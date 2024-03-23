@@ -10,13 +10,14 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarco.xyz/",
+  site: "https://lialittis.github.io/",
+  // base: "astro-portfolio",
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        "https://gianmarco.xyz/sitemap-index.xml",
-        "https://gianmarco.xyz/sitemap-0.xml",
+        "https://lialittis.github.io/sitemap-index.xml",
+        "https://lialittis.github.io/sitemap-0.xml",
       ],
     }),
     solidJs(),
@@ -27,5 +28,5 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime],
   },
   output: "server",
-  adapter: netlify(),
+  // adapter: netlify(),
 });

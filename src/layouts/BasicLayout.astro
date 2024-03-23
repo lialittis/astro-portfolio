@@ -9,7 +9,7 @@ const { title, description, page } = Astro.props;
 const image =
   page === "travel"
     ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/me.webp`;
+    : `${Astro.url.origin}/gojo-tc.webp`;
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ const image =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/head.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />

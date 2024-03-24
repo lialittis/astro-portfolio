@@ -1,12 +1,7 @@
-# ⚡️astro-bento-portfolio
+# Tianchi YU's Workshop
 
-## A personal portfolio website made using `Astro`.
+## A personal website made using `Astro`.
 
-![astro-bento-portfolio | Bento-like Personal Porfolio Template](public/preview.png)
-
-To view a demo example, **[click here](https://sparkly-speculoos-0c9197.netlify.app/)**
-
-or my portfolio **[click here](https://gianmarco.xyz/)**
 
 ## Features
 
@@ -66,6 +61,6 @@ or
 
 [![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ladvace/astro-bento-portfolio)
 
-## Authors ❤️
+## Reference ❤️
 
 - Gianmarco - https://github.com/Ladvace

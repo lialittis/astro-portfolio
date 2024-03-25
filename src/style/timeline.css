@@ -1,0 +1,23 @@
+/* Example CSS styles for the timeline */
+.timeline {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+}
+
+.timeline-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.timeline-content p {
+    margin-top: 10px;
+}

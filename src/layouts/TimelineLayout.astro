@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  children: string
+  description: string;
+  page?: "travel";
+}
+
+const { title, description, page } = Astro.props;
+const image =
+  page === "travel"
+    ? `${Astro.url.origin}/globe_preview.webp"`
+    : `${Astro.url.origin}/gojo-tc.webp`;
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="charset="UTF-8">
+    <meta name="viewport" ccontent="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+    <header>
+        <h1>{title}</h1>
+    </header>
+    <slot />
+    
+    <footer>
+        <p>&copy; {new Date().getFullYear()} Your Name </p>
+    </footer>
+</body>
+</html>

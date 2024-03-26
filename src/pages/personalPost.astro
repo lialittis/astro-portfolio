@@ -1,60 +1,79 @@
 ---
 import TimelineLayout from '../layouts/TimelineLayout.astro'
+import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card/index.astro'
+import PostCard from '../components/PostCard.astro';
+import AboutMe from '../components/AboutMe.astro';
 import '../style/timeline.css'
 ---
 
-<TimelineLayout title="Personal Post" description="A personal post" children="HI, This is Tianchi">
-  <div class="timeline text-white">
-    
-    <Card 
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
+<!-- animation -->
+<script>
+  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../lib/constants";
+  const cards = document.querySelectorAll(".card");
+
+  const sequence = [
+    loaderAnimation,
+    [
+      cards,
+      { y: ["40%", "0%"], opacity: [0, 1] },
+      {
+        at: "-0.1",
+        duration: 0.4,
+        delay: stagger(0.3),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+      },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<Layout
+  title="Tianchi YU(于天池) - Developer & Adventurer"
+  description="Software developer & Life Adventurer"
+>
+  <main
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:grid-rows-8"
+  >
+    <PostCard
+      colSpan="md:col-span-3"
+      rowSpan="md:row-span-4"
+      title="I Got A Cat!!!"
+      date="March 25, 2024"
+      content="Today, I got a very cut cat! I give her a name : MIA !"
+      imagePath='/img/mia.jpg'
+     />
+    <Card
+      colSpan="md:col-span-3"
+      rowSpan="md:row-span-4"
       title="I Got A Cat!!!"
       colorText="text-neutral-900"
     >
-        <!-- Example timeline item -->
-    <div class="timeline-item text-white">
-      <div class="timeline-date">March 25, 2024</div>
-      <div class="timeline-content">
-        <!-- <img src="/gojo-tc.png" alt="March 25th"> -->
-        <p>Today, I got a very cut cat! I give her a name : MIA !</p>
-      </div>
-      <img
-      width="300"
-      height="300"
-      src="/gojo-tc.png"
-      class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
-      alt="mia"
-        />
-    </div>
     </Card>
 
-    <Card 
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
-      title="Astro Website"
+    <Card
+      colSpan="md:col-span-3"
+      rowSpan="md:row-span-4"
+      title="I Got A Cat!!!"
       colorText="text-neutral-900"
     >
-        <!-- Example timeline item -->
-    <div class="timeline-item text-white">
-      <div class="timeline-date">March 5, 2024</div>
-      <div class="timeline-content">
-        <img src="../img/gojo-tc.png" alt="March 25th">
-        <p>Today, I started working on my personal website using Astro!</p>
+    <!-- <div class="timeline-item w-full h-full">
+      <h5 class="timeline-date">March 25, 2024</h5>
+        <div class="flex flex-col h-full">
+        <p class="m-0 font-light text-xl">
+          Today, I got a very cut cat! I give her a name : MIA !
+        </p>
       </div>
-    </div>
+      <img
+          width="300"
+          height="300"
+          src="/gojo-tc.png"
+          class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+          alt="mia"
+        />
+    </div> -->
     </Card>
-
-    <!-- Another timeline item -->
-    <div class="timeline-item">
-      <div class="timeline-date">April 1, 2024</div>
-      <div class="timeline-content">
-        <img src="/img/april1.jpg" alt="April 1st">
-        <p>Received my first feedback from users about the website - excited to implement some changes!</p>
-      </div>
-    </div>
-
-    <!-- Add more timeline items as needed -->
-  </div>
-</TimelineLayout>
+  </main>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import Card from "./Card/index.astro"
+
+interface Props {
+    colSpan: string;
+    rowSpan: string;
+    title: string;
+    date: string;
+    content: string;
+    imagePath?: string;
+}
+
+const {colSpan, rowSpan, title, date, content, imagePath} = Astro.props
+---
+
+<Card
+      colSpan={colSpan}
+      rowSpan={rowSpan}
+      title={title}
+    >
+    <h5 class="timeline-date">{date}</h5>
+    <div class="w-full h-full">
+      <div class="flex flex-col justify-between md:max-h-[300px] md:max-w-[500px] gap-4">
+        <div class="flex flex-col">
+        <p class="m-0 font-light text-xl">
+          {content}
+        </p>
+        </div>
+      </div>
+      <img
+          width="250"
+          height="250"
+          src={imagePath}
+          class="w-auto max-h-[250px] select-none bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+          alt="mia"
+        />
+    </div>
+</Card>

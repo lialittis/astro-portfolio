@@ -1,0 +1,38 @@
+---
+import { formatDate } from "../lib/helpers";
+import type { MarkdownLayoutProps } from "astro";
+import BasicLayout from "./BasicLayout.astro";
+// style import
+// import "../style/blog-global.css"
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+  pubDate: string;
+  minutesRead: string;
+}>;
+
+const { frontmatter } = Astro.props;
+// console.log(frontmatter);
+---
+
+<BasicLayout title={frontmatter.title} description={frontmatter.description}>
+  <header>
+    <div class="container">
+
+    </div>
+    <img src="" alt="">
+  </header>
+  <div class="post-content">
+    <div class="content">
+       <slot/>
+    </div>
+    <div class="sidebar"></div>
+  </div>
+</BasicLayout>
+
+<style>
+  .big {
+    font-size : 4rem;
+  }
+</style>

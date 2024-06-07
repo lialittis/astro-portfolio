@@ -28,5 +28,5 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime],
   },
   output: "server",
-  // adapter: netlify(),
+  adapter: netlify(),
 });

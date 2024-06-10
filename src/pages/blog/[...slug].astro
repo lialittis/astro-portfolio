@@ -17,6 +17,13 @@ if (entry === undefined) {
   return Astro.redirect("/404");
 }
 const { Content } = await entry.render();
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
 ---
 
 <Content />

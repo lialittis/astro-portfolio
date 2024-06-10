@@ -10,7 +10,7 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://lialittis.github.io/",
+  site: "https://www.tianchiyu.me",
   // base: "astro-portfolio",
   integrations: [
     sitemap(),

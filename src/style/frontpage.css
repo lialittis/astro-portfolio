@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   height: -webkit-fill-available;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,9 +15,16 @@
   opacity: 1;
 }
 
+.modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Disable pointer events */
+}
+
 .modal-content {
   /* background: white; */
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: rgba(255, 255, 255,0.9);
     /* 使用Flexbox布局 */
   display: flex;
   flex-direction: column;
@@ -56,6 +63,20 @@
   font-family: Tahoma,Arial,“Hiragino Sans GB”,simsun,sans-serif;
 }
 
+.hi-text {
+  position: absolute;
+  line-height: 100px;
+  height: 200px;
+  font-size: 30px;
+}
+
+.hi-text p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Tahoma,Arial,“Hiragino Sans GB”,simsun,sans-serif;
+}
+
 .modal-buttons {
   margin-top: 20px;
 
@@ -87,6 +108,7 @@
 }
 
 /* 设置文本和按钮的默认透明度为0，即隐藏 */
+.modal-content:hover .hi-text,
 .modal-content .text-center,
 .modal-content .modal-buttons,
 .modal-content .modal-exit-button {
@@ -95,6 +117,7 @@
 }
 
 /* 鼠标悬停时，显示文本和按钮 */
+.modal-content .hi-text,
 .modal-content:hover .text-center,
 .modal-content:hover .modal-buttons,
 .modal-content:hover .modal-exit-button {

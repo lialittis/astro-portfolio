@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Hide the modal when the close button is clicked
   closeModal.addEventListener("click", function () {
     modal.classList.remove("show");
+    modal.classList.add("hidden");
   });
 
   // Optional: Hide the modal when clicking outside of it
   window.addEventListener("click", function (event) {
     if (event.target === modal) {
       modal.classList.remove("show");
+      modal.classList.add("hidden");
     }
   });
 
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Show the modal when the page loads
       setTimeout(() => {
         modal.classList.remove("show");
+        modal.classList.add("hidden");
       }, 800); // 延迟0.8秒后显示
     } else {
       playModal.textContent = '你确定吗？';

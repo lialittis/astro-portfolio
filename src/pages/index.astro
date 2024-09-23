@@ -38,18 +38,27 @@ import "../style/frontpage.css";
 >
   <div id="intro-modal" class="modal">
     <div class="modal-content">
-      <div class="hi-text">
-        <p>HI ! Come Here!</p>
+      <div class="hi-text" style="position: z-index: 1;">
+        <p>Hey ! I am Glad You Found Me!</p>
       </div>
-      <div class="text-center">
+      <div class="text-center" style="position: z-index: 1;">
         <p>Welcome to My World! 欢迎访问我的网站！</p><br />
-        <p>我叫于天池 (Tianchi YU) ，你想认识：</p> <br />
+        <p>My Name is Tianchi YU (于天池), you'd like to know about:</p>
+        <br />
         <!-- <p>My Name is Tianchi YU, What do U Want:</p> -->
       </div>
-      <div class="modal-buttons">
+      <div class="modal-buttons" style="position:z-index: 100;">
         <a href="/me" class="modal-button">(My LifeStyle) 生活中的我</a>
-        <a href="/me" class="modal-button">(My Profession) 专业中的我</a>
-        <button class="modal-button" id="close-modal">(Random Walk) 随便看看～</button>
+        <a href="https://lialittis.github.io" class="modal-button"
+          >(My Profession) 专业中的我</a
+        >
+        <!-- <button
+          onclick="window.location.href='https://lialittis.github.io'"
+          class="modal-button">(My Profession) 专业中的我</button
+        > -->
+        <button class="modal-button" id="close-modal"
+          >(Random Walk) 随便看看～</button
+        >
       </div>
       <button id="change-text-button" class="modal-exit-button">
         (Not Interested, Sorry) 点错了，并不想了解你... Bye
@@ -67,8 +76,10 @@ import "../style/frontpage.css";
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2"
       title="Blog"
-      href="/blog"
-    />
+      href="https://tianchiyu.bearblog.dev/"
+    >
+      <p>More Coming...</p>
+    </Card>
     <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-1"
@@ -84,7 +95,7 @@ import "../style/frontpage.css";
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
         © 2024 · Crafted with ♥️ using <a
-          href="https://astro.build/"
+          href=""
           target="_blank"
           class="text-red-500">Astro</a
         >

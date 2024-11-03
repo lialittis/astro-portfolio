@@ -25,12 +25,12 @@
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Ladvace/astro-bento-portfolio
+$ git clone https://github.com/lialittis/astro-portfolio.git
 ```
 
 ```bash
 # Go into the repository
-$ cd astro-bento-portfolio
+$ cd astro-portfolio
 ```
 
 ```bash
@@ -56,10 +56,6 @@ remember to replace the `site` and other properties with your data in `astro.con
 Deploying your website on Netlify it's optional but I reccomand it in order to deploy it faster and easly.
 
 You just need to fork this repo and linking it to your Netlify account.
-
-or
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ladvace/astro-bento-portfolio)
 
 ## Reference ❤️
 

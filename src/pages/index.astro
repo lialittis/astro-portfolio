@@ -8,6 +8,7 @@ import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
 import "../style/frontpage.css";
+import KeyWords from "../components/KeyWords.astro";
 ---
 
 <script>
@@ -36,7 +37,7 @@ import "../style/frontpage.css";
   title="Tianchi YU(于天池) - Developer & Adventurer"
   description="Software developer & Life Adventurer"
 >
-  <div id="intro-modal" class="modal">
+  <!-- <div id="intro-modal" class="modal">
     <div class="modal-content">
       <div class="hi-text" style="position: z-index: 1;">
         <p>Hey ! I am Glad You Found Me!</p>
@@ -45,17 +46,12 @@ import "../style/frontpage.css";
         <p>Welcome to My World! 欢迎访问我的网站！</p><br />
         <p>My Name is Tianchi YU (于天池), you'd like to know about:</p>
         <br />
-        <!-- <p>My Name is Tianchi YU, What do U Want:</p> -->
       </div>
       <div class="modal-buttons" style="position:z-index: 100;">
         <a href="/me" class="modal-button">(My LifeStyle) 生活中的我</a>
         <a href="https://lialittis.github.io" class="modal-button"
           >(My Profession) 专业中的我</a
         >
-        <!-- <button
-          onclick="window.location.href='https://lialittis.github.io'"
-          class="modal-button">(My Profession) 专业中的我</button
-        > -->
         <button class="modal-button" id="close-modal"
           >(Random Walk) 随便看看～</button
         >
@@ -64,19 +60,43 @@ import "../style/frontpage.css";
         (Not Interested, Sorry) 点错了，并不想了解你... Bye
       </button>
     </div>
-  </div>
+  </div> -->
   <main
     class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
   >
     <IntroCard />
-    <AboutMe />
+    <KeyWords />
     <ContactsCard />
-    <TimeZone />
+
     <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2"
       title="Blog"
-      href="https://tianchiyu.bearblog.dev/"
+      href="https://lialittis.github.io/blog/"
+    >
+      <p>More Coming...</p>
+    </Card>
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-2"
+      title="Resume"
+      href="https://lialittis.github.io/"
+    >
+      <p>More Coming...</p>
+    </Card>
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-2"
+      title="Projects"
+      href="https://lialittis.github.io/projects/"
+    >
+      <p>More Coming...</p>
+    </Card>
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-2"
+      title="Pablications"
+      href="https://lialittis.github.io/publications/"
     >
       <p>More Coming...</p>
     </Card>
@@ -92,7 +112,8 @@ import "../style/frontpage.css";
       </div>
     </Card>
     <Now />
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+    <TimeZone />
+    <!-- <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
         © 2024 · Crafted with ♥️ using <a
           href=""
@@ -100,6 +121,6 @@ import "../style/frontpage.css";
           class="text-red-500">Astro</a
         >
       </p>
-    </Card>
+    </Card> -->
   </main>
 </Layout>

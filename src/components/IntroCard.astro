@@ -10,52 +10,82 @@ import Tooltip from "./Tooltip/index";
   <div class="flex w-full h-full">
     <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
       <div class="flex flex-col h-full">
-        <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
+        <h6 class="text-sm font-light m-0 text-gray-500">Short Bio</h6>
         <p class="m-0 font-light text-xl">
-          Hi, I'm <b class="font-bold">Tianchi YU</b>, currently a software
-          developer driven by a passion for creating innovative tools, software, and systems;
-          I am also becoming a new PhD student in system security domain and try to be a qualified
-          researcher.
+          Hi, I'm <b class="font-bold">Tianchi YU</b>, a first-year Ph.D.
+          student specializing in <b class="font-bold text-blue-500"
+            >System Security</b
+          > at the
+          <a
+            href="https://www.unipd.it/en/"
+            target="_blank"
+            class="text-red-500">University of Padova</a
+          > under the guidance of amazing
+          <a
+            href="https://www.math.unipd.it/~conti/"
+            target="_blank"
+            class="font-bold text-red-500">Prof. Mauro Conti</a
+          >. I am part of the <a
+            href="https://spritz.math.unipd.it/"
+            target="_blank"
+            class="text-red-500">Security and Privacy</a
+          > (SPRITZ) research group, and I also serve as an Industrial Ph.D. student,
+          collaborating with Huawei's <b class="font-bold"
+            >Trusted System Security Lab</b
+          >
+          in Munich, supervised by senior expert and director <a
+            href="https://www.linkedin.com/in/silviu-vlasceanu/"
+            target="_blank"
+            class="text-red-500 font-bold">Silviu Vlasceanu</a
+          >.
+
+          <!-- <p class="m-0 font-light text-xl">
+            I’m looking to collaborate on the systems and security research.
+          </p> -->
+
+          <!-- <p class="m-0 font-light text-xl">Beyond coding,</p>
+          <ul class="list-disc list-inside text-xl font-light">
+            <li>I like anime, music and sports.</li>
+            <li>I speak Mandarin, English and French.</li>
+            <li>I enjoy reading, thinking and travelling.</li>
+          </ul> -->
         </p>
-        <p class="m-0 font-light text-xl">Beyond coding, </p>
-        <ul class="list-disc list-inside text-xl font-light">
-        <li>I like anime, music and sports.</li>
-        <li>I speak Mandarin, English and French.</li>
-        <li>I enjoy reading, thinking and travelling.</li>
-      </ul>
-      
-      </div>
-      <div class="flex gap-4">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
-            <Icon name="ri:github-fill" class="h-6" />
-            <span class="sr-only">GitHub Profile</span>
-          </Button>
-        </a>
-        <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
-          <Button aria-label="linkedin profile">
-            <Icon name="ri:linkedin-box-fill" class="h-6" />
-            <span class="sr-only">Linkedin Profile</span>
-          </Button>
-        </a>
-        <!-- <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
+        <!-- <div class="flex gap-4">
+          <a href={LINKS.github} aria-label="github profile" target="_blank">
+            <Button aria-label="github profile">
+              <Icon name="ri:github-fill" class="h-6" />
+              <span class="sr-only">GitHub Profile</span>
+            </Button>
+          </a>
+          <a
+            href={LINKS.linkedin}
+            aria-label="linkeding profile"
+            target="_blank"
+          >
+            <Button aria-label="linkedin profile">
+              <Icon name="ri:linkedin-box-fill" class="h-6" />
+              <span class="sr-only">Linkedin Profile</span>
+            </Button>
+          </a>
+          <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
           <Button aria-label="dribble profile">
             <Icon name="ri:dribbble-fill" class="h-6" />
             <span class="sr-only">Dribble Profile</span>
           </Button>
-        </a> -->
-        <!-- <Tooltip client:visible>
+        </a>
+          <Tooltip client:visible>
           <Button aria-label="easter egg btn">
             <Icon name="ri:emotion-laugh-line" class="h-6" />
             <span class="sr-only">Easter egg button</span>
           </Button>
-        </Tooltip> -->
+        </Tooltip>
+        </div> -->
       </div>
     </div>
     <img
       width="300"
       height="300"
-      src="/gojo-tc.webp"
+      src="/YU_Tianchi.jpg"
       class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
       alt="memoji of gianmarco"
     />

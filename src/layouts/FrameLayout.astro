@@ -1,0 +1,61 @@
+---
+import NavBar from "../components/NavBar.astro";
+import BasicLayout from "./BasicLayout.astro";
+import SimpleLayout from "./SimpleLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  page?: "travel";
+}
+
+const { title, description, page } = Astro.props;
+---
+
+<SimpleLayout title={title} description={description}>
+  <div
+    slot="loader"
+    class="loader bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
+  >
+  </div>
+  <NavBar />
+  <body class="relative overscroll-none">
+    <slot name="loader" />
+    <slot />
+    <script>
+      import { inView, animate } from "motion";
+
+      inView(".loader", (info) => {
+        animate(
+          info.target,
+          { opacity: [1, 0], pointerEvents: "none" },
+          { easing: "ease-in-out", duration: 0.5 }
+        );
+      });
+    </script>
+    <script>
+      import { inView, animate } from "motion";
+
+      inView("h1, h2, h3, h4, h5, p", (info) => {
+        animate(
+          info.target,
+          { filter: ["blur(3px)", "blur(0px)"] },
+          { easing: "ease-in-out", duration: 0.5 }
+        );
+      });
+    </script>
+    <script>
+      import Lenis from "lenis";
+
+      const lenis = new Lenis();
+
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+  <!-- <slot /> -->
+</SimpleLayout>

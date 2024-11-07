@@ -1,6 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import BasicLayout from "./BasicLayout.astro";
+import SimpleLayout from "./SimpleLayout.astro";
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ interface Props {
 const { title, description, page } = Astro.props;
 ---
 
-<BasicLayout title={title} description={description}>
+<SimpleLayout title={title} description={description}>
   <div
     slot="loader"
     class="loader bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
@@ -19,4 +20,4 @@ const { title, description, page } = Astro.props;
   </div>
   <NavBar />
   <slot />
-</BasicLayout>
+</SimpleLayout>

@@ -1,6 +1,7 @@
 import { onMount } from "solid-js";
 import * as d3 from "d3";
 import worldData from "../lib/world.json";
+import React from "react";
 
 const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
@@ -76,8 +77,8 @@ const GlobeComponent = () => {
   });
 
   return (
-    <div class="flex flex-col text-white justify-center items-center w-full h-full">
-      <div class="w-full" ref={mapContainer}></div>
+    <div className="flex flex-col text-white justify-center items-center w-full h-full">
+      <div className="w-full"></div>
     </div>
   );
 };

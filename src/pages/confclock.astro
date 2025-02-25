@@ -1,0 +1,17 @@
+---
+// import ConferenceTable from "../components/ConferenceTable";
+import Layout from "../layouts/Layout.astro";
+
+import SimplifiedConfTable from "../components/SimplifiedConfTable";
+import SimpleLayout from "../layouts/SimpleLayout.astro";
+import NavBar from "../components/NavBar.astro";
+---
+
+<SimpleLayout title="Conferences Clock" description="">
+  <NavBar />
+  <main
+    class="text-white"
+  >
+      <SimplifiedConfTable />
+  </main>
+</SimpleLayout>

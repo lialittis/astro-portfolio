@@ -69,8 +69,6 @@ const CountdownCellRenderer = (props: { value: string; data: Conference }) => {
   return <span>{timeLeft}</span>;
 };
 
-
-
 const ConfTable = (props: ConfProps) => {
 
   const [rowData, setRowData] = useState<Conference[]>(() => 

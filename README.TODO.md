@@ -5,7 +5,7 @@
 - [x] Add a today's clock
 - [x] Modify table header names
 - [ ] Make the link clickable
-- [ ] Make column adjustable
+- [x] Make column adjustable
 - [ ] Add more conference info in YAML format
 - [ ] Add filter functionalities
 - [x] Add clock info

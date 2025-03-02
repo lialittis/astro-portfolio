@@ -93,35 +93,65 @@ const ConfTable = (props: ConfProps) => {
     return () => clearInterval(interval);
   }, []);
 
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
 
-  const [colDefs, setColDefs] = useState<ColDef<Conference>[]>([
-    { field: "title", headerName: "Title" },
-    { field: "sub", headerName: "Domain"},
-    { field: "rank.ccf", headerName: "CCF Rank"},
-    { field: "rank.core", headerName: "CORE Rank"},
-    { field: "rank.thcpl", headerName: "THCPL Rank"},
-    { field: "latestconf.date", headerName: "Date"},
+  // Handle screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  const [allColumns, setColDefs] = useState<ColDef<Conference>[]>([
+    { field: "title", headerName: "Title", maxWidth: 150},
+    { field: "sub", headerName: "Domain", maxWidth: 150},
+    { field: "rank.ccf", headerName: "CCF Rank", maxWidth: 120},
+    { field: "rank.core", headerName: "CORE Rank", maxWidth: 120},
+    { field: "rank.thcpl", headerName: "THCPL Rank", maxWidth: 120},
     { field: "deadline", headerName: "Deadline"},
     {
       field: "remainingTime",
       headerName: "Clock",
       cellRenderer: CountdownCellRenderer,
+      cellStyle: params => {
+            if (params.value < '30d') {
+                //mark police cells as red
+                return {color: 'white', backgroundColor: 'red'};
+            } else if (params.value < '60d') {
+              return {color: 'white', backgroundColor: 'orange'};
+            } else {
+              return {color: 'white', backgroundColor: 'green'};
+            }
+            return null;
+        }
     },
+    { field: "latestconf.date", headerName: "Date"},
     { field: "latestconf.place", headerName: "Place"},
     { field: "latestconf.link", headerName: "Link"},
     ]);
 
+  // Adjust columns based on screen size
+  const colDefs = isMobile
+    ? allColumns.filter(col => ["title", "deadline", "remainingTime"].includes(col.field as string))
+    : allColumns;
+
   const defaultColDef: ColDef = {
     flex: 1,
+    resizable: true,
   };
 
   return (
-    <div className="overflow-x-auto">
-      <div className="w-screen h-screen">
+    <div className="overflow-x-auto w-screen flex flex-col">
+      <div className="flex-grow mt-5">
         <AgGridReact
           rowData={rowData}
           columnDefs={colDefs}
           defaultColDef={defaultColDef}
+          domLayout="autoHeight"
+          // className="ag-theme-alpine w-full h-full"
         />
       </div>
     </div>

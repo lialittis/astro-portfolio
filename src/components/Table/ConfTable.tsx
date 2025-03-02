@@ -93,17 +93,21 @@ const ConfTable = (props: ConfProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null); // Start as null to avoid SSR issues
 
-  // Handle screen size changes
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Run only on the client
+    const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+    
+    checkScreenSize(); // Set initial state
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  // if (isMobile === null) {
+  //   return null; // Prevents SSR issues by returning nothing until mounted
+  // }
 
   const [allColumns, setColDefs] = useState<ColDef<Conference>[]>([
     { field: "title", headerName: "Title", maxWidth: 150},

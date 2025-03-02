@@ -2,14 +2,14 @@
 
 ## Conference Clock
 
-- [ ] Modify table header names
+- [x] Add a today's clock
+- [x] Modify table header names
 - [ ] Make the link clickable
 - [ ] Make column adjustable
 - [ ] Add more conference info in YAML format
 - [ ] Add filter functionalities
-- [ ] Add clock info
+- [x] Add clock info
 - [ ] Make the column of deadline sortable according to time, not alphabic
-
 
 ## Code Style
 

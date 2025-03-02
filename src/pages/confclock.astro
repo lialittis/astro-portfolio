@@ -1,87 +1,99 @@
 ---
-import ConfTable from "../components/Table/ConfTable";
-import SimpleLayout from "../layouts/SimpleLayout.astro";
-import NavBar from "../components/NavBar.astro";
+import ConfTable from '../components/Table/ConfTable'
+import SimpleLayout from '../layouts/SimpleLayout.astro'
+import NavBar from '../components/NavBar.astro'
 
-import fs from "fs";
-import path from "path";
-import yaml from "yaml";
+import fs from 'fs'
+import path from 'path'
+import yaml from 'yaml'
 
 interface TimelineEntry {
-  deadline: string;
-  comment: string;
+	deadline: string
+	comment: string
 }
 
 interface ConferenceYear {
-  year: number;
-  id: string;
-  link: string;
-  timeline: TimelineEntry[];
-  timezone: string;
-  date: string;
-  place: string;
+	year: number
+	id: string
+	link: string
+	timeline: TimelineEntry[]
+	timezone: string
+	date: string
+	place: string
 }
 
 interface Conference {
-  title: string;
-  description: string;
-  sub: string;
-  rank: { ccf: string; core: string; thcpl: string };
-  dblp: string;
-  confs: ConferenceYear[];
-  latestconf: ConferenceYear;
+	title: string
+	description: string
+	sub: string
+	rank: { ccf: string; core: string; thcpl: string }
+	dblp: string
+	confs: ConferenceYear[]
+	latestconf: ConferenceYear
+	deadline: string
+	remainingTime: string
 }
 
 const loadConferences = (baseDir: string): Conference[] => {
-  const conferenceList: Conference[] = [];
+	const conferenceList: Conference[] = []
 
-  // Read all subdirectories (e.g., security, system)
-  const categories = fs
-    .readdirSync(baseDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory()) // Only directories
-    .map((dirent) => dirent.name);
+	// Read all subdirectories (e.g., security, system)
+	const categories = fs
+		.readdirSync(baseDir, { withFileTypes: true })
+		.filter((dirent) => dirent.isDirectory()) // Only directories
+		.map((dirent) => dirent.name)
 
-  console.log(categories);
+	console.log(categories)
 
-  categories.forEach((category) => {
-    const categoryPath = path.join(baseDir, category);
+	categories.forEach((category) => {
+		const categoryPath = path.join(baseDir, category)
 
-    // Read all YAML files inside each category
-    const files = fs
-      .readdirSync(categoryPath)
-      .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml"));
+		// Read all YAML files inside each category
+		const files = fs
+			.readdirSync(categoryPath)
+			.filter((file) => file.endsWith('.yaml') || file.endsWith('.yml'))
 
-    files.forEach((file) => {
-      const filePath = path.join(categoryPath, file);
-      const content = fs.readFileSync(filePath, "utf8");
+		files.forEach((file) => {
+			const filePath = path.join(categoryPath, file)
+			const content = fs.readFileSync(filePath, 'utf8')
 
-      try {
-        const parsed = yaml.parse(content);
-        // console.log("Parsed YAML:", parsed);
+			try {
+				const parsed = yaml.parse(content)
+				// console.log("Parsed YAML:", parsed);
 
-        // Ensure the parsed data is structured correctly
-        if (parsed && typeof parsed === "object" && parsed.confs) {
-          parsed.latestconf = parsed.confs[parsed.confs.length - 1];
-          // console.log(parsed.latestconf);
-          conferenceList.push(parsed);
-        } else {
-          console.warn(`Warning: Skipping ${file} due to invalid structure`);
-        }
-      } catch (error) {
-        console.error(`Error parsing YAML file ${filePath}:`, error);
-      }
-    });
-  });
+				// Ensure the parsed data is structured correctly
+				if (parsed && typeof parsed === 'object' && parsed.confs) {
+					parsed.latestconf = parsed.confs[parsed.confs.length - 1]
+					// console.log(parsed.latestconf);
+					switch (parsed.sub) {
+						case 'SE':
+							parsed.sub = 'System'
+							break
+						case 'SC':
+							parsed.sub = 'Security'
+						default:
+							break
+					}
+					parsed.deadline = parsed.latestconf.timeline[0].deadline
+					conferenceList.push(parsed)
+				} else {
+					console.warn(`Warning: Skipping ${file} due to invalid structure`)
+				}
+			} catch (error) {
+				console.error(`Error parsing YAML file ${filePath}:`, error)
+			}
+		})
+	})
 
-  return conferenceList;
-};
+	return conferenceList
+}
 
-const conferences = loadConferences("./conferences");
+const conferences = loadConferences('./conferences')
 ---
 
-<SimpleLayout title="Conferences Clock" description="">
-  <NavBar />
-  <div>
-    <ConfTable conferences={conferences} client:load />
-  </div>
+<SimpleLayout title='Conferences Clock' description=''>
+	<NavBar />
+	<div id='timeDisplay'>
+		<ConfTable conferences={conferences} client:load />
+	</div>
 </SimpleLayout>

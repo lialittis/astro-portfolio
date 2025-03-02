@@ -1,0 +1,6 @@
+# Ignore everything:
+/*
+/src/styles/main.css
+
+# Except src folder:
+!/src

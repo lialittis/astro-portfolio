@@ -36,7 +36,7 @@ interface ConfProps {
   conferences: Conference [];
 }
 
-const SimplifiedConfTable = (props: ConfProps) => {
+const ConfTable = (props: ConfProps) => {
 
   const [rowData, setRowData] = useState<Conference[]>(props.conferences);
 
@@ -67,4 +67,4 @@ const SimplifiedConfTable = (props: ConfProps) => {
 };
 
 
-export default SimplifiedConfTable;
+export default ConfTable;

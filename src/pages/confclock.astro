@@ -1,6 +1,5 @@
 ---
-// import ConferenceTable from "../components/ConferenceTable";
-import SimplifiedConfTable from "../components/SimplifiedConfTable";
+import ConfTable from "../components/Table/ConfTable";
 import SimpleLayout from "../layouts/SimpleLayout.astro";
 import NavBar from "../components/NavBar.astro";
 
@@ -83,6 +82,6 @@ const conferences = loadConferences("./conferences");
 <SimpleLayout title="Conferences Clock" description="">
   <NavBar />
   <div>
-    <SimplifiedConfTable conferences={conferences} client:load />
+    <ConfTable conferences={conferences} client:load />
   </div>
 </SimpleLayout>

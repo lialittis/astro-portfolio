@@ -1,6 +1,6 @@
 import { onMount } from "solid-js";
 import * as d3 from "d3";
-import worldData from "../lib/world.json";
+import worldData from "../../lib/world.json";
 import React from "react";
 
 const GlobeComponent = () => {

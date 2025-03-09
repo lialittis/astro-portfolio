@@ -3,6 +3,8 @@ import React, {useEffect, useState } from "react";
 import type { ColDef } from "ag-grid-community";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
+import type { ICellRendererParams } from 'ag-grid-community';
+import { TitleCellRender } from "./TitleCellRender";
 
 // Register ag-Grid modules
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -103,16 +105,14 @@ const ConfTable = (props: ConfProps) => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // if (isMobile === null) {
-  //   return null; // Prevents SSR issues by returning nothing until mounted
-  // }
-
   const [allColumns, setColDefs] = useState<ColDef<Conference>[]>([
-    { field: "title", headerName: "Title", maxWidth: 150},
+    { field: "title", headerName: "Title", maxWidth: 150,
+      cellRenderer: TitleCellRender,
+    },
     { field: "sub", headerName: "Domain", maxWidth: 150},
-    { field: "rank.ccf", headerName: "CCF Rank", maxWidth: 120},
-    { field: "rank.core", headerName: "CORE Rank", maxWidth: 120},
-    { field: "rank.thcpl", headerName: "THCPL Rank", maxWidth: 120},
+    { field: "rank.core", headerName: "CORE Rank", maxWidth: 100},
+    { field: "rank.ccf", headerName: "CCF Rank", maxWidth: 100},
+    // { field: "rank.thcpl", headerName: "THCPL Rank", maxWidth: 120},
     { field: "deadline", headerName: "Deadline"},
     {
       field: "remainingTime",
@@ -132,7 +132,7 @@ const ConfTable = (props: ConfProps) => {
     },
     { field: "latestconf.date", headerName: "Date"},
     { field: "latestconf.place", headerName: "Place"},
-    { field: "latestconf.link", headerName: "Link"},
+    // { field: "latestconf.link", headerName: "Link"},
     ]);
 
   // Adjust columns based on screen size

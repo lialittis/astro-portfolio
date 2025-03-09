@@ -37,7 +37,7 @@ interface Conference {
 const loadConferences = (baseDir: string): Conference[] => {
 	const conferenceList: Conference[] = []
 
-	// Read all subdirectories (e.g., security, system)
+	// Read all subdirectories (e.g., DS, SC)
 	const categories = fs
 		.readdirSync(baseDir, { withFileTypes: true })
 		.filter((dirent) => dirent.isDirectory()) // Only directories
@@ -66,11 +66,15 @@ const loadConferences = (baseDir: string): Conference[] => {
 					parsed.latestconf = parsed.confs[parsed.confs.length - 1]
 					// console.log(parsed.latestconf);
 					switch (parsed.sub) {
-						case 'SE':
+						case 'DS':
 							parsed.sub = 'System'
 							break
 						case 'SC':
 							parsed.sub = 'Security'
+							break;
+						case 'SE':
+							parsed.sub = 'Software'
+							break
 						default:
 							break
 					}

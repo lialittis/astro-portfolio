@@ -5,14 +5,12 @@ const blog = defineCollection({
   schema: rssSchema,
 });
 
-export const security_news_collections = {
-  updates: defineCollection({
-    schema: z.object({
-      title: z.string(),
-      date: z.string(),  // or `z.date()` if preferred
-      tags: z.array(z.string()).optional(),
-    }),
+const updates = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),  // or `z.string()` if preferred
+    tags: z.array(z.string()).optional(),
   }),
-};
+}); 
 
-export const collections = { blog };
+export const collections = { blog, updates };

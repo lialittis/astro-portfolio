@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
-// import netlify from "@astrojs/netlify";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import sitemap from '@astrojs/sitemap';
@@ -15,9 +13,6 @@ export default defineConfig({
     react(
       // {include: ['**/*.tsx', '**/*.jsx'],}
     ),
-    tailwind({
-      applyBaseStyles: false,
-    }),
     sitemap(),
     // robotsTxt({
     //   sitemap: [

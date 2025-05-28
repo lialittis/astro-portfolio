@@ -33,19 +33,26 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/d3": "^7.4.3",
     "@types/react": "^19.0.10",
     "@unocss/astro": "^0.58.9",
-    "@unocss/postcss": "^0.58.9",
+    "@unocss/postcss": "^66.1.2",
+    "@unocss/preset-typography": "^66.1.2",
     "@unocss/preset-uno": "^0.58.9",
+    "@unocss/preset-wind3": "^66.1.2",
     "@unocss/reset": "^0.58.9",
+    "@unocss/vite": "^66.1.2",
     "autoprefixer": "^10.4.20",
     "d3": "^7.9.0",
     "markdown-it": "^14.1.0",
     "motion": "^10.18.0",
+    "postcss": "^8.5.3",
     "prettier": "3.5.2",
     "sanitize-html": "^2.14.0",
-    "unocss": "^0.58.9"
+    "tailwindcss": "3.4.3",
+    "unocss": "^66.1.2"
   },
   "packageManager": "pnpm@9.2.0"
 }

@@ -1,0 +1,94 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro'
+import NavBar from '../components/NavBar.astro'
+import { getCollection } from 'astro:content'
+
+const title = 'Security News'
+const description =
+	'Latest updates and insights on security trends and vulnerabilities.'
+
+const allPosts = await getCollection('updates')
+
+const securityPosts = allPosts
+	.filter((post: { data: { tags: string | string[] } }) =>
+		post.data.tags?.includes('security')
+	)
+	.sort(
+		(a: { data: { date: string } }, b: { data: { date: string } }) =>
+			new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+	)
+
+// Pre-render markdown content
+const renderedPosts = await Promise.all(
+	securityPosts.map(
+		async (post: {
+			render: () => PromiseLike<{ Content: any }> | { Content: any }
+			data: { title: any; date: any }
+		}) => {
+			const { Content } = await post.render()
+			return {
+				title: post.data.title,
+				date: post.data.date,
+				Content
+			}
+		}
+	)
+)
+---
+
+<SimpleLayout title={title} description={description}>
+	<NavBar />
+
+	<div class='w-screen min-h-screen dotted-bg'>
+		<section
+			class='pt-20 flex flex-col items-center text-white text-center gap-4'
+		>
+			<h1 class='text-4xl md:text-5xl xl:text-6xl font-bold'>
+				Security News <br />
+				<span class='font-normal'>Latest Updates</span>
+			</h1>
+			<p class='text-lg text-secondary-200 max-w-xl'>
+				Stay informed with the latest security trends and insights...
+			</p>
+		</section>
+
+		<section class='mt-16 flex flex-col items-center gap-6'>
+			<h2 class='text-2xl md:text-3xl font-bold text-white'>Latest Articles</h2>
+			<p class='text-lg text-secondary-200 text-white mb-4'>
+				Explore the most recent articles on security topics.
+			</p>
+
+			<div class='flex flex-col gap-6 max-w-3xl w-full px-4'>
+				{
+					renderedPosts.map(({ title, date, Content }) => (
+						<article class='bg-white text-black p-6 rounded-lg shadow-md'>
+							<h3 class='text-xl font-bold mb-1'>{title}</h3>
+							<p class='text-sm text-gray-500 mb-3'>{date}</p>
+							<div class='prose m-auto text-left'>
+								<Content />
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</section>
+
+		<section
+			class='mt-16 flex flex-col items-center gap-4 text-white text-center'
+		>
+			<h2 class='text-2xl md:text-3xl font-bold'>Upcoming Events</h2>
+			<p class='text-lg text-secondary-200'>
+				Check out the upcoming security conferences and webinars.
+			</p>
+		</section>
+
+		<section
+			class='mt-16 mb-20 flex flex-col items-center gap-4 text-white text-center'
+		>
+			<h2 class='text-2xl md:text-3xl font-bold'>Security Tools</h2>
+			<p class='text-lg text-secondary-200'>
+				Discover the latest tools and resources for enhancing security.
+			</p>
+		</section>
+	</div>
+</SimpleLayout>

@@ -1,5 +1,7 @@
 // uno.config.ts
 import { defineConfig, presetUno, presetWebFonts } from "unocss";
+import presetWind3 from '@unocss/preset-wind3'
+import presetTypography from '@unocss/preset-typography'
 
 export default defineConfig({
   content: {
@@ -58,7 +60,31 @@ export default defineConfig({
     },
   },
   presets: [
-    presetUno(),
+    // presetUno(),
+    presetWind3(),
+    presetTypography({
+      cssExtend: {
+        'a': {
+          color: '#E63946',
+          'text-decoration': 'underline',
+        },
+        'h1,h2,h3': {
+          color: '#E63946',
+        },
+        'code': {
+          color: '#F3A3AA',
+          'background-color': '#111',
+          padding: '2px 4px',
+          'border-radius': '4px',
+        },
+        'blockquote': {
+          color: '#888',
+          'border-left': '4px solid #737373',
+          padding: '0.5em 1em',
+          'background-color': '#1A1A1A',
+        },
+      },
+    }),
     presetWebFonts({
       provider: "fontshare",
       fonts: {

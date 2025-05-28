@@ -1,0 +1,35 @@
+name: Fetch Security News
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *"  # Every day at 5 AM UTC
+  push:
+    branches: [ gh-pages ]
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install feedparser
+
+      - name: Run fetch script
+        run: python scripts/fetch_securityweek.py
+
+      - name: Commit changes
+        run: |
+          git config --global lialittis "GitHub Actions"
+          git config --global tianchi.yu@outlook.com "action@github.com"
+          git add src/content/updates/
+          git commit -m "Auto: fetch security news for ${{ github.run_number }}" || echo "Nothing to commit"
+          git push

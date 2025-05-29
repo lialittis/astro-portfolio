@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="/tianchi2.jpg"><meta name="generator" content="Astro v4.16.18"><title>Gianmarco Cavallo - Blog</title><meta name="description" content="Software developer with strong focus on the user experience animations and micro interactions"><meta name="robots" content="/favicon/sitemap-index.xml"><!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn --><meta property="og:title" content="Gianmarco Cavallo - Blog"><meta property="og:description" content="Software developer with strong focus on the user experience animations and micro interactions"><meta property="og:type" content="website"><meta property="og:url" content="https://tianchiyu.me"><meta property="og:image" content="https://tianchiyu.me/gojo-tc.webp"><!-- Basic Twitter Card tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Gianmarco Cavallo - Blog"><meta name="twitter:description" content="Software developer with strong focus on the user experience animations and micro interactions"><meta name="twitter:image" content="https://tianchiyu.me/gojo-tc.webp"><link rel="preconnect" href="https://cdn.fontshare.com"><link rel="stylesheet" href="/_astro/ag-grid-table.ChnjlOJS.css"><style>@font-face{font-family:CabinetGrotesk;src:url(/fonts/CabinetGrotesk-Variable.ttf) format("truetype-variations");font-weight:400;font-style:normal;font-display:swap;font-weight:100 1000}@font-face{font-family:Satoshi;src:url(/fonts/Satoshi-Variable.ttf) format("truetype-variations");font-weight:400;font-style:normal;font-display:swap;font-weight:100 1000}body{margin:0;font-family:Satoshi,sans-serif;-webkit-font-smoothing:antialiased}h1,h2,h3,h4,h5,h6{font-family:Cabinet Grotesk,sans-serif}p{font-family:Satoshi}b{font-weight:700!important}
+</style><script src="/_astro/BasicLayout.astro_astro_type_script_index_0_lang.CP6rZelV.js" type="module"></script></head> <body class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center">   <main class="mx-auto max-w-3xl w-full h-screen p-8 text-neutral-100"> <a href="/blog" class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg mb-8">Back</a> <div class="my-10"> <h1 class="text-5xl font-semibold">Rust Basics 1(Quick Review)</h1> <div class="flex justify-between pt-4 text-gray-500 text-sm"> <p>July 1, 2023</p> <p>6 min read</p> </div> </div> <article class="prose prose-p:text-red-500 prose-slate prose-invert"> <h1 id="rust-basics1">Rust Basics(1)</h1>
+<h2 id="anatomy-of-a-rust-program">Anatomy of a Rust Program</h2>
+<ul>
+<li>indent with four spaces, not a tab</li>
+<li><code>println!</code> calls a Rust marco</li>
+<li>end the line with a semicolon(;)</li>
+</ul>
+<h2 id="compiling-and-running-are-seperate-steps">Compiling and Running Are Seperate Steps</h2>
+<p>Rust is an <em>ahead-of-time</em> compiled language.</p>
+<h2 id="cargo">Cargo</h2>
+<p>Cargo creats a project in a new directory and initializes a new Git repository along with a <code>.gitignore</code>
+file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Note: Git is a common version control system. You can change cargo new to use a different version control </span></span>
+<span class="line"><span>system or no version control system by using the --vcs flag. Run cargo new --help to see the available </span></span>
+<span class="line"><span>options.</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Cargo expects sources files to live inside the <code>src</code> directory and puts the binary in a directory named
+<code>debug</code>.</p>
+<ul>
+<li><code>cargo new</code></li>
+<li><code>cargo build</code></li>
+<li><code>cargo run</code></li>
+<li><code>cargo check</code></li>
+</ul>
+<h3 id="tomltoms-obvious-minimal-language">TOML(Tom’s Obvious, Minimal Language)</h3>
+<p>It is Cargo’s configuration format.</p>
+<h3 id="building-for-release">Building for Release</h3>
+<p><code>cargo build --release</code> compile the project with optimizations.</p>
+<h2 id="crate">Crate</h2>
+<p>A <code>crate</code> is a collection of Rust source code files. For example, the <code>rand</code> crate is a <em>library</em> crate,
+which contains code that is intended to be used in other programs.</p>
+<h3 id="external-crates">external crates</h3>
+<p>The external crates are added into projects as dependencies. Cargo fetches the latest versions of everything
+that dependency needs from the <em>registry</em>, which is a copy of data from <code>Crates.io</code>.</p>
+<h3 id="cargolock">Cargo.lock</h3>
+<p>If <code>Cargo.lock</code> exists, Cargo will use the versions specified there rather than doing all the work of
+figuring out versions again, which lets us have a reproducible build automatically.</p>
+<h3 id="update">update</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cargo update</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>helps you to update a crate.</p>
+<h1 id="common-programming-concepts">Common Programming Concepts</h1>
+<h2 id="variables-and-mutability">Variables and Mutability</h2>
+<p>By default, variables in Rust are immutable.</p>
+<p>You would get compile-time errors when we attempt to change a value that is designated as immutable.</p>
+<h3 id="constants">Constants</h3>
+<p>Like immutable variables, but constants:</p>
+<ul>
+<li>don’t accept mut syntax.</li>
+<li>use const keyword</li>
+<li>the type of the value must be annotated</li>
+</ul>
+<h3 id="shadowing">Shadowing</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="rust"><code><span class="line"><span style="color:#F97583">fn</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    let</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    let</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        let</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">        println!</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"The value of x in the inner scope is: {x}"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    println!</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"The value of x is: {x}"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>When you run it:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cargo</span><span style="color:#9ECBFF"> run</span></span>
+<span class="line"><span style="color:#B392F0">   Compiling</span><span style="color:#9ECBFF"> variables</span><span style="color:#9ECBFF"> v0.1.0</span><span style="color:#E1E4E8"> (file:///projects/variables)</span></span>
+<span class="line"><span style="color:#B392F0">    Finished</span><span style="color:#9ECBFF"> dev</span><span style="color:#E1E4E8"> [unoptimized </span><span style="color:#9ECBFF">+</span><span style="color:#9ECBFF"> debuginfo]</span><span style="color:#9ECBFF"> target</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">s</span><span style="color:#E1E4E8">) </span><span style="color:#9ECBFF">in</span><span style="color:#9ECBFF"> 0.31s</span></span>
+<span class="line"><span style="color:#B392F0">     Running</span><span style="color:#9ECBFF"> `</span><span style="color:#B392F0">target/debug/variables</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> x</span><span style="color:#9ECBFF"> in</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> inner</span><span style="color:#9ECBFF"> scope</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 12</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> x</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 6</span></span>
+<span class="line"></span></code></pre>
+<p>But shadowing:</p>
+<ul>
+<li>we create a new variable</li>
+<li>we can change the type of the value</li>
+</ul>
+<h2 id="data-types">Data Types</h2>
+<p>Rust is a statically typed language, it must know the types of all variables at compile time.</p>
+<h3 id="scalar-types">Scalar Types</h3>
+<p>Four primary scalar types : integers, floating-point numbers, Booleans and characters.</p>
+<h4 id="integer-types">Integer Types</h4>
+<p>Integer Literals in Rust</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Number literals	Example</span></span>
+<span class="line"><span>Decimal	98_222</span></span>
+<span class="line"><span>Hex	0xff</span></span>
+<span class="line"><span>Octal	0o77</span></span>
+<span class="line"><span>Binary	0b1111_0000</span></span>
+<span class="line"><span>Byte (u8 only)	b'A'</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Integer Overflow</p>
+<ul>
+<li>In debug mode, Rust includes checks for integer overflow and cause the program to <code>panic</code> at runtime.</li>
+<li>In release mode, Rust performs <em>two’s complement wrapping</em> for the value, and the program won’t panic.</li>
+</ul>
+<h4 id="floating-point-types">Floating-point Types</h4>
+<p>Two primitive types : numbers with decimal points f32 and f64.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let x = 2.0; // f64</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let y: f32 = 3.0; // f32</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="boolean-type">Boolean Type</h3>
+<p><code>true</code> and <code>false</code></p>
+<h3 id="character-type">Character Type</h3>
+<p>Four bytes in size and Unicode Scalar Value.</p>
+<h3 id="compound-types">Compound Types</h3>
+<h4 id="tuple">Tuple</h4>
+<ul>
+<li>a variety fo types</li>
+<li>a fixed length</li>
+<li>comma-separated list</li>
+<li>access a tuple element by using a period (.) followed by the index</li>
+<li>tuple without any values has a special name, <em>unit</em> : an empty value ()</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let tup: (i32, f64, u8) = (500, 6.4, 1);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let tup = (500, 6.4, 1);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let (x, y, z) = tup;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("The value of y is: {y}");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="array">Array</h4>
+<ul>
+<li>same type</li>
+<li>a fixed lenght</li>
+<li>comma-separated list</li>
+<li>access elements by using indexing</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let a = [1, 2, 3, 4, 5];</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    let a: [i32; 5] = [1, 2, 3, 4, 5];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let a = [3; 5]; // equal to [3, 3, 3, 3, 3];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let first = a[0];</span></span>
+<span class="line"><span>    let second = a[1];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Arrays are useful when you want your data allocated on the stack rather than the heap.</p>
+<p><strong>Runtime error : invalid array element access:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>use std::io;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let a = [1, 2, 3, 4, 5];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("Please enter an array index.");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let mut index = String::new();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    io::stdin()</span></span>
+<span class="line"><span>        .read_line(&#x26;mut index)</span></span>
+<span class="line"><span>        .expect("Failed to read line");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let index: usize = index</span></span>
+<span class="line"><span>        .trim()</span></span>
+<span class="line"><span>        .parse()</span></span>
+<span class="line"><span>        .expect("Index entered was not a number");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let element = a[index];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("The value of the element at index {index} is: {element}");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>The program resulted in a runtime error at the point of using an invalid value in the indexing operation.
+This check has to happen at runtime, especially in this case, because the compiler can’t possibly know
+what value a user will enter when they run the code later.</p>
+<h2 id="functions">Functions</h2>
+<p>Functions are prevalent in Rust code.</p>
+<p>Rust code uses <em>snake case</em> as the conventional style for function and variable names.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    println!("Hello, world!");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    another_function();</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>fn another_function() {</span></span>
+<span class="line"><span>    println!("Another function.");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>In function signatures, you must declare the type of each parameter. <strong>Requiring type annotations in
+function definitions means the compiler almost never needs you to use them elsewhere in the code to
+figure out what type you mean</strong>.</p>
+<h3 id="statements-and-expressions">Statements and Expressions</h3>
+<p>Function bodies are made up of a series of statements optionally ending in an expression.</p>
+<ul>
+<li>Statements are instructions that perform some action and do not return a value.</li>
+<li>Expressions evaluate to a resultant value.</li>
+</ul>
+<p>Expressions do not include ending semicolons. If you add a semicolon to the end of an expression, you
+turn it into a statement, and it will then not return a value.</p>
+<h3 id="functions-with-return-values">Functions with Return Values</h3>
+<p>We must declare the return type after an arrow (->).</p>
+<p>We need to have an expression as the return value. If not, there might be mismatched types error.</p>
+<h2 id="control-flow">Control Flow</h2>
+<h3 id="if-expressions">if Expressions</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if condition {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Boolean is expected after <code>if</code>, Rust cannot automatically convert non-Boolean to Boolean types.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if condition {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} else if condition {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} ... {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Using too many <code>else if</code> expressions can clutter your code, so if you have more that one, you might
+wnat to refactor your code. For example by <code>match</code>.</p>
+<h4 id="using-if-in-a-let-statement">Using if in a let Statement</h4>
+<p>Because <code>if</code> is an expression, it could be used on the right side of a <code>let</code> statement.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let condition = true;</span></span>
+<span class="line"><span>    let number = if condition { 5 } else { 6 };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("The value of number is: {number}");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="repetition-with-loops">Repetition with Loops</h3>
+<p>Loop is an expression.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    loop {</span></span>
+<span class="line"><span>        println!("again!");</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="returning-values-from-loops">Returning Values from Loops</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let mut counter = 0;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let result = loop {</span></span>
+<span class="line"><span>        counter += 1;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        if counter == 10 {</span></span>
+<span class="line"><span>            break counter * 2;</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("The result is {result}");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="loop-labels-to-disambiguate-between-multiple-loops">Loop Labels to Disambiguate Between Multiple Loops</h4>
+<p>We could specify a loop label so that we use with <code>break</code> or <code>continue</code> to specify that those keywords
+apply to the labeled loop instead of the innermost loop.</p>
+<p>Note that, the <code>break</code> keyword cannot be followed by both a return value and a loop label at the same
+time. The <code>break</code> statement is used to exit a loop or a block early, and it can be optionally followed
+by an expression to provide a return value for the enclosing function or block. However, it cannot
+be combined with a loop label.</p>
+<p>The labels should be in format like : <code>'lable</code>.</p>
+<h4 id="conditional-loops-with-while">Conditional Loops with while</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let mut number = 3;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    while number != 0 {</span></span>
+<span class="line"><span>        println!("{number}!");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        number -= 1;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    println!("LIFTOFF!!!");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="looping-through-a-collection-with-for">Looping Through a Collection with for</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    let a = [10, 20, 30, 40, 50];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    for element in a {</span></span>
+<span class="line"><span>        println!("the value is: {element}");</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fn main() {</span></span>
+<span class="line"><span>    for number in (1..4).rev() {</span></span>
+<span class="line"><span>        println!("{number}!");</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    println!("LIFTOFF!!!");</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre> </article> </main>   </body> </html> 

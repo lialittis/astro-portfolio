@@ -1,0 +1,1 @@
+import{t as e}from"./index.es.DK9ZsSF-.js";import"./BasicLayout.astro_astro_type_script_index_0_lang.CP6rZelV.js";import"./stagger.es.B1aIIWq_.js";const o=[[".loaderRef",{opacity:[1,0],pointerEvents:"none"},{easing:"ease-out"}]];e(o);

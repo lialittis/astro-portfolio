@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tianchi YU(于天池)&apos;s Blog</title><description>my blog</description><link>https://tianchiyu.me/</link><item><title>Rust Basics 1(Quick Review)</title><link>https://tianchiyu.me/blog/2023-07-01-rust-basics-1quick-review/</link><guid isPermaLink="true">https://tianchiyu.me/blog/2023-07-01-rust-basics-1quick-review/</guid><pubDate>Sat, 01 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Rust Basics(1)&lt;/h1&gt;
+&lt;h2&gt;Anatomy of a Rust Program&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;indent with four spaces, not a tab&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;println!&lt;/code&gt; calls a Rust marco&lt;/li&gt;
+&lt;li&gt;end the line with a semicolon(;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Compiling and Running Are Seperate Steps&lt;/h2&gt;
+&lt;p&gt;Rust is an &lt;em&gt;ahead-of-time&lt;/em&gt; compiled language.&lt;/p&gt;
+&lt;h2&gt;Cargo&lt;/h2&gt;
+&lt;p&gt;Cargo creats a project in a new directory and initializes a new Git repository along with a &lt;code&gt;.gitignore&lt;/code&gt;
+file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Note: Git is a common version control system. You can change cargo new to use a different version control 
+system or no version control system by using the --vcs flag. Run cargo new --help to see the available 
+options.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Cargo expects sources files to live inside the &lt;code&gt;src&lt;/code&gt; directory and puts the binary in a directory named
+&lt;code&gt;debug&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cargo new&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo build&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo run&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo check&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;TOML(Tom&apos;s Obvious, Minimal Language)&lt;/h3&gt;
+&lt;p&gt;It is Cargo&apos;s configuration format.&lt;/p&gt;
+&lt;h3&gt;Building for Release&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;cargo build --release&lt;/code&gt; compile the project with optimizations.&lt;/p&gt;
+&lt;h2&gt;Crate&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;crate&lt;/code&gt; is a collection of Rust source code files. For example, the &lt;code&gt;rand&lt;/code&gt; crate is a &lt;em&gt;library&lt;/em&gt; crate,
+which contains code that is intended to be used in other programs.&lt;/p&gt;
+&lt;h3&gt;external crates&lt;/h3&gt;
+&lt;p&gt;The external crates are added into projects as dependencies. Cargo fetches the latest versions of everything
+that dependency needs from the &lt;em&gt;registry&lt;/em&gt;, which is a copy of data from &lt;code&gt;Crates.io&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Cargo.lock&lt;/h3&gt;
+&lt;p&gt;If &lt;code&gt;Cargo.lock&lt;/code&gt; exists, Cargo will use the versions specified there rather than doing all the work of
+figuring out versions again, which lets us have a reproducible build automatically.&lt;/p&gt;
+&lt;h3&gt;update&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;cargo update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;helps you to update a crate.&lt;/p&gt;
+&lt;h1&gt;Common Programming Concepts&lt;/h1&gt;
+&lt;h2&gt;Variables and Mutability&lt;/h2&gt;
+&lt;p&gt;By default, variables in Rust are immutable.&lt;/p&gt;
+&lt;p&gt;You would get compile-time errors when we attempt to change a value that is designated as immutable.&lt;/p&gt;
+&lt;h3&gt;Constants&lt;/h3&gt;
+&lt;p&gt;Like immutable variables, but constants:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;don&apos;t accept mut syntax.&lt;/li&gt;
+&lt;li&gt;use const keyword&lt;/li&gt;
+&lt;li&gt;the type of the value must be annotated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Shadowing&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    {
+        let x = x * 2;
+        println!(&quot;The value of x in the inner scope is: {x}&quot;);
+    }
+
+    println!(&quot;The value of x is: {x}&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you run it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/variables`
+The value of x in the inner scope is: 12
+The value of x is: 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But shadowing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we create a new variable&lt;/li&gt;
+&lt;li&gt;we can change the type of the value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Data Types&lt;/h2&gt;
+&lt;p&gt;Rust is a statically typed language, it must know the types of all variables at compile time.&lt;/p&gt;
+&lt;h3&gt;Scalar Types&lt;/h3&gt;
+&lt;p&gt;Four primary scalar types : integers, floating-point numbers, Booleans and characters.&lt;/p&gt;
+&lt;h4&gt;Integer Types&lt;/h4&gt;
+&lt;p&gt;Integer Literals in Rust&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Number literals	Example
+Decimal	98_222
+Hex	0xff
+Octal	0o77
+Binary	0b1111_0000
+Byte (u8 only)	b&apos;A&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Integer Overflow&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In debug mode, Rust includes checks for integer overflow and cause the program to &lt;code&gt;panic&lt;/code&gt; at runtime.&lt;/li&gt;
+&lt;li&gt;In release mode, Rust performs &lt;em&gt;two&apos;s complement wrapping&lt;/em&gt; for the value, and the program won&apos;t panic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Floating-point Types&lt;/h4&gt;
+&lt;p&gt;Two primitive types : numbers with decimal points f32 and f64.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let x = 2.0; // f64
+
+    let y: f32 = 3.0; // f32
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Boolean Type&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;true&lt;/code&gt; and &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Character Type&lt;/h3&gt;
+&lt;p&gt;Four bytes in size and Unicode Scalar Value.&lt;/p&gt;
+&lt;h3&gt;Compound Types&lt;/h3&gt;
+&lt;h4&gt;Tuple&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;a variety fo types&lt;/li&gt;
+&lt;li&gt;a fixed length&lt;/li&gt;
+&lt;li&gt;comma-separated list&lt;/li&gt;
+&lt;li&gt;access a tuple element by using a period (.) followed by the index&lt;/li&gt;
+&lt;li&gt;tuple without any values has a special name, &lt;em&gt;unit&lt;/em&gt; : an empty value ()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!(&quot;The value of y is: {y}&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Array&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;same type&lt;/li&gt;
+&lt;li&gt;a fixed lenght&lt;/li&gt;
+&lt;li&gt;comma-separated list&lt;/li&gt;
+&lt;li&gt;access elements by using indexing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let a = [1, 2, 3, 4, 5];
+    
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    let a = [3; 5]; // equal to [3, 3, 3, 3, 3];
+
+    let first = a[0];
+    let second = a[1];
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Arrays are useful when you want your data allocated on the stack rather than the heap.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Runtime error : invalid array element access:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use std::io;
+
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    println!(&quot;Please enter an array index.&quot;);
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&amp;amp;mut index)
+        .expect(&quot;Failed to read line&quot;);
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect(&quot;Index entered was not a number&quot;);
+
+    let element = a[index];
+
+    println!(&quot;The value of the element at index {index} is: {element}&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The program resulted in a runtime error at the point of using an invalid value in the indexing operation.
+This check has to happen at runtime, especially in this case, because the compiler can’t possibly know
+what value a user will enter when they run the code later.&lt;/p&gt;
+&lt;h2&gt;Functions&lt;/h2&gt;
+&lt;p&gt;Functions are prevalent in Rust code.&lt;/p&gt;
+&lt;p&gt;Rust code uses &lt;em&gt;snake case&lt;/em&gt; as the conventional style for function and variable names.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    println!(&quot;Hello, world!&quot;);
+
+    another_function();
+}
+
+fn another_function() {
+    println!(&quot;Another function.&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In function signatures, you must declare the type of each parameter. &lt;strong&gt;Requiring type annotations in
+function definitions means the compiler almost never needs you to use them elsewhere in the code to
+figure out what type you mean&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Statements and Expressions&lt;/h3&gt;
+&lt;p&gt;Function bodies are made up of a series of statements optionally ending in an expression.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Statements are instructions that perform some action and do not return a value.&lt;/li&gt;
+&lt;li&gt;Expressions evaluate to a resultant value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Expressions do not include ending semicolons. If you add a semicolon to the end of an expression, you
+turn it into a statement, and it will then not return a value.&lt;/p&gt;
+&lt;h3&gt;Functions with Return Values&lt;/h3&gt;
+&lt;p&gt;We must declare the return type after an arrow (-&amp;gt;).&lt;/p&gt;
+&lt;p&gt;We need to have an expression as the return value. If not, there might be mismatched types error.&lt;/p&gt;
+&lt;h2&gt;Control Flow&lt;/h2&gt;
+&lt;h3&gt;if Expressions&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;if condition {
+
+} else {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Boolean is expected after &lt;code&gt;if&lt;/code&gt;, Rust cannot automatically convert non-Boolean to Boolean types.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if condition {
+
+} else if condition {
+
+} ... {
+
+} else {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using too many &lt;code&gt;else if&lt;/code&gt; expressions can clutter your code, so if you have more that one, you might
+wnat to refactor your code. For example by &lt;code&gt;match&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Using if in a let Statement&lt;/h4&gt;
+&lt;p&gt;Because &lt;code&gt;if&lt;/code&gt; is an expression, it could be used on the right side of a &lt;code&gt;let&lt;/code&gt; statement.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!(&quot;The value of number is: {number}&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Repetition with Loops&lt;/h3&gt;
+&lt;p&gt;Loop is an expression.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    loop {
+        println!(&quot;again!&quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Returning Values from Loops&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!(&quot;The result is {result}&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Loop Labels to Disambiguate Between Multiple Loops&lt;/h4&gt;
+&lt;p&gt;We could specify a loop label so that we use with &lt;code&gt;break&lt;/code&gt; or &lt;code&gt;continue&lt;/code&gt; to specify that those keywords
+apply to the labeled loop instead of the innermost loop.&lt;/p&gt;
+&lt;p&gt;Note that, the &lt;code&gt;break&lt;/code&gt; keyword cannot be followed by both a return value and a loop label at the same
+time. The &lt;code&gt;break&lt;/code&gt; statement is used to exit a loop or a block early, and it can be optionally followed
+by an expression to provide a return value for the enclosing function or block. However, it cannot
+be combined with a loop label.&lt;/p&gt;
+&lt;p&gt;The labels should be in format like : &lt;code&gt;&apos;lable&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Conditional Loops with while&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!(&quot;{number}!&quot;);
+
+        number -= 1;
+    }
+
+    println!(&quot;LIFTOFF!!!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Looping Through a Collection with for&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!(&quot;the value is: {element}&quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;fn main() {
+    for number in (1..4).rev() {
+        println!(&quot;{number}!&quot;);
+    }
+    println!(&quot;LIFTOFF!!!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Hello, World</title><link>https://tianchiyu.me/blog/post1/</link><guid isPermaLink="true">https://tianchiyu.me/blog/post1/</guid><description>this is a post example</description><pubDate>Sat, 21 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Hi there!&lt;/h1&gt;
+&lt;p&gt;This Markdown file creates a page at &lt;code&gt;your-domain.com/post1/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It probably isn&apos;t styled much, but Markdown does support:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italics.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;lists&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://astro.build&quot;&gt;links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;and more!&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Hello, World</title><link>https://tianchiyu.me/blog/post2/</link><guid isPermaLink="true">https://tianchiyu.me/blog/post2/</guid><description>this is a post example</description><pubDate>Sat, 21 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Hi there!&lt;/h1&gt;
+&lt;p&gt;This Markdown file creates a page at &lt;code&gt;your-domain.com/post1/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It probably isn&apos;t styled much, but Markdown does support:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italics.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;lists&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://astro.build&quot;&gt;links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;and more!&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item></channel></rss>

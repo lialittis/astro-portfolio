@@ -1,0 +1,1 @@
+import"./BasicLayout.astro_astro_type_script_index_0_lang.CP6rZelV.js";const e=document.getElementById("menu-button"),n=document.getElementById("mobile-menu");e!=null&&n!=null&&e.addEventListener("click",()=>{n.classList.toggle("hidden")});

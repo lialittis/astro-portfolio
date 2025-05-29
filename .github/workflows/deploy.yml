@@ -6,6 +6,10 @@ on:
   push:
     branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_run:
+    workflows: ["Fetch Security News"]
+    types:
+      - completed
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment

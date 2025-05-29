@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global lialittis "GitHub Actions"
-          git config --global tianchi.yu@outlook.com "action@github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "action@github.com"
           git add src/content/updates/
           git commit -m "Auto: fetch security news for ${{ github.run_number }}" || echo "Nothing to commit"
           git push

@@ -4,16 +4,16 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 5 * * *"  # Every day at 5 AM UTC
-  push:
-    branches: [ gh-pages ]
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout main branch
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v4

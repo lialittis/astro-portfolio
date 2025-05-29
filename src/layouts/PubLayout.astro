@@ -1,0 +1,161 @@
+---
+import { ViewTransitions } from "astro:transitions";
+// import "../../global.css";
+import "virtual:uno.css";
+
+interface Props {
+  title: string;
+  description: string;
+  page?: "travel" | "blog";
+  slug?: string | undefined;
+  frontmatter?: {
+    file: string;
+    url: string | undefined;
+  } & {
+    title: string;
+    description: string;
+    pubDate: string;
+    minutesRead: string;
+  };
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Diadema Studio",
+  url: "https://www.diadema.studio",
+  logo: "https://www.diadema.studio/images/logo.png",
+  description:
+    "Diadema Studio is a creative web agency based in Italy, specializing in innovative web design, development, and digital marketing solutions.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Via Example 123",
+    addressLocality: "Milan",
+    postalCode: "20100",
+    addressCountry: "IT",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+39-0123-456-789",
+    contactType: "Customer Service",
+    areaServed: "IT",
+    availableLanguage: ["Italian", "English"],
+  },
+  sameAs: [
+    "https://www.facebook.com/diademastudio",
+    "https://www.twitter.com/diademastudio",
+    "https://www.instagram.com/diademastudio",
+    "https://www.linkedin.com/company/diademastudio",
+  ],
+  founder: {
+    "@type": "Person",
+    name: "Your Name",
+    jobTitle: "Founder & CEO",
+    sameAs: "https://www.linkedin.com/in/yourprofile",
+  },
+  foundingDate: "2023-01-01",
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      Diadema Studio | Creative Web Design and Digital Marketing in Italy
+    </title>
+    <meta
+      name="description"
+      content="Transform your digital presence with Diadema Studio's innovative web design and marketing solutions. Based in Italy, we deliver creative excellence."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Diadema Studio is a creative web agency based in Italy, specializing in innovative web design, development, and digital marketing solutions."
+    />
+    <meta
+      name="keywords"
+      content="Diadema Studio, creative web agency, web design, development and SEO."
+    />
+    <meta name="author" content="Diadema Studio" />
+    <title>Diadema Studio | Creative Web Agency in Italy</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Diadema Studio | Creative Web Agency in Italy"
+    />
+    <meta
+      property="og:description"
+      content="Diadema Studio is a creative web agency based in Italy, specializing in innovative web design and development"
+    />
+    <meta property="og:url" content="https://www.diadema.studio" />
+    <meta
+      property="og:image"
+      content="https://www.diadema.studio/images/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Diadema Studio | Creative Web Agency in Italy"
+    />
+    <meta
+      name="twitter:description"
+      content="Diadema Studio is a creative web agency based in Italy, specializing in innovative web design, development."
+    />
+    <meta name="twitter:url" content="https://www.diadema.studio" />
+    <meta
+      name="twitter:image"
+      content="https://www.diadema.studio/images/twitter-image.jpg"
+    />
+
+    <link rel="canonical" href="https://www.diadema.studio" />
+    <link rel="icon" href="https://www.diadema.studio/favicon.ico" />
+
+    <link rel="preconnect" href="https://cdn.fontshare.com" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <ViewTransitions />
+  </head>
+  <body class="relative overscroll-none">
+    <slot name="loader" />
+    <slot />
+    <script>
+      import { inView, animate } from "motion";
+
+      inView(".loader", (info) => {
+        animate(
+          info.target,
+          { opacity: [1, 0], pointerEvents: "none" },
+          { easing: "ease-in-out", duration: 0.5 }
+        );
+      });
+    </script>
+    <script>
+      import { inView, animate } from "motion";
+
+      inView("h1, h2, h3, h4, h5, p", (info) => {
+        animate(
+          info.target,
+          { filter: ["blur(3px)", "blur(0px)"] },
+          { easing: "ease-in-out", duration: 0.5 }
+        );
+      });
+    </script>
+    <script>
+      import Lenis from "lenis";
+
+      const lenis = new Lenis();
+
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

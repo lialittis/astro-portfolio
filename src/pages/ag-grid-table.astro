@@ -1,0 +1,76 @@
+---
+// 第一部分：Frontmatter 服务端逻辑
+import { AG_GRID_STYLES } from "../consts"; // 可选样式常量
+import Layout from "../layouts/Layout.astro"; // 你的布局组件
+import "@astrouxds/ag-grid-theme/dist/main.css"; // AG Grid 样式
+---
+
+<Layout title="AG Grid Demo">
+  <div id="myGrid" class="ag-theme-alpine-dark h-[600px]"></div>
+
+  <!-- 客户端脚本 -->
+  <script>
+    // 生成随机数函数
+    const getRandomNum = (min, max, roundTo = 0) => {
+      const num = Math.random() * max + min;
+      return num.toFixed(roundTo);
+    };
+
+    // 列配置
+    const columnData = [
+      { headerName: "", field: "control" },
+      {
+        headerName: "Current tag",
+        field: "currentTag",
+        checkboxSelection: true,
+      },
+      // ...保持你的原始列配置不变...
+    ];
+
+    // 初始化函数
+    function initAGGrid() {
+      const agColumnData = columnData.slice(0);
+      agColumnData.shift();
+
+      // 动态生成行数据
+      const agRowData = Array.from({ length: 24 }, (_, i) => ({
+        selected: false,
+        currentTag: getRandomNum(19999999, 9999999),
+        originalTag: "0000" + getRandomNum(11111, 99999),
+        // ...保持你的原始行数据生成逻辑...
+      }));
+
+      // 配置 Grid
+      new agGrid.Grid(document.querySelector("#myGrid"), {
+        columnDefs: agColumnData,
+        rowData: agRowData,
+        // 添加常用配置
+        pagination: true,
+        paginationPageSize: 10,
+        rowSelection: "multiple",
+        defaultColDef: {
+          resizable: true,
+          sortable: true,
+          filter: true,
+        },
+      });
+    }
+
+    // 动态加载 AG Grid 资源
+    if (typeof window !== "undefined") {
+      import("ag-grid-community").then((agGrid) => {
+        window.agGrid = agGrid;
+        initAGGrid();
+      });
+    }
+  </script>
+
+  <!-- 样式优化 -->
+  <style>
+    .ag-theme-alpine-dark {
+      --ag-header-background-color: hsl(215, 28%, 17%);
+      --ag-background-color: hsl(215, 28%, 22%);
+      --ag-row-hover-color: hsl(215, 28%, 25%);
+    }
+  </style>
+</Layout>

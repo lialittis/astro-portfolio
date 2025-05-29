@@ -1,42 +1,43 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card/index.astro";
-import IntroCard from "../components/IntroCard.astro";
-import ContactsCard from "../components/ContactsCard.astro";
-import TimeZone from "../components/TimeZoneCard.astro";
-import Now from "../components/Now.astro";
-import Globe from "../components/Globe";
-import "../style/frontpage.css";
-import KeyWords from "../components/KeyWords.astro";
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card/index.astro'
+import IntroCard from '../components/IntroCard.astro'
+import ContactsCard from '../components/ContactsCard.astro'
+import TimeZone from '../components/TimeZoneCard.astro'
+import Now from '../components/Now.astro'
+import Globe from '../components/Globe/Globe'
+import '../style/frontpage.css'
+import KeyWords from '../components/KeyWords.astro'
+import SecurityNewsCard from '../components/SecurityNewsCard.astro'
 ---
 
 <script>
-  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../lib/constants";
-  const cards = document.querySelectorAll(".card");
+	import { stagger, spring, timeline, type TimelineDefinition } from 'motion'
+	import { loaderAnimation } from '../lib/constants'
+	const cards = document.querySelectorAll('.card')
 
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ];
+	const sequence = [
+		loaderAnimation,
+		[
+			cards,
+			{ y: ['40%', '0%'], opacity: [0, 1] },
+			{
+				at: '-0.1',
+				duration: 0.4,
+				delay: stagger(0.3),
+				easing: spring({ velocity: 100, stiffness: 50, damping: 10 })
+			}
+		]
+	]
 
-  timeline(sequence as TimelineDefinition);
+	timeline(sequence as TimelineDefinition)
 </script>
 
 <Layout
-  title="Tianchi YU(于天池) - Developer & Hacker"
-  description="Security Researcher & Life Hacker"
+	title='Tianchi YU(于天池) - Developer & Hacker'
+	description='Security Researcher & Life Hacker'
 >
-  <!-- <div id="intro-modal" class="modal">
+	<!-- <div id="intro-modal" class="modal">
     <div class="modal-content">
       <div class="hi-text" style="position: z-index: 1;">
         <p>Hey ! I am Glad You Found Me!</p>
@@ -60,59 +61,60 @@ import KeyWords from "../components/KeyWords.astro";
       </button>
     </div>
   </div> -->
-  <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
-  >
-    <IntroCard />
-    <KeyWords />
-    <ContactsCard />
+	<main
+		class='text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
+	>
+		<IntroCard />
+		<KeyWords />
+		<ContactsCard />
 
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
-      title="Blog"
-      href="https://lialittis.github.io/blog/"
-    >
-      <p>More Coming...</p>
-    </Card>
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
-      title="Resume"
-      href="https://lialittis.github.io/"
-    >
-      <p>More Coming...</p>
-    </Card>
-    <Card
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Blog'
+			href='https://lialittis.github.io/blog/'
+		>
+			<p>More Coming...</p>
+		</Card>
+		<SecurityNewsCard />
+		<!-- <Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Resume'
+			href='https://lialittis.github.io/'
+		>
+			<p>More Coming...</p>
+		</Card> -->
+		<!-- <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2"
       title="Projects"
-      href="https://lialittis.github.io/projects/"
+      href="project"
     >
-      <p>More Coming...</p>
+      <p></p>
     </Card>
     <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2"
       title="Pablications"
-      href="https://lialittis.github.io/publications/"
+      href="publications"
     >
-      <p>More Coming...</p>
-    </Card>
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
-      title="Countries I visited"
-      href="travel"
-      colorText="text-neutral-900"
-    >
-      <div class="h-full w-full absolute inset-0 -z-10">
-        <Globe client:load />
-      </div>
-    </Card>
-    <Now />
-    <TimeZone />
-    <!-- <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+      <p></p>
+    </Card> -->
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Countries I visited'
+			href='travel'
+			colorText='text-neutral-900'
+		>
+			<div class='h-full w-full absolute inset-0 -z-10'>
+				<Globe client:load />
+			</div>
+		</Card>
+		<Now />
+		<TimeZone />
+		<!-- <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
         © 2024 · Crafted with ♥️ using <a
           href=""
@@ -121,5 +123,5 @@ import KeyWords from "../components/KeyWords.astro";
         >
       </p>
     </Card> -->
-  </main>
+	</main>
 </Layout>

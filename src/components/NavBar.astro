@@ -1,0 +1,43 @@
+<nav class='top-16 mt-10 z-200 w-full flex justify-between items-center px-6'>
+
+  <div class='left-4 text-white text-xl font-bold'>Tianchi YU</div>
+
+	<!-- Desktop Navigation -->
+	<div
+		class='absolute hidden lg:flex gap-10 left-1/2 transform -translate-x-1/2'
+	>
+		<a class='cursor-pointer text-white' href='/'>Home</a>
+		<a class='cursor-pointer text-white' href='/project'>Projects</a>
+		<a class='cursor-pointer text-white' href='/me'>About</a>
+		<a class='cursor-pointer text-white' href='/publications'>Publications</a>
+		<a class='cursor-pointer text-white' href='/confclock'>Conferences Clock</a>
+	</div>
+
+	<!-- Mobile Menu Button -->
+	<button id='menu-button' class='lg:hidden text-white text-2xl'> ☰ </button>
+
+	<!-- Mobile Dropdown (Hidden by Default) -->
+	<div
+		id='mobile-menu'
+		class='absolute left-0 w-full bg-gray-900 text-white hidden'
+	>
+		<div class='flex flex-col items-center py-4 gap-4'>
+			<a class='cursor-pointer' href='/'>Home</a>
+			<a class='cursor-pointer' href='/project'>Projects</a>
+			<a class='cursor-pointer' href='/me'>About</a>
+			<a class='cursor-pointer' href='/publications'>Publications</a>
+			<a class='cursor-pointer' href='/confclock'>Conferences Clock</a>
+		</div>
+	</div>
+</nav>
+
+<script>
+	const menuButton = document.getElementById('menu-button')
+	const mobileMenu = document.getElementById('mobile-menu')
+
+	if (menuButton != null && mobileMenu != null) {
+		menuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden')
+		})
+	}
+</script>

@@ -10,12 +10,12 @@ const description =
 const allPosts = await getCollection('updates')
 
 const securityPosts = allPosts
-	.filter((post: { data: { tags?: string[] } }) =>
-		Array.isArray(post.data.tags) && post.data.tags.includes('security')
+	.filter(
+		(post: { data: { tags?: string[] } }) =>
+			Array.isArray(post.data.tags) && post.data.tags.includes('security')
 	)
 	.sort(
-		(a, b) =>
-			new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+		(a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 	)
 
 // Pre-render markdown content
@@ -34,6 +34,10 @@ const renderedPosts = await Promise.all(
 		}
 	)
 )
+
+// Only show the 3 latest posts
+const latestPosts = renderedPosts.slice(0, 3)
+const hasMorePosts = renderedPosts.length > 3
 ---
 
 <SimpleLayout title={title} description={description}>
@@ -59,17 +63,32 @@ const renderedPosts = await Promise.all(
 			</p>
 
 			<div class='flex flex-col gap-6 max-w-3xl w-full px-4'>
-				{
-					renderedPosts.map(({ title, date, Content }) => (
-						<article class='bg-white text-black p-6 rounded-lg shadow-md'>
-							<h3 class='text-xl font-bold mb-1'>{title}</h3>
-							<p class='text-sm text-gray-500 mb-3'>{date}</p>
-							<div class='prose m-auto text-left'>
-								<Content />
-							</div>
-						</article>
-					))
-				}
+				{latestPosts.map(({ title, date, Content }, idx) => (
+					<article
+						class="bg-white text-black rounded-lg shadow-md overflow-hidden transition-all duration-300 max-h-20 hover:max-h-[600px] cursor-pointer group"
+						style="will-change: max-height;"
+						tabindex="0"
+					>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-1">
+								<span class="mr-2 text-secondary-700">{idx + 1}.</span>
+								{title}
+							</h3>
+							<p class="text-sm text-gray-500 mb-3">{date}</p>
+						</div>
+						<div class="prose m-auto text-left px-6 pb-6 transition-opacity duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[400px] group-hover:mt-0 overflow-y-auto">
+							<Content />
+						</div>
+					</article>
+				))}
+				{hasMorePosts ? (
+					<a
+						href='/security-news/archive'
+						class='mt-4 self-center px-6 py-2 rounded-lg bg-secondary-700 text-white font-semibold shadow hover:bg-secondary-800 transition'
+					>
+						View All Security News
+					</a>
+				) : null}
 			</div>
 		</section>
 

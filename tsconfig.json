@@ -3,5 +3,8 @@
   "compilerOptions": {
     "jsx": "react",
     "jsxFactory": "React.createElement",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }

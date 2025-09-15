@@ -1,15 +1,11 @@
 ---
 import Card from "./Card/index.astro";
-import Button from "./Button.astro";
-import { LINKS } from "../lib/constants";
-import { Icon } from "astro-icon/components";
-import Tooltip from "./Tooltip/index";
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
-  <div class="flex w-full h-full">
-    <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
-      <div class="flex flex-col h-full">
+  <div class="flex w-full min-h-fit">
+    <div class="flex flex-col justify-between gap-4 flex-1">
+      <div class="flex flex-col">
         <h6 class="text-sm font-light m-0 text-gray-500">Short Bio</h6>
         <p class="m-0 font-light text-xl">
           Hi, I'm <b class="font-bold">Tianchi YU</b>, a first-year Ph.D.
@@ -20,7 +16,7 @@ import Tooltip from "./Tooltip/index";
             href="https://www.unipd.it/en/"
             target="_blank"
             class="text-red-500">University of Padova</a
-          > under the guidance of amazing
+          > under the guidance of
           <a
             href="https://www.math.unipd.it/~conti/"
             target="_blank"
@@ -28,65 +24,30 @@ import Tooltip from "./Tooltip/index";
           >. I am part of the <a
             href="https://spritz.math.unipd.it/"
             target="_blank"
-            class="text-red-500">Security and Privacy</a
-          > (SPRITZ) research group, and I also serve as an Industrial Ph.D. student,
+            class="text-red-500">Security and Privacy (SPRITZ)</a
+          > research group, and I also serve as an Industrial Ph.D. student,
           collaborating with Huawei's <b class="font-bold"
             >Trusted System Security Lab</b
-          >
-          in Munich, supervised by senior expert and director <a
+          > at Munich Heisenberg Researcher Center
+          , supervised by senior expert and director <a
             href="https://www.linkedin.com/in/silviu-vlasceanu/"
             target="_blank"
             class="text-red-500 font-bold">Silviu Vlasceanu</a
-          >.
-
-          <!-- <p class="m-0 font-light text-xl">
-            I’m looking to collaborate on the systems and security research.
-          </p> -->
-
-          <!-- <p class="m-0 font-light text-xl">Beyond coding,</p>
-          <ul class="list-disc list-inside text-xl font-light">
-            <li>I like anime, music and sports.</li>
-            <li>I speak Mandarin, English and French.</li>
-            <li>I enjoy reading, thinking and travelling.</li>
-          </ul> -->
-        </p>
-        <!-- <div class="flex gap-4">
-          <a href={LINKS.github} aria-label="github profile" target="_blank">
-            <Button aria-label="github profile">
-              <Icon name="ri:github-fill" class="h-6" />
-              <span class="sr-only">GitHub Profile</span>
-            </Button>
-          </a>
-          <a
-            href={LINKS.linkedin}
-            aria-label="linkeding profile"
+          >. I am also co-adviced by <a
+            href="https://www.ifi.uzh.ch/en/spins/people/oliveira.html"
             target="_blank"
-          >
-            <Button aria-label="linkedin profile">
-              <Icon name="ri:linkedin-box-fill" class="h-6" />
-              <span class="sr-only">Linkedin Profile</span>
-            </Button>
-          </a>
-          <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
-          <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
-          </Button>
-        </a>
-          <Tooltip client:visible>
-          <Button aria-label="easter egg btn">
-            <Icon name="ri:emotion-laugh-line" class="h-6" />
-            <span class="sr-only">Easter egg button</span>
-          </Button>
-        </Tooltip>
-        </div> -->
+            class="text-red-500 font-bold">Prof. Ivan De Oliveira Nunes</a> from
+            the <a href="https://www.ifi.uzh.ch/en/spins/people.html"
+            target="_blank"
+            class="text-red-500">Security and Privacy of Information, Networks, and Systems (SPINS)</a> research group at University of Zurich.
+        </p>
       </div>
     </div>
     <img
       width="300"
       height="300"
       src="/tianchi2.jpg"
-      class="w-auto max-h-[300px] select-none absolute right-[-110px] justify-center z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+      class="w-auto h-auto max-w-[100px] md:max-w-[280px] p-6 select-none absolute right-[-110px] justify-center z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none flex-shrink-0"
       alt="memoji of gianmarco"
     />
   </div>

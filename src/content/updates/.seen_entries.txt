@@ -1,4 +1,5 @@
 http://security.googleblog.com/2025/09/pixel-android-trusted-images-c2pa-content-credentials.html
+http://security.googleblog.com/2025/09/supporting-rowhammer-research-to.html
 https://blog.trailofbits.com/2025/08/20/marshal-madness-a-brief-history-of-ruby-deserialization-exploits/
 https://blog.trailofbits.com/2025/08/21/weaponizing-image-scaling-against-production-ai-systems/
 https://blog.trailofbits.com/2025/08/28/intern-projects-that-outlived-the-internship/
@@ -15,6 +16,7 @@ https://thehackernews.com/2025/08/researchers-warn-of-sitecore-exploit.html
 https://thehackernews.com/2025/08/webinar-why-top-teams-are-prioritizing.html
 https://thehackernews.com/2025/08/whatsapp-issues-emergency-update-for.html
 https://thehackernews.com/2025/09/20-popular-npm-packages-with-2-billion.html
+https://thehackernews.com/2025/09/6-browser-based-attacks-security-teams.html
 https://thehackernews.com/2025/09/adobe-commerce-flaw-cve-2025-54236-lets.html
 https://thehackernews.com/2025/09/android-security-alert-google-patches.html
 https://thehackernews.com/2025/09/apple-warns-french-users-of-fourth.html
@@ -29,9 +31,11 @@ https://thehackernews.com/2025/09/critical-cve-2025-5086-in-delmia-apriso.html
 https://thehackernews.com/2025/09/cursor-ai-code-editor-flaw-enables.html
 https://thehackernews.com/2025/09/cybercriminals-exploit-xs-grok-ai-to.html
 https://thehackernews.com/2025/09/detecting-data-leaks-before-disaster.html
+https://thehackernews.com/2025/09/fbi-warns-of-unc6040-and-unc6395.html
 https://thehackernews.com/2025/09/from-mostererat-to-clickfix-new-malware.html
 https://thehackernews.com/2025/09/ghostredirector-hacks-65-windows.html
 https://thehackernews.com/2025/09/google-pixel-10-adds-c2pa-support-to.html
+https://thehackernews.com/2025/09/hiddengh0st-winos-and-kkrat-exploit-seo.html
 https://thehackernews.com/2025/09/how-leading-cisos-are-getting-budget.html
 https://thehackernews.com/2025/09/iranian-hackers-exploit-100-embassy.html
 https://thehackernews.com/2025/09/malicious-npm-packages-exploit-ethereum.html
@@ -48,6 +52,7 @@ https://thehackernews.com/2025/09/threat-actors-weaponize-hexstrike-ai-to.html
 https://thehackernews.com/2025/09/tor-based-cryptojacking-attack-expands.html
 https://thehackernews.com/2025/09/virustotal-finds-44-undetected-svg.html
 https://thehackernews.com/2025/09/webinar-shadow-ai-agents-multiply-fast.html
+https://thehackernews.com/2025/09/weekly-recap-bootkit-malware-ai-powered.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -56,9 +61,12 @@ https://www.schneier.com/blog/archives/2025/09/ai-in-government.html
 https://www.schneier.com/blog/archives/2025/09/generative-ai-as-a-cybercrime-assistant.html
 https://www.schneier.com/blog/archives/2025/09/gpt-4o-mini-falls-for-psychological-manipulation.html
 https://www.schneier.com/blog/archives/2025/09/indirect-prompt-injection-attacks-against-llm-assistants.html
+https://www.schneier.com/blog/archives/2025/09/lawsuit-about-whatsapp-security.html
 https://www.schneier.com/blog/archives/2025/09/my-latest-book-rewiring-democracy.html
 https://www.schneier.com/blog/archives/2025/09/new-cryptanalysis-of-the-fiat-shamir-protocol.html
+https://www.schneier.com/blog/archives/2025/09/upcoming-speaking-engagements-48.html
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
+https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/ai-supply-chain-attack-method-demonstrated-against-google-microsoft-products/
@@ -72,8 +80,10 @@ https://www.securityweek.com/delmia-factory-software-vulnerability-exploited-in-
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
+https://www.securityweek.com/fbi-shares-iocs-for-recent-salesforce-intrusion-campaigns/
 https://www.securityweek.com/firecompass-raises-20-million-for-offensive-security-platform/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
+https://www.securityweek.com/google-launched-behind-the-scenes-campaign-against-california-privacy-legislation-it-passed-anyway/
 https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-in-latest-update/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
@@ -89,9 +99,12 @@ https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
 https://www.securityweek.com/ransomware-group-exploits-hybrid-cloud-gaps-gains-full-azure-control-in-enterprise-attacks/
 https://www.securityweek.com/ransomware-losses-climb-as-ai-pushes-phishing-to-new-heights/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
+https://www.securityweek.com/samsung-patches-zero-day-exploited-against-android-users/
 https://www.securityweek.com/sangoma-patches-critical-zero-day-exploited-to-hack-freepbx-servers/
 https://www.securityweek.com/sap-patches-critical-netweaver-vulnerabilities/
 https://www.securityweek.com/security-firms-hit-by-salesforce-salesloft-drift-breach/
+https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
+https://www.securityweek.com/terra-security-raises-30-million-for-ai-penetration-testing-platform/
 https://www.securityweek.com/threat-actor-connected-to-play-ransomhub-and-dragonforce-ransomware-operations/
 https://www.securityweek.com/tidal-cyber-raises-10-million-for-cti-and-adversary-behavior-platform/
 https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
@@ -99,3 +112,5 @@ https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-brea
 https://www.securityweek.com/us-cybersecurity-agency-flags-wi-fi-range-extender-vulnerability-under-active-attack/
 https://www.securityweek.com/vmscape-academics-break-cloud-isolation-with-new-spectre-attack/
 https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen-testing/
+https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
+https://www.securityweek.com/zero-trust-is-15-years-old-why-full-adoption-is-worth-the-struggle/

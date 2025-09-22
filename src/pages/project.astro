@@ -4,162 +4,224 @@ import ProjectLayout from "../layouts/ProjectLayout.astro";
 import projects from "../lib/Projects";
 
 const title = "Projects";
+
+// Projects loaded successfully
 ---
 
 <ProjectLayout
   title={title}
   description="Projects"
 >
-  <div class="projectContainer top-100">
-    <div class="projects">
-      <h1>Projects</h1>
-      <p class="note">
-        Note: The listed projects are just part of my previous jobs. If there is anything you would like to see further, please
-        feel free to contact me.
-      </p>
+  <div class="projectContainer">
+    <!-- Simple header for debugging -->
+    <div class="header-section" style="position: relative; z-index: 10;">
+      <h1 style="color: transparent; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; text-align: center; font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; font-weight: 800; letter-spacing: -0.02em;">My Projects</h1>
+      <p style="color: rgba(255, 255, 255, 0.7); text-align: center; font-size: 1.2rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Explore my portfolio of innovative projects spanning cryptography, IoT, blockchain, and data visualization.</p>
+    </div>
+    
+    <!-- Basic grid without complex styling -->
+    <div class="projects-grid-simple" style="position: relative; z-index: 10;">
       {
-        projects.map((project) => (
-          <div class="project">
-            <div class="header">
-              <h1 class="text-red-500">{project.title}</h1>
-              <div class="techsContainer">
-                Technologies:
-                <div class="techs">
-                  {project.technologies.map((tech) => (
-                    <div>{tech}</div>
-                  ))}
-                </div>
-              </div>
+        projects.map((project, index) => (
+          <div class="project-card-simple" style="margin-bottom: 2rem; position: relative; z-index: 10;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem;">
+              <h2 style="color: white; font-size: 1.5rem; margin: 0; line-height: 1.3; flex: 1; font-weight: 700;">{project.title}</h2>
+              <span style="font-size: 0.875rem; font-weight: 600; color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); flex-shrink: 0;">0{index + 1}</span>
             </div>
-            <p class="mb-2">{project.description}</p>
-            <a href={project.url} target="_blank" rel="noreferrer">
-              <div class="button">Project url =&gt;</div>
+            
+            <div class="tech-simple" style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
+                <span style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); color: rgba(255, 255, 255, 0.9); padding: 0.5rem 1rem; margin: 0; display: inline-block; border-radius: 50px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease;">{tech}</span>
+              ))}
+            </div>
+            
+            <p style="color: rgba(255, 255, 255, 0.8); margin: 1.5rem 0 2rem; line-height: 1.6; font-size: 1rem;">{project.description}</p>
+            
+            <a href={project.url} target="_blank" rel="noreferrer" class="project-link-simple">
+              <span>View Project</span>
+              <svg style="width: 16px; height: 16px; transition: transform 0.3s ease;" viewBox="0 0 16 16" fill="none">
+                <path d="M1 8h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
           </div>
         ))
       }
     </div>
+
+    <!-- Complex version commented out for debugging
+    <div class="projects-grid">
+      {
+        projects.map((project, index) => (
+          <div class="project-card" data-index={index}>
+            <div class="card-background"></div>
+            <div class="card-content">
+              <div class="project-header">
+                <h2 class="project-title">{project.title}</h2>
+                <div class="project-number">0{index + 1}</div>
+              </div>
+              
+              <div class="tech-stack">
+                {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
+                  <span class="tech-tag">{tech}</span>
+                ))}
+              </div>
+              
+              <p class="project-description">{project.description}</p>
+              
+              <div class="card-footer">
+                <a href={project.url} target="_blank" rel="noreferrer" class="project-link">
+                  <span>View Project</span>
+                  <svg class="link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M1 8h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    -->
   </div>
 </ProjectLayout>
 
+
+
 <style>
+  /* Cool Modern Styles - Fixed visibility */
   .projectContainer {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    /* justify-content: center; */
-    box-sizing: border-box;
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-    z-index: 100;
-    color: aliceblue;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+    /* min-height: 100vh !important; */
+    position: relative !important;
+    z-index: 9999 !important;
+    display: block !important;
   }
 
-  .note {
-    opacity: 0.5;
-    margin: 0;
-    max-width: 900px;
-    text-align: left;
+  .header-section {
+    margin-bottom: 3rem !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10000 !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
-  a {
-    text-decoration: none;
+  /* Cool grid styling */
+  .projects-grid-simple {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    position: relative !important;
+    z-index: 10000 !important;
   }
 
-  .projectContainer .projects {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 40px;
-    margin-top: 30px;
+  .project-card-simple {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10001 !important;
+    margin-bottom: 2rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
   }
 
-  h1 {
-    font-weight: 700;
-    text-align: start;
+  .project-card-simple:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(102, 126, 234, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2) !important;
   }
 
-  h2 {
-    display: flex;
-    margin: 0;
+  .tech-simple {
+    margin: 1rem 0 !important;
+    display: block !important;
   }
 
-  .project {
-    text-align: start;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background: #2b2727;
-    padding: 2rem;
-    width: 100%;
-    border-radius: 5px;
-    transition: transform 0.2s ease-in-out;
-    border-radius: 25px;
+  /* Cool project link styling */
+  .project-link-simple {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.5rem !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid transparent !important;
+    margin-top: auto !important;
   }
 
-  .project p {
-    font-weight: 100;
-    color: #708090;
+  .project-link-simple:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
   }
 
-  .projects {
-    width: 100%;
-    margin: 50px auto;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr;
-    margin-bottom: 10px;
+  .project-link-simple:hover svg {
+    transform: translateX(4px) !important;
   }
 
-  .techsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  /* Tech tag hover effects */
+  .tech-simple span:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%) !important;
+    transform: translateY(-2px) !important;
   }
 
-  .techs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .techs > div {
-    margin: 0 0 0 10px;
+  /* Override any parent styles that might hide content */
+  .projectContainer * {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border: 2px solid white;
-    padding: 10px;
+  /* Add subtle animations */
+  .project-card-simple {
+    animation: fadeInUp 0.6s ease-out !important;
   }
 
-  @media (min-width: 900px) {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive grid */
+  @media (min-width: 768px) {
+    .projects-grid-simple {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 2.5rem !important;
+    }
+    
+    .project-card-simple {
+      min-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
     .projectContainer {
-      padding: 0;
+      padding: 1rem !important;
     }
-    .projects > h1 {
-      font-size: 48px;
-      margin: 50px 0 0 0;
-    }
-
-    .projects {
-      grid-template-columns: 1fr;
-    }
-
-    .projects .project {
-      min-height: 200px;
-    }
-    .button {
-      max-width: 200px;
-    }
-  }
-
-  @media (min-width: 600px) {
-    .projects {
-      grid-template-columns: 1fr;
+    
+    .header-section {
+      margin-bottom: 2rem !important;
+      padding: 1.5rem !important;
     }
   }
 </style>

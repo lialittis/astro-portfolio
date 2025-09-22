@@ -1,35 +1,250 @@
-<nav class='top-16 mt-10 z-200 w-full flex justify-between items-center px-6'>
-
-  <div class='left-4 text-white text-xl font-bold'>Tianchi YU</div>
+<nav class='navbar-cool'>
+  <!-- Brand/Logo -->
+  <div class='navbar-brand'>
+    <span class='brand-text'>Tianchi YU</span>
+  </div>
 
 	<!-- Desktop Navigation -->
-	<div
-		class='absolute hidden lg:flex gap-10 left-1/2 transform -translate-x-1/2'
-	>
-		<a class='cursor-pointer text-white' href='/'>Home</a>
-		<a class='cursor-pointer text-white' href='/project'>Projects</a>
-		<a class='cursor-pointer text-white' href='/me'>About</a>
-		<a class='cursor-pointer text-white' href='/publications'>Publications</a>
-		<a class='cursor-pointer text-white' href='/confclock'>Conferences Clock</a>
+	<div class='navbar-desktop'>
+		<a class='nav-link' href='/'>Home</a>
+		<a class='nav-link' href='/project'>Projects</a>
+		<a class='nav-link' href='/me'>About</a>
+		<a class='nav-link' href='/publications'>Publications</a>
+		<a class='nav-link' href='/confclock'>Conferences</a>
 	</div>
 
 	<!-- Mobile Menu Button -->
-	<button id='menu-button' class='lg:hidden text-white text-2xl'> ☰ </button>
+	<button id='menu-button' class='mobile-menu-btn'> 
+    <span class='hamburger-line'></span>
+    <span class='hamburger-line'></span>
+    <span class='hamburger-line'></span>
+  </button>
 
-	<!-- Mobile Dropdown (Hidden by Default) -->
-	<div
-		id='mobile-menu'
-		class='absolute left-0 w-full bg-gray-900 text-white hidden'
-	>
-		<div class='flex flex-col items-center py-4 gap-4'>
-			<a class='cursor-pointer' href='/'>Home</a>
-			<a class='cursor-pointer' href='/project'>Projects</a>
-			<a class='cursor-pointer' href='/me'>About</a>
-			<a class='cursor-pointer' href='/publications'>Publications</a>
-			<a class='cursor-pointer' href='/confclock'>Conferences Clock</a>
+	<!-- Mobile Dropdown -->
+	<div id='mobile-menu' class='mobile-dropdown hidden'>
+		<div class='mobile-nav-content'>
+			<a class='mobile-nav-link' href='/'>Home</a>
+			<a class='mobile-nav-link' href='/project'>Projects</a>
+			<a class='mobile-nav-link' href='/me'>About</a>
+			<a class='mobile-nav-link' href='/publications'>Publications</a>
+			<a class='mobile-nav-link' href='/confclock'>Conferences</a>
 		</div>
 	</div>
 </nav>
+
+<style>
+  /* Cool Navigation Bar Styling */
+  .navbar-cool {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    
+    /* Glassmorphism effect */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    transition: all 0.3s ease;
+  }
+
+  .navbar-cool:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.12) 100%);
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+  }
+
+  /* Brand/Logo Styling */
+  .navbar-brand {
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+  }
+
+  .brand-text:hover {
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Desktop Navigation */
+  .navbar-desktop {
+    display: none;
+    gap: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    border-radius: 25px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+
+  .nav-link:hover {
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .nav-link:hover::before {
+    opacity: 1;
+  }
+
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 0.25rem;
+  }
+
+  .mobile-menu-btn:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  }
+
+  .hamburger-line {
+    width: 1.2rem;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile Dropdown */
+  .mobile-dropdown {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .mobile-nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-nav-link:hover {
+    color: white;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (min-width: 1024px) {
+    .navbar-desktop {
+      display: flex;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .navbar-cool {
+      width: calc(100% - 1rem);
+      padding: 0.75rem 1rem;
+    }
+    
+    .brand-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .navbar-cool {
+      top: 0.5rem;
+      width: calc(100% - 1rem);
+    }
+  }
+
+  /* Animation for mobile menu toggle */
+  .mobile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-dropdown.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+</style>
 
 <script>
 	const menuButton = document.getElementById('menu-button')
@@ -37,7 +252,30 @@
 
 	if (menuButton != null && mobileMenu != null) {
 		menuButton.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden')
+			if (mobileMenu.classList.contains('hidden')) {
+				mobileMenu.classList.remove('hidden')
+				mobileMenu.classList.add('show')
+			} else {
+				mobileMenu.classList.remove('show')
+				mobileMenu.classList.add('hidden')
+			}
+		})
+
+		// Close mobile menu when clicking outside
+		document.addEventListener('click', (event) => {
+			const target = event.target as Element
+			if (target && !menuButton.contains(target) && !mobileMenu.contains(target)) {
+				mobileMenu.classList.remove('show')
+				mobileMenu.classList.add('hidden')
+			}
+		})
+
+		// Close mobile menu on window resize to desktop size
+		window.addEventListener('resize', () => {
+			if (window.innerWidth >= 1024) {
+				mobileMenu.classList.remove('show')
+				mobileMenu.classList.add('hidden')
+			}
 		})
 	}
 </script>

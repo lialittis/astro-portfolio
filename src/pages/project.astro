@@ -88,16 +88,23 @@ const title = "Projects";
 
 
 <style>
-  /* Cool Modern Styles - Fixed visibility */
+  /* 
+   * Z-INDEX HIERARCHY:
+   * Navigation Bar: 1000 (highest - always visible)
+   * Project Content: 100-110 (above modal and other page elements)
+   * Modal (frontpage.css): 99 (below project content)
+   * Background Effects: -1 (lowest)
+   */
+
+  /* Cool Modern Styles - Fixed visibility and spacing */
   .projectContainer {
     width: 100% !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
-    padding: 2rem !important;
+    padding: 8rem 2rem 2rem 2rem !important; /* Extra top padding for navbar */
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
-    /* min-height: 100vh !important; */
     position: relative !important;
-    z-index: 9999 !important;
+    z-index: 100 !important; /* Higher than modal (99) but lower than navbar (1000) */
     display: block !important;
   }
 
@@ -105,7 +112,7 @@ const title = "Projects";
     margin-bottom: 3rem !important;
     display: block !important;
     position: relative !important;
-    z-index: 10000 !important;
+    z-index: 101 !important; /* Higher than modal and container */
     background: rgba(255, 255, 255, 0.02) !important;
     border-radius: 16px !important;
     padding: 2rem !important;
@@ -119,7 +126,7 @@ const title = "Projects";
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
     position: relative !important;
-    z-index: 10000 !important;
+    z-index: 101 !important; /* Higher than modal and container */
   }
 
   .project-card-simple {
@@ -130,7 +137,7 @@ const title = "Projects";
     border-radius: 20px !important;
     display: block !important;
     position: relative !important;
-    z-index: 10001 !important;
+    z-index: 102 !important; /* Higher than grid and modal */
     margin-bottom: 2rem !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
@@ -216,7 +223,7 @@ const title = "Projects";
 
   @media (max-width: 767px) {
     .projectContainer {
-      padding: 1rem !important;
+      padding: 6rem 1rem 1rem 1rem !important; /* Adjusted for mobile navbar */
     }
     
     .header-section {

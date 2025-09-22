@@ -85,4 +85,15 @@ const image =
   b {
     font-weight: 700 !important;
   }
+
+  /* Add top spacing to prevent navbar overlap */
+  main, .projectContainer {
+    padding-top: 6rem !important;
+  }
+
+  @media (max-width: 640px) {
+    main, .projectContainer {
+      padding-top: 5rem !important;
+    }
+  }
 </style>

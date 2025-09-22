@@ -211,7 +211,7 @@ with md_path.open("w", encoding="utf-8") as f:
             summary_text += f"the last {DAYS_LOOKBACK} days "
         else:
             summary_text += f"the last {DAYS_LOOKBACK_RESEARCH} days "
-        summary_text += f"across {len(RSS_SOURCES)} sources (max {MAX_ENTRIES_PER_SOURCE} entries per source).*\n\n"
+        # summary_text += f"across {len(RSS_SOURCES)} sources (max {MAX_ENTRIES_PER_SOURCE} entries per source).*\n\n"
         
         f.write(summary_text)
         

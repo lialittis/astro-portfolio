@@ -62,21 +62,21 @@ const hasMorePosts = renderedPosts.length > 3
 				Explore the most recent articles on security topics.
 			</p>
 
-			<div class='flex flex-col gap-6 max-w-3xl w-full px-4'>
+			<div class='flex flex-col gap-8 max-w-7xl w-full px-4'>
 				{latestPosts.map(({ title, date, Content }, idx) => (
 					<article
-						class="bg-white text-black rounded-lg shadow-md overflow-hidden transition-all duration-300 max-h-20 hover:max-h-[600px] cursor-pointer group"
-						style="will-change: max-height;"
+						class={`security-card bg-white text-black rounded-lg shadow-lg overflow-hidden transition-all duration-500 cursor-pointer ${idx === 0 ? 'expanded' : 'collapsed'}`}
+						data-index={idx}
 						tabindex="0"
 					>
-						<div class="p-6">
-							<h3 class="text-xl font-bold mb-1">
-								<span class="mr-2 text-secondary-700">{idx + 1}.</span>
+						<div class="p-8">
+							<h3 class="text-2xl font-bold mb-2">
+								<span class="mr-3 text-secondary-700">{idx + 1}.</span>
 								{title}
 							</h3>
-							<p class="text-sm text-gray-500 mb-3">{date}</p>
+							<p class="text-base text-gray-500 mb-4">{date}</p>
 						</div>
-						<div class="prose m-auto text-left px-6 pb-6 transition-opacity duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[400px] group-hover:mt-0 overflow-y-auto">
+						<div class="content prose max-w-none text-left px-8 pb-8 transition-all duration-500 overflow-y-auto">
 							<Content />
 						</div>
 					</article>
@@ -111,3 +111,50 @@ const hasMorePosts = renderedPosts.length > 3
 		</section>
 	</div>
 </SimpleLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const cards = document.querySelectorAll('.security-card');
+		
+		cards.forEach((card, index) => {
+			card.addEventListener('click', () => {
+				// Collapse all cards
+				cards.forEach(c => {
+					c.classList.remove('expanded');
+					c.classList.add('collapsed');
+				});
+				
+				// Expand clicked card
+				card.classList.remove('collapsed');
+				card.classList.add('expanded');
+			});
+		});
+	});
+</script>
+
+<style>
+	.security-card.collapsed {
+		max-height: 140px;
+	}
+	
+	.security-card.expanded {
+		max-height: 800px;
+	}
+	
+	.security-card.collapsed .content {
+		opacity: 0;
+		max-height: 0;
+		padding-bottom: 0;
+	}
+	
+	.security-card.expanded .content {
+		opacity: 1;
+		max-height: 600px;
+		padding-bottom: 2rem;
+	}
+	
+	.security-card:hover {
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		transform: translateY(-2px);
+	}
+</style>

@@ -124,3 +124,176 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     </Card> -->
 	</main>
 </Layout>
+
+<style>
+  /* Cool theme styling for home page - optimized for readability */
+  main {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+  }
+
+  main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Enhanced Card component styling for better readability */
+  :global(.card) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.card:hover) {
+    transform: translateY(-8px) !important;
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.12) 100%) !important;
+  }
+
+  /* High contrast text for excellent readability */
+  :global(.card h1), :global(.card h2), :global(.card h3), :global(.card h4), :global(.card h5), :global(.card h6) {
+    color: rgba(255, 255, 255, 0.98) !important;
+    font-weight: 700 !important;
+  }
+
+  :global(.card p) {
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.6 !important;
+  }
+
+  :global(.card .text-xs) {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Enhanced link styling with better contrast */
+  :global(.card a) {
+    color: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s ease !important;
+    text-decoration: underline !important;
+    text-decoration-color: rgba(102, 126, 234, 0.5) !important;
+  }
+
+  :global(.card a:hover) {
+    color: #78dbff !important;
+    text-decoration-color: #78dbff !important;
+  }
+
+  /* Special gradient styling for accent links */
+  :global(.card .text-red-500) {
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+
+  :global(.card .text-red-500:hover) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  /* Button styling with high contrast */
+  :global(.card button), :global(.card .button-like) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(15px) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.card button:hover), :global(.card .button-like:hover) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    transform: translateY(-3px) !important;
+    border-color: rgba(102, 126, 234, 0.6) !important;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
+    color: white !important;
+  }
+
+  /* Special styling for specific components */
+  :global(.intro-card), :global(.contact-card) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+  }
+
+  /* Globe container enhancement */
+  :global(.card .h-\[250px\]) {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Security news and other content cards */
+  :global(.security-news-card), :global(.keywords-card) {
+    background: linear-gradient(135deg, rgba(120, 219, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%) !important;
+  }
+
+  /* Timeline and Now card special styling */
+  :global(.now-card), :global(.timezone-card) {
+    background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%) !important;
+  }
+
+  /* Ensure all text is properly contrasted */
+  :global(.card span), :global(.card div), :global(.card time) {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Special handling for small text */
+  :global(.card .text-sm) {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  /* Icon styling */
+  :global(.card svg) {
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.card:hover svg) {
+    color: #78dbff !important;
+  }
+
+  /* Animation for cards */
+  :global(.card) {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive adjustments for readability */
+  @media (max-width: 768px) {
+    :global(.card p) {
+      font-size: 0.95rem !important;
+      line-height: 1.5 !important;
+    }
+    
+    :global(.card h1), :global(.card h2), :global(.card h3) {
+      font-size: 1.1rem !important;
+    }
+  }
+</style>

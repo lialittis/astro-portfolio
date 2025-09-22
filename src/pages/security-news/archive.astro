@@ -51,20 +51,41 @@ const renderedPosts = await Promise.all(
 				href='/security-news'
 				class='mt-4 self-center px-6 py-2 rounded-lg bg-secondary-700 text-white font-semibold shadow hover:bg-secondary-800 transition flex items-center gap-2'
 			>
-				<span class='material-icons'>arrow_back</span>
+				<span>←</span>
 				Back to Latest
 			</a>
 		</section>
 
 		<section class='mt-16 flex flex-col items-center gap-6'>
-			<div class='flex flex-col gap-6 max-w-3xl w-full px-4'>
+			<h2 class='text-2xl md:text-3xl font-bold text-white'>All Articles</h2>
+			<p class='text-lg text-secondary-200 text-white mb-4'>
+				Complete archive of security news and updates.
+			</p>
+			
+			<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl w-full px-4'>
 				{
-					renderedPosts.map(({ title, date, Content }) => (
-						<article class='bg-white text-black p-6 rounded-lg shadow-md'>
-							<h3 class='text-xl font-bold mb-1'>{title}</h3>
-							<p class='text-sm text-gray-500 mb-3'>{date}</p>
-							<div class='prose m-auto text-left'>
-								<Content />
+					renderedPosts.map(({ title, date, Content }, idx) => (
+						<article class='article-card bg-white text-black rounded-lg shadow-lg overflow-hidden transition-all duration-500 hover:shadow-xl flex flex-col h-full' data-index={idx}>
+							<div class='p-6 flex-1'>
+								<h3 class='article-title text-lg font-bold mb-2 line-clamp-2'>
+									<span class='mr-2 text-secondary-700 text-sm'>{idx + 1}.</span>
+									{title}
+								</h3>
+								<p class='article-date text-sm text-gray-500 mb-3'>{date}</p>
+								<div class='article-preview prose prose-sm max-w-none text-left text-gray-700 line-clamp-4'>
+									<Content />
+								</div>
+								<div class='article-full-content hidden prose max-w-none text-left text-gray-700'>
+									<Content />
+								</div>
+							</div>
+							<div class='px-6 pb-4'>
+								<button class='read-more-btn text-secondary-700 hover:text-secondary-800 font-semibold text-sm transition-colors' data-index={idx}>
+									Read More →
+								</button>
+								<button class='read-less-btn hidden bg-secondary-700 text-black hover:bg-secondary-800 font-semibold text-sm transition-colors px-4 py-2 rounded-lg' data-index={idx}>
+									← Back to Grid
+								</button>
 							</div>
 						</article>
 					))
@@ -73,3 +94,259 @@ const renderedPosts = await Promise.all(
 		</section>
 	</div>
 </SimpleLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const readMoreButtons = document.querySelectorAll('.read-more-btn');
+		const readLessButtons = document.querySelectorAll('.read-less-btn');
+		let expandedArticle: HTMLElement | null = null;
+		
+		function collapseArticle() {
+			if (!expandedArticle) return;
+			
+			const grid = document.querySelector('.grid') as HTMLElement;
+			if (grid) {
+				// First collapse the article and remove styles
+				expandedArticle.classList.remove('expanded');
+				grid.classList.remove('single-expanded');
+				
+				// Reset all inline styles that might interfere
+				expandedArticle.style.cssText = '';
+				
+				// Show/hide content
+				const preview = expandedArticle.querySelector('.article-preview') as HTMLElement;
+				const fullContent = expandedArticle.querySelector('.article-full-content') as HTMLElement;
+				const readMoreBtn = expandedArticle.querySelector('.read-more-btn') as HTMLElement;
+				const readLessBtn = expandedArticle.querySelector('.read-less-btn') as HTMLElement;
+				const title = expandedArticle.querySelector('.article-title');
+				
+				if (preview) preview.style.display = 'block';
+				if (fullContent) fullContent.style.display = 'none';
+				if (readMoreBtn) readMoreBtn.style.display = 'inline-block';
+				if (readLessBtn) readLessBtn.style.display = 'none';
+				if (title) title.classList.add('line-clamp-2');
+				
+				// Show all articles and reset their styles
+				const allArticles = document.querySelectorAll('.article-card');
+				allArticles.forEach(a => {
+					const article = a as HTMLElement;
+					article.style.cssText = '';
+				});
+				
+				expandedArticle = null;
+			}
+		}
+		
+		readMoreButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				const index = button.getAttribute('data-index');
+				const article = document.querySelector(`article[data-index="${index}"]`) as HTMLElement;
+				const grid = document.querySelector('.grid') as HTMLElement;
+				
+				if (article && grid) {
+					expandedArticle = article;
+					
+					// Hide all other articles
+					const allArticles = document.querySelectorAll('.article-card');
+					allArticles.forEach(a => {
+						if (a !== article) {
+							(a as HTMLElement).style.display = 'none';
+						}
+					});
+					
+					// Expand the clicked article
+					article.classList.add('expanded');
+					grid.classList.add('single-expanded');
+					
+					// Show/hide content
+					const preview = article.querySelector('.article-preview') as HTMLElement;
+					const fullContent = article.querySelector('.article-full-content') as HTMLElement;
+					const readMoreBtn = article.querySelector('.read-more-btn') as HTMLElement;
+					const readLessBtn = article.querySelector('.read-less-btn') as HTMLElement;
+					const title = article.querySelector('.article-title');
+					
+					if (preview) preview.style.display = 'none';
+					if (fullContent) fullContent.style.display = 'block';
+					if (readMoreBtn) readMoreBtn.style.display = 'none';
+					if (readLessBtn) readLessBtn.style.display = 'inline-block';
+					if (title) title.classList.remove('line-clamp-2');
+				}
+			});
+		});
+		
+		readLessButtons.forEach((button) => {
+			button.addEventListener('click', (e) => {
+				e.stopPropagation();
+				collapseArticle();
+			});
+		});
+		
+		// Click outside to collapse
+		document.addEventListener('click', (e) => {
+			if (expandedArticle && !expandedArticle.contains(e.target as Node)) {
+				collapseArticle();
+			}
+		});
+		
+		// Escape key to collapse
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && expandedArticle) {
+				collapseArticle();
+			}
+		});
+	});
+</script>
+
+<style>
+	.line-clamp-2 {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	
+	.line-clamp-4 {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	
+	.prose p {
+		margin-bottom: 0.5rem;
+	}
+	
+	.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	/* Fixed card layout for consistent grid */
+	.article-card:not(.expanded) .p-6 {
+		padding: 1.5rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article-card:not(.expanded) .flex-1 {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	.article-card:not(.expanded) .article-preview {
+		flex: 1;
+		overflow: hidden;
+	}
+
+	.article-card:not(.expanded) .px-6.pb-4 {
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		margin-top: auto;
+	}
+
+	/* Expanded article styles */
+	.grid.single-expanded {
+		display: block;
+	}
+
+	.article-card.expanded {
+		position: fixed !important;
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		width: 90vw !important;
+		max-width: 1200px !important;
+		height: 80vh !important;
+		max-height: 600px !important;
+		z-index: 1000 !important;
+		overflow-y: auto !important;
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+		border: none !important;
+		display: flex !important;
+		flex-direction: column !important;
+	}
+
+	/* Ensure grid items maintain proper height when not expanded */
+	.article-card:not(.expanded) {
+		position: static !important;
+		transform: none !important;
+		width: auto !important;
+		height: 350px !important;
+		min-height: 350px !important;
+		max-height: 350px !important;
+		display: flex !important;
+		flex-direction: column !important;
+		overflow: hidden;
+	}
+
+	.article-card.expanded .p-6 {
+		padding: 2rem;
+	}
+
+	.article-card.expanded .article-title {
+		font-size: 2rem;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	.article-card.expanded .article-date {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.article-card.expanded .prose {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.article-card.expanded .read-less-btn {
+		position: sticky;
+		top: 20px;
+		float: right;
+		margin-bottom: 20px;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Overlay when article is expanded */
+	.grid.single-expanded::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 999;
+		backdrop-filter: blur(4px);
+	}
+
+	/* Smooth transitions */
+	.article-card {
+		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.article-full-content {
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	/* Scrollbar styling for expanded content */
+	.article-card.expanded::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.article-card.expanded::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 4px;
+	}
+
+	.article-card.expanded::-webkit-scrollbar-thumb {
+		background: #c1c1c1;
+		border-radius: 4px;
+	}
+
+	.article-card.expanded::-webkit-scrollbar-thumb:hover {
+		background: #a1a1a1;
+	}
+</style>

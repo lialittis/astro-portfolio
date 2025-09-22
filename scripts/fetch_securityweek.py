@@ -204,16 +204,16 @@ with md_path.open("w", encoding="utf-8") as f:
         daily_sources = [s for s in RSS_SOURCES if s.get('daily_news', True)]
         research_sources = [s for s in RSS_SOURCES if not s.get('daily_news', True)]
         
-        summary_text = f"*Found {len(all_filtered_entries)} relevant security news items from "
-        if daily_sources and research_sources:
-            summary_text += f"the last {DAYS_LOOKBACK} days (daily news) and {DAYS_LOOKBACK_RESEARCH} days (research blogs) "
-        elif daily_sources:
-            summary_text += f"the last {DAYS_LOOKBACK} days "
-        else:
-            summary_text += f"the last {DAYS_LOOKBACK_RESEARCH} days "
+        # summary_text = f"*Found {len(all_filtered_entries)} relevant security news items from "
+        # if daily_sources and research_sources:
+        #     summary_text += f"the last {DAYS_LOOKBACK} days (daily news) and {DAYS_LOOKBACK_RESEARCH} days (research blogs) "
+        # elif daily_sources:
+        #     summary_text += f"the last {DAYS_LOOKBACK} days "
+        # else:
+        #     summary_text += f"the last {DAYS_LOOKBACK_RESEARCH} days "
         # summary_text += f"across {len(RSS_SOURCES)} sources (max {MAX_ENTRIES_PER_SOURCE} entries per source).*\n\n"
         
-        f.write(summary_text)
+        # f.write(summary_text)
         
         # Group entries by source
         current_source = None

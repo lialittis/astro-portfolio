@@ -13,15 +13,15 @@ const title = "Publications";
     <div
       class="h-body-with-navbar w-full flex flex-col justify-center items-center gap-10"
     >
-      <div class="mt-10 flex flex-col justify-center items-center gap-2.5 z-0">
+      <div class="mt-30 flex flex-col justify-center items-center gap-2.5 z-0">
         <h1
-          class="text-4xl md:text-5xl/[0.7] xl:text-6xl/[0.8] font-bold text-white"
+          class="hero-title text-4xl md:text-5xl/[0.7] xl:text-6xl/[0.8] font-bold"
         >
           Publications <br />
           <span class="font-normal">Display</span>
         </h1>
 
-        <p class="text-1xl text-secondary-200 text-white">
+        <p class="text-1xl text-white opacity-80 animate-pulse">
           Please scroll down...
         </p>
       </div>
@@ -33,25 +33,26 @@ const title = "Publications";
     </div>
   </div>
   <section
-    class="relative w-[calc(100vw-4rem)] mx-auto mt-[-50vh] h-[calc(100vh-1rem)] sticky top-[1rem] rounded-t-2xl"
+    class="relative w-[calc(100vw-10rem)] mx-auto mt-[-50vh] h-[calc(100vh-2rem)] sticky top-[1rem] rounded-t-2xl"
   >
     <!-- <BookmarkSvg /> -->
 
     <h2 class="text-white ml-2 mt-1 font-bold pl-6 pt-4">
       0. Security for Distributed Machine Learning
     </h2>
-    <div class="m-6 flex flex-col lg:flex-row gap-5 z-20">
-      <!-- <ContactForm client:load /> -->
-      <h3 class="text-gray 600 mb-4 text-lg">
-        Authors: Laurent Gomez., <a class="font-bold">Tianchi Yu.</a>, and
-        Patrick Duverger.
-        <p class="text-gray-600">
-          20th International Conference on Security and Cryptography - SECRYPT
-        </p>
-      </h3>
+    <div class="m-6 flex flex-col lg:flex-row gap-6 z-20">
+      <div class="lg:w-1/5">
+        <h3 class="authors mt-6 mb-4 text-lg">
+          Authors: Laurent Gomez., <a class="font-bold">Tianchi Yu.</a>, and
+          Patrick Duverger.
+          <p class="conference-name">
+            20th International Conference on Security and Cryptography - SECRYPT
+          </p>
+        </h3>
+      </div>
 
-      <div class="border-1 border-secondary-600 rounded-2xl p-4">
-        <p class="text-gray-100 text-lg text-justify">
+      <div class="publication-content lg:w-4/5">
+        <p class="abstract-text">
           With the adoption of IoT-like technologies, industrials aim to enhance
           the business value of their physical assets and improve their
           operational efficiency. However, IoT devices alone tend to strain
@@ -72,25 +73,26 @@ const title = "Publications";
         </p>
       </div>
     </div>
-    <a
-      href="https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
-      target="_blank"
-      rel="noreferrer"
-      style="text-align:-webkit-center"
-    >
-      <div
-        class="w-fit border-1 border-secondary-600 rounded-2xl p-4 justify-center"
+    <div class="text-center m-6">
+      <a
+        href="https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
+        target="_blank"
+        rel="noreferrer"
+        class="url-button"
       >
-        URL =&gt;
-      </div>
-    </a>
+        View Publication
+      </a>
+    </div>
   </section>
   <section
-    class="relative w-[calc(100vw-3rem)] mx-auto h-[calc(100vh-2rem)] sticky top-[2rem] rounded-t-2xl"
+    class="relative w-[calc(100vw-8rem)] mx-auto h-[calc(100vh-2rem)] sticky top-[2rem] rounded-t-2xl"
   >
-    <!-- <BookmarkSvg /> -->
-
-    <h2 class="text-white ml-2 mt-1 font-bold">More Coming...</h2>
+    <div class="coming-soon">
+      <h2>More Coming...</h2>
+      <p class="abstract-text">
+        🚀 Exciting research projects in progress! Stay tuned for upcoming publications in system security, hardware protection, and trusted computing.
+      </p>
+    </div>
   </section>
   <!-- <section
     class="relative w-[calc(100vw-2rem)] mx-auto h-[calc(100vh-3rem)] sticky top-[3rem] rounded-t-2xl"
@@ -101,19 +103,232 @@ const title = "Publications";
 </FrameLayout>
 
 <style>
+  @import "../style/glassmorphism-theme.css";
   @unocss;
 
+  /* Enhanced body with glassmorphism background */
   body {
     font-family: "Inter", sans-serif;
-    background-color: black;
-    /* color: redb; */
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     color: aliceblue;
+    position: relative;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
   }
 
+  /* Hide horizontal scrollbar globally */
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Hide scrollbar for webkit browsers */
+  ::-webkit-scrollbar-horizontal {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Enhanced dotted background for hero section */
+  .dotted-bg {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+  }
+
+  .dotted-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.3) 2px, transparent 2px);
+    background-size: 50px 50px;
+    opacity: 0.6;
+    animation: float 12s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+  }
+
+  /* Enhanced hero text with gradient effects */
+  .hero-title {
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 50%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3)); }
+    to { filter: drop-shadow(0 0 30px rgba(120, 219, 255, 0.5)); }
+  }
+
+  /* Enhanced heading styles */
   h2 {
-    @apply text-2xl text-secondary-50 font-semibold mb-4;
+    @apply text-2xl font-semibold mb-4;
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
   }
 
+  /* Enhanced sections with glassmorphism */
+  section {
+    padding: 0px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 2px solid rgba(102, 126, 234, 0.5);
+    border-left: 2px solid rgba(102, 126, 234, 0.3);
+    border-right: 2px solid rgba(102, 126, 234, 0.3);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  section:hover {
+    border-top-color: rgba(120, 219, 255, 0.7);
+    box-shadow: 
+      0 20px 40px rgba(102, 126, 234, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Enhanced publication content styling */
+  .publication-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .publication-content:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  }
+
+  /* Enhanced author and conference text */
+  .authors {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .authors a {
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+
+  .authors a:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .conference-name {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  /* Enhanced abstract text */
+  .abstract-text {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  /* Enhanced URL link button */
+  .url-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .url-button:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    border-color: rgba(120, 219, 255, 0.4);
+  }
+
+  .url-button::after {
+    content: '→';
+    transition: transform 0.3s ease;
+  }
+
+  .url-button:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* Enhanced "More Coming" section */
+  .coming-soon {
+    background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%);
+    border: 1px solid rgba(255, 119, 198, 0.2);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin: 2rem;
+  }
+
+  .coming-soon h2 {
+    background: linear-gradient(135deg, #ff77c6 0%, #bd93f9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Maintain original scroll behavior */
   html.lenis,
   html.lenis body {
     height: auto;
@@ -135,14 +350,35 @@ const title = "Publications";
     pointer-events: none;
   }
 
-  section {
-    padding: 0px;
-    background-color: black;
-    @apply border-t-1 border-x-1 border-solid border-amber bg-secondary-900 overflow-hidden background-color:black;
+  /* Responsive enhancements */
+  @media (max-width: 768px) {
+    section {
+      margin: 0 1rem;
+      border-radius: 12px;
+    }
+    
+    .publication-content {
+      padding: 1.5rem;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
   }
 
-  /* input::placeholder,
-  textarea::placeholder {
-    @apply text-secondary-300;
-  } */
+  /* Add subtle animations for content reveal */
+  section {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>

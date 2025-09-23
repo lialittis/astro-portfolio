@@ -175,11 +175,14 @@ import Tooltip from "../components/Tooltip/index";
 </Layout>
 
 <style>
-  /* Cool theme styling to match project page */
+  @import "../style/glassmorphism-theme.css";
+
+  /* Apply glassmorphism theme */
   main {
-    /* background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important; */
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
     position: relative;
     z-index: 10;
+    min-height: 100vh;
   }
 
   main::before {
@@ -190,20 +193,21 @@ import Tooltip from "../components/Tooltip/index";
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
   }
 
-  /* Override Card component styling */
+  /* Use glassmorphism card styling */
   :global(.card) {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
     backdrop-filter: blur(20px) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
     transition: all 0.3s ease !important;
+    animation: fadeInUp 0.6s ease-out;
   }
 
   :global(.card:hover) {
@@ -212,7 +216,24 @@ import Tooltip from "../components/Tooltip/index";
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2) !important;
   }
 
-  /* Style the links with gradient colors */
+  /* Typography styles */
+  :global(.card h6) {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  :global(.card p) {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  :global(.card b) {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  :global(.card li) {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Link styles */
   :global(.card a) {
     color: rgba(255, 255, 255, 0.9) !important;
     transition: all 0.3s ease !important;
@@ -222,9 +243,8 @@ import Tooltip from "../components/Tooltip/index";
     color: #667eea !important;
   }
 
-  /* Style the red links with cool gradient */
   :global(.card .text-red-500) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%) !important;
     background-clip: text !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -232,18 +252,18 @@ import Tooltip from "../components/Tooltip/index";
   }
 
   :global(.card .text-red-500:hover) {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     background-clip: text !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
   }
 
-  /* Style the blue text */
+  /* Blue text accent */
   :global(.card .text-blue-500) {
     color: #78dbff !important;
   }
 
-  /* Style buttons to match project page */
+  /* Button styles */
   :global(.card button), :global(.card .button) {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -257,29 +277,7 @@ import Tooltip from "../components/Tooltip/index";
     border-color: rgba(102, 126, 234, 0.4) !important;
   }
 
-  /* Style the text content */
-  :global(.card h6) {
-    color: rgba(255, 255, 255, 0.5) !important;
-  }
-
-  :global(.card p) {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  :global(.card b) {
-    color: rgba(255, 255, 255, 0.95) !important;
-  }
-
-  /* Style the list items */
-  :global(.card li) {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  /* Add subtle animation */
-  :global(.card) {
-    animation: fadeInUp 0.6s ease-out;
-  }
-
+  /* Animation */
   @keyframes fadeInUp {
     from {
       opacity: 0;

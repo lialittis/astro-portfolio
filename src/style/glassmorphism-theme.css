@@ -1,0 +1,179 @@
+/* 
+ * Shared Glassmorphism Theme
+ * Used across index.astro, me.astro, and project.astro
+ * Provides consistent cool modern styling
+ */
+
+/* Main background styling */
+.glassmorphism-main {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+.glassmorphism-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Card component base styling */
+.glassmorphism-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.glassmorphism-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(102, 126, 234, 0.5) !important;
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.12) 100%) !important;
+}
+
+/* Typography styling */
+.glassmorphism-heading {
+  color: rgba(255, 255, 255, 0.98) !important;
+  font-weight: 700 !important;
+}
+
+.glassmorphism-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.6 !important;
+}
+
+.glassmorphism-text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.glassmorphism-text-subtle {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.glassmorphism-text-light {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Link styling */
+.glassmorphism-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(102, 126, 234, 0.5) !important;
+}
+
+.glassmorphism-link:hover {
+  color: #78dbff !important;
+  text-decoration-color: #78dbff !important;
+}
+
+/* Gradient link styling */
+.glassmorphism-gradient-link {
+  background: linear-gradient(135deg, #78dbff 0%, #667eea 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.glassmorphism-gradient-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Button styling */
+.glassmorphism-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(15px) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.3s ease !important;
+}
+
+.glassmorphism-button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  transform: translateY(-3px) !important;
+  border-color: rgba(102, 126, 234, 0.6) !important;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
+  color: white !important;
+}
+
+/* Icon styling */
+.glassmorphism-icon {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease !important;
+}
+
+.glassmorphism-card:hover .glassmorphism-icon {
+  color: #78dbff !important;
+}
+
+/* Special card variants */
+.glassmorphism-card-enhanced {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+}
+
+.glassmorphism-card-blue {
+  background: linear-gradient(135deg, rgba(120, 219, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%) !important;
+}
+
+.glassmorphism-card-pink {
+  background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%) !important;
+}
+
+/* Globe container styling */
+.glassmorphism-globe-container {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glassmorphism-text {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .glassmorphism-heading {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Accent color utilities */
+.glassmorphism-accent-blue {
+  color: #78dbff !important;
+}
+
+.glassmorphism-accent-purple {
+  color: #667eea !important;
+}

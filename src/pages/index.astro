@@ -126,7 +126,9 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
 </Layout>
 
 <style>
-  /* Cool theme styling for home page - optimized for readability */
+  @import "../style/glassmorphism-theme.css";
+
+  /* Apply glassmorphism theme */
   main {
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
     position: relative;
@@ -149,13 +151,14 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     z-index: -1;
   }
 
-  /* Enhanced Card component styling for better readability */
+  /* Use glassmorphism card base */
   :global(.card) {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
     backdrop-filter: blur(20px) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
     transition: all 0.3s ease !important;
+    animation: fadeInUp 0.6s ease-out;
   }
 
   :global(.card:hover) {
@@ -165,7 +168,7 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.12) 100%) !important;
   }
 
-  /* High contrast text for excellent readability */
+  /* Typography */
   :global(.card h1), :global(.card h2), :global(.card h3), :global(.card h4), :global(.card h5), :global(.card h6) {
     color: rgba(255, 255, 255, 0.98) !important;
     font-weight: 700 !important;
@@ -180,7 +183,11 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     color: rgba(255, 255, 255, 0.8) !important;
   }
 
-  /* Enhanced link styling with better contrast */
+  :global(.card .text-sm) {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  /* Links */
   :global(.card a) {
     color: rgba(255, 255, 255, 0.95) !important;
     transition: all 0.3s ease !important;
@@ -193,7 +200,6 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     text-decoration-color: #78dbff !important;
   }
 
-  /* Special gradient styling for accent links */
   :global(.card .text-red-500) {
     background: linear-gradient(135deg, #78dbff 0%, #667eea 100%) !important;
     background-clip: text !important;
@@ -210,7 +216,7 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     -webkit-text-fill-color: transparent !important;
   }
 
-  /* Button styling with high contrast */
+  /* Buttons */
   :global(.card button), :global(.card .button-like) {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -227,39 +233,7 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     color: white !important;
   }
 
-  /* Special styling for specific components */
-  :global(.intro-card), :global(.contact-card) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
-  }
-
-  /* Globe container enhancement */
-  :global(.card .h-\[250px\]) {
-    background: rgba(0, 0, 0, 0.2) !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  /* Security news and other content cards */
-  :global(.security-news-card), :global(.keywords-card) {
-    background: linear-gradient(135deg, rgba(120, 219, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%) !important;
-  }
-
-  /* Timeline and Now card special styling */
-  :global(.now-card), :global(.timezone-card) {
-    background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%) !important;
-  }
-
-  /* Ensure all text is properly contrasted */
-  :global(.card span), :global(.card div), :global(.card time) {
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-
-  /* Special handling for small text */
-  :global(.card .text-sm) {
-    color: rgba(255, 255, 255, 0.75) !important;
-  }
-
-  /* Icon styling */
+  /* Icons */
   :global(.card svg) {
     color: rgba(255, 255, 255, 0.8) !important;
     transition: all 0.3s ease !important;
@@ -269,11 +243,30 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     color: #78dbff !important;
   }
 
-  /* Animation for cards */
-  :global(.card) {
-    animation: fadeInUp 0.6s ease-out;
+  /* Special components */
+  :global(.intro-card), :global(.contact-card) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
   }
 
+  :global(.card .h-\[250px\]) {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  :global(.security-news-card), :global(.keywords-card) {
+    background: linear-gradient(135deg, rgba(120, 219, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%) !important;
+  }
+
+  :global(.now-card), :global(.timezone-card) {
+    background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%) !important;
+  }
+
+  :global(.card span), :global(.card div), :global(.card time) {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Animation */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -285,7 +278,7 @@ import SecurityNewsCard from '../components/SecurityNewsCard.astro'
     }
   }
 
-  /* Responsive adjustments for readability */
+  /* Responsive */
   @media (max-width: 768px) {
     :global(.card p) {
       font-size: 0.95rem !important;

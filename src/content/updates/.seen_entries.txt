@@ -96,6 +96,13 @@ https://thehackernews.com/2025/09/virustotal-finds-44-undetected-svg.html
 https://thehackernews.com/2025/09/webinar-shadow-ai-agents-multiply-fast.html
 https://thehackernews.com/2025/09/weekly-recap-bootkit-malware-ai-powered.html
 https://thehackernews.com/2025/10/50-battering-ram-attack-breaks-intel.html
+https://thehackernews.com/2025/10/alert-malicious-pypi-package-soopsocks.html
+https://thehackernews.com/2025/10/cisa-flags-meteobridge-cve-2025-4008.html
+https://thehackernews.com/2025/10/confucius-hackers-hit-pakistan-with-new.html
+https://thehackernews.com/2025/10/detour-dog-caught-running-dns-powered.html
+https://thehackernews.com/2025/10/product-walkthrough-how-passwork-7.html
+https://thehackernews.com/2025/10/researchers-warn-of-self-spreading.html
+https://thehackernews.com/2025/10/threatsday-bulletin-carplay-exploit.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -118,6 +125,9 @@ https://www.schneier.com/blog/archives/2025/09/surveying-the-global-spyware-mark
 https://www.schneier.com/blog/archives/2025/09/time-of-check-time-of-use-attacks-against-llms.html
 https://www.schneier.com/blog/archives/2025/09/upcoming-speaking-engagements-48.html
 https://www.schneier.com/blog/archives/2025/09/us-disrupts-massive-cell-phone-array-in-new-york.html
+https://www.schneier.com/blog/archives/2025/10/daniel-miessler-on-the-ai-attack-defense-balance.html
+https://www.schneier.com/blog/archives/2025/10/use-of-generative-ai-in-scams.html
+https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
@@ -132,6 +142,7 @@ https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-securit
 https://www.securityweek.com/chatgpt-deep-research-targeted-in-server-side-data-theft-attack/
 https://www.securityweek.com/chatgpt-tricked-into-solving-captchas/
 https://www.securityweek.com/chrome-140-update-patches-sixth-zero-day-of-2025/
+https://www.securityweek.com/chrome-141-and-firefox-143-patches-fix-high-severity-vulnerabilities/
 https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
@@ -158,6 +169,7 @@ https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
 https://www.securityweek.com/in-other-news-iranian-ships-hacked-verified-android-developers-ai-used-in-attacks/
 https://www.securityweek.com/in-other-news-lockbit-5-0-department-of-war-cybersecurity-framework-oneplus-vulnerability/
+https://www.securityweek.com/in-other-news-pqc-adoption-new-android-spyware-fema-data-breach/
 https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-attacks-gmail-security-claims-debunked/
 https://www.securityweek.com/insight-partners-confirms-data-breach-result-of-ransomware-attack/
 https://www.securityweek.com/interpol-says-260-suspects-in-online-romance-scams-have-been-arrested-in-africa/
@@ -166,8 +178,10 @@ https://www.securityweek.com/israeli-cyber-fund-glilot-capital-raises-500-millio
 https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-cyberattack/
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
+https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
 https://www.securityweek.com/microsoft-patches-86-vulnerabilities/
 https://www.securityweek.com/microsoft-reduces-israels-access-to-cloud-and-ai-products-over-reports-of-mass-surveillance-in-gaza/
+https://www.securityweek.com/mokn-raises-3-million-for-phish-back-solution/
 https://www.securityweek.com/mondoo-raises-17-5-million-for-vulnerability-management-platform/
 https://www.securityweek.com/more-cybersecurity-firms-hit-by-salesforce-salesloft-drift-breach/
 https://www.securityweek.com/nearly-250000-impacted-by-data-breach-at-medical-associates-of-brevard/
@@ -176,6 +190,9 @@ https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurrency-transactions/
 https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-industrial-camera-hacking/
+https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
+https://www.securityweek.com/oracle-says-known-vulnerabilities-possibly-exploited-in-recent-extortion-attacks/
+https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
 https://www.securityweek.com/patch-bypassed-for-supermicro-vulnerability-allowing-bmc-hack/
 https://www.securityweek.com/payment-system-vendor-took-year-to-patch-infinite-card-top-up-hack-security-firm/
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-ransomware-behind-weeks-long-outage/
@@ -186,6 +203,7 @@ https://www.securityweek.com/ransomware-losses-climb-as-ai-pushes-phishing-to-ne
 https://www.securityweek.com/recent-fortra-goanywhere-mft-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
+https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/salesforce-ai-hack-enabled-crm-data-theft/
 https://www.securityweek.com/samsung-patches-zero-day-exploited-against-android-users/
 https://www.securityweek.com/sangoma-patches-critical-zero-day-exploited-to-hack-freepbx-servers/
@@ -202,6 +220,7 @@ https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/
+https://www.securityweek.com/unauthenticated-rce-flaw-patched-in-draytek-routers/
 https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-remote-hacking/
 https://www.securityweek.com/us-cybersecurity-agency-flags-wi-fi-range-extender-vulnerability-under-active-attack/
 https://www.securityweek.com/virtual-event-today-attack-surface-management-summit/

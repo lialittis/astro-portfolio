@@ -51,3 +51,14 @@ confs:
     timezone: UTC-12
     date: February 23 - February 28, 2025
     place: San Diego, California
+  - year: 2026
+    id: ndss26
+    link: https://www.ndss-symposium.org/ndss2026/
+    timeline:
+      - deadline: '2025-04-16 23:59:59'
+        comment: Summer
+      - deadline: '2025-07-09 23:59:59'
+        comment: Fall
+    timezone: UTC-12
+    date: February 23 - February 27, 2026
+    place: San Diego, California

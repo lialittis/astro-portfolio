@@ -119,15 +119,24 @@ const ConfTable = (props: ConfProps) => {
       headerName: "Clock",
       cellRenderer: CountdownCellRenderer,
       cellStyle: params => {
-            if (params.value < '30d') {
-                //mark police cells as red
+            // Parse the remaining time to get days
+            const timeStr = params.value || '0d';
+            const daysMatch = timeStr.match(/(\d+)d/);
+            const days = daysMatch ? parseInt(daysMatch[1]) : 0;
+            
+            if (days === 0) {
+                // Deadline has passed - gray background
+                return {color: 'white', backgroundColor: 'gray'};
+            } else if (days < 30) {
+                // Less than 30 days - red background
                 return {color: 'white', backgroundColor: 'red'};
-            } else if (params.value < '60d') {
-              return {color: 'white', backgroundColor: 'orange'};
+            } else if (days < 60) {
+                // 30-60 days - orange background
+                return {color: 'white', backgroundColor: 'orange'};
             } else {
-              return {color: 'white', backgroundColor: 'green'};
+                // More than 60 days - green background
+                return {color: 'white', backgroundColor: 'green'};
             }
-            return null;
         }
     },
     { field: "latestconf.date", headerName: "Date"},

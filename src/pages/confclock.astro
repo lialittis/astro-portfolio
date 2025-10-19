@@ -37,10 +37,10 @@ interface Conference {
 const loadConferences = (baseDir: string): Conference[] => {
 	const conferenceList: Conference[] = []
 
-	// Read all subdirectories (e.g., DS, SC)
+	// Read all subdirectories (e.g., DS, SC), but exclude Archived
 	const categories = fs
 		.readdirSync(baseDir, { withFileTypes: true })
-		.filter((dirent) => dirent.isDirectory()) // Only directories
+		.filter((dirent) => dirent.isDirectory() && dirent.name !== 'Archived') // Only directories, exclude Archived
 		.map((dirent) => dirent.name)
 
 	console.log(categories)
@@ -78,7 +78,24 @@ const loadConferences = (baseDir: string): Conference[] => {
 						default:
 							break
 					}
-					parsed.deadline = parsed.latestconf.timeline[0].deadline
+					
+					// Find the first deadline that hasn't passed yet
+					const now = new Date()
+					let selectedDeadline = parsed.latestconf.timeline[0].deadline
+					
+					for (const entry of parsed.latestconf.timeline) {
+						const deadlineDate = new Date(entry.deadline)
+						if (deadlineDate >= now) {
+							selectedDeadline = entry.deadline
+							break
+						}
+					}
+					// If all deadlines have passed, use the last one
+					if (!selectedDeadline) {
+						selectedDeadline = parsed.latestconf.timeline[parsed.latestconf.timeline.length - 1].deadline
+					}
+					
+					parsed.deadline = selectedDeadline
 					conferenceList.push(parsed)
 				} else {
 					console.warn(`Warning: Skipping ${file} due to invalid structure`)
@@ -97,7 +114,7 @@ const conferences = loadConferences('./conferences')
 
 <SimpleLayout title='Conferences Clock' description=''>
 	<NavBar />
-	<div id='timeDisplay'>
+	<div id='timeDisplay' class='pt-24 md:pt-28 w-full'>
 		<ConfTable conferences={conferences} client:load />
 	</div>
 </SimpleLayout>

@@ -15,7 +15,7 @@ const { title, body, colSpan, rowSpan, href, colorText } = Astro.props;
 ---
 
 <div
-  class={`card group overflow-hidden transfor-y-[-40%] bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 ${
+  class={`card group overflow-x-hidden overflow-y-auto transfor-y-[-40%] bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 ${
     rowSpan?.includes('auto') ? 'h-auto min-h-fit' : 'h-auto'
   } ${
     colSpan || "md:col-span-2"
@@ -39,3 +39,40 @@ const { title, body, colSpan, rowSpan, href, colorText } = Astro.props;
     )
   }
 </div>
+
+<style>
+  /* Hide scrollbar while keeping scroll functionality */
+  .card {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+  }
+
+  /* Chrome, Safari, and Opera */
+  .card::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Optional: Beautiful custom scrollbar (uncomment to enable instead of hiding) */
+  
+  /* .card::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  .card::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(120, 219, 255, 0.5) 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+  }
+
+  .card::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(120, 219, 255, 0.8) 100%);
+  } */
+ 
+</style>

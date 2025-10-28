@@ -105,6 +105,7 @@ https://thehackernews.com/2025/10/alert-malicious-pypi-package-soopsocks.html
 https://thehackernews.com/2025/10/analysing-clickfix-3-reasons-why.html
 https://thehackernews.com/2025/10/apt36-targets-indian-government-with.html
 https://thehackernews.com/2025/10/architectures-risks-and-adoption-how-to.html
+https://thehackernews.com/2025/10/chatgpt-atlas-browser-can-be-tricked-by.html
 https://thehackernews.com/2025/10/chinese-cybercrime-group-runs-global.html
 https://thehackernews.com/2025/10/cisa-flags-adobe-aem-flaw-with-perfect.html
 https://thehackernews.com/2025/10/cisa-flags-meteobridge-cve-2025-4008.html
@@ -130,12 +131,14 @@ https://thehackernews.com/2025/10/meta-rolls-out-new-tools-to-protect.html
 https://thehackernews.com/2025/10/microsoft-issues-emergency-patch-for.html
 https://thehackernews.com/2025/10/microsoft-revokes-200-fraudulent.html
 https://thehackernews.com/2025/10/microsoft-warns-of-payroll-pirates.html
+https://thehackernews.com/2025/10/new-chatgpt-atlas-browser-exploit-lets.html
 https://thehackernews.com/2025/10/new-oracle-e-business-suite-bug-could.html
 https://thehackernews.com/2025/10/new-sap-netweaver-bug-lets-attackers.html
 https://thehackernews.com/2025/10/oracle-rushes-patch-for-cve-2025-61882.html
 https://thehackernews.com/2025/10/over-100-vs-code-extensions-exposed.html
 https://thehackernews.com/2025/10/polaredge-targets-cisco-asus-qnap.html
 https://thehackernews.com/2025/10/product-walkthrough-how-passwork-7.html
+https://thehackernews.com/2025/10/qilin-ransomware-combines-linux-payload.html
 https://thehackernews.com/2025/10/researchers-uncover-watchguard-vpn-bug.html
 https://thehackernews.com/2025/10/researchers-warn-of-self-spreading.html
 https://thehackernews.com/2025/10/saas-breaches-start-with-tokens-what.html
@@ -143,6 +146,7 @@ https://thehackernews.com/2025/10/scanning-activity-on-palo-alto-networks.html
 https://thehackernews.com/2025/10/secure-ai-at-scale-and-speed-learn.html
 https://thehackernews.com/2025/10/securing-ai-to-benefit-from-ai.html
 https://thehackernews.com/2025/10/self-spreading-glassworm-infects-vs.html
+https://thehackernews.com/2025/10/sidewinder-adopts-new-clickonce-based.html
 https://thehackernews.com/2025/10/smishing-triad-linked-to-194000.html
 https://thehackernews.com/2025/10/stealit-malware-abuses-nodejs-single.html
 https://thehackernews.com/2025/10/step-into-password-graveyard-if-you.html
@@ -155,6 +159,7 @@ https://thehackernews.com/2025/10/two-cvss-100-bugs-in-red-lion-rtus.html
 https://thehackernews.com/2025/10/two-new-windows-zero-days-exploited-in.html
 https://thehackernews.com/2025/10/weekly-recap-f5-breached-linux-rootkits.html
 https://thehackernews.com/2025/10/weekly-recap-oracle-0-day-bitlocker.html
+https://thehackernews.com/2025/10/weekly-recap-wsus-exploited-lockbit-50.html
 https://thehackernews.com/2025/10/why-organizations-are-abandoning-static.html
 https://thehackernews.com/2025/10/zimbra-zero-day-exploited-to-target.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -189,6 +194,7 @@ https://www.schneier.com/blog/archives/2025/10/autonomous-ai-hacking-and-the-fut
 https://www.schneier.com/blog/archives/2025/10/daniel-miessler-on-the-ai-attack-defense-balance.html
 https://www.schneier.com/blog/archives/2025/10/failures-in-face-recognition.html
 https://www.schneier.com/blog/archives/2025/10/flok-license-plate-surveillance.html
+https://www.schneier.com/blog/archives/2025/10/louvre-jewel-heist.html
 https://www.schneier.com/blog/archives/2025/10/rewiring-democracy-is-coming-soon.html
 https://www.schneier.com/blog/archives/2025/10/serious-f5-breach.html
 https://www.schneier.com/blog/archives/2025/10/the-trump-administrations-increased-use-of-social-media-surveillance.html
@@ -213,11 +219,14 @@ https://www.securityweek.com/apple-updates-ios-and-macos-to-prevent-malicious-fo
 https://www.securityweek.com/beer-giant-asahi-says-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
+https://www.securityweek.com/chainguard-raises-280-million-in-growth-funding/
+https://www.securityweek.com/chatgpt-atlas-omnibox-is-vulnerable-to-jailbreaks/
 https://www.securityweek.com/chatgpt-deep-research-targeted-in-server-side-data-theft-attack/
 https://www.securityweek.com/chatgpt-tricked-into-solving-captchas/
 https://www.securityweek.com/chinese-hackers-breached-law-firm-williams-connolly-via-zero-day/
 https://www.securityweek.com/chrome-140-update-patches-sixth-zero-day-of-2025/
 https://www.securityweek.com/chrome-141-and-firefox-143-patches-fix-high-severity-vulnerabilities/
+https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
@@ -305,6 +314,7 @@ https://www.securityweek.com/pwn2own-whatsapp-hacker-says-exploit-privately-repo
 https://www.securityweek.com/pypi-warns-users-of-fresh-phishing-campaign/
 https://www.securityweek.com/ransomware-group-exploits-hybrid-cloud-gaps-gains-full-azure-control-in-enterprise-attacks/
 https://www.securityweek.com/ransomware-losses-climb-as-ai-pushes-phishing-to-new-heights/
+https://www.securityweek.com/ransomware-payments-dropped-in-q3-2025-analysis/
 https://www.securityweek.com/realm-security-raises-15-million-in-series-a-funding/
 https://www.securityweek.com/recent-fortra-goanywhere-mft-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
@@ -345,5 +355,6 @@ https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen
 https://www.securityweek.com/webinar-today-fact-vs-fiction-the-truth-about-api-security/
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
 https://www.securityweek.com/will-ai-spm-become-the-standard-security-layer-for-safe-ai-adoption/
+https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-websites/
 https://www.securityweek.com/zdi-drops-13-unpatched-ivanti-endpoint-manager-vulnerabilities/
 https://www.securityweek.com/zero-trust-is-15-years-old-why-full-adoption-is-worth-the-struggle/

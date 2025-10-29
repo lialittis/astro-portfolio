@@ -8,8 +8,11 @@ if (slug === undefined) {
 }
 
 const posts = (await getCollection("blog")).sort(
-  (blogEntryA, blogEntryB) =>
-    blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
+  (blogEntryA, blogEntryB) => {
+    const pubDateA = blogEntryA.data.pubDate instanceof Date ? blogEntryA.data.pubDate : new Date(0);
+    const pubDateB = blogEntryB.data.pubDate instanceof Date ? blogEntryB.data.pubDate : new Date(0);
+    return pubDateB.getTime() - pubDateA.getTime();
+  }
 );
 
 const entry = posts.find((entry) => entry.slug === slug);

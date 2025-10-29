@@ -1,0 +1,46 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro'
+import NavBar from '../components/NavBar.astro'
+import { getCollection } from 'astro:content'
+
+const title = 'Blog Overview'
+const description = 'Browse all blog posts in a clean, minimal style.'
+
+const allPosts = await getCollection('blog')
+
+const blogPosts = allPosts
+	.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+
+const renderedPosts = await Promise.all(
+	blogPosts.map(async (post) => {
+		const { Content } = await post.render()
+		return {
+			title: post.data.title,
+			date: post.data.date,
+			summary: post.data.summary || '',
+			Content,
+			url: post.slug ? `/blog/${post.slug}` : '#'
+		}
+	})
+)
+---
+
+<SimpleLayout title={title} description={description}>
+	<NavBar />
+	<div class="w-screen min-h-screen bg-white flex flex-col items-center py-16">
+		<h1 class="text-3xl font-bold mb-8 text-gray-900">Blog Overview</h1>
+		<div class="w-full max-w-3xl flex flex-col gap-6 px-4">
+			{renderedPosts.map(({ title, date, summary, url }, idx) => (
+				<a href={url} class="block border-b border-gray-200 py-4 hover:bg-gray-50 transition">
+					<div class="flex flex-col md:flex-row md:items-center justify-between">
+						<div>
+							<h2 class="text-xl font-semibold text-gray-900">{title}</h2>
+							<p class="text-sm text-gray-500 mt-1">{summary}</p>
+						</div>
+						<span class="text-xs text-gray-400 md:ml-4">{date}</span>
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+</SimpleLayout>

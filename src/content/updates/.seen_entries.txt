@@ -13,6 +13,7 @@ https://blog.trailofbits.com/2025/09/18/use-mutation-testing-to-find-the-bugs-yo
 https://blog.trailofbits.com/2025/09/24/supply-chain-attacks-are-exploiting-our-assumptions/
 https://blog.trailofbits.com/2025/10/22/prompt-injection-to-rce-in-ai-agents/
 https://blog.trailofbits.com/2025/10/30/vulnerabilities-in-luks2-disk-encryption-for-confidential-vms/
+https://blog.trailofbits.com/2025/10/31/the-cryptography-behind-electronic-passports/
 https://thehackernews.com/2025/07/ai-driven-trends-in-endpoint-security.html
 https://thehackernews.com/2025/08/abandoned-sogou-zhuyin-update-server.html
 https://thehackernews.com/2025/08/attackers-abuse-velociraptor-forensic.html
@@ -111,6 +112,7 @@ https://thehackernews.com/2025/10/apt36-targets-indian-government-with.html
 https://thehackernews.com/2025/10/architectures-risks-and-adoption-how-to.html
 https://thehackernews.com/2025/10/chatgpt-atlas-browser-can-be-tricked-by.html
 https://thehackernews.com/2025/10/chinese-cybercrime-group-runs-global.html
+https://thehackernews.com/2025/10/cisa-and-nsa-issue-urgent-guidance-to.html
 https://thehackernews.com/2025/10/cisa-flags-adobe-aem-flaw-with-perfect.html
 https://thehackernews.com/2025/10/cisa-flags-meteobridge-cve-2025-4008.html
 https://thehackernews.com/2025/10/cl0p-linked-hackers-breach-dozens-of.html
@@ -119,6 +121,7 @@ https://thehackernews.com/2025/10/confucius-hackers-hit-pakistan-with-new.html
 https://thehackernews.com/2025/10/critical-exploit-lets-hackers-bypass.html
 https://thehackernews.com/2025/10/detour-dog-caught-running-dns-powered.html
 https://thehackernews.com/2025/10/discover-practical-ai-tactics-for-grc.html
+https://thehackernews.com/2025/10/eclipse-foundation-revokes-leaked-open.html
 https://thehackernews.com/2025/10/experts-reports-sharp-increase-in.html
 https://thehackernews.com/2025/10/experts-warn-of-widespread-sonicwall.html
 https://thehackernews.com/2025/10/f5-breach-exposes-big-ip-source-code.html
@@ -138,11 +141,13 @@ https://thehackernews.com/2025/10/meta-rolls-out-new-tools-to-protect.html
 https://thehackernews.com/2025/10/microsoft-issues-emergency-patch-for.html
 https://thehackernews.com/2025/10/microsoft-revokes-200-fraudulent.html
 https://thehackernews.com/2025/10/microsoft-warns-of-payroll-pirates.html
+https://thehackernews.com/2025/10/nation-state-hackers-deploy-new.html
 https://thehackernews.com/2025/10/new-ai-targeted-cloaking-attack-tricks.html
 https://thehackernews.com/2025/10/new-brash-exploit-crashes-chromium.html
 https://thehackernews.com/2025/10/new-chatgpt-atlas-browser-exploit-lets.html
 https://thehackernews.com/2025/10/new-oracle-e-business-suite-bug-could.html
 https://thehackernews.com/2025/10/new-sap-netweaver-bug-lets-attackers.html
+https://thehackernews.com/2025/10/openai-unveils-aardvark-gpt-5-agent.html
 https://thehackernews.com/2025/10/oracle-rushes-patch-for-cve-2025-61882.html
 https://thehackernews.com/2025/10/over-100-vs-code-extensions-exposed.html
 https://thehackernews.com/2025/10/phantomraven-malware-found-in-126-npm.html
@@ -214,6 +219,7 @@ https://www.schneier.com/blog/archives/2025/10/the-ai-designed-bioweapon-arms-ra
 https://www.schneier.com/blog/archives/2025/10/the-trump-administrations-increased-use-of-social-media-surveillance.html
 https://www.schneier.com/blog/archives/2025/10/upcoming-speaking-engagements-49.html
 https://www.schneier.com/blog/archives/2025/10/use-of-generative-ai-in-scams.html
+https://www.schneier.com/blog/archives/2025/10/will-ai-strengthen-or-undermine-democracy.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
@@ -238,10 +244,12 @@ https://www.securityweek.com/chainguard-raises-280-million-in-growth-funding/
 https://www.securityweek.com/chatgpt-atlas-omnibox-is-vulnerable-to-jailbreaks/
 https://www.securityweek.com/chatgpt-deep-research-targeted-in-server-side-data-theft-attack/
 https://www.securityweek.com/chatgpt-tricked-into-solving-captchas/
+https://www.securityweek.com/chinese-apt-exploits-unpatched-windows-flaw-in-recent-attacks/
 https://www.securityweek.com/chinese-hackers-breached-law-firm-williams-connolly-via-zero-day/
 https://www.securityweek.com/chrome-140-update-patches-sixth-zero-day-of-2025/
 https://www.securityweek.com/chrome-141-and-firefox-143-patches-fix-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
+https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
 https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
@@ -295,6 +303,7 @@ https://www.securityweek.com/irregular-raises-80-million-for-ai-security-testing
 https://www.securityweek.com/israeli-cyber-fund-glilot-capital-raises-500-million/
 https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-cyberattack/
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
+https://www.securityweek.com/japan-issues-ot-security-guidance-for-semiconductor-factories/
 https://www.securityweek.com/juniper-networks-patches-critical-junos-space-vulnerabilities/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
@@ -316,6 +325,7 @@ https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-contin
 https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurrency-transactions/
 https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-industrial-camera-hacking/
 https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
+https://www.securityweek.com/open-vsx-downplays-impact-from-glassworm-campaign/
 https://www.securityweek.com/oracle-e-business-suite-zero-day-exploited-in-cl0p-attacks/
 https://www.securityweek.com/oracle-says-known-vulnerabilities-possibly-exploited-in-recent-extortion-attacks/
 https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
@@ -360,6 +370,7 @@ https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/
+https://www.securityweek.com/ukrainian-man-extradited-from-ireland-to-us-over-conti-ransomware-charges/
 https://www.securityweek.com/unauthenticated-rce-flaw-patched-in-draytek-routers/
 https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-remote-hacking/
 https://www.securityweek.com/us-cybersecurity-agency-flags-wi-fi-range-extender-vulnerability-under-active-attack/

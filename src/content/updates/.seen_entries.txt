@@ -180,8 +180,16 @@ https://thehackernews.com/2025/10/weekly-recap-wsus-exploited-lockbit-50.html
 https://thehackernews.com/2025/10/why-organizations-are-abandoning-static.html
 https://thehackernews.com/2025/10/zimbra-zero-day-exploited-to-target.html
 https://thehackernews.com/2025/11/asd-warns-of-ongoing-badcandy-attacks.html
+https://thehackernews.com/2025/11/bitdefender-named-representative-vendor.html
+https://thehackernews.com/2025/11/cisco-warns-of-new-firewall-attack.html
 https://thehackernews.com/2025/11/cybercriminals-exploit-remote.html
+https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html
+https://thehackernews.com/2025/11/hackers-weaponize-windows-hyper-v-to.html
+https://thehackernews.com/2025/11/researchers-find-chatgpt.html
 https://thehackernews.com/2025/11/researchers-uncover-bankbot-ynrk-and.html
+https://thehackernews.com/2025/11/securing-open-android-ecosystem-with.html
+https://thehackernews.com/2025/11/sonicwall-confirms-state-sponsored.html
+https://thehackernews.com/2025/11/threatsday-bulletin-ai-tools-in-malware.html
 https://thehackernews.com/2025/11/weekly-recap-lazarus-hits-web3-intelamd.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
@@ -225,6 +233,9 @@ https://www.schneier.com/blog/archives/2025/10/upcoming-speaking-engagements-49.
 https://www.schneier.com/blog/archives/2025/10/use-of-generative-ai-in-scams.html
 https://www.schneier.com/blog/archives/2025/10/will-ai-strengthen-or-undermine-democracy.html
 https://www.schneier.com/blog/archives/2025/11/ai-summarization-optimization.html
+https://www.schneier.com/blog/archives/2025/11/cybercriminals-targeting-payroll-sites.html
+https://www.schneier.com/blog/archives/2025/11/rigged-poker-games.html
+https://www.schneier.com/blog/archives/2025/11/scientists-need-a-positive-vision-for-ai.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
@@ -242,6 +253,7 @@ https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35
 https://www.securityweek.com/apple-seeks-researchers-for-2026-iphone-security-program/
 https://www.securityweek.com/apple-sends-fresh-wave-of-spyware-notifications-to-french-users/
 https://www.securityweek.com/apple-updates-ios-and-macos-to-prevent-malicious-font-attacks/
+https://www.securityweek.com/automotive-it-firm-hyundai-autoever-discloses-data-breach/
 https://www.securityweek.com/beer-giant-asahi-says-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
@@ -260,6 +272,7 @@ https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
 https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-in-coordinated-campaign/
+https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-center-appliance/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
 https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-at-google-deepmind/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
@@ -270,6 +283,7 @@ https://www.securityweek.com/cyberattack-disrupts-check-in-systems-at-major-euro
 https://www.securityweek.com/cyberattack-on-beer-giant-asahi-disrupts-production/
 https://www.securityweek.com/data-breach-at-doctors-imaging-group-impacts-171000-people/
 https://www.securityweek.com/defakto-raises-30-million-for-non-human-iam-platform/
+https://www.securityweek.com/defi-protocol-balancer-starts-recovering-funds-stolen-in-128-million-heist/
 https://www.securityweek.com/delmia-factory-software-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-data-breach/
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
@@ -279,6 +293,7 @@ https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botne
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
 https://www.securityweek.com/fbi-shares-iocs-for-recent-salesforce-intrusion-campaigns/
 https://www.securityweek.com/firecompass-raises-20-million-for-offensive-security-platform/
+https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
 https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-chain-attacks/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
@@ -315,6 +330,7 @@ https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until
 https://www.securityweek.com/japan-issues-ot-security-guidance-for-semiconductor-factories/
 https://www.securityweek.com/juniper-networks-patches-critical-junos-space-vulnerabilities/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
+https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-collect-data-google-warns/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
 https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-block-ntlm-hash-leaks/
@@ -330,6 +346,7 @@ https://www.securityweek.com/myanmar-military-shuts-down-major-cybercrime-center
 https://www.securityweek.com/nearly-250000-impacted-by-data-breach-at-medical-associates-of-brevard/
 https://www.securityweek.com/netskope-raises-over-908-million-in-ipo/
 https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-service-disruptions/
+https://www.securityweek.com/nevada-ransomware-attack-started-months-before-it-was-discovered-per-report/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurrency-transactions/
 https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-industrial-camera-hacking/
@@ -356,6 +373,7 @@ https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attac
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
+https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
 https://www.securityweek.com/rondodox-botnet-takes-exploit-shotgun-approach/
 https://www.securityweek.com/salesforce-ai-hack-enabled-crm-data-theft/
 https://www.securityweek.com/samsung-patches-zero-day-exploited-against-android-users/
@@ -369,6 +387,7 @@ https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-co
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
 https://www.securityweek.com/sophisticated-malware-deployed-in-oracle-ebs-zero-day-attacks/
 https://www.securityweek.com/spektrum-labs-emerges-from-stealth-to-help-companies-prove-resilience/
+https://www.securityweek.com/state-sponsored-hackers-stole-sonicwall-cloud-backups-in-recent-attack/
 https://www.securityweek.com/supply-chain-attack-targets-vs-code-extensions-with-glassworm-malware/
 https://www.securityweek.com/terra-security-raises-30-million-for-ai-penetration-testing-platform/
 https://www.securityweek.com/threat-actor-connected-to-play-ransomhub-and-dragonforce-ransomware-operations/
@@ -376,6 +395,7 @@ https://www.securityweek.com/tidal-cyber-raises-10-million-for-cti-and-adversary
 https://www.securityweek.com/tiffany-data-breach-impacts-thousands-of-customers/
 https://www.securityweek.com/toys-r-us-canada-customer-information-leaked-online/
 https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
+https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scanning-engine/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/

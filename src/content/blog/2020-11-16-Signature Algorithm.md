@@ -37,8 +37,6 @@ categories:
 
 ### Properties
 
-![signature & verification]()
-
 Choosing a system:
 
 * signing must be easy for the legitimate user (trapdoor)【合法用户】 and impossible for anybody else;

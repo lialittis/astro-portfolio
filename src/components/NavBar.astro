@@ -246,6 +246,120 @@
     visibility: hidden;
     transform: translateY(-10px);
   }
+
+  /* Hacker Mode Styles */
+  :global(body[data-style="hacker"]) .navbar-cool {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: none;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    background: rgba(0, 20, 0, 0.9);
+    border: 1px solid #00ff41;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  }
+
+  :global(body[data-style="hacker"]) .navbar-cool:hover {
+    background: rgba(0, 30, 0, 0.95);
+    border-color: #00ff41;
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.5);
+  }
+
+  :global(body[data-style="hacker"]) .navbar-brand {
+    margin-bottom: 2rem;
+  }
+
+  :global(body[data-style="hacker"]) .brand-text {
+    color: #00ff41;
+    background: none;
+    -webkit-text-fill-color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  }
+
+  :global(body[data-style="hacker"]) .navbar-desktop {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    display: flex;
+  }
+
+  :global(body[data-style="hacker"]) .nav-link {
+    color: #00ff41;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 120px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  :global(body[data-style="hacker"]) .nav-link::before {
+    background: rgba(0, 255, 65, 0.1);
+    border-radius: 5px;
+  }
+
+  :global(body[data-style="hacker"]) .nav-link:hover {
+    color: #ffffff;
+    background: rgba(0, 255, 65, 0.2);
+    border-color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  }
+
+  :global(body[data-style="hacker"]) .mobile-menu-btn {
+    background: rgba(0, 20, 0, 0.9);
+    border: 1px solid #00ff41;
+    border-radius: 5px;
+  }
+
+  :global(body[data-style="hacker"]) .hamburger-line {
+    background: #00ff41;
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  :global(body[data-style="hacker"]) .mobile-dropdown {
+    background: rgba(0, 20, 0, 0.95);
+    border: 1px solid #00ff41;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  }
+
+  :global(body[data-style="hacker"]) .mobile-nav-link {
+    color: #00ff41;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  }
+
+  :global(body[data-style="hacker"]) .mobile-nav-link:hover {
+    color: #ffffff;
+    background: rgba(0, 255, 65, 0.2);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+  }
+
+  @media (max-width: 1023px) {
+    :global(body[data-style="hacker"]) .navbar-cool {
+      top: 20px;
+      left: 10px;
+      transform: none;
+      flex-direction: row;
+      padding: 0.75rem 1rem;
+    }
+
+    :global(body[data-style="hacker"]) .navbar-brand {
+      margin-bottom: 0;
+    }
+
+    :global(body[data-style="hacker"]) .navbar-desktop {
+      display: none;
+    }
+  }
 </style>
 
 <script>

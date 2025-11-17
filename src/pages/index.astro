@@ -20,20 +20,6 @@ const ActiveLayout = Layout;
 	// Apply style on load
 	const style = localStorage.getItem('style') || 'modern';
 	document.body.setAttribute('data-style', style);
-	
-	// Toggle layout visibility
-	window.addEventListener('DOMContentLoaded', () => {
-		const hackerLayout = document.querySelector('.hacker-layout');
-		const modernLayout = document.querySelector('.modern-layout');
-		
-		if (style === 'hacker') {
-			hackerLayout?.classList.remove('hidden');
-			modernLayout?.classList.add('hidden');
-		} else {
-			hackerLayout?.classList.add('hidden');
-			modernLayout?.classList.remove('hidden');
-		}
-	});
 </script>
 
 <script>
@@ -90,142 +76,197 @@ const ActiveLayout = Layout;
   </div> -->
 	<main
 		class='text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:auto-rows-auto'
+		id="main-content"
 	>
-		<!-- Hacker Mode Layout -->
-		<div class="hacker-layout">
-			<div class="terminal-header">
-				<div class="terminal-controls">
-					<span class="dot red"></span>
-					<span class="dot yellow"></span>
-					<span class="dot green"></span>
-				</div>
-				<div class="terminal-title">root@tianchi:~$</div>
+		<!-- Terminal Header (Hacker Mode Only) -->
+		<div class="terminal-header">
+			<div class="terminal-controls">
+				<span class="dot red"></span>
+				<span class="dot yellow"></span>
+				<span class="dot green"></span>
 			</div>
-			
-			<div class="terminal-content">
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">whoami</span>
-				</div>
-				<div class="hacker-intro">
-					<IntroCard />
-				</div>
-
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">cat skills.txt</span>
-				</div>
-				<div class="hacker-section">
-					<KeyWords />
-				</div>
-
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">ls -la ./content</span>
-				</div>
-				<div class="hacker-grid">
-					<Card
-						colSpan='md:col-span-1'
-						rowSpan='md:row-span-1'
-						title='Blog'
-						href='/blog'
-					>
-						<p>More Coming...</p>
-					</Card>
-					<SecurityNewsCard />
-				</div>
-
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">./show_map.sh</span>
-				</div>
-				<div class="hacker-section">
-					<Card
-						colSpan='md:col-span-1'
-						rowSpan='md:row-span-1'
-						title='Countries I visited'
-						href='travel'
-					>
-						<div class='h-[250px] w-full relative flex items-center justify-center'>
-							<Globe client:load />
-						</div>
-					</Card>
-				</div>
-
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">cat contact.json</span>
-				</div>
-				<div class="hacker-grid">
-					<ContactsCard />
-					<Now />
-					<TimeZone />
-				</div>
+			<div class="terminal-title">root@tianchi:~$</div>
+		</div>
+		
+		<!-- Terminal Content Wrapper (Hacker Mode Only) -->
+		<div class="terminal-content">
+			<!-- Command Line: whoami -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">whoami</span>
 			</div>
 		</div>
+		
+		<IntroCard />
 
-		<!-- Modern Mode Layout -->
-		<div class="modern-layout hidden">
-			<IntroCard />
-			<KeyWords />
-			<ContactsCard />
-
-			<Card
-				colSpan='md:col-span-1'
-				rowSpan='md:row-span-2'
-				title='Blog'
-				href='/blog'
-			>
-				<p>More Coming...</p>
-			</Card>
-			<SecurityNewsCard />
-			<Card
-				colSpan='md:col-span-1'
-				rowSpan='md:row-span-2'
-				title='Countries I visited'
-				href='travel'
-			>
-				<div class='h-[250px] w-full relative flex items-center justify-center'>
-					<Globe client:load />
-				</div>
-			</Card>
-			<Now />
-			<TimeZone />
+		<div class="terminal-content">
+			<!-- Command Line: cat skills.txt -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">cat skills.txt</span>
+			</div>
 		</div>
+		
+		<KeyWords />
+
+		<div class="terminal-content">
+			<!-- Command Line: cat contact.json -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">cat contact.json</span>
+			</div>
+		</div>
+		
+		<ContactsCard />
+
+		<div class="terminal-content">
+			<!-- Command Line: ls -la ./content -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">ls -la ./content</span>
+			</div>
+		</div>
+		
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Blog'
+			href='/blog'
+		>
+			<p>More Coming...</p>
+		</Card>
+		<SecurityNewsCard />
+
+		<div class="terminal-content">
+			<!-- Command Line: ./show_map.sh -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">./show_map.sh</span>
+			</div>
+		</div>
+		
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Countries I visited'
+			href='travel'
+		>
+			<div class='h-[250px] w-full relative flex items-center justify-center'>
+				<Globe client:load />
+			</div>
+		</Card>
+
+		<div class="terminal-content">
+			<!-- Command Line: tail -f status.log -->
+			<div class="cmd-line">
+				<span class="prompt">$</span> <span class="cmd">tail -f status.log</span>
+			</div>
+		</div>
+		
+		<Now />
+		<TimeZone />
 	</main>
 </ActiveLayout>
 
 <style>
   @import "../style/glassmorphism-theme.css";
 
-  /* Hacker Layout Styles */
-  .hacker-layout {
-    grid-column: 1 / -1;
+  /* ============================================
+     MODERN MODE (Default)
+     ============================================ */
+  
+  /* Modern mode: standard grid layout */
+  main {
+    display: grid !important;
+  }
+
+  /* Hide terminal elements in modern mode */
+  .terminal-header,
+  .terminal-content {
+    display: none;
+  }
+
+  /* ============================================
+     HACKER MODE
+     ============================================ */
+  
+  /* Hacker mode: single column layout with proper structure */
+  :global(body[data-style="hacker"]) main {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 1200px !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    background: transparent !important;
+    grid-template-columns: unset !important;
+  }
+
+  /* Terminal wrapper */
+  :global(body[data-style="hacker"]) .terminal-header {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .modern-layout {
-    display: contents;
-  }
-
-  .modern-layout.hidden {
-    display: none;
-  }
-
-  .hacker-layout.hidden {
-    display: none;
-  }
-
-  /* Terminal Window */
-  .terminal-header {
     background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
     border: 1px solid rgba(0, 255, 65, 0.3);
     border-bottom: none;
     padding: 12px 16px;
-    display: flex;
     align-items: center;
     gap: 12px;
     border-radius: 8px 8px 0 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Terminal content area wrapper */
+  :global(body[data-style="hacker"]) .terminal-header ~ * {
+    background: #000000;
+    border-left: 1px solid rgba(0, 255, 65, 0.3);
+    border-right: 1px solid rgba(0, 255, 65, 0.3);
+  }
+
+  /* Last element gets bottom border and radius */
+  :global(body[data-style="hacker"]) main > *:last-child {
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    padding-bottom: 32px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Terminal command lines */
+  :global(body[data-style="hacker"]) .terminal-content {
+    display: block;
+    padding: 0 24px;
+    background: #000000;
+  }
+
+  :global(body[data-style="hacker"]) .cmd-line {
+    display: flex;
+    font-family: 'SF Mono', 'Monaco', monospace;
+    font-size: 14px;
+    color: rgba(0, 255, 65, 0.9);
+    margin-top: 20px;
+    margin-bottom: 12px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* First command line after header */
+  :global(body[data-style="hacker"]) .terminal-header + .terminal-content .cmd-line {
+    margin-top: 24px;
+  }
+
+  /* Cards in hacker mode - indented with border */
+  :global(body[data-style="hacker"]) main > :not(.terminal-header):not(.terminal-content) {
+    margin: 0 0 20px 0;
+    padding: 0 32px 0 48px;
+    border-left: 2px solid rgba(0, 255, 65, 0.2);
+    margin-left: 46px;
+    background: #000000 !important;
+  }
+  
+  /* Add top margin for first card */
+  :global(body[data-style="hacker"]) .terminal-header + .terminal-content + * {
+    margin-top: 8px;
+  }
+
+  /* Terminal Window - base styles for hacker mode */
+  .terminal-header {
+    /* Display and styling handled by hacker mode rules */
   }
 
   .terminal-controls {
@@ -252,26 +293,11 @@ const ActiveLayout = Layout;
   }
 
   .terminal-content {
-    background: #000000;
-    border: 1px solid rgba(0, 255, 65, 0.3);
-    border-top: 1px solid rgba(0, 255, 65, 0.1);
-    padding: 24px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    /* Styling handled by hacker mode rules */
   }
 
   .cmd-line {
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 14px;
-    color: rgba(0, 255, 65, 0.9);
-    margin-top: 16px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    /* Styling handled by hacker mode rules */
   }
 
   .cmd-line .prompt {
@@ -289,69 +315,42 @@ const ActiveLayout = Layout;
     to { opacity: 1; }
   }
 
-  .hacker-intro,
-  .hacker-section {
-    margin-left: 20px;
-    border-left: 2px solid rgba(0, 255, 65, 0.2);
-    padding-left: 16px;
-  }
 
-  .hacker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin-left: 20px;
-    border-left: 2px solid rgba(0, 255, 65, 0.2);
-    padding-left: 16px;
-  }
 
-  /* Hacker theme - Professional & Elegant */
-  :global(body[data-style="hacker"]) main {
-    background: #000000 !important;
-    padding: 32px 16px !important;
-  }
-
-  :global(body[data-style="hacker"]) main::before {
+  /* Hacker theme - Additional subtle effects */
+  :global(body[data-style="hacker"]) main::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: 
-      radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(0, 200, 83, 0.02) 0%, transparent 50%),
-      repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 65, 0.01) 1px, transparent 2px, transparent 3px);
-    animation: scanline 15s linear infinite;
+      radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(0, 200, 83, 0.01) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -2;
   }
 
   :global(body[data-style="hacker"]) .card {
-    background: rgba(0, 20, 8, 0.6) !important;
-    border: 1px solid rgba(0, 255, 65, 0.25) !important;
-    border-left: 2px solid rgba(0, 255, 65, 0.5) !important;
-    box-shadow: 
-      0 2px 12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(0, 255, 65, 0.08),
-      0 0 20px rgba(0, 255, 65, 0.03) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
     position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-  }
-
-  :global(body[data-style="hacker"]) .card::before {
-    content: '> ';
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    color: rgba(0, 255, 65, 0.4);
-    font-family: 'SF Mono', monospace;
-    font-size: 14px;
-    font-weight: bold;
+    backdrop-filter: none !important;
+    padding: 16px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   :global(body[data-style="hacker"]) .card:hover {
-    border-color: rgba(0, 255, 65, 0.4) !important;
-    border-left-color: #00ff41 !important;
-    box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(0, 255, 65, 0.15),
-      0 0 30px rgba(0, 255, 65, 0.08) !important;
-    transform: translateX(4px) !important;
+    background: rgba(0, 255, 65, 0.03) !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    border-radius: 4px !important;
   }
 
   :global(body[data-style="hacker"]) .card h1,
@@ -359,9 +358,10 @@ const ActiveLayout = Layout;
   :global(body[data-style="hacker"]) .card h3 {
     color: #00ff41 !important;
     font-family: 'SF Mono', 'Monaco', monospace !important;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.25) !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
   }
 
   :global(body[data-style="hacker"]) .card h4,
@@ -369,18 +369,29 @@ const ActiveLayout = Layout;
   :global(body[data-style="hacker"]) .card h6 {
     color: #00d639 !important;
     font-family: 'SF Mono', 'Monaco', monospace !important;
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.2) !important;
+    text-shadow: 0 0 6px rgba(0, 255, 65, 0.2) !important;
     font-weight: 500 !important;
+    margin-bottom: 10px !important;
   }
 
   :global(body[data-style="hacker"]) .card p,
   :global(body[data-style="hacker"]) .card span,
   :global(body[data-style="hacker"]) .card div {
-    color: rgba(0, 255, 65, 0.85) !important;
+    color: rgba(0, 255, 65, 0.88) !important;
     font-family: 'SF Mono', 'Monaco', monospace !important;
     font-size: 0.95em !important;
-    line-height: 1.7 !important;
+    line-height: 1.8 !important;
     letter-spacing: 0.3px !important;
+  }
+  
+  :global(body[data-style="hacker"]) .card ul,
+  :global(body[data-style="hacker"]) .card ol {
+    margin: 8px 0 !important;
+  }
+  
+  :global(body[data-style="hacker"]) .card li {
+    margin-bottom: 4px !important;
+    color: rgba(0, 255, 65, 0.88) !important;
   }
 
   :global(body[data-style="hacker"]) .card a {
@@ -441,22 +452,46 @@ const ActiveLayout = Layout;
 
   /* Responsive for hacker layout */
   @media (max-width: 768px) {
-    .terminal-content {
-      padding: 16px;
+    :global(body[data-style="hacker"]) main {
+      max-width: 100% !important;
     }
 
-    .hacker-grid {
-      grid-template-columns: 1fr;
-      margin-left: 12px;
-      padding-left: 12px;
+    :global(body[data-style="hacker"]) .terminal-header {
+      padding: 10px 12px;
+      border-radius: 6px 6px 0 0;
     }
 
-    .cmd-line {
+    :global(body[data-style="hacker"]) .terminal-content {
+      padding: 0 16px;
+    }
+
+    :global(body[data-style="hacker"]) main > :not(.terminal-header):not(.terminal-content) {
+      margin: 0 0 16px 0;
+      padding: 0 20px 0 32px;
+      margin-left: 30px;
+    }
+
+    :global(body[data-style="hacker"]) .card {
+      padding: 12px 0 !important;
+    }
+
+    :global(body[data-style="hacker"]) .cmd-line {
       font-size: 12px;
+      margin-top: 16px;
+      margin-bottom: 10px;
     }
 
-    .terminal-title {
+    :global(body[data-style="hacker"]) .terminal-header + .terminal-content .cmd-line {
+      margin-top: 16px;
+    }
+
+    :global(body[data-style="hacker"]) .terminal-title {
       font-size: 11px;
+    }
+
+    :global(body[data-style="hacker"]) main > *:last-child {
+      padding-bottom: 24px !important;
+      border-radius: 0 0 6px 6px;
     }
   }
 

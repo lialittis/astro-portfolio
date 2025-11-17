@@ -1,0 +1,65 @@
+---
+---
+
+<button id="style-switcher" class="style-switcher-btn">
+  <span id="switcher-text">HACKER MODE</span>
+</button>
+
+<script>
+  const btn = document.getElementById('style-switcher');
+  const text = document.getElementById('switcher-text');
+  const currentStyle = localStorage.getItem('style') || 'modern';
+  
+  if (currentStyle === 'hacker') {
+    text!.textContent = 'MODERN MODE';
+  }
+  
+  btn?.addEventListener('click', () => {
+    const style = localStorage.getItem('style') || 'modern';
+    const newStyle = style === 'modern' ? 'hacker' : 'modern';
+    localStorage.setItem('style', newStyle);
+    window.location.reload();
+  });
+</script>
+
+<style>
+  .style-switcher-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  .style-switcher-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(body[data-style="hacker"]) .style-switcher-btn {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    color: #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  }
+
+  :global(body[data-style="hacker"]) .style-switcher-btn:hover {
+    background: rgba(0, 255, 65, 0.2);
+    border-color: #00ff41;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  }
+</style>

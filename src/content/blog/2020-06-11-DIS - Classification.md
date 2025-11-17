@@ -78,11 +78,11 @@ The model is applied to data with unknown labels: **prediction**
 
 ### Example of Classification
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/example_classification.png)
+![](../../../public/assets/img/example_classification.png)
 
 #### Model test and Usage
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/model_test.png)
+![](../../../public/assets/img/model_test.png)
 
 ## Problem formulation
 
@@ -169,7 +169,7 @@ Three conditions can occur such that no further partitions can be performed:
 ### Example
 
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/example_decision_tree.png)
+![](../../../public/assets/img/example_decision_tree.png)
 
 Based on this approach for attribute selection, we can now illustrate the induction of the decision tree. In a first step, age is chosen for a split. The partition 31..40 contains after the split only instances from one class, the positive class, thus for this branch of the tree the induction terminates.
 
@@ -199,7 +199,7 @@ If P = N, then H(P,N) = 1 -> maximal uncertainty
 
 #### Example
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/example_attribute_selection.png)
+![](../../../public/assets/img/example_attribute_selection.png)
 
 We illustrate the attribute selection process now for our running example. Initially the data contains P = 9 positive instances and N = 5 negative instances. This results in an entropy of 0.94, i.e. 0.94 bits are required to decide the class of one instance. We compute next the entropies of all partitions that result from splitting all attributes. For example, if we split for Age, we obtain 3 partitions, each with a different distribution of positive and negative instances; and thus with different entropies.
 
@@ -338,7 +338,7 @@ Updating attribute tables
 
 ### Example
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/example_continuous_splits.png)
+![](../../../public/assets/img/example_continuous_splits.png)
 
 In this example we demonstrate of how attribute tables are split, when a decision node is introduced in the decision tree. Since the split is based on attribute Age, the table for Age can simply be split into two subtables at the threshold value. For the Car Type table we use the temporary hash table indicating partition membership to separate it into two subtables.
 
@@ -462,7 +462,7 @@ Typical parameters
 
 #### Illustration of Random Forests
 
-![](https://raw.githubusercontent.com/lialittis/lialittis.github.io/master/assets/img/illustration_random_forests.png)
+![](../../../public/assets/img/illustration_random_forests.png)
 
 Random forests allow to learn much more complex functions than basic decision trees. This fact is illustrated in this visualization. For the same training data set different numbers of decision trees are constructed (rCART is a variant of decision trees). We observe that with increasing numbers of trees the decision boundaries become increasingly more complex and smoother, and thus a better separation among different classes can be achieved.
 

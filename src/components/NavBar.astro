@@ -576,6 +576,13 @@
 					xOffset = x
 					yOffset = y
 					setPosition(x, y)
+				} else {
+					// Default to left-middle position
+					const defaultX = 20
+					const defaultY = (window.innerHeight - navbar.offsetHeight) / 2
+					xOffset = defaultX
+					yOffset = defaultY
+					setPosition(defaultX, defaultY)
 				}
 			}
 		}

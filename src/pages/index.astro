@@ -16,7 +16,6 @@ import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
 import CommandLine from '../components/Terminal/CommandLine.astro'
 
-const ActiveLayout = Layout;
 ---
 
 <script>
@@ -64,7 +63,7 @@ const ActiveLayout = Layout;
 
 <StyleSwitcher />
 
-<ActiveLayout
+<Layout
 	title='Tianchi YU(于天池) - Developer & Hacker'
 	description='Security Researcher & Life Hacker'
 >
@@ -176,7 +175,7 @@ const ActiveLayout = Layout;
 		<Now />
 		<TimeZone />
 	</main>
-</ActiveLayout>
+</Layout>
 
 <style>
   @import "../style/glassmorphism-theme.css";

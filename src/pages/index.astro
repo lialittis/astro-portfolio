@@ -25,32 +25,19 @@ const ActiveLayout = Layout;
 	document.body.setAttribute('data-style', style);
 	
 	// Toggle layout visibility immediately to prevent flash
+	const hackerContainer = document.querySelector('.hacker-container');
 	const hackerLayout = document.querySelector('.hacker-layout');
 	const modernLayout = document.querySelector('.modern-layout');
 	
 	if (style === 'hacker') {
+		hackerContainer?.setAttribute('style', 'display: block !important;');
 		hackerLayout?.classList.remove('hidden');
 		modernLayout?.classList.add('hidden');
 	} else {
+		hackerContainer?.setAttribute('style', 'display: none !important;');
 		hackerLayout?.classList.add('hidden');
 		modernLayout?.classList.remove('hidden');
 	}
-	
-	// Also listen for style changes from StyleSwitcher
-	window.addEventListener('storage', (e) => {
-		if (e.key === 'style') {
-			const newStyle = e.newValue || 'modern';
-			document.body.setAttribute('data-style', newStyle);
-			
-			if (newStyle === 'hacker') {
-				hackerLayout?.classList.remove('hidden');
-				modernLayout?.classList.add('hidden');
-			} else {
-				hackerLayout?.classList.add('hidden');
-				modernLayout?.classList.remove('hidden');
-			}
-		}
-	});
 </script>
 
 <script>
@@ -105,10 +92,9 @@ const ActiveLayout = Layout;
       </button>
     </div>
   </div> -->
-	<main
-		class='text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:auto-rows-auto'
-	>
-		<!-- Hacker Mode Layout -->
+	
+	<!-- Hacker Mode Layout -->
+	<div class="hacker-container">
 		<TerminalWrapper class="hacker-layout hidden">
 			<TerminalHeader title="root@tianchi:~$" />
 			
@@ -158,52 +144,71 @@ const ActiveLayout = Layout;
 				</div>
 			</div>
 		</TerminalWrapper>
+	</div>
 
-		<!-- Modern Mode Layout -->
-		<div class="modern-layout hidden">
-			<IntroCard />
-			<KeyWords />
-			<ContactsCard />
+	<!-- Modern Mode Layout -->
+	<main
+		class='modern-layout hidden text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:auto-rows-auto'
+	>
+		<IntroCard />
+		<KeyWords />
+		<ContactsCard />
 
-			<Card
-				colSpan='md:col-span-1'
-				rowSpan='md:row-span-2'
-				title='Blog'
-				href='/blog'
-			>
-				<p>More Coming...</p>
-			</Card>
-			<SecurityNewsCard />
-			<Card
-				colSpan='md:col-span-1'
-				rowSpan='md:row-span-2'
-				title='Countries I visited'
-				href='travel'
-			>
-				<div class='h-[250px] w-full relative flex items-center justify-center'>
-					<Globe client:load />
-				</div>
-			</Card>
-			<Now />
-			<TimeZone />
-		</div>
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Blog'
+			href='/blog'
+		>
+			<p>More Coming...</p>
+		</Card>
+		<SecurityNewsCard />
+		<Card
+			colSpan='md:col-span-1'
+			rowSpan='md:row-span-2'
+			title='Countries I visited'
+			href='travel'
+		>
+			<div class='h-[250px] w-full relative flex items-center justify-center'>
+				<Globe client:load />
+			</div>
+		</Card>
+		<Now />
+		<TimeZone />
 	</main>
 </ActiveLayout>
 
 <style>
   @import "../style/glassmorphism-theme.css";
+  @import "../style/hacker-theme.css";
+
+  /* Hacker Container */
+  .hacker-container {
+    display: none;
+    min-height: 100vh;
+    padding: 2rem;
+    padding-top: 6rem; /* Space for navbar */
+  }
+
+  body[data-style="hacker"] .hacker-container {
+    display: block !important;
+  }
+
+  body[data-style="modern"] .hacker-container {
+    display: none !important;
+  }
 
   /* Modern Layout */
   .modern-layout {
-    display: contents;
+    display: grid;
   }
 
   .modern-layout.hidden {
-    display: none;
+    display: none !important;
   }
 
   /* Modern glassmorphism theme */
-  main {
+  .modern-layout {
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
     position: relative;
     z-index: 10;

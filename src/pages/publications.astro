@@ -1,16 +1,33 @@
 ---
 import FrameLayout from "../layouts/FrameLayout.astro";
 import StackedCards from "../components/StackedCards";
+import StyleSwitcher from "../components/StyleSwitcher.astro";
+import TerminalWrapper from "../components/Terminal/TerminalWrapper.astro";
+import TerminalHeader from "../components/Terminal/TerminalHeader.astro";
+import CommandLine from "../components/Terminal/CommandLine.astro";
 const title = "Publications";
+
+// Publication data
+const publications = [
+  {
+    id: 1,
+    type: "publication",
+    title: "Security for Distributed Machine Learning",
+    authors: "Laurent Gomez.,",
+    myName: "Tianchi Yu.",
+    conference: "20th International Conference on Security and Cryptography - SECRYPT",
+    abstract: "With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.",
+    url: "https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
+  }
+];
 ---
 
+<StyleSwitcher />
+
 <FrameLayout title={title} description="Publications">
-  <!-- <div
-    slot="loader"
-    class="loader star-clip-path bg-secondary-900 text-neutral-50 text-3xl font-black text-white uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0 w-screen h-screen"
-  >
-  </div> -->
-  <div class="w-screen h-screen sticky top-0 dotted-bg">
+  <!-- Modern Layout -->
+  <div class="modern-container">
+    <div class="w-screen h-screen sticky top-0 dotted-bg">
     <div
       class="h-body-with-navbar w-full flex flex-col justify-center items-center gap-10"
     >
@@ -34,40 +51,262 @@ const title = "Publications";
     </div>
   </div>
   
-  <StackedCards 
-    client:load
-    cards={[
-      {
-        id: 1,
-        type: "publication",
-        title: "0. Security for Distributed Machine Learning",
-        width: "calc(100vw - 10rem)",
-        authors: "Laurent Gomez.,",
-        myName: "Tianchi Yu.",
-        conference: "20th International Conference on Security and Cryptography - SECRYPT",
-        abstract: "With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.",
-        url: "https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
-      },
-      {
-        id: 2,
-        type: "coming-soon",
-        title: "More Coming...",
-        width: "calc(100vw - 8rem)",
-        message: "🚀 Exciting research projects in progress! Stay tuned for upcoming publications in system security, hardware protection, and trusted computing."
-      },
-      {
-        id: 3,
-        type: "coming-soon",
-        title: "Future Works...",
-        width: "calc(100vw - 6rem)",
-        message: "🔬 Research pipeline includes TEE-based secure computing, hardware-software co-design, and next-generation cryptographic protocols."
-      }
-    ]}
-  />
+    <StackedCards 
+      client:load
+      cards={[
+        {
+          id: 1,
+          type: "publication",
+          title: "0. Security for Distributed Machine Learning",
+          width: "calc(100vw - 10rem)",
+          authors: "Laurent Gomez.,",
+          myName: "Tianchi Yu.",
+          conference: "20th International Conference on Security and Cryptography - SECRYPT",
+          abstract: "With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.",
+          url: "https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
+        },
+        {
+          id: 2,
+          type: "coming-soon",
+          title: "More Coming...",
+          width: "calc(100vw - 8rem)",
+          message: "🚀 Exciting research projects in progress! Stay tuned for upcoming publications in system security, hardware protection, and trusted computing."
+        },
+        {
+          id: 3,
+          type: "coming-soon",
+          title: "Future Works...",
+          width: "calc(100vw - 6rem)",
+          message: "🔬 Research pipeline includes TEE-based secure computing, hardware-software co-design, and next-generation cryptographic protocols."
+        }
+      ]}
+    />
+  </div>
+
+  <!-- Hacker Layout -->
+  <div class="hacker-container hidden">
+    <TerminalWrapper>
+      <TerminalHeader title="~/publications" />
+      <div class="terminal-content">
+        <CommandLine command="ls -la ~/research/publications" />
+        
+        <div class="file-listing">
+          <div class="file-listing-line" style="color: rgba(0, 255, 65, 0.7);">
+            total {publications.length}
+          </div>
+          {publications.map((pub, index) => (
+            <div class="file-listing-line">
+              <span style="color: rgba(0, 255, 65, 0.5);">-rw-r--r--</span>
+              <span style="color: rgba(0, 255, 65, 0.5); margin: 0 0.5rem;">1</span>
+              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 0.5rem;">tianchi</span>
+              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">staff</span>
+              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">2023</span>
+              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">Jul 25</span>
+              <span style="color: #00ff41; font-weight: 600;">{pub.title}.pdf</span>
+            </div>
+          ))}
+          <div class="file-listing-line">
+            <span style="color: rgba(0, 255, 65, 0.5);">drwxr-xr-x</span>
+            <span style="color: rgba(0, 255, 65, 0.5); margin: 0 0.5rem;">2</span>
+            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 0.5rem;">tianchi</span>
+            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">staff</span>
+            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">4096</span>
+            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">Nov 18 2025</span>
+            <span style="color: #00d9ff; font-weight: 600;">in_progress/</span>
+          </div>
+        </div>
+
+        {publications.map((pub, index) => (
+          <div class="publication-section">
+            <CommandLine command={`cat ${pub.title}.pdf`} />
+            <div class="terminal-publication">
+              <h2 class="pub-title">[{index}] {pub.title}</h2>
+              
+              <div class="pub-meta">
+                <div class="meta-line">
+                  <span class="meta-label">AUTHORS:</span>
+                  <span class="meta-value">{pub.authors} <span class="highlight-name">{pub.myName}</span></span>
+                </div>
+                <div class="meta-line">
+                  <span class="meta-label">CONFERENCE:</span>
+                  <span class="meta-value">{pub.conference}</span>
+                </div>
+              </div>
+
+              <div class="pub-abstract">
+                <div class="abstract-header">ABSTRACT:</div>
+                <p class="abstract-text">{pub.abstract}</p>
+              </div>
+
+              <a href={pub.url} target="_blank" rel="noopener noreferrer" class="terminal-link-btn">
+                <span>→ View Publication</span>
+              </a>
+            </div>
+          </div>
+        ))}
+
+        <div class="publication-section">
+          <CommandLine command="cat in_progress/status.txt" />
+          <div class="terminal-publication coming-soon-terminal">
+            <div class="coming-soon-content">
+              <h3 style="color: #00d9ff; font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
+              <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">
+                Stay tuned for upcoming publications in:<br/>
+                • System Security<br/>
+                • Memory Protection<br/>
+                • Hardware-Software Co-design<br/>
+                • AI Stack Security<br/>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <CommandLine command="echo 'End of publications list'" />
+      </div>
+    </TerminalWrapper>
+  </div>
 </FrameLayout>
 
 <style>
   @import "../style/glassmorphism-theme.css";
+  @import "../style/hacker-theme.css";
+
+  /* Container visibility */
+  .modern-container {
+    display: block;
+  }
+
+  .modern-container.hidden {
+    display: none !important;
+  }
+
+  .hacker-container {
+    display: block;
+    min-height: 100vh;
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+
+  .hacker-container.hidden {
+    display: none !important;
+  }
+
+  /* Hacker Mode Specific Styles */
+  .file-listing {
+    background: rgba(0, 20, 8, 0.3);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    font-family: 'SF Mono', 'Monaco', monospace;
+    font-size: 0.875rem;
+  }
+
+  .file-listing-line {
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.875rem;
+    margin: 0.25rem 0;
+    color: rgba(0, 255, 65, 0.7);
+  }
+
+  .publication-section {
+    margin-bottom: 3rem;
+  }
+
+  .terminal-publication {
+    background: rgba(0, 20, 8, 0.2);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+
+  .pub-title {
+    color: #00ff41;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .pub-meta {
+    margin-bottom: 1.5rem;
+  }
+
+  .meta-line {
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    margin: 0.75rem 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .meta-label {
+    color: #00d9ff;
+    font-weight: 600;
+    min-width: 120px;
+  }
+
+  .meta-value {
+    color: rgba(255, 255, 255, 0.9);
+    flex: 1;
+  }
+
+  .highlight-name {
+    color: #00ff41;
+    font-weight: 700;
+  }
+
+  .pub-abstract {
+    margin: 1.5rem 0;
+  }
+
+  .abstract-header {
+    color: #00d9ff;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .abstract-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  .terminal-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #00ff41;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #00ff41;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .terminal-link-btn:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .coming-soon-terminal {
+    background: rgba(0, 20, 20, 0.3);
+    border-color: rgba(0, 217, 255, 0.3);
+  }
+
+  .coming-soon-content {
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    text-align: center;
+  }
 
   /* Enhanced body with glassmorphism background */
   body {
@@ -345,3 +584,36 @@ const title = "Publications";
     }
   }
 </style>
+
+<script>
+  // Toggle between modern and hacker layouts
+  function toggleLayout() {
+    const modernContainer = document.querySelector('.modern-container');
+    const hackerContainer = document.querySelector('.hacker-container');
+    const currentStyle = document.body.getAttribute('data-style');
+
+    if (currentStyle === 'hacker') {
+      modernContainer?.classList.add('hidden');
+      hackerContainer?.classList.remove('hidden');
+    } else {
+      modernContainer?.classList.remove('hidden');
+      hackerContainer?.classList.add('hidden');
+    }
+  }
+
+  // Initial setup
+  toggleLayout();
+
+  // Listen for style changes
+  window.addEventListener('styleChange', toggleLayout);
+  
+  // Also check periodically with MutationObserver
+  const observer = new MutationObserver(() => {
+    toggleLayout();
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ['data-style']
+  });
+</script>

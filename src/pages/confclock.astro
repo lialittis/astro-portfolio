@@ -1,7 +1,10 @@
 ---
 import ConfTable from '../components/Table/ConfTable'
-import SimpleLayout from '../layouts/SimpleLayout.astro'
-import NavBar from '../components/NavBar.astro'
+import Layout from "../layouts/Layout.astro";
+import StyleSwitcher from '../components/StyleSwitcher.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
 
 import fs from 'fs'
 import path from 'path'
@@ -110,11 +113,708 @@ const loadConferences = (baseDir: string): Conference[] => {
 }
 
 const conferences = loadConferences('./conferences')
+
+// Helper function to calculate remaining time
+function calculateRemainingTime(deadline: string): string {
+	const now = new Date()
+	const deadlineDate = new Date(deadline)
+	const diff = deadlineDate.getTime() - now.getTime()
+	
+	if (diff < 0) return 'EXPIRED'
+	
+	const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+	const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+	
+	if (days > 0) {
+		return `${days}d ${hours}h`
+	} else {
+		const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+		return `${hours}h ${minutes}m`
+	}
+}
+
+// Helper function to format date safely
+function formatDeadlineDate(deadline: string, timezone: string): string {
+	try {
+		const date = new Date(deadline)
+		// Handle special timezones that aren't valid IANA timezone identifiers
+		const safeTimezone = timezone === 'AoE' ? 'Pacific/Kiritimati' : timezone
+		
+		return date.toLocaleDateString('en-US', { 
+			year: 'numeric', 
+			month: 'short', 
+			day: 'numeric',
+			hour: '2-digit',
+			minute: '2-digit',
+			timeZone: safeTimezone 
+		})
+	} catch (error) {
+		// If timezone is still invalid, just format without timezone
+		const date = new Date(deadline)
+		return date.toLocaleDateString('en-US', { 
+			year: 'numeric', 
+			month: 'short', 
+			day: 'numeric',
+			hour: '2-digit',
+			minute: '2-digit'
+		}) + ` (${timezone})`
+	}
+}
 ---
 
-<SimpleLayout title='Conferences Clock' description=''>
-	<NavBar />
-	<div id='timeDisplay' class='pt-24 md:pt-28 w-full'>
-		<ConfTable conferences={conferences} client:load />
+
+<Layout title='Conferences Clock' description=''>
+	<StyleSwitcher />
+	
+	<!-- Modern Layout -->
+	<div class='modern-container'>
+		<div id='timeDisplay' class='pt-24 md:pt-28 w-full'>
+			<ConfTable conferences={conferences} client:load />
+		</div>
 	</div>
-</SimpleLayout>
+
+	<!-- Hacker Layout -->
+    <div id="hacker-container" class="hacker-container hidden">
+		<TerminalWrapper>
+			<TerminalHeader title='~/conferences/deadlines' />
+			<div class='terminal-content'>
+				<CommandLine command='cat conferences.info' />
+				
+				<div class='terminal-output'>
+					<div class='info-section'>
+						<p class='terminal-text' style='color: #00d9ff; font-weight: 600;'>
+							Conference Deadline Tracker - Real-time monitoring system
+						</p>
+						<p class='terminal-text' style='color: rgba(255, 255, 255, 0.7);'>
+							Total conferences: {conferences.length} | Categories: System, Security, Software
+						</p>
+					</div>
+				</div>
+
+				<CommandLine command='grep -E "ACTIVE|URGENT" ./conferences/* | sort -k2' />
+				
+				<div class='active-conferences-list'>
+					<div class='list-header'>
+						<span style='color: #00d9ff; font-weight: 600;'>ACTIVE DEADLINES</span>
+						<button id='showTableBtn' class='table-view-btn'>
+							<span class='btn-icon'></span> View Full Table
+						</button>
+					</div>
+					
+					{conferences
+						.filter(conf => {
+							const remaining = calculateRemainingTime(conf.deadline)
+							return remaining !== 'EXPIRED'
+						})
+						.sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime())
+						.map(conf => {
+							const remaining = calculateRemainingTime(conf.deadline)
+							const isUrgent = parseInt(remaining.split('d')[0]) < 7
+							
+							return (
+								<div class={`active-row ${isUrgent ? 'urgent' : ''}`}>
+									<span class='row-title'>{conf.title}</span>
+									<span class='row-category'>{conf.sub}</span>
+									<span class='row-rank'>{conf.rank.core}</span>
+									<span class='row-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
+										{remaining}
+									</span>
+								</div>
+							)
+						})
+					}
+				</div>
+
+				<CommandLine command='ls -la ./conferences/*' />
+				
+				<div class='conference-categories'>
+					{['System', 'Security', 'Software'].map(category => {
+						const categoryConfs = conferences.filter(c => c.sub === category)
+						return categoryConfs.length > 0 ? (
+							<div class='category-section'>
+								<div class='category-header'>
+									<span class='prompt'>$</span>
+									<span style='color: #00d9ff;'> ./conferences/{category.toLowerCase()}/</span>
+								</div>
+								
+								{categoryConfs.map((conf, index) => {
+									const remaining = calculateRemainingTime(conf.deadline)
+									const isExpired = remaining === 'EXPIRED'
+									const isUrgent = !isExpired && parseInt(remaining.split('d')[0]) < 7
+									
+									return (
+										<div class='conf-entry'>
+											<div class='conf-header'>
+												<span class='conf-number'>[{String(index + 1).padStart(2, '0')}]</span>
+												<span class='conf-title'>{conf.title}</span>
+												<span class={`conf-status ${isExpired ? 'expired' : isUrgent ? 'urgent' : 'active'}`}>
+													{isExpired ? '✗ EXPIRED' : isUrgent ? '⚠ URGENT' : '✓ ACTIVE'}
+												</span>
+											</div>
+											
+											<div class='conf-details'>
+												<div class='detail-line'>
+													<span class='detail-label'>DEADLINE:</span>
+													<span class='detail-value' style={isExpired ? 'color: #ff5555;' : isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
+														{formatDeadlineDate(conf.deadline, conf.latestconf.timezone)}
+													</span>
+													<span class='remaining-time' style={isExpired ? 'color: #ff5555;' : isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
+														({remaining})
+													</span>
+												</div>
+												
+												<div class='detail-line'>
+													<span class='detail-label'>RANK:</span>
+													<span class='detail-value'>
+														CCF: <span class='rank-badge'>{conf.rank.ccf}</span>
+														{conf.rank.core && ` | CORE: `}<span class='rank-badge'>{conf.rank.core}</span>
+													</span>
+												</div>
+												
+												<div class='detail-line'>
+													<span class='detail-label'>VENUE:</span>
+													<span class='detail-value'>{conf.latestconf.place}</span>
+												</div>
+												
+												<div class='detail-line'>
+													<span class='detail-label'>DATE:</span>
+													<span class='detail-value'>{conf.latestconf.date}</span>
+												</div>
+												
+												{conf.latestconf.link && (
+													<div class='detail-line'>
+														<span class='detail-label'>LINK:</span>
+														<a href={conf.latestconf.link} target='_blank' rel='noopener noreferrer' class='conf-link'>
+															{conf.latestconf.link}
+														</a>
+													</div>
+												)}
+											</div>
+											
+											{conf.description && (
+												<div class='conf-description'>
+													<p>{conf.description}</p>
+												</div>
+											)}
+										</div>
+									)
+								})}
+							</div>
+						) : null
+					})}
+				</div>
+
+				<CommandLine command='echo "Monitoring active..."' />
+			</div>
+		</TerminalWrapper>
+	</div>
+
+	<!-- Modal for Table View -->
+	<div id='tableModal' class='modal hidden'>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<h2>Conference Deadlines - Table View</h2>
+				<button id='closeModalBtn' class='close-btn'>✕</button>
+			</div>
+			<div class='modal-body'>
+				<ConfTable conferences={conferences} client:load />
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	@import '../style/hacker-theme.css';
+	
+	/* Container visibility */
+	.modern-container {
+		display: block;
+		position: relative;
+		z-index: 100;
+	}
+
+	.modern-container.hidden {
+		display: none !important;
+	}
+
+	.hacker-container {
+		display: block;
+		min-height: 100vh;
+		padding: 0;
+		padding-top: 6rem;
+		padding-bottom: 2rem;
+		z-index: 100;
+	}
+
+	.hacker-container.hidden {
+		display: none !important;
+	}
+
+	/* Terminal Output Styles */
+	.terminal-output {
+		padding: 1rem 0;
+	}
+
+	.info-section {
+		margin-bottom: 2rem;
+		padding: 1rem;
+		background: rgba(0, 20, 8, 0.3);
+		border: 1px solid rgba(0, 255, 65, 0.2);
+		border-radius: 5px;
+	}
+
+	.terminal-text {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.95rem;
+		line-height: 1.8;
+		margin: 0.5rem 0;
+	}
+
+	/* Active Conferences List */
+	.active-conferences-list {
+		margin: 1.5rem 0;
+		background: rgba(0, 20, 8, 0.3);
+		border: 1px solid rgba(0, 255, 65, 0.2);
+		border-radius: 5px;
+		padding: 1rem;
+	}
+
+	.list-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+	}
+
+	.table-view-btn {
+		background: rgba(0, 217, 255, 0.1);
+		border: 1px solid rgba(0, 217, 255, 0.3);
+		color: #00d9ff;
+		padding: 0.4rem 1rem;
+		border-radius: 5px;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.85rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.table-view-btn:hover {
+		background: rgba(0, 217, 255, 0.2);
+		border-color: rgba(0, 217, 255, 0.6);
+		box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+		transform: translateY(-1px);
+	}
+
+	.btn-icon {
+		font-size: 1rem;
+	}
+
+	.active-row {
+		display: grid;
+		grid-template-columns: 2fr 1fr 80px 100px;
+		gap: 1rem;
+		padding: 0.75rem;
+		margin: 0.5rem 0;
+		background: rgba(0, 40, 10, 0.2);
+		border: 1px solid rgba(0, 255, 65, 0.15);
+		border-radius: 4px;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9rem;
+		align-items: center;
+		transition: all 0.2s ease;
+	}
+
+	.active-row:hover {
+		background: rgba(0, 40, 10, 0.3);
+		border-color: rgba(0, 255, 65, 0.3);
+		transform: translateX(5px);
+	}
+
+	.active-row.urgent {
+		border-color: rgba(255, 184, 108, 0.3);
+		background: rgba(40, 30, 0, 0.2);
+	}
+
+	.active-row.urgent:hover {
+		border-color: rgba(255, 184, 108, 0.5);
+		background: rgba(40, 30, 0, 0.3);
+	}
+
+	.row-title {
+		color: #00ff41;
+		font-weight: 600;
+	}
+
+	.row-category {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.row-rank {
+		color: #ffb86c;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	.row-time {
+		font-weight: 700;
+		text-align: right;
+	}
+
+	/* Modal Styles */
+	.modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.85);
+		backdrop-filter: blur(10px);
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		animation: fadeIn 0.3s ease;
+	}
+
+	.modal.hidden {
+		display: none !important;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.modal-content {
+		background: rgba(10, 10, 15, 0.95);
+		border: 2px solid rgba(0, 255, 65, 0.3);
+		border-radius: 12px;
+		max-width: 1400px;
+		width: 100%;
+		max-height: 90vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 0 50px rgba(0, 255, 65, 0.2);
+		animation: slideUp 0.3s ease;
+	}
+
+	@keyframes slideUp {
+		from {
+			transform: translateY(50px);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.modal-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 2rem;
+		border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+		background: rgba(0, 20, 8, 0.3);
+	}
+
+	.modal-header h2 {
+		color: #00ff41;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1.3rem;
+		margin: 0;
+	}
+
+	.close-btn {
+		background: rgba(255, 85, 85, 0.1);
+		border: 1px solid rgba(255, 85, 85, 0.3);
+		color: #ff5555;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		font-size: 1.2rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.close-btn:hover {
+		background: rgba(255, 85, 85, 0.2);
+		border-color: rgba(255, 85, 85, 0.6);
+		transform: rotate(90deg);
+	}
+
+	.modal-body {
+		padding: 2rem;
+		overflow-y: auto;
+		flex: 1;
+	}
+
+	/* Conference Categories */
+	.conference-categories {
+		margin: 2rem 0;
+	}
+
+	.category-section {
+		margin-bottom: 3rem;
+	}
+
+	.category-header {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1.1rem;
+		color: #00d9ff;
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
+
+	.prompt {
+		color: #00ff41;
+		margin-right: 0.5rem;
+	}
+
+	/* Conference Entry */
+	.conf-entry {
+		background: rgba(0, 20, 8, 0.2);
+		border: 1px solid rgba(0, 255, 65, 0.2);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.conf-entry:hover {
+		background: rgba(0, 30, 8, 0.3);
+		border-color: rgba(0, 255, 65, 0.4);
+		box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+	}
+
+	.conf-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.conf-number {
+		color: #00d9ff;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.conf-title {
+		color: #00ff41;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1.1rem;
+		font-weight: 700;
+		flex: 1;
+	}
+
+	.conf-status {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.85rem;
+		padding: 0.25rem 0.75rem;
+		border-radius: 3px;
+		font-weight: 600;
+	}
+
+	.conf-status.active {
+		color: #00ff41;
+		background: rgba(0, 255, 65, 0.1);
+		border: 1px solid rgba(0, 255, 65, 0.3);
+	}
+
+	.conf-status.urgent {
+		color: #ffb86c;
+		background: rgba(255, 184, 108, 0.1);
+		border: 1px solid rgba(255, 184, 108, 0.3);
+	}
+
+	.conf-status.expired {
+		color: #ff5555;
+		background: rgba(255, 85, 85, 0.1);
+		border: 1px solid rgba(255, 85, 85, 0.3);
+	}
+
+	.conf-details {
+		margin: 1rem 0;
+	}
+
+	.detail-line {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9rem;
+		margin: 0.5rem 0;
+		display: flex;
+		gap: 1rem;
+		align-items: baseline;
+	}
+
+	.detail-label {
+		color: #00d9ff;
+		font-weight: 600;
+		min-width: 100px;
+	}
+
+	.detail-value {
+		color: rgba(255, 255, 255, 0.9);
+		flex: 1;
+	}
+
+	.remaining-time {
+		font-weight: 600;
+		margin-left: 0.5rem;
+	}
+
+	.rank-badge {
+		color: #ffb86c;
+		font-weight: 700;
+	}
+
+	.conf-link {
+		color: #00d9ff;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition: all 0.3s ease;
+	}
+
+	.conf-link:hover {
+		color: #00ff41;
+		border-bottom-color: #00ff41;
+		text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+	}
+
+	.conf-description {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid rgba(0, 255, 65, 0.2);
+	}
+
+	.conf-description p {
+		color: rgba(255, 255, 255, 0.8);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.conf-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.detail-line {
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+
+		.detail-label {
+			min-width: auto;
+		}
+
+		.active-row {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+
+		.row-rank,
+		.row-time {
+			text-align: left;
+		}
+
+		.modal {
+			padding: 1rem;
+		}
+
+		.modal-content {
+			max-height: 95vh;
+		}
+
+		.modal-header {
+			padding: 1rem;
+		}
+
+		.modal-body {
+			padding: 1rem;
+		}
+	}
+</style>
+
+<script>
+	// Toggle between modern and hacker layouts
+	function toggleLayout() {
+		const modernContainer = document.querySelector('.modern-container')
+		const hackerContainer = document.querySelector('.hacker-container')
+		const currentStyle = document.body.getAttribute('data-style')
+
+		if (currentStyle === 'hacker') {
+			modernContainer?.classList.add('hidden')
+			hackerContainer?.classList.remove('hidden')
+		} else {
+			modernContainer?.classList.remove('hidden')
+			hackerContainer?.classList.add('hidden')
+		}
+	}
+
+	// Initial setup
+	toggleLayout()
+
+	// Listen for style changes
+	window.addEventListener('styleChange', toggleLayout)
+	
+	// MutationObserver for reliable theme switching
+	const observer = new MutationObserver(() => {
+		toggleLayout()
+	})
+
+	observer.observe(document.body, {
+		attributes: true,
+		attributeFilter: ['data-style']
+	})
+
+	// Modal functionality
+	const showTableBtn = document.getElementById('showTableBtn')
+	const closeModalBtn = document.getElementById('closeModalBtn')
+	const tableModal = document.getElementById('tableModal')
+
+	showTableBtn?.addEventListener('click', () => {
+		tableModal?.classList.remove('hidden')
+		document.body.style.overflow = 'hidden'
+	})
+
+	closeModalBtn?.addEventListener('click', () => {
+		tableModal?.classList.add('hidden')
+		document.body.style.overflow = 'auto'
+	})
+
+	// Close modal when clicking outside
+	tableModal?.addEventListener('click', (e) => {
+		if (e.target === tableModal) {
+			tableModal.classList.add('hidden')
+			document.body.style.overflow = 'auto'
+		}
+	})
+
+	// Close modal with Escape key
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && !tableModal?.classList.contains('hidden')) {
+			tableModal?.classList.add('hidden')
+			document.body.style.overflow = 'auto'
+		}
+	})
+</script>

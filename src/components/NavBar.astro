@@ -550,4 +550,154 @@
 			}
 		})
 	}
+
+	// Draggable NavBar in Hacker Mode
+	const navbar = document.querySelector('.navbar-cool') as HTMLElement
+	
+	if (navbar) {
+		let isDragging = false
+		let currentX = 0
+		let currentY = 0
+		let initialX = 0
+		let initialY = 0
+		let xOffset = 0
+		let yOffset = 0
+
+		// Only enable dragging in hacker mode and on desktop
+		const isHackerMode = () => document.body.getAttribute('data-style') === 'hacker'
+		const isDesktop = () => window.innerWidth >= 1024
+
+		// Load saved position from localStorage
+		const loadPosition = () => {
+			if (isHackerMode() && isDesktop()) {
+				const savedPos = localStorage.getItem('navbar-position')
+				if (savedPos) {
+					const { x, y } = JSON.parse(savedPos)
+					xOffset = x
+					yOffset = y
+					setPosition(x, y)
+				}
+			}
+		}
+
+		// Save position to localStorage
+		const savePosition = () => {
+			if (isHackerMode() && isDesktop()) {
+				localStorage.setItem('navbar-position', JSON.stringify({ x: xOffset, y: yOffset }))
+			}
+		}
+
+		const setPosition = (x: number, y: number) => {
+			if (isHackerMode() && isDesktop()) {
+				navbar.style.left = `${x}px`
+				navbar.style.top = `${y}px`
+				navbar.style.transform = 'none'
+			}
+		}
+
+		const dragStart = (e: MouseEvent | TouchEvent) => {
+			if (!isHackerMode() || !isDesktop()) return
+
+			if (e.type === 'touchstart') {
+				const touch = (e as TouchEvent).touches[0]
+				initialX = touch.clientX - xOffset
+				initialY = touch.clientY - yOffset
+			} else {
+				initialX = (e as MouseEvent).clientX - xOffset
+				initialY = (e as MouseEvent).clientY - yOffset
+			}
+
+			if ((e.target as Element).closest('.navbar-cool')) {
+				isDragging = true
+				navbar.style.cursor = 'grabbing'
+			}
+		}
+
+		const drag = (e: MouseEvent | TouchEvent) => {
+			if (!isDragging || !isHackerMode() || !isDesktop()) return
+
+			e.preventDefault()
+
+			if (e.type === 'touchmove') {
+				const touch = (e as TouchEvent).touches[0]
+				currentX = touch.clientX - initialX
+				currentY = touch.clientY - initialY
+			} else {
+				currentX = (e as MouseEvent).clientX - initialX
+				currentY = (e as MouseEvent).clientY - initialY
+			}
+
+			xOffset = currentX
+			yOffset = currentY
+
+			// Constrain to viewport
+			const maxX = window.innerWidth - navbar.offsetWidth
+			const maxY = window.innerHeight - navbar.offsetHeight
+			
+			xOffset = Math.max(0, Math.min(xOffset, maxX))
+			yOffset = Math.max(0, Math.min(yOffset, maxY))
+
+			setPosition(xOffset, yOffset)
+		}
+
+		const dragEnd = () => {
+			if (isDragging) {
+				isDragging = false
+				navbar.style.cursor = 'grab'
+				savePosition()
+			}
+		}
+
+		// Set cursor style for hacker mode
+		const updateCursor = () => {
+			if (isHackerMode() && isDesktop()) {
+				navbar.style.cursor = 'grab'
+			} else {
+				navbar.style.cursor = 'default'
+			}
+		}
+
+		// Event listeners
+		navbar.addEventListener('mousedown', dragStart)
+		navbar.addEventListener('touchstart', dragStart, { passive: false })
+		
+		document.addEventListener('mousemove', drag)
+		document.addEventListener('touchmove', drag, { passive: false })
+		
+		document.addEventListener('mouseup', dragEnd)
+		document.addEventListener('touchend', dragEnd)
+
+		// Handle style changes
+		const styleObserver = new MutationObserver(() => {
+			updateCursor()
+			if (isHackerMode() && isDesktop()) {
+				loadPosition()
+			} else {
+				// Reset to default position in modern mode
+				navbar.style.left = ''
+				navbar.style.top = ''
+				navbar.style.transform = ''
+			}
+		})
+
+		styleObserver.observe(document.body, {
+			attributes: true,
+			attributeFilter: ['data-style']
+		})
+
+		// Handle window resize
+		window.addEventListener('resize', () => {
+			updateCursor()
+			if (!isDesktop()) {
+				// Reset position on mobile
+				navbar.style.left = ''
+				navbar.style.top = ''
+				navbar.style.transform = ''
+			}
+		})
+
+		// Initialize
+		updateCursor()
+		loadPosition()
+	}
 </script>

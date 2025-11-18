@@ -12,26 +12,43 @@ import '../style/hacker-theme.css'
 import KeyWords from '../components/KeyWords.astro'
 import SecurityNewsCard from '../components/SecurityNewsCard.astro'
 import StyleSwitcher from '../components/StyleSwitcher.astro'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
 
 const ActiveLayout = Layout;
 ---
 
 <script>
-	// Apply style on load
+	// Apply style on load and toggle layout visibility
 	const style = localStorage.getItem('style') || 'modern';
 	document.body.setAttribute('data-style', style);
 	
-	// Toggle layout visibility
-	window.addEventListener('DOMContentLoaded', () => {
-		const hackerLayout = document.querySelector('.hacker-layout');
-		const modernLayout = document.querySelector('.modern-layout');
-		
-		if (style === 'hacker') {
-			hackerLayout?.classList.remove('hidden');
-			modernLayout?.classList.add('hidden');
-		} else {
-			hackerLayout?.classList.add('hidden');
-			modernLayout?.classList.remove('hidden');
+	// Toggle layout visibility immediately to prevent flash
+	const hackerLayout = document.querySelector('.hacker-layout');
+	const modernLayout = document.querySelector('.modern-layout');
+	
+	if (style === 'hacker') {
+		hackerLayout?.classList.remove('hidden');
+		modernLayout?.classList.add('hidden');
+	} else {
+		hackerLayout?.classList.add('hidden');
+		modernLayout?.classList.remove('hidden');
+	}
+	
+	// Also listen for style changes from StyleSwitcher
+	window.addEventListener('storage', (e) => {
+		if (e.key === 'style') {
+			const newStyle = e.newValue || 'modern';
+			document.body.setAttribute('data-style', newStyle);
+			
+			if (newStyle === 'hacker') {
+				hackerLayout?.classList.remove('hidden');
+				modernLayout?.classList.add('hidden');
+			} else {
+				hackerLayout?.classList.add('hidden');
+				modernLayout?.classList.remove('hidden');
+			}
 		}
 	});
 </script>
@@ -92,34 +109,21 @@ const ActiveLayout = Layout;
 		class='text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:auto-rows-auto'
 	>
 		<!-- Hacker Mode Layout -->
-		<div class="hacker-layout">
-			<div class="terminal-header">
-				<div class="terminal-controls">
-					<span class="dot red"></span>
-					<span class="dot yellow"></span>
-					<span class="dot green"></span>
-				</div>
-				<div class="terminal-title">root@tianchi:~$</div>
-			</div>
+		<TerminalWrapper class="hacker-layout hidden">
+			<TerminalHeader title="root@tianchi:~$" />
 			
 			<div class="terminal-content">
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">whoami</span>
-				</div>
+				<CommandLine command="whoami" />
 				<div class="hacker-intro">
 					<IntroCard />
 				</div>
 
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">cat skills.txt</span>
-				</div>
+				<CommandLine command="cat skills.txt" />
 				<div class="hacker-section">
 					<KeyWords />
 				</div>
 
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">ls -la ./content</span>
-				</div>
+				<CommandLine command="ls -la ./content" />
 				<div class="hacker-grid">
 					<Card
 						colSpan='md:col-span-1'
@@ -132,9 +136,7 @@ const ActiveLayout = Layout;
 					<SecurityNewsCard />
 				</div>
 
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">./show_map.sh</span>
-				</div>
+				<CommandLine command="./show_map.sh" />
 				<div class="hacker-section">
 					<Card
 						colSpan='md:col-span-1'
@@ -148,16 +150,14 @@ const ActiveLayout = Layout;
 					</Card>
 				</div>
 
-				<div class="cmd-line">
-					<span class="prompt">$</span> <span class="cmd">cat contact.json</span>
-				</div>
+				<CommandLine command="cat contact.json" />
 				<div class="hacker-grid">
 					<ContactsCard />
 					<Now />
 					<TimeZone />
 				</div>
 			</div>
-		</div>
+		</TerminalWrapper>
 
 		<!-- Modern Mode Layout -->
 		<div class="modern-layout hidden">
@@ -193,271 +193,13 @@ const ActiveLayout = Layout;
 <style>
   @import "../style/glassmorphism-theme.css";
 
-  /* Hacker Layout Styles */
-  .hacker-layout {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
+  /* Modern Layout */
   .modern-layout {
     display: contents;
   }
 
   .modern-layout.hidden {
     display: none;
-  }
-
-  .hacker-layout.hidden {
-    display: none;
-  }
-
-  /* Terminal Window */
-  .terminal-header {
-    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
-    border: 1px solid rgba(0, 255, 65, 0.3);
-    border-bottom: none;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .terminal-controls {
-    display: flex;
-    gap: 8px;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .dot.red { background: #ff5f56; }
-  .dot.yellow { background: #ffbd2e; }
-  .dot.green { background: #27c93f; }
-
-  .terminal-title {
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 13px;
-    color: rgba(0, 255, 65, 0.8);
-    letter-spacing: 0.5px;
-  }
-
-  .terminal-content {
-    background: #000000;
-    border: 1px solid rgba(0, 255, 65, 0.3);
-    border-top: 1px solid rgba(0, 255, 65, 0.1);
-    padding: 24px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .cmd-line {
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 14px;
-    color: rgba(0, 255, 65, 0.9);
-    margin-top: 16px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .cmd-line .prompt {
-    color: #00ff41;
-    font-weight: bold;
-  }
-
-  .cmd-line .cmd {
-    color: rgba(0, 255, 65, 0.85);
-    animation: typing 0.5s steps(20);
-  }
-
-  @keyframes typing {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .hacker-intro,
-  .hacker-section {
-    margin-left: 20px;
-    border-left: 2px solid rgba(0, 255, 65, 0.2);
-    padding-left: 16px;
-  }
-
-  .hacker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin-left: 20px;
-    border-left: 2px solid rgba(0, 255, 65, 0.2);
-    padding-left: 16px;
-  }
-
-  /* Hacker theme - Professional & Elegant */
-  :global(body[data-style="hacker"]) main {
-    background: #000000 !important;
-    padding: 32px 16px !important;
-  }
-
-  :global(body[data-style="hacker"]) main::before {
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(0, 200, 83, 0.02) 0%, transparent 50%),
-      repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 65, 0.01) 1px, transparent 2px, transparent 3px);
-    animation: scanline 15s linear infinite;
-  }
-
-  :global(body[data-style="hacker"]) .card {
-    background: rgba(0, 20, 8, 0.6) !important;
-    border: 1px solid rgba(0, 255, 65, 0.25) !important;
-    border-left: 2px solid rgba(0, 255, 65, 0.5) !important;
-    box-shadow: 
-      0 2px 12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(0, 255, 65, 0.08),
-      0 0 20px rgba(0, 255, 65, 0.03) !important;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-  }
-
-  :global(body[data-style="hacker"]) .card::before {
-    content: '> ';
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    color: rgba(0, 255, 65, 0.4);
-    font-family: 'SF Mono', monospace;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  :global(body[data-style="hacker"]) .card:hover {
-    border-color: rgba(0, 255, 65, 0.4) !important;
-    border-left-color: #00ff41 !important;
-    box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(0, 255, 65, 0.15),
-      0 0 30px rgba(0, 255, 65, 0.08) !important;
-    transform: translateX(4px) !important;
-  }
-
-  :global(body[data-style="hacker"]) .card h1,
-  :global(body[data-style="hacker"]) .card h2,
-  :global(body[data-style="hacker"]) .card h3 {
-    color: #00ff41 !important;
-    font-family: 'SF Mono', 'Monaco', monospace !important;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-  }
-
-  :global(body[data-style="hacker"]) .card h4,
-  :global(body[data-style="hacker"]) .card h5,
-  :global(body[data-style="hacker"]) .card h6 {
-    color: #00d639 !important;
-    font-family: 'SF Mono', 'Monaco', monospace !important;
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.2) !important;
-    font-weight: 500 !important;
-  }
-
-  :global(body[data-style="hacker"]) .card p,
-  :global(body[data-style="hacker"]) .card span,
-  :global(body[data-style="hacker"]) .card div {
-    color: rgba(0, 255, 65, 0.85) !important;
-    font-family: 'SF Mono', 'Monaco', monospace !important;
-    font-size: 0.95em !important;
-    line-height: 1.7 !important;
-    letter-spacing: 0.3px !important;
-  }
-
-  :global(body[data-style="hacker"]) .card a {
-    color: #00ff41 !important;
-    text-decoration: none !important;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.3) !important;
-    transition: all 0.3s ease !important;
-  }
-
-  :global(body[data-style="hacker"]) .card a:hover {
-    color: #00ff41 !important;
-    border-bottom-color: #00ff41 !important;
-    text-shadow: 0 0 12px rgba(0, 255, 65, 0.6) !important;
-    letter-spacing: 0.5px !important;
-  }
-
-  :global(body[data-style="hacker"]) .card .text-xs,
-  :global(body[data-style="hacker"]) .card .text-sm {
-    color: rgba(0, 255, 65, 0.6) !important;
-    font-size: 0.85em !important;
-  }
-
-  :global(body[data-style="hacker"]) .card button {
-    background: rgba(0, 255, 65, 0.1) !important;
-    border: 1px solid rgba(0, 255, 65, 0.4) !important;
-    color: #00ff41 !important;
-    font-family: 'SF Mono', monospace !important;
-    padding: 8px 16px !important;
-    transition: all 0.3s ease !important;
-  }
-
-  :global(body[data-style="hacker"]) .card button:hover {
-    background: rgba(0, 255, 65, 0.2) !important;
-    border-color: #00ff41 !important;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
-    transform: translateY(-2px) !important;
-  }
-
-  :global(body[data-style="hacker"]) .card svg {
-    color: rgba(0, 255, 65, 0.7) !important;
-    filter: drop-shadow(0 0 4px rgba(0, 255, 65, 0.3)) !important;
-  }
-
-  :global(body[data-style="hacker"]) .card:hover svg {
-    color: #00ff41 !important;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.5)) !important;
-  }
-
-  @keyframes scanline {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100%); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(0.8); }
-  }
-
-  /* Responsive for hacker layout */
-  @media (max-width: 768px) {
-    .terminal-content {
-      padding: 16px;
-    }
-
-    .hacker-grid {
-      grid-template-columns: 1fr;
-      margin-left: 12px;
-      padding-left: 12px;
-    }
-
-    .cmd-line {
-      font-size: 12px;
-    }
-
-    .terminal-title {
-      font-size: 11px;
-    }
   }
 
   /* Modern glassmorphism theme */

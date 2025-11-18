@@ -1,0 +1,193 @@
+---
+// Example page demonstrating reusable hacker theme
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card/index.astro'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
+import StyleSwitcher from '../components/StyleSwitcher.astro'
+import '../style/hacker-theme.css'
+---
+
+<script>
+  // Apply style on load and toggle layout visibility
+  const style = localStorage.getItem('style') || 'modern';
+  document.body.setAttribute('data-style', style);
+  
+  // Toggle layout visibility immediately to prevent flash
+  const hackerLayout = document.querySelector('.hacker-layout');
+  const modernLayout = document.querySelector('.modern-layout');
+  
+  if (style === 'hacker') {
+    hackerLayout?.classList.remove('hidden');
+    modernLayout?.classList.add('hidden');
+  } else {
+    hackerLayout?.classList.add('hidden');
+    modernLayout?.classList.remove('hidden');
+  }
+</script>
+
+<StyleSwitcher />
+
+<Layout 
+  title='Example Page - Hacker Theme Demo'
+  description='Demonstration of reusable hacker theme components'
+>
+  <main class='text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:gap-4'>
+    <!-- Hacker Mode Layout -->
+    <TerminalWrapper class="hacker-layout hidden">
+      <TerminalHeader title="root@example:~$" />
+      
+      <div class="terminal-content">
+        <CommandLine command="whoami" />
+        <div class="hacker-intro">
+          <Card 
+            colSpan='md:col-span-1'
+            rowSpan='md:row-span-1'
+            title='About This Page'
+          >
+            <p>This is an example page demonstrating the reusable hacker theme.</p>
+            <p>All components and styles are now modular and can be used on any page!</p>
+          </Card>
+        </div>
+
+        <CommandLine command="ls -la ./features" />
+        <div class="hacker-grid">
+          <Card 
+            colSpan='md:col-span-1'
+            rowSpan='md:row-span-1'
+            title='Terminal Components'
+          >
+            <p>TerminalHeader, CommandLine, and TerminalWrapper components are reusable across all pages.</p>
+          </Card>
+          <Card 
+            colSpan='md:col-span-1'
+            rowSpan='md:row-span-1'
+            title='Auto Styling'
+          >
+            <p>When hacker mode is active, all cards automatically get the terminal theme styling.</p>
+          </Card>
+        </div>
+
+        <CommandLine command="cat benefits.txt" />
+        <div class="hacker-section">
+          <Card 
+            colSpan='md:col-span-1'
+            rowSpan='md:row-span-1'
+            title='Benefits'
+          >
+            <ul style="list-style: none; padding: 0;">
+              <li>✓ Easy to implement on any page</li>
+              <li>✓ Consistent styling across the site</li>
+              <li>✓ Automatic theme switching</li>
+              <li>✓ Clean, maintainable code</li>
+            </ul>
+          </Card>
+        </div>
+
+        <CommandLine command="./usage.sh --help" />
+        <div class="hacker-intro">
+          <Card 
+            colSpan='md:col-span-1'
+            rowSpan='md:row-span-1'
+            title='How to Use'
+          >
+            <p>1. Import Terminal components</p>
+            <p>2. Import hacker-theme.css</p>
+            <p>3. Wrap content in TerminalWrapper</p>
+            <p>4. Add TerminalHeader</p>
+            <p>5. Use CommandLine for prompts</p>
+            <p>See HACKER_THEME_USAGE.md for full documentation!</p>
+          </Card>
+        </div>
+      </div>
+    </TerminalWrapper>
+
+    <!-- Modern Mode Layout -->
+    <div class="modern-layout hidden">
+      <Card 
+        colSpan='md:col-span-2'
+        rowSpan='md:row-span-2'
+        title='Example Page'
+      >
+        <h2>Hacker Theme Demo</h2>
+        <p>This page demonstrates the reusable hacker theme components.</p>
+        <p>Switch to hacker mode using the toggle in the top-right corner!</p>
+      </Card>
+
+      <Card 
+        colSpan='md:col-span-1'
+        rowSpan='md:row-span-1'
+        title='Terminal Components'
+      >
+        <p>Reusable across all pages</p>
+      </Card>
+
+      <Card 
+        colSpan='md:col-span-1'
+        rowSpan='md:row-span-1'
+        title='Auto Styling'
+      >
+        <p>Automatic theme application</p>
+      </Card>
+
+      <Card 
+        colSpan='md:col-span-2'
+        rowSpan='md:row-span-1'
+        title='Documentation'
+      >
+        <p>Check out HACKER_THEME_USAGE.md for complete implementation guide!</p>
+      </Card>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @import "../style/glassmorphism-theme.css";
+
+  .modern-layout {
+    display: contents;
+  }
+
+  .modern-layout.hidden {
+    display: none;
+  }
+
+  /* Modern glassmorphism theme */
+  main {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+  }
+
+  main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Use glassmorphism card base */
+  :global(.card) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.card:hover) {
+    transform: translateY(-8px) !important;
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25) !important;
+  }
+</style>

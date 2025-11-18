@@ -1,26 +1,21 @@
-/* Hacker/Terminal Theme */
+/* Hacker/Terminal Theme - Reusable Styles */
 
-.hacker-main {
+/* ======================
+   HACKER MODE MAIN LAYOUT
+   ====================== */
+
+/* Hacker theme - Professional & Elegant */
+body[data-style="hacker"] main {
   background: #000000 !important;
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  font-family: 'Courier New', monospace !important;
+  padding: 32px 16px !important;
 }
 
-.hacker-main::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+body[data-style="hacker"] main::before {
   background: 
-    repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.03) 0px, transparent 1px, transparent 2px, rgba(0, 255, 0, 0.03) 3px),
-    repeating-linear-gradient(90deg, rgba(0, 255, 0, 0.03) 0px, transparent 1px, transparent 2px, rgba(0, 255, 0, 0.03) 3px);
-  pointer-events: none;
-  z-index: -1;
-  animation: scanline 8s linear infinite;
+    radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(0, 200, 83, 0.02) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 65, 0.01) 1px, transparent 2px, transparent 3px);
+  animation: scanline 15s linear infinite;
 }
 
 @keyframes scanline {
@@ -28,68 +23,203 @@
   100% { transform: translateY(100%); }
 }
 
-.hacker-card {
-  background: rgba(0, 20, 0, 0.8) !important;
-  border: 1px solid #00ff00 !important;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3), inset 0 0 10px rgba(0, 255, 0, 0.1) !important;
-  transition: all 0.3s ease !important;
-  font-family: 'Courier New', monospace !important;
+/* ======================
+   CARD STYLES
+   ====================== */
+
+body[data-style="hacker"] .card {
+  background: rgba(0, 20, 8, 0.6) !important;
+  border: 1px solid rgba(0, 255, 65, 0.25) !important;
+  border-left: 2px solid rgba(0, 255, 65, 0.5) !important;
+  box-shadow: 
+    0 2px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(0, 255, 65, 0.08),
+    0 0 20px rgba(0, 255, 65, 0.03) !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
-.hacker-card:hover {
-  border-color: #00ff00 !important;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), inset 0 0 15px rgba(0, 255, 0, 0.2) !important;
-  transform: translateY(-2px) !important;
-}
-
-.hacker-card::before {
+body[data-style="hacker"] .card::before {
   content: '> ';
-  color: #00ff00;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: rgba(0, 255, 65, 0.4);
+  font-family: 'SF Mono', monospace;
+  font-size: 14px;
   font-weight: bold;
 }
 
-.hacker-heading {
-  color: #00ff00 !important;
-  font-family: 'Courier New', monospace !important;
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5) !important;
-  font-weight: 700 !important;
+body[data-style="hacker"] .card:hover {
+  border-color: rgba(0, 255, 65, 0.4) !important;
+  border-left-color: #00ff41 !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(0, 255, 65, 0.15),
+    0 0 30px rgba(0, 255, 65, 0.08) !important;
+  transform: translateX(4px) !important;
 }
 
-.hacker-text {
-  color: #00ff00 !important;
-  font-family: 'Courier New', monospace !important;
-  line-height: 1.6 !important;
+/* ======================
+   TYPOGRAPHY
+   ====================== */
+
+body[data-style="hacker"] .card h1,
+body[data-style="hacker"] .card h2,
+body[data-style="hacker"] .card h3 {
+  color: #00ff41 !important;
+  font-family: 'SF Mono', 'Monaco', monospace !important;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
 }
 
-.hacker-text-muted {
-  color: rgba(0, 255, 0, 0.7) !important;
+body[data-style="hacker"] .card h4,
+body[data-style="hacker"] .card h5,
+body[data-style="hacker"] .card h6 {
+  color: #00d639 !important;
+  font-family: 'SF Mono', 'Monaco', monospace !important;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.2) !important;
+  font-weight: 500 !important;
 }
 
-.hacker-link {
-  color: #00ff00 !important;
-  text-decoration: underline !important;
+body[data-style="hacker"] .card p,
+body[data-style="hacker"] .card span,
+body[data-style="hacker"] .card div {
+  color: rgba(0, 255, 65, 0.85) !important;
+  font-family: 'SF Mono', 'Monaco', monospace !important;
+  font-size: 0.95em !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.3px !important;
+}
+
+body[data-style="hacker"] .card .text-xs,
+body[data-style="hacker"] .card .text-sm {
+  color: rgba(0, 255, 65, 0.6) !important;
+  font-size: 0.85em !important;
+}
+
+/* ======================
+   LINKS
+   ====================== */
+
+body[data-style="hacker"] .card a {
+  color: #00ff41 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
-.hacker-link:hover {
-  color: #00ff00 !important;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8) !important;
+body[data-style="hacker"] .card a:hover {
+  color: #00ff41 !important;
+  border-bottom-color: #00ff41 !important;
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.6) !important;
+  letter-spacing: 0.5px !important;
 }
 
-.hacker-button {
-  background: rgba(0, 255, 0, 0.1) !important;
-  border: 1px solid #00ff00 !important;
-  color: #00ff00 !important;
-  font-family: 'Courier New', monospace !important;
+/* ======================
+   BUTTONS
+   ====================== */
+
+body[data-style="hacker"] .card button {
+  background: rgba(0, 255, 65, 0.1) !important;
+  border: 1px solid rgba(0, 255, 65, 0.4) !important;
+  color: #00ff41 !important;
+  font-family: 'SF Mono', monospace !important;
+  padding: 8px 16px !important;
   transition: all 0.3s ease !important;
 }
 
-.hacker-button:hover {
-  background: rgba(0, 255, 0, 0.2) !important;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+body[data-style="hacker"] .card button:hover {
+  background: rgba(0, 255, 65, 0.2) !important;
+  border-color: #00ff41 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
+  transform: translateY(-2px) !important;
 }
 
-.hacker-icon {
-  color: #00ff00 !important;
-  filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.5)) !important;
+/* ======================
+   ICONS & SVG
+   ====================== */
+
+body[data-style="hacker"] .card svg {
+  color: rgba(0, 255, 65, 0.7) !important;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 65, 0.3)) !important;
+}
+
+body[data-style="hacker"] .card:hover svg {
+  color: #00ff41 !important;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.5)) !important;
+}
+
+/* ======================
+   ANIMATIONS
+   ====================== */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.8); }
+}
+
+/* ======================
+   UTILITY CLASSES
+   ====================== */
+
+.hacker-layout {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hacker-layout.hidden {
+  display: none !important;
+}
+
+.hacker-intro,
+.hacker-section {
+  margin-left: 20px;
+  border-left: 2px solid rgba(0, 255, 65, 0.2);
+  padding-left: 16px;
+}
+
+.hacker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-left: 20px;
+  border-left: 2px solid rgba(0, 255, 65, 0.2);
+  padding-left: 16px;
+}
+
+/* Terminal specific */
+.terminal-content {
+  background: #000000;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-top: 1px solid rgba(0, 255, 65, 0.1);
+  padding: 24px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ======================
+   RESPONSIVE
+   ====================== */
+
+@media (max-width: 768px) {
+  .terminal-content {
+    padding: 16px;
+  }
+
+  .hacker-grid {
+    grid-template-columns: 1fr;
+    margin-left: 12px;
+    padding-left: 12px;
+  }
 }

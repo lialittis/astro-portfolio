@@ -87,12 +87,17 @@ const image =
   }
 
   /* Add top spacing to prevent navbar overlap */
-  main, .projectContainer {
+  main, .projectContainer, .hacker-container {
     padding-top: 6rem !important;
   }
 
+  /* Ensure hacker mode background */
+  body[data-style="hacker"] {
+    background: #000000 !important;
+  }
+
   @media (max-width: 640px) {
-    main, .projectContainer {
+    main, .projectContainer, .hacker-container {
       padding-top: 5rem !important;
     }
   }

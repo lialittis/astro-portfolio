@@ -191,6 +191,7 @@ https://thehackernews.com/2025/11/amazon-uncovers-attacks-exploited-cisco.html
 https://thehackernews.com/2025/11/asd-warns-of-ongoing-badcandy-attacks.html
 https://thehackernews.com/2025/11/beyond-iam-silos-why-identity-security.html
 https://thehackernews.com/2025/11/bitdefender-named-representative-vendor.html
+https://thehackernews.com/2025/11/cisa-warns-of-actively-exploited.html
 https://thehackernews.com/2025/11/cisco-warns-of-new-firewall-attack.html
 https://thehackernews.com/2025/11/cisos-expert-guide-to-ai-supply-chain.html
 https://thehackernews.com/2025/11/ctm360-exposes-global-whatsapp.html
@@ -211,10 +212,12 @@ https://thehackernews.com/2025/11/hidden-logic-bombs-in-malware-laced.html
 https://thehackernews.com/2025/11/iranian-hackers-launch-spearspecter-spy.html
 https://thehackernews.com/2025/11/iranian-hackers-use-deeproot-and.html
 https://thehackernews.com/2025/11/learn-how-leading-companies-secure.html
+https://thehackernews.com/2025/11/matrix-push-c2-uses-browser.html
 https://thehackernews.com/2025/11/meta-expands-whatsapp-security-research.html
 https://thehackernews.com/2025/11/microsoft-fixes-63-security-flaws.html
 https://thehackernews.com/2025/11/microsoft-mitigates-record-572-tbps.html
 https://thehackernews.com/2025/11/microsoft-uncovers-whisper-leak-attack.html
+https://thehackernews.com/2025/11/new-fluent-bit-flaws-expose-cloud-to.html
 https://thehackernews.com/2025/11/ransomwares-fragmentation-reaches.html
 https://thehackernews.com/2025/11/researchers-detail-tuoni-c2s-role-in.html
 https://thehackernews.com/2025/11/researchers-detect-malicious-npm.html
@@ -225,7 +228,9 @@ https://thehackernews.com/2025/11/rondodox-exploits-unpatched-xwiki.html
 https://thehackernews.com/2025/11/salesforce-flags-unauthorized-data.html
 https://thehackernews.com/2025/11/samsung-zero-click-flaw-exploited-to.html
 https://thehackernews.com/2025/11/sec-drops-solarwinds-case-after-years.html
+https://thehackernews.com/2025/11/second-sha1-hulud-wave-affects-25000.html
 https://thehackernews.com/2025/11/securing-open-android-ecosystem-with.html
+https://thehackernews.com/2025/11/shadowpad-malware-actively-exploits.html
 https://thehackernews.com/2025/11/shadowray-20-exploits-unpatched-ray.html
 https://thehackernews.com/2025/11/sneaky-2fa-phishing-kit-adds-bitb-pop.html
 https://thehackernews.com/2025/11/sonicwall-confirms-state-sponsored.html
@@ -234,6 +239,7 @@ https://thehackernews.com/2025/11/threatsday-bulletin-ai-tools-in-malware.html
 https://thehackernews.com/2025/11/tsundere-botnet-expands-using-game.html
 https://thehackernews.com/2025/11/vibe-coded-malicious-vs-code-extension.html
 https://thehackernews.com/2025/11/webinar-learn-how-leading-security.html
+https://thehackernews.com/2025/11/weekly-recap-fortinet-exploit-chrome-0.html
 https://thehackernews.com/2025/11/weekly-recap-lazarus-hits-web3-intelamd.html
 https://thehackernews.com/2025/11/whatsapp-malware-maverick-hijacks.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -295,6 +301,7 @@ https://www.schneier.com/blog/archives/2025/11/scientists-need-a-positive-vision
 https://www.schneier.com/blog/archives/2025/11/the-role-of-humans-in-an-ai-powered-world.html
 https://www.schneier.com/blog/archives/2025/11/upcoming-speaking-engagements-50.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
+https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
@@ -337,6 +344,7 @@ https://www.securityweek.com/chrome-142-update-patches-high-severity-flaws/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
 https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
+https://www.securityweek.com/cisa-confirms-exploitation-of-recent-oracle-identity-manager-vulnerability/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
 https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-in-coordinated-campaign/
@@ -349,6 +357,7 @@ https://www.securityweek.com/cloudflare-blocks-record-11-5-tbps-ddos-attack/
 https://www.securityweek.com/cloudflare-says-highly-disruptive-outage-not-caused-by-attack/
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
 https://www.securityweek.com/critical-windows-server-wsus-vulnerability-exploited-in-the-wild/
+https://www.securityweek.com/crowdstrike-insider-helped-hackers-falsely-claim-system-breach/
 https://www.securityweek.com/customer-service-firm-5ca-denies-responsibility-for-discord-data-breach/
 https://www.securityweek.com/cyberattack-disrupts-check-in-systems-at-major-european-airports/
 https://www.securityweek.com/cyberattack-on-beer-giant-asahi-disrupts-production/
@@ -415,10 +424,12 @@ https://www.securityweek.com/landfall-android-spyware-targeted-samsung-phones-vi
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
 https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-collect-data-google-warns/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
+https://www.securityweek.com/mazda-says-no-data-leakage-or-operational-impact-from-oracle-hack/
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
 https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-block-ntlm-hash-leaks/
+https://www.securityweek.com/microsoft-highlights-security-risks-introduced-by-new-agentic-ai-feature/
 https://www.securityweek.com/microsoft-patches-173-vulnerabilities-including-exploited-windows-flaws/
 https://www.securityweek.com/microsoft-patches-86-vulnerabilities/
 https://www.securityweek.com/microsoft-reduces-israels-access-to-cloud-and-ai-products-over-reports-of-mass-surveillance-in-gaza/
@@ -477,6 +488,7 @@ https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-
 https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-configurations-exposed-in-breach/
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
 https://www.securityweek.com/sophisticated-malware-deployed-in-oracle-ebs-zero-day-attacks/
+https://www.securityweek.com/spanish-airline-iberia-notifies-customers-of-data-breach/
 https://www.securityweek.com/spektrum-labs-emerges-from-stealth-to-help-companies-prove-resilience/
 https://www.securityweek.com/squarex-and-perplexity-quarrel-over-alleged-comet-browser-vulnerability/
 https://www.securityweek.com/state-sponsored-hackers-stole-sonicwall-cloud-backups-in-recent-attack/

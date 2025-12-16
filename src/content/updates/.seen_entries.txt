@@ -262,8 +262,11 @@ https://thehackernews.com/2025/11/weekly-recap-fortinet-exploit-chrome-0.html
 https://thehackernews.com/2025/11/weekly-recap-lazarus-hits-web3-intelamd.html
 https://thehackernews.com/2025/11/whatsapp-malware-maverick-hijacks.html
 https://thehackernews.com/2025/11/when-your-2m-security-detection-fails.html
+https://thehackernews.com/2025/12/a-browser-extension-risk-guide-after.html
+https://thehackernews.com/2025/12/apple-issues-security-updates-after-two.html
 https://thehackernews.com/2025/12/brazil-hit-by-banking-trojan-spread-via.html
 https://thehackernews.com/2025/12/chopping-ai-down-to-size-turning.html
+https://thehackernews.com/2025/12/cisa-adds-actively-exploited-sierra.html
 https://thehackernews.com/2025/12/cisa-flags-actively-exploited-geoserver.html
 https://thehackernews.com/2025/12/critical-react2shell-flaw-added-to-cisa.html
 https://thehackernews.com/2025/12/critical-rsc-bugs-in-react-and-nextjs.html
@@ -271,8 +274,10 @@ https://thehackernews.com/2025/12/critical-xxe-bug-cve-2025-66516-cvss.html
 https://thehackernews.com/2025/12/discover-ai-tools-fueling-next.html
 https://thehackernews.com/2025/12/experts-confirm-jssmuggler-uses.html
 https://thehackernews.com/2025/12/fake-osint-and-gpt-utility-github-repos.html
+https://thehackernews.com/2025/12/featured-chrome-browser-extension.html
 https://thehackernews.com/2025/12/fortinet-ivanti-and-sap-issue-urgent.html
 https://thehackernews.com/2025/12/four-threat-clusters-using-castleloader.html
+https://thehackernews.com/2025/12/freepbx-authentication-bypass-exposed.html
 https://thehackernews.com/2025/12/google-adds-layered-defenses-to-chrome.html
 https://thehackernews.com/2025/12/how-to-streamline-zero-trust-using.html
 https://thehackernews.com/2025/12/india-orders-messaging-apps-to-work.html
@@ -291,6 +296,7 @@ https://thehackernews.com/2025/12/securing-genai-in-browser-policy.html
 https://thehackernews.com/2025/12/stac6565-targets-canada-in-80-of.html
 https://thehackernews.com/2025/12/storm-0249-escalates-ransomware-attacks.html
 https://thehackernews.com/2025/12/threatsday-bulletin-spyware-alerts.html
+https://thehackernews.com/2025/12/weekly-recap-apple-0-days-winrar.html
 https://thehackernews.com/2025/12/weekly-recap-usb-malware-react2shell.html
 https://thehackernews.com/2025/12/wirte-leverages-ashenloader-sideloading.html
 https://thehackernews.com/2025/12/wordpress-king-addons-flaw-under-active.html
@@ -355,6 +361,7 @@ https://www.schneier.com/blog/archives/2025/11/rigged-poker-games.html
 https://www.schneier.com/blog/archives/2025/11/scientists-need-a-positive-vision-for-ai.html
 https://www.schneier.com/blog/archives/2025/11/the-role-of-humans-in-an-ai-powered-world.html
 https://www.schneier.com/blog/archives/2025/11/upcoming-speaking-engagements-50.html
+https://www.schneier.com/blog/archives/2025/12/against-the-federal-moratorium-on-state-level-regulation-of-ai.html
 https://www.schneier.com/blog/archives/2025/12/ai-vs-human-drivers.html
 https://www.schneier.com/blog/archives/2025/12/ais-exploiting-smart-contracts.html
 https://www.schneier.com/blog/archives/2025/12/building-trustworthy-ai-agents.html
@@ -362,12 +369,14 @@ https://www.schneier.com/blog/archives/2025/12/fbi-warns-of-fake-video-scams.htm
 https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-vampire-squid-genome.html
 https://www.schneier.com/blog/archives/2025/12/like-social-media-ai-requires-difficult-choices.html
 https://www.schneier.com/blog/archives/2025/12/substitution-cipher-based-on-the-voynich-manuscript.html
+https://www.schneier.com/blog/archives/2025/12/upcoming-speaking-engagements-51.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
+https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
@@ -385,11 +394,13 @@ https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-
 https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espionage-campaign/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
 https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35-million-paid-to-date/
+https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-exploited-chrome-flaw/
 https://www.securityweek.com/apple-seeks-researchers-for-2026-iphone-security-program/
 https://www.securityweek.com/apple-sends-fresh-wave-of-spyware-notifications-to-french-users/
 https://www.securityweek.com/apple-updates-ios-and-macos-to-prevent-malicious-font-attacks/
 https://www.securityweek.com/arizona-attorney-general-sues-chinese-online-retailer-temu-over-data-theft-claims/
 https://www.securityweek.com/asahi-data-breach-impacts-2-million-individuals/
+https://www.securityweek.com/atlassian-patches-critical-apache-tika-flaw/
 https://www.securityweek.com/automotive-it-firm-hyundai-autoever-discloses-data-breach/
 https://www.securityweek.com/beer-giant-asahi-says-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
@@ -463,6 +474,7 @@ https://www.securityweek.com/google-paid-out-458000-at-live-hacking-event/
 https://www.securityweek.com/google-patches-gemini-ai-hacks-involving-poisoned-logs-search-results/
 https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-in-latest-update/
 https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulnerabilities/
+https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
@@ -519,6 +531,7 @@ https://www.securityweek.com/microsoft-patches-86-vulnerabilities/
 https://www.securityweek.com/microsoft-reduces-israels-access-to-cloud-and-ai-products-over-reports-of-mass-surveillance-in-gaza/
 https://www.securityweek.com/microsoft-revokes-over-200-certificates-to-disrupt-ransomware-campaign/
 https://www.securityweek.com/microsoft-silently-mitigated-exploited-lnk-vulnerability/
+https://www.securityweek.com/militant-groups-are-experimenting-with-ai-and-the-risks-are-expected-to-grow/
 https://www.securityweek.com/millions-impacted-by-conduent-data-breach/
 https://www.securityweek.com/mitre-releases-2025-list-of-top-25-most-dangerous-software-vulnerabilities/
 https://www.securityweek.com/mokn-raises-3-million-for-phish-back-solution/
@@ -584,6 +597,7 @@ https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-
 https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-configurations-exposed-in-breach/
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
 https://www.securityweek.com/sophisticated-malware-deployed-in-oracle-ebs-zero-day-attacks/
+https://www.securityweek.com/soverli-raises-2-6-million-for-secure-smartphone-os/
 https://www.securityweek.com/spanish-airline-iberia-notifies-customers-of-data-breach/
 https://www.securityweek.com/spektrum-labs-emerges-from-stealth-to-help-companies-prove-resilience/
 https://www.securityweek.com/squarex-and-perplexity-quarrel-over-alleged-comet-browser-vulnerability/
@@ -591,6 +605,7 @@ https://www.securityweek.com/state-sponsored-hackers-stole-sonicwall-cloud-backu
 https://www.securityweek.com/supply-chain-attack-targets-vs-code-extensions-with-glassworm-malware/
 https://www.securityweek.com/sweet-security-raises-75-million-for-cloud-and-ai-security/
 https://www.securityweek.com/terra-security-raises-30-million-for-ai-penetration-testing-platform/
+https://www.securityweek.com/third-draftkings-hacker-pleads-guilty/
 https://www.securityweek.com/threat-actor-connected-to-play-ransomhub-and-dragonforce-ransomware-operations/
 https://www.securityweek.com/tidal-cyber-raises-10-million-for-cti-and-adversary-behavior-platform/
 https://www.securityweek.com/tiffany-data-breach-impacts-thousands-of-customers/

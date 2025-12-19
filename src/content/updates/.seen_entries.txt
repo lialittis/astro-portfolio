@@ -28,6 +28,7 @@ https://blog.trailofbits.com/2025/11/18/we-found-cryptography-bugs-in-the-ellipt
 https://blog.trailofbits.com/2025/12/02/introducing-constant-time-support-for-llvm-to-protect-cryptographic-code/
 https://blog.trailofbits.com/2025/12/11/introducing-mrva-a-terminal-first-approach-to-codeql-multi-repo-variant-analysis/
 https://blog.trailofbits.com/2025/12/12/catching-malicious-package-releases-using-a-transparency-log/
+https://blog.trailofbits.com/2025/12/16/use-gwp-asan-to-detect-exploits-in-production-environments/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://thehackernews.com/2025/07/ai-driven-trends-in-endpoint-security.html
 https://thehackernews.com/2025/08/abandoned-sogou-zhuyin-update-server.html
@@ -268,6 +269,7 @@ https://thehackernews.com/2025/12/brazil-hit-by-banking-trojan-spread-via.html
 https://thehackernews.com/2025/12/chopping-ai-down-to-size-turning.html
 https://thehackernews.com/2025/12/cisa-adds-actively-exploited-sierra.html
 https://thehackernews.com/2025/12/cisa-flags-actively-exploited-geoserver.html
+https://thehackernews.com/2025/12/cisa-flags-critical-asus-live-update.html
 https://thehackernews.com/2025/12/critical-react2shell-flaw-added-to-cisa.html
 https://thehackernews.com/2025/12/critical-rsc-bugs-in-react-and-nextjs.html
 https://thehackernews.com/2025/12/critical-xxe-bug-cve-2025-66516-cvss.html
@@ -280,9 +282,11 @@ https://thehackernews.com/2025/12/four-threat-clusters-using-castleloader.html
 https://thehackernews.com/2025/12/freepbx-authentication-bypass-exposed.html
 https://thehackernews.com/2025/12/google-adds-layered-defenses-to-chrome.html
 https://thehackernews.com/2025/12/how-to-streamline-zero-trust-using.html
+https://thehackernews.com/2025/12/hpe-oneview-flaw-rated-cvss-100-allows.html
 https://thehackernews.com/2025/12/india-orders-messaging-apps-to-work.html
 https://thehackernews.com/2025/12/intellexa-leaks-reveal-zero-days-and.html
 https://thehackernews.com/2025/12/jpcert-confirms-active-command.html
+https://thehackernews.com/2025/12/kimwolf-botnet-hijacks-18-million.html
 https://thehackernews.com/2025/12/malicious-rust-crate-delivers-os.html
 https://thehackernews.com/2025/12/microsoft-silently-patches-windows-lnk.html
 https://thehackernews.com/2025/12/nanoremote-malware-uses-google-drive.html
@@ -293,9 +297,12 @@ https://thehackernews.com/2025/12/react2shell-exploitation-escalates-into.html
 https://thehackernews.com/2025/12/researchers-find-malicious-vs-code-go.html
 https://thehackernews.com/2025/12/researchers-uncover-30-flaws-in-ai.html
 https://thehackernews.com/2025/12/securing-genai-in-browser-policy.html
+https://thehackernews.com/2025/12/sonicwall-fixes-actively-exploited-cve.html
 https://thehackernews.com/2025/12/stac6565-targets-canada-in-80-of.html
 https://thehackernews.com/2025/12/storm-0249-escalates-ransomware-attacks.html
+https://thehackernews.com/2025/12/the-case-for-dynamic-ai-saas-security.html
 https://thehackernews.com/2025/12/threatsday-bulletin-spyware-alerts.html
+https://thehackernews.com/2025/12/threatsday-bulletin-whatsapp-hijacks.html
 https://thehackernews.com/2025/12/weekly-recap-apple-0-days-winrar.html
 https://thehackernews.com/2025/12/weekly-recap-usb-malware-react2shell.html
 https://thehackernews.com/2025/12/wirte-leverages-ashenloader-sideloading.html
@@ -365,12 +372,15 @@ https://www.schneier.com/blog/archives/2025/12/against-the-federal-moratorium-on
 https://www.schneier.com/blog/archives/2025/12/ai-vs-human-drivers.html
 https://www.schneier.com/blog/archives/2025/12/ais-exploiting-smart-contracts.html
 https://www.schneier.com/blog/archives/2025/12/building-trustworthy-ai-agents.html
+https://www.schneier.com/blog/archives/2025/12/deliberate-internet-shutdowns.html
 https://www.schneier.com/blog/archives/2025/12/fbi-warns-of-fake-video-scams.html
 https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-vampire-squid-genome.html
 https://www.schneier.com/blog/archives/2025/12/like-social-media-ai-requires-difficult-choices.html
+https://www.schneier.com/blog/archives/2025/12/someone-boarded-a-plane-at-heathrow-without-a-ticket-or-passport.html
 https://www.schneier.com/blog/archives/2025/12/substitution-cipher-based-on-the-voynich-manuscript.html
 https://www.schneier.com/blog/archives/2025/12/upcoming-speaking-engagements-51.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
+https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
@@ -426,6 +436,7 @@ https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
 https://www.securityweek.com/cisa-confirms-exploitation-of-recent-oracle-identity-manager-vulnerability/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
+https://www.securityweek.com/cisa-warns-of-exploited-flaw-in-asus-update-tool/
 https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-in-coordinated-campaign/
 https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-center-appliance/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
@@ -462,6 +473,7 @@ https://www.securityweek.com/fieldtex-data-breach-impacts-238000/
 https://www.securityweek.com/firecompass-raises-20-million-for-offensive-security-platform/
 https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
 https://www.securityweek.com/fortinet-confirms-active-exploitation-of-critical-fortiweb-vulnerability/
+https://www.securityweek.com/france-probes-foreign-interference-after-remote-control-malware-found-on-passenger-ferry/
 https://www.securityweek.com/french-soccer-federation-hit-by-cyberattack-member-data-stolen/
 https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-chain-attacks/
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
@@ -486,6 +498,7 @@ https://www.securityweek.com/high-severity-vulnerabilities-patched-in-vmware-ari
 https://www.securityweek.com/highest-ever-severity-score-assigned-by-microsoft-to-asp-net-core-vulnerability/
 https://www.securityweek.com/how-software-development-teams-can-securely-and-ethically-deploy-ai-tools/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
+https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
 https://www.securityweek.com/hyperbunker-raises-seed-funding-to-launch-next-generation-anti-ransomware-device/
 https://www.securityweek.com/ics-patch-tuesday-fixes-announced-by-siemens-schneider-rockwell-abb-phoenix-contact/
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-addressed-by-siemens-rockwell-aveva-schneider/
@@ -506,6 +519,7 @@ https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
 https://www.securityweek.com/insight-partners-confirms-data-breach-result-of-ransomware-attack/
 https://www.securityweek.com/interpol-says-260-suspects-in-online-romance-scams-have-been-arrested-in-africa/
+https://www.securityweek.com/iot-security-firm-exein-raises-e100-million/
 https://www.securityweek.com/irregular-raises-80-million-for-ai-security-testing-lab/
 https://www.securityweek.com/israeli-cyber-fund-glilot-capital-raises-500-million/
 https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-cyberattack/
@@ -593,6 +607,7 @@ https://www.securityweek.com/security-firms-hit-by-salesforce-salesloft-drift-br
 https://www.securityweek.com/securityweek-to-host-2025-ics-cybersecurity-conference-october-27-30-in-atlanta/
 https://www.securityweek.com/servicenow-to-acquire-identity-security-firm-veza-in-reported-1-billion-deal/
 https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
+https://www.securityweek.com/sonicwall-patches-exploited-sma-1000-zero-day/
 https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-email-security-appliance/
 https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-configurations-exposed-in-breach/
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
@@ -615,6 +630,7 @@ https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scann
 https://www.securityweek.com/trump-signs-executive-order-to-block-state-ai-regulations/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
+https://www.securityweek.com/uefi-vulnerability-in-major-motherboards-enables-early-boot-attacks/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/
 https://www.securityweek.com/ukrainian-extradited-to-us-faces-charges-in-jabber-zeus-cybercrime-case/
 https://www.securityweek.com/ukrainian-man-extradited-from-ireland-to-us-over-conti-ransomware-charges/

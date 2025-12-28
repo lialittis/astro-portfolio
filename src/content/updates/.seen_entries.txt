@@ -270,9 +270,11 @@ https://thehackernews.com/2025/12/attacks-are-evolving-3-ways-to-protect.html
 https://thehackernews.com/2025/12/brazil-hit-by-banking-trojan-spread-via.html
 https://thehackernews.com/2025/12/chopping-ai-down-to-size-turning.html
 https://thehackernews.com/2025/12/cisa-adds-actively-exploited-sierra.html
+https://thehackernews.com/2025/12/cisa-flags-actively-exploited-digiever.html
 https://thehackernews.com/2025/12/cisa-flags-actively-exploited-geoserver.html
 https://thehackernews.com/2025/12/cisa-flags-critical-asus-live-update.html
 https://thehackernews.com/2025/12/cracked-software-and-youtube-videos.html
+https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html
 https://thehackernews.com/2025/12/critical-n8n-flaw-cvss-99-enables.html
 https://thehackernews.com/2025/12/critical-react2shell-flaw-added-to-cisa.html
 https://thehackernews.com/2025/12/critical-rsc-bugs-in-react-and-nextjs.html
@@ -282,6 +284,7 @@ https://thehackernews.com/2025/12/experts-confirm-jssmuggler-uses.html
 https://thehackernews.com/2025/12/fake-osint-and-gpt-utility-github-repos.html
 https://thehackernews.com/2025/12/featured-chrome-browser-extension.html
 https://thehackernews.com/2025/12/fortinet-ivanti-and-sap-issue-urgent.html
+https://thehackernews.com/2025/12/fortinet-warns-of-active-exploitation.html
 https://thehackernews.com/2025/12/four-threat-clusters-using-castleloader.html
 https://thehackernews.com/2025/12/freepbx-authentication-bypass-exposed.html
 https://thehackernews.com/2025/12/google-adds-layered-defenses-to-chrome.html
@@ -299,6 +302,7 @@ https://thehackernews.com/2025/12/microsoft-silently-patches-windows-lnk.html
 https://thehackernews.com/2025/12/nanoremote-malware-uses-google-drive.html
 https://thehackernews.com/2025/12/new-advanced-phishing-kits-use-ai-and.html
 https://thehackernews.com/2025/12/new-macsync-macos-stealer-uses-signed.html
+https://thehackernews.com/2025/12/new-mongodb-flaw-lets-unauthenticated.html
 https://thehackernews.com/2025/12/new-react-rsc-vulnerabilities-enable.html
 https://thehackernews.com/2025/12/new-uefi-flaw-enables-early-boot-dma.html
 https://thehackernews.com/2025/12/nigeria-arrests-raccoono365-phishing.html
@@ -315,7 +319,9 @@ https://thehackernews.com/2025/12/stac6565-targets-canada-in-80-of.html
 https://thehackernews.com/2025/12/storm-0249-escalates-ransomware-attacks.html
 https://thehackernews.com/2025/12/the-case-for-dynamic-ai-saas-security.html
 https://thehackernews.com/2025/12/threatsday-bulletin-spyware-alerts.html
+https://thehackernews.com/2025/12/threatsday-bulletin-stealth-loaders-ai.html
 https://thehackernews.com/2025/12/threatsday-bulletin-whatsapp-hijacks.html
+https://thehackernews.com/2025/12/trust-wallet-chrome-extension-bug.html
 https://thehackernews.com/2025/12/two-chrome-extensions-caught-secretly.html
 https://thehackernews.com/2025/12/us-doj-charges-54-in-atm-jackpotting.html
 https://thehackernews.com/2025/12/us-doj-seizes-fraud-domain-behind-146.html
@@ -392,7 +398,9 @@ https://www.schneier.com/blog/archives/2025/12/ais-exploiting-smart-contracts.ht
 https://www.schneier.com/blog/archives/2025/12/building-trustworthy-ai-agents.html
 https://www.schneier.com/blog/archives/2025/12/deliberate-internet-shutdowns.html
 https://www.schneier.com/blog/archives/2025/12/fbi-warns-of-fake-video-scams.html
+https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-squid-camouflage.html
 https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-vampire-squid-genome.html
+https://www.schneier.com/blog/archives/2025/12/iot-hack.html
 https://www.schneier.com/blog/archives/2025/12/like-social-media-ai-requires-difficult-choices.html
 https://www.schneier.com/blog/archives/2025/12/microsoft-is-finally-killing-rc4.html
 https://www.schneier.com/blog/archives/2025/12/someone-boarded-a-plane-at-heathrow-without-a-ticket-or-passport.html

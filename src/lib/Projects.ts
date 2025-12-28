@@ -1,5 +1,12 @@
 const projects = [
 	{
+		title: 'Fun TUI in Rust',
+		technologies: ['Rust', 'TUI', 'CLI', 'Crossterm'],
+		description:
+			'A fun terminal user interface (TUI) application built using Rust and the Crossterm library. This project showcases my skills in Rust programming and TUI development, providing an engaging and interactive experience for users in the terminal environment.',
+		url: 'https://gitea.com/lialittis/fun-tui'
+	},
+	{
 		title: 'Cryptology Labs',
 		technologies: ['Cryptology', '', '', ''],
 		description:

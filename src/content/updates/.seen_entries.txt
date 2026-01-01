@@ -30,6 +30,7 @@ https://blog.trailofbits.com/2025/12/11/introducing-mrva-a-terminal-first-approa
 https://blog.trailofbits.com/2025/12/12/catching-malicious-package-releases-using-a-transparency-log/
 https://blog.trailofbits.com/2025/12/16/use-gwp-asan-to-detect-exploits-in-production-environments/
 https://blog.trailofbits.com/2025/12/19/can-chatbots-craft-correct-code/
+https://blog.trailofbits.com/2025/12/31/detect-gos-silent-arithmetic-bugs-with-go-panikint/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://thehackernews.com/2025/07/ai-driven-trends-in-endpoint-security.html
@@ -282,6 +283,7 @@ https://thehackernews.com/2025/12/critical-react2shell-flaw-added-to-cisa.html
 https://thehackernews.com/2025/12/critical-rsc-bugs-in-react-and-nextjs.html
 https://thehackernews.com/2025/12/critical-xxe-bug-cve-2025-66516-cvss.html
 https://thehackernews.com/2025/12/csa-issues-alert-on-critical.html
+https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html
 https://thehackernews.com/2025/12/discover-ai-tools-fueling-next.html
 https://thehackernews.com/2025/12/experts-confirm-jssmuggler-uses.html
 https://thehackernews.com/2025/12/fake-osint-and-gpt-utility-github-repos.html
@@ -294,6 +296,7 @@ https://thehackernews.com/2025/12/google-adds-layered-defenses-to-chrome.html
 https://thehackernews.com/2025/12/how-to-integrate-ai-into-modern-soc.html
 https://thehackernews.com/2025/12/how-to-streamline-zero-trust-using.html
 https://thehackernews.com/2025/12/hpe-oneview-flaw-rated-cvss-100-allows.html
+https://thehackernews.com/2025/12/ibm-warns-of-critical-api-connect-bug.html
 https://thehackernews.com/2025/12/india-orders-messaging-apps-to-work.html
 https://thehackernews.com/2025/12/intellexa-leaks-reveal-zero-days-and.html
 https://thehackernews.com/2025/12/interpol-arrests-574-in-africa.html
@@ -317,6 +320,7 @@ https://thehackernews.com/2025/12/passwd-walkthrough-of-google-workspace.html
 https://thehackernews.com/2025/12/picklescan-bugs-allow-malicious-pytorch.html
 https://thehackernews.com/2025/12/react2shell-exploitation-escalates-into.html
 https://thehackernews.com/2025/12/researchers-find-malicious-vs-code-go.html
+https://thehackernews.com/2025/12/researchers-spot-modified-shai-hulud.html
 https://thehackernews.com/2025/12/researchers-uncover-30-flaws-in-ai.html
 https://thehackernews.com/2025/12/sec-files-charges-over-14-million.html
 https://thehackernews.com/2025/12/securing-genai-in-browser-policy.html
@@ -330,6 +334,7 @@ https://thehackernews.com/2025/12/threatsday-bulletin-stealth-loaders-ai.html
 https://thehackernews.com/2025/12/threatsday-bulletin-whatsapp-hijacks.html
 https://thehackernews.com/2025/12/traditional-security-frameworks-leave.html
 https://thehackernews.com/2025/12/trust-wallet-chrome-extension-bug.html
+https://thehackernews.com/2025/12/trust-wallet-chrome-extension-hack.html
 https://thehackernews.com/2025/12/two-chrome-extensions-caught-secretly.html
 https://thehackernews.com/2025/12/us-doj-charges-54-in-atm-jackpotting.html
 https://thehackernews.com/2025/12/us-doj-seizes-fraud-domain-behind-146.html
@@ -412,6 +417,7 @@ https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-squid-camou
 https://www.schneier.com/blog/archives/2025/12/friday-squid-blogging-vampire-squid-genome.html
 https://www.schneier.com/blog/archives/2025/12/iot-hack.html
 https://www.schneier.com/blog/archives/2025/12/like-social-media-ai-requires-difficult-choices.html
+https://www.schneier.com/blog/archives/2025/12/linkedin-job-scams.html
 https://www.schneier.com/blog/archives/2025/12/microsoft-is-finally-killing-rc4.html
 https://www.schneier.com/blog/archives/2025/12/someone-boarded-a-plane-at-heathrow-without-a-ticket-or-passport.html
 https://www.schneier.com/blog/archives/2025/12/substitution-cipher-based-on-the-voynich-manuscript.html
@@ -509,6 +515,7 @@ https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
 https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acquisition-of-wiz/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
+https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
@@ -662,6 +669,7 @@ https://www.securityweek.com/security-firms-hit-by-salesforce-salesloft-drift-br
 https://www.securityweek.com/securityweek-to-host-2025-ics-cybersecurity-conference-october-27-30-in-atlanta/
 https://www.securityweek.com/servicenow-to-acquire-armis-for-7-75-billion-in-cash/
 https://www.securityweek.com/servicenow-to-acquire-identity-security-firm-veza-in-reported-1-billion-deal/
+https://www.securityweek.com/shai-hulud-supply-chain-attack-led-to-8-5-million-trust-wallet-heist/
 https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
 https://www.securityweek.com/sonicwall-patches-exploited-sma-1000-zero-day/
 https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-email-security-appliance/

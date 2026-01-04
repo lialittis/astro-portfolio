@@ -345,6 +345,11 @@ https://thehackernews.com/2025/12/weekly-recap-usb-malware-react2shell.html
 https://thehackernews.com/2025/12/wirte-leverages-ashenloader-sideloading.html
 https://thehackernews.com/2025/12/wordpress-king-addons-flaw-under-active.html
 https://thehackernews.com/2025/12/zero-click-agentic-browser-attack-can.html
+https://thehackernews.com/2026/01/cybercriminals-abuse-google-cloud-email.html
+https://thehackernews.com/2026/01/rondodox-botnet-exploits-critical.html
+https://thehackernews.com/2026/01/the-roi-problem-in-attack-surface.html
+https://thehackernews.com/2026/01/threatsday-bulletin-ghostad-drain-macos.html
+https://thehackernews.com/2026/01/transparent-tribe-launches-new-rat.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -423,6 +428,7 @@ https://www.schneier.com/blog/archives/2025/12/someone-boarded-a-plane-at-heathr
 https://www.schneier.com/blog/archives/2025/12/substitution-cipher-based-on-the-voynich-manuscript.html
 https://www.schneier.com/blog/archives/2025/12/upcoming-speaking-engagements-51.html
 https://www.schneier.com/blog/archives/2025/12/urban-vpn-proxy-surreptitiously-intercepts-ai-chats.html
+https://www.schneier.com/blog/archives/2026/01/flock-exposes-its-ai-enabled-surveillance-cameras.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
@@ -434,6 +440,7 @@ https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competitio
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
+https://www.securityweek.com/adobe-coldfusion-servers-targeted-in-coordinated-campaign/
 https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-vulnerability-in-collaboration-suite/
@@ -496,6 +503,7 @@ https://www.securityweek.com/cloudflare-outage-caused-by-react2shell-mitigations
 https://www.securityweek.com/cloudflare-says-highly-disruptive-outage-not-caused-by-attack/
 https://www.securityweek.com/clover-security-raises-36-million-to-secure-software-by-design/
 https://www.securityweek.com/coupang-to-issue-1-17-billion-in-vouchers-over-data-breach/
+https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individuals/
 https://www.securityweek.com/critical-king-addons-vulnerability-exploited-to-hack-wordpress-sites/
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
 https://www.securityweek.com/critical-windows-server-wsus-vulnerability-exploited-in-the-wild/
@@ -640,6 +648,7 @@ https://www.securityweek.com/penn-and-phoenix-universities-disclose-data-breach-
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-data-breach-after-ransomware-attack/
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-ransomware-behind-weeks-long-outage/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
+https://www.securityweek.com/president-trump-orders-divestment-in-2-9-million-chips-deal-to-protect-us-security-interests/
 https://www.securityweek.com/prime-security-raises-20-million-to-build-agentic-security-architect/
 https://www.securityweek.com/princeton-university-data-breach-impacts-alumni-students-employees/
 https://www.securityweek.com/proofpoint-completes-1-8-billion-acquisition-of-hornetsecurity/
@@ -658,6 +667,7 @@ https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
 https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
+https://www.securityweek.com/rondodox-botnet-exploiting-react2shell-vulnerability/
 https://www.securityweek.com/rondodox-botnet-takes-exploit-shotgun-approach/
 https://www.securityweek.com/salesforce-ai-hack-enabled-crm-data-theft/
 https://www.securityweek.com/salesforce-instances-hacked-via-gainsight-integrations/
@@ -696,6 +706,7 @@ https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scann
 https://www.securityweek.com/trump-signs-executive-order-to-block-state-ai-regulations/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
+https://www.securityweek.com/two-us-cybersecurity-pros-plead-guilty-over-ransomware-attacks/
 https://www.securityweek.com/uefi-vulnerability-in-major-motherboards-enables-early-boot-attacks/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/
 https://www.securityweek.com/ukrainian-extradited-to-us-faces-charges-in-jabber-zeus-cybercrime-case/

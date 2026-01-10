@@ -346,18 +346,24 @@ https://thehackernews.com/2025/12/wirte-leverages-ashenloader-sideloading.html
 https://thehackernews.com/2025/12/wordpress-king-addons-flaw-under-active.html
 https://thehackernews.com/2025/12/zero-click-agentic-browser-attack-can.html
 https://thehackernews.com/2026/01/active-exploitation-hits-legacy-d-link.html
+https://thehackernews.com/2026/01/cisa-retires-10-emergency-cybersecurity.html
 https://thehackernews.com/2026/01/critical-adonisjs-bodyparser-flaw-cvss.html
 https://thehackernews.com/2026/01/cybercriminals-abuse-google-cloud-email.html
+https://thehackernews.com/2026/01/cybersecurity-predictions-2026-hype-we.html
 https://thehackernews.com/2026/01/fake-booking-emails-redirect-hotel.html
 https://thehackernews.com/2026/01/kimwolf-android-botnet-infects-over-2.html
 https://thehackernews.com/2026/01/new-n8n-vulnerability-99-cvss-lets.html
 https://thehackernews.com/2026/01/rondodox-botnet-exploits-critical.html
 https://thehackernews.com/2026/01/the-roi-problem-in-attack-surface.html
+https://thehackernews.com/2026/01/the-state-of-trusted-open-source.html
 https://thehackernews.com/2026/01/threatsday-bulletin-ghostad-drain-macos.html
+https://thehackernews.com/2026/01/threatsday-bulletin-rustfs-flaw-iranian.html
 https://thehackernews.com/2026/01/transparent-tribe-launches-new-rat.html
+https://thehackernews.com/2026/01/trend-micro-apex-central-rce-flaw.html
 https://thehackernews.com/2026/01/two-chrome-extensions-caught-stealing.html
 https://thehackernews.com/2026/01/unpatched-firmware-flaw-exposes.html
 https://thehackernews.com/2026/01/vs-code-forks-recommend-missing.html
+https://thehackernews.com/2026/01/whatsapp-worm-spreads-astaroth-banking.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -437,8 +443,11 @@ https://www.schneier.com/blog/archives/2025/12/substitution-cipher-based-on-the-
 https://www.schneier.com/blog/archives/2025/12/upcoming-speaking-engagements-51.html
 https://www.schneier.com/blog/archives/2025/12/urban-vpn-proxy-surreptitiously-intercepts-ai-chats.html
 https://www.schneier.com/blog/archives/2026/01/a-cyberattack-was-part-of-the-us-assault-on-venezuela.html
+https://www.schneier.com/blog/archives/2026/01/ai-humans-making-the-relationship-work.html
 https://www.schneier.com/blog/archives/2026/01/flock-exposes-its-ai-enabled-surveillance-cameras.html
+https://www.schneier.com/blog/archives/2026/01/palo-alto-crosswalk-signals-had-default-passwords.html
 https://www.schneier.com/blog/archives/2026/01/telegram-hosting-worlds-largest-darknet-market.html
+https://www.schneier.com/blog/archives/2026/01/the-wegmans-supermarket-chain-is-probably-using-facial-recognition.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
@@ -446,6 +455,7 @@ https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-bre
 https://www.securityweek.com/22-million-affected-by-aflac-data-breach/
 https://www.securityweek.com/3-5-million-affected-by-university-of-phoenix-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
+https://www.securityweek.com/377000-impacted-by-data-breach-at-texas-gas-station-firm/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
@@ -499,6 +509,7 @@ https://www.securityweek.com/chrome-143-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
 https://www.securityweek.com/cisa-analyzes-malware-from-ivanti-epmm-intrusions/
+https://www.securityweek.com/cisa-closes-10-emergency-directives-as-vulnerability-catalog-takes-over/
 https://www.securityweek.com/cisa-confirms-exploitation-of-recent-oracle-identity-manager-vulnerability/
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
@@ -520,6 +531,7 @@ https://www.securityweek.com/critical-king-addons-vulnerability-exploited-to-hac
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
 https://www.securityweek.com/critical-windows-server-wsus-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/crowdstrike-insider-helped-hackers-falsely-claim-system-breach/
+https://www.securityweek.com/crowdstrike-to-buy-identity-security-firm-sgnl-for-740-million-in-cash/
 https://www.securityweek.com/customer-service-firm-5ca-denies-responsibility-for-discord-data-breach/
 https://www.securityweek.com/cyber-risk-trends-for-2026-building-resilience-not-just-defenses/
 https://www.securityweek.com/cyberattack-disrupts-check-in-systems-at-major-european-airports/
@@ -541,6 +553,7 @@ https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-thre
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
+https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
 https://www.securityweek.com/fbi-shares-iocs-for-recent-salesforce-intrusion-campaigns/
@@ -721,6 +734,7 @@ https://www.securityweek.com/tiffany-data-breach-impacts-thousands-of-customers/
 https://www.securityweek.com/top-us-accounting-firm-sax-discloses-2024-data-breach-impacting-220000/
 https://www.securityweek.com/toys-r-us-canada-customer-information-leaked-online/
 https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
+https://www.securityweek.com/trend-micro-patches-critical-code-execution-flaw-in-apex-central/
 https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scanning-engine/
 https://www.securityweek.com/trump-signs-executive-order-to-block-state-ai-regulations/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
@@ -753,3 +767,4 @@ https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-w
 https://www.securityweek.com/zafran-security-raises-60-million-in-series-c-funding/
 https://www.securityweek.com/zdi-drops-13-unpatched-ivanti-endpoint-manager-vulnerabilities/
 https://www.securityweek.com/zero-trust-is-15-years-old-why-full-adoption-is-worth-the-struggle/
+https://www.securityweek.com/zombieagent-attack-let-researchers-take-over-chatgpt/

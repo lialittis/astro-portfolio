@@ -346,12 +346,17 @@ https://thehackernews.com/2025/12/wirte-leverages-ashenloader-sideloading.html
 https://thehackernews.com/2025/12/wordpress-king-addons-flaw-under-active.html
 https://thehackernews.com/2025/12/zero-click-agentic-browser-attack-can.html
 https://thehackernews.com/2026/01/active-exploitation-hits-legacy-d-link.html
+https://thehackernews.com/2026/01/anthropic-launches-claude-ai-for.html
 https://thehackernews.com/2026/01/cisa-retires-10-emergency-cybersecurity.html
 https://thehackernews.com/2026/01/critical-adonisjs-bodyparser-flaw-cvss.html
 https://thehackernews.com/2026/01/cybercriminals-abuse-google-cloud-email.html
 https://thehackernews.com/2026/01/cybersecurity-predictions-2026-hype-we.html
+https://thehackernews.com/2026/01/europol-arrests-34-black-axe-members-in.html
 https://thehackernews.com/2026/01/fake-booking-emails-redirect-hotel.html
+https://thehackernews.com/2026/01/gobruteforcer-botnet-targets-crypto.html
 https://thehackernews.com/2026/01/kimwolf-android-botnet-infects-over-2.html
+https://thehackernews.com/2026/01/muddywater-launches-rustywater-rat-via.html
+https://thehackernews.com/2026/01/n8n-supply-chain-attack-abuses.html
 https://thehackernews.com/2026/01/new-n8n-vulnerability-99-cvss-lets.html
 https://thehackernews.com/2026/01/rondodox-botnet-exploits-critical.html
 https://thehackernews.com/2026/01/the-roi-problem-in-attack-surface.html
@@ -363,6 +368,7 @@ https://thehackernews.com/2026/01/trend-micro-apex-central-rce-flaw.html
 https://thehackernews.com/2026/01/two-chrome-extensions-caught-stealing.html
 https://thehackernews.com/2026/01/unpatched-firmware-flaw-exposes.html
 https://thehackernews.com/2026/01/vs-code-forks-recommend-missing.html
+https://thehackernews.com/2026/01/weekly-recap-ai-automation-exploits.html
 https://thehackernews.com/2026/01/whatsapp-worm-spreads-astaroth-banking.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
@@ -444,6 +450,7 @@ https://www.schneier.com/blog/archives/2025/12/upcoming-speaking-engagements-51.
 https://www.schneier.com/blog/archives/2025/12/urban-vpn-proxy-surreptitiously-intercepts-ai-chats.html
 https://www.schneier.com/blog/archives/2026/01/a-cyberattack-was-part-of-the-us-assault-on-venezuela.html
 https://www.schneier.com/blog/archives/2026/01/ai-humans-making-the-relationship-work.html
+https://www.schneier.com/blog/archives/2026/01/corrupting-llms-through-weird-generalizations.html
 https://www.schneier.com/blog/archives/2026/01/flock-exposes-its-ai-enabled-surveillance-cameras.html
 https://www.schneier.com/blog/archives/2026/01/palo-alto-crosswalk-signals-had-default-passwords.html
 https://www.schneier.com/blog/archives/2026/01/telegram-hosting-worlds-largest-darknet-market.html
@@ -550,6 +557,7 @@ https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
 https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acquisition-of-wiz/
 https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-threat-actor/
+https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
@@ -581,6 +589,7 @@ https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
 https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism-morality-and-hacking/
+https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center-patient-data-they-werent-immediately-notified/
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
 https://www.securityweek.com/hackers-target-perplexity-comet-browser-users/
@@ -612,6 +621,7 @@ https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
 https://www.securityweek.com/infostealer-malware-delivered-in-emeditor-supply-chain-attack/
 https://www.securityweek.com/insight-partners-confirms-data-breach-result-of-ransomware-attack/
+https://www.securityweek.com/instagram-fixes-password-reset-vulnerability-amid-user-data-leak/
 https://www.securityweek.com/interpol-says-260-suspects-in-online-romance-scams-have-been-arrested-in-africa/
 https://www.securityweek.com/iot-security-firm-exein-raises-e100-million/
 https://www.securityweek.com/irregular-raises-80-million-for-ai-security-testing-lab/
@@ -625,6 +635,7 @@ https://www.securityweek.com/kimwolf-android-botnet-ensnares-1-8-million-devices
 https://www.securityweek.com/korean-air-data-compromised-in-oracle-ebs-hack/
 https://www.securityweek.com/landfall-android-spyware-targeted-samsung-phones-via-zero-day/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
+https://www.securityweek.com/llms-in-attacker-crosshairs-warns-threat-intel-firm/
 https://www.securityweek.com/lumia-security-raises-18-million-for-ai-security-and-governance/
 https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-collect-data-google-warns/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
@@ -732,6 +743,7 @@ https://www.securityweek.com/threat-actor-connected-to-play-ransomhub-and-dragon
 https://www.securityweek.com/tidal-cyber-raises-10-million-for-cti-and-adversary-behavior-platform/
 https://www.securityweek.com/tiffany-data-breach-impacts-thousands-of-customers/
 https://www.securityweek.com/top-us-accounting-firm-sax-discloses-2024-data-breach-impacting-220000/
+https://www.securityweek.com/torq-raises-140-million-at-1-2-billion-valuation/
 https://www.securityweek.com/toys-r-us-canada-customer-information-leaked-online/
 https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
 https://www.securityweek.com/trend-micro-patches-critical-code-execution-flaw-in-apex-central/

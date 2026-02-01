@@ -378,10 +378,12 @@ https://thehackernews.com/2026/01/fortinet-patches-cve-2026-24858-after.html
 https://thehackernews.com/2026/01/gobruteforcer-botnet-targets-crypto.html
 https://thehackernews.com/2026/01/gootloader-malware-uses-5001000.html
 https://thehackernews.com/2026/01/indian-users-targeted-in-tax-phishing.html
+https://thehackernews.com/2026/01/iran-linked-redkitten-cyber-campaign.html
 https://thehackernews.com/2026/01/kimwolf-android-botnet-infects-over-2.html
 https://thehackernews.com/2026/01/kimwolf-botnet-infected-over-2-million.html
 https://thehackernews.com/2026/01/lastpass-warns-of-fake-maintenance.html
 https://thehackernews.com/2026/01/lotuslite-backdoor-targets-us-policy.html
+https://thehackernews.com/2026/01/mandiant-finds-shinyhunters-using.html
 https://thehackernews.com/2026/01/microsoft-flags-multi-stage-aitm.html
 https://thehackernews.com/2026/01/microsoft-issues-emergency-patch-for.html
 https://thehackernews.com/2026/01/microsoft-legal-action-disrupts-redvds.html
@@ -393,6 +395,7 @@ https://thehackernews.com/2026/01/new-osiris-ransomware-emerges-as-new.html
 https://thehackernews.com/2026/01/openai-to-show-ads-in-chatgpt-for.html
 https://thehackernews.com/2026/01/palo-alto-fixes-globalprotect-dos-flaw.html
 https://thehackernews.com/2026/01/phishing-attack-uses-stolen-credentials.html
+https://thehackernews.com/2026/01/poland-attributes-december-cyber.html
 https://thehackernews.com/2026/01/researchers-find-175000-publicly.html
 https://thehackernews.com/2026/01/researchers-reveal-reprompt-attack.html
 https://thehackernews.com/2026/01/researchers-uncover-chrome-extensions.html
@@ -632,6 +635,7 @@ https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
 https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acquisition-of-wiz/
 https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-threat-actor/
+https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-attack/
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/

@@ -422,20 +422,27 @@ https://thehackernews.com/2026/01/who-approved-this-agent-rethinking.html
 https://thehackernews.com/2026/01/zoom-and-gitlab-release-security.html
 https://thehackernews.com/2026/02/aisurukimwolf-botnet-launches-record.html
 https://thehackernews.com/2026/02/asian-state-backed-group-tgr-sta-1030.html
+https://thehackernews.com/2026/02/beyondtrust-fixes-critical-pre-auth-rce.html
 https://thehackernews.com/2026/02/cisa-orders-removal-of-unsupported-edge.html
 https://thehackernews.com/2026/02/claude-opus-46-finds-500-high-severity.html
 https://thehackernews.com/2026/02/compromised-dydx-npm-and-pypi-packages.html
 https://thehackernews.com/2026/02/docker-fixes-critical-ask-gordon-ai.html
+https://thehackernews.com/2026/02/fortinet-patches-critical-sqli-flaw.html
+https://thehackernews.com/2026/02/german-agencies-warn-of-signal-phishing.html
 https://thehackernews.com/2026/02/hackers-exploit-metro4shell-rce-flaw-in.html
 https://thehackernews.com/2026/02/how-samsung-knox-helps-stop-your-network-security-breach.html
 https://thehackernews.com/2026/02/infy-hackers-resume-operations-with-new.html
 https://thehackernews.com/2026/02/microsoft-begins-ntlm-phase-out-with.html
 https://thehackernews.com/2026/02/mozilla-adds-one-click-option-to.html
 https://thehackernews.com/2026/02/openclaw-bug-enables-one-click-remote.html
+https://thehackernews.com/2026/02/openclaw-integrates-virustotal-scanning.html
 https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html
+https://thehackernews.com/2026/02/solarwinds-web-help-desk-exploited-for.html
+https://thehackernews.com/2026/02/teampcp-worm-exploits-cloud.html
 https://thehackernews.com/2026/02/the-buyers-guide-to-ai-usage-control.html
 https://thehackernews.com/2026/02/threatsday-bulletin-codespaces-rce.html
 https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
+https://thehackernews.com/2026/02/weekly-recap-ai-skill-malware-31tbps.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -536,6 +543,7 @@ https://www.schneier.com/blog/archives/2026/01/why-ai-keeps-falling-for-prompt-i
 https://www.schneier.com/blog/archives/2026/02/backdoor-in-notepad.html
 https://www.schneier.com/blog/archives/2026/02/i-am-in-the-epstein-files.html
 https://www.schneier.com/blog/archives/2026/02/iphone-lockdown-mode-protects-washington-post-reporter.html
+https://www.schneier.com/blog/archives/2026/02/llms-are-getting-a-lot-better-and-faster-at-finding-and-exploiting-zero-days.html
 https://www.schneier.com/blog/archives/2026/02/microsoft-is-giving-the-fbi-bitlocker-keys.html
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
@@ -664,6 +672,7 @@ https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-thre
 https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-attack/
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
+https://www.securityweek.com/european-commission-investigating-cyberattack/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
@@ -752,6 +761,7 @@ https://www.securityweek.com/kimwolf-android-botnet-ensnares-1-8-million-devices
 https://www.securityweek.com/korean-air-data-compromised-in-oracle-ebs-hack/
 https://www.securityweek.com/landfall-android-spyware-targeted-samsung-phones-via-zero-day/
 https://www.securityweek.com/lastpass-users-targeted-with-backup-themed-phishing-emails/
+https://www.securityweek.com/lema-ai-emerges-from-stealth-with-24-million-to-tackle-third-party-risk/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
 https://www.securityweek.com/living-off-the-ai-the-next-evolution-of-attacker-tradecraft/
 https://www.securityweek.com/llms-in-attacker-crosshairs-warns-threat-intel-firm/
@@ -789,6 +799,7 @@ https://www.securityweek.com/netskope-raises-over-908-million-in-ipo/
 https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-service-disruptions/
 https://www.securityweek.com/nevada-ransomware-attack-started-months-before-it-was-discovered-per-report/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
+https://www.securityweek.com/new-paper-and-tool-help-security-teams-move-beyond-blind-reliance-on-cisas-kev-catalog/
 https://www.securityweek.com/new-reprompt-attack-silently-siphons-microsoft-copilot-data/
 https://www.securityweek.com/new-stackwarp-attack-threatens-confidential-vms-on-amd-processors/
 https://www.securityweek.com/new-sturnus-banking-trojan-targets-whatsapp-telegram-signal-messages/
@@ -809,9 +820,11 @@ https://www.securityweek.com/opti-raises-20-million-for-identity-security-platfo
 https://www.securityweek.com/oracle-e-business-suite-zero-day-exploited-in-cl0p-attacks/
 https://www.securityweek.com/oracle-says-known-vulnerabilities-possibly-exploited-in-recent-extortion-attacks/
 https://www.securityweek.com/oracles-first-2026-cpu-delivers-337-new-security-patches/
+https://www.securityweek.com/organizations-urged-to-replace-discontinued-edge-devices/
 https://www.securityweek.com/organizations-warned-of-exploited-linux-vulnerabilities/
 https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
 https://www.securityweek.com/organizations-warned-of-exploited-zimbra-collaboration-vulnerability/
+https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-against-ai-driven-threats/
 https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phishing-campaign/
 https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automotive-2026/
 https://www.securityweek.com/over-73000-watchguard-firebox-devices-impacted-by-recent-critical-flaw/
@@ -843,6 +856,7 @@ https://www.securityweek.com/realm-security-raises-15-million-in-series-a-fundin
 https://www.securityweek.com/recent-fortra-goanywhere-mft-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/recent-geoserver-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
+https://www.securityweek.com/recent-solarwinds-flaws-potentially-exploited-as-zero-days/
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
@@ -861,6 +875,7 @@ https://www.securityweek.com/servicenow-to-acquire-armis-for-7-75-billion-in-cas
 https://www.securityweek.com/servicenow-to-acquire-identity-security-firm-veza-in-reported-1-billion-deal/
 https://www.securityweek.com/shai-hulud-supply-chain-attack-led-to-8-5-million-trust-wallet-heist/
 https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
+https://www.securityweek.com/smartertools-hit-by-ransomware-via-vulnerability-in-its-own-product/
 https://www.securityweek.com/solarwinds-patches-critical-web-help-desk-vulnerabilities/
 https://www.securityweek.com/sonicwall-patches-exploited-sma-1000-zero-day/
 https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-email-security-appliance/

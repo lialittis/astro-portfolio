@@ -420,13 +420,18 @@ https://thehackernews.com/2026/01/whatsapp-rolls-out-lockdown-style.html
 https://thehackernews.com/2026/01/whatsapp-worm-spreads-astaroth-banking.html
 https://thehackernews.com/2026/01/who-approved-this-agent-rethinking.html
 https://thehackernews.com/2026/01/zoom-and-gitlab-release-security.html
+https://thehackernews.com/2026/02/83-of-ivanti-epmm-exploits-linked-to.html
 https://thehackernews.com/2026/02/aisurukimwolf-botnet-launches-record.html
+https://thehackernews.com/2026/02/apple-fixes-exploited-zero-day.html
+https://thehackernews.com/2026/02/apt36-and-sidecopy-launch-cross.html
 https://thehackernews.com/2026/02/asian-state-backed-group-tgr-sta-1030.html
 https://thehackernews.com/2026/02/beyondtrust-fixes-critical-pre-auth-rce.html
 https://thehackernews.com/2026/02/cisa-orders-removal-of-unsupported-edge.html
 https://thehackernews.com/2026/02/claude-opus-46-finds-500-high-severity.html
 https://thehackernews.com/2026/02/compromised-dydx-npm-and-pypi-packages.html
 https://thehackernews.com/2026/02/docker-fixes-critical-ask-gordon-ai.html
+https://thehackernews.com/2026/02/exposed-training-open-door-for-crypto.html
+https://thehackernews.com/2026/02/first-malicious-outlook-add-in-found.html
 https://thehackernews.com/2026/02/fortinet-patches-critical-sqli-flaw.html
 https://thehackernews.com/2026/02/german-agencies-warn-of-signal-phishing.html
 https://thehackernews.com/2026/02/hackers-exploit-metro4shell-rce-flaw-in.html
@@ -436,10 +441,13 @@ https://thehackernews.com/2026/02/microsoft-begins-ntlm-phase-out-with.html
 https://thehackernews.com/2026/02/mozilla-adds-one-click-option-to.html
 https://thehackernews.com/2026/02/openclaw-bug-enables-one-click-remote.html
 https://thehackernews.com/2026/02/openclaw-integrates-virustotal-scanning.html
+https://thehackernews.com/2026/02/over-60-software-vendors-issue-security.html
 https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html
 https://thehackernews.com/2026/02/solarwinds-web-help-desk-exploited-for.html
 https://thehackernews.com/2026/02/teampcp-worm-exploits-cloud.html
 https://thehackernews.com/2026/02/the-buyers-guide-to-ai-usage-control.html
+https://thehackernews.com/2026/02/the-ctem-divide-why-84-of-security.html
+https://thehackernews.com/2026/02/threatsday-bulletin-ai-prompt-rce.html
 https://thehackernews.com/2026/02/threatsday-bulletin-codespaces-rce.html
 https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
 https://thehackernews.com/2026/02/weekly-recap-ai-skill-malware-31tbps.html
@@ -545,6 +553,9 @@ https://www.schneier.com/blog/archives/2026/02/i-am-in-the-epstein-files.html
 https://www.schneier.com/blog/archives/2026/02/iphone-lockdown-mode-protects-washington-post-reporter.html
 https://www.schneier.com/blog/archives/2026/02/llms-are-getting-a-lot-better-and-faster-at-finding-and-exploiting-zero-days.html
 https://www.schneier.com/blog/archives/2026/02/microsoft-is-giving-the-fbi-bitlocker-keys.html
+https://www.schneier.com/blog/archives/2026/02/prompt-injection-via-road-signs.html
+https://www.schneier.com/blog/archives/2026/02/rewiring-democracy-ebook-is-on-sale.html
+https://www.schneier.com/blog/archives/2026/02/the-ai-generated-text-arms-race.html
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
@@ -581,8 +592,10 @@ https://www.securityweek.com/akira-ransomware-group-made-244-million-in-ransom-p
 https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-campaign/
 https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/
 https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espionage-campaign/
+https://www.securityweek.com/apollomd-data-breach-impacts-626000-individuals/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
 https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35-million-paid-to-date/
+https://www.securityweek.com/apple-patches-ios-zero-day-exploited-in-extremely-sophisticated-attack/
 https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-exploited-chrome-flaw/
 https://www.securityweek.com/apple-seeks-researchers-for-2026-iphone-security-program/
 https://www.securityweek.com/apple-sends-fresh-wave-of-spyware-notifications-to-french-users/
@@ -633,6 +646,7 @@ https://www.securityweek.com/cloudflare-blocks-record-11-5-tbps-ddos-attack/
 https://www.securityweek.com/cloudflare-outage-caused-by-react2shell-mitigations/
 https://www.securityweek.com/cloudflare-says-highly-disruptive-outage-not-caused-by-attack/
 https://www.securityweek.com/clover-security-raises-36-million-to-secure-software-by-design/
+https://www.securityweek.com/conduent-breach-hits-volvo-group-nearly-17000-employees-data-exposed/
 https://www.securityweek.com/coupang-to-issue-1-17-billion-in-vouchers-over-data-breach/
 https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individuals/
 https://www.securityweek.com/critical-dolby-vulnerability-patched-in-android/
@@ -692,6 +706,7 @@ https://www.securityweek.com/france-probes-foreign-interference-after-remote-con
 https://www.securityweek.com/french-soccer-federation-hit-by-cyberattack-member-data-stolen/
 https://www.securityweek.com/fresh-mongodb-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/fresh-smartermail-flaw-exploited-for-admin-access/
+https://www.securityweek.com/gitguardian-raises-50-million-for-secrets-and-non-human-identity-security/
 https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-chain-attacks/
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
@@ -719,6 +734,7 @@ https://www.securityweek.com/high-severity-vulnerabilities-patched-in-vmware-ari
 https://www.securityweek.com/highest-ever-severity-score-assigned-by-microsoft-to-asp-net-core-vulnerability/
 https://www.securityweek.com/how-software-development-teams-can-securely-and-ethically-deploy-ai-tools/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
+https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
 https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
 https://www.securityweek.com/hyperbunker-raises-seed-funding-to-launch-next-generation-anti-ransomware-device/
 https://www.securityweek.com/ics-patch-tuesday-fixes-announced-by-siemens-schneider-rockwell-abb-phoenix-contact/
@@ -784,6 +800,7 @@ https://www.securityweek.com/microsoft-patches-office-zero-day-likely-exploited-
 https://www.securityweek.com/microsoft-reduces-israels-access-to-cloud-and-ai-products-over-reports-of-mass-surveillance-in-gaza/
 https://www.securityweek.com/microsoft-revokes-over-200-certificates-to-disrupt-ransomware-campaign/
 https://www.securityweek.com/microsoft-silently-mitigated-exploited-lnk-vulnerability/
+https://www.securityweek.com/microsoft-to-enable-windows-baseline-security-with-new-runtime-integrity-safeguards/
 https://www.securityweek.com/militant-groups-are-experimenting-with-ai-and-the-risks-are-expected-to-grow/
 https://www.securityweek.com/millions-impacted-by-conduent-data-breach/
 https://www.securityweek.com/mitre-launches-new-security-framework-for-embedded-systems/
@@ -798,6 +815,7 @@ https://www.securityweek.com/nearly-250000-impacted-by-data-breach-at-medical-as
 https://www.securityweek.com/netskope-raises-over-908-million-in-ipo/
 https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-service-disruptions/
 https://www.securityweek.com/nevada-ransomware-attack-started-months-before-it-was-discovered-per-report/
+https://www.securityweek.com/nevada-unveils-new-statewide-data-classification-policy-months-after-cyberattack/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-paper-and-tool-help-security-teams-move-beyond-blind-reliance-on-cisas-kev-catalog/
 https://www.securityweek.com/new-reprompt-attack-silently-siphons-microsoft-copilot-data/
@@ -811,6 +829,7 @@ https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-indu
 https://www.securityweek.com/nordvpn-denies-breach-after-hacker-leaks-data/
 https://www.securityweek.com/notepad-patches-updater-flaw-after-reports-of-traffic-hijacking/
 https://www.securityweek.com/npm-package-with-56000-downloads-steals-whatsapp-credentials-data/
+https://www.securityweek.com/nucleus-raises-20-million-for-exposure-management/
 https://www.securityweek.com/nudge-security-raises-22-5-million-in-series-a-funding/
 https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
 https://www.securityweek.com/open-vsx-downplays-impact-from-glassworm-campaign/
@@ -933,6 +952,7 @@ https://www.securityweek.com/vulnerability-allows-hackers-to-hijack-openclaw-ai-
 https://www.securityweek.com/webinar-today-ai-and-the-trust-dilemma-balancing-innovation-and-risk/
 https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen-testing/
 https://www.securityweek.com/webinar-today-fact-vs-fiction-the-truth-about-api-security/
+https://www.securityweek.com/webinar-today-identity-under-attack-strengthen-your-identity-defenses/
 https://www.securityweek.com/webinar-today-protecting-what-wafs-and-gateways-cant-see-register/
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
 https://www.securityweek.com/whisperpair-attack-leaves-millions-of-bluetooth-accessories-open-to-hijacking/

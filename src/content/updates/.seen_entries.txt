@@ -437,18 +437,23 @@ https://thehackernews.com/2026/02/german-agencies-warn-of-signal-phishing.html
 https://thehackernews.com/2026/02/hackers-exploit-metro4shell-rce-flaw-in.html
 https://thehackernews.com/2026/02/how-samsung-knox-helps-stop-your-network-security-breach.html
 https://thehackernews.com/2026/02/infy-hackers-resume-operations-with-new.html
+https://thehackernews.com/2026/02/malicious-chrome-extensions-caught.html
 https://thehackernews.com/2026/02/microsoft-begins-ntlm-phase-out-with.html
+https://thehackernews.com/2026/02/microsoft-discloses-dns-based-clickfix.html
 https://thehackernews.com/2026/02/mozilla-adds-one-click-option-to.html
+https://thehackernews.com/2026/02/npms-update-to-harden-their-supply.html
 https://thehackernews.com/2026/02/openclaw-bug-enables-one-click-remote.html
 https://thehackernews.com/2026/02/openclaw-integrates-virustotal-scanning.html
 https://thehackernews.com/2026/02/over-60-software-vendors-issue-security.html
 https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html
+https://thehackernews.com/2026/02/researchers-observe-in-wild.html
 https://thehackernews.com/2026/02/solarwinds-web-help-desk-exploited-for.html
 https://thehackernews.com/2026/02/teampcp-worm-exploits-cloud.html
 https://thehackernews.com/2026/02/the-buyers-guide-to-ai-usage-control.html
 https://thehackernews.com/2026/02/the-ctem-divide-why-84-of-security.html
 https://thehackernews.com/2026/02/threatsday-bulletin-ai-prompt-rce.html
 https://thehackernews.com/2026/02/threatsday-bulletin-codespaces-rce.html
+https://thehackernews.com/2026/02/uat-9921-deploys-voidlink-malware-to.html
 https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
 https://thehackernews.com/2026/02/weekly-recap-ai-skill-malware-31tbps.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -556,6 +561,7 @@ https://www.schneier.com/blog/archives/2026/02/microsoft-is-giving-the-fbi-bitlo
 https://www.schneier.com/blog/archives/2026/02/prompt-injection-via-road-signs.html
 https://www.schneier.com/blog/archives/2026/02/rewiring-democracy-ebook-is-on-sale.html
 https://www.schneier.com/blog/archives/2026/02/the-ai-generated-text-arms-race.html
+https://www.schneier.com/blog/archives/2026/02/upcoming-speaking-engagements-53.html
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
@@ -606,6 +612,7 @@ https://www.securityweek.com/asymmetric-security-emerges-from-stealth-with-4-2-m
 https://www.securityweek.com/atlassian-patches-critical-apache-tika-flaw/
 https://www.securityweek.com/automotive-it-firm-hyundai-autoever-discloses-data-breach/
 https://www.securityweek.com/beer-giant-asahi-says-data-stolen-in-ransomware-attack/
+https://www.securityweek.com/beyondtrust-vulnerability-targeted-by-hackers-within-24-hours-of-poc-release/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
@@ -626,6 +633,7 @@ https://www.securityweek.com/chrome-141-and-firefox-143-patches-fix-high-severit
 https://www.securityweek.com/chrome-142-update-patches-exploited-zero-day/
 https://www.securityweek.com/chrome-142-update-patches-high-severity-flaws/
 https://www.securityweek.com/chrome-143-patches-high-severity-vulnerabilities/
+https://www.securityweek.com/chrome-145-patches-11-vulnerabilities/
 https://www.securityweek.com/chrome-edge-extensions-caught-stealing-chatgpt-sessions/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
@@ -635,6 +643,7 @@ https://www.securityweek.com/cisa-confirms-exploitation-of-recent-oracle-identit
 https://www.securityweek.com/cisa-cve-program-to-focus-on-vulnerability-data-quality/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
 https://www.securityweek.com/cisa-warns-of-exploited-flaw-in-asus-update-tool/
+https://www.securityweek.com/cisa-warns-of-exploited-solarwinds-notepad-microsoft-vulnerabilities/
 https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-in-coordinated-campaign/
 https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-center-appliance/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
@@ -683,6 +692,7 @@ https://www.securityweek.com/discord-says-user-information-stolen-in-third-party
 https://www.securityweek.com/dknife-implant-used-by-chinese-threat-actor-for-adversary-in-the-middle-attacks/
 https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acquisition-of-wiz/
 https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-threat-actor/
+https://www.securityweek.com/dutch-carrier-odido-discloses-data-breach-impacting-6-million/
 https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-attack/
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/

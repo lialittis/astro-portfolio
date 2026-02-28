@@ -10,7 +10,9 @@ http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 http://security.googleblog.com/2025/12/further-hardening-android-gpus.html
 http://security.googleblog.com/2025/12/https-certificate-industry-phasing-out.html
 http://security.googleblog.com/2026/01/android-theft-protection-feature-updates.html
+http://security.googleblog.com/2026/02/cultivating-robust-and-efficient.html
 http://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html
+http://security.googleblog.com/2026/02/strengthening-android-lead-in-scam-protection.html
 https://blog.trailofbits.com/2025/08/20/marshal-madness-a-brief-history-of-ruby-deserialization-exploits/
 https://blog.trailofbits.com/2025/08/21/weaponizing-image-scaling-against-production-ai-systems/
 https://blog.trailofbits.com/2025/08/28/intern-projects-that-outlived-the-internship/
@@ -38,8 +40,10 @@ https://blog.trailofbits.com/2026/01/29/building-cryptographic-agility-into-sigs
 https://blog.trailofbits.com/2026/01/30/celebrating-our-2025-open-source-contributions/
 https://blog.trailofbits.com/2026/02/18/carelessness-versus-craftsmanship-in-cryptography/
 https://blog.trailofbits.com/2026/02/20/using-threat-modeling-and-prompt-injection-to-audit-comet/
+https://blog.trailofbits.com/2026/02/25/mquire-linux-memory-forensics-without-external-dependencies/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
+https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
 https://thehackernews.com/2025/07/ai-driven-trends-in-endpoint-security.html
 https://thehackernews.com/2025/08/abandoned-sogou-zhuyin-update-server.html
 https://thehackernews.com/2025/08/attackers-abuse-velociraptor-forensic.html
@@ -425,6 +429,8 @@ https://thehackernews.com/2026/01/who-approved-this-agent-rethinking.html
 https://thehackernews.com/2026/01/zoom-and-gitlab-release-security.html
 https://thehackernews.com/2026/02/3-ways-to-start-your-intelligent.html
 https://thehackernews.com/2026/02/83-of-ivanti-epmm-exploits-linked-to.html
+https://thehackernews.com/2026/02/900-sangoma-freepbx-instances.html
+https://thehackernews.com/2026/02/aeternum-c2-botnet-stores-encrypted.html
 https://thehackernews.com/2026/02/aisurukimwolf-botnet-launches-record.html
 https://thehackernews.com/2026/02/anthropic-launches-claude-code-security.html
 https://thehackernews.com/2026/02/anthropic-says-chinese-ai-firms-used-16.html
@@ -446,6 +452,7 @@ https://thehackernews.com/2026/02/critical-flaws-found-in-four-vs-code.html
 https://thehackernews.com/2026/02/cybersecurity-tech-predictions-for-2026.html
 https://thehackernews.com/2026/02/docker-fixes-critical-ask-gordon-ai.html
 https://thehackernews.com/2026/02/ec-council-expands-ai-certification.html
+https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html
 https://thehackernews.com/2026/02/exposed-training-open-door-for-crypto.html
 https://thehackernews.com/2026/02/fbi-reports-1900-atm-jackpotting.html
 https://thehackernews.com/2026/02/first-malicious-outlook-add-in-found.html
@@ -459,6 +466,7 @@ https://thehackernews.com/2026/02/identity-cyber-scores-new-metric.html
 https://thehackernews.com/2026/02/identity-prioritization-isnt-backlog.html
 https://thehackernews.com/2026/02/infy-hackers-resume-operations-with-new.html
 https://thehackernews.com/2026/02/malicious-chrome-extensions-caught.html
+https://thehackernews.com/2026/02/malicious-go-crypto-module-steals.html
 https://thehackernews.com/2026/02/microsoft-begins-ntlm-phase-out-with.html
 https://thehackernews.com/2026/02/microsoft-discloses-dns-based-clickfix.html
 https://thehackernews.com/2026/02/mozilla-adds-one-click-option-to.html
@@ -476,6 +484,9 @@ https://thehackernews.com/2026/02/the-buyers-guide-to-ai-usage-control.html
 https://thehackernews.com/2026/02/the-ctem-divide-why-84-of-security.html
 https://thehackernews.com/2026/02/threatsday-bulletin-ai-prompt-rce.html
 https://thehackernews.com/2026/02/threatsday-bulletin-codespaces-rce.html
+https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html
+https://thehackernews.com/2026/02/trojanized-gaming-tools-spread-java.html
+https://thehackernews.com/2026/02/uat-10027-targets-us-education-and.html
 https://thehackernews.com/2026/02/uat-9921-deploys-voidlink-malware-to.html
 https://thehackernews.com/2026/02/unsolicitedbooker-targets-central-asian.html
 https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
@@ -581,12 +592,14 @@ https://www.schneier.com/blog/archives/2026/01/upcoming-speaking-engagements-52.
 https://www.schneier.com/blog/archives/2026/01/why-ai-keeps-falling-for-prompt-injection-attacks.html
 https://www.schneier.com/blog/archives/2026/02/ai-found-twelve-new-vulnerabilities-in-openssl.html
 https://www.schneier.com/blog/archives/2026/02/backdoor-in-notepad.html
+https://www.schneier.com/blog/archives/2026/02/friday-squid-blogging-squid-fishing-in-peru.html
 https://www.schneier.com/blog/archives/2026/02/i-am-in-the-epstein-files.html
 https://www.schneier.com/blog/archives/2026/02/iphone-lockdown-mode-protects-washington-post-reporter.html
 https://www.schneier.com/blog/archives/2026/02/llms-are-getting-a-lot-better-and-faster-at-finding-and-exploiting-zero-days.html
 https://www.schneier.com/blog/archives/2026/02/malicious-ai.html
 https://www.schneier.com/blog/archives/2026/02/microsoft-is-giving-the-fbi-bitlocker-keys.html
 https://www.schneier.com/blog/archives/2026/02/on-the-security-of-password-managers.html
+https://www.schneier.com/blog/archives/2026/02/poisoning-ai-training-data.html
 https://www.schneier.com/blog/archives/2026/02/prompt-injection-via-road-signs.html
 https://www.schneier.com/blog/archives/2026/02/rewiring-democracy-ebook-is-on-sale.html
 https://www.schneier.com/blog/archives/2026/02/side-channel-attacks-against-llms.html
@@ -594,6 +607,7 @@ https://www.schneier.com/blog/archives/2026/02/the-ai-generated-text-arms-race.h
 https://www.schneier.com/blog/archives/2026/02/the-promptware-kill-chain.html
 https://www.schneier.com/blog/archives/2026/02/upcoming-speaking-engagements-53.html
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
+https://www.schneier.com/blog/archives/2026/02/why-tehrans-two-tiered-internet-is-so-dangerous.html
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
@@ -603,10 +617,12 @@ https://www.securityweek.com/22-million-affected-by-aflac-data-breach/
 https://www.securityweek.com/3-5-million-affected-by-university-of-phoenix-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
 https://www.securityweek.com/377000-impacted-by-data-breach-at-texas-gas-station-firm/
+https://www.securityweek.com/38-million-allegedly-impacted-by-manomano-data-breach/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/750000-impacted-by-data-breach-at-canadian-investment-watchdog/
+https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/access-system-flaws-enabled-hackers-to-unlock-doors-at-major-european-firms/
 https://www.securityweek.com/adobe-coldfusion-servers-targeted-in-coordinated-campaign/
@@ -614,6 +630,7 @@ https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-vulnerability-in-collaboration-suite/
 https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
+https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
 https://www.securityweek.com/ai-security-firm-ciphero-emerges-from-stealth-with-2-5-million-in-funding/
 https://www.securityweek.com/ai-security-firm-polygraf-raises-9-5-million-in-seed-funding/
 https://www.securityweek.com/ai-sidebar-spoofing-puts-chatgpt-atlas-perplexity-comet-and-other-browsers-at-risk/
@@ -629,11 +646,13 @@ https://www.securityweek.com/akira-ransomware-group-made-244-million-in-ransom-p
 https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-campaign/
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
 https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/
+https://www.securityweek.com/anthropic-refuses-to-bend-to-pentagon-on-ai-safeguards-as-dispute-nears-deadline/
 https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espionage-campaign/
 https://www.securityweek.com/api-threats-grow-in-scale-as-ai-expands-the-blast-radius/
 https://www.securityweek.com/apollomd-data-breach-impacts-626000-individuals/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
 https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35-million-paid-to-date/
+https://www.securityweek.com/apple-iphone-and-ipad-cleared-for-classified-nato-use/
 https://www.securityweek.com/apple-patches-ios-zero-day-exploited-in-extremely-sophisticated-attack/
 https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-exploited-chrome-flaw/
 https://www.securityweek.com/apple-seeks-researchers-for-2026-iphone-security-program/
@@ -828,6 +847,7 @@ https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
 https://www.securityweek.com/japan-issues-ot-security-guidance-for-semiconductor-factories/
 https://www.securityweek.com/juniper-networks-patches-critical-junos-space-vulnerabilities/
+https://www.securityweek.com/juniper-networks-ptx-routers-affected-by-critical-vulnerability/
 https://www.securityweek.com/kasada-raises-20-million-for-anti-bot-expansion/
 https://www.securityweek.com/kimwolf-android-botnet-ensnares-1-8-million-devices/
 https://www.securityweek.com/korean-air-data-compromised-in-oracle-ebs-hack/
@@ -986,6 +1006,7 @@ https://www.securityweek.com/transunion-data-breach-impacts-4-4-million/
 https://www.securityweek.com/traveler-information-stolen-in-eurail-data-breach/
 https://www.securityweek.com/trend-micro-patches-critical-code-execution-flaw-in-apex-central/
 https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scanning-engine/
+https://www.securityweek.com/trump-orders-all-federal-agencies-to-phase-out-use-of-anthropic-technology/
 https://www.securityweek.com/trump-signs-executive-order-to-block-state-ai-regulations/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/

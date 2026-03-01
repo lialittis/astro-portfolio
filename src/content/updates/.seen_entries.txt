@@ -444,6 +444,7 @@ https://thehackernews.com/2026/02/cisa-flags-four-security-flaws-under.html
 https://thehackernews.com/2026/02/cisa-orders-removal-of-unsupported-edge.html
 https://thehackernews.com/2026/02/citizen-lab-finds-cellebrite-tool-used.html
 https://thehackernews.com/2026/02/claude-opus-46-finds-500-high-severity.html
+https://thehackernews.com/2026/02/clawjacked-flaw-lets-malicious-sites.html
 https://thehackernews.com/2026/02/clickfix-campaign-abuses-compromised.html
 https://thehackernews.com/2026/02/cline-cli-230-supply-chain-attack.html
 https://thehackernews.com/2026/02/cloud-forensics-webinar-learn-how-ai.html
@@ -474,6 +475,7 @@ https://thehackernews.com/2026/02/npms-update-to-harden-their-supply.html
 https://thehackernews.com/2026/02/openclaw-bug-enables-one-click-remote.html
 https://thehackernews.com/2026/02/openclaw-integrates-virustotal-scanning.html
 https://thehackernews.com/2026/02/over-60-software-vendors-issue-security.html
+https://thehackernews.com/2026/02/pentagon-designates-anthropic-supply.html
 https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html
 https://thehackernews.com/2026/02/researchers-observe-in-wild.html
 https://thehackernews.com/2026/02/researchers-show-copilot-and-grok-can.html
@@ -482,6 +484,7 @@ https://thehackernews.com/2026/02/solarwinds-web-help-desk-exploited-for.html
 https://thehackernews.com/2026/02/teampcp-worm-exploits-cloud.html
 https://thehackernews.com/2026/02/the-buyers-guide-to-ai-usage-control.html
 https://thehackernews.com/2026/02/the-ctem-divide-why-84-of-security.html
+https://thehackernews.com/2026/02/thousands-of-public-google-cloud-api.html
 https://thehackernews.com/2026/02/threatsday-bulletin-ai-prompt-rce.html
 https://thehackernews.com/2026/02/threatsday-bulletin-codespaces-rce.html
 https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html
@@ -670,6 +673,7 @@ https://www.securityweek.com/beyondtrust-vulnerability-exploited-in-ransomware-a
 https://www.securityweek.com/beyondtrust-vulnerability-targeted-by-hackers-within-24-hours-of-poc-release/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
+https://www.securityweek.com/canadian-tire-data-breach-impacts-38-million-accounts/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
 https://www.securityweek.com/central-maine-healthcare-data-breach-impacts-145000-individuals/
 https://www.securityweek.com/chainguard-raises-280-million-in-growth-funding/

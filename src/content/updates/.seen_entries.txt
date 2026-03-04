@@ -496,6 +496,15 @@ https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
 https://thehackernews.com/2026/02/weekly-recap-ai-skill-malware-31tbps.html
 https://thehackernews.com/2026/02/weekly-recap-double-tap-skimmers.html
 https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html
+https://thehackernews.com/2026/03/ai-agents-next-wave-identity-dark.html
+https://thehackernews.com/2026/03/fake-tech-support-spam-deploys.html
+https://thehackernews.com/2026/03/google-confirms-cve-2026-21385-in.html
+https://thehackernews.com/2026/03/google-develops-merkle-tree.html
+https://thehackernews.com/2026/03/microsoft-warns-oauth-redirect-abuse.html
+https://thehackernews.com/2026/03/new-chrome-vulnerability-let-malicious.html
+https://thehackernews.com/2026/03/open-source-cyberstrikeai-deployed-in.html
+https://thehackernews.com/2026/03/sloppylemming-targets-pakistan-and.html
+https://thehackernews.com/2026/03/starkiller-phishing-suite-uses-aitm.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -611,6 +620,9 @@ https://www.schneier.com/blog/archives/2026/02/the-promptware-kill-chain.html
 https://www.schneier.com/blog/archives/2026/02/upcoming-speaking-engagements-53.html
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
 https://www.schneier.com/blog/archives/2026/02/why-tehrans-two-tiered-internet-is-so-dangerous.html
+https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html
+https://www.schneier.com/blog/archives/2026/03/on-moltbook.html
+https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
@@ -647,6 +659,7 @@ https://www.securityweek.com/aisuru-botnet-powers-record-ddos-attack-peaking-at-
 https://www.securityweek.com/aisy-launches-out-of-stealth-to-transform-vulnerability-management/
 https://www.securityweek.com/akira-ransomware-group-made-244-million-in-ransom-proceeds/
 https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-campaign/
+https://www.securityweek.com/android-update-patches-exploited-qualcomm-zero-day/
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
 https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/
 https://www.securityweek.com/anthropic-refuses-to-bend-to-pentagon-on-ai-safeguards-as-dispute-nears-deadline/
@@ -810,6 +823,7 @@ https://www.securityweek.com/high-severity-vulnerabilities-patched-by-fortinet-a
 https://www.securityweek.com/high-severity-vulnerabilities-patched-by-ivanti-and-zoom/
 https://www.securityweek.com/high-severity-vulnerabilities-patched-in-vmware-aria-operations-nsx-vcenter/
 https://www.securityweek.com/highest-ever-severity-score-assigned-by-microsoft-to-asp-net-core-vulnerability/
+https://www.securityweek.com/honeywell-researcher-clash-over-impact-of-building-controller-vulnerability/
 https://www.securityweek.com/how-software-development-teams-can-securely-and-ethically-deploy-ai-tools/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
@@ -843,6 +857,8 @@ https://www.securityweek.com/insight-partners-confirms-data-breach-result-of-ran
 https://www.securityweek.com/instagram-fixes-password-reset-vulnerability-amid-user-data-leak/
 https://www.securityweek.com/interpol-says-260-suspects-in-online-romance-scams-have-been-arrested-in-africa/
 https://www.securityweek.com/iot-security-firm-exein-raises-e100-million/
+https://www.securityweek.com/iran-cyber-front-hacktivist-activity-rises-but-state-sponsored-attacks-stay-low/
+https://www.securityweek.com/iranian-strikes-on-amazon-data-centers-highlight-industrys-vulnerability-to-physical-disasters/
 https://www.securityweek.com/irregular-raises-80-million-for-ai-security-testing-lab/
 https://www.securityweek.com/israeli-cyber-fund-glilot-capital-raises-500-million/
 https://www.securityweek.com/italy-antitrust-agency-fines-apple-116-million-over-privacy-feature-apple-announces-appeal/
@@ -897,6 +913,7 @@ https://www.securityweek.com/netskope-raises-over-908-million-in-ipo/
 https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-service-disruptions/
 https://www.securityweek.com/nevada-ransomware-attack-started-months-before-it-was-discovered-per-report/
 https://www.securityweek.com/nevada-unveils-new-statewide-data-classification-policy-months-after-cyberattack/
+https://www.securityweek.com/new-airsnitch-attack-shows-wi-fi-client-isolation-could-be-a-false-sense-of-security/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-keenadu-android-malware-found-on-thousands-of-devices/
 https://www.securityweek.com/new-paper-and-tool-help-security-teams-move-beyond-blind-reliance-on-cisas-kev-catalog/
@@ -1041,6 +1058,7 @@ https://www.securityweek.com/vulncheck-raises-25-million-in-series-b-funding-to-
 https://www.securityweek.com/vulnerabilities-allow-disruption-of-phoenix-contact-ups-devices/
 https://www.securityweek.com/vulnerabilities-in-popular-pdf-platforms-allowed-account-takeover-data-exfiltration/
 https://www.securityweek.com/vulnerability-allows-hackers-to-hijack-openclaw-ai-assistant/
+https://www.securityweek.com/vulnerability-in-ms-agent-ai-framework-can-allow-full-system-compromise/
 https://www.securityweek.com/webinar-today-ai-and-the-trust-dilemma-balancing-innovation-and-risk/
 https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen-testing/
 https://www.securityweek.com/webinar-today-fact-vs-fiction-the-truth-about-api-security/

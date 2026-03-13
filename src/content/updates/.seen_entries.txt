@@ -41,6 +41,7 @@ https://blog.trailofbits.com/2026/01/30/celebrating-our-2025-open-source-contrib
 https://blog.trailofbits.com/2026/02/18/carelessness-versus-craftsmanship-in-cryptography/
 https://blog.trailofbits.com/2026/02/20/using-threat-modeling-and-prompt-injection-to-audit-comet/
 https://blog.trailofbits.com/2026/02/25/mquire-linux-memory-forensics-without-external-dependencies/
+https://blog.trailofbits.com/2026/03/11/six-mistakes-in-erc-4337-smart-accounts/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -498,13 +499,18 @@ https://thehackernews.com/2026/02/weekly-recap-double-tap-skimmers.html
 https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html
 https://thehackernews.com/2026/03/ai-agents-next-wave-identity-dark.html
 https://thehackernews.com/2026/03/anthropic-finds-22-firefox.html
+https://thehackernews.com/2026/03/apple-issues-security-updates-for-older.html
+https://thehackernews.com/2026/03/attackers-dont-just-send-phishing.html
 https://thehackernews.com/2026/03/can-security-platform-finally-deliver.html
 https://thehackernews.com/2026/03/chrome-extension-turns-malicious-after.html
+https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html
 https://thehackernews.com/2026/03/cisco-confirms-active-exploitation-of.html
 https://thehackernews.com/2026/03/fake-tech-support-spam-deploys.html
 https://thehackernews.com/2026/03/google-confirms-cve-2026-21385-in.html
 https://thehackernews.com/2026/03/google-develops-merkle-tree.html
 https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html
+https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html
+https://thehackernews.com/2026/03/how-to-scale-phishing-detection-in-your.html
 https://thehackernews.com/2026/03/iran-linked-muddywater-hackers-target.html
 https://thehackernews.com/2026/03/malicious-npm-package-posing-as.html
 https://thehackernews.com/2026/03/microsoft-reveals-clickfix-campaign.html
@@ -514,10 +520,15 @@ https://thehackernews.com/2026/03/new-chrome-vulnerability-let-malicious.html
 https://thehackernews.com/2026/03/open-source-cyberstrikeai-deployed-in.html
 https://thehackernews.com/2026/03/openai-codex-security-scanned-12.html
 https://thehackernews.com/2026/03/preparing-for-quantum-era-post-quantum.html
+https://thehackernews.com/2026/03/researchers-trick-perplexitys-comet-ai.html
+https://thehackernews.com/2026/03/rust-based-venon-malware-targets-33.html
+https://thehackernews.com/2026/03/six-android-malware-families-target-pix.html
 https://thehackernews.com/2026/03/sloppylemming-targets-pakistan-and.html
 https://thehackernews.com/2026/03/starkiller-phishing-suite-uses-aitm.html
 https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html
+https://thehackernews.com/2026/03/threatsday-bulletin-oauth-trap-edr.html
 https://thehackernews.com/2026/03/transparent-tribe-uses-ai-to-mass.html
+https://thehackernews.com/2026/03/veeam-patches-7-critical-backup.html
 https://thehackernews.com/2026/03/web-server-exploits-and-mimikatz-used.html
 https://thehackernews.com/2026/03/weekly-recap-qualcomm-0-day-ios-exploit.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -636,9 +647,12 @@ https://www.schneier.com/blog/archives/2026/02/upcoming-speaking-engagements-53.
 https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-jumpseat-spy-satellites.html
 https://www.schneier.com/blog/archives/2026/02/why-tehrans-two-tiered-internet-is-so-dangerous.html
 https://www.schneier.com/blog/archives/2026/03/anthropic-and-the-pentagon.html
+https://www.schneier.com/blog/archives/2026/03/canada-needs-nationalized-public-ai.html
 https://www.schneier.com/blog/archives/2026/03/claude-used-to-hack-mexican-government.html
 https://www.schneier.com/blog/archives/2026/03/friday-squid-blogging-squid-in-byzantine-monk-cooking.html
 https://www.schneier.com/blog/archives/2026/03/hacked-app-part-of-us-israeli-propaganda-campaign-against-iran.html
+https://www.schneier.com/blog/archives/2026/03/iphones-and-ipads-approved-for-nato-classified-data.html
+https://www.schneier.com/blog/archives/2026/03/jailbreaking-the-f-35-fighter-jet.html
 https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html
 https://www.schneier.com/blog/archives/2026/03/manipulating-ai-summarization-features.html
 https://www.schneier.com/blog/archives/2026/03/new-attack-against-wi-fi.html
@@ -679,6 +693,7 @@ https://www.securityweek.com/aisle-emerges-from-stealth-with-ai-based-reasoning-
 https://www.securityweek.com/aisuru-botnet-powers-record-ddos-attack-peaking-at-29-tbps/
 https://www.securityweek.com/aisy-launches-out-of-stealth-to-transform-vulnerability-management/
 https://www.securityweek.com/akira-ransomware-group-made-244-million-in-ransom-proceeds/
+https://www.securityweek.com/ally-wordpress-plugin-flaw-exposes-over-200000-websites-to-attacks/
 https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-campaign/
 https://www.securityweek.com/android-update-patches-exploited-qualcomm-zero-day/
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
@@ -695,6 +710,7 @@ https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-expl
 https://www.securityweek.com/apple-seeks-researchers-for-2026-iphone-security-program/
 https://www.securityweek.com/apple-sends-fresh-wave-of-spyware-notifications-to-french-users/
 https://www.securityweek.com/apple-updates-ios-and-macos-to-prevent-malicious-font-attacks/
+https://www.securityweek.com/apple-updates-older-ios-versions-to-patch-coruna-exploits/
 https://www.securityweek.com/arizona-attorney-general-sues-chinese-online-retailer-temu-over-data-theft-claims/
 https://www.securityweek.com/arkanix-stealer-malware-disappears-shortly-after-debut/
 https://www.securityweek.com/armorcode-raises-16-million-for-exposure-management-platform/
@@ -743,6 +759,7 @@ https://www.securityweek.com/cisa-warns-of-exploited-flaw-in-asus-update-tool/
 https://www.securityweek.com/cisa-warns-of-exploited-solarwinds-notepad-microsoft-vulnerabilities/
 https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-in-coordinated-campaign/
 https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-center-appliance/
+https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities-2/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
 https://www.securityweek.com/cisco-patches-vulnerability-exploited-by-chinese-hackers/
 https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-at-google-deepmind/
@@ -761,6 +778,7 @@ https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individu
 https://www.securityweek.com/critical-dolby-vulnerability-patched-in-android/
 https://www.securityweek.com/critical-grandstream-phone-vulnerability-exposes-calls-to-interception/
 https://www.securityweek.com/critical-king-addons-vulnerability-exploited-to-hack-wordpress-sites/
+https://www.securityweek.com/critical-n8n-vulnerabilities-allowed-server-takeover/
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/
@@ -909,6 +927,7 @@ https://www.securityweek.com/lumia-security-raises-18-million-for-ai-security-an
 https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-collect-data-google-warns/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
 https://www.securityweek.com/mazda-says-no-data-leakage-or-operational-impact-from-oracle-hack/
+https://www.securityweek.com/medtech-giant-stryker-crippled-by-iran-linked-hacker-attack/
 https://www.securityweek.com/memcyco-raises-37-million-for-anti-impersonation-technology/
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
@@ -1039,6 +1058,7 @@ https://www.securityweek.com/sophisticated-malware-deployed-in-oracle-ebs-zero-d
 https://www.securityweek.com/soverli-raises-2-6-million-for-secure-smartphone-os/
 https://www.securityweek.com/spanish-airline-iberia-notifies-customers-of-data-breach/
 https://www.securityweek.com/spektrum-labs-emerges-from-stealth-to-help-companies-prove-resilience/
+https://www.securityweek.com/splunk-zoom-patch-severe-vulnerabilities/
 https://www.securityweek.com/squarex-and-perplexity-quarrel-over-alleged-comet-browser-vulnerability/
 https://www.securityweek.com/state-sponsored-hackers-stole-sonicwall-cloud-backups-in-recent-attack/
 https://www.securityweek.com/substack-discloses-security-incident-after-hacker-leaks-data/

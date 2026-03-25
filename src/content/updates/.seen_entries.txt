@@ -42,6 +42,7 @@ https://blog.trailofbits.com/2026/02/18/carelessness-versus-craftsmanship-in-cry
 https://blog.trailofbits.com/2026/02/20/using-threat-modeling-and-prompt-injection-to-audit-comet/
 https://blog.trailofbits.com/2026/02/25/mquire-linux-memory-forensics-without-external-dependencies/
 https://blog.trailofbits.com/2026/03/11/six-mistakes-in-erc-4337-smart-accounts/
+https://blog.trailofbits.com/2026/03/24/spotting-issues-in-defi-with-dimensional-analysis/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -497,6 +498,7 @@ https://thehackernews.com/2026/02/webinar-smarter-soc-blueprint-learn.html
 https://thehackernews.com/2026/02/weekly-recap-ai-skill-malware-31tbps.html
 https://thehackernews.com/2026/02/weekly-recap-double-tap-skimmers.html
 https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html
+https://thehackernews.com/2026/03/5-learnings-from-first-ever-gartner.html
 https://thehackernews.com/2026/03/9-critical-ip-kvm-flaws-enable.html
 https://thehackernews.com/2026/03/ai-agents-next-wave-identity-dark.html
 https://thehackernews.com/2026/03/ai-flaws-in-amazon-bedrock-langsmith.html
@@ -510,16 +512,19 @@ https://thehackernews.com/2026/03/chrome-extension-turns-malicious-after.html
 https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html
 https://thehackernews.com/2026/03/cisa-flags-apple-craft-cms-laravel-bugs.html
 https://thehackernews.com/2026/03/cisco-confirms-active-exploitation-of.html
+https://thehackernews.com/2026/03/citrix-urges-patching-critical.html
 https://thehackernews.com/2026/03/claude-code-security-and-magecart.html
 https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html
 https://thehackernews.com/2026/03/critical-telnetd-flaw-cve-2026-32746.html
 https://thehackernews.com/2026/03/doj-disrupts-3-million-device-iot.html
 https://thehackernews.com/2026/03/fake-tech-support-spam-deploys.html
+https://thehackernews.com/2026/03/ghost-campaign-uses-7-npm-packages-to.html
 https://thehackernews.com/2026/03/glassworm-supply-chain-attack-abuses-72.html
 https://thehackernews.com/2026/03/google-adds-24-hour-wait-for-unverified.html
 https://thehackernews.com/2026/03/google-confirms-cve-2026-21385-in.html
 https://thehackernews.com/2026/03/google-develops-merkle-tree.html
 https://thehackernews.com/2026/03/google-fixes-two-chrome-zero-days.html
+https://thehackernews.com/2026/03/hackers-use-fake-resumes-to-steal.html
 https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html
 https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html
 https://thehackernews.com/2026/03/how-to-scale-phishing-detection-in-your.html
@@ -547,6 +552,10 @@ https://thehackernews.com/2026/03/six-android-malware-families-target-pix.html
 https://thehackernews.com/2026/03/sloppylemming-targets-pakistan-and.html
 https://thehackernews.com/2026/03/starkiller-phishing-suite-uses-aitm.html
 https://thehackernews.com/2026/03/storm-2561-spreads-trojan-vpn-clients.html
+https://thehackernews.com/2026/03/tax-search-ads-deliver-screenconnect.html
+https://thehackernews.com/2026/03/teampcp-backdoors-litellm-versions.html
+https://thehackernews.com/2026/03/teampcp-hacks-checkmarx-github-actions.html
+https://thehackernews.com/2026/03/the-hidden-cost-of-cybersecurity.html
 https://thehackernews.com/2026/03/the-importance-of-behavioral-analytics.html
 https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html
 https://thehackernews.com/2026/03/threatsday-bulletin-oauth-trap-edr.html
@@ -684,10 +693,12 @@ https://www.schneier.com/blog/archives/2026/03/jailbreaking-the-f-35-fighter-jet
 https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html
 https://www.schneier.com/blog/archives/2026/03/manipulating-ai-summarization-features.html
 https://www.schneier.com/blog/archives/2026/03/metas-ai-glasses-and-privacy.html
+https://www.schneier.com/blog/archives/2026/03/microsoft-xbox-hacked.html
 https://www.schneier.com/blog/archives/2026/03/new-attack-against-wi-fi.html
 https://www.schneier.com/blog/archives/2026/03/on-moltbook.html
 https://www.schneier.com/blog/archives/2026/03/proton-mail-shared-user-information-with-the-police.html
 https://www.schneier.com/blog/archives/2026/03/south-korean-police-accidentally-post-cryptocurrency-wallet-password.html
+https://www.schneier.com/blog/archives/2026/03/team-mirai-and-democracy.html
 https://www.schneier.com/blog/archives/2026/03/upcoming-speaking-engagements-54.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
@@ -696,6 +707,7 @@ https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-br
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
 https://www.securityweek.com/2-venezuelans-convicted-in-us-for-using-malware-to-hack-atms/
 https://www.securityweek.com/22-million-affected-by-aflac-data-breach/
+https://www.securityweek.com/3-1-million-impacted-by-qualderm-data-breach/
 https://www.securityweek.com/3-5-million-affected-by-university-of-phoenix-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
 https://www.securityweek.com/377000-impacted-by-data-breach-at-texas-gas-station-firm/
@@ -782,6 +794,7 @@ https://www.securityweek.com/chrome-142-update-patches-exploited-zero-day/
 https://www.securityweek.com/chrome-142-update-patches-high-severity-flaws/
 https://www.securityweek.com/chrome-143-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-145-patches-11-vulnerabilities/
+https://www.securityweek.com/chrome-146-update-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-edge-extensions-caught-stealing-chatgpt-sessions/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
@@ -813,6 +826,7 @@ https://www.securityweek.com/cogent-security-raises-42-million-for-ai-driven-vul
 https://www.securityweek.com/conduent-breach-hits-volvo-group-nearly-17000-employees-data-exposed/
 https://www.securityweek.com/coupang-to-issue-1-17-billion-in-vouchers-over-data-breach/
 https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individuals/
+https://www.securityweek.com/critical-citrix-netscaler-vulnerability-poised-for-exploitation-security-firms-warn/
 https://www.securityweek.com/critical-dolby-vulnerability-patched-in-android/
 https://www.securityweek.com/critical-grandstream-phone-vulnerability-exposes-calls-to-interception/
 https://www.securityweek.com/critical-hpe-aos-cx-vulnerability-allows-admin-password-resets/
@@ -865,6 +879,7 @@ https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
+https://www.securityweek.com/extortion-group-claims-it-hacked-astrazeneca/
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
 https://www.securityweek.com/fbi-20-million-losses-caused-by-700-atm-jackpotting-attacks-in-2025/
 https://www.securityweek.com/fbi-shares-iocs-for-recent-salesforce-intrusion-campaigns/
@@ -1178,6 +1193,7 @@ https://www.securityweek.com/webinar-today-protecting-what-wafs-and-gateways-can
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
 https://www.securityweek.com/whisperpair-attack-leaves-millions-of-bluetooth-accessories-open-to-hijacking/
 https://www.securityweek.com/who-is-zico-kolter-a-professor-leads-openai-safety-panel-with-power-to-halt-unsafe-ai-releases/
+https://www.securityweek.com/why-agentic-ai-systems-need-better-governance-lessons-from-openclaw/
 https://www.securityweek.com/why-identity-security-must-move-beyond-mfa/
 https://www.securityweek.com/will-ai-spm-become-the-standard-security-layer-for-safe-ai-adoption/
 https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-websites/

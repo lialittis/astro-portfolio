@@ -516,11 +516,13 @@ https://thehackernews.com/2026/03/chrome-extension-turns-malicious-after.html
 https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html
 https://thehackernews.com/2026/03/cisa-flags-apple-craft-cms-laravel-bugs.html
 https://thehackernews.com/2026/03/cisco-confirms-active-exploitation-of.html
+https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html
 https://thehackernews.com/2026/03/citrix-urges-patching-critical.html
 https://thehackernews.com/2026/03/claude-code-security-and-magecart.html
 https://thehackernews.com/2026/03/claude-extension-flaw-enabled-zero.html
 https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html
 https://thehackernews.com/2026/03/critical-telnetd-flaw-cve-2026-32746.html
+https://thehackernews.com/2026/03/deepload-malware-uses-clickfix-and-wmi.html
 https://thehackernews.com/2026/03/doj-disrupts-3-million-device-iot.html
 https://thehackernews.com/2026/03/fake-tech-support-spam-deploys.html
 https://thehackernews.com/2026/03/ghost-campaign-uses-7-npm-packages-to.html
@@ -536,6 +538,7 @@ https://thehackernews.com/2026/03/how-to-scale-phishing-detection-in-your.html
 https://thehackernews.com/2026/03/interlock-ransomware-exploits-cisco-fmc.html
 https://thehackernews.com/2026/03/interpol-dismantles-45000-malicious-ips.html
 https://thehackernews.com/2026/03/investigating-new-click-fix-variant.html
+https://thehackernews.com/2026/03/iran-linked-hackers-breach-fbi.html
 https://thehackernews.com/2026/03/iran-linked-muddywater-hackers-target.html
 https://thehackernews.com/2026/03/langchain-langgraph-flaws-expose-files.html
 https://thehackernews.com/2026/03/leaknet-ransomware-uses-clickfix-via.html
@@ -550,6 +553,7 @@ https://thehackernews.com/2026/03/nine-crackarmor-flaws-in-linux-apparmor.html
 https://thehackernews.com/2026/03/open-source-cyberstrikeai-deployed-in.html
 https://thehackernews.com/2026/03/open-vsx-bug-let-malicious-vs-code.html
 https://thehackernews.com/2026/03/openai-codex-security-scanned-12.html
+https://thehackernews.com/2026/03/openai-patches-chatgpt-data.html
 https://thehackernews.com/2026/03/oracle-patches-critical-cve-2026-21992.html
 https://thehackernews.com/2026/03/preparing-for-quantum-era-post-quantum.html
 https://thehackernews.com/2026/03/product-walkthrough-how-mesh-csma.html
@@ -566,6 +570,7 @@ https://thehackernews.com/2026/03/teampcp-pushes-malicious-telnyx.html
 https://thehackernews.com/2026/03/the-hidden-cost-of-cybersecurity.html
 https://thehackernews.com/2026/03/the-importance-of-behavioral-analytics.html
 https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html
+https://thehackernews.com/2026/03/the-state-of-secrets-sprawl-2026-9.html
 https://thehackernews.com/2026/03/threatsday-bulletin-oauth-trap-edr.html
 https://thehackernews.com/2026/03/transparent-tribe-uses-ai-to-mass.html
 https://thehackernews.com/2026/03/trivy-security-scanner-github-actions.html
@@ -575,6 +580,7 @@ https://thehackernews.com/2026/03/veeam-patches-7-critical-backup.html
 https://thehackernews.com/2026/03/web-server-exploits-and-mimikatz-used.html
 https://thehackernews.com/2026/03/webinar-stop-guessing-learn-to-validate.html
 https://thehackernews.com/2026/03/weekly-recap-qualcomm-0-day-ios-exploit.html
+https://thehackernews.com/2026/03/weekly-recap-telecom-sleeper-cells-llm.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -692,6 +698,7 @@ https://www.schneier.com/blog/archives/2026/02/us-declassifies-information-on-ju
 https://www.schneier.com/blog/archives/2026/02/why-tehrans-two-tiered-internet-is-so-dangerous.html
 https://www.schneier.com/blog/archives/2026/03/academia-and-the-ai-brain-drain.html
 https://www.schneier.com/blog/archives/2026/03/anthropic-and-the-pentagon.html
+https://www.schneier.com/blog/archives/2026/03/apples-camera-indicator-lights.html
 https://www.schneier.com/blog/archives/2026/03/as-the-us-midterms-approach-ai-is-going-to-emerge-as-a-key-issue-concerning-voters.html
 https://www.schneier.com/blog/archives/2026/03/canada-needs-nationalized-public-ai.html
 https://www.schneier.com/blog/archives/2026/03/claude-used-to-hack-mexican-government.html
@@ -891,13 +898,17 @@ https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-at
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
 https://www.securityweek.com/european-commission-investigating-cyberattack/
+https://www.securityweek.com/european-commission-reports-cyber-intrusion-and-data-theft/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
+https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/extortion-group-claims-it-hacked-astrazeneca/
+https://www.securityweek.com/f5-big-ip-dos-flaw-upgraded-to-critical-rce-now-exploited-in-the-wild/
 https://www.securityweek.com/f5-to-acquire-calypsoai-for-180-million/
 https://www.securityweek.com/fbi-20-million-losses-caused-by-700-atm-jackpotting-attacks-in-2025/
+https://www.securityweek.com/fbi-confirms-kash-patel-email-hack-as-us-offers-10m-reward-for-hackers/
 https://www.securityweek.com/fbi-shares-iocs-for-recent-salesforce-intrusion-campaigns/
 https://www.securityweek.com/feds-seize-password-database-used-in-massive-bank-account-takeover-scheme/
 https://www.securityweek.com/fieldtex-data-breach-impacts-238000/
@@ -929,6 +940,7 @@ https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-i
 https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulnerabilities/
 https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
+https://www.securityweek.com/hacked-hospitals-hidden-spyware-iran-conflict-shows-how-digital-fight-is-ingrained-in-warfare/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
 https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism-morality-and-hacking/
 https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center-patient-data-they-werent-immediately-notified/
@@ -937,6 +949,7 @@ https://www.securityweek.com/hackers-offer-to-sell-millions-of-eurail-user-recor
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
 https://www.securityweek.com/hackers-target-perplexity-comet-browser-users/
+https://www.securityweek.com/healthcare-it-platform-carecloud-probing-potential-data-breach/
 https://www.securityweek.com/helmet-security-emerges-from-stealth-mode-with-9-million-in-funding/
 https://www.securityweek.com/high-severity-vulnerabilities-patched-by-fortinet-and-ivanti/
 https://www.securityweek.com/high-severity-vulnerabilities-patched-by-ivanti-and-zoom/
@@ -948,6 +961,7 @@ https://www.securityweek.com/how-software-development-teams-can-securely-and-eth
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
 https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
+https://www.securityweek.com/huskeys-emerges-from-stealth-with-8-million-in-funding/
 https://www.securityweek.com/hyperbunker-raises-seed-funding-to-launch-next-generation-anti-ransomware-device/
 https://www.securityweek.com/ics-patch-tuesday-fixes-announced-by-siemens-schneider-rockwell-abb-phoenix-contact/
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-addressed-by-siemens-rockwell-aveva-schneider/
@@ -1153,6 +1167,7 @@ https://www.securityweek.com/substack-discloses-security-incident-after-hacker-l
 https://www.securityweek.com/supply-chain-attack-targets-vs-code-extensions-with-glassworm-malware/
 https://www.securityweek.com/sweet-security-raises-75-million-for-cloud-and-ai-security/
 https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt/
+https://www.securityweek.com/telnyx-targeted-in-growing-teampcp-supply-chain-attack/
 https://www.securityweek.com/tennessee-man-pleads-guilty-to-repeatedly-hacking-supreme-courts-filing-system/
 https://www.securityweek.com/terra-security-raises-30-million-for-ai-penetration-testing-platform/
 https://www.securityweek.com/thailand-conference-launches-international-initiative-to-fight-online-scams/

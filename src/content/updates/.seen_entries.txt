@@ -592,12 +592,22 @@ https://thehackernews.com/2026/03/web-server-exploits-and-mimikatz-used.html
 https://thehackernews.com/2026/03/webinar-stop-guessing-learn-to-validate.html
 https://thehackernews.com/2026/03/weekly-recap-qualcomm-0-day-ios-exploit.html
 https://thehackernews.com/2026/03/weekly-recap-telecom-sleeper-cells-llm.html
+https://thehackernews.com/2026/04/285-million-drift-hack-traced-to-six.html
+https://thehackernews.com/2026/04/36-malicious-npm-packages-exploited.html
+https://thehackernews.com/2026/04/bka-identifies-revil-leaders-behind-130.html
 https://thehackernews.com/2026/04/cisco-patches-98-cvss-imc-and-ssm-flaws.html
+https://thehackernews.com/2026/04/dprk-linked-hackers-use-github-as-c2-in.html
 https://thehackernews.com/2026/04/drift-loses-285-million-in-durable.html
+https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html
 https://thehackernews.com/2026/04/hackers-exploit-cve-2025-55182-to.html
+https://thehackernews.com/2026/04/how-litellm-turned-developer-machines.html
+https://thehackernews.com/2026/04/iran-linked-password-spraying-campaign.html
 https://thehackernews.com/2026/04/microsoft-details-cookie-controlled-php.html
+https://thehackernews.com/2026/04/multi-os-cyberattacks-how-socs-close.html
 https://thehackernews.com/2026/04/new-sparkcat-variant-in-ios-android.html
+https://thehackernews.com/2026/04/qilin-and-warlock-ransomware-use.html
 https://thehackernews.com/2026/04/threatsday-bulletin-pre-auth-chains.html
+https://thehackernews.com/2026/04/weekly-recap-axios-hack-chrome-0-day.html
 https://thehackernews.com/2026/04/why-third-party-risk-is-biggest-gap-in.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
@@ -739,7 +749,9 @@ https://www.schneier.com/blog/archives/2026/03/team-mirai-and-democracy.html
 https://www.schneier.com/blog/archives/2026/03/upcoming-speaking-engagements-54.html
 https://www.schneier.com/blog/archives/2026/04/a-taxonomy-of-cognitive-security.html
 https://www.schneier.com/blog/archives/2026/04/company-that-secretly-records-and-publishes-zoom-meetings.html
+https://www.schneier.com/blog/archives/2026/04/google-wants-to-transition-to-post-quantum-cryptography-by-2029.html
 https://www.schneier.com/blog/archives/2026/04/is-hackback-official-us-cybersecurity-strategy.html
+https://www.schneier.com/blog/archives/2026/04/new-mexicos-meta-ruling-and-encryption.html
 https://www.schneier.com/blog/archives/2026/04/possible-us-government-iphone-hacking-tool-leaked.html
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
@@ -926,6 +938,7 @@ https://www.securityweek.com/eclypsium-raises-25-million-for-device-supply-chain
 https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-attack/
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
 https://www.securityweek.com/european-airport-cyberattack-linked-to-obscure-ransomware-suspect-arrested/
+https://www.securityweek.com/european-commission-confirms-data-breach-linked-to-trivy-supply-chain-attack/
 https://www.securityweek.com/european-commission-investigating-cyberattack/
 https://www.securityweek.com/european-commission-reports-cyber-intrusion-and-data-theft/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
@@ -948,6 +961,7 @@ https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-i
 https://www.securityweek.com/forget-predictions-true-2026-cybersecurity-priorities-from-leaders/
 https://www.securityweek.com/fortinet-confirms-active-exploitation-of-critical-fortiweb-vulnerability/
 https://www.securityweek.com/fortinet-confirms-forticloud-sso-exploitation-against-patched-devices/
+https://www.securityweek.com/fortinet-rushes-emergency-fixes-for-exploited-zero-day/
 https://www.securityweek.com/fortinet-warns-of-new-attacks-exploiting-old-vulnerability/
 https://www.securityweek.com/france-probes-foreign-interference-after-remote-control-malware-found-on-passenger-ferry/
 https://www.securityweek.com/french-government-says-1-2-million-bank-accounts-exposed-in-breach/
@@ -960,6 +974,7 @@ https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-r
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
+https://www.securityweek.com/google-deepmind-researchers-map-web-attacks-against-ai-agents/
 https://www.securityweek.com/google-deepminds-new-ai-agent-finds-and-fixes-vulnerabilities/
 https://www.securityweek.com/google-launched-behind-the-scenes-campaign-against-california-privacy-legislation-it-passed-anyway/
 https://www.securityweek.com/google-offers-up-to-20000-in-new-ai-bug-bounty-program/
@@ -971,6 +986,7 @@ https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulner
 https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-slashes-quantum-resource-requirements-for-breaking-cryptocurrency-encryption/
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
+https://www.securityweek.com/guardarian-users-targeted-with-malicious-strapi-npm-packages/
 https://www.securityweek.com/hacked-hospitals-hidden-spyware-iran-conflict-shows-how-digital-fight-is-ingrained-in-warfare/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
 https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism-morality-and-hacking/
@@ -1272,6 +1288,7 @@ https://www.securityweek.com/who-is-zico-kolter-a-professor-leads-openai-safety-
 https://www.securityweek.com/why-agentic-ai-systems-need-better-governance-lessons-from-openclaw/
 https://www.securityweek.com/why-identity-security-must-move-beyond-mfa/
 https://www.securityweek.com/will-ai-spm-become-the-standard-security-layer-for-safe-ai-adoption/
+https://www.securityweek.com/wynn-resorts-says-21000-employees-affected-by-shinyhunters-hack/
 https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-websites/
 https://www.securityweek.com/zafran-security-raises-60-million-in-series-c-funding/
 https://www.securityweek.com/zdi-drops-13-unpatched-ivanti-endpoint-manager-vulnerabilities/

@@ -16,6 +16,7 @@ http://security.googleblog.com/2026/02/strengthening-android-lead-in-scam-protec
 http://security.googleblog.com/2026/03/post-quantum-cryptography-in-android.html
 http://security.googleblog.com/2026/03/vrp-2025-year-in-review.html
 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+http://security.googleblog.com/2026/04/protecting-cookies-with-device-bound.html
 https://blog.trailofbits.com/2025/08/20/marshal-madness-a-brief-history-of-ruby-deserialization-exploits/
 https://blog.trailofbits.com/2025/08/21/weaponizing-image-scaling-against-production-ai-systems/
 https://blog.trailofbits.com/2025/08/28/intern-projects-that-outlived-the-internship/
@@ -50,6 +51,8 @@ https://blog.trailofbits.com/2026/03/25/try-our-new-dimensional-analysis-claude-
 https://blog.trailofbits.com/2026/03/31/how-we-made-trail-of-bits-ai-native-so-far/
 https://blog.trailofbits.com/2026/04/01/mutation-testing-for-the-agentic-era/
 https://blog.trailofbits.com/2026/04/03/simplifying-mba-obfuscation-with-cobra/
+https://blog.trailofbits.com/2026/04/07/what-we-learned-about-tee-security-from-auditing-whatsapps-private-inference/
+https://blog.trailofbits.com/2026/04/09/master-c-and-c-with-our-new-testing-handbook-chapter/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -594,19 +597,28 @@ https://thehackernews.com/2026/03/weekly-recap-qualcomm-0-day-ios-exploit.html
 https://thehackernews.com/2026/03/weekly-recap-telecom-sleeper-cells-llm.html
 https://thehackernews.com/2026/04/285-million-drift-hack-traced-to-six.html
 https://thehackernews.com/2026/04/36-malicious-npm-packages-exploited.html
+https://thehackernews.com/2026/04/adobe-reader-zero-day-exploited-via.html
+https://thehackernews.com/2026/04/bitter-linked-hack-for-hire-campaign.html
 https://thehackernews.com/2026/04/bka-identifies-revil-leaders-behind-130.html
 https://thehackernews.com/2026/04/cisco-patches-98-cvss-imc-and-ssm-flaws.html
 https://thehackernews.com/2026/04/dprk-linked-hackers-use-github-as-c2-in.html
 https://thehackernews.com/2026/04/drift-loses-285-million-in-durable.html
+https://thehackernews.com/2026/04/engagelab-sdk-flaw-exposed-50m-android.html
 https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html
 https://thehackernews.com/2026/04/hackers-exploit-cve-2025-55182-to.html
 https://thehackernews.com/2026/04/how-litellm-turned-developer-machines.html
 https://thehackernews.com/2026/04/iran-linked-password-spraying-campaign.html
+https://thehackernews.com/2026/04/masjesu-botnet-emerges-as-ddos-for-hire.html
 https://thehackernews.com/2026/04/microsoft-details-cookie-controlled-php.html
 https://thehackernews.com/2026/04/multi-os-cyberattacks-how-socs-close.html
+https://thehackernews.com/2026/04/new-chaos-variant-targets-misconfigured.html
 https://thehackernews.com/2026/04/new-sparkcat-variant-in-ios-android.html
 https://thehackernews.com/2026/04/qilin-and-warlock-ransomware-use.html
+https://thehackernews.com/2026/04/shrinking-iam-attack-surface-through.html
+https://thehackernews.com/2026/04/the-hidden-security-risks-of-shadow-ai.html
+https://thehackernews.com/2026/04/threatsday-bulletin-hybrid-p2p-botnet.html
 https://thehackernews.com/2026/04/threatsday-bulletin-pre-auth-chains.html
+https://thehackernews.com/2026/04/uat-10362-targets-taiwanese-ngos-with.html
 https://thehackernews.com/2026/04/weekly-recap-axios-hack-chrome-0-day.html
 https://thehackernews.com/2026/04/why-third-party-risk-is-biggest-gap-in.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -749,10 +761,14 @@ https://www.schneier.com/blog/archives/2026/03/team-mirai-and-democracy.html
 https://www.schneier.com/blog/archives/2026/03/upcoming-speaking-engagements-54.html
 https://www.schneier.com/blog/archives/2026/04/a-taxonomy-of-cognitive-security.html
 https://www.schneier.com/blog/archives/2026/04/company-that-secretly-records-and-publishes-zoom-meetings.html
+https://www.schneier.com/blog/archives/2026/04/cybersecurity-in-the-age-of-instant-software.html
 https://www.schneier.com/blog/archives/2026/04/google-wants-to-transition-to-post-quantum-cryptography-by-2029.html
+https://www.schneier.com/blog/archives/2026/04/hong-kong-police-can-force-you-to-reveal-your-encryption-keys.html
 https://www.schneier.com/blog/archives/2026/04/is-hackback-official-us-cybersecurity-strategy.html
 https://www.schneier.com/blog/archives/2026/04/new-mexicos-meta-ruling-and-encryption.html
+https://www.schneier.com/blog/archives/2026/04/on-microsofts-lousy-cloud-security.html
 https://www.schneier.com/blog/archives/2026/04/possible-us-government-iphone-hacking-tool-leaked.html
+https://www.schneier.com/blog/archives/2026/04/python-supply-chain-compromise.html
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
@@ -763,6 +779,7 @@ https://www.securityweek.com/2-venezuelans-convicted-in-us-for-using-malware-to-
 https://www.securityweek.com/22-million-affected-by-aflac-data-breach/
 https://www.securityweek.com/3-1-million-impacted-by-qualderm-data-breach/
 https://www.securityweek.com/3-5-million-affected-by-university-of-phoenix-data-breach/
+https://www.securityweek.com/300000-people-impacted-by-eurail-data-breach/
 https://www.securityweek.com/320000-paid-out-at-zeroday-cloud-for-open-source-software-exploits/
 https://www.securityweek.com/377000-impacted-by-data-breach-at-texas-gas-station-firm/
 https://www.securityweek.com/38-million-allegedly-impacted-by-manomano-data-breach/
@@ -778,6 +795,7 @@ https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-vulnerability-in-collaboration-suite/
 https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
+https://www.securityweek.com/adobe-reader-zero-day-exploited-for-months-researcher/
 https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
 https://www.securityweek.com/ai-security-firm-ciphero-emerges-from-stealth-with-2-5-million-in-funding/
 https://www.securityweek.com/ai-security-firm-polygraf-raises-9-5-million-in-seed-funding/
@@ -804,6 +822,7 @@ https://www.securityweek.com/apollomd-data-breach-impacts-626000-individuals/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
 https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35-million-paid-to-date/
 https://www.securityweek.com/apple-debuts-background-security-improvements-with-fresh-webkit-patches/
+https://www.securityweek.com/apple-intelligence-ai-guardrails-bypassed-in-new-attack/
 https://www.securityweek.com/apple-iphone-and-ipad-cleared-for-classified-nato-use/
 https://www.securityweek.com/apple-patches-ios-zero-day-exploited-in-extremely-sophisticated-attack/
 https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-exploited-chrome-flaw/
@@ -828,6 +847,7 @@ https://www.securityweek.com/bind-updates-patch-high-severity-vulnerabilities-2/
 https://www.securityweek.com/bold-security-emerges-from-stealth-with-40-million-in-funding/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
+https://www.securityweek.com/can-we-trust-ai-no-but-eventually-we-must/
 https://www.securityweek.com/canadian-tire-data-breach-impacts-38-million-accounts/
 https://www.securityweek.com/cape-raises-100-million-for-protection-against-cellular-security-threats/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
@@ -973,6 +993,7 @@ https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-
 https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
+https://www.securityweek.com/google-api-keys-in-android-apps-expose-gemini-endpoints-to-unauthorized-access/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
 https://www.securityweek.com/google-deepmind-researchers-map-web-attacks-against-ai-agents/
 https://www.securityweek.com/google-deepminds-new-ai-agent-finds-and-fixes-vulnerabilities/
@@ -986,6 +1007,7 @@ https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulner
 https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-slashes-quantum-resource-requirements-for-breaking-cryptocurrency-encryption/
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
+https://www.securityweek.com/google-warns-of-new-campaign-targeting-bpos-to-steal-corporate-data/
 https://www.securityweek.com/guardarian-users-targeted-with-malicious-strapi-npm-packages/
 https://www.securityweek.com/hacked-hospitals-hidden-spyware-iran-conflict-shows-how-digital-fight-is-ingrained-in-warfare/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
@@ -1147,6 +1169,7 @@ https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automot
 https://www.securityweek.com/over-73000-watchguard-firebox-devices-impacted-by-recent-critical-flaw/
 https://www.securityweek.com/packagegate-flaws-open-javascript-ecosystem-to-supply-chain-attacks/
 https://www.securityweek.com/palo-alto-networks-google-cloud-strike-multibillion-dollar-ai-and-cloud-security-deal/
+https://www.securityweek.com/palo-alto-networks-sonicwall-patch-high-severity-vulnerabilities/
 https://www.securityweek.com/patch-bypassed-for-supermicro-vulnerability-allowing-bmc-hack/
 https://www.securityweek.com/payment-system-vendor-took-year-to-patch-infinite-card-top-up-hack-security-firm/
 https://www.securityweek.com/penn-and-phoenix-universities-disclose-data-breach-after-oracle-hack/
@@ -1197,6 +1220,7 @@ https://www.securityweek.com/securityweek-to-host-2025-ics-cybersecurity-confere
 https://www.securityweek.com/servicenow-to-acquire-armis-for-7-75-billion-in-cash/
 https://www.securityweek.com/servicenow-to-acquire-identity-security-firm-veza-in-reported-1-billion-deal/
 https://www.securityweek.com/shai-hulud-supply-chain-attack-led-to-8-5-million-trust-wallet-heist/
+https://www.securityweek.com/shaky-ceasefire-unlikely-to-stop-cyberattacks-from-iran-linked-hackers-for-long/
 https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
 https://www.securityweek.com/smartertools-hit-by-ransomware-via-vulnerability-in-its-own-product/
 https://www.securityweek.com/solarwinds-patches-critical-web-help-desk-vulnerabilities/

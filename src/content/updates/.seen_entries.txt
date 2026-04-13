@@ -15,6 +15,7 @@ http://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem
 http://security.googleblog.com/2026/02/strengthening-android-lead-in-scam-protection.html
 http://security.googleblog.com/2026/03/post-quantum-cryptography-in-android.html
 http://security.googleblog.com/2026/03/vrp-2025-year-in-review.html
+http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html
 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 http://security.googleblog.com/2026/04/protecting-cookies-with-device-bound.html
 https://blog.trailofbits.com/2025/08/20/marshal-madness-a-brief-history-of-ruby-deserialization-exploits/
@@ -597,17 +598,23 @@ https://thehackernews.com/2026/03/weekly-recap-qualcomm-0-day-ios-exploit.html
 https://thehackernews.com/2026/03/weekly-recap-telecom-sleeper-cells-llm.html
 https://thehackernews.com/2026/04/285-million-drift-hack-traced-to-six.html
 https://thehackernews.com/2026/04/36-malicious-npm-packages-exploited.html
+https://thehackernews.com/2026/04/adobe-patches-actively-exploited.html
 https://thehackernews.com/2026/04/adobe-reader-zero-day-exploited-via.html
 https://thehackernews.com/2026/04/bitter-linked-hack-for-hire-campaign.html
 https://thehackernews.com/2026/04/bka-identifies-revil-leaders-behind-130.html
+https://thehackernews.com/2026/04/browser-extensions-are-new-ai.html
 https://thehackernews.com/2026/04/cisco-patches-98-cvss-imc-and-ssm-flaws.html
+https://thehackernews.com/2026/04/cpuid-breach-distributes-stx-rat-via.html
 https://thehackernews.com/2026/04/dprk-linked-hackers-use-github-as-c2-in.html
 https://thehackernews.com/2026/04/drift-loses-285-million-in-durable.html
 https://thehackernews.com/2026/04/engagelab-sdk-flaw-exposed-50m-android.html
 https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html
+https://thehackernews.com/2026/04/glassworm-campaign-uses-zig-dropper-to.html
+https://thehackernews.com/2026/04/google-rolls-out-dbsc-in-chrome-146-to.html
 https://thehackernews.com/2026/04/hackers-exploit-cve-2025-55182-to.html
 https://thehackernews.com/2026/04/how-litellm-turned-developer-machines.html
 https://thehackernews.com/2026/04/iran-linked-password-spraying-campaign.html
+https://thehackernews.com/2026/04/marimo-rce-flaw-cve-2026-39987.html
 https://thehackernews.com/2026/04/masjesu-botnet-emerges-as-ddos-for-hire.html
 https://thehackernews.com/2026/04/microsoft-details-cookie-controlled-php.html
 https://thehackernews.com/2026/04/multi-os-cyberattacks-how-socs-close.html
@@ -769,6 +776,7 @@ https://www.schneier.com/blog/archives/2026/04/new-mexicos-meta-ruling-and-encry
 https://www.schneier.com/blog/archives/2026/04/on-microsofts-lousy-cloud-security.html
 https://www.schneier.com/blog/archives/2026/04/possible-us-government-iphone-hacking-tool-leaked.html
 https://www.schneier.com/blog/archives/2026/04/python-supply-chain-compromise.html
+https://www.schneier.com/blog/archives/2026/04/sen-sanders-talks-to-claude-about-ai-and-privacy.html
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
@@ -795,6 +803,7 @@ https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-vulnerability-in-collaboration-suite/
 https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
+https://www.securityweek.com/adobe-patches-reader-zero-day-exploited-for-months/
 https://www.securityweek.com/adobe-reader-zero-day-exploited-for-months-researcher/
 https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
 https://www.securityweek.com/ai-security-firm-ciphero-emerges-from-stealth-with-2-5-million-in-funding/
@@ -873,6 +882,7 @@ https://www.securityweek.com/chrome-142-update-patches-high-severity-flaws/
 https://www.securityweek.com/chrome-143-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-145-patches-11-vulnerabilities/
 https://www.securityweek.com/chrome-146-update-patches-high-severity-vulnerabilities/
+https://www.securityweek.com/chrome-147-patches-60-vulnerabilities-including-two-critical-flaws-worth-86000/
 https://www.securityweek.com/chrome-edge-extensions-caught-stealing-chatgpt-sessions/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
@@ -913,6 +923,7 @@ https://www.securityweek.com/critical-grandstream-phone-vulnerability-exposes-ca
 https://www.securityweek.com/critical-hpe-aos-cx-vulnerability-allows-admin-password-resets/
 https://www.securityweek.com/critical-king-addons-vulnerability-exploited-to-hack-wordpress-sites/
 https://www.securityweek.com/critical-langflow-vulnerability-exploited-hours-after-public-disclosure/
+https://www.securityweek.com/critical-marimo-flaw-exploited-hours-after-public-disclosure/
 https://www.securityweek.com/critical-n8n-vulnerabilities-allowed-server-takeover/
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
 https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-exploited-in-attacks/
@@ -1004,6 +1015,7 @@ https://www.securityweek.com/google-paid-out-458000-at-live-hacking-event/
 https://www.securityweek.com/google-patches-gemini-ai-hacks-involving-poisoned-logs-search-results/
 https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-in-latest-update/
 https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulnerabilities/
+https://www.securityweek.com/google-rolls-out-cookie-theft-protections-in-chrome/
 https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-slashes-quantum-resource-requirements-for-breaking-cryptocurrency-encryption/
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
@@ -1078,6 +1090,7 @@ https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
 https://www.securityweek.com/japan-issues-ot-security-guidance-for-semiconductor-factories/
 https://www.securityweek.com/juniper-networks-patches-critical-junos-space-vulnerabilities/
+https://www.securityweek.com/juniper-networks-patches-dozens-of-junos-os-vulnerabilities/
 https://www.securityweek.com/juniper-networks-ptx-routers-affected-by-critical-vulnerability/
 https://www.securityweek.com/kasada-raises-20-million-for-anti-bot-expansion/
 https://www.securityweek.com/kimwolf-android-botnet-ensnares-1-8-million-devices/
@@ -1101,6 +1114,7 @@ https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-t
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
 https://www.securityweek.com/microsoft-bug-bounty-program-expanded-to-third-party-code/
 https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-block-ntlm-hash-leaks/
+https://www.securityweek.com/microsoft-finds-vulnerability-exposing-millions-of-android-crypto-wallet-users/
 https://www.securityweek.com/microsoft-highlights-security-risks-introduced-by-new-agentic-ai-feature/
 https://www.securityweek.com/microsoft-names-new-operating-cisos-in-strategic-move-to-strengthen-cyber-defense/
 https://www.securityweek.com/microsoft-patches-173-vulnerabilities-including-exploited-windows-flaws/
@@ -1162,6 +1176,7 @@ https://www.securityweek.com/organizations-urged-to-replace-discontinued-edge-de
 https://www.securityweek.com/organizations-warned-of-exploited-linux-vulnerabilities/
 https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
 https://www.securityweek.com/organizations-warned-of-exploited-zimbra-collaboration-vulnerability/
+https://www.securityweek.com/orthanc-dicom-vulnerabilities-lead-to-crashes-rce/
 https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-against-ai-driven-threats/
 https://www.securityweek.com/over-100-github-repositories-distributing-boryptgrab-stealer/
 https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phishing-campaign/

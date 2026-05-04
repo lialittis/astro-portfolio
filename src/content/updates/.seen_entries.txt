@@ -689,6 +689,14 @@ https://thehackernews.com/2026/04/weekly-recap-fast16-malware-xchat.html
 https://thehackernews.com/2026/04/weekly-recap-vercel-hack-push-fraud.html
 https://thehackernews.com/2026/04/what-to-look-for-in-exposure-management.html
 https://thehackernews.com/2026/04/why-third-party-risk-is-biggest-gap-in.html
+https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html
+https://thehackernews.com/2026/05/cisa-adds-actively-exploited-linux-root.html
+https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
+https://thehackernews.com/2026/05/global-crackdown-arrests-276-shuts-9.html
+https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
+https://thehackernews.com/2026/05/top-five-sales-challenges-costing-msps.html
+https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html
+https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -984,6 +992,7 @@ https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-c
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities-2/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
 https://www.securityweek.com/cisco-patches-vulnerability-exploited-by-chinese-hackers/
+https://www.securityweek.com/cisco-releases-open-source-tool-for-ai-model-provenance/
 https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-at-google-deepmind/
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
@@ -1060,6 +1069,7 @@ https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-s
 https://www.securityweek.com/dutch-carrier-odido-discloses-data-breach-impacting-6-million/
 https://www.securityweek.com/easily-exploitable-pack2theroot-linux-vulnerability-leads-to-root-access/
 https://www.securityweek.com/eclypsium-raises-25-million-for-device-supply-chain-security/
+https://www.securityweek.com/edtech-firm-instructure-discloses-data-breach/
 https://www.securityweek.com/enocean-smartserver-flaws-expose-buildings-to-remote-hacking/
 https://www.securityweek.com/escan-antivirus-delivers-malware-in-supply-chain-attack/
 https://www.securityweek.com/eu-sets-february-deadline-for-verdict-on-googles-32b-wiz-acquisition/
@@ -1102,6 +1112,7 @@ https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-
 https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
+https://www.securityweek.com/google-adjusts-bug-bounties-chrome-payouts-drop-as-android-rewards-rise-amid-ai-surge/
 https://www.securityweek.com/google-api-keys-in-android-apps-expose-gemini-endpoints-to-unauthorized-access/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
 https://www.securityweek.com/google-deepmind-researchers-map-web-attacks-against-ai-agents/
@@ -1141,6 +1152,7 @@ https://www.securityweek.com/how-software-development-teams-can-securely-and-eth
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
 https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
+https://www.securityweek.com/hugging-face-clawhub-abused-for-malware-distribution/
 https://www.securityweek.com/huskeys-emerges-from-stealth-with-8-million-in-funding/
 https://www.securityweek.com/hyperbunker-raises-seed-funding-to-launch-next-generation-anti-ransomware-device/
 https://www.securityweek.com/ics-patch-tuesday-fixes-announced-by-siemens-schneider-rockwell-abb-phoenix-contact/
@@ -1168,6 +1180,7 @@ https://www.securityweek.com/in-other-news-ransomware-shuts-us-clinics-ics-vulne
 https://www.securityweek.com/in-other-news-record-ddos-epsteins-hacker-eset-product-vulnerabilities/
 https://www.securityweek.com/in-other-news-satellite-cybersecurity-act-90k-chrome-flaw-teen-hacker-arrested/
 https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-attacks-gmail-security-claims-debunked/
+https://www.securityweek.com/in-other-news-scattered-spider-hacker-arrested-soc-effectiveness-metrics-nsa-tool-vulnerability/
 https://www.securityweek.com/in-other-news-unauthorized-mythos-access-plankey-cisa-nomination-ends-new-display-security-device/
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
 https://www.securityweek.com/infostealer-malware-delivered-in-emeditor-supply-chain-attack/
@@ -1248,6 +1261,7 @@ https://www.securityweek.com/nevada-confirms-ransomware-attack-behind-statewide-
 https://www.securityweek.com/nevada-ransomware-attack-started-months-before-it-was-discovered-per-report/
 https://www.securityweek.com/nevada-unveils-new-statewide-data-classification-policy-months-after-cyberattack/
 https://www.securityweek.com/new-airsnitch-attack-shows-wi-fi-client-isolation-could-be-a-false-sense-of-security/
+https://www.securityweek.com/new-bluekit-phishing-kit-features-ai-assistant/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-keenadu-android-malware-found-on-thousands-of-devices/
 https://www.securityweek.com/new-paper-and-tool-help-security-teams-move-beyond-blind-reliance-on-cisas-kev-catalog/
@@ -1356,6 +1370,7 @@ https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-co
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
 https://www.securityweek.com/sonicwall-urges-immediate-patching-of-firewall-vulnerabilities/
 https://www.securityweek.com/sophisticated-clickfix-campaign-targeting-hospitality-sector/
+https://www.securityweek.com/sophisticated-deepdoor-backdoor-enables-espionage-disruption/
 https://www.securityweek.com/sophisticated-malware-deployed-in-oracle-ebs-zero-day-attacks/
 https://www.securityweek.com/soverli-raises-2-6-million-for-secure-smartphone-os/
 https://www.securityweek.com/spanish-airline-iberia-notifies-customers-of-data-breach/
@@ -1417,6 +1432,7 @@ https://www.securityweek.com/us-cyber-strategy-targets-adversaries-critical-infr
 https://www.securityweek.com/us-cybersecurity-agency-flags-wi-fi-range-extender-vulnerability-under-active-attack/
 https://www.securityweek.com/us-federal-agencys-cisco-firewall-infected-with-firestarter-backdoor/
 https://www.securityweek.com/us-healthcare-diagnostic-firm-says-140000-affected-by-data-breach/
+https://www.securityweek.com/us-military-reaches-deals-with-7-tech-companies-to-use-their-ai-on-classified-systems/
 https://www.securityweek.com/us-organizations-warned-of-chinese-malware-used-for-long-term-persistence/
 https://www.securityweek.com/veeam-to-acquire-data-security-firm-securiti-ai-for-1-7-billion/
 https://www.securityweek.com/venice-security-emerges-from-stealth-with-33m-funding-for-privileged-access-management/

@@ -693,14 +693,22 @@ https://thehackernews.com/2026/04/why-third-party-risk-is-biggest-gap-in.html
 https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html
 https://thehackernews.com/2026/05/android-apps-get-public-verification.html
 https://thehackernews.com/2026/05/cisa-adds-actively-exploited-linux-root.html
+https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html
 https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html
 https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
+https://thehackernews.com/2026/05/fake-call-history-apps-stole-payments.html
 https://thehackernews.com/2026/05/global-crackdown-arrests-276-shuts-9.html
+https://thehackernews.com/2026/05/ivanti-epmm-cve-2026-6973-rce-under.html
+https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html
 https://thehackernews.com/2026/05/mirai-based-xlabsv1-botnet-exploits-adb.html
 https://thehackernews.com/2026/05/muddywater-uses-microsoft-teams-to.html
+https://thehackernews.com/2026/05/one-click-total-shutdown-patient-zero.html
 https://thehackernews.com/2026/05/palo-alto-pan-os-flaw-under-active.html
+https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html
 https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
+https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html
+https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html
 https://thehackernews.com/2026/05/top-five-sales-challenges-costing-msps.html
 https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html
 https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
@@ -904,6 +912,7 @@ https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
 https://www.securityweek.com/adobe-patches-reader-zero-day-exploited-for-months/
 https://www.securityweek.com/adobe-reader-zero-day-exploited-for-months-researcher/
 https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
+https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/
 https://www.securityweek.com/ai-fuels-industrial-cybercrime-as-time-to-exploit-shrinks-to-hours/
 https://www.securityweek.com/ai-security-firm-ciphero-emerges-from-stealth-with-2-5-million-in-funding/
 https://www.securityweek.com/ai-security-firm-polygraf-raises-9-5-million-in-seed-funding/
@@ -1057,6 +1066,7 @@ https://www.securityweek.com/cyber-insights-2026-social-engineering/
 https://www.securityweek.com/cyber-risk-trends-for-2026-building-resilience-not-just-defenses/
 https://www.securityweek.com/cyberattack-disrupts-check-in-systems-at-major-european-airports/
 https://www.securityweek.com/cyberattack-disrupts-frances-postal-service-and-banking-during-christmas-rush/
+https://www.securityweek.com/cyberattack-hits-canvas-system-used-by-thousands-of-schools-as-finals-loom/
 https://www.securityweek.com/cyberattack-on-beer-giant-asahi-disrupts-production/
 https://www.securityweek.com/cyberattack-unlikely-in-communications-failure-that-grounded-flights-in-greece/
 https://www.securityweek.com/cybernut-closes-5m-growth-capital-for-k-12-security-awareness-training/
@@ -1198,6 +1208,7 @@ https://www.securityweek.com/in-other-news-record-ddos-epsteins-hacker-eset-prod
 https://www.securityweek.com/in-other-news-satellite-cybersecurity-act-90k-chrome-flaw-teen-hacker-arrested/
 https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-attacks-gmail-security-claims-debunked/
 https://www.securityweek.com/in-other-news-scattered-spider-hacker-arrested-soc-effectiveness-metrics-nsa-tool-vulnerability/
+https://www.securityweek.com/in-other-news-train-hacker-arrested-pamdoora-linux-backdoor-new-cisa-director-frontrunner/
 https://www.securityweek.com/in-other-news-unauthorized-mythos-access-plankey-cisa-nomination-ends-new-display-security-device/
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
 https://www.securityweek.com/infostealer-malware-delivered-in-emeditor-supply-chain-attack/
@@ -1217,6 +1228,7 @@ https://www.securityweek.com/iranian-strikes-on-amazon-data-centers-highlight-in
 https://www.securityweek.com/irregular-raises-80-million-for-ai-security-testing-lab/
 https://www.securityweek.com/israeli-cyber-fund-glilot-capital-raises-500-million/
 https://www.securityweek.com/italy-antitrust-agency-fines-apple-116-million-over-privacy-feature-apple-announces-appeal/
+https://www.securityweek.com/ivanti-patches-epmm-zero-day-exploited-in-targeted-attacks/
 https://www.securityweek.com/ivanti-patches-exploited-epmm-zero-days/
 https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-cyberattack/
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
@@ -1326,12 +1338,14 @@ https://www.securityweek.com/palo-alto-networks-sonicwall-patch-high-severity-vu
 https://www.securityweek.com/palo-alto-networks-to-patch-zero-day-exploited-to-hack-firewalls/
 https://www.securityweek.com/patch-bypassed-for-supermicro-vulnerability-allowing-bmc-hack/
 https://www.securityweek.com/payment-system-vendor-took-year-to-patch-infinite-card-top-up-hack-security-firm/
+https://www.securityweek.com/pcpjack-worm-removes-teampcp-infections-steals-credentials/
 https://www.securityweek.com/penn-and-phoenix-universities-disclose-data-breach-after-oracle-hack/
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-data-breach-after-ransomware-attack/
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-ransomware-behind-weeks-long-outage/
 https://www.securityweek.com/pentagons-chief-tech-officer-says-he-clashed-with-ai-company-anthropic-over-autonomous-warfare/
 https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting-energy-sector/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
+https://www.securityweek.com/polish-security-agency-reports-ics-breaches-at-five-water-treatment-plants/
 https://www.securityweek.com/pre-stuxnet-sabotage-malware-fast16-linked-to-us-iran-cyber-tensions/
 https://www.securityweek.com/president-trump-orders-divestment-in-2-9-million-chips-deal-to-protect-us-security-interests/
 https://www.securityweek.com/prime-security-raises-20-million-to-build-agentic-security-architect/
@@ -1471,6 +1485,7 @@ https://www.securityweek.com/vulnerabilities-allow-disruption-of-phoenix-contact
 https://www.securityweek.com/vulnerabilities-in-popular-pdf-platforms-allowed-account-takeover-data-exfiltration/
 https://www.securityweek.com/vulnerabilities-patched-in-crowdstrike-tenable-products/
 https://www.securityweek.com/vulnerability-allows-hackers-to-hijack-openclaw-ai-assistant/
+https://www.securityweek.com/vulnerability-in-claude-extension-for-chrome-exposes-ai-agent-to-takeover/
 https://www.securityweek.com/vulnerability-in-ms-agent-ai-framework-can-allow-full-system-compromise/
 https://www.securityweek.com/webinar-today-ai-and-the-trust-dilemma-balancing-innovation-and-risk/
 https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen-testing/
@@ -1484,6 +1499,7 @@ https://www.securityweek.com/who-is-zico-kolter-a-professor-leads-openai-safety-
 https://www.securityweek.com/why-agentic-ai-systems-need-better-governance-lessons-from-openclaw/
 https://www.securityweek.com/why-identity-security-must-move-beyond-mfa/
 https://www.securityweek.com/will-ai-spm-become-the-standard-security-layer-for-safe-ai-adoption/
+https://www.securityweek.com/worries-about-ais-risks-to-humanity-loom-over-the-trial-pitting-musk-against-openais-leaders/
 https://www.securityweek.com/wynn-resorts-says-21000-employees-affected-by-shinyhunters-hack/
 https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-websites/
 https://www.securityweek.com/zafran-security-raises-60-million-in-series-c-funding/

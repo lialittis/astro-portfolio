@@ -59,6 +59,7 @@ https://blog.trailofbits.com/2026/04/17/we-beat-googles-zero-knowledge-proof-of-
 https://blog.trailofbits.com/2026/04/23/trailmark-turns-code-into-graphs/
 https://blog.trailofbits.com/2026/04/29/extending-ruzzy-with-libafl/
 https://blog.trailofbits.com/2026/05/05/c/c-checklist-challenges-solved/
+https://blog.trailofbits.com/2026/05/12/go-fuzzing-was-missing-half-the-toolkit.-we-forked-the-toolchain-to-fix-it./
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -699,20 +700,29 @@ https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
 https://thehackernews.com/2026/05/fake-call-history-apps-stole-payments.html
 https://thehackernews.com/2026/05/global-crackdown-arrests-276-shuts-9.html
+https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html
+https://thehackernews.com/2026/05/ios-265-brings-default-end-to-end.html
 https://thehackernews.com/2026/05/ivanti-epmm-cve-2026-6973-rce-under.html
 https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html
+https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html
 https://thehackernews.com/2026/05/mirai-based-xlabsv1-botnet-exploits-adb.html
 https://thehackernews.com/2026/05/muddywater-uses-microsoft-teams-to.html
+https://thehackernews.com/2026/05/new-exim-bdat-vulnerability-exposes.html
 https://thehackernews.com/2026/05/one-click-total-shutdown-patient-zero.html
+https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html
 https://thehackernews.com/2026/05/palo-alto-pan-os-flaw-under-active.html
 https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html
 https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
 https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html
+https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html
 https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html
+https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html
 https://thehackernews.com/2026/05/top-five-sales-challenges-costing-msps.html
 https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html
 https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
 https://thehackernews.com/2026/05/vm2-nodejs-library-vulnerabilities.html
+https://thehackernews.com/2026/05/webinar-what-riskiest-soc-alerts-go.html
+https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
 https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -879,6 +889,7 @@ https://www.schneier.com/blog/archives/2026/04/sen-sanders-talks-to-claude-about
 https://www.schneier.com/blog/archives/2026/04/upcoming-speaking-engagements-55.html
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html
+https://www.schneier.com/blog/archives/2026/05/copy-fail-linux-vulnerability.html
 https://www.schneier.com/blog/archives/2026/05/darksword-malware.html
 https://www.schneier.com/blog/archives/2026/05/hacking-polymarket.html
 https://www.schneier.com/blog/archives/2026/05/rowhammer-attack-against-nvidia-chips.html
@@ -906,6 +917,7 @@ https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-di
 https://www.securityweek.com/access-system-flaws-enabled-hackers-to-unlock-doors-at-major-european-firms/
 https://www.securityweek.com/adobe-coldfusion-servers-targeted-in-coordinated-campaign/
 https://www.securityweek.com/adobe-patches-29-vulnerabilities/
+https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
 https://www.securityweek.com/adobe-patches-critical-vulnerability-in-collaboration-suite/
 https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
@@ -967,6 +979,7 @@ https://www.securityweek.com/bind-updates-patch-high-severity-vulnerabilities-2/
 https://www.securityweek.com/bitwarden-npm-package-hit-in-supply-chain-attack/
 https://www.securityweek.com/bold-security-emerges-from-stealth-with-40-million-in-funding/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
+https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/
 https://www.securityweek.com/by-design-flaw-in-mcp-could-enable-widespread-ai-supply-chain-attacks/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
 https://www.securityweek.com/can-we-trust-ai-no-but-eventually-we-must/
@@ -1079,6 +1092,7 @@ https://www.securityweek.com/data-breaches-at-healthcare-organizations-in-illino
 https://www.securityweek.com/data-exposure-vulnerability-found-in-deep-learning-tool-keras/
 https://www.securityweek.com/data-security-firm-evervault-raises-25-million-in-series-b-funding/
 https://www.securityweek.com/data-stolen-in-eurofiber-france-hack/
+https://www.securityweek.com/deal-reached-with-hackers-to-delete-data-stolen-from-the-canvas-educational-platform/
 https://www.securityweek.com/defakto-raises-30-million-for-non-human-iam-platform/
 https://www.securityweek.com/default-ics-credentials-exploited-in-destructive-attack-on-polish-energy-facilities/
 https://www.securityweek.com/defi-protocol-balancer-starts-recovering-funds-stolen-in-128-million-heist/
@@ -1104,6 +1118,7 @@ https://www.securityweek.com/european-commission-investigating-cyberattack/
 https://www.securityweek.com/european-commission-reports-cyber-intrusion-and-data-theft/
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
+https://www.securityweek.com/exaforce-raises-125-million-for-agentic-soc-platform/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
 https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/
 https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
@@ -1127,6 +1142,7 @@ https://www.securityweek.com/fortinet-confirms-forticloud-sso-exploitation-again
 https://www.securityweek.com/fortinet-rushes-emergency-fixes-for-exploited-zero-day/
 https://www.securityweek.com/fortinet-warns-of-new-attacks-exploiting-old-vulnerability/
 https://www.securityweek.com/france-probes-foreign-interference-after-remote-control-malware-found-on-passenger-ferry/
+https://www.securityweek.com/free-onlyfans-lure-used-to-spread-cross-platform-crpx0-malware/
 https://www.securityweek.com/french-government-says-1-2-million-bank-accounts-exposed-in-breach/
 https://www.securityweek.com/french-soccer-federation-hit-by-cyberattack-member-data-stolen/
 https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after-disclosure/
@@ -1180,9 +1196,11 @@ https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-deve
 https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
 https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
 https://www.securityweek.com/hugging-face-clawhub-abused-for-malware-distribution/
+https://www.securityweek.com/hundreds-of-malicious-packages-force-rubygems-to-suspend-registrations/
 https://www.securityweek.com/huskeys-emerges-from-stealth-with-8-million-in-funding/
 https://www.securityweek.com/hyperbunker-raises-seed-funding-to-launch-next-generation-anti-ransomware-device/
 https://www.securityweek.com/ics-patch-tuesday-fixes-announced-by-siemens-schneider-rockwell-abb-phoenix-contact/
+https://www.securityweek.com/ics-patch-tuesday-new-security-advisories-from-siemens-schneider-cisa/
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-addressed-by-siemens-rockwell-aveva-schneider/
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-fixed-by-siemens-schneider-aveva-phoenix-contact/
 https://www.securityweek.com/identity-security-firm-saviynt-raises-700-million-at-3-billion-valuation/
@@ -1264,6 +1282,7 @@ https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-bloc
 https://www.securityweek.com/microsoft-finds-vulnerability-exposing-millions-of-android-crypto-wallet-users/
 https://www.securityweek.com/microsoft-highlights-security-risks-introduced-by-new-agentic-ai-feature/
 https://www.securityweek.com/microsoft-names-new-operating-cisos-in-strategic-move-to-strengthen-cyber-defense/
+https://www.securityweek.com/microsoft-patches-137-vulnerabilities/
 https://www.securityweek.com/microsoft-patches-173-vulnerabilities-including-exploited-windows-flaws/
 https://www.securityweek.com/microsoft-patches-57-vulnerabilities-three-zero-days/
 https://www.securityweek.com/microsoft-patches-86-vulnerabilities/
@@ -1492,8 +1511,10 @@ https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen
 https://www.securityweek.com/webinar-today-fact-vs-fiction-the-truth-about-api-security/
 https://www.securityweek.com/webinar-today-identity-under-attack-strengthen-your-identity-defenses/
 https://www.securityweek.com/webinar-today-protecting-what-wafs-and-gateways-cant-see-register/
+https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
 https://www.securityweek.com/whisperpair-attack-leaves-millions-of-bluetooth-accessories-open-to-hijacking/
+https://www.securityweek.com/white-circle-raises-11-million-for-ai-control-platform/
 https://www.securityweek.com/white-house-chief-of-staff-to-meet-ith-anthropic-ceo-over-its-new-ai-technology/
 https://www.securityweek.com/who-is-zico-kolter-a-professor-leads-openai-safety-panel-with-power-to-halt-unsafe-ai-releases/
 https://www.securityweek.com/why-agentic-ai-systems-need-better-governance-lessons-from-openclaw/

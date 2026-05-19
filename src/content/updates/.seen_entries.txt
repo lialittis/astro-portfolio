@@ -700,15 +700,23 @@ https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html
 https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html
 https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
+https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html
 https://thehackernews.com/2026/05/fake-call-history-apps-stole-payments.html
+https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html
 https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html
 https://thehackernews.com/2026/05/ghostwriter-targets-ukrainian.html
+https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html
 https://thehackernews.com/2026/05/global-crackdown-arrests-276-shuts-9.html
+https://thehackernews.com/2026/05/how-to-reduce-phishing-exposure-before.html
 https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html
+https://thehackernews.com/2026/05/interpol-operation-ramz-disrupts-mena.html
 https://thehackernews.com/2026/05/ios-265-brings-default-end-to-end.html
 https://thehackernews.com/2026/05/ivanti-epmm-cve-2026-6973-rce-under.html
+https://thehackernews.com/2026/05/ivanti-fortinet-sap-vmware-n8n-patch.html
 https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html
+https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html
 https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html
+https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html
 https://thehackernews.com/2026/05/mirai-based-xlabsv1-botnet-exploits-adb.html
 https://thehackernews.com/2026/05/muddywater-uses-microsoft-teams-to.html
 https://thehackernews.com/2026/05/new-exim-bdat-vulnerability-exposes.html
@@ -718,6 +726,7 @@ https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html
 https://thehackernews.com/2026/05/palo-alto-pan-os-flaw-under-active.html
 https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html
 https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
+https://thehackernews.com/2026/05/pre-stuxnet-fast16-malware-tampered.html
 https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html
 https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html
 https://thehackernews.com/2026/05/stealer-backdoor-found-in-3-node-ipc.html
@@ -730,6 +739,7 @@ https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html
 https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
 https://thehackernews.com/2026/05/vm2-nodejs-library-vulnerabilities.html
 https://thehackernews.com/2026/05/webinar-what-riskiest-soc-alerts-go.html
+https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html
 https://thehackernews.com/2026/05/what-45-days-of-watching-your-own-tools.html
 https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
@@ -906,6 +916,7 @@ https://www.schneier.com/blog/archives/2026/05/how-dangerous-is-anthropics-mytho
 https://www.schneier.com/blog/archives/2026/05/openais-gpt-5-5-is-as-good-as-mythos-at-finding-security-vulnerabilities.html
 https://www.schneier.com/blog/archives/2026/05/rowhammer-attack-against-nvidia-chips.html
 https://www.schneier.com/blog/archives/2026/05/upcoming-speaking-engagements-56.html
+https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
@@ -923,6 +934,7 @@ https://www.securityweek.com/377000-impacted-by-data-breach-at-texas-gas-station
 https://www.securityweek.com/38-million-allegedly-impacted-by-manomano-data-breach/
 https://www.securityweek.com/4-5-million-offered-in-new-cloud-hacking-competition/
 https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
+https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-ransom-demand/
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/750000-impacted-by-data-breach-at-canadian-investment-watchdog/
 https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/
@@ -1049,6 +1061,7 @@ https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-a
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
 https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/
+https://www.securityweek.com/claw-chain-openclaw-flaws-allow-sandbox-escape-backdoor-delivery/
 https://www.securityweek.com/clickfix-attack-uses-windows-terminal-to-evade-detection/
 https://www.securityweek.com/clickfix-attacks-against-macos-users-evolving/
 https://www.securityweek.com/cloned-ai-tool-sites-distribute-malware-in-installfix-campaign/
@@ -1082,6 +1095,7 @@ https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-explo
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/
 https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/
+https://www.securityweek.com/critical-vulnerability-exposes-industrial-robot-fleets-to-hacking/
 https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/
 https://www.securityweek.com/critical-windows-server-wsus-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/crowdstrike-insider-helped-hackers-falsely-claim-system-breach/
@@ -1138,6 +1152,7 @@ https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabi
 https://www.securityweek.com/exaforce-raises-125-million-for-agentic-soc-platform/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
 https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/
+https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/
 https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
 https://www.securityweek.com/exploited-vulnerability-exposes-nginx-servers-to-hacking/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
@@ -1151,6 +1166,7 @@ https://www.securityweek.com/feds-seize-password-database-used-in-massive-bank-a
 https://www.securityweek.com/fieldtex-data-breach-impacts-238000/
 https://www.securityweek.com/firecompass-raises-20-million-for-offensive-security-platform/
 https://www.securityweek.com/firefox-vulnerability-allows-tor-user-fingerprinting/
+https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/
 https://www.securityweek.com/flickr-security-incident-tied-to-third-party-email-system/
 https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
 https://www.securityweek.com/forget-predictions-true-2026-cybersecurity-priorities-from-leaders/
@@ -1188,12 +1204,14 @@ https://www.securityweek.com/google-slashes-quantum-resource-requirements-for-br
 https://www.securityweek.com/google-sues-chinese-cybercriminals-behind-lighthouse-phishing-kit/
 https://www.securityweek.com/google-warns-of-new-campaign-targeting-bpos-to-steal-corporate-data/
 https://www.securityweek.com/government-scientific-entities-hit-via-daemon-tools-supply-chain-attack/
+https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/
 https://www.securityweek.com/guardarian-users-targeted-with-malicious-strapi-npm-packages/
 https://www.securityweek.com/hacked-hospitals-hidden-spyware-iran-conflict-shows-how-digital-fight-is-ingrained-in-warfare/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
 https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism-morality-and-hacking/
 https://www.securityweek.com/hackers-abuse-qemu-for-defense-evasion/
 https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center-patient-data-they-werent-immediately-notified/
+https://www.securityweek.com/hackers-earn-1-3-million-at-pwn2own-berlin-2026/
 https://www.securityweek.com/hackers-leak-5-1-million-panera-bread-accounts/
 https://www.securityweek.com/hackers-offer-to-sell-millions-of-eurail-user-records/
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
@@ -1311,6 +1329,7 @@ https://www.securityweek.com/microsoft-silently-mitigated-exploited-lnk-vulnerab
 https://www.securityweek.com/microsoft-to-enable-windows-baseline-security-with-new-runtime-integrity-safeguards/
 https://www.securityweek.com/microsoft-warns-of-exchange-server-zero-day-exploited-in-the-wild/
 https://www.securityweek.com/militant-groups-are-experimenting-with-ai-and-the-risks-are-expected-to-grow/
+https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/
 https://www.securityweek.com/millions-impacted-by-conduent-data-breach/
 https://www.securityweek.com/mitre-launches-new-security-framework-for-embedded-systems/
 https://www.securityweek.com/mitre-releases-2025-list-of-top-25-most-dangerous-software-vulnerabilities/
@@ -1386,6 +1405,7 @@ https://www.securityweek.com/pennsylvania-attorney-general-confirms-ransomware-b
 https://www.securityweek.com/pentagons-chief-tech-officer-says-he-clashed-with-ai-company-anthropic-over-autonomous-warfare/
 https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting-energy-sector/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
+https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/
 https://www.securityweek.com/polish-security-agency-reports-ics-breaches-at-five-water-treatment-plants/
 https://www.securityweek.com/pre-stuxnet-sabotage-malware-fast16-linked-to-us-iran-cyber-tensions/
 https://www.securityweek.com/president-trump-orders-divestment-in-2-9-million-chips-deal-to-protect-us-security-interests/
@@ -1417,6 +1437,7 @@ https://www.securityweek.com/recent-solarwinds-flaws-potentially-exploited-as-ze
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
+https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unpatched-2020-cve/
 https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
 https://www.securityweek.com/rockwell-vulnerability-allowing-remote-ics-hacking-exploited-in-attacks/
 https://www.securityweek.com/rondodox-botnet-exploiting-react2shell-vulnerability/

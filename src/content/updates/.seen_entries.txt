@@ -60,6 +60,7 @@ https://blog.trailofbits.com/2026/04/23/trailmark-turns-code-into-graphs/
 https://blog.trailofbits.com/2026/04/29/extending-ruzzy-with-libafl/
 https://blog.trailofbits.com/2026/05/05/c/c-checklist-challenges-solved/
 https://blog.trailofbits.com/2026/05/12/go-fuzzing-was-missing-half-the-toolkit.-we-forked-the-toolchain-to-fix-it./
+https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -699,14 +700,18 @@ https://thehackernews.com/2026/05/cisa-adds-cisco-sd-wan-cve-2026-20182.html
 https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html
 https://thehackernews.com/2026/05/cisco-catalyst-sd-wan-controller-auth.html
 https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html
+https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html
 https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html
 https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html
 https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
 https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html
+https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html
 https://thehackernews.com/2026/05/fake-call-history-apps-stole-payments.html
+https://thehackernews.com/2026/05/first-vpn-dismantled-in-global-takedown.html
 https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html
 https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html
+https://thehackernews.com/2026/05/ghostwriter-targets-ukraine-government.html
 https://thehackernews.com/2026/05/ghostwriter-targets-ukrainian.html
 https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html
 https://thehackernews.com/2026/05/github-internal-repositories-breached.html
@@ -718,7 +723,10 @@ https://thehackernews.com/2026/05/interpol-operation-ramz-disrupts-mena.html
 https://thehackernews.com/2026/05/ios-265-brings-default-end-to-end.html
 https://thehackernews.com/2026/05/ivanti-epmm-cve-2026-6973-rce-under.html
 https://thehackernews.com/2026/05/ivanti-fortinet-sap-vmware-n8n-patch.html
+https://thehackernews.com/2026/05/laravel-lang-php-packages-compromised.html
 https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html
+https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html
+https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html
 https://thehackernews.com/2026/05/microsoft-open-sources-rampart-and.html
 https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html
 https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html
@@ -727,9 +735,11 @@ https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html
 https://thehackernews.com/2026/05/mirai-based-xlabsv1-botnet-exploits-adb.html
 https://thehackernews.com/2026/05/muddywater-uses-microsoft-teams-to.html
 https://thehackernews.com/2026/05/new-exim-bdat-vulnerability-exposes.html
+https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html
 https://thehackernews.com/2026/05/on-prem-microsoft-exchange-server-cve.html
 https://thehackernews.com/2026/05/one-click-total-shutdown-patient-zero.html
 https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html
+https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html
 https://thehackernews.com/2026/05/palo-alto-pan-os-flaw-under-active.html
 https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html
 https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
@@ -744,6 +754,7 @@ https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html
 https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html
 https://thehackernews.com/2026/05/threatsday-bulletin-pan-os-rce-mythos.html
 https://thehackernews.com/2026/05/top-five-sales-challenges-costing-msps.html
+https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html
 https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html
 https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
 https://thehackernews.com/2026/05/vm2-nodejs-library-vulnerabilities.html
@@ -919,6 +930,7 @@ https://www.schneier.com/blog/archives/2026/04/upcoming-speaking-engagements-55.
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html
 https://www.schneier.com/blog/archives/2026/05/bypassing-on-camera-age-verification-checks.html
+https://www.schneier.com/blog/archives/2026/05/cisa-security-leak.html
 https://www.schneier.com/blog/archives/2026/05/copy-fail-linux-vulnerability.html
 https://www.schneier.com/blog/archives/2026/05/darksword-malware.html
 https://www.schneier.com/blog/archives/2026/05/hacking-polymarket.html
@@ -1151,6 +1163,7 @@ https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acqu
 https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-threat-actor/
 https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/
 https://www.securityweek.com/drupal-patches-highly-critical-vulnerability-exposing-websites-to-hacking/
+https://www.securityweek.com/drupal-vulnerability-in-hacker-crosshairs-shortly-after-disclosure/
 https://www.securityweek.com/dutch-carrier-odido-discloses-data-breach-impacting-6-million/
 https://www.securityweek.com/easily-exploitable-pack2theroot-linux-vulnerability-leads-to-root-access/
 https://www.securityweek.com/eclypsium-raises-25-million-for-device-supply-chain-security/
@@ -1183,6 +1196,7 @@ https://www.securityweek.com/fieldtex-data-breach-impacts-238000/
 https://www.securityweek.com/firecompass-raises-20-million-for-offensive-security-platform/
 https://www.securityweek.com/firefox-vulnerability-allows-tor-user-fingerprinting/
 https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/
+https://www.securityweek.com/first-vpn-cybercrime-service-disrupted-administrator-arrested/
 https://www.securityweek.com/flickr-security-incident-tied-to-third-party-email-system/
 https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
 https://www.securityweek.com/forget-predictions-true-2026-cybersecurity-priorities-from-leaders/
@@ -1269,6 +1283,7 @@ https://www.securityweek.com/in-other-news-deepwatch-layoffs-macos-vulnerability
 https://www.securityweek.com/in-other-news-e1-2b-gdpr-fines-net-ntlmv1-rainbow-tables-rockwell-security-notice/
 https://www.securityweek.com/in-other-news-gladinet-flaw-exploitation-attacks-on-ics-honeypot-clayrat-spyware/
 https://www.securityweek.com/in-other-news-hashjack-ai-browser-attack-charming-kitten-leak-hacker-unmasked/
+https://www.securityweek.com/in-other-news-industrial-router-exploitation-cisa-kev-nomination-form-gas-station-hacking/
 https://www.securityweek.com/in-other-news-iranian-ships-hacked-verified-android-developers-ai-used-in-attacks/
 https://www.securityweek.com/in-other-news-lockbit-5-0-department-of-war-cybersecurity-framework-oneplus-vulnerability/
 https://www.securityweek.com/in-other-news-n8n-flaw-exploited-slopoly-malware-interpol-cybercrime-crackdown/
@@ -1411,6 +1426,7 @@ https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-
 https://www.securityweek.com/over-100-github-repositories-distributing-boryptgrab-stealer/
 https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phishing-campaign/
 https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automotive-2026/
+https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/
 https://www.securityweek.com/over-73000-watchguard-firebox-devices-impacted-by-recent-critical-flaw/
 https://www.securityweek.com/packagegate-flaws-open-javascript-ecosystem-to-supply-chain-attacks/
 https://www.securityweek.com/palo-alto-networks-google-cloud-strike-multibillion-dollar-ai-and-cloud-security-deal/
@@ -1543,6 +1559,7 @@ https://www.securityweek.com/ukrainian-man-extradited-from-ireland-to-us-over-co
 https://www.securityweek.com/unauthenticated-rce-flaw-patched-in-draytek-routers/
 https://www.securityweek.com/unc6692-uses-email-bombing-social-engineering-to-deploy-snow-malware/
 https://www.securityweek.com/under-armour-looking-into-data-breach-affecting-customers-email-addresses/
+https://www.securityweek.com/underminr-vulnerability-lets-attackers-hide-malicious-connections-behind-trusted-domains/
 https://www.securityweek.com/university-of-sydney-data-breach-affects-27000-individuals/
 https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-remote-hacking/
 https://www.securityweek.com/unsecured-perforce-servers-expose-sensitive-data-from-major-orgs/

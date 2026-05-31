@@ -697,6 +697,8 @@ https://thehackernews.com/2026/05/5-steps-to-managing-shadow-ai-tools.html
 https://thehackernews.com/2026/05/9-year-old-linux-kernel-flaw-enables.html
 https://thehackernews.com/2026/05/ai-chatbot-recommendations-redirect.html
 https://thehackernews.com/2026/05/android-apps-get-public-verification.html
+https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html
+https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html
 https://thehackernews.com/2026/05/cisa-adds-actively-exploited-linux-root.html
 https://thehackernews.com/2026/05/cisa-adds-cisco-sd-wan-cve-2026-20182.html
 https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html
@@ -705,6 +707,7 @@ https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html
 https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html
 https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html
 https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html
+https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets.html
 https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
 https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html
@@ -732,9 +735,11 @@ https://thehackernews.com/2026/05/laravel-lang-php-packages-compromised.html
 https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html
 https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html
 https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html
+https://thehackernews.com/2026/05/malicious-sicoob-nuget-steals-banking.html
 https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html
 https://thehackernews.com/2026/05/microsoft-open-sources-rampart-and.html
 https://thehackernews.com/2026/05/microsoft-patches-sharepoint-rce-flaw.html
+https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html
 https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html
 https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html
 https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html
@@ -750,6 +755,7 @@ https://thehackernews.com/2026/05/one-click-total-shutdown-patient-zero.html
 https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html
 https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html
 https://thehackernews.com/2026/05/palo-alto-pan-os-flaw-under-active.html
+https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html
 https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html
 https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html
 https://thehackernews.com/2026/05/pre-stuxnet-fast16-malware-tampered.html
@@ -760,6 +766,7 @@ https://thehackernews.com/2026/05/stealer-backdoor-found-in-3-node-ipc.html
 https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html
 https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html
 https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html
+https://thehackernews.com/2026/05/threat-actors-exploit-critical.html
 https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html
 https://thehackernews.com/2026/05/threatsday-bulletin-pan-os-rce-mythos.html
 https://thehackernews.com/2026/05/top-five-sales-challenges-costing-msps.html
@@ -769,6 +776,7 @@ https://thehackernews.com/2026/05/two-cybersecurity-professionals-get-4.html
 https://thehackernews.com/2026/05/vm2-nodejs-library-vulnerabilities.html
 https://thehackernews.com/2026/05/webinar-what-riskiest-soc-alerts-go.html
 https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html
+https://thehackernews.com/2026/05/what-2000-exposed-vibe-coded-apps.html
 https://thehackernews.com/2026/05/what-45-days-of-watching-your-own-tools.html
 https://thehackernews.com/2026/05/when-identity-is-attack-path.html
 https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
@@ -939,6 +947,7 @@ https://www.schneier.com/blog/archives/2026/04/upcoming-speaking-engagements-55.
 https://www.schneier.com/blog/archives/2026/04/us-bans-all-foreign-made-consumer-routers.html
 https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html
 https://www.schneier.com/blog/archives/2026/05/bypassing-on-camera-age-verification-checks.html
+https://www.schneier.com/blog/archives/2026/05/chilling-effects.html
 https://www.schneier.com/blog/archives/2026/05/cisa-security-leak.html
 https://www.schneier.com/blog/archives/2026/05/copy-fail-linux-vulnerability.html
 https://www.schneier.com/blog/archives/2026/05/darksword-malware.html
@@ -1045,6 +1054,7 @@ https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/
 https://www.securityweek.com/by-design-flaw-in-mcp-could-enable-widespread-ai-supply-chain-attacks/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
+https://www.securityweek.com/california-sues-23andme-alleging-it-failed-to-protect-user-data-in-2023-breach/
 https://www.securityweek.com/can-we-trust-ai-no-but-eventually-we-must/
 https://www.securityweek.com/canadian-tire-data-breach-impacts-38-million-accounts/
 https://www.securityweek.com/cape-raises-100-million-for-protection-against-cellular-security-threats/
@@ -1053,6 +1063,7 @@ https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-securit
 https://www.securityweek.com/censys-raises-70-million-for-internet-intelligence-platform/
 https://www.securityweek.com/central-maine-healthcare-data-breach-impacts-145000-individuals/
 https://www.securityweek.com/chainguard-raises-280-million-in-growth-funding/
+https://www.securityweek.com/charter-communications-data-breach-could-impact-nearly-5-million/
 https://www.securityweek.com/chatgpt-atlas-omnibox-is-vulnerable-to-jailbreaks/
 https://www.securityweek.com/chatgpt-deep-research-targeted-in-server-side-data-theft-attack/
 https://www.securityweek.com/chatgpt-tricked-into-solving-captchas/
@@ -1073,6 +1084,7 @@ https://www.securityweek.com/chrome-143-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-145-patches-11-vulnerabilities/
 https://www.securityweek.com/chrome-146-update-patches-high-severity-vulnerabilities/
 https://www.securityweek.com/chrome-147-patches-60-vulnerabilities-including-two-critical-flaws-worth-86000/
+https://www.securityweek.com/chrome-148-update-patches-151-vulnerabilities/
 https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/
 https://www.securityweek.com/chrome-edge-extensions-caught-stealing-chatgpt-sessions/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
@@ -1190,6 +1202,7 @@ https://www.securityweek.com/european-commission-reports-cyber-intrusion-and-dat
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exaforce-raises-125-million-for-agentic-soc-platform/
+https://www.securityweek.com/exploit-code-published-for-critical-flowise-rce-vulnerability/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
 https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/
 https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/
@@ -1222,12 +1235,14 @@ https://www.securityweek.com/french-soccer-federation-hit-by-cyberattack-member-
 https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after-disclosure/
 https://www.securityweek.com/fresh-mongodb-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/fresh-smartermail-flaw-exploited-for-admin-access/
+https://www.securityweek.com/geordie-raises-30-million-for-ai-security-and-governance-platform/
 https://www.securityweek.com/gitguardian-raises-50-million-for-secrets-and-non-human-identity-security/
 https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-chain-attacks/
 https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/
 https://www.securityweek.com/gladinet-centrestack-flaw-exploited-to-hack-organizations/
 https://www.securityweek.com/gladinet-patches-exploited-centrestack-vulnerability/
 https://www.securityweek.com/glassworm-botnet-disrupted/
+https://www.securityweek.com/gogs-zero-day-exposes-servers-to-remote-code-execution/
 https://www.securityweek.com/google-adjusts-bug-bounties-chrome-payouts-drop-as-android-rewards-rise-amid-ai-surge/
 https://www.securityweek.com/google-api-keys-in-android-apps-expose-gemini-endpoints-to-unauthorized-access/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
@@ -1308,6 +1323,7 @@ https://www.securityweek.com/in-other-news-satellite-cybersecurity-act-90k-chrom
 https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-attacks-gmail-security-claims-debunked/
 https://www.securityweek.com/in-other-news-scattered-spider-hacker-arrested-soc-effectiveness-metrics-nsa-tool-vulnerability/
 https://www.securityweek.com/in-other-news-train-hacker-arrested-pamdoora-linux-backdoor-new-cisa-director-frontrunner/
+https://www.securityweek.com/in-other-news-trump-mobile-data-breach-fifa-world-cup-phishing-cisa-responds-to-supply-chain-attacks/
 https://www.securityweek.com/in-other-news-unauthorized-mythos-access-plankey-cisa-nomination-ends-new-display-security-device/
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
 https://www.securityweek.com/infostealer-malware-delivered-in-emeditor-supply-chain-attack/
@@ -1382,6 +1398,7 @@ https://www.securityweek.com/millions-impacted-by-conduent-data-breach/
 https://www.securityweek.com/mitre-launches-new-security-framework-for-embedded-systems/
 https://www.securityweek.com/mitre-releases-2025-list-of-top-25-most-dangerous-software-vulnerabilities/
 https://www.securityweek.com/mobile-attack-surface-expands-as-enterprises-lose-control/
+https://www.securityweek.com/mokn-raises-15-million-for-phish-back-platform/
 https://www.securityweek.com/mokn-raises-3-million-for-phish-back-solution/
 https://www.securityweek.com/mondoo-raises-17-5-million-for-vulnerability-management-platform/
 https://www.securityweek.com/monnai-raises-12-million-for-identity-and-risk-data-infrastructure/

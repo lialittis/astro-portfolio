@@ -712,6 +712,7 @@ https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
 https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html
 https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html
 https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html
+https://thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html
 https://thehackernews.com/2026/05/fake-call-history-apps-stole-payments.html
 https://thehackernews.com/2026/05/first-vpn-dismantled-in-global-takedown.html
 https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html
@@ -782,6 +783,7 @@ https://thehackernews.com/2026/05/when-identity-is-attack-path.html
 https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
 https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
+https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1500,6 +1502,7 @@ https://www.securityweek.com/recent-apache-activemq-vulnerability-exploited-in-t
 https://www.securityweek.com/recent-cisco-catalyst-sd-wan-vulnerability-now-widely-exploited/
 https://www.securityweek.com/recent-fortra-goanywhere-mft-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/recent-geoserver-vulnerability-exploited-in-attacks/
+https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/recent-solarwinds-flaws-potentially-exploited-as-zero-days/
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/

@@ -61,6 +61,7 @@ https://blog.trailofbits.com/2026/04/29/extending-ruzzy-with-libafl/
 https://blog.trailofbits.com/2026/05/05/c/c-checklist-challenges-solved/
 https://blog.trailofbits.com/2026/05/12/go-fuzzing-was-missing-half-the-toolkit.-we-forked-the-toolchain-to-fix-it./
 https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/
+https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -783,7 +784,17 @@ https://thehackernews.com/2026/05/when-identity-is-attack-path.html
 https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
 https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
+https://thehackernews.com/2026/06/autonomous-ai-tool-finds-2-year-old-rce.html
+https://thehackernews.com/2026/06/beyond-zero-day-see-your-network-like.html
 https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html
+https://thehackernews.com/2026/06/google-doubleclick-abused-in-new.html
+https://thehackernews.com/2026/06/microsoft-365-android-apps-let-any-app.html
+https://thehackernews.com/2026/06/new-http2-bomb-vulnerability-allows.html
+https://thehackernews.com/2026/06/one-click-github-dev-attack-lets.html
+https://thehackernews.com/2026/06/shrinking-iam-attack-surface-through.html
+https://thehackernews.com/2026/06/unpatched-windows-search-uri.html
+https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html
+https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -964,6 +975,9 @@ https://www.schneier.com/blog/archives/2026/05/openais-gpt-5-5-is-as-good-as-myt
 https://www.schneier.com/blog/archives/2026/05/rowhammer-attack-against-nvidia-chips.html
 https://www.schneier.com/blog/archives/2026/05/upcoming-speaking-engagements-56.html
 https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html
+https://www.schneier.com/blog/archives/2026/06/ai-used-to-decrypt-medieval-ciphers.html
+https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html
+https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
@@ -1128,6 +1142,7 @@ https://www.securityweek.com/cogent-security-raises-42-million-for-ai-driven-vul
 https://www.securityweek.com/conduent-breach-hits-volvo-group-nearly-17000-employees-data-exposed/
 https://www.securityweek.com/copperhelm-raises-7-million-for-agentic-cloud-security-platform/
 https://www.securityweek.com/copy-fail-logic-flaw-in-linux-kernel-enables-system-takeover/
+https://www.securityweek.com/coralogix-raises-200m-at-1-6b-valuation-to-scale-ai-observability-platform/
 https://www.securityweek.com/coruna-ios-exploit-kit-likely-an-update-to-operation-triangulation/
 https://www.securityweek.com/coupang-to-issue-1-17-billion-in-vouchers-over-data-breach/
 https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individuals/
@@ -1277,6 +1292,7 @@ https://www.securityweek.com/hackers-leak-5-1-million-panera-bread-accounts/
 https://www.securityweek.com/hackers-offer-to-sell-millions-of-eurail-user-records/
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
+https://www.securityweek.com/hackers-target-global-stock-exchange-in-espionage-operation/
 https://www.securityweek.com/hackers-target-perplexity-comet-browser-users/
 https://www.securityweek.com/healthcare-it-platform-carecloud-probing-potential-data-breach/
 https://www.securityweek.com/helmet-security-emerges-from-stealth-mode-with-9-million-in-funding/
@@ -1291,6 +1307,7 @@ https://www.securityweek.com/how-software-development-teams-can-securely-and-eth
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-eliminate-the-technical-debt-of-insecure-ai-assisted-software-development/
 https://www.securityweek.com/hpe-patches-critical-flaw-in-it-infrastructure-management-software/
+https://www.securityweek.com/http-2-bomb-exploit-knocks-web-servers-offline-in-seconds/
 https://www.securityweek.com/hugging-face-clawhub-abused-for-malware-distribution/
 https://www.securityweek.com/hundreds-of-malicious-packages-force-rubygems-to-suspend-registrations/
 https://www.securityweek.com/huskeys-emerges-from-stealth-with-8-million-in-funding/
@@ -1300,6 +1317,7 @@ https://www.securityweek.com/ics-patch-tuesday-new-security-advisories-from-siem
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-addressed-by-siemens-rockwell-aveva-schneider/
 https://www.securityweek.com/ics-patch-tuesday-vulnerabilities-fixed-by-siemens-schneider-aveva-phoenix-contact/
 https://www.securityweek.com/identity-security-firm-saviynt-raises-700-million-at-3-billion-valuation/
+https://www.securityweek.com/ima-diligence-services-data-breach-impacts-525000-people/
 https://www.securityweek.com/imper-ai-emerges-from-stealth-mode-with-28-million-in-funding/
 https://www.securityweek.com/imunify360-vulnerability-could-expose-millions-of-sites-to-hacking/
 https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major-shinyhunters-hacks-deepseeks-coding-bias/
@@ -1355,6 +1373,7 @@ https://www.securityweek.com/juniper-networks-patches-dozens-of-junos-os-vulnera
 https://www.securityweek.com/juniper-networks-ptx-routers-affected-by-critical-vulnerability/
 https://www.securityweek.com/kasada-raises-20-million-for-anti-bot-expansion/
 https://www.securityweek.com/kimwolf-android-botnet-ensnares-1-8-million-devices/
+https://www.securityweek.com/kirki-burst-statistics-wordpress-plugin-flaws-in-attackers-crosshairs/
 https://www.securityweek.com/korean-air-data-compromised-in-oracle-ebs-hack/
 https://www.securityweek.com/la-metro-cyberattack-linked-to-iranian-state-sponsored-hackers/
 https://www.securityweek.com/landfall-android-spyware-targeted-samsung-phones-via-zero-day/
@@ -1393,6 +1412,7 @@ https://www.securityweek.com/microsoft-reduces-israels-access-to-cloud-and-ai-pr
 https://www.securityweek.com/microsoft-revokes-over-200-certificates-to-disrupt-ransomware-campaign/
 https://www.securityweek.com/microsoft-silently-mitigated-exploited-lnk-vulnerability/
 https://www.securityweek.com/microsoft-to-enable-windows-baseline-security-with-new-runtime-integrity-safeguards/
+https://www.securityweek.com/microsoft-tries-to-calm-legal-threat-fears-after-zero-day-disclosure-backlash/
 https://www.securityweek.com/microsoft-warns-of-exchange-server-zero-day-exploited-in-the-wild/
 https://www.securityweek.com/militant-groups-are-experimenting-with-ai-and-the-risks-are-expected-to-grow/
 https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/
@@ -1451,6 +1471,7 @@ https://www.securityweek.com/oracle-says-known-vulnerabilities-possibly-exploite
 https://www.securityweek.com/oracles-first-2026-cpu-delivers-337-new-security-patches/
 https://www.securityweek.com/organizations-urged-to-replace-discontinued-edge-devices/
 https://www.securityweek.com/organizations-warned-of-exploited-cisco-kentico-zimbra-vulnerabilities/
+https://www.securityweek.com/organizations-warned-of-exploited-linux-kernel-vulnerability/
 https://www.securityweek.com/organizations-warned-of-exploited-linux-vulnerabilities/
 https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
 https://www.securityweek.com/organizations-warned-of-exploited-zimbra-collaboration-vulnerability/
@@ -1523,6 +1544,7 @@ https://www.securityweek.com/sap-npm-packages-targeted-in-supply-chain-attack/
 https://www.securityweek.com/sap-patches-critical-netweaver-vulnerabilities/
 https://www.securityweek.com/sbom-pioneer-allan-friedman-joins-netrise-to-advance-supply-chain-visibility/
 https://www.securityweek.com/security-firms-hit-by-salesforce-salesloft-drift-breach/
+https://www.securityweek.com/security-of-100-ai-agents-tested-and-ranked-what-you-need-to-know/
 https://www.securityweek.com/securityweek-to-host-2025-ics-cybersecurity-conference-october-27-30-in-atlanta/
 https://www.securityweek.com/securityweek-to-host-ai-risk-summit-august-11-12-at-the-ritz-carlton-half-moon-bay/
 https://www.securityweek.com/serial-to-ip-converter-flaws-expose-ot-and-healthcare-systems-to-hacking/
@@ -1583,9 +1605,11 @@ https://www.securityweek.com/trueconf-zero-day-exploited-in-asian-government-att
 https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scanning-engine/
 https://www.securityweek.com/trump-administration-vows-crackdown-on-chinese-companies-exploiting-ai-models-made-in-us/
 https://www.securityweek.com/trump-orders-all-federal-agencies-to-phase-out-use-of-anthropic-technology/
+https://www.securityweek.com/trump-signs-executive-order-that-invites-vetting-of-top-ai-models-for-national-security-risks/
 https://www.securityweek.com/trump-signs-executive-order-to-block-state-ai-regulations/
 https://www.securityweek.com/trump-urges-extending-foreign-surveillance-program-as-some-lawmakers-push-for-us-privacy-protections/
 https://www.securityweek.com/turla-and-gamaredon-working-together-in-fresh-ukrainian-intrusions/
+https://www.securityweek.com/two-new-reports-offer-competing-explanations-for-cybersecuritys-growing-crisis/
 https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-charged-in-us/
 https://www.securityweek.com/two-us-cybersecurity-pros-plead-guilty-over-ransomware-attacks/
 https://www.securityweek.com/two-vulnerabilities-patched-in-ivanti-neurons-for-itsm/

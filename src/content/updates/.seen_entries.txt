@@ -784,13 +784,22 @@ https://thehackernews.com/2026/05/when-identity-is-attack-path.html
 https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
 https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
+https://thehackernews.com/2026/06/ai-agent-uncovers-21-zero-days-in.html
+https://thehackernews.com/2026/06/android-spyware-asin-targets-arabic.html
 https://thehackernews.com/2026/06/autonomous-ai-tool-finds-2-year-old-rce.html
 https://thehackernews.com/2026/06/beyond-zero-day-see-your-network-like.html
+https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html
+https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html
 https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html
+https://thehackernews.com/2026/06/free-apps-are-quietly-turning-smart-tvs.html
 https://thehackernews.com/2026/06/google-doubleclick-abused-in-new.html
+https://thehackernews.com/2026/06/ironworm-and-new-miasma-worm-variant.html
+https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html
 https://thehackernews.com/2026/06/microsoft-365-android-apps-let-any-app.html
+https://thehackernews.com/2026/06/new-chatgpt-lockdown-mode-limits-tools.html
 https://thehackernews.com/2026/06/new-http2-bomb-vulnerability-allows.html
 https://thehackernews.com/2026/06/one-click-github-dev-attack-lets.html
+https://thehackernews.com/2026/06/only-10-of-socs-say-theyre-getting.html
 https://thehackernews.com/2026/06/shrinking-iam-attack-surface-through.html
 https://thehackernews.com/2026/06/unpatched-windows-search-uri.html
 https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html
@@ -976,6 +985,8 @@ https://www.schneier.com/blog/archives/2026/05/rowhammer-attack-against-nvidia-c
 https://www.schneier.com/blog/archives/2026/05/upcoming-speaking-engagements-56.html
 https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html
 https://www.schneier.com/blog/archives/2026/06/ai-used-to-decrypt-medieval-ciphers.html
+https://www.schneier.com/blog/archives/2026/06/ai-worm.html
+https://www.schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html
 https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html
 https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
@@ -1102,6 +1113,7 @@ https://www.securityweek.com/chrome-146-update-patches-high-severity-vulnerabili
 https://www.securityweek.com/chrome-147-patches-60-vulnerabilities-including-two-critical-flaws-worth-86000/
 https://www.securityweek.com/chrome-148-update-patches-151-vulnerabilities/
 https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/
+https://www.securityweek.com/chrome-149-patches-429-vulnerabilities/
 https://www.securityweek.com/chrome-edge-extensions-caught-stealing-chatgpt-sessions/
 https://www.securityweek.com/chrome-zero-day-exploitation-linked-to-hacking-team-spyware/
 https://www.securityweek.com/cisa-adds-exploited-xwiki-vmware-flaws-to-kev-catalog/
@@ -1123,6 +1135,7 @@ https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities-
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
 https://www.securityweek.com/cisco-patches-vulnerability-exploited-by-chinese-hackers/
 https://www.securityweek.com/cisco-releases-open-source-tool-for-ai-model-provenance/
+https://www.securityweek.com/cisco-warns-of-7th-sd-wan-zero-day-exploited-in-2026/
 https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-at-google-deepmind/
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
@@ -1322,6 +1335,7 @@ https://www.securityweek.com/imper-ai-emerges-from-stealth-mode-with-28-million-
 https://www.securityweek.com/imunify360-vulnerability-could-expose-millions-of-sites-to-hacking/
 https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major-shinyhunters-hacks-deepseeks-coding-bias/
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
+https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/
 https://www.securityweek.com/in-other-news-atm-jackpotting-whatsapp-nso-lawsuit-continues-cisa-hiring/
 https://www.securityweek.com/in-other-news-big-tech-vs-canada-encryption-bill-ciscos-free-ai-security-spec-audi-app-flaws/
 https://www.securityweek.com/in-other-news-chatgpt-data-leak-android-rootkit-water-facility-hit-by-ransomware/
@@ -1346,6 +1360,7 @@ https://www.securityweek.com/in-other-news-train-hacker-arrested-pamdoora-linux-
 https://www.securityweek.com/in-other-news-trump-mobile-data-breach-fifa-world-cup-phishing-cisa-responds-to-supply-chain-attacks/
 https://www.securityweek.com/in-other-news-unauthorized-mythos-access-plankey-cisa-nomination-ends-new-display-security-device/
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
+https://www.securityweek.com/industry-reactions-to-new-trump-ai-cybersecurity-executive-order-feedback-friday/
 https://www.securityweek.com/infostealer-malware-delivered-in-emeditor-supply-chain-attack/
 https://www.securityweek.com/infotainment-ev-charger-exploits-earn-hackers-1m-at-pwn2own-automotive-2026/
 https://www.securityweek.com/insight-partners-confirms-data-breach-result-of-ransomware-attack/
@@ -1446,6 +1461,7 @@ https://www.securityweek.com/new-sandworm_mode-supply-chain-attack-hits-npm/
 https://www.securityweek.com/new-stackwarp-attack-threatens-confidential-vms-on-amd-processors/
 https://www.securityweek.com/new-sturnus-banking-trojan-targets-whatsapp-telegram-signal-messages/
 https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurrency-transactions/
+https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/
 https://www.securityweek.com/nike-probing-potential-security-incident-as-hackers-threaten-to-leak-data/
 https://www.securityweek.com/niobium-raises-23-million-for-fhe-hardware-acceleration/
 https://www.securityweek.com/nissan-confirms-impact-from-red-hat-data-breach/
@@ -1457,8 +1473,10 @@ https://www.securityweek.com/npm-package-with-56000-downloads-steals-whatsapp-cr
 https://www.securityweek.com/nucleus-raises-20-million-for-exposure-management/
 https://www.securityweek.com/nudge-security-raises-22-5-million-in-series-a-funding/
 https://www.securityweek.com/ocean-emerges-from-stealth-with-28m-for-agentic-email-security-platform/
+https://www.securityweek.com/offroad-emerges-from-stealth-with-7-million-to-tackle-enterprise-identity-risk/
 https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
 https://www.securityweek.com/onyx-security-launches-with-40-million-in-funding/
+https://www.securityweek.com/opal-security-raises-23-million-for-ai-native-identity-governance/
 https://www.securityweek.com/open-vsx-downplays-impact-from-glassworm-campaign/
 https://www.securityweek.com/open-vsx-publisher-account-hijacked-in-fresh-glassworm-attack/
 https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/
@@ -1482,6 +1500,7 @@ https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phi
 https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automotive-2026/
 https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/
 https://www.securityweek.com/over-73000-watchguard-firebox-devices-impacted-by-recent-critical-flaw/
+https://www.securityweek.com/owasp-incubator-project-helps-developers-find-and-fix-vulnerable-dependencies-in-seconds/
 https://www.securityweek.com/packagegate-flaws-open-javascript-ecosystem-to-supply-chain-attacks/
 https://www.securityweek.com/palo-alto-networks-google-cloud-strike-multibillion-dollar-ai-and-cloud-security-deal/
 https://www.securityweek.com/palo-alto-networks-sonicwall-patch-high-severity-vulnerabilities/

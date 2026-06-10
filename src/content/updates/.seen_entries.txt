@@ -788,20 +788,29 @@ https://thehackernews.com/2026/06/ai-agent-uncovers-21-zero-days-in.html
 https://thehackernews.com/2026/06/android-spyware-asin-targets-arabic.html
 https://thehackernews.com/2026/06/autonomous-ai-tool-finds-2-year-old-rce.html
 https://thehackernews.com/2026/06/beyond-zero-day-see-your-network-like.html
+https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html
 https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html
 https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html
 https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html
 https://thehackernews.com/2026/06/free-apps-are-quietly-turning-smart-tvs.html
 https://thehackernews.com/2026/06/google-doubleclick-abused-in-new.html
 https://thehackernews.com/2026/06/ironworm-and-new-miasma-worm-variant.html
+https://thehackernews.com/2026/06/meta-to-use-off-site-business-data-for.html
 https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html
 https://thehackernews.com/2026/06/microsoft-365-android-apps-let-any-app.html
+https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html
+https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html
 https://thehackernews.com/2026/06/new-chatgpt-lockdown-mode-limits-tools.html
+https://thehackernews.com/2026/06/new-frost-attack-lets-websites-track.html
 https://thehackernews.com/2026/06/new-http2-bomb-vulnerability-allows.html
 https://thehackernews.com/2026/06/one-click-github-dev-attack-lets.html
 https://thehackernews.com/2026/06/only-10-of-socs-say-theyre-getting.html
+https://thehackernews.com/2026/06/researchers-build-self-replicating-ai.html
 https://thehackernews.com/2026/06/shrinking-iam-attack-surface-through.html
+https://thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html
+https://thehackernews.com/2026/06/the-hidden-security-risk-in-modern.html
 https://thehackernews.com/2026/06/unpatched-windows-search-uri.html
+https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html
 https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html
 https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -986,6 +995,9 @@ https://www.schneier.com/blog/archives/2026/05/upcoming-speaking-engagements-56.
 https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html
 https://www.schneier.com/blog/archives/2026/06/ai-used-to-decrypt-medieval-ciphers.html
 https://www.schneier.com/blog/archives/2026/06/ai-worm.html
+https://www.schneier.com/blog/archives/2026/06/anthropics-project-glasswing-update.html
+https://www.schneier.com/blog/archives/2026/06/critical-zcash-vulnerability-found-and-fixed.html
+https://www.schneier.com/blog/archives/2026/06/gps-as-a-key-distribution-platform.html
 https://www.schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html
 https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html
 https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
@@ -1013,6 +1025,7 @@ https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-she
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/access-system-flaws-enabled-hackers-to-unlock-doors-at-major-european-firms/
 https://www.securityweek.com/adobe-coldfusion-servers-targeted-in-coordinated-campaign/
+https://www.securityweek.com/adobe-patches-123-vulnerabilities/
 https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/
 https://www.securityweek.com/adobe-patches-critical-coldfusion-and-commerce-vulnerabilities/
@@ -1042,6 +1055,7 @@ https://www.securityweek.com/american-lending-center-data-breach-affects-123000-
 https://www.securityweek.com/android-update-patches-exploited-qualcomm-zero-day/
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
 https://www.securityweek.com/another-draftkings-hacker-sentenced-to-prison/
+https://www.securityweek.com/anthropic-launches-claude-fable-5-mythos-class-ai-with-cybersecurity-guardrails/
 https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/
 https://www.securityweek.com/anthropic-refuses-to-bend-to-pentagon-on-ai-safeguards-as-dispute-nears-deadline/
 https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espionage-campaign/
@@ -1094,6 +1108,7 @@ https://www.securityweek.com/charter-communications-data-breach-could-impact-nea
 https://www.securityweek.com/chatgpt-atlas-omnibox-is-vulnerable-to-jailbreaks/
 https://www.securityweek.com/chatgpt-deep-research-targeted-in-server-side-data-theft-attack/
 https://www.securityweek.com/chatgpt-tricked-into-solving-captchas/
+https://www.securityweek.com/check-point-vpn-zero-day-exploited-in-qilin-ransomware-attacks/
 https://www.securityweek.com/checkout-com-discloses-data-breach-after-extortion-attempt/
 https://www.securityweek.com/chinese-apt-exploits-unpatched-windows-flaw-in-recent-attacks/
 https://www.securityweek.com/chinese-apt-mustang-panda-caught-using-kernel-mode-rootkit/
@@ -1140,6 +1155,7 @@ https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-a
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
 https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/
+https://www.securityweek.com/claude-mythos-turns-n-days-into-n-hours-with-rapid-exploit-creation/
 https://www.securityweek.com/claw-chain-openclaw-flaws-allow-sandbox-escape-backdoor-delivery/
 https://www.securityweek.com/clickfix-attack-uses-windows-terminal-to-evade-detection/
 https://www.securityweek.com/clickfix-attacks-against-macos-users-evolving/
@@ -1419,6 +1435,7 @@ https://www.securityweek.com/microsoft-highlights-security-risks-introduced-by-n
 https://www.securityweek.com/microsoft-names-new-operating-cisos-in-strategic-move-to-strengthen-cyber-defense/
 https://www.securityweek.com/microsoft-patches-137-vulnerabilities/
 https://www.securityweek.com/microsoft-patches-173-vulnerabilities-including-exploited-windows-flaws/
+https://www.securityweek.com/microsoft-patches-200-vulnerabilities/
 https://www.securityweek.com/microsoft-patches-57-vulnerabilities-three-zero-days/
 https://www.securityweek.com/microsoft-patches-86-vulnerabilities/
 https://www.securityweek.com/microsoft-patches-exploited-undefend-and-redsun-defender-zero-days/
@@ -1456,6 +1473,7 @@ https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-contin
 https://www.securityweek.com/new-keenadu-android-malware-found-on-thousands-of-devices/
 https://www.securityweek.com/new-linux-kernel-vulnerability-fragnesia-allows-root-privilege-escalation/
 https://www.securityweek.com/new-paper-and-tool-help-security-teams-move-beyond-blind-reliance-on-cisas-kev-catalog/
+https://www.securityweek.com/new-platform-uses-cryptographic-invisibility-to-protect-ai-built-applications/
 https://www.securityweek.com/new-reprompt-attack-silently-siphons-microsoft-copilot-data/
 https://www.securityweek.com/new-sandworm_mode-supply-chain-attack-hits-npm/
 https://www.securityweek.com/new-stackwarp-attack-threatens-confidential-vms-on-amd-processors/
@@ -1482,6 +1500,7 @@ https://www.securityweek.com/open-vsx-publisher-account-hijacked-in-fresh-glassw
 https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/
 https://www.securityweek.com/openai-launches-bug-bounty-program-for-abuse-and-safety-risks/
 https://www.securityweek.com/openai-user-data-exposed-in-mixpanel-hack/
+https://www.securityweek.com/openssl-patches-high-severity-vulnerability-found-with-ai/
 https://www.securityweek.com/opti-raises-20-million-for-identity-security-platform/
 https://www.securityweek.com/oracle-debuts-monthly-critical-security-patch-updates/
 https://www.securityweek.com/oracle-e-business-suite-zero-day-exploited-in-cl0p-attacks/
@@ -1496,6 +1515,7 @@ https://www.securityweek.com/organizations-warned-of-exploited-zimbra-collaborat
 https://www.securityweek.com/orthanc-dicom-vulnerabilities-lead-to-crashes-rce/
 https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-against-ai-driven-threats/
 https://www.securityweek.com/over-100-github-repositories-distributing-boryptgrab-stealer/
+https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/
 https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phishing-campaign/
 https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automotive-2026/
 https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/
@@ -1560,6 +1580,7 @@ https://www.securityweek.com/samsung-patches-zero-day-exploited-against-android-
 https://www.securityweek.com/sandhills-medical-says-ransomware-breach-affects-170000/
 https://www.securityweek.com/sangoma-patches-critical-zero-day-exploited-to-hack-freepbx-servers/
 https://www.securityweek.com/sap-npm-packages-targeted-in-supply-chain-attack/
+https://www.securityweek.com/sap-patches-critical-netweaver-commerce-vulnerabilities/
 https://www.securityweek.com/sap-patches-critical-netweaver-vulnerabilities/
 https://www.securityweek.com/sbom-pioneer-allan-friedman-joins-netrise-to-advance-supply-chain-visibility/
 https://www.securityweek.com/security-firms-hit-by-salesforce-salesloft-drift-breach/
@@ -1685,6 +1706,7 @@ https://www.securityweek.com/white-house-chief-of-staff-to-meet-ith-anthropic-ce
 https://www.securityweek.com/who-is-zico-kolter-a-professor-leads-openai-safety-panel-with-power-to-halt-unsafe-ai-releases/
 https://www.securityweek.com/why-agentic-ai-systems-need-better-governance-lessons-from-openclaw/
 https://www.securityweek.com/why-identity-security-must-move-beyond-mfa/
+https://www.securityweek.com/will-ai-kill-the-bug-bounty-industry/
 https://www.securityweek.com/will-ai-spm-become-the-standard-security-layer-for-safe-ai-adoption/
 https://www.securityweek.com/worries-about-ais-risks-to-humanity-loom-over-the-trial-pitting-musk-against-openais-leaders/
 https://www.securityweek.com/wynn-resorts-says-21000-employees-affected-by-shinyhunters-hack/

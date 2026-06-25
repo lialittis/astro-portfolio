@@ -63,6 +63,7 @@ https://blog.trailofbits.com/2026/05/12/go-fuzzing-was-missing-half-the-toolkit.
 https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/
 https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/
 https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/
+https://blog.trailofbits.com/2026/06/22/introducing-patch-the-planet/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -788,6 +789,7 @@ https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
 https://thehackernews.com/2026/06/152-chrome-wallpaper-extensions-with.html
 https://thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html
 https://thehackernews.com/2026/06/ai-agent-uncovers-21-zero-days-in.html
+https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html
 https://thehackernews.com/2026/06/android-spyware-asin-targets-arabic.html
 https://thehackernews.com/2026/06/autojack-attack-lets-one-web-page.html
 https://thehackernews.com/2026/06/autonomous-ai-tool-finds-2-year-old-rce.html
@@ -795,13 +797,20 @@ https://thehackernews.com/2026/06/beyond-zero-day-see-your-network-like.html
 https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html
 https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html
 https://thehackernews.com/2026/06/cisa-flags-litespeed-cpanel-plugin-flaw.html
+https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html
 https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html
+https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html
 https://thehackernews.com/2026/06/cisco-releases-security-updates-for.html
+https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
+https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html
 https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html
 https://thehackernews.com/2026/06/crypto-clipper-campaign-abuses-fake.html
+https://thehackernews.com/2026/06/dawn-of-apex-agentic-adversary.html
+https://thehackernews.com/2026/06/doj-seizes-huione-cloud-account-tied-to.html
 https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html
 https://thehackernews.com/2026/06/europol-disrupts-audia6-crypto.html
 https://thehackernews.com/2026/06/f5-patches-two-critical-nginx-open.html
+https://thehackernews.com/2026/06/fake-ai-agent-skill-passed-security.html
 https://thehackernews.com/2026/06/forget-data-leakage-shadow-ais-real.html
 https://thehackernews.com/2026/06/free-apps-are-quietly-turning-smart-tvs.html
 https://thehackernews.com/2026/06/from-assistive-to-agentic-ai-shift.html
@@ -1032,10 +1041,12 @@ https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-
 https://www.schneier.com/blog/archives/2026/06/ai-use-by-the-us-government.html
 https://www.schneier.com/blog/archives/2026/06/ai-used-to-decrypt-medieval-ciphers.html
 https://www.schneier.com/blog/archives/2026/06/ai-worm.html
+https://www.schneier.com/blog/archives/2026/06/anthropics-fable-5-model-jailbroken-within-days.html
 https://www.schneier.com/blog/archives/2026/06/anthropics-fable-and-the-state-of-ai.html
 https://www.schneier.com/blog/archives/2026/06/anthropics-project-glasswing-update.html
 https://www.schneier.com/blog/archives/2026/06/bernie-sanders-ai-sovereign-wealth-fund-plan.html
 https://www.schneier.com/blog/archives/2026/06/critical-zcash-vulnerability-found-and-fixed.html
+https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis-2.html
 https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis.html
 https://www.schneier.com/blog/archives/2026/06/enhanced-license-plate-tracking.html
 https://www.schneier.com/blog/archives/2026/06/gps-as-a-key-distribution-platform.html
@@ -1078,6 +1089,7 @@ https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
 https://www.securityweek.com/adobe-patches-reader-zero-day-exploited-for-months/
 https://www.securityweek.com/adobe-reader-zero-day-exploited-for-months-researcher/
 https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
+https://www.securityweek.com/agentic-ai-security-wrong-context-wrong-decisions-at-machine-speed/
 https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/
 https://www.securityweek.com/ai-fuels-industrial-cybercrime-as-time-to-exploit-shrinks-to-hours/
 https://www.securityweek.com/ai-security-firm-ciphero-emerges-from-stealth-with-2-5-million-in-funding/
@@ -1201,6 +1213,7 @@ https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities-
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities/
 https://www.securityweek.com/cisco-patches-vulnerability-exploited-by-chinese-hackers/
 https://www.securityweek.com/cisco-releases-open-source-tool-for-ai-model-provenance/
+https://www.securityweek.com/cisco-sd-wan-zero-day-exploited-months-before-patching/
 https://www.securityweek.com/cisco-warns-of-7th-sd-wan-zero-day-exploited-in-2026/
 https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-at-google-deepmind/
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
@@ -1243,6 +1256,7 @@ https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-explo
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/
 https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/
+https://www.securityweek.com/critical-ubiquiti-vulnerabilities-in-attackers-crosshairs/
 https://www.securityweek.com/critical-vulnerability-exposes-industrial-robot-fleets-to-hacking/
 https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/
 https://www.securityweek.com/critical-windows-server-wsus-vulnerability-exploited-in-the-wild/
@@ -1303,8 +1317,10 @@ https://www.securityweek.com/european-commission-reports-cyber-intrusion-and-dat
 https://www.securityweek.com/european-space-agency-confirms-breach-after-hacker-offers-to-sell-data/
 https://www.securityweek.com/ex-whatsapp-security-chief-sues-meta-over-vulnerabilities-retaliation/
 https://www.securityweek.com/exaforce-raises-125-million-for-agentic-soc-platform/
+https://www.securityweek.com/exclusive-meet-aivex-a-new-triage-model-built-to-reduce-supply-chain-threat-and-risk/
 https://www.securityweek.com/exploit-code-published-for-critical-flowise-rce-vulnerability/
 https://www.securityweek.com/exploit-for-vmware-zero-day-flaws-likely-built-a-year-before-public-disclosure/
+https://www.securityweek.com/exploitable-ci-cd-vulnerabilities-expose-millions-of-repositories-to-hijacking/
 https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/
 https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/
 https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
@@ -1482,6 +1498,7 @@ https://www.securityweek.com/living-off-the-ai-the-next-evolution-of-attacker-tr
 https://www.securityweek.com/llms-in-attacker-crosshairs-warns-threat-intel-firm/
 https://www.securityweek.com/loblaw-data-breach-impacts-customer-information/
 https://www.securityweek.com/lumia-security-raises-18-million-for-ai-security-and-governance/
+https://www.securityweek.com/macos-weaknesses-chained-to-silently-disable-endpoint-security-agents/
 https://www.securityweek.com/maine-disables-data-breach-portal-due-to-fake-submissions/
 https://www.securityweek.com/malicious-ai-prompt-injection-attacks-increasing-but-sophistication-still-low-google/
 https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-collect-data-google-warns/
@@ -1493,6 +1510,7 @@ https://www.securityweek.com/medtronic-hack-confirmed-after-shinyhunters-threate
 https://www.securityweek.com/memcyco-raises-37-million-for-anti-impersonation-technology/
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
+https://www.securityweek.com/microsoft-and-allies-smash-shared-infrastructure-of-amadey-and-stealc-malware/
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
 https://www.securityweek.com/microsoft-bug-bounty-program-expanded-to-third-party-code/
 https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-block-ntlm-hash-leaks/
@@ -1777,6 +1795,7 @@ https://www.securityweek.com/webinar-today-identity-under-attack-strengthen-your
 https://www.securityweek.com/webinar-today-protecting-what-wafs-and-gateways-cant-see-register/
 https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
+https://www.securityweek.com/when-information-becomes-the-attack-surface-understanding-ai-agent-traps/
 https://www.securityweek.com/whisperpair-attack-leaves-millions-of-bluetooth-accessories-open-to-hijacking/
 https://www.securityweek.com/white-circle-raises-11-million-for-ai-control-platform/
 https://www.securityweek.com/white-house-chief-of-staff-to-meet-ith-anthropic-ceo-over-its-new-ai-technology/

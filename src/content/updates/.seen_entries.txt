@@ -64,6 +64,7 @@ https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-stati
 https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/
 https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/
 https://blog.trailofbits.com/2026/06/22/introducing-patch-the-planet/
+https://blog.trailofbits.com/2026/06/30/shipping-post-quantum-cryptography-to-python/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -787,6 +788,7 @@ https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html
 https://thehackernews.com/2026/05/windows-phone-link-exploited-by-cloudz.html
 https://thehackernews.com/2026/05/your-ai-agents-are-already-inside.html
 https://thehackernews.com/2026/06/152-chrome-wallpaper-extensions-with.html
+https://thehackernews.com/2026/06/282-ios-apps-found-leaking-llm-api-keys.html
 https://thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html
 https://thehackernews.com/2026/06/ai-agent-uncovers-21-zero-days-in.html
 https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html
@@ -819,6 +821,7 @@ https://thehackernews.com/2026/06/free-apps-are-quietly-turning-smart-tvs.html
 https://thehackernews.com/2026/06/from-assistive-to-agentic-ai-shift.html
 https://thehackernews.com/2026/06/google-doubleclick-abused-in-new.html
 https://thehackernews.com/2026/06/google-sues-chinese-smishing-network.html
+https://thehackernews.com/2026/06/guardfall-exposes-open-source-ai-coding.html
 https://thehackernews.com/2026/06/guardian-agents-next-layer-of-identity.html
 https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html
 https://thehackernews.com/2026/06/inc-ransomware-claims-830-victims-since.html
@@ -826,6 +829,7 @@ https://thehackernews.com/2026/06/interpol-takes-down-sniper-dz-phishing.html
 https://thehackernews.com/2026/06/interpol-warns-phishing-ransomware-and.html
 https://thehackernews.com/2026/06/ironworm-and-new-miasma-worm-variant.html
 https://thehackernews.com/2026/06/junior-hacker-used-tailscale-and.html
+https://thehackernews.com/2026/06/langflow-rce-exploited-to-deploy-monero.html
 https://thehackernews.com/2026/06/langgraph-flaw-chain-exposes-self.html
 https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html
 https://thehackernews.com/2026/06/meta-to-use-off-site-business-data-for.html
@@ -835,6 +839,7 @@ https://thehackernews.com/2026/06/microsoft-confirms-rogueplanet-defender_020224
 https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html
 https://thehackernews.com/2026/06/microsoft-details-windows-clipper.html
 https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html
+https://thehackernews.com/2026/06/microsoft-warns-poisoned-mcp-tool.html
 https://thehackernews.com/2026/06/new-chatgpt-lockdown-mode-limits-tools.html
 https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html
 https://thehackernews.com/2026/06/new-frost-attack-lets-websites-track.html
@@ -851,8 +856,10 @@ https://thehackernews.com/2026/06/over-400-arch-linux-aur-packages.html
 https://thehackernews.com/2026/06/popular-wordpress-plugin-scripts.html
 https://thehackernews.com/2026/06/researchers-build-self-replicating-ai.html
 https://thehackernews.com/2026/06/rethinking-mdr-as-attackers-and.html
+https://thehackernews.com/2026/06/rustduck-botnet-rebuilds-in-rust-to.html
 https://thehackernews.com/2026/06/shinyhunters-exploits-oracle-peoplesoft.html
 https://thehackernews.com/2026/06/shrinking-iam-attack-surface-through.html
+https://thehackernews.com/2026/06/silent-swap-crypto-clipper-uses-fake.html
 https://thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html
 https://thehackernews.com/2026/06/the-gentlemen-raas-uses-gentlekiller.html
 https://thehackernews.com/2026/06/the-hidden-security-risk-in-modern.html
@@ -866,6 +873,9 @@ https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html
 https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html
 https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html
 https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html
+https://thehackernews.com/2026/07/azure-cli-password-spray-hits-at-least.html
+https://thehackernews.com/2026/07/citrix-patches-six-netscaler-flaws.html
+https://thehackernews.com/2026/07/researcher-analyzes-3000-live-clickfix.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1058,12 +1068,14 @@ https://www.schneier.com/blog/archives/2026/06/critical-zcash-vulnerability-foun
 https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis-2.html
 https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis.html
 https://www.schneier.com/blog/archives/2026/06/enhanced-license-plate-tracking.html
+https://www.schneier.com/blog/archives/2026/06/factoring-rsa-keys-with-many-zeros.html
 https://www.schneier.com/blog/archives/2026/06/gps-as-a-key-distribution-platform.html
 https://www.schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html
 https://www.schneier.com/blog/archives/2026/06/interesting-paper-exploring-prompt-injection.html
 https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html
 https://www.schneier.com/blog/archives/2026/06/nso-group-hacking-whatsapp-despite-court-order.html
 https://www.schneier.com/blog/archives/2026/06/one-million-passports-leaked-online.html
+https://www.schneier.com/blog/archives/2026/06/robot-police-officers.html
 https://www.schneier.com/blog/archives/2026/06/the-chinese-control-the-majority-of-argentinas-squid-fleet.html
 https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html
 https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
@@ -1102,6 +1114,7 @@ https://www.securityweek.com/adobe-patches-nearly-140-vulnerabilities/
 https://www.securityweek.com/adobe-patches-reader-zero-day-exploited-for-months/
 https://www.securityweek.com/adobe-reader-zero-day-exploited-for-months-researcher/
 https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/
+https://www.securityweek.com/aflac-japan-data-breach-impacts-4-38-million/
 https://www.securityweek.com/agentic-ai-security-wrong-context-wrong-decisions-at-machine-speed/
 https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/
 https://www.securityweek.com/ai-fuels-industrial-cybercrime-as-time-to-exploit-shrinks-to-hours/
@@ -1163,6 +1176,7 @@ https://www.securityweek.com/beyondtrust-vulnerability-exploited-in-ransomware-a
 https://www.securityweek.com/beyondtrust-vulnerability-targeted-by-hackers-within-24-hours-of-poc-release/
 https://www.securityweek.com/bind-updates-patch-high-severity-vulnerabilities-2/
 https://www.securityweek.com/bitwarden-npm-package-hit-in-supply-chain-attack/
+https://www.securityweek.com/bluehammer-vulnerability-exploited-in-ransomware-attacks/
 https://www.securityweek.com/bold-security-emerges-from-stealth-with-40-million-in-funding/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/
@@ -1269,6 +1283,7 @@ https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-expl
 https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-exploited-in-attacks/
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/
+https://www.securityweek.com/critical-simplehelp-vulnerability-exploited-for-malware-delivery/
 https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/
 https://www.securityweek.com/critical-ubiquiti-vulnerabilities-in-attackers-crosshairs/
 https://www.securityweek.com/critical-vulnerability-exposes-industrial-robot-fleets-to-hacking/
@@ -1301,6 +1316,7 @@ https://www.securityweek.com/data-exposure-vulnerability-found-in-deep-learning-
 https://www.securityweek.com/data-security-firm-evervault-raises-25-million-in-series-b-funding/
 https://www.securityweek.com/data-stolen-in-eurofiber-france-hack/
 https://www.securityweek.com/deal-reached-with-hackers-to-delete-data-stolen-from-the-canvas-educational-platform/
+https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/
 https://www.securityweek.com/defakto-raises-30-million-for-non-human-iam-platform/
 https://www.securityweek.com/default-ics-credentials-exploited-in-destructive-attack-on-polish-energy-facilities/
 https://www.securityweek.com/defi-protocol-balancer-starts-recovering-funds-stolen-in-128-million-heist/
@@ -1338,6 +1354,7 @@ https://www.securityweek.com/exploitable-ci-cd-vulnerabilities-expose-millions-o
 https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/
 https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/
 https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
+https://www.securityweek.com/exploitation-of-recent-oracle-e-business-suite-vulnerability-begins/
 https://www.securityweek.com/exploited-vulnerability-exposes-nginx-servers-to-hacking/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/extortion-group-claims-it-hacked-astrazeneca/
@@ -1390,6 +1407,7 @@ https://www.securityweek.com/google-launched-behind-the-scenes-campaign-against-
 https://www.securityweek.com/google-offers-up-to-20000-in-new-ai-bug-bounty-program/
 https://www.securityweek.com/google-paid-out-17-million-in-bug-bounty-rewards-in-2025/
 https://www.securityweek.com/google-paid-out-458000-at-live-hacking-event/
+https://www.securityweek.com/google-patches-382-chrome-vulnerabilities/
 https://www.securityweek.com/google-patches-gemini-ai-hacks-involving-poisoned-logs-search-results/
 https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-in-latest-update/
 https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulnerabilities/
@@ -1586,6 +1604,7 @@ https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-
 https://www.securityweek.com/nike-probing-potential-security-incident-as-hackers-threaten-to-leak-data/
 https://www.securityweek.com/niobium-raises-23-million-for-fhe-hardware-acceleration/
 https://www.securityweek.com/nissan-confirms-impact-from-red-hat-data-breach/
+https://www.securityweek.com/nissan-employee-data-breached-in-oracle-peoplesoft-hack/
 https://www.securityweek.com/nists-quantum-breakthrough-single-photons-produced-on-a-chip/
 https://www.securityweek.com/no-exploits-required/
 https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-industrial-camera-hacking/
@@ -1737,6 +1756,7 @@ https://www.securityweek.com/tennessee-man-pleads-guilty-to-repeatedly-hacking-s
 https://www.securityweek.com/terra-security-raises-30-million-for-ai-penetration-testing-platform/
 https://www.securityweek.com/texas-parks-wildlife-data-breach-affects-3-million-individuals/
 https://www.securityweek.com/thailand-conference-launches-international-initiative-to-fight-online-scams/
+https://www.securityweek.com/the-ai-token-costs-that-can-break-cybersecurity/
 https://www.securityweek.com/the-collapse-of-predictive-security-in-the-age-of-machine-speed-attacks/
 https://www.securityweek.com/the-credential-crisis-how-stolen-credentials-defeat-modern-security/
 https://www.securityweek.com/the-next-cybersecurity-crisis-isnt-breaches-its-data-you-cant-trust/

@@ -874,15 +874,23 @@ https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html
 https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html
 https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html
 https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html
+https://thehackernews.com/2026/07/16-year-old-linux-kvm-flaw-lets-guest.html
 https://thehackernews.com/2026/07/azure-cli-password-spray-hits-at-least.html
+https://thehackernews.com/2026/07/beyondtrust-patches-critical-auth.html
+https://thehackernews.com/2026/07/certcc-warns-of-hidden-admin-backdoor.html
 https://thehackernews.com/2026/07/citrix-patches-six-netscaler-flaws.html
 https://thehackernews.com/2026/07/european-parliament-member.html
 https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html
+https://thehackernews.com/2026/07/how-to-evaluate-ai-soc-platform-in-2026.html
+https://thehackernews.com/2026/07/monday-recap-proxy-botnets-browser.html
 https://thehackernews.com/2026/07/new-avalon-malware-framework-packs.html
 https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html
+https://thehackernews.com/2026/07/new-java-based-quimarat-maas-built-to.html
+https://thehackernews.com/2026/07/new-trojpix-attack-leaks-data-from-air.html
 https://thehackernews.com/2026/07/pamstealer-uses-fake-maccy-sites-and.html
 https://thehackernews.com/2026/07/ransomware-groups-turn-to-citrix-bleed.html
 https://thehackernews.com/2026/07/researcher-analyzes-3000-live-clickfix.html
+https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html
 https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html
 https://thehackernews.com/2026/07/unpatched-flaws-disclosed-in-filesystem.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -1090,6 +1098,7 @@ https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner
 https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
 https://www.schneier.com/blog/archives/2026/06/upcoming-speaking-engagements-57.html
 https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html
+https://www.schneier.com/blog/archives/2026/07/france-to-stop-certifying-non-quantum-safe-encryption.html
 https://www.schneier.com/blog/archives/2026/07/papa-johns-surveillance-based-advertising.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
@@ -1175,6 +1184,7 @@ https://www.securityweek.com/apple-updates-older-ios-versions-to-patch-coruna-ex
 https://www.securityweek.com/arizona-attorney-general-sues-chinese-online-retailer-temu-over-data-theft-claims/
 https://www.securityweek.com/arkanix-stealer-malware-disappears-shortly-after-debut/
 https://www.securityweek.com/armorcode-raises-16-million-for-exposure-management-platform/
+https://www.securityweek.com/armored-likho-apt-targeting-government-electric-power-entities/
 https://www.securityweek.com/asahi-data-breach-impacts-2-million-individuals/
 https://www.securityweek.com/asymmetric-security-emerges-from-stealth-with-4-2-million-in-funding/
 https://www.securityweek.com/atlassian-patches-critical-apache-tika-flaw/
@@ -1188,6 +1198,7 @@ https://www.securityweek.com/beyondtrust-vulnerability-exploited-in-ransomware-a
 https://www.securityweek.com/beyondtrust-vulnerability-targeted-by-hackers-within-24-hours-of-poc-release/
 https://www.securityweek.com/bind-updates-patch-high-severity-vulnerabilities-2/
 https://www.securityweek.com/bitwarden-npm-package-hit-in-supply-chain-attack/
+https://www.securityweek.com/blogspot-hosted-payloads-delivered-in-veildrop-attacks/
 https://www.securityweek.com/bluehammer-vulnerability-exploited-in-ransomware-attacks/
 https://www.securityweek.com/bold-security-emerges-from-stealth-with-40-million-in-funding/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
@@ -1687,7 +1698,9 @@ https://www.securityweek.com/princeton-university-data-breach-impacts-alumni-stu
 https://www.securityweek.com/pro-iranian-hacking-group-claims-credit-for-hack-of-fbi-director-kash-patels-personal-account/
 https://www.securityweek.com/progress-patches-multiple-vulnerabilities-in-moveit-waf-loadmaster/
 https://www.securityweek.com/project-eleven-raises-20-million-for-post-quantum-security/
+https://www.securityweek.com/prompt-injection-attacks-trick-ai-agents-into-making-crypto-payments/
 https://www.securityweek.com/promptspy-android-malware-abuses-gemini-ai-at-runtime-for-persistence/
+https://www.securityweek.com/proof-of-concept-exploit-released-for-linux-bad-epoll-root-access-vulnerability/
 https://www.securityweek.com/proofpoint-completes-1-8-billion-acquisition-of-hornetsecurity/
 https://www.securityweek.com/prosper-data-breach-impacts-17-6-million-accounts/
 https://www.securityweek.com/pwn2own-whatsapp-hacker-says-exploit-privately-reported-to-meta/

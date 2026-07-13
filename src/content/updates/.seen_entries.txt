@@ -881,11 +881,14 @@ https://thehackernews.com/2026/07/azure-cli-password-spray-hits-at-least.html
 https://thehackernews.com/2026/07/beyondtrust-patches-critical-auth.html
 https://thehackernews.com/2026/07/certcc-warns-of-hidden-admin-backdoor.html
 https://thehackernews.com/2026/07/citrix-patches-six-netscaler-flaws.html
+https://thehackernews.com/2026/07/critical-zimbra-flaw-could-let-crafted_0483473395.html
 https://thehackernews.com/2026/07/dormant-github-accounts-help-attackers.html
 https://thehackernews.com/2026/07/european-parliament-member.html
 https://thehackernews.com/2026/07/friendly-fire-ai-agents-built-to-catch.html
 https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html
 https://thehackernews.com/2026/07/how-to-evaluate-ai-soc-platform-in-2026.html
+https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html
+https://thehackernews.com/2026/07/laser-attack-resets-tangem-wallet.html
 https://thehackernews.com/2026/07/metas-new-ai-image-tool-lets-others-use.html
 https://thehackernews.com/2026/07/microsoft-patches-rogueplanet-defender.html
 https://thehackernews.com/2026/07/monday-recap-proxy-botnets-browser.html
@@ -898,6 +901,8 @@ https://thehackernews.com/2026/07/npm-12-disables-install-scripts-by.html
 https://thehackernews.com/2026/07/pamstealer-uses-fake-maccy-sites-and.html
 https://thehackernews.com/2026/07/ransomware-groups-turn-to-citrix-bleed.html
 https://thehackernews.com/2026/07/researcher-analyzes-3000-live-clickfix.html
+https://thehackernews.com/2026/07/researcher-details-whatsapp-to-host.html
+https://thehackernews.com/2026/07/six-new-u-boot-flaws-could-let.html
 https://thehackernews.com/2026/07/summer-of-clearinghouses.html
 https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html
 https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html
@@ -1107,9 +1112,11 @@ https://www.schneier.com/blog/archives/2026/06/the-chinese-control-the-majority-
 https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html
 https://www.schneier.com/blog/archives/2026/06/the-intersection-of-encryption-and-ai.html
 https://www.schneier.com/blog/archives/2026/06/upcoming-speaking-engagements-57.html
+https://www.schneier.com/blog/archives/2026/07/ai-surveillance-and-social-progress.html
 https://www.schneier.com/blog/archives/2026/07/cybersecurity-and-the-gap-between-skill-and-ability.html
 https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html
 https://www.schneier.com/blog/archives/2026/07/france-to-stop-certifying-non-quantum-safe-encryption.html
+https://www.schneier.com/blog/archives/2026/07/friday-squid-blogging-squidbleed-vulnerability.html
 https://www.schneier.com/blog/archives/2026/07/google-is-suing-chinese-scammers-who-are-using-gemini.html
 https://www.schneier.com/blog/archives/2026/07/papa-johns-surveillance-based-advertising.html
 https://www.schneier.com/blog/archives/2026/07/the-language-of-ai-could-change-how-humans-speak.html
@@ -1228,6 +1235,7 @@ https://www.securityweek.com/cape-raises-100-million-for-protection-against-cell
 https://www.securityweek.com/capsule-security-emerges-from-stealth-with-7-million-in-funding/
 https://www.securityweek.com/cato-networks-acquires-ai-security-firm-aim-security/
 https://www.securityweek.com/censys-raises-70-million-for-internet-intelligence-platform/
+https://www.securityweek.com/centers-laboratory-data-breach-affects-540000-individuals/
 https://www.securityweek.com/central-maine-healthcare-data-breach-impacts-145000-individuals/
 https://www.securityweek.com/chainguard-raises-280-million-in-growth-funding/
 https://www.securityweek.com/charter-communications-data-breach-could-impact-nearly-5-million/
@@ -1432,6 +1440,8 @@ https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after
 https://www.securityweek.com/fresh-mongodb-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/fresh-smartermail-flaw-exploited-for-admin-access/
 https://www.securityweek.com/geordie-raises-30-million-for-ai-security-and-governance-platform/
+https://www.securityweek.com/ghost-accounts-abuse-github-api-in-mass-recon-campaign/
+https://www.securityweek.com/gigawiper-combines-multiple-malware-for-system-level-sabotage/
 https://www.securityweek.com/gitguardian-raises-50-million-for-secrets-and-non-human-identity-security/
 https://www.securityweek.com/github-boosting-security-in-response-to-npm-supply-chain-attacks/
 https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/
@@ -1476,6 +1486,7 @@ https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sot
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
 https://www.securityweek.com/hackers-target-global-stock-exchange-in-espionage-operation/
 https://www.securityweek.com/hackers-target-perplexity-comet-browser-users/
+https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/
 https://www.securityweek.com/healthcare-it-platform-carecloud-probing-potential-data-breach/
 https://www.securityweek.com/helmet-security-emerges-from-stealth-mode-with-9-million-in-funding/
 https://www.securityweek.com/herd-security-raises-3-million-for-ai-powered-training-platform/
@@ -1513,6 +1524,7 @@ https://www.securityweek.com/in-other-news-canadian-hacker-jailed-open-source-ze
 https://www.securityweek.com/in-other-news-chatgpt-data-leak-android-rootkit-water-facility-hit-by-ransomware/
 https://www.securityweek.com/in-other-news-crowdstrike-vulnerabilities-cisa-layoffs-mango-data-breach/
 https://www.securityweek.com/in-other-news-deepwatch-layoffs-macos-vulnerability-amazon-ai-bug-bounty/
+https://www.securityweek.com/in-other-news-dhs-database-hacked-adobe-boosts-patch-cadence-canada-disrupts-ransomware-ops/
 https://www.securityweek.com/in-other-news-e1-2b-gdpr-fines-net-ntlmv1-rainbow-tables-rockwell-security-notice/
 https://www.securityweek.com/in-other-news-gladinet-flaw-exploitation-attacks-on-ics-honeypot-clayrat-spyware/
 https://www.securityweek.com/in-other-news-google-security-layoffs-audia6-takedown-400-million-coupang-fine/
@@ -1665,6 +1677,7 @@ https://www.securityweek.com/nucleus-raises-20-million-for-exposure-management/
 https://www.securityweek.com/nudge-security-raises-22-5-million-in-series-a-funding/
 https://www.securityweek.com/ocean-emerges-from-stealth-with-28m-for-agentic-email-security-platform/
 https://www.securityweek.com/offroad-emerges-from-stealth-with-7-million-to-tackle-enterprise-identity-risk/
+https://www.securityweek.com/okta-warns-of-vishing-attacks-targeting-microsoft-365-customers/
 https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
 https://www.securityweek.com/onyx-security-launches-with-40-million-in-funding/
 https://www.securityweek.com/opal-security-raises-23-million-for-ai-native-identity-governance/

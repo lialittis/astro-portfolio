@@ -880,6 +880,7 @@ https://thehackernews.com/2026/07/16-year-old-linux-kvm-flaw-lets-guest.html
 https://thehackernews.com/2026/07/acr-stealer-uses-clickfix-lures-to.html
 https://thehackernews.com/2026/07/ai-attacks-move-in-minutes-join-this.html
 https://thehackernews.com/2026/07/apple-fixes-hide-my-email-bug-that.html
+https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html
 https://thehackernews.com/2026/07/aws-kiro-flaw-let-poisoned-web-page.html
 https://thehackernews.com/2026/07/azure-cli-password-spray-hits-at-least.html
 https://thehackernews.com/2026/07/beyondtrust-patches-critical-auth.html
@@ -909,7 +910,9 @@ https://thehackernews.com/2026/07/metas-new-ai-image-tool-lets-others-use.html
 https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html
 https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html
 https://thehackernews.com/2026/07/microsoft-patches-rogueplanet-defender.html
+https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html
 https://thehackernews.com/2026/07/monday-recap-proxy-botnets-browser.html
+https://thehackernews.com/2026/07/n8n-sandbox-escape-lets-workflow.html
 https://thehackernews.com/2026/07/new-avalon-malware-framework-packs.html
 https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html
 https://thehackernews.com/2026/07/new-gigawiper-windows-backdoor-bundles.html
@@ -920,11 +923,14 @@ https://thehackernews.com/2026/07/new-webinar-closing-approval-gap-in-ai.html
 https://thehackernews.com/2026/07/new-wp2shell-wordpress-core-flaw-lets.html
 https://thehackernews.com/2026/07/nodebb-patches-eight-ai-found-flaws.html
 https://thehackernews.com/2026/07/npm-12-disables-install-scripts-by.html
+https://thehackernews.com/2026/07/nvidia-forms-37-member-open-secure-ai.html
 https://thehackernews.com/2026/07/okobot-malware-framework-injects-seed.html
 https://thehackernews.com/2026/07/open-source-android-ai-agents-could-let.html
 https://thehackernews.com/2026/07/openai-says-its-own-ai-models-escaped.html
 https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html
+https://thehackernews.com/2026/07/operation-bluedash-deploys-level-rmm.html
 https://thehackernews.com/2026/07/pamstealer-uses-fake-maccy-sites-and.html
+https://thehackernews.com/2026/07/public-exploit-released-for-patched.html
 https://thehackernews.com/2026/07/qilin-ransomware-attackers-exploit-pan.html
 https://thehackernews.com/2026/07/ransomware-groups-turn-to-citrix-bleed.html
 https://thehackernews.com/2026/07/researcher-analyzes-3000-live-clickfix.html
@@ -935,6 +941,7 @@ https://thehackernews.com/2026/07/seeing-ai-agents-is-not-enough-security.html
 https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html
 https://thehackernews.com/2026/07/six-new-u-boot-flaws-could-let.html
 https://thehackernews.com/2026/07/summer-of-clearinghouses.html
+https://thehackernews.com/2026/07/teleshim-abuses-telegram-for-c2-in.html
 https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html
 https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html
 https://thehackernews.com/2026/07/threatsday-cloud-bucket-hijacking.html
@@ -942,6 +949,7 @@ https://thehackernews.com/2026/07/trojanized-newtonsoftjson-fork-hides.html
 https://thehackernews.com/2026/07/tuxbot-v3-evolution-shows-signs-of-llm.html
 https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html
 https://thehackernews.com/2026/07/unpatched-flaws-disclosed-in-filesystem.html
+https://thehackernews.com/2026/07/weekly-recap-rogue-ai-agents-check.html
 https://thehackernews.com/2026/07/zimbra-patches-critical-snmp-command.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
@@ -1264,6 +1272,7 @@ https://www.securityweek.com/autonomous-ai-agents-provide-new-class-of-supply-ch
 https://www.securityweek.com/autonomous-offensive-security-firm-xbow-raises-120m-at-1b-valuation/
 https://www.securityweek.com/autonomous-offensive-security-firm-xbow-raises-35-million/
 https://www.securityweek.com/beacon-security-raises-13-million-for-security-data-platform/
+https://www.securityweek.com/beelzebub-raises-3-4-million-for-hacker-trapping-platform/
 https://www.securityweek.com/beer-giant-asahi-says-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/beyondtrust-vulnerability-exploited-in-ransomware-attacks/
 https://www.securityweek.com/beyondtrust-vulnerability-targeted-by-hackers-within-24-hours-of-poc-release/
@@ -1358,6 +1367,7 @@ https://www.securityweek.com/cloudflare-says-highly-disruptive-outage-not-caused
 https://www.securityweek.com/cloudsmith-raises-72-million-in-series-c-funding/
 https://www.securityweek.com/clover-health-investments-discloses-data-breach/
 https://www.securityweek.com/clover-security-raises-36-million-to-secure-software-by-design/
+https://www.securityweek.com/coca-cola-confirms-data-breach-after-fairlife-ransomware-attack/
 https://www.securityweek.com/coca-cola-suspends-us-fairlife-production-due-to-ransomware-attack/
 https://www.securityweek.com/cochat-launches-ai-collaboration-platform-to-combat-shadow-ai/
 https://www.securityweek.com/cogent-security-raises-42-million-for-ai-driven-vulnerability-management/
@@ -1369,6 +1379,7 @@ https://www.securityweek.com/coruna-ios-exploit-kit-likely-an-update-to-operatio
 https://www.securityweek.com/coupang-to-issue-1-17-billion-in-vouchers-over-data-breach/
 https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individuals/
 https://www.securityweek.com/crewai-vulnerabilities-expose-devices-to-hacking/
+https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/critical-citrix-netscaler-vulnerability-poised-for-exploitation-security-firms-warn/
 https://www.securityweek.com/critical-command-execution-vulnerability-patched-in-cisco-ise/
 https://www.securityweek.com/critical-cpanel-whm-vulnerability-exploited-as-zero-day-for-months/
@@ -1481,6 +1492,7 @@ https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/
 https://www.securityweek.com/first-vpn-cybercrime-service-disrupted-administrator-arrested/
 https://www.securityweek.com/flickr-security-incident-tied-to-third-party-email-system/
 https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
+https://www.securityweek.com/for-some-so-called-skynet-day-came-too-close-to-sci-fi-after-a-rogue-agent-hacked-into-a-startup/
 https://www.securityweek.com/forget-predictions-true-2026-cybersecurity-priorities-from-leaders/
 https://www.securityweek.com/fortibleed-86000-fortinet-device-credentials-compromised/
 https://www.securityweek.com/fortibleed-campaign-linked-to-inc-lynx-ransomware-attacks/
@@ -1662,6 +1674,7 @@ https://www.securityweek.com/mazda-says-no-data-leakage-or-operational-impact-fr
 https://www.securityweek.com/medtech-giant-stryker-crippled-by-iran-linked-hacker-attack/
 https://www.securityweek.com/medtronic-data-breach-impacts-3-8-million-people/
 https://www.securityweek.com/medtronic-hack-confirmed-after-shinyhunters-threatens-data-leak/
+https://www.securityweek.com/medusahvnc-malware-uses-hidden-windows-desktops-to-evade-detection/
 https://www.securityweek.com/memcyco-raises-37-million-for-anti-impersonation-technology/
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/meta-pays-78000-bounty-for-vulnerability-exposing-customer-support-data/
@@ -1715,6 +1728,7 @@ https://www.securityweek.com/nevada-unveils-new-statewide-data-classification-po
 https://www.securityweek.com/new-airsnitch-attack-shows-wi-fi-client-isolation-could-be-a-false-sense-of-security/
 https://www.securityweek.com/new-bluekit-phishing-kit-features-ai-assistant/
 https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/
+https://www.securityweek.com/new-github-pypi-policies-boost-supply-chain-security/
 https://www.securityweek.com/new-guidance-calls-on-ot-operators-to-create-continually-updated-system-inventory/
 https://www.securityweek.com/new-hollowgraph-malware-abuses-microsoft-365-calendar-for-cc-communication/
 https://www.securityweek.com/new-keenadu-android-malware-found-on-thousands-of-devices/
@@ -1742,6 +1756,7 @@ https://www.securityweek.com/npm-package-with-56000-downloads-steals-whatsapp-cr
 https://www.securityweek.com/nuclear-sabotage-malware-benchmark-trips-up-most-frontier-ai-models/
 https://www.securityweek.com/nucleus-raises-20-million-for-exposure-management/
 https://www.securityweek.com/nudge-security-raises-22-5-million-in-series-a-funding/
+https://www.securityweek.com/nvidia-and-tech-giants-launch-ai-security-alliance/
 https://www.securityweek.com/ocean-emerges-from-stealth-with-28m-for-agentic-email-security-platform/
 https://www.securityweek.com/offroad-emerges-from-stealth-with-7-million-to-tackle-enterprise-identity-risk/
 https://www.securityweek.com/okta-warns-of-vishing-attacks-targeting-microsoft-365-customers/
@@ -1767,6 +1782,7 @@ https://www.securityweek.com/organizations-warned-of-exploited-linux-kernel-vuln
 https://www.securityweek.com/organizations-warned-of-exploited-linux-vulnerabilities/
 https://www.securityweek.com/organizations-warned-of-exploited-meteobridge-vulnerability/
 https://www.securityweek.com/organizations-warned-of-exploited-zimbra-collaboration-vulnerability/
+https://www.securityweek.com/origin-energy-data-breach-affects-900000-australians/
 https://www.securityweek.com/orthanc-dicom-vulnerabilities-lead-to-crashes-rce/
 https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-against-ai-driven-threats/
 https://www.securityweek.com/over-100-github-repositories-distributing-boryptgrab-stealer/
@@ -1807,6 +1823,7 @@ https://www.securityweek.com/promptspy-android-malware-abuses-gemini-ai-at-runti
 https://www.securityweek.com/proof-of-concept-exploit-released-for-linux-bad-epoll-root-access-vulnerability/
 https://www.securityweek.com/proofpoint-completes-1-8-billion-acquisition-of-hornetsecurity/
 https://www.securityweek.com/prosper-data-breach-impacts-17-6-million-accounts/
+https://www.securityweek.com/ptc-windchill-vulnerability-exploited-in-ransomware-campaign/
 https://www.securityweek.com/pwn2own-whatsapp-hacker-says-exploit-privately-reported-to-meta/
 https://www.securityweek.com/pypi-warns-users-of-fresh-phishing-campaign/
 https://www.securityweek.com/qiz-security-raises-17-million-for-cryptographic-governance-platform/
@@ -1940,6 +1957,7 @@ https://www.securityweek.com/under-armour-looking-into-data-breach-affecting-cus
 https://www.securityweek.com/underminr-vulnerability-lets-attackers-hide-malicious-connections-behind-trusted-domains/
 https://www.securityweek.com/university-of-sydney-data-breach-affects-27000-individuals/
 https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/
+https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-remote-hacking/
 https://www.securityweek.com/unsecured-perforce-servers-expose-sensitive-data-from-major-orgs/
 https://www.securityweek.com/upbound-group-says-data-breach-led-to-13-million-in-fraudulent-contract-losses/

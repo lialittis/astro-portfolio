@@ -68,6 +68,8 @@ https://blog.trailofbits.com/2026/06/30/shipping-post-quantum-cryptography-to-py
 https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/
 https://blog.trailofbits.com/2026/07/08/mutation-testing-comes-to-daml/
 https://blog.trailofbits.com/2026/07/13/rust-proof-your-code-with-our-new-testing-handbook-chapter/
+https://blog.trailofbits.com/2026/07/28/how-we-use-goal-to-find-bugs-in-patch-the-planet/
+https://blog.trailofbits.com/2026/07/30/building-secure-uniswap-v4-hooks/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -883,6 +885,7 @@ https://thehackernews.com/2026/07/apple-fixes-hide-my-email-bug-that.html
 https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html
 https://thehackernews.com/2026/07/aws-kiro-flaw-let-poisoned-web-page.html
 https://thehackernews.com/2026/07/azure-cli-password-spray-hits-at-least.html
+https://thehackernews.com/2026/07/azure-cosmos-db-flaw-exposed-platform.html
 https://thehackernews.com/2026/07/beyondtrust-patches-critical-auth.html
 https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html
 https://thehackernews.com/2026/07/certcc-warns-of-hidden-admin-backdoor.html
@@ -902,12 +905,14 @@ https://thehackernews.com/2026/07/goldeneyedog-subgroup-linked-to.html
 https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html
 https://thehackernews.com/2026/07/google-launches-gemini-35-flash-cyber.html
 https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html
+https://thehackernews.com/2026/07/hackers-exploit-anysign4pc-via-hacked.html
 https://thehackernews.com/2026/07/how-to-evaluate-ai-soc-platform-in-2026.html
 https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html
 https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html
 https://thehackernews.com/2026/07/laser-attack-resets-tangem-wallet.html
 https://thehackernews.com/2026/07/metas-new-ai-image-tool-lets-others-use.html
 https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html
+https://thehackernews.com/2026/07/microsoft-copilot-for-word-can-copy.html
 https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html
 https://thehackernews.com/2026/07/microsoft-patches-rogueplanet-defender.html
 https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html
@@ -939,11 +944,14 @@ https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html
 https://thehackernews.com/2026/07/sase-has-ai-blind-spot-inspecting.html
 https://thehackernews.com/2026/07/seeing-ai-agents-is-not-enough-security.html
 https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html
+https://thehackernews.com/2026/07/silverfox-targets-japanese-manufacturer.html
 https://thehackernews.com/2026/07/six-new-u-boot-flaws-could-let.html
 https://thehackernews.com/2026/07/summer-of-clearinghouses.html
 https://thehackernews.com/2026/07/teleshim-abuses-telegram-for-c2-in.html
+https://thehackernews.com/2026/07/the-network-has-become-control-plane.html
 https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html
 https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html
+https://thehackernews.com/2026/07/threatsday-ai-powered-hacking-370.html
 https://thehackernews.com/2026/07/threatsday-cloud-bucket-hijacking.html
 https://thehackernews.com/2026/07/trojanized-newtonsoftjson-fork-hides.html
 https://thehackernews.com/2026/07/tuxbot-v3-evolution-shows-signs-of-llm.html
@@ -1158,6 +1166,8 @@ https://www.schneier.com/blog/archives/2026/06/upcoming-speaking-engagements-57.
 https://www.schneier.com/blog/archives/2026/07/a-video-screen-that-is-also-a-camera.html
 https://www.schneier.com/blog/archives/2026/07/ai-data-centers-and-the-concentration-of-wealth.html
 https://www.schneier.com/blog/archives/2026/07/ai-surveillance-and-social-progress.html
+https://www.schneier.com/blog/archives/2026/07/american-being-prosecuted-for-wiping-his-phone-before-handing-it-over-to-border-officials.html
+https://www.schneier.com/blog/archives/2026/07/axon-is-another-license-plate-surveillance-company.html
 https://www.schneier.com/blog/archives/2026/07/cybersecurity-and-the-gap-between-skill-and-ability.html
 https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html
 https://www.schneier.com/blog/archives/2026/07/details-of-alan-turings-voice-encryption-system.html
@@ -1166,10 +1176,14 @@ https://www.schneier.com/blog/archives/2026/07/first-person-identity-theft-story
 https://www.schneier.com/blog/archives/2026/07/france-to-stop-certifying-non-quantum-safe-encryption.html
 https://www.schneier.com/blog/archives/2026/07/friday-squid-blogging-squidbleed-vulnerability.html
 https://www.schneier.com/blog/archives/2026/07/google-is-suing-chinese-scammers-who-are-using-gemini.html
+https://www.schneier.com/blog/archives/2026/07/long-lived-vulnerability-in-microsoft-secure-boot.html
+https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html
+https://www.schneier.com/blog/archives/2026/07/measuring-the-tendency-of-ai-agents-to-go-rogue.html
 https://www.schneier.com/blog/archives/2026/07/mit-to-become-hotbed-of-ai-video-surveillance.html
 https://www.schneier.com/blog/archives/2026/07/on-flock-license-plate-tracking-cameras.html
 https://www.schneier.com/blog/archives/2026/07/papa-johns-surveillance-based-advertising.html
 https://www.schneier.com/blog/archives/2026/07/protecting-privacy-in-an-ai-era.html
+https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide.html
 https://www.schneier.com/blog/archives/2026/07/the-language-of-ai-could-change-how-humans-speak.html
 https://www.schneier.com/blog/archives/2026/07/vulnerability-in-fifas-network.html
 https://www.schneier.com/blog/archives/2026/07/why-ai-needs-a-genie-coefficient.html
@@ -1336,6 +1350,7 @@ https://www.securityweek.com/cisa-directs-federal-agencies-to-prioritize-securit
 https://www.securityweek.com/cisa-flags-critical-ptc-vulnerability-that-had-german-police-mobilized/
 https://www.securityweek.com/cisa-hackers-exploiting-vulnerability-in-product-of-taiwan-security-firm-teamt5/
 https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-sharepoint-vulnerabilities/
+https://www.securityweek.com/cisa-urges-water-sector-to-protect-ot-after-coordinated-attacks-on-plcs/
 https://www.securityweek.com/cisa-warns-of-exploited-apple-kentico-microsoft-vulnerabilities/
 https://www.securityweek.com/cisa-warns-of-exploited-flaw-in-asus-update-tool/
 https://www.securityweek.com/cisa-warns-of-exploited-solarwinds-notepad-microsoft-vulnerabilities/
@@ -1381,6 +1396,7 @@ https://www.securityweek.com/covenant-health-data-breach-impacts-478000-individu
 https://www.securityweek.com/crewai-vulnerabilities-expose-devices-to-hacking/
 https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/
 https://www.securityweek.com/critical-citrix-netscaler-vulnerability-poised-for-exploitation-security-firms-warn/
+https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/
 https://www.securityweek.com/critical-command-execution-vulnerability-patched-in-cisco-ise/
 https://www.securityweek.com/critical-cpanel-whm-vulnerability-exploited-as-zero-day-for-months/
 https://www.securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution/
@@ -1422,6 +1438,7 @@ https://www.securityweek.com/cybernut-closes-5m-growth-capital-for-k-12-security
 https://www.securityweek.com/cybersecurity-firms-impacted-by-klue-supply-chain-attack/
 https://www.securityweek.com/cybersecurity-ma-roundup-30-deals-announced-in-december-2025/
 https://www.securityweek.com/cybersecurity-ma-roundup-38-deals-announced-in-march-2026/
+https://www.securityweek.com/danglegeddon-ai-could-weaponize-forgotten-dns-records-at-global-scale/
 https://www.securityweek.com/darksword-ios-exploit-kit-used-by-state-sponsored-hackers-spyware-vendors/
 https://www.securityweek.com/dartmouth-college-confirms-data-theft-in-oracle-hack/
 https://www.securityweek.com/data-breach-at-doctors-imaging-group-impacts-171000-people/
@@ -1430,6 +1447,7 @@ https://www.securityweek.com/data-breaches-at-healthcare-organizations-in-illino
 https://www.securityweek.com/data-exposure-vulnerability-found-in-deep-learning-tool-keras/
 https://www.securityweek.com/data-security-firm-evervault-raises-25-million-in-series-b-funding/
 https://www.securityweek.com/data-stolen-in-eurofiber-france-hack/
+https://www.securityweek.com/databahn-raises-40-million-for-agentic-data-pipeline-management/
 https://www.securityweek.com/deal-reached-with-hackers-to-delete-data-stolen-from-the-canvas-educational-platform/
 https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/
 https://www.securityweek.com/defakto-raises-30-million-for-non-human-iam-platform/
@@ -1438,6 +1456,7 @@ https://www.securityweek.com/defi-protocol-balancer-starts-recovering-funds-stol
 https://www.securityweek.com/dell-recoverpoint-zero-day-exploited-by-chinese-cyberespionage-group/
 https://www.securityweek.com/delmia-factory-software-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/depthfirst-raises-40-million-for-vulnerability-management/
+https://www.securityweek.com/discern-security-raises-13-million-in-series-a-funding/
 https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-data-breach/
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
 https://www.securityweek.com/dknife-implant-used-by-chinese-threat-actor-for-adversary-in-the-middle-attacks/
@@ -1762,6 +1781,7 @@ https://www.securityweek.com/offroad-emerges-from-stealth-with-7-million-to-tack
 https://www.securityweek.com/okta-warns-of-vishing-attacks-targeting-microsoft-365-customers/
 https://www.securityweek.com/oneleet-raises-33-million-for-security-compliance-platform/
 https://www.securityweek.com/onyx-security-launches-with-40-million-in-funding/
+https://www.securityweek.com/onyx-security-raises-113-million-to-control-ai-agents-in-the-enterprise/
 https://www.securityweek.com/opal-security-raises-23-million-for-ai-native-identity-governance/
 https://www.securityweek.com/open-vsx-downplays-impact-from-glassworm-campaign/
 https://www.securityweek.com/open-vsx-publisher-account-hijacked-in-fresh-glassworm-attack/

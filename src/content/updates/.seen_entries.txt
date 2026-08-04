@@ -965,9 +965,19 @@ https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html
 https://thehackernews.com/2026/07/unpatched-flaws-disclosed-in-filesystem.html
 https://thehackernews.com/2026/07/weekly-recap-rogue-ai-agents-check.html
 https://thehackernews.com/2026/07/zimbra-patches-critical-snmp-command.html
+https://thehackernews.com/2026/08/18-malicious-npm-packages-deliver-cross.html
 https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html
+https://thehackernews.com/2026/08/chinese-threat-actor-uses-leaked.html
+https://thehackernews.com/2026/08/fomo-in-soc-where-ai-platforms-like.html
+https://thehackernews.com/2026/08/google-password-manager-attacks-could.html
 https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html
+https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html
+https://thehackernews.com/2026/08/inc-ransomware-emerges-as-dominant.html
+https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html
+https://thehackernews.com/2026/08/pnld-breach-exposes-uk-police-and.html
 https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html
+https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html
+https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1198,6 +1208,8 @@ https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-here
 https://www.schneier.com/blog/archives/2026/07/the-language-of-ai-could-change-how-humans-speak.html
 https://www.schneier.com/blog/archives/2026/07/vulnerability-in-fifas-network.html
 https://www.schneier.com/blog/archives/2026/07/why-ai-needs-a-genie-coefficient.html
+https://www.schneier.com/blog/archives/2026/08/more-on-the-openai-agents-attack-on-hugging-face.html
+https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
@@ -1308,6 +1320,7 @@ https://www.securityweek.com/blogspot-hosted-payloads-delivered-in-veildrop-atta
 https://www.securityweek.com/bluehammer-vulnerability-exploited-in-ransomware-attacks/
 https://www.securityweek.com/bold-security-emerges-from-stealth-with-40-million-in-funding/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
+https://www.securityweek.com/brinks-home-discloses-data-breach-as-hackers-leak-files/
 https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/
 https://www.securityweek.com/by-design-flaw-in-mcp-could-enable-widespread-ai-supply-chain-attacks/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
@@ -1446,6 +1459,7 @@ https://www.securityweek.com/cyberattack-disrupts-check-in-systems-at-major-euro
 https://www.securityweek.com/cyberattack-disrupts-frances-postal-service-and-banking-during-christmas-rush/
 https://www.securityweek.com/cyberattack-disrupts-operations-of-japanese-frozen-food-giant-nichirei/
 https://www.securityweek.com/cyberattack-hits-canvas-system-used-by-thousands-of-schools-as-finals-loom/
+https://www.securityweek.com/cyberattack-hits-liechtensteins-register-of-people-behind-companies-and-foundations/
 https://www.securityweek.com/cyberattack-on-beer-giant-asahi-disrupts-production/
 https://www.securityweek.com/cyberattack-unlikely-in-communications-failure-that-grounded-flights-in-greece/
 https://www.securityweek.com/cyberattacks-on-minnesota-water-systems-investigated-as-officials-warn-about-iranian-hackers/
@@ -1603,6 +1617,7 @@ https://www.securityweek.com/high-severity-vulnerabilities-patched-in-vmware-ari
 https://www.securityweek.com/highest-ever-severity-score-assigned-by-microsoft-to-asp-net-core-vulnerability/
 https://www.securityweek.com/hightower-holding-data-breach-impacts-130000/
 https://www.securityweek.com/honeywell-researcher-clash-over-impact-of-building-controller-vulnerability/
+https://www.securityweek.com/horizon3-raises-250-million-to-fund-continuing-growth/
 https://www.securityweek.com/how-software-development-teams-can-securely-and-ethically-deploy-ai-tools/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-conduct-a-successful-audit-of-ai-driven-software-development/
@@ -1717,6 +1732,7 @@ https://www.securityweek.com/meta-pays-78000-bounty-for-vulnerability-exposing-c
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
 https://www.securityweek.com/microsoft-and-allies-smash-shared-infrastructure-of-amadey-and-stealc-malware/
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
+https://www.securityweek.com/microsoft-bug-bounty-program-20-million-paid-to-500-researchers/
 https://www.securityweek.com/microsoft-bug-bounty-program-expanded-to-third-party-code/
 https://www.securityweek.com/microsoft-disables-downloaded-file-previews-to-block-ntlm-hash-leaks/
 https://www.securityweek.com/microsoft-finds-vulnerability-exposing-millions-of-android-crypto-wallet-users/
@@ -1751,6 +1767,7 @@ https://www.securityweek.com/more-klue-breach-victims-identified-as-hackers-get-
 https://www.securityweek.com/mount-royal-university-confirms-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/myanmar-military-shuts-down-major-cybercrime-center-and-detains-over-2000-people/
 https://www.securityweek.com/mythos-proves-potent-in-vulnerability-discovery-less-convincing-elsewhere/
+https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/
 https://www.securityweek.com/n8n-vulnerabilities-could-lead-to-remote-code-execution/
 https://www.securityweek.com/navia-data-breach-impacts-2-7-million/
 https://www.securityweek.com/nearly-1-million-user-records-compromised-in-figure-data-breach/
@@ -1776,6 +1793,7 @@ https://www.securityweek.com/new-sandworm_mode-supply-chain-attack-hits-npm/
 https://www.securityweek.com/new-stackwarp-attack-threatens-confidential-vms-on-amd-processors/
 https://www.securityweek.com/new-sturnus-banking-trojan-targets-whatsapp-telegram-signal-messages/
 https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurrency-transactions/
+https://www.securityweek.com/new-york-awards-9-million-to-strengthen-cybersecurity-at-153-water-systems/
 https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-in-funding/
 https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/
 https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/
@@ -1882,6 +1900,7 @@ https://www.securityweek.com/recent-geoserver-vulnerability-exploited-in-attacks
 https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks/
 https://www.securityweek.com/recent-sap-s-4hana-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/recent-solarwinds-flaws-potentially-exploited-as-zero-days/
+https://www.securityweek.com/recent-sonicwall-vulnerabilities-exploited-in-ransomware-attacks/
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
@@ -1889,6 +1908,7 @@ https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unp
 https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
 https://www.securityweek.com/reveng-ai-raises-15-million-to-hunt-for-flaws-and-backdoors-in-software-binaries/
 https://www.securityweek.com/risk-ledger-raises-32-million-in-series-b-funding/
+https://www.securityweek.com/river-bank-says-hackers-deleted-data-stolen-in-ransomware-attack/
 https://www.securityweek.com/rockwell-vulnerability-allowing-remote-ics-hacking-exploited-in-attacks/
 https://www.securityweek.com/rokarolla-banking-trojan-targets-200-applications/
 https://www.securityweek.com/rondodox-botnet-exploiting-react2shell-vulnerability/

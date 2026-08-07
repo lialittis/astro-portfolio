@@ -70,6 +70,7 @@ https://blog.trailofbits.com/2026/07/08/mutation-testing-comes-to-daml/
 https://blog.trailofbits.com/2026/07/13/rust-proof-your-code-with-our-new-testing-handbook-chapter/
 https://blog.trailofbits.com/2026/07/28/how-we-use-goal-to-find-bugs-in-patch-the-planet/
 https://blog.trailofbits.com/2026/07/30/building-secure-uniswap-v4-hooks/
+https://blog.trailofbits.com/2026/08/05/a-few-notes-on-aws-nitro-enclaves-kms-integration/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -967,16 +968,26 @@ https://thehackernews.com/2026/07/weekly-recap-rogue-ai-agents-check.html
 https://thehackernews.com/2026/07/zimbra-patches-critical-snmp-command.html
 https://thehackernews.com/2026/08/18-malicious-npm-packages-deliver-cross.html
 https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html
+https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html
+https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html
+https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html
 https://thehackernews.com/2026/08/chinese-threat-actor-uses-leaked.html
+https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html
+https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html
 https://thehackernews.com/2026/08/fomo-in-soc-where-ai-platforms-like.html
 https://thehackernews.com/2026/08/google-password-manager-attacks-could.html
 https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html
 https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html
 https://thehackernews.com/2026/08/inc-ransomware-emerges-as-dominant.html
 https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html
+https://thehackernews.com/2026/08/new-interrupt-injection-attack-can.html
+https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html
+https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html
 https://thehackernews.com/2026/08/pnld-breach-exposes-uk-police-and.html
 https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html
 https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html
+https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html
+https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html
 https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
@@ -1208,8 +1219,12 @@ https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-here
 https://www.schneier.com/blog/archives/2026/07/the-language-of-ai-could-change-how-humans-speak.html
 https://www.schneier.com/blog/archives/2026/07/vulnerability-in-fifas-network.html
 https://www.schneier.com/blog/archives/2026/07/why-ai-needs-a-genie-coefficient.html
+https://www.schneier.com/blog/archives/2026/08/adversarial-clothing-designed-to-fool-facial-recognition-systems.html
+https://www.schneier.com/blog/archives/2026/08/iran-cyberattacks-against-minnesota-water-systems.html
 https://www.schneier.com/blog/archives/2026/08/more-on-the-openai-agents-attack-on-hugging-face.html
+https://www.schneier.com/blog/archives/2026/08/some-claude-chats-are-searchable-on-google.html
 https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html
+https://www.schneier.com/blog/archives/2026/08/vulnerabilities-in-car-anti-theft-device.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
@@ -1384,6 +1399,7 @@ https://www.securityweek.com/cisco-fortinet-palo-alto-networks-devices-targeted-
 https://www.securityweek.com/cisco-launches-low-cost-ai-models-for-source-code-security/
 https://www.securityweek.com/cisco-patches-another-sd-wan-zero-day-exploited-in-attacks/
 https://www.securityweek.com/cisco-patches-another-sd-wan-zero-day-the-sixth-exploited-in-2026/
+https://www.securityweek.com/cisco-patches-critical-sd-wan-ios-xe-fmc-vulnerabilities/
 https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-contact-center-appliance/
 https://www.securityweek.com/cisco-patches-critical-vulnerability-in-secure-workload/
 https://www.securityweek.com/cisco-patches-high-severity-ios-xr-vulnerabilities-2/
@@ -1436,6 +1452,7 @@ https://www.securityweek.com/critical-langflow-vulnerability-exploited-hours-aft
 https://www.securityweek.com/critical-marimo-flaw-exploited-hours-after-public-disclosure/
 https://www.securityweek.com/critical-n8n-vulnerabilities-allowed-server-takeover/
 https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-exploited-as-zero-day/
+https://www.securityweek.com/critical-paperclip-flaw-allowed-admin-access-code-execution/
 https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-exploited-in-attacks/
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/
@@ -1603,6 +1620,7 @@ https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center
 https://www.securityweek.com/hackers-earn-1-3-million-at-pwn2own-berlin-2026/
 https://www.securityweek.com/hackers-leak-5-1-million-panera-bread-accounts/
 https://www.securityweek.com/hackers-offer-to-sell-millions-of-eurail-user-records/
+https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/
 https://www.securityweek.com/hackers-steal-sensitive-data-from-auction-house-sothebys/
 https://www.securityweek.com/hackers-target-casino-operator-boyd-gaming/
 https://www.securityweek.com/hackers-target-global-stock-exchange-in-espionage-operation/
@@ -1618,6 +1636,7 @@ https://www.securityweek.com/highest-ever-severity-score-assigned-by-microsoft-t
 https://www.securityweek.com/hightower-holding-data-breach-impacts-130000/
 https://www.securityweek.com/honeywell-researcher-clash-over-impact-of-building-controller-vulnerability/
 https://www.securityweek.com/horizon3-raises-250-million-to-fund-continuing-growth/
+https://www.securityweek.com/how-a-50000-exploit-chain-turned-bixby-against-samsung-phones/
 https://www.securityweek.com/how-software-development-teams-can-securely-and-ethically-deploy-ai-tools/
 https://www.securityweek.com/how-to-close-the-ai-governance-gap-in-software-development/
 https://www.securityweek.com/how-to-conduct-a-successful-audit-of-ai-driven-software-development/
@@ -1727,6 +1746,7 @@ https://www.securityweek.com/medtronic-data-breach-impacts-3-8-million-people/
 https://www.securityweek.com/medtronic-hack-confirmed-after-shinyhunters-threatens-data-leak/
 https://www.securityweek.com/medusahvnc-malware-uses-hidden-windows-desktops-to-evade-detection/
 https://www.securityweek.com/memcyco-raises-37-million-for-anti-impersonation-technology/
+https://www.securityweek.com/meta-ai-hacked-external-systems-during-cybersecurity-testing/
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/meta-pays-78000-bounty-for-vulnerability-exposing-customer-support-data/
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
@@ -1864,6 +1884,7 @@ https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
 https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/
 https://www.securityweek.com/podcast-broken-governance-agentic-ai-and-the-mindstone-agent-exclusive/
+https://www.securityweek.com/podcast-compliance-wont-save-you-the-future-of-cyber-risk-with-edna-conway/
 https://www.securityweek.com/polish-security-agency-reports-ics-breaches-at-five-water-treatment-plants/
 https://www.securityweek.com/pre-stuxnet-sabotage-malware-fast16-linked-to-us-iran-cyber-tensions/
 https://www.securityweek.com/president-trump-orders-divestment-in-2-9-million-chips-deal-to-protect-us-security-interests/
@@ -2070,6 +2091,7 @@ https://www.securityweek.com/wynn-resorts-says-21000-employees-affected-by-shiny
 https://www.securityweek.com/year-old-wordpress-plugin-flaws-exploited-to-hack-websites/
 https://www.securityweek.com/zafran-security-raises-60-million-in-series-c-funding/
 https://www.securityweek.com/zdi-drops-13-unpatched-ivanti-endpoint-manager-vulnerabilities/
+https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/
 https://www.securityweek.com/zero-trust-is-15-years-old-why-full-adoption-is-worth-the-struggle/
 https://www.securityweek.com/zionsiphon-malware-targets-ics-in-water-facilities/
 https://www.securityweek.com/zombieagent-attack-let-researchers-take-over-chatgpt/

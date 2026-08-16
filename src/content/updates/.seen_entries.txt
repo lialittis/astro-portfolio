@@ -973,6 +973,7 @@ https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html
 https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html
 https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html
 https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html
+https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html
 https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html
 https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html
 https://thehackernews.com/2026/08/chinese-threat-actor-uses-leaked.html
@@ -1241,19 +1242,24 @@ https://www.schneier.com/blog/archives/2026/08/adversarial-clothing-designed-to-
 https://www.schneier.com/blog/archives/2026/08/ai-for-military-support.html
 https://www.schneier.com/blog/archives/2026/08/ai-genie-in-the-wild.html
 https://www.schneier.com/blog/archives/2026/08/friday-squid-blogging-arctic-bobtail-squid-video.html
+https://www.schneier.com/blog/archives/2026/08/friday-squid-blogging-searching-for-the-colossal-squid-2.html
+https://www.schneier.com/blog/archives/2026/08/if-the-markets-reject-openai-and-anthropic-the-us-should-nationalize-them.html
 https://www.schneier.com/blog/archives/2026/08/iran-cyberattacks-against-minnesota-water-systems.html
 https://www.schneier.com/blog/archives/2026/08/more-on-the-openai-agents-attack-on-hugging-face.html
 https://www.schneier.com/blog/archives/2026/08/prompt-injections-for-defense.html
 https://www.schneier.com/blog/archives/2026/08/python-now-has-a-post-quantum-encryption-library.html
+https://www.schneier.com/blog/archives/2026/08/separating-ais-technological-problems-from-its-capitalism-problems.html
 https://www.schneier.com/blog/archives/2026/08/some-claude-chats-are-searchable-on-google.html
 https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html
 https://www.schneier.com/blog/archives/2026/08/vulnerabilities-in-car-anti-theft-device.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
+https://www.securityweek.com/1-6-million-likely-impacted-by-ringcentral-data-breach/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
 https://www.securityweek.com/100-chrome-extensions-steal-user-data-open-backdoor/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/12-million-impacted-by-data-breach-at-japanese-telco-kddi/
+https://www.securityweek.com/14000-trezor-customers-impacted-by-data-breach-at-shipmonk/
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
 https://www.securityweek.com/15-year-old-linux-vulnerability-ghostlock-earns-researchers-92k-from-google/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
@@ -1277,6 +1283,7 @@ https://www.securityweek.com/abstract-raises-25-million-to-expand-composable-sec
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/access-system-flaws-enabled-hackers-to-unlock-doors-at-major-european-firms/
 https://www.securityweek.com/adobe-coldfusion-servers-targeted-in-coordinated-campaign/
+https://www.securityweek.com/adobe-commerce-bug-targeted-immediately-after-disclosure/
 https://www.securityweek.com/adobe-patches-123-vulnerabilities/
 https://www.securityweek.com/adobe-patches-29-vulnerabilities/
 https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/
@@ -1312,6 +1319,7 @@ https://www.securityweek.com/ally-wordpress-plugin-flaw-exposes-over-200000-webs
 https://www.securityweek.com/amazon-detects-150000-npm-packages-in-worm-powered-campaign/
 https://www.securityweek.com/amazon-q-flaw-enabled-cloud-credential-theft-via-malicious-repositories/
 https://www.securityweek.com/american-lending-center-data-breach-affects-123000-individuals/
+https://www.securityweek.com/amnesiastealer-macos-malware-steals-data-controls-browser-sessions/
 https://www.securityweek.com/android-update-patches-exploited-qualcomm-zero-day/
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
 https://www.securityweek.com/another-draftkings-hacker-sentenced-to-prison/
@@ -1616,6 +1624,7 @@ https://www.securityweek.com/glassworm-botnet-disrupted/
 https://www.securityweek.com/gogs-zero-day-exposes-servers-to-remote-code-execution/
 https://www.securityweek.com/google-adjusts-bug-bounties-chrome-payouts-drop-as-android-rewards-rise-amid-ai-surge/
 https://www.securityweek.com/google-api-keys-in-android-apps-expose-gemini-endpoints-to-unauthorized-access/
+https://www.securityweek.com/google-cloud-sets-out-post-quantum-roadmap-with-2029-readiness-goal/
 https://www.securityweek.com/google-confirms-exploitation-of-oracle-peoplesoft-zero-day-by-shinyhunters/
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
 https://www.securityweek.com/google-deepmind-researchers-map-web-attacks-against-ai-agents/
@@ -1646,6 +1655,7 @@ https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism
 https://www.securityweek.com/hackers-abuse-qemu-for-defense-evasion/
 https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center-patient-data-they-werent-immediately-notified/
 https://www.securityweek.com/hackers-earn-1-3-million-at-pwn2own-berlin-2026/
+https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/
 https://www.securityweek.com/hackers-leak-5-1-million-panera-bread-accounts/
 https://www.securityweek.com/hackers-offer-to-sell-millions-of-eurail-user-records/
 https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/
@@ -1896,6 +1906,7 @@ https://www.securityweek.com/outtake-raises-40-million-to-bolster-digital-trust-
 https://www.securityweek.com/over-100-github-repositories-distributing-boryptgrab-stealer/
 https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/
 https://www.securityweek.com/over-100-organizations-targeted-in-shinyhunters-phishing-campaign/
+https://www.securityweek.com/over-1000-charities-hit-by-beacon-crm-data-breach/
 https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/
 https://www.securityweek.com/over-3-million-in-prizes-offered-at-pwn2own-automotive-2026/
 https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/

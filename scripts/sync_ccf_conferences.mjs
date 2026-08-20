@@ -37,7 +37,7 @@ if (selected.length === 0) {
 const slugify = (title) =>
 	title
 		.toLowerCase()
-		.replace('&', 'and')
+		.replace(/&/g, 'and')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-|-$/g, '')
 

@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // const exitModal = document.getElementById("exit-modal");
   const playModal = document.getElementById("change-text-button");
 
+  // This shared script also runs on pages that do not include the intro modal.
+  if (!modal || !closeModal || !playModal) return;
+
   // Show the modal when the page loads
   setTimeout(() => {
     modal.classList.add("show");

@@ -1,10 +1,10 @@
 // 'use client';
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { ColDef } from "ag-grid-community";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import type { ICellRendererParams } from 'ag-grid-community';
 import { TitleCellRender } from "./TitleCellRender";
+import { formatRemainingTime } from "../../lib/conferenceTime";
 
 // Register ag-Grid modules
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -33,6 +33,8 @@ interface Conference {
   confs: ConferenceYear[];
   latestconf: ConferenceYear;
   deadline: string;
+  deadlineDisplay: string;
+  deadlineUtc: string;
   remainingTime: string;
 }
 
@@ -41,32 +43,20 @@ interface ConfProps {
 }
 
 // Helper function to compute remaining time
-const computeRemainingTime = (deadline: string): string => {
-  if (!deadline) return "N/A";
-
-  const ddl = new Date(deadline.replace(" ", "T") + "Z"); // Convert to UTC
-  const now = new Date();
-  const gap = Math.max(0, ddl.getTime() - now.getTime()); // Ensure non-negative
-
-  const seconds = Math.floor((gap / 1000) % 60);
-  const minutes = Math.floor((gap / (1000 * 60)) % 60);
-  const hours = Math.floor((gap / (1000 * 60 * 60)) % 24);
-  const days = Math.floor(gap / (1000 * 60 * 60 * 24));
-
-  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-};
+const computeRemainingTime = (deadlineUtc: string): string =>
+  formatRemainingTime(deadlineUtc, true);
 
 // Custom cell renderer for countdown
 const CountdownCellRenderer = (props: { value: string; data: Conference }) => {
-  const [timeLeft, setTimeLeft] = useState(computeRemainingTime(props.data.deadline));
+  const [timeLeft, setTimeLeft] = useState(computeRemainingTime(props.data.deadlineUtc));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(computeRemainingTime(props.data.deadline));
+      setTimeLeft(computeRemainingTime(props.data.deadlineUtc));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [props.data.deadline]);
+  }, [props.data.deadlineUtc]);
 
   return <span>{timeLeft}</span>;
 };
@@ -76,7 +66,7 @@ const ConfTable = (props: ConfProps) => {
   const [rowData, setRowData] = useState<Conference[]>(() => 
     props.conferences.map(conf => ({
       ...conf,
-      remainingTime: computeRemainingTime(conf.deadline),
+      remainingTime: computeRemainingTime(conf.deadlineUtc),
     }))
   );
 
@@ -85,7 +75,7 @@ const ConfTable = (props: ConfProps) => {
       setRowData(prevData =>
         prevData.map(conf => ({
           ...conf,
-          remainingTime: computeRemainingTime(conf.deadline),
+          remainingTime: computeRemainingTime(conf.deadlineUtc),
         }))
       );
     }, 1000);
@@ -113,7 +103,7 @@ const ConfTable = (props: ConfProps) => {
     { field: "rank.core", headerName: "CORE Rank", maxWidth: 100},
     { field: "rank.ccf", headerName: "CCF Rank", maxWidth: 100},
     // { field: "rank.thcpl", headerName: "THCPL Rank", maxWidth: 120},
-    { field: "deadline", headerName: "Deadline"},
+    { field: "deadlineDisplay", headerName: "Deadline"},
     {
       field: "remainingTime",
       headerName: "Clock",
@@ -124,7 +114,7 @@ const ConfTable = (props: ConfProps) => {
             const daysMatch = timeStr.match(/(\d+)d/);
             const days = daysMatch ? parseInt(daysMatch[1]) : 0;
             
-            if (days === 0) {
+            if (timeStr === "EXPIRED" || timeStr === "TBD") {
                 // Deadline has passed - gray background
                 return {color: 'white', backgroundColor: 'gray'};
             } else if (days < 30) {
@@ -146,7 +136,7 @@ const ConfTable = (props: ConfProps) => {
 
   // Adjust columns based on screen size
   const colDefs = isMobile
-    ? allColumns.filter(col => ["title", "deadline", "remainingTime"].includes(col.field as string))
+    ? allColumns.filter(col => ["title", "deadlineDisplay", "remainingTime"].includes(col.field as string))
     : allColumns;
 
   const defaultColDef: ColDef = {
@@ -155,7 +145,7 @@ const ConfTable = (props: ConfProps) => {
   };
 
   return (
-    <div className="overflow-x-auto w-screen flex flex-col">
+    <div className="overflow-x-auto w-full flex flex-col">
       <div className="flex-grow mt-5">
         <AgGridReact
           rowData={rowData}

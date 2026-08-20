@@ -1,6 +1,8 @@
+# Source: https://ccfddl.com/conference/allconf.yml
+# Filter: CCF A, DS/SE/SC
 title: SC
-description: International Conference for High Performance Computing, Networking,
-  Storage, and Analysis
+description: International Conference for High Performance Computing,
+  Networking, Storage, and Analysis
 sub: DS
 rank:
   ccf: A
@@ -12,7 +14,7 @@ confs:
     id: sc22
     link: https://sc22.supercomputing.org/
     timeline:
-      - deadline: '2022-04-01 23:59:00'
+      - deadline: 2022-04-01 23:59:00
     timezone: AoE
     date: November 13-18, 2022
     place: Dallas, Texas, USA
@@ -20,7 +22,7 @@ confs:
     id: sc23
     link: https://sc23.supercomputing.org/
     timeline:
-      - deadline: '2023-04-06 23:59:00'
+      - deadline: 2023-04-06 23:59:00
     timezone: AoE
     date: November 12-17, 2023
     place: DENVER, CO, USA
@@ -28,8 +30,8 @@ confs:
     id: sc24
     link: https://sc24.supercomputing.org/
     timeline:
-      - abstract_deadline: '2024-03-26 23:59:59'
-        deadline: '2024-04-02 23:59:00'
+      - abstract_deadline: 2024-03-26 23:59:59
+        deadline: 2024-04-02 23:59:00
     timezone: AoE
     date: November 17-22, 2024
     place: ATLANTA, GA, USA
@@ -37,8 +39,17 @@ confs:
     id: sc25
     link: https://sc25.supercomputing.org/
     timeline:
-      - abstract_deadline: '2025-04-07 23:59:59'
-        deadline: '2025-04-14 23:59:00'
+      - abstract_deadline: 2025-04-07 23:59:59
+        deadline: 2025-04-14 23:59:00
     timezone: AoE
     date: November 16-21, 2025
     place: St. louis, Missouri, USA
+  - year: 2026
+    id: sc26
+    link: https://sc26.supercomputing.org/
+    timeline:
+      - abstract_deadline: 2026-04-01 23:59:59
+        deadline: 2026-04-08 23:59:00
+    timezone: AoE
+    date: November 15-20, 2026
+    place: McCormick Place, Chicago, Illinois, USA

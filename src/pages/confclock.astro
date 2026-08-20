@@ -9,10 +9,12 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
 import fs from 'fs'
 import path from 'path'
 import yaml from 'yaml'
+import { deadlineToTimestamp, formatRemainingTime } from '../lib/conferenceTime'
 
 interface TimelineEntry {
 	deadline: string
-	comment: string
+	abstract_deadline?: string
+	comment?: string
 }
 
 interface ConferenceYear {
@@ -34,19 +36,29 @@ interface Conference {
 	confs: ConferenceYear[]
 	latestconf: ConferenceYear
 	deadline: string
+	deadlineDisplay: string
+	deadlineUtc: string
 	remainingTime: string
 }
+
+const CATEGORY_LABELS = {
+	DS: 'Systems',
+	SE: 'Software',
+	SC: 'Security',
+} as const
 
 const loadConferences = (baseDir: string): Conference[] => {
 	const conferenceList: Conference[] = []
 
-	// Read all subdirectories (e.g., DS, SC), but exclude Archived
+	// The clock intentionally tracks only CCF-A venues in the requested subjects.
 	const categories = fs
 		.readdirSync(baseDir, { withFileTypes: true })
-		.filter((dirent) => dirent.isDirectory() && dirent.name !== 'Archived') // Only directories, exclude Archived
+		.filter(
+			(dirent) =>
+				dirent.isDirectory() &&
+				dirent.name in CATEGORY_LABELS,
+		)
 		.map((dirent) => dirent.name)
-
-	console.log(categories)
 
 	categories.forEach((category) => {
 		const categoryPath = path.join(baseDir, category)
@@ -65,40 +77,44 @@ const loadConferences = (baseDir: string): Conference[] => {
 				// console.log("Parsed YAML:", parsed);
 
 				// Ensure the parsed data is structured correctly
-				if (parsed && typeof parsed === 'object' && parsed.confs) {
+				if (
+					parsed &&
+					typeof parsed === 'object' &&
+					parsed.confs &&
+					parsed.rank?.ccf === 'A'
+				) {
 					parsed.latestconf = parsed.confs[parsed.confs.length - 1]
-					// console.log(parsed.latestconf);
-					switch (parsed.sub) {
-						case 'DS':
-							parsed.sub = 'System'
-							break
-						case 'SC':
-							parsed.sub = 'Security'
-							break;
-						case 'SE':
-							parsed.sub = 'Software'
-							break
-						default:
-							break
-					}
+					const subject = parsed.sub as keyof typeof CATEGORY_LABELS
+					parsed.sub = CATEGORY_LABELS[subject]
 					
-					// Find the first deadline that hasn't passed yet
-					const now = new Date()
-					let selectedDeadline = parsed.latestconf.timeline[0].deadline
-					
-					for (const entry of parsed.latestconf.timeline) {
-						const deadlineDate = new Date(entry.deadline)
-						if (deadlineDate >= now) {
-							selectedDeadline = entry.deadline
-							break
-						}
+					const deadlines = parsed.latestconf.timeline
+						.map((entry: TimelineEntry) => ({
+							entry,
+							timestamp: deadlineToTimestamp(
+								entry.deadline,
+								parsed.latestconf.timezone,
+							),
+						}))
+						.filter(
+							(item: { timestamp: number | null }) =>
+								item.timestamp !== null,
+						)
+
+					if (deadlines.length === 0) {
+						console.warn(`Warning: Skipping ${file}; no dated deadline`)
+						return
 					}
-					// If all deadlines have passed, use the last one
-					if (!selectedDeadline) {
-						selectedDeadline = parsed.latestconf.timeline[parsed.latestconf.timeline.length - 1].deadline
-					}
-					
-					parsed.deadline = selectedDeadline
+
+					const now = Date.now()
+					const selected =
+						deadlines.find(
+							(item: { timestamp: number | null }) =>
+								item.timestamp! >= now,
+						) ?? deadlines[deadlines.length - 1]
+
+					parsed.deadline = selected.entry.deadline
+					parsed.deadlineDisplay = `${selected.entry.deadline} ${parsed.latestconf.timezone}`
+					parsed.deadlineUtc = new Date(selected.timestamp!).toISOString()
 					conferenceList.push(parsed)
 				} else {
 					console.warn(`Warning: Skipping ${file} due to invalid structure`)
@@ -109,57 +125,28 @@ const loadConferences = (baseDir: string): Conference[] => {
 		})
 	})
 
-	return conferenceList
+	const now = Date.now()
+	return conferenceList.sort((a, b) => {
+		const aTime = Date.parse(a.deadlineUtc)
+		const bTime = Date.parse(b.deadlineUtc)
+		const aActive = aTime >= now
+		const bActive = bTime >= now
+
+		if (aActive !== bActive) return aActive ? -1 : 1
+		return aActive ? aTime - bTime : bTime - aTime
+	})
 }
 
 const conferences = loadConferences('./conferences')
 
 // Helper function to calculate remaining time
-function calculateRemainingTime(deadline: string): string {
-	const now = new Date()
-	const deadlineDate = new Date(deadline)
-	const diff = deadlineDate.getTime() - now.getTime()
-	
-	if (diff < 0) return 'EXPIRED'
-	
-	const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-	const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-	
-	if (days > 0) {
-		return `${days}d ${hours}h`
-	} else {
-		const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-		return `${hours}h ${minutes}m`
-	}
+function calculateRemainingTime(deadlineUtc: string): string {
+	return formatRemainingTime(deadlineUtc)
 }
 
-// Helper function to format date safely
-function formatDeadlineDate(deadline: string, timezone: string): string {
-	try {
-		const date = new Date(deadline)
-		// Handle special timezones that aren't valid IANA timezone identifiers
-		const safeTimezone = timezone === 'AoE' ? 'Pacific/Kiritimati' : timezone
-		
-		return date.toLocaleDateString('en-US', { 
-			year: 'numeric', 
-			month: 'short', 
-			day: 'numeric',
-			hour: '2-digit',
-			minute: '2-digit',
-			timeZone: safeTimezone 
-		})
-	} catch (error) {
-		// If timezone is still invalid, just format without timezone
-		const date = new Date(deadline)
-		return date.toLocaleDateString('en-US', { 
-			year: 'numeric', 
-			month: 'short', 
-			day: 'numeric',
-			hour: '2-digit',
-			minute: '2-digit'
-		}) + ` (${timezone})`
-	}
-}
+const activeConferences = conferences
+	.filter((conference) => calculateRemainingTime(conference.deadlineUtc) !== 'EXPIRED')
+	.sort((a, b) => Date.parse(a.deadlineUtc) - Date.parse(b.deadlineUtc))
 ---
 
 
@@ -169,6 +156,16 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 	<!-- Modern Layout -->
 	<div class='modern-container'>
 		<div id='timeDisplay' class='pt-24 md:pt-28 w-full'>
+			<header class='clock-intro'>
+				<div>
+					<p class='clock-eyebrow'>CCF A · {conferences.length} conferences</p>
+					<h1>Conference Clock</h1>
+					<p>Systems, software & programming languages, and security.</p>
+				</div>
+				<a href='https://ccfddl.com/' target='_blank' rel='noopener noreferrer'>
+					Data from CCFDDL ↗
+				</a>
+			</header>
 			<ConfTable conferences={conferences} client:load />
 		</div>
 	</div>
@@ -186,7 +183,7 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 							Conference Deadline Tracker - Real-time monitoring system
 						</p>
 						<p class='terminal-text' style='color: rgba(255, 255, 255, 0.7);'>
-							Total conferences: {conferences.length} | Categories: System, Security, Software
+							Total conferences: {conferences.length} | CCF rank: A | Categories: Systems, Security, Software
 						</p>
 					</div>
 				</div>
@@ -201,106 +198,111 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 						</button>
 					</div>
 					
-					{conferences
-						.filter(conf => {
-							const remaining = calculateRemainingTime(conf.deadline)
-							return remaining !== 'EXPIRED'
-						})
-						.sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime())
+					{activeConferences
 						.map(conf => {
-							const remaining = calculateRemainingTime(conf.deadline)
+							const remaining = calculateRemainingTime(conf.deadlineUtc)
 							const isUrgent = parseInt(remaining.split('d')[0]) < 7
 							
 							return (
-								<div class={`active-row ${isUrgent ? 'urgent' : ''}`}>
+								<button
+									type='button'
+									class={`active-row ${isUrgent ? 'urgent' : ''}`}
+									data-conference-trigger={conf.latestconf.id}
+									aria-expanded='false'
+									aria-controls={`conference-detail-${conf.latestconf.id}`}
+								>
 									<span class='row-title'>{conf.title}</span>
 									<span class='row-category'>{conf.sub}</span>
-									<span class='row-rank'>{conf.rank.core}</span>
+									<span class='row-rank'>CCF {conf.rank.ccf}</span>
 									<span class='row-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
 										{remaining}
+										<span class='row-arrow' aria-hidden='true'>›</span>
 									</span>
-								</div>
+								</button>
 							)
 						})
 					}
 				</div>
 
-				<CommandLine command='ls -la ./conferences/*' />
+				<CommandLine command='ls -la ./conferences/active/' />
 				
-				<div class='conference-categories'>
-					{['System', 'Security', 'Software'].map(category => {
-						const categoryConfs = conferences.filter(c => c.sub === category)
-						return categoryConfs.length > 0 ? (
-							<div class='category-section'>
-								<div class='category-header'>
-									<span class='prompt'>$</span>
-									<span style='color: #00d9ff;'> ./conferences/{category.toLowerCase()}/</span>
+				<div class='conference-detail-viewer' aria-live='polite'>
+					<div id='conference-detail-empty' class='conference-detail-empty'>
+						<span class='empty-cursor'>&gt;_</span>
+						<div>
+							<p>SELECT AN ACTIVE CONFERENCE</p>
+							<span>Click a deadline above to inspect its details.</span>
+						</div>
+					</div>
+
+					{activeConferences.map(conf => {
+						const remaining = calculateRemainingTime(conf.deadlineUtc)
+						const isUrgent = parseInt(remaining.split('d')[0]) < 7
+
+						return (
+							<article
+								id={`conference-detail-${conf.latestconf.id}`}
+								class='conf-entry conference-detail-panel hidden'
+								data-conference-detail={conf.latestconf.id}
+								aria-label={`${conf.title} conference details`}
+							>
+								<div class='detail-path'>
+									<span>$</span> cat ./conferences/active/{conf.latestconf.id}.yml
 								</div>
-								
-								{categoryConfs.map((conf, index) => {
-									const remaining = calculateRemainingTime(conf.deadline)
-									const isExpired = remaining === 'EXPIRED'
-									const isUrgent = !isExpired && parseInt(remaining.split('d')[0]) < 7
-									
-									return (
-										<div class='conf-entry'>
-											<div class='conf-header'>
-												<span class='conf-number'>[{String(index + 1).padStart(2, '0')}]</span>
-												<span class='conf-title'>{conf.title}</span>
-												<span class={`conf-status ${isExpired ? 'expired' : isUrgent ? 'urgent' : 'active'}`}>
-													{isExpired ? '✗ EXPIRED' : isUrgent ? '⚠ URGENT' : '✓ ACTIVE'}
-												</span>
-											</div>
-											
-											<div class='conf-details'>
-												<div class='detail-line'>
-													<span class='detail-label'>DEADLINE:</span>
-													<span class='detail-value' style={isExpired ? 'color: #ff5555;' : isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
-														{formatDeadlineDate(conf.deadline, conf.latestconf.timezone)}
-													</span>
-													<span class='remaining-time' style={isExpired ? 'color: #ff5555;' : isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
-														({remaining})
-													</span>
-												</div>
-												
-												<div class='detail-line'>
-													<span class='detail-label'>RANK:</span>
-													<span class='detail-value'>
-														CCF: <span class='rank-badge'>{conf.rank.ccf}</span>
-														{conf.rank.core && ` | CORE: `}<span class='rank-badge'>{conf.rank.core}</span>
-													</span>
-												</div>
-												
-												<div class='detail-line'>
-													<span class='detail-label'>VENUE:</span>
-													<span class='detail-value'>{conf.latestconf.place}</span>
-												</div>
-												
-												<div class='detail-line'>
-													<span class='detail-label'>DATE:</span>
-													<span class='detail-value'>{conf.latestconf.date}</span>
-												</div>
-												
-												{conf.latestconf.link && (
-													<div class='detail-line'>
-														<span class='detail-label'>LINK:</span>
-														<a href={conf.latestconf.link} target='_blank' rel='noopener noreferrer' class='conf-link'>
-															{conf.latestconf.link}
-														</a>
-													</div>
-												)}
-											</div>
-											
-											{conf.description && (
-												<div class='conf-description'>
-													<p>{conf.description}</p>
-												</div>
-											)}
+								<div class='conf-header'>
+									<span class='conf-number'>[{conf.latestconf.id}]</span>
+									<span class='conf-title'>{conf.title}</span>
+									<span class={`conf-status ${isUrgent ? 'urgent' : 'active'}`}>
+										{isUrgent ? '⚠ URGENT' : '✓ ACTIVE'}
+									</span>
+								</div>
+
+								<div class='conf-details'>
+									<div class='detail-line'>
+										<span class='detail-label'>DEADLINE:</span>
+										<span class='detail-value' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
+											{conf.deadlineDisplay}
+										</span>
+										<span class='remaining-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
+											({remaining})
+										</span>
+									</div>
+									<div class='detail-line'>
+										<span class='detail-label'>DOMAIN:</span>
+										<span class='detail-value'>{conf.sub}</span>
+									</div>
+									<div class='detail-line'>
+										<span class='detail-label'>RANK:</span>
+										<span class='detail-value'>
+											CCF: <span class='rank-badge'>{conf.rank.ccf}</span>
+											{conf.rank.core && ` | CORE: `}<span class='rank-badge'>{conf.rank.core}</span>
+										</span>
+									</div>
+									<div class='detail-line'>
+										<span class='detail-label'>VENUE:</span>
+										<span class='detail-value'>{conf.latestconf.place}</span>
+									</div>
+									<div class='detail-line'>
+										<span class='detail-label'>DATE:</span>
+										<span class='detail-value'>{conf.latestconf.date}</span>
+									</div>
+									{conf.latestconf.link && (
+										<div class='detail-line'>
+											<span class='detail-label'>LINK:</span>
+											<a href={conf.latestconf.link} target='_blank' rel='noopener noreferrer' class='conf-link'>
+												{conf.latestconf.link}
+											</a>
 										</div>
-									)
-								})}
-							</div>
-						) : null
+									)}
+								</div>
+
+								{conf.description && (
+									<div class='conf-description'>
+										<p>{conf.description}</p>
+									</div>
+								)}
+							</article>
+						)
 					})}
 				</div>
 
@@ -327,10 +329,22 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 	@import '../style/hacker-theme.css';
 	
 	/* Container visibility */
+	:global(body) {
+		height: auto !important;
+		min-height: 100vh;
+		justify-content: flex-start !important;
+		align-items: stretch !important;
+	}
+
 	.modern-container {
 		display: block;
 		position: relative;
 		z-index: 100;
+		width: 100%;
+		max-width: 1500px;
+		margin: 0 auto;
+		padding: 0 1.5rem 3rem;
+		box-sizing: border-box;
 	}
 
 	.modern-container.hidden {
@@ -348,6 +362,47 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 
 	.hacker-container.hidden {
 		display: none !important;
+	}
+
+	.clock-intro {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: 1.5rem 1.75rem;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 18px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+		box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+	}
+
+	.clock-intro h1 {
+		margin: 0.2rem 0 0.35rem;
+		font-size: clamp(2rem, 4vw, 3.4rem);
+		line-height: 1;
+	}
+
+	.clock-intro p {
+		margin: 0;
+	}
+
+	.clock-intro .clock-eyebrow {
+		color: #a5b4fc !important;
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.clock-intro a {
+		flex-shrink: 0;
+		color: #c4b5fd;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.clock-intro a:hover {
+		color: white;
 	}
 
 	/* Terminal Output Styles */
@@ -418,6 +473,7 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 	.active-row {
 		display: grid;
 		grid-template-columns: 2fr 1fr 80px 100px;
+		width: 100%;
 		gap: 1rem;
 		padding: 0.75rem;
 		margin: 0.5rem 0;
@@ -428,6 +484,10 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		font-size: 0.9rem;
 		align-items: center;
 		transition: all 0.2s ease;
+		appearance: none;
+		color: inherit;
+		cursor: pointer;
+		text-align: left;
 	}
 
 	.active-row:hover {
@@ -446,6 +506,17 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		background: rgba(40, 30, 0, 0.3);
 	}
 
+	.active-row[aria-expanded='true'] {
+		background: rgba(0, 65, 20, 0.35);
+		border-color: rgba(0, 217, 255, 0.65);
+		box-shadow: 0 0 18px rgba(0, 217, 255, 0.12);
+	}
+
+	.active-row:focus-visible {
+		outline: 2px solid #00d9ff;
+		outline-offset: 2px;
+	}
+
 	.row-title {
 		color: #00ff41;
 		font-weight: 600;
@@ -462,8 +533,23 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 	}
 
 	.row-time {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.65rem;
 		font-weight: 700;
 		text-align: right;
+	}
+
+	.row-arrow {
+		display: inline-block;
+		font-size: 1.2rem;
+		line-height: 1;
+		transition: transform 0.2s ease;
+	}
+
+	.active-row[aria-expanded='true'] .row-arrow {
+		transform: rotate(90deg);
 	}
 
 	/* Modal Styles */
@@ -564,26 +650,79 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		flex: 1;
 	}
 
-	/* Conference Categories */
-	.conference-categories {
+	/* On-demand conference details */
+	.conference-detail-viewer {
 		margin: 2rem 0;
 	}
 
-	.category-section {
-		margin-bottom: 3rem;
-	}
-
-	.category-header {
+	.conference-detail-empty {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		min-height: 92px;
+		padding: 1.25rem 1.5rem;
+		border: 1px dashed rgba(0, 217, 255, 0.3);
+		border-radius: 8px;
+		background: rgba(0, 20, 25, 0.2);
 		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.1rem;
-		color: #00d9ff;
-		margin-bottom: 1.5rem;
-		font-weight: 600;
+		box-sizing: border-box;
 	}
 
-	.prompt {
+	.conference-detail-empty.hidden {
+		display: none !important;
+	}
+
+	.conference-detail-empty p {
+		margin: 0 0 0.35rem;
+		color: #00d9ff;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+	}
+
+	.conference-detail-empty span:not(.empty-cursor) {
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 0.82rem;
+	}
+
+	.empty-cursor {
 		color: #00ff41;
-		margin-right: 0.5rem;
+		font-size: 1.4rem;
+		font-weight: 700;
+		text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+	}
+
+	.conference-detail-panel.hidden {
+		display: none !important;
+	}
+
+	.conference-detail-panel:not(.hidden) {
+		animation: revealDetail 0.22s ease-out;
+	}
+
+	@keyframes revealDetail {
+		from {
+			opacity: 0;
+			transform: translateY(-8px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.detail-path {
+		margin-bottom: 1.25rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+		color: #00d9ff;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.85rem;
+	}
+
+	.detail-path span {
+		color: #00ff41;
+		font-weight: 700;
 	}
 
 	/* Conference Entry */
@@ -713,6 +852,17 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 
 	/* Responsive */
 	@media (max-width: 768px) {
+		.modern-container {
+			padding-inline: 0.75rem;
+		}
+
+		.clock-intro {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 1rem;
+			padding: 1.25rem;
+		}
+
 		.conf-header {
 			flex-direction: column;
 			align-items: flex-start;
@@ -735,6 +885,10 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		.row-rank,
 		.row-time {
 			text-align: left;
+		}
+
+		.row-time {
+			justify-content: flex-start;
 		}
 
 		.modal {
@@ -787,6 +941,43 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		attributeFilter: ['data-style']
 	})
 
+	// Expand one active conference at a time in the terminal detail viewer.
+	const conferenceTriggers = Array.from(
+		document.querySelectorAll<HTMLButtonElement>('[data-conference-trigger]')
+	)
+	const conferenceDetails = Array.from(
+		document.querySelectorAll<HTMLElement>('[data-conference-detail]')
+	)
+	const conferenceDetailEmpty = document.getElementById('conference-detail-empty')
+
+	const collapseConferenceDetails = () => {
+		conferenceTriggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'))
+		conferenceDetails.forEach((detail) => detail.classList.add('hidden'))
+		conferenceDetailEmpty?.classList.remove('hidden')
+	}
+
+	conferenceTriggers.forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const wasExpanded = trigger.getAttribute('aria-expanded') === 'true'
+			const conferenceId = trigger.dataset.conferenceTrigger
+			collapseConferenceDetails()
+
+			if (wasExpanded || !conferenceId) return
+
+			const selectedDetail = conferenceDetails.find(
+				(detail) => detail.dataset.conferenceDetail === conferenceId
+			)
+			if (!selectedDetail) return
+
+			trigger.setAttribute('aria-expanded', 'true')
+			conferenceDetailEmpty?.classList.add('hidden')
+			selectedDetail.classList.remove('hidden')
+			requestAnimationFrame(() => {
+				selectedDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+			})
+		})
+	})
+
 	// Modal functionality
 	const showTableBtn = document.getElementById('showTableBtn')
 	const closeModalBtn = document.getElementById('closeModalBtn')
@@ -815,6 +1006,8 @@ function formatDeadlineDate(deadline: string, timezone: string): string {
 		if (e.key === 'Escape' && !tableModal?.classList.contains('hidden')) {
 			tableModal?.classList.add('hidden')
 			document.body.style.overflow = 'auto'
+		} else if (e.key === 'Escape') {
+			collapseConferenceDetails()
 		}
 	})
 </script>

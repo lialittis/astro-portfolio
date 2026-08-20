@@ -5,7 +5,7 @@ import presetTypography from '@unocss/preset-typography'
 
 export default defineConfig({
   content: {
-    filesystem: ["**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}"],
+    filesystem: ["src/**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}"],
   },
   theme: {
     boxShadow: {

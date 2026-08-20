@@ -1,3 +1,5 @@
+# Source: https://ccfddl.com/conference/allconf.yml
+# Filter: CCF A, DS/SE/SC
 title: EUROCRYPT
 description: European Cryptology Conference
 sub: SC
@@ -11,7 +13,7 @@ confs:
     id: eurocrypt21
     link: https://eurocrypt.iacr.org/2021
     timeline:
-      - deadline: '2020-10-08 21:00:00'
+      - deadline: 2020-10-08 21:00:00
     timezone: UTC-12
     date: October 17-21, 2021
     place: Zagreb, Croatia
@@ -19,7 +21,7 @@ confs:
     id: eurocrypt24
     link: https://eurocrypt.iacr.org/2024
     timeline:
-      - deadline: '2023-10-06 23:59:59'
+      - deadline: 2023-10-06 23:59:59
     timezone: AoE
     date: May 26-30, 2024
     place: Zurich, Switzerland
@@ -27,7 +29,23 @@ confs:
     id: eurocrypt25
     link: https://eurocrypt.iacr.org/2025/
     timeline:
-      - deadline: '2024-10-02 23:59:59'
+      - deadline: 2024-10-02 23:59:59
     timezone: AoE
     date: May 4-8, 2025
     place: Madrid, Spain
+  - year: 2026
+    id: eurocrypt26
+    link: https://eurocrypt.iacr.org/2026/
+    timeline:
+      - deadline: 2025-10-02 23:59:59
+    timezone: AoE
+    date: May 10-14, 2026
+    place: Rome, Italy
+  - year: 2027
+    id: eurocrypt27
+    link: https://eurocrypt.iacr.org/2027/
+    timeline:
+      - deadline: 2026-09-17 23:59:59
+    timezone: AoE
+    date: April 11-15, 2027
+    place: Eindhoven, Netherlands

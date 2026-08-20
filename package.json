@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "sync:conferences": "node scripts/sync_ccf_conferences.mjs",
     "prettier": "npx prettier --write ."
   },
   "dependencies": {

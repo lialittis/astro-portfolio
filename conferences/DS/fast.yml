@@ -1,3 +1,5 @@
+# Source: https://ccfddl.com/conference/allconf.yml
+# Filter: CCF A, DS/SE/SC
 title: FAST
 description: USENIX Conference on File and Storage Technologies
 sub: DS
@@ -11,7 +13,7 @@ confs:
     id: fast21
     link: https://www.usenix.org/conference/fast21/
     timeline:
-      - deadline: '2020-09-24 23:59:59'
+      - deadline: 2020-09-24 23:59:59
     timezone: UTC-7
     date: February 23-25, 2021
     place: Virtual
@@ -19,7 +21,7 @@ confs:
     id: fast22
     link: https://www.usenix.org/conference/fast22/
     timeline:
-      - deadline: '2021-09-23 23:59:59'
+      - deadline: 2021-09-23 23:59:59
     timezone: UTC-7
     date: February 21-24, 2022
     place: SANTA CLARA, CA, USA
@@ -27,7 +29,7 @@ confs:
     id: fast23
     link: https://www.usenix.org/conference/fast23
     timeline:
-      - deadline: '2022-09-22 23:59:59'
+      - deadline: 2022-09-22 23:59:59
     timezone: UTC-7
     date: FEBRUARY 20-23, 2023
     place: SANTA CLARA, CA, USA
@@ -35,7 +37,7 @@ confs:
     id: fast24
     link: https://www.usenix.org/conference/fast24
     timeline:
-      - deadline: '2023-09-21 23:59:59'
+      - deadline: 2023-09-21 23:59:59
     timezone: UTC-7
     date: FEBRUARY 27-29, 2024
     place: SANTA CLARA, CA, USA
@@ -43,7 +45,7 @@ confs:
     id: fast25
     link: https://www.usenix.org/conference/fast25
     timeline:
-      - deadline: '2024-09-17 23:59:59'
+      - deadline: 2024-09-17 23:59:59
     timezone: UTC-7
     date: FEBRUARY 25-27, 2025
     place: SANTA CLARA, CA, USA
@@ -51,10 +53,21 @@ confs:
     id: fast26
     link: https://www.usenix.net/conference/fast26
     timeline:
-      - deadline: '2025-03-18 23:59:00'
+      - deadline: 2025-03-18 23:59:00
         comment: Spring deadline
-      - deadline: '2025-09-16 23:59:00'
+      - deadline: 2025-09-16 23:59:00
         comment: Fall deadline
     timezone: AoE
     date: FEBRUARY 24-26, 2026
     place: SANTA CLARA, CA, USA
+  - year: 2027
+    id: fast27
+    link: https://www.usenix.org/conference/fast27
+    timeline:
+      - deadline: 2026-03-17 23:59:00
+        comment: Spring deadline
+      - deadline: 2026-09-15 23:59:00
+        comment: Fall deadline
+    timezone: AoE
+    date: FEBRUARY 23-25, 2027
+    place: Renton, WA, USA

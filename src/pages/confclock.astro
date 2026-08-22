@@ -17,6 +17,17 @@ interface TimelineEntry {
 	comment?: string
 }
 
+interface SubmissionWindow {
+	id: string
+	label: string
+	deadline: string
+	deadlineDisplay: string
+	deadlineUtc: string
+	abstractDeadline?: string
+	abstractDeadlineDisplay?: string
+	abstractDeadlineUtc?: string
+}
+
 interface ConferenceYear {
 	year: number
 	id: string
@@ -36,8 +47,11 @@ interface Conference {
 	confs: ConferenceYear[]
 	latestconf: ConferenceYear
 	deadline: string
+	deadlineLabel: string
 	deadlineDisplay: string
+	deadlineSummary: string
 	deadlineUtc: string
+	submissionWindows: SubmissionWindow[]
 	remainingTime: string
 }
 
@@ -46,6 +60,28 @@ const CATEGORY_LABELS = {
 	SE: 'Software',
 	SC: 'Security',
 } as const
+
+const getSubmissionWindowLabel = (
+	entry: TimelineEntry,
+	index: number,
+	total: number,
+): string => {
+	const comment = entry.comment?.trim()
+	if (!comment) return total > 1 ? `Cycle ${index + 1}` : 'Main submission'
+
+	const ordinalCycle = comment.match(
+		/^(First|Second|Third)\s+(?:Paper\s+)?submission deadline$/i,
+	)
+	if (ordinalCycle) return `${ordinalCycle[1]} Cycle`
+
+	const label = comment
+		.replace(/^Submission Deadline Round\s+/i, 'Round ')
+		.replace(/\s+submission deadline$/i, '')
+		.replace(/\s+deadline$/i, '')
+		.trim()
+
+	return label.charAt(0).toUpperCase() + label.slice(1)
+}
 
 const loadConferences = (baseDir: string): Conference[] => {
 	const conferenceList: Conference[] = []
@@ -87,34 +123,63 @@ const loadConferences = (baseDir: string): Conference[] => {
 					const subject = parsed.sub as keyof typeof CATEGORY_LABELS
 					parsed.sub = CATEGORY_LABELS[subject]
 					
-					const deadlines = parsed.latestconf.timeline
-						.map((entry: TimelineEntry) => ({
-							entry,
-							timestamp: deadlineToTimestamp(
+					const submissionWindows = parsed.latestconf.timeline
+						.map((entry: TimelineEntry, index: number) => {
+							const timestamp = deadlineToTimestamp(
 								entry.deadline,
 								parsed.latestconf.timezone,
-							),
-						}))
+							)
+							if (timestamp === null) return null
+
+							const abstractTimestamp = entry.abstract_deadline
+								? deadlineToTimestamp(
+										entry.abstract_deadline,
+										parsed.latestconf.timezone,
+									)
+								: null
+
+							return {
+								id: `${parsed.latestconf.id}-window-${index + 1}`,
+								label: getSubmissionWindowLabel(
+									entry,
+									index,
+									parsed.latestconf.timeline.length,
+								),
+								deadline: entry.deadline,
+								deadlineDisplay: `${entry.deadline} ${parsed.latestconf.timezone}`,
+								deadlineUtc: new Date(timestamp).toISOString(),
+								...(entry.abstract_deadline && abstractTimestamp !== null
+									? {
+										abstractDeadline: entry.abstract_deadline,
+										abstractDeadlineDisplay: `${entry.abstract_deadline} ${parsed.latestconf.timezone}`,
+										abstractDeadlineUtc: new Date(abstractTimestamp).toISOString(),
+									}
+									: {}),
+							} satisfies SubmissionWindow
+						})
 						.filter(
-							(item: { timestamp: number | null }) =>
-								item.timestamp !== null,
+							(window: SubmissionWindow | null): window is SubmissionWindow =>
+								window !== null,
 						)
 
-					if (deadlines.length === 0) {
+					if (submissionWindows.length === 0) {
 						console.warn(`Warning: Skipping ${file}; no dated deadline`)
 						return
 					}
 
 					const now = Date.now()
 					const selected =
-						deadlines.find(
-							(item: { timestamp: number | null }) =>
-								item.timestamp! >= now,
-						) ?? deadlines[deadlines.length - 1]
+						submissionWindows.find(
+							(window: SubmissionWindow) =>
+								Date.parse(window.deadlineUtc) >= now,
+						) ?? submissionWindows[submissionWindows.length - 1]
 
-					parsed.deadline = selected.entry.deadline
-					parsed.deadlineDisplay = `${selected.entry.deadline} ${parsed.latestconf.timezone}`
-					parsed.deadlineUtc = new Date(selected.timestamp!).toISOString()
+					parsed.deadline = selected.deadline
+					parsed.deadlineLabel = selected.label
+					parsed.deadlineDisplay = selected.deadlineDisplay
+					parsed.deadlineSummary = `${selected.label} · ${selected.deadlineDisplay}`
+					parsed.deadlineUtc = selected.deadlineUtc
+					parsed.submissionWindows = submissionWindows
 					conferenceList.push(parsed)
 				} else {
 					console.warn(`Warning: Skipping ${file} due to invalid structure`)
@@ -211,7 +276,13 @@ const activeConferences = conferences
 									aria-expanded='false'
 									aria-controls={`conference-detail-${conf.latestconf.id}`}
 								>
-									<span class='row-title'>{conf.title}</span>
+									<span class='row-title'>
+										<span>{conf.title}</span>
+										<small>
+											{conf.deadlineLabel}
+											{conf.submissionWindows.length > 1 && ` · ${conf.submissionWindows.length} windows`}
+										</small>
+									</span>
 									<span class='row-category'>{conf.sub}</span>
 									<span class='row-rank'>CCF {conf.rank.ccf}</span>
 									<span class='row-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
@@ -259,7 +330,11 @@ const activeConferences = conferences
 
 								<div class='conf-details'>
 									<div class='detail-line'>
-										<span class='detail-label'>DEADLINE:</span>
+										<span class='detail-label'>NEXT WINDOW:</span>
+										<span class='detail-value window-name'>{conf.deadlineLabel}</span>
+									</div>
+									<div class='detail-line'>
+										<span class='detail-label'>PAPER DDL:</span>
 										<span class='detail-value' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
 											{conf.deadlineDisplay}
 										</span>
@@ -295,6 +370,51 @@ const activeConferences = conferences
 										</div>
 									)}
 								</div>
+
+								<section class='submission-schedule' aria-label={`${conf.title} submission windows`}>
+									<div class='schedule-header'>
+										<span>SUBMISSION WINDOWS</span>
+										<small>{conf.latestconf.timezone} · {conf.submissionWindows.length} total</small>
+									</div>
+									<div class='window-list'>
+										{conf.submissionWindows.map((window, index) => {
+											const deadlineTime = Date.parse(window.deadlineUtc)
+											const isClosed = deadlineTime < Date.now()
+											const isNext = !isClosed && window.deadlineUtc === conf.deadlineUtc
+											const abstractIsClosed = window.abstractDeadlineUtc
+												? Date.parse(window.abstractDeadlineUtc) < Date.now()
+												: false
+
+											return (
+												<div class={`submission-window ${isClosed ? 'closed' : isNext ? 'next' : 'upcoming'}`}>
+													<div class='window-heading'>
+														<span class='window-index'>{String(index + 1).padStart(2, '0')}</span>
+														<strong>{window.label}</strong>
+														<span class='window-status'>
+															{isClosed
+																? 'CLOSED'
+																: isNext
+																	? `NEXT · ${calculateRemainingTime(window.deadlineUtc)}`
+																	: 'UPCOMING'}
+														</span>
+													</div>
+													{window.abstractDeadlineDisplay && (
+														<div class='window-date-row'>
+															<span>REGISTER / ABSTRACT</span>
+															<time class={abstractIsClosed ? 'date-closed' : ''}>
+																{window.abstractDeadlineDisplay}
+															</time>
+														</div>
+													)}
+													<div class='window-date-row'>
+														<span>PAPER</span>
+														<time class={isClosed ? 'date-closed' : ''}>{window.deadlineDisplay}</time>
+													</div>
+												</div>
+											)
+										})}
+									</div>
+								</section>
 
 								{conf.description && (
 									<div class='conf-description'>
@@ -518,8 +638,18 @@ const activeConferences = conferences
 	}
 
 	.row-title {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
 		color: #00ff41;
 		font-weight: 600;
+	}
+
+	.row-title small {
+		color: #00d9ff;
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.02em;
 	}
 
 	.row-category {
@@ -725,6 +855,115 @@ const activeConferences = conferences
 		font-weight: 700;
 	}
 
+	.window-name {
+		color: #00d9ff;
+		font-weight: 700;
+	}
+
+	.submission-schedule {
+		margin-top: 1.5rem;
+		padding-top: 1.25rem;
+		border-top: 1px solid rgba(0, 217, 255, 0.2);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+	}
+
+	.schedule-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 0.9rem;
+		color: #00d9ff;
+		font-size: 0.82rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+
+	.schedule-header small {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 0.72rem;
+		font-weight: 500;
+		letter-spacing: 0;
+	}
+
+	.window-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+		gap: 0.75rem;
+	}
+
+	.submission-window {
+		padding: 0.9rem 1rem;
+		border: 1px solid rgba(0, 255, 65, 0.18);
+		border-radius: 6px;
+		background: rgba(0, 30, 10, 0.28);
+	}
+
+	.submission-window.next {
+		border-color: rgba(0, 217, 255, 0.55);
+		background: rgba(0, 45, 55, 0.25);
+		box-shadow: inset 3px 0 0 rgba(0, 217, 255, 0.7);
+	}
+
+	.submission-window.closed {
+		opacity: 0.52;
+		background: rgba(20, 20, 20, 0.25);
+	}
+
+	.window-heading {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: 0.65rem;
+		margin-bottom: 0.7rem;
+	}
+
+	.window-heading strong {
+		color: rgba(255, 255, 255, 0.92);
+		font-size: 0.84rem;
+	}
+
+	.window-index {
+		color: #00d9ff;
+		font-size: 0.72rem;
+	}
+
+	.window-status {
+		color: #00ff41;
+		font-size: 0.66rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+	}
+
+	.submission-window.next .window-status {
+		color: #00d9ff;
+	}
+
+	.submission-window.closed .window-status {
+		color: rgba(255, 255, 255, 0.48);
+	}
+
+	.window-date-row {
+		display: grid;
+		grid-template-columns: 145px 1fr;
+		gap: 0.75rem;
+		margin-top: 0.4rem;
+		font-size: 0.73rem;
+	}
+
+	.window-date-row span {
+		color: rgba(255, 255, 255, 0.48);
+	}
+
+	.window-date-row time {
+		color: rgba(255, 255, 255, 0.86);
+	}
+
+	.window-date-row time.date-closed {
+		color: rgba(255, 255, 255, 0.42);
+		text-decoration: line-through;
+	}
+
 	/* Conference Entry */
 	.conf-entry {
 		background: rgba(0, 20, 8, 0.2);
@@ -889,6 +1128,29 @@ const activeConferences = conferences
 
 		.row-time {
 			justify-content: flex-start;
+		}
+
+		.schedule-header {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.35rem;
+		}
+
+		.window-list {
+			grid-template-columns: 1fr;
+		}
+
+		.window-heading {
+			grid-template-columns: auto 1fr;
+		}
+
+		.window-status {
+			grid-column: 2;
+		}
+
+		.window-date-row {
+			grid-template-columns: 1fr;
+			gap: 0.15rem;
 		}
 
 		.modal {

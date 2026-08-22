@@ -11,7 +11,19 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 
 interface TimelineEntry {
   deadline: string;
-  comment: string;
+  abstract_deadline?: string;
+  comment?: string;
+}
+
+interface SubmissionWindow {
+  id: string;
+  label: string;
+  deadline: string;
+  deadlineDisplay: string;
+  deadlineUtc: string;
+  abstractDeadline?: string;
+  abstractDeadlineDisplay?: string;
+  abstractDeadlineUtc?: string;
 }
 
 interface ConferenceYear {
@@ -33,8 +45,11 @@ interface Conference {
   confs: ConferenceYear[];
   latestconf: ConferenceYear;
   deadline: string;
+  deadlineLabel: string;
   deadlineDisplay: string;
+  deadlineSummary: string;
   deadlineUtc: string;
+  submissionWindows: SubmissionWindow[];
   remainingTime: string;
 }
 
@@ -60,6 +75,18 @@ const CountdownCellRenderer = (props: { value: string; data: Conference }) => {
 
   return <span>{timeLeft}</span>;
 };
+
+const DeadlineSummaryCellRenderer = (props: { data: Conference }) => (
+  <span
+    title={props.data.deadlineSummary}
+    style={{ display: "flex", flexDirection: "column", lineHeight: 1.15 }}
+  >
+    <strong style={{ fontSize: "0.78rem" }}>{props.data.deadlineLabel}</strong>
+    <small style={{ fontSize: "0.64rem", opacity: 0.72 }}>
+      {props.data.deadlineDisplay}
+    </small>
+  </span>
+);
 
 const ConfTable = (props: ConfProps) => {
 
@@ -95,7 +122,7 @@ const ConfTable = (props: ConfProps) => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  const [allColumns, setColDefs] = useState<ColDef<Conference>[]>([
+  const allColumns: ColDef<Conference>[] = [
     { field: "title", headerName: "Title", maxWidth: 150,
       cellRenderer: TitleCellRender,
     },
@@ -103,7 +130,8 @@ const ConfTable = (props: ConfProps) => {
     { field: "rank.core", headerName: "CORE Rank", maxWidth: 100},
     { field: "rank.ccf", headerName: "CCF Rank", maxWidth: 100},
     // { field: "rank.thcpl", headerName: "THCPL Rank", maxWidth: 120},
-    { field: "deadlineDisplay", headerName: "Deadline"},
+    { field: "deadlineLabel", headerName: "Next Window", minWidth: 130},
+    { field: "deadlineDisplay", headerName: "Paper Deadline", minWidth: 190},
     {
       field: "remainingTime",
       headerName: "Clock",
@@ -132,11 +160,20 @@ const ConfTable = (props: ConfProps) => {
     { field: "latestconf.date", headerName: "Date"},
     { field: "latestconf.place", headerName: "Place"},
     // { field: "latestconf.link", headerName: "Link"},
-    ]);
+    ];
 
   // Adjust columns based on screen size
   const colDefs = isMobile
-    ? allColumns.filter(col => ["title", "deadlineDisplay", "remainingTime"].includes(col.field as string))
+    ? [
+        { field: "title", headerName: "Title", maxWidth: 105, cellRenderer: TitleCellRender },
+        {
+          field: "deadlineSummary",
+          headerName: "Next Deadline",
+          minWidth: 155,
+          cellRenderer: DeadlineSummaryCellRenderer,
+        },
+        allColumns.find((column) => column.field === "remainingTime")!,
+      ]
     : allColumns;
 
   const defaultColDef: ColDef = {

@@ -988,6 +988,7 @@ https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html
 https://thehackernews.com/2026/08/cisco-patches-nine-crosswork-and-secure.html
 https://thehackernews.com/2026/08/clickfix-attacks-deliver-macos-stealer.html
 https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html
+https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html
 https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html
 https://thehackernews.com/2026/08/enterprise-defenses-recovered-at-edge.html
 https://thehackernews.com/2026/08/fomo-in-soc-where-ai-platforms-like.html
@@ -1018,15 +1019,21 @@ https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html
 https://thehackernews.com/2026/08/safepal-hardware-wallet-maker-says-flaw.html
 https://thehackernews.com/2026/08/sap-commerce-cloud-flaw-could-let.html
 https://thehackernews.com/2026/08/shieldbreak-zero-day-poc-claims.html
+https://thehackernews.com/2026/08/shipping-more-ai-code-than-you-can.html
 https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html
+https://thehackernews.com/2026/08/the-outsized-shadow-why-5-of-ai-users.html
 https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html
 https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html
 https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html
+https://thehackernews.com/2026/08/tiktok-agrees-to-400-million-settlement.html
 https://thehackernews.com/2026/08/twinloot-abuses-sharepoint-and-teams-to.html
 https://thehackernews.com/2026/08/unc6671-vishing-attacks-target-personal.html
 https://thehackernews.com/2026/08/wazuh-and-ai-for-enhanced-soc-workflows.html
 https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html
+https://thehackernews.com/2026/08/weedhack-malware-spreads-via-fake.html
+https://thehackernews.com/2026/08/weekly-recap-ai-powered-plc-attacks.html
 https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html
+https://thehackernews.com/2026/08/wordlistloader-delivers-amatera-via.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1307,6 +1314,7 @@ https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-r
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/750000-impacted-by-data-breach-at-canadian-investment-watchdog/
 https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/
+https://www.securityweek.com/91-vulnerabilities-patched-in-spring-application-framework/
 https://www.securityweek.com/abstract-raises-25-million-to-expand-composable-security-operations-platform/
 https://www.securityweek.com/academics-build-ai-powered-android-vulnerability-discovery-and-validation-tool/
 https://www.securityweek.com/access-system-flaws-enabled-hackers-to-unlock-doors-at-major-european-firms/
@@ -1778,6 +1786,7 @@ https://www.securityweek.com/interpol-says-260-suspects-in-online-romance-scams-
 https://www.securityweek.com/iot-security-firm-exein-raises-e100-million/
 https://www.securityweek.com/iran-cyber-front-hacktivist-activity-rises-but-state-sponsored-attacks-stay-low/
 https://www.securityweek.com/iran-linked-hacker-attack-on-stryker-disrupted-manufacturing-and-shipping/
+https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/
 https://www.securityweek.com/iran-linked-hackers-take-aim-at-us-and-other-targets-raising-risk-of-cyberattacks-during-war/
 https://www.securityweek.com/iranian-apt-hacks-us-airport-bank-software-company/
 https://www.securityweek.com/iranian-apt-intrusion-masquerades-as-chaos-ransomware-attack/
@@ -1967,6 +1976,7 @@ https://www.securityweek.com/penn-and-phoenix-universities-disclose-data-breach-
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-data-breach-after-ransomware-attack/
 https://www.securityweek.com/pennsylvania-attorney-general-confirms-ransomware-behind-weeks-long-outage/
 https://www.securityweek.com/pentagons-chief-tech-officer-says-he-clashed-with-ai-company-anthropic-over-autonomous-warfare/
+https://www.securityweek.com/personal-information-exposed-in-apollo-global-data-breach/
 https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting-energy-sector/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
 https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/
@@ -2012,8 +2022,10 @@ https://www.securityweek.com/recent-sonicwall-vulnerabilities-exploited-in-ranso
 https://www.securityweek.com/record-breaking-ddos-attack-peaks-at-22-tbps-and-10-bpps/
 https://www.securityweek.com/red-hat-confirms-gitlab-instance-hack-data-theft/
 https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-solution/
+https://www.securityweek.com/reliaquest-confirms-shinyhunters-hack-but-says-impact-was-limited/
 https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unpatched-2020-cve/
 https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
+https://www.securityweek.com/rethinking-application-security-for-the-ai-era/
 https://www.securityweek.com/reveng-ai-raises-15-million-to-hunt-for-flaws-and-backdoors-in-software-binaries/
 https://www.securityweek.com/risk-ledger-raises-32-million-in-series-b-funding/
 https://www.securityweek.com/river-bank-says-hackers-deleted-data-stolen-in-ransomware-attack/
@@ -2088,6 +2100,7 @@ https://www.securityweek.com/thousands-of-magento-sites-hit-in-ongoing-defacemen
 https://www.securityweek.com/threat-actor-connected-to-play-ransomhub-and-dragonforce-ransomware-operations/
 https://www.securityweek.com/tidal-cyber-raises-10-million-for-cti-and-adversary-behavior-platform/
 https://www.securityweek.com/tiffany-data-breach-impacts-thousands-of-customers/
+https://www.securityweek.com/tiktok-reaches-400-million-settlement-with-us-justice-department-over-childrens-privacy/
 https://www.securityweek.com/top-us-accounting-firm-sax-discloses-2024-data-breach-impacting-220000/
 https://www.securityweek.com/torq-raises-140-million-at-1-2-billion-valuation/
 https://www.securityweek.com/toys-r-us-canada-customer-information-leaked-online/
@@ -2113,6 +2126,7 @@ https://www.securityweek.com/two-scattered-spider-suspects-arrested-in-uk-one-ch
 https://www.securityweek.com/two-us-cybersecurity-pros-plead-guilty-over-ransomware-attacks/
 https://www.securityweek.com/two-vulnerabilities-patched-in-ivanti-neurons-for-itsm/
 https://www.securityweek.com/tycoon-2fa-loses-phishing-kit-crown-amid-surge-in-attacks/
+https://www.securityweek.com/uber-fined-nearly-1-billion-by-dutch-regulators-over-automated-suspensions-of-driver-accounts/
 https://www.securityweek.com/uefi-vulnerability-in-major-motherboards-enables-early-boot-attacks/
 https://www.securityweek.com/uk-government-rolls-out-agentic-ai-defense-plan-alongside-industry-pledge/
 https://www.securityweek.com/uk-train-operator-lner-warns-customers-of-data-breach/

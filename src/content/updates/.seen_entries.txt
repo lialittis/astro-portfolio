@@ -1031,6 +1031,7 @@ https://thehackernews.com/2026/08/ransom-busters-claims-it-hacked.html
 https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html
 https://thehackernews.com/2026/08/safepal-hardware-wallet-maker-says-flaw.html
 https://thehackernews.com/2026/08/sap-commerce-cloud-flaw-could-let.html
+https://thehackernews.com/2026/08/securing-claude-code-new-compliance-api.html
 https://thehackernews.com/2026/08/shieldbreak-zero-day-poc-claims.html
 https://thehackernews.com/2026/08/shipping-more-ai-code-than-you-can.html
 https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets.html
@@ -1049,8 +1050,10 @@ https://thehackernews.com/2026/08/wazuh-and-ai-for-enhanced-soc-workflows.html
 https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html
 https://thehackernews.com/2026/08/weedhack-malware-spreads-via-fake.html
 https://thehackernews.com/2026/08/weekly-recap-ai-powered-plc-attacks.html
+https://thehackernews.com/2026/08/weekly-recap-chinese-spy-proxy-ai.html
 https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html
 https://thehackernews.com/2026/08/wordlistloader-delivers-amatera-via.html
+https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1295,6 +1298,7 @@ https://www.schneier.com/blog/archives/2026/08/hacking-public-wi-fi-dns-to-steal
 https://www.schneier.com/blog/archives/2026/08/hiding-prompt-injection-in-legal-filing.html
 https://www.schneier.com/blog/archives/2026/08/if-the-markets-reject-openai-and-anthropic-the-us-should-nationalize-them.html
 https://www.schneier.com/blog/archives/2026/08/iran-cyberattacks-against-minnesota-water-systems.html
+https://www.schneier.com/blog/archives/2026/08/is-someone-hacking-dod-refrigerators.html
 https://www.schneier.com/blog/archives/2026/08/llm-based-social-engineering-scams.html
 https://www.schneier.com/blog/archives/2026/08/llms-and-contextual-integrity.html
 https://www.schneier.com/blog/archives/2026/08/more-incidents-of-ais-going-rogue-in-cybersecurity-challenges.html
@@ -1335,6 +1339,7 @@ https://www.securityweek.com/689000-affected-by-insider-breach-at-finwise-bank/
 https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-ransom-demand/
 https://www.securityweek.com/700credit-data-breach-impacts-5-8-million-individuals/
 https://www.securityweek.com/750000-impacted-by-data-breach-at-canadian-investment-watchdog/
+https://www.securityweek.com/9-5-million-impacted-by-aesto-health-data-breach/
 https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/
 https://www.securityweek.com/91-vulnerabilities-patched-in-spring-application-framework/
 https://www.securityweek.com/abstract-raises-25-million-to-expand-composable-security-operations-platform/
@@ -1388,6 +1393,7 @@ https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-d
 https://www.securityweek.com/anthropic-refuses-to-bend-to-pentagon-on-ai-safeguards-as-dispute-nears-deadline/
 https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espionage-campaign/
 https://www.securityweek.com/anthropic-unveils-claude-security-to-counter-ai-powered-exploit-surge/
+https://www.securityweek.com/anthropic-warns-claude-users-of-infostealer-malware-infections/
 https://www.securityweek.com/api-threats-grow-in-scale-as-ai-expands-the-blast-radius/
 https://www.securityweek.com/apollomd-data-breach-impacts-626000-individuals/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
@@ -1556,6 +1562,7 @@ https://www.securityweek.com/critical-oracle-identity-manager-flaw-possibly-expl
 https://www.securityweek.com/critical-paperclip-flaw-allowed-admin-access-code-execution/
 https://www.securityweek.com/critical-quest-kace-vulnerability-potentially-exploited-in-attacks/
 https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/
+https://www.securityweek.com/critical-ruby-on-rails-vulnerability-in-attackers-crosshairs/
 https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/
 https://www.securityweek.com/critical-simplehelp-vulnerability-exploited-for-malware-delivery/
 https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/
@@ -1860,6 +1867,7 @@ https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-
 https://www.securityweek.com/manifold-raises-8-million-for-ai-detection-and-response/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
 https://www.securityweek.com/mazda-says-no-data-leakage-or-operational-impact-from-oracle-hack/
+https://www.securityweek.com/mckesson-confirms-data-breach-as-attacker-deadline-looms/
 https://www.securityweek.com/medtech-giant-stryker-crippled-by-iran-linked-hacker-attack/
 https://www.securityweek.com/medtronic-data-breach-impacts-3-8-million-people/
 https://www.securityweek.com/medtronic-hack-confirmed-after-shinyhunters-threatens-data-leak/
@@ -1940,6 +1948,7 @@ https://www.securityweek.com/new-xcsset-macos-malware-variant-hijacks-cryptocurr
 https://www.securityweek.com/new-york-awards-9-million-to-strengthen-cybersecurity-at-153-water-systems/
 https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-in-funding/
 https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/
+https://www.securityweek.com/nightmare-eclipse-drops-hardbreacher-kaspersky-product-exploit/
 https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/
 https://www.securityweek.com/nike-probing-potential-security-incident-as-hackers-threaten-to-leak-data/
 https://www.securityweek.com/niobium-raises-23-million-for-fhe-hardware-acceleration/
@@ -2002,6 +2011,7 @@ https://www.securityweek.com/palo-alto-networks-google-cloud-strike-multibillion
 https://www.securityweek.com/palo-alto-networks-patches-13-vulnerabilities/
 https://www.securityweek.com/palo-alto-networks-sonicwall-patch-high-severity-vulnerabilities/
 https://www.securityweek.com/palo-alto-networks-to-patch-zero-day-exploited-to-hack-firewalls/
+https://www.securityweek.com/papercut-exploitation-escalates-to-active-intrusions/
 https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/
 https://www.securityweek.com/patch-bypassed-for-supermicro-vulnerability-allowing-bmc-hack/
 https://www.securityweek.com/payment-system-vendor-took-year-to-patch-infinite-card-top-up-hack-security-firm/
@@ -2082,6 +2092,7 @@ https://www.securityweek.com/security-of-100-ai-agents-tested-and-ranked-what-yo
 https://www.securityweek.com/securityweek-to-host-2025-ics-cybersecurity-conference-october-27-30-in-atlanta/
 https://www.securityweek.com/securityweek-to-host-ai-risk-summit-august-11-12-at-the-ritz-carlton-half-moon-bay/
 https://www.securityweek.com/serial-to-ip-converter-flaws-expose-ot-and-healthcare-systems-to-hacking/
+https://www.securityweek.com/servicenow-patches-3-critical-code-injection-vulnerabilities/
 https://www.securityweek.com/servicenow-to-acquire-armis-for-7-75-billion-in-cash/
 https://www.securityweek.com/servicenow-to-acquire-identity-security-firm-veza-in-reported-1-billion-deal/
 https://www.securityweek.com/shai-hulud-supply-chain-attack-led-to-8-5-million-trust-wallet-heist/
@@ -2209,6 +2220,7 @@ https://www.securityweek.com/vulnerability-allows-hackers-to-hijack-openclaw-ai-
 https://www.securityweek.com/vulnerability-in-claude-extension-for-chrome-exposes-ai-agent-to-takeover/
 https://www.securityweek.com/vulnerability-in-ms-agent-ai-framework-can-allow-full-system-compromise/
 https://www.securityweek.com/vulnerability-in-popular-conference-software-granted-attackers-a-100-talk-acceptance-rate/
+https://www.securityweek.com/watchguard-patches-critical-vulnerabilities/
 https://www.securityweek.com/webinar-today-ai-and-the-trust-dilemma-balancing-innovation-and-risk/
 https://www.securityweek.com/webinar-today-breaking-ai-inside-the-art-of-llm-pen-testing/
 https://www.securityweek.com/webinar-today-fact-vs-fiction-the-truth-about-api-security/
@@ -2217,6 +2229,7 @@ https://www.securityweek.com/webinar-today-protecting-what-wafs-and-gateways-can
 https://www.securityweek.com/webinar-today-rethinking-cyber-defense-for-ai-speed-attacks/
 https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/
 https://www.securityweek.com/west-virginia-credit-union-notifying-187000-people-impacted-by-2023-data-breach/
+https://www.securityweek.com/what-the-hugging-face-incident-teaches-security-leaders-about-ai-agent-access/
 https://www.securityweek.com/when-information-becomes-the-attack-surface-understanding-ai-agent-traps/
 https://www.securityweek.com/whisperpair-attack-leaves-millions-of-bluetooth-accessories-open-to-hijacking/
 https://www.securityweek.com/white-circle-raises-11-million-for-ai-control-platform/

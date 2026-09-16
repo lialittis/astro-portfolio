@@ -97,24 +97,24 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
 					<SecurityNewsCard />
 				</div>
 
-				<CommandLine command="./show_map.sh" />
+				<CommandLine command="cat whats-new.log" />
 				<div class="hacker-section">
+					<Now />
+				</div>
+
+				<CommandLine command="cat contact.json && ./show_map.sh" />
+				<div class="hacker-grid">
+					<ContactsCard />
 					<Card
 						colSpan='md:col-span-1'
 						rowSpan='md:row-span-1'
 						title='Countries I visited'
 						href='travel'
 					>
-						<div class='h-[250px] w-full relative flex items-center justify-center'>
+						<div class='h-[160px] w-full relative flex items-center justify-center'>
 							<Globe client:load />
 						</div>
 					</Card>
-				</div>
-
-				<CommandLine command="cat contact.json" />
-				<div class="hacker-grid">
-					<ContactsCard />
-					<Now />
 					<TimeZone />
 				</div>
 			</div>

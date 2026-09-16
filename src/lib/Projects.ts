@@ -1,4 +1,19 @@
-const projects = [
+export interface Project {
+	title: string;
+	technologies: string[];
+	description: string;
+	url: string;
+	status?: 'preparing';
+}
+
+const projects: Project[] = [
+	{
+		title: 'SystemSketch',
+		technologies: [],
+		description: '',
+		url: '',
+		status: 'preparing'
+	},
 	{
 		title: 'Fun TUI in Rust',
 		technologies: ['Rust', 'TUI', 'CLI', 'Crossterm'],

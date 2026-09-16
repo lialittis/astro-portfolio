@@ -31,13 +31,13 @@ const title = "Projects";
           {
             projects.map((project, index) => (
               <div class="file-listing-line">
-                <span class="file-mode">drwxr-xr-x</span>
+                <span class="file-mode">{project.status === 'preparing' ? '-rw-r--r--' : 'drwxr-xr-x'}</span>
                 <span class="file-count">2</span>
                 <span class="file-owner">tianchi</span>
                 <span class="file-group">staff</span>
-                <span class="file-size">4096</span>
+                <span class="file-size">{project.status === 'preparing' ? '0' : '4096'}</span>
                 <span class="file-date">Nov 18 2025</span>
-                <span class="file-name">project_{String(index + 1).padStart(2, '0')}_[{project.title}]</span>
+                <span class:list={['file-name', { 'file-name-draft': project.status === 'preparing' }]}>project_{String(index + 1).padStart(2, '0')}_[{project.title}]{project.status === 'preparing' && '.draft'}</span>
               </div>
             ))
           }
@@ -48,26 +48,35 @@ const title = "Projects";
             projects.map((project, index) => (
               <div class="hacker-project-card">
                 <div class="project-header-hacker">
-                  <CommandLine command={`cat project_${String(index + 1).padStart(2, '0')}_[${project.title}]`} />
+                  <CommandLine command={`${project.status === 'preparing' ? 'touch' : 'cat'} project_${String(index + 1).padStart(2, '0')}_[${project.title}]`} />
                 </div>
                 
                 <div class="project-content-hacker">
                   <div class="project-heading">
                     <h2 class="project-title">{project.title}</h2>
-                    <span class="project-number">[{String(index + 1).padStart(2, '0')}]</span>
+                    <div class="project-meta">
+                      {project.status === 'preparing' && <span class="project-status">PREPARING</span>}
+                      <span class="project-number">[{String(index + 1).padStart(2, '0')}]</span>
+                    </div>
                   </div>
                   
-                  <div class="tech-stack-hacker">
-                    {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
-                      <span class="tech-tag-hacker">{tech}</span>
-                    ))}
-                  </div>
+                  {project.technologies.length > 0 && (
+                    <div class="tech-stack-hacker">
+                      {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
+                        <span class="tech-tag-hacker">{tech}</span>
+                      ))}
+                    </div>
+                  )}
                   
-                  <p class="project-description">{project.description}</p>
+                  {project.description && <p class="project-description">{project.description}</p>}
                   
-                  <a href={project.url} target="_blank" rel="noreferrer" class="project-link-hacker">
-                    <span><span class="action-prompt">$</span> open project</span>
-                  </a>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noreferrer" class="project-link-hacker">
+                      <span><span class="action-prompt">$</span> open project</span>
+                    </a>
+                  ) : (
+                    <p class="empty-project">// empty workspace — figures coming soon</p>
+                  )}
                 </div>
               </div>
             ))
@@ -151,6 +160,10 @@ const title = "Projects";
     font-weight: 600;
   }
 
+  .file-name-draft {
+    color: #f7c873;
+  }
+
   /* Hacker Mode Styles */
   .projects-list {
     display: flex;
@@ -222,11 +235,37 @@ const title = "Projects";
     font-size: 0.875rem;
   }
 
+  .project-meta {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .project-status {
+    padding: 0.25rem 0.55rem;
+    color: #f7c873;
+    background: rgba(247, 200, 115, 0.07);
+    border: 1px solid rgba(247, 200, 115, 0.36);
+    border-radius: 4px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
   .project-description {
     margin: 1.5rem 0;
     color: #b8c4c0 !important;
     font-family: 'SF Mono', monospace;
     line-height: 1.7;
+  }
+
+  .empty-project {
+    margin: 1.25rem 0 0;
+    color: #789184 !important;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.85rem;
+    font-style: italic;
   }
 
   .tech-stack-hacker {

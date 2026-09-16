@@ -37,12 +37,26 @@ const image =
     <link rel="preconnect" href="https://cdn.fontshare.com" />
   </head>
   <body data-style="hacker"
-    class="bg-darkslate-700 md:h-screen flex flex-col items-center"
+    class="bg-darkslate-700 min-h-screen flex flex-col items-center"
   >
     <slot name="loader" />
     <slot />
 
     <script src="../js/scripts.js"></script>
+    <script is:inline>
+      (() => {
+        const hideLoader = () => {
+          const loader = document.querySelector('.loader');
+          if (!loader) return;
+          loader.style.opacity = '0';
+          loader.style.pointerEvents = 'none';
+          window.setTimeout(() => loader.remove(), 300);
+        };
+
+        if (document.readyState === 'complete') hideLoader();
+        else window.addEventListener('load', hideLoader, { once: true });
+      })();
+    </script>
   </body>
 </html>
 
@@ -68,6 +82,10 @@ const image =
     margin: 0;
     font-family: "Satoshi", sans-serif;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .loader {
+    transition: opacity 0.25s ease;
   }
 
   h1,

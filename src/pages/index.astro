@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import HackerLayout from '../layouts/HackerLayout.astro'
 import Card from '../components/Card/index.astro'
 import IntroCard from '../components/IntroCard.astro'
 import ContactsCard from '../components/ContactsCard.astro'
@@ -11,33 +10,11 @@ import '../style/frontpage.css'
 import '../style/hacker-theme.css'
 import KeyWords from '../components/KeyWords.astro'
 import SecurityNewsCard from '../components/SecurityNewsCard.astro'
-import StyleSwitcher from '../components/StyleSwitcher.astro'
 import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
 import CommandLine from '../components/Terminal/CommandLine.astro'
 
 ---
-
-<script>
-	// Apply style on load and toggle layout visibility
-	const style = localStorage.getItem('style') || 'modern';
-	document.body.setAttribute('data-style', style);
-	
-	// Toggle layout visibility immediately to prevent flash
-	const hackerContainer = document.querySelector('.hacker-container');
-	const hackerLayout = document.querySelector('.hacker-layout');
-	const modernLayout = document.querySelector('.modern-layout');
-	
-	if (style === 'hacker') {
-		hackerContainer?.setAttribute('style', 'display: block !important;');
-		hackerLayout?.classList.remove('hidden');
-		modernLayout?.classList.add('hidden');
-	} else {
-		hackerContainer?.setAttribute('style', 'display: none !important;');
-		hackerLayout?.classList.add('hidden');
-		modernLayout?.classList.remove('hidden');
-	}
-</script>
 
 <script>
 	import { stagger, spring, timeline, type TimelineDefinition } from 'motion'
@@ -60,8 +37,6 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
 
 	timeline(sequence as TimelineDefinition)
 </script>
-
-<StyleSwitcher />
 
 <Layout
 	title='Tianchi YU(于天池) - Developer & Hacker'
@@ -94,7 +69,7 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
 	
 	<!-- Hacker Mode Layout -->
 	<div class="hacker-container">
-		<TerminalWrapper class="hacker-layout hidden">
+		<TerminalWrapper>
 			<TerminalHeader title="root@tianchi:~$" />
 			
 			<div class="terminal-content">
@@ -144,227 +119,23 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
 			</div>
 		</TerminalWrapper>
 	</div>
-
-	<!-- Modern Mode Layout -->
-	<main
-		class='modern-layout hidden text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:auto-rows-auto'
-	>
-		<IntroCard />
-		<KeyWords />
-		<ContactsCard />
-
-		<Card
-			colSpan='md:col-span-1'
-			rowSpan='md:row-span-2'
-			title='Blog'
-			href='/blog'
-		>
-			<p>More Coming...</p>
-		</Card>
-		<SecurityNewsCard />
-		<Card
-			colSpan='md:col-span-1'
-			rowSpan='md:row-span-2'
-			title='Countries I visited'
-			href='travel'
-		>
-			<div class='h-[250px] w-full relative flex items-center justify-center'>
-				<Globe client:load />
-			</div>
-		</Card>
-		<Now />
-		<TimeZone />
-	</main>
 </Layout>
 
 <style>
-  @import "../style/glassmorphism-theme.css";
   @import "../style/hacker-theme.css";
 
   /* Hacker Container */
   .hacker-container {
-    display: none;
+    display: block;
     min-height: 100vh;
     padding: 2rem;
     padding-top: 6rem; /* Space for navbar */
   }
 
-  body[data-style="hacker"] .hacker-container {
-    display: block !important;
-  }
-
-  body[data-style="modern"] .hacker-container {
-    display: none !important;
-  }
-
-  /* Modern Layout */
-  .modern-layout {
-    display: grid;
-  }
-
-  .modern-layout.hidden {
-    display: none !important;
-  }
-
-  /* Modern glassmorphism theme */
-  .modern-layout {
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
-    position: relative;
-    z-index: 10;
-    min-height: 100vh;
-  }
-
-  main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* Use glassmorphism card base */
-  :global(.card) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.3s ease !important;
-    animation: fadeInUp 0.6s ease-out;
-  }
-
-  :global(.card:hover) {
-    transform: translateY(-8px) !important;
-    border-color: rgba(102, 126, 234, 0.5) !important;
-    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25) !important;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.12) 100%) !important;
-  }
-
-  /* Typography */
-  :global(.card h1), :global(.card h2), :global(.card h3), :global(.card h4), :global(.card h5), :global(.card h6) {
-    color: rgba(255, 255, 255, 0.98) !important;
-    font-weight: 700 !important;
-  }
-
-  :global(.card p) {
-    color: rgba(255, 255, 255, 0.9) !important;
-    line-height: 1.6 !important;
-  }
-
-  :global(.card .text-xs) {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  :global(.card .text-sm) {
-    color: rgba(255, 255, 255, 0.75) !important;
-  }
-
-  /* Links */
-  :global(.card a) {
-    color: rgba(255, 255, 255, 0.95) !important;
-    transition: all 0.3s ease !important;
-    text-decoration: underline !important;
-    text-decoration-color: rgba(102, 126, 234, 0.5) !important;
-  }
-
-  :global(.card a:hover) {
-    color: #78dbff !important;
-    text-decoration-color: #78dbff !important;
-  }
-
-  :global(.card .text-red-500) {
-    background: linear-gradient(135deg, #78dbff 0%, #667eea 100%) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-  }
-
-  :global(.card .text-red-500:hover) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-  }
-
-  /* Buttons */
-  :global(.card button), :global(.card .button-like) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    backdrop-filter: blur(15px) !important;
-    color: rgba(255, 255, 255, 0.95) !important;
-    transition: all 0.3s ease !important;
-  }
-
-  :global(.card button:hover), :global(.card .button-like:hover) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    transform: translateY(-3px) !important;
-    border-color: rgba(102, 126, 234, 0.6) !important;
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
-    color: white !important;
-  }
-
-  /* Icons */
-  :global(.card svg) {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: all 0.3s ease !important;
-  }
-
-  :global(.card:hover svg) {
-    color: #78dbff !important;
-  }
-
-  /* Special components */
-  :global(.intro-card), :global(.contact-card) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
-  }
-
-  :global(.card .h-\[250px\]) {
-    background: rgba(0, 0, 0, 0.2) !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  :global(.security-news-card), :global(.keywords-card) {
-    background: linear-gradient(135deg, rgba(120, 219, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%) !important;
-  }
-
-  :global(.now-card), :global(.timezone-card) {
-    background: linear-gradient(135deg, rgba(255, 119, 198, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%) !important;
-  }
-
-  :global(.card span), :global(.card div), :global(.card time) {
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-
-  /* Animation */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
-    :global(.card p) {
-      font-size: 0.95rem !important;
-      line-height: 1.5 !important;
-    }
-    
-    :global(.card h1), :global(.card h2), :global(.card h3) {
-      font-size: 1.1rem !important;
+    .hacker-container {
+      padding: 1rem;
+      padding-top: 5rem;
     }
   }
 </style>

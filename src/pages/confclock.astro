@@ -1,7 +1,6 @@
 ---
 import ConfTable from '../components/Table/ConfTable'
 import Layout from "../layouts/Layout.astro";
-import StyleSwitcher from '../components/StyleSwitcher.astro'
 import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
 import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 import CommandLine from '../components/Terminal/CommandLine.astro'
@@ -216,27 +215,7 @@ const activeConferences = conferences
 
 
 <Layout title='Conferences Clock' description=''>
-	<StyleSwitcher />
-	
-	<!-- Modern Layout -->
-	<div class='modern-container'>
-		<div id='timeDisplay' class='pt-24 md:pt-28 w-full'>
-			<header class='clock-intro'>
-				<div>
-					<p class='clock-eyebrow'>CCF A · {conferences.length} conferences</p>
-					<h1>Conference Clock</h1>
-					<p>Systems, software & programming languages, and security.</p>
-				</div>
-				<a href='https://ccfddl.com/' target='_blank' rel='noopener noreferrer'>
-					Data from CCFDDL ↗
-				</a>
-			</header>
-			<ConfTable conferences={conferences} client:load />
-		</div>
-	</div>
-
-	<!-- Hacker Layout -->
-    <div id="hacker-container" class="hacker-container hidden">
+    <div id="hacker-container" class="hacker-container">
 		<TerminalWrapper>
 			<TerminalHeader title='~/conferences/deadlines' />
 			<div class='terminal-content'>
@@ -448,27 +427,11 @@ const activeConferences = conferences
 <style>
 	@import '../style/hacker-theme.css';
 	
-	/* Container visibility */
 	:global(body) {
 		height: auto !important;
 		min-height: 100vh;
 		justify-content: flex-start !important;
 		align-items: stretch !important;
-	}
-
-	.modern-container {
-		display: block;
-		position: relative;
-		z-index: 100;
-		width: 100%;
-		max-width: 1500px;
-		margin: 0 auto;
-		padding: 0 1.5rem 3rem;
-		box-sizing: border-box;
-	}
-
-	.modern-container.hidden {
-		display: none !important;
 	}
 
 	.hacker-container {
@@ -1091,17 +1054,6 @@ const activeConferences = conferences
 
 	/* Responsive */
 	@media (max-width: 768px) {
-		.modern-container {
-			padding-inline: 0.75rem;
-		}
-
-		.clock-intro {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 1rem;
-			padding: 1.25rem;
-		}
-
 		.conf-header {
 			flex-direction: column;
 			align-items: flex-start;
@@ -1172,37 +1124,6 @@ const activeConferences = conferences
 </style>
 
 <script>
-	// Toggle between modern and hacker layouts
-	function toggleLayout() {
-		const modernContainer = document.querySelector('.modern-container')
-		const hackerContainer = document.querySelector('.hacker-container')
-		const currentStyle = document.body.getAttribute('data-style')
-
-		if (currentStyle === 'hacker') {
-			modernContainer?.classList.add('hidden')
-			hackerContainer?.classList.remove('hidden')
-		} else {
-			modernContainer?.classList.remove('hidden')
-			hackerContainer?.classList.add('hidden')
-		}
-	}
-
-	// Initial setup
-	toggleLayout()
-
-	// Listen for style changes
-	window.addEventListener('styleChange', toggleLayout)
-	
-	// MutationObserver for reliable theme switching
-	const observer = new MutationObserver(() => {
-		toggleLayout()
-	})
-
-	observer.observe(document.body, {
-		attributes: true,
-		attributeFilter: ['data-style']
-	})
-
 	// Expand one active conference at a time in the terminal detail viewer.
 	const conferenceTriggers = Array.from(
 		document.querySelectorAll<HTMLButtonElement>('[data-conference-trigger]')

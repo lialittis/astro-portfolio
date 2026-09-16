@@ -1,53 +1,119 @@
 ---
-import Card from "./Card/index.astro";
+import Card from './Card/index.astro'
+
+const focusAreas = [
+  {
+    label: 'research',
+    items: ['System Security', 'Microarchitecture', 'Remote Attacks', 'Program Analysis']
+  },
+  {
+    label: 'building',
+    items: ['C/C++', 'Rust', 'Go', 'Python', 'OCaml']
+  },
+  {
+    label: 'interests',
+    items: [
+      'Cyber-Physical Systems',
+      'Distributed Systems',
+      'AI Security',
+      'Reverse Engineering'
+    ]
+  }
+]
 ---
 
-<Card
-  colSpan="md:col-span-1"
-  rowSpan="md:row-span-10"
-  title="Key Words About me"
->
-  <div class="flex flex-col gap-2">
-    <p class="text-sm font-light">
-      <br />
-      <a class="text-red">As A Researcher</a>
-      <ul class="list-disc list-inside">
-        <li>System Security</li>
-        <li>xPUs and Micro-arch</li>
-        <li>Remote Attacks</li>
-        <li>Cyber-Physical Systems</li>
-        <li>Blockchain and Distributed Systems</li>
-        <li>AI Security & Privacy</li>
-      </ul>
-    </p>
-    <p class="text-sm font-light">
-      <br />
-      <a class="text-red">As A Developer</a>
-      <ul class="list-disc list-inside">
-        <li>C/C++</li>
-        <li>GoLang</li>
-        <li>Python</li>
-        <li>OCaml</li>
-        <li>Rust</li>
-        <li>Nodejs</li>
-      </ul>
-    </p>
-
-    <p class="text-sm font-light">
-      <br />
-      <a class="text-red">What I believe</a>
-      <p class="text-xl">"Talk is cheap, show me the code."</p>
-      <p class="text-xl">"Stay Hungry, Stay Foolish."</p>
-    </p>
-
-    <!-- <p class="text-sm font-light">
-      With a strong appreciation for the open-source ethos, I am also venturing
-      into entrepreneurship. Lately, I've been intrigued by the profound
-      influence of computer science on society. I look forward to witnessing and
-      contributing to the transformative changes unfolding in the real world.
-    </p>
-    <p class="text-sm font-light">
-      I believe that a successful life stems from transcending individual
-      perspectives and quick execution. -->
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-auto" title="Current Focus">
+  <div class="focus-list">
+    {
+      focusAreas.map(({ label, items }) => (
+        <div class="focus-row">
+          <span class="focus-label">{label}</span>
+          <span class="focus-arrow" aria-hidden="true">→</span>
+          <div class="focus-tags">
+            {items.map((item) => <span class="focus-tag">{item}</span>)}
+          </div>
+        </div>
+      ))
+    }
   </div>
+
+  <blockquote class="focus-quote">
+    <del>Talk is cheap. Show me the code.</del>
+    <span>Code (from AI) is cheap. Show me the idea.</span>
+  </blockquote>
 </Card>
+
+<style>
+  .focus-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .focus-row {
+    display: grid;
+    grid-template-columns: 5.5rem auto 1fr;
+    align-items: start;
+    gap: 0.65rem;
+  }
+
+  .focus-label {
+    color: #f7c873;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+  }
+
+  .focus-arrow {
+    color: #00ff41;
+    line-height: 1.75rem;
+  }
+
+  .focus-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .focus-tag {
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    border-radius: 0.25rem;
+    color: #b8c4c0;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .focus-quote {
+    border-left: 2px solid rgba(0, 255, 65, 0.45);
+    display: grid;
+    font-size: 0.8rem;
+    font-style: italic;
+    gap: 0.35rem;
+    margin: 1rem 0 0;
+    padding-left: 0.75rem;
+  }
+
+  .focus-quote del {
+    color: #52645b;
+    text-decoration-color: #f7c873;
+    text-decoration-thickness: 1px;
+  }
+
+  .focus-quote span {
+    color: #00d9ff;
+  }
+
+  @media (max-width: 640px) {
+    .focus-row {
+      grid-template-columns: auto 1fr;
+      gap: 0.3rem 0.5rem;
+    }
+
+    .focus-tags {
+      grid-column: 1 / -1;
+      padding-left: 1rem;
+    }
+  }
+</style>

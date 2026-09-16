@@ -69,7 +69,7 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
   </div> -->
 	
 	<!-- Hacker Mode Layout -->
-	<div class="hacker-container">
+	<div class="hacker-container home-terminal">
 		<TerminalWrapper>
 			<TerminalHeader title="root@tianchi:~$" />
 			
@@ -131,6 +131,101 @@ import CommandLine from '../components/Terminal/CommandLine.astro'
     min-height: 100vh;
     padding: 2rem;
     padding-top: 2rem;
+  }
+
+  .home-terminal :global(.card) {
+    background: linear-gradient(135deg, rgba(0, 22, 18, 0.72), rgba(0, 8, 6, 0.94)) !important;
+    border: 1px solid rgba(0, 255, 65, 0.18) !important;
+    border-left: 2px solid rgba(0, 255, 65, 0.38) !important;
+    box-shadow:
+      0 4px 18px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(0, 255, 65, 0.06) !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
+  }
+
+  .home-terminal :global(.card:hover) {
+    background: linear-gradient(135deg, rgba(0, 29, 25, 0.82), rgba(0, 10, 8, 0.97)) !important;
+    border-color: rgba(0, 217, 255, 0.48) !important;
+    border-left-color: #00d9ff !important;
+    box-shadow:
+      0 0 24px rgba(0, 217, 255, 0.1),
+      inset 0 1px 0 rgba(0, 217, 255, 0.08) !important;
+    transform: none !important;
+  }
+
+  .home-terminal :global(.card h1),
+  .home-terminal :global(.card h2),
+  .home-terminal :global(.card h3) {
+    color: #00d9ff !important;
+    text-shadow: 0 0 12px rgba(0, 217, 255, 0.2) !important;
+  }
+
+  .home-terminal :global(.card h4),
+  .home-terminal :global(.card h5),
+  .home-terminal :global(.card h6),
+  .home-terminal :global(.card .text-red) {
+    color: #f7c873 !important;
+    text-shadow: 0 0 8px rgba(247, 200, 115, 0.15) !important;
+  }
+
+  .home-terminal :global(.card p),
+  .home-terminal :global(.card li),
+  .home-terminal :global(.card address),
+  .home-terminal :global(.card div) {
+    color: #b8c4c0 !important;
+  }
+
+  .home-terminal :global(.card b) {
+    color: #f7c873 !important;
+  }
+
+  .home-terminal :global(.card li::marker) {
+    color: #f7c873;
+  }
+
+  .home-terminal :global(.card a) {
+    color: #00d9ff !important;
+    border-bottom-color: rgba(0, 217, 255, 0.3) !important;
+  }
+
+  .home-terminal :global(.card a:hover) {
+    color: #00ff41 !important;
+    border-bottom-color: #00ff41 !important;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.35) !important;
+  }
+
+  .home-terminal :global(.card .text-xs),
+  .home-terminal :global(.card .text-sm) {
+    color: #789184 !important;
+  }
+
+  .home-terminal :global(.card time) {
+    color: #00d9ff !important;
+    text-shadow: 0 0 16px rgba(0, 217, 255, 0.18);
+  }
+
+  .home-terminal :global(.card button) {
+    background: rgba(0, 255, 65, 0.08) !important;
+    border-color: rgba(0, 255, 65, 0.35) !important;
+    color: #00ff41 !important;
+  }
+
+  .home-terminal :global(.card button:hover) {
+    background: rgba(0, 217, 255, 0.1) !important;
+    border-color: #00d9ff !important;
+    color: #00d9ff !important;
+    box-shadow: 0 0 16px rgba(0, 217, 255, 0.16) !important;
+  }
+
+  .home-terminal :global(.card svg) {
+    color: #00d9ff !important;
+    filter: drop-shadow(0 0 4px rgba(0, 217, 255, 0.25)) !important;
+  }
+
+  .home-terminal :global(.hacker-intro),
+  .home-terminal :global(.hacker-section),
+  .home-terminal :global(.hacker-grid) {
+    border-left-color: rgba(0, 255, 65, 0.3);
   }
 
   @media (max-width: 768px) {

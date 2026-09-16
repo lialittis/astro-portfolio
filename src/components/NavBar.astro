@@ -1,122 +1,93 @@
-<nav class="navbar-cool">
-  <a class="navbar-brand" href="/">Tianchi YU</a>
-  <div class="navbar-desktop">
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/project">Projects</a>
-    <a class="nav-link" href="/me">About</a>
-    <a class="nav-link" href="/blog">Blogs</a>
-    <a class="nav-link" href="/publications">Publications</a>
-    <a class="nav-link" href="/confclock">Conferences</a>
-  </div>
-  <button id="menu-button" class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-    <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-  </button>
-  <div id="mobile-menu" class="mobile-dropdown hidden">
-    <a class="mobile-nav-link" href="/">Home</a>
-    <a class="mobile-nav-link" href="/project">Projects</a>
-    <a class="mobile-nav-link" href="/me">About</a>
-    <a class="mobile-nav-link" href="/blog">Blogs</a>
-    <a class="mobile-nav-link" href="/publications">Publications</a>
-    <a class="mobile-nav-link" href="/confclock">Conferences</a>
-  </div>
+---
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/project', label: 'projects' },
+  { href: '/me', label: 'about' },
+  { href: '/blog', label: 'blog' },
+  { href: '/publications', label: 'publications' },
+  { href: '/confclock', label: 'conferences' },
+];
+
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<nav class="terminal-nav" aria-label="Primary navigation">
+  {links.map(({ href, label }) => (
+    <a
+      href={href}
+      class:list={['terminal-nav-link', { active: isActive(href) }]}
+      aria-current={isActive(href) ? 'page' : undefined}
+    >
+      <span aria-hidden="true">~/</span>{label}
+    </a>
+  ))}
 </nav>
 
 <style>
-  .navbar-cool {
-    position: fixed; top: 50%; left: 20px; z-index: 1000;
-    display: flex; flex-direction: column; align-items: center;
-    padding: 1.5rem 1rem; transform: translateY(-50%);
-    background: rgba(0, 20, 0, 0.92); border: 1px solid #00ff41;
-    border-radius: 10px; box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
-    backdrop-filter: blur(25px); transition: box-shadow 0.3s ease, background 0.3s ease;
+  .terminal-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 0;
+    margin-left: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
-  .navbar-cool:hover { background: rgba(0, 30, 0, 0.96); box-shadow: 0 0 40px rgba(0, 255, 65, 0.5); }
-  .navbar-brand {
-    margin-bottom: 2rem; color: #00ff41; font: 800 1.25rem "SF Mono", Monaco, "Courier New", monospace;
-    letter-spacing: -0.02em; text-decoration: none; text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+
+  .terminal-nav::-webkit-scrollbar {
+    display: none;
   }
-  .navbar-desktop { display: flex; flex-direction: column; gap: 0.5rem; }
-  .nav-link, .mobile-nav-link {
-    color: #00ff41; font-family: "SF Mono", Monaco, "Courier New", monospace;
-    text-align: center; text-decoration: none; transition: all 0.25s ease;
+
+  .terminal-nav-link {
+    flex: 0 0 auto;
+    padding: 0.35rem 0.55rem;
+    color: rgba(0, 255, 65, 0.58);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.72rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   }
-  .nav-link { min-width: 120px; padding: 0.75rem 1rem; border: 1px solid transparent; border-radius: 5px; font-size: 0.9rem; }
-  .nav-link:hover, .mobile-nav-link:hover {
-    color: #fff; background: rgba(0, 255, 65, 0.2); border-color: #00ff41;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+
+  .terminal-nav-link:hover {
+    color: #00ff41;
+    background: rgba(0, 255, 65, 0.08);
+    border-color: rgba(0, 255, 65, 0.25);
   }
-  .mobile-menu-btn {
-    display: none; width: 2.5rem; height: 2.5rem; flex-direction: column; align-items: center;
-    justify-content: center; gap: 0.25rem; padding: 0; cursor: pointer;
-    background: rgba(0, 20, 0, 0.92); border: 1px solid #00ff41; border-radius: 5px;
+
+  .terminal-nav-link.active {
+    color: #00ff41;
+    background: rgba(0, 255, 65, 0.12);
+    border-color: rgba(0, 255, 65, 0.4);
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
   }
-  .hamburger-line { width: 1.2rem; height: 2px; background: #00ff41; box-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
-  .mobile-dropdown {
-    position: absolute; top: calc(100% + 0.75rem); right: 0; display: flex; min-width: 190px;
-    flex-direction: column; gap: 0.5rem; padding: 1rem; background: rgba(0, 20, 0, 0.97);
-    border: 1px solid #00ff41; border-radius: 10px; box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+
+  :global(body > .terminal-nav),
+  :global(body > astro-island > .terminal-nav) {
+    width: min(1400px, calc(100% - 2rem));
+    box-sizing: border-box;
+    margin: 1rem auto 0;
+    padding: 0.65rem;
+    background: linear-gradient(180deg, #141414 0%, #080808 100%);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 8px;
   }
-  .mobile-nav-link { padding: 0.65rem 1rem; border: 1px solid transparent; border-radius: 5px; }
-  .mobile-dropdown.hidden { display: none; }
-  @media (max-width: 1023px) {
-    .navbar-cool { top: 0.75rem; right: 0.75rem; left: 0.75rem; flex-direction: row; justify-content: space-between; padding: 0.75rem 1rem; transform: none; }
-    .navbar-brand { margin-bottom: 0; }
-    .navbar-desktop { display: none; }
-    .mobile-menu-btn { display: flex; }
+
+  @media (max-width: 768px) {
+    .terminal-nav {
+      width: 100%;
+      margin-left: 0;
+      padding-bottom: 0.15rem;
+    }
+
+    .terminal-nav-link {
+      padding: 0.4rem 0.5rem;
+      font-size: 0.68rem;
+    }
   }
 </style>
-
-<script>
-  const menuButton = document.getElementById('menu-button')
-  const mobileMenu = document.getElementById('mobile-menu')
-  const closeMobileMenu = () => {
-    mobileMenu?.classList.add('hidden')
-    menuButton?.setAttribute('aria-expanded', 'false')
-  }
-  menuButton?.addEventListener('click', () => {
-    const willOpen = mobileMenu?.classList.contains('hidden') ?? false
-    mobileMenu?.classList.toggle('hidden')
-    menuButton.setAttribute('aria-expanded', String(willOpen))
-  })
-  document.addEventListener('click', (event) => {
-    const target = event.target as Node
-    if (!menuButton?.contains(target) && !mobileMenu?.contains(target)) closeMobileMenu()
-  })
-  window.addEventListener('resize', () => { if (window.innerWidth >= 1024) closeMobileMenu() })
-
-  const navbar = document.querySelector<HTMLElement>('.navbar-cool')
-  if (navbar) {
-    let dragging = false, initialX = 0, initialY = 0, offsetX = 0, offsetY = 0
-    const isDesktop = () => window.innerWidth >= 1024
-    const setPosition = (x: number, y: number) => {
-      navbar.style.left = `${x}px`; navbar.style.top = `${y}px`; navbar.style.transform = 'none'
-    }
-    const loadPosition = () => {
-      if (!isDesktop()) return
-      const saved = localStorage.getItem('navbar-position')
-      if (saved) ({ x: offsetX, y: offsetY } = JSON.parse(saved))
-      else { offsetX = 20; offsetY = (window.innerHeight - navbar.offsetHeight) / 2 }
-      setPosition(offsetX, offsetY); navbar.style.cursor = 'grab'
-    }
-    navbar.addEventListener('mousedown', (event) => {
-      if (!isDesktop() || (event.target as Element).closest('a')) return
-      dragging = true; initialX = event.clientX - offsetX; initialY = event.clientY - offsetY; navbar.style.cursor = 'grabbing'
-    })
-    document.addEventListener('mousemove', (event) => {
-      if (!dragging || !isDesktop()) return
-      offsetX = Math.max(0, Math.min(event.clientX - initialX, window.innerWidth - navbar.offsetWidth))
-      offsetY = Math.max(0, Math.min(event.clientY - initialY, window.innerHeight - navbar.offsetHeight))
-      setPosition(offsetX, offsetY)
-    })
-    document.addEventListener('mouseup', () => {
-      if (!dragging) return
-      dragging = false; navbar.style.cursor = 'grab'
-      localStorage.setItem('navbar-position', JSON.stringify({ x: offsetX, y: offsetY }))
-    })
-    window.addEventListener('resize', () => {
-      if (isDesktop()) loadPosition()
-      else { navbar.style.left = ''; navbar.style.top = ''; navbar.style.transform = ''; navbar.style.cursor = 'default' }
-    })
-    loadPosition()
-  }
-</script>

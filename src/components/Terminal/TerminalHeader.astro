@@ -1,4 +1,6 @@
 ---
+import NavBar from '../NavBar.astro';
+
 interface Props {
   title?: string;
 }
@@ -13,6 +15,7 @@ const { title = 'root@tianchi:~$' } = Astro.props;
     <span class="dot green"></span>
   </div>
   <div class="terminal-title">{title}</div>
+  <NavBar />
 </div>
 
 <style>
@@ -52,8 +55,17 @@ const { title = 'root@tianchi:~$' } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .terminal-header {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
     .terminal-title {
       font-size: 11px;
+    }
+
+    .terminal-header :global(.terminal-nav) {
+      flex-basis: 100%;
     }
   }
 </style>

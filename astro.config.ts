@@ -13,7 +13,9 @@ export default defineConfig({
     react(
       // {include: ['**/*.tsx', '**/*.jsx'],}
     ),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.endsWith('/progress/') && !page.endsWith('/progress'),
+    }),
     // robotsTxt({
     //   sitemap: [
     //     "https://lialittis.github.io/sitemap-index.xml",

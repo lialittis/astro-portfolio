@@ -8,6 +8,7 @@ const links = [
   { href: '/blog', label: 'blog' },
   { href: '/publications', label: 'publications' },
   { href: '/confclock', label: 'conferences' },
+  { href: '/progress', label: 'progress', locked: true },
 ];
 
 const isActive = (href: string) =>
@@ -15,13 +16,14 @@ const isActive = (href: string) =>
 ---
 
 <nav class="terminal-nav" aria-label="Primary navigation">
-  {links.map(({ href, label }) => (
+  {links.map(({ href, label, locked }) => (
     <a
       href={href}
       class:list={['terminal-nav-link', { active: isActive(href) }]}
       aria-current={isActive(href) ? 'page' : undefined}
+      aria-label={locked ? `${label}, locked` : label}
     >
-      <span aria-hidden="true">~/</span>{label}
+      <span aria-hidden="true">~/</span>{label}{locked && <span class="lock-mark" aria-hidden="true">◆</span>}
     </a>
   ))}
 </nav>
@@ -65,6 +67,12 @@ const isActive = (href: string) =>
     background: rgba(0, 255, 65, 0.12);
     border-color: rgba(0, 255, 65, 0.4);
     text-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
+  }
+
+  .lock-mark {
+    margin-left: 0.35rem;
+    color: #f7c873;
+    font-size: 0.55rem;
   }
 
   :global(body > .terminal-nav),

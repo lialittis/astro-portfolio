@@ -7,12 +7,13 @@ interface Props {
   description: string;
   page?: "travel";
   standaloneNav?: boolean;
+  noindex?: boolean;
 }
 
-const { title, description, page, standaloneNav = true } = Astro.props;
+const { title, description, page, standaloneNav = true, noindex = false } = Astro.props;
 ---
 
-<BasicLayout title={title} description={description}>
+<BasicLayout title={title} description={description} noindex={noindex}>
   <div
     slot="loader"
     class="loader bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"

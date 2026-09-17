@@ -25,3 +25,6 @@ pnpm-debug.log*
 # local files
 .local
 local/
+
+# Unencrypted progress-vault data stays on this machine.
+data/progress.private.yml

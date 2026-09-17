@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
+import ProgressVault from '../components/ProgressVault'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import '../style/hacker-theme.css'
+---
+
+<Layout
+  title="Progress Vault"
+  description="Encrypted personal reminder board"
+  standaloneNav={false}
+  noindex={true}
+>
+  <div class="progress-container">
+    <TerminalWrapper>
+      <TerminalHeader title="root@progress:~$" />
+      <main class="terminal-content">
+        <CommandLine command="decrypt ~/progress.enc.json" />
+        <div class="progress-vault-root">
+          <ProgressVault client:load />
+          <noscript>
+            <p class="noscript-message">JavaScript is required to decrypt this page locally.</p>
+          </noscript>
+        </div>
+      </main>
+    </TerminalWrapper>
+  </div>
+</Layout>
+
+<style>
+  .progress-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .progress-vault-root {
+    margin-left: 20px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(0, 255, 65, 0.24);
+  }
+
+  .noscript-message {
+    padding: 1rem;
+    color: #f7c873 !important;
+    font-family: 'SF Mono', 'Monaco', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .progress-container {
+      padding: 1rem;
+    }
+
+    .progress-vault-root {
+      margin-left: 8px;
+      padding-left: 10px;
+    }
+  }
+</style>

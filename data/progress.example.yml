@@ -1,0 +1,27 @@
+# Copy this file with `pnpm progress:init`, then edit progress.private.yml.
+# The private file is ignored by Git. Only its encrypted output is deployed.
+version: 1
+updatedAt: "2026-09-17"
+items: []
+
+# Example work item — keep this commented or copy it under `items`:
+#   - id: system-sketch
+#     title: SystemSketch
+#     kind: project
+#     summary: Manually redraw technical systems from papers, posters, and blogs.
+#     status: planned
+#     priority: medium
+#     startDate: "2026-10-01"
+#     targetDate: "2026-12-15"
+#     nextAction: Choose the first system and define a visual language.
+#     tasks:
+#       - id: choose-first-source
+#         label: Select the first paper or system
+#         lane: now
+#         done: false
+#         dueDate: "2026-10-01"
+#     milestones:
+#       - id: first-figure
+#         label: Publish the first figure
+#         date: "2026-10-31"
+#         state: upcoming

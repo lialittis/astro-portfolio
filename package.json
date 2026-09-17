@@ -8,6 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "progress:init": "node scripts/progress-vault.mjs init",
+    "progress:encrypt": "node scripts/progress-vault.mjs encrypt",
+    "progress:decrypt": "node scripts/progress-vault.mjs decrypt",
+    "progress:validate": "node scripts/progress-vault.mjs validate",
+    "test:progress": "node --test tests/progress-vault.test.mjs",
     "sync:conferences": "node scripts/sync_ccf_conferences.mjs",
     "prettier": "npx prettier --write ."
   },

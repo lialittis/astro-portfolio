@@ -41,6 +41,9 @@ and writes `public/data/progress.enc.json`. Commit that encrypted file when it i
 ready to deploy. Enter it as `<answer>::<private-suffix>` and use at least 12 unpredictable
 characters for the suffix; the public code puzzle alone is not resistant to offline guessing.
 
+Task checkboxes persist in browser `localStorage`. They synchronize between the task overview
+and Work Context cards on that browser, but do not sync across browsers or devices.
+
 If the local YAML is lost, move any existing private file aside and run
 `pnpm progress:decrypt` to restore it from the encrypted payload.
 

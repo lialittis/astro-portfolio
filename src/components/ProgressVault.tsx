@@ -11,6 +11,7 @@ import '../style/progress-vault.css'
 
 const AAD = new TextEncoder().encode('progress-vault:v1')
 const EXPECTED_ITERATIONS = 600_000
+const TASK_STATE_PREFIX = 'progress-vault:task:v1:'
 
 class VaultSetupError extends Error {}
 
@@ -23,6 +24,43 @@ const isProgressDataset = (value: unknown): value is ProgressDataset => {
   if (!value || typeof value !== 'object') return false
   const dataset = value as Partial<ProgressDataset>
   return dataset.version === 1 && typeof dataset.updatedAt === 'string' && Array.isArray(dataset.items)
+}
+
+const getTaskStateKey = async (projectId: string, taskId: string) => {
+  const digest = await window.crypto.subtle.digest(
+    'SHA-256',
+    new TextEncoder().encode(`${projectId}:${taskId}`),
+  )
+  const id = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('')
+  return `${TASK_STATE_PREFIX}${id}`
+}
+
+const applyLocalTaskState = async (dataset: ProgressDataset): Promise<ProgressDataset> => ({
+  ...dataset,
+  items: await Promise.all(
+    dataset.items.map(async (item) => ({
+      ...item,
+      tasks: await Promise.all(
+        item.tasks.map(async (task) => {
+          try {
+            const saved = window.localStorage.getItem(await getTaskStateKey(item.id, task.id))
+            if (saved === '1' || saved === '0') return { ...task, done: saved === '1' }
+          } catch {
+            // Keep the encrypted dataset value when browser storage is unavailable.
+          }
+          return task
+        }),
+      ),
+    })),
+  ),
+})
+
+const saveLocalTaskState = async (projectId: string, taskId: string, done: boolean) => {
+  try {
+    window.localStorage.setItem(await getTaskStateKey(projectId, taskId), done ? '1' : '0')
+  } catch {
+    // The checkbox still works for this session when browser storage is unavailable.
+  }
 }
 
 const decryptDataset = async (envelope: ProgressEnvelope, answer: string) => {
@@ -108,6 +146,8 @@ interface TaskEntry extends ProgressTask {
   projectTitle: string
 }
 
+type ToggleTask = (projectId: string, taskId: string) => void
+
 function EmptyDashboard() {
   return (
     <section className="vault-empty" aria-labelledby="empty-title">
@@ -124,7 +164,7 @@ function EmptyDashboard() {
   )
 }
 
-function WorkCard({ item }: { item: WorkItem }) {
+function WorkCard({ item, onToggleTask }: { item: WorkItem; onToggleTask: ToggleTask }) {
   const days = getDaysUntil(item.targetDate)
   const schedule = item.tasks.find((task) => task.schedule)?.schedule
   const deadlineClass =
@@ -163,6 +203,34 @@ function WorkCard({ item }: { item: WorkItem }) {
         )}
       </dl>
 
+      {item.tasks.length > 0 && (
+        <div className="vault-context-tasks">
+          <div className="vault-context-tasks-heading">
+            <span>linked tasks</span>
+            <span>{item.tasks.filter((task) => !task.done).length} open</span>
+          </div>
+          <ul>
+            {item.tasks.map((task) => (
+              <li className={task.done ? 'is-done' : ''} key={task.id}>
+                <input
+                  className="vault-task-checkbox vault-context-task-checkbox"
+                  type="checkbox"
+                  checked={task.done}
+                  onChange={() => onToggleTask(item.id, task.id)}
+                  aria-label={`${task.done ? 'Mark incomplete' : 'Mark complete'}: ${task.label}`}
+                />
+                <div>
+                  <strong>{task.label}</strong>
+                  {(task.schedule || task.dueDate) && (
+                    <small>{task.schedule ?? `Due ${formatDate(task.dueDate)}`}</small>
+                  )}
+                </div>
+                <span className={`vault-context-task-lane lane-${task.lane}`}>{task.lane}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </article>
   )
 }
@@ -223,7 +291,7 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
   )
 }
 
-function ImmediateTasks({ entries }: { entries: TaskEntry[] }) {
+function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onToggleTask: ToggleTask }) {
   const laneOrder = { now: 0, next: 1, later: 2 }
   const orderedEntries = [...entries].sort((left, right) => {
     if (left.done !== right.done) return Number(left.done) - Number(right.done)
@@ -255,7 +323,13 @@ function ImmediateTasks({ entries }: { entries: TaskEntry[] }) {
                   : ''
             return (
               <li className={task.done ? 'is-done' : dueClass} key={`${task.projectId}-${task.id}`}>
-                <span className="vault-task-check" aria-hidden="true">{task.done ? '✓' : '○'}</span>
+                <input
+                  className="vault-task-checkbox"
+                  type="checkbox"
+                  checked={task.done}
+                  onChange={() => onToggleTask(task.projectId, task.id)}
+                  aria-label={`${task.done ? 'Mark incomplete' : 'Mark complete'}: ${task.label}`}
+                />
                 <div className="vault-task-copy">
                   <strong>{task.label}</strong>
                   <span>{task.projectTitle}</span>
@@ -273,11 +347,20 @@ function ImmediateTasks({ entries }: { entries: TaskEntry[] }) {
           })}
         </ul>
       )}
+      <p className="vault-local-state-note">Checkboxes are saved only in this browser.</p>
     </section>
   )
 }
 
-function Dashboard({ dataset, onLock }: { dataset: ProgressDataset; onLock: () => void }) {
+function Dashboard({
+  dataset,
+  onLock,
+  onToggleTask,
+}: {
+  dataset: ProgressDataset
+  onLock: () => void
+  onToggleTask: ToggleTask
+}) {
   const timeline = useMemo(
     () =>
       dataset.items
@@ -320,7 +403,7 @@ function Dashboard({ dataset, onLock }: { dataset: ProgressDataset; onLock: () =
         <EmptyDashboard />
       ) : (
         <>
-          <ImmediateTasks entries={tasks} />
+          <ImmediateTasks entries={tasks} onToggleTask={onToggleTask} />
 
           <section className="vault-work-section" aria-labelledby="work-title">
             <div className="vault-section-heading">
@@ -331,7 +414,9 @@ function Dashboard({ dataset, onLock }: { dataset: ProgressDataset; onLock: () =
               <span>{dataset.items.length} item{dataset.items.length === 1 ? '' : 's'}</span>
             </div>
             <div className="vault-work-grid">
-              {dataset.items.map((item) => <WorkCard item={item} key={item.id} />)}
+              {dataset.items.map((item) => (
+                <WorkCard item={item} onToggleTask={onToggleTask} key={item.id} />
+              ))}
             </div>
           </section>
 
@@ -347,6 +432,28 @@ export default function ProgressVault() {
   const [phase, setPhase] = useState<'locked' | 'unlocking' | 'error' | 'setup'>('locked')
   const [message, setMessage] = useState('')
   const answerRef = useRef<HTMLInputElement>(null)
+
+  const toggleTask: ToggleTask = (projectId, taskId) => {
+    if (!dataset) return
+    const currentTask = dataset.items
+      .find((item) => item.id === projectId)
+      ?.tasks.find((task) => task.id === taskId)
+    if (!currentTask) return
+
+    const done = !currentTask.done
+    setDataset({
+      ...dataset,
+      items: dataset.items.map((item) =>
+        item.id === projectId
+          ? {
+              ...item,
+              tasks: item.tasks.map((task) => task.id === taskId ? { ...task, done } : task),
+            }
+          : item,
+      ),
+    })
+    void saveLocalTaskState(projectId, taskId, done)
+  }
 
   const unlock = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -366,7 +473,7 @@ export default function ProgressVault() {
       const envelope = (await response.json()) as ProgressEnvelope
       const decrypted = await decryptDataset(envelope, answer)
       if (answerRef.current) answerRef.current.value = ''
-      setDataset(decrypted)
+      setDataset(await applyLocalTaskState(decrypted))
       setPhase('locked')
     } catch (error) {
       if (answerRef.current) {
@@ -391,7 +498,7 @@ export default function ProgressVault() {
     window.setTimeout(() => answerRef.current?.focus(), 250)
   }
 
-  if (dataset) return <Dashboard dataset={dataset} onLock={lock} />
+  if (dataset) return <Dashboard dataset={dataset} onLock={lock} onToggleTask={toggleTask} />
 
   return (
     <section className="vault-gate" aria-labelledby="vault-title">

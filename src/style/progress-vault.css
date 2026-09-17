@@ -324,6 +324,21 @@
   text-decoration: line-through;
 }
 
+.vault-task-checkbox {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: #00ff41;
+  cursor: pointer;
+}
+
+.vault-local-state-note {
+  margin: 0.7rem 0 0 !important;
+  color: #52645b !important;
+  font-size: 0.6rem;
+  text-align: right;
+}
+
 .vault-task-copy strong,
 .vault-task-copy span,
 .vault-task-due span,
@@ -508,6 +523,85 @@
 .vault-work-meta .priority-medium,
 .vault-work-meta .is-soon { color: #f7c873; }
 .vault-work-meta .priority-low { color: #789184; }
+
+.vault-context-tasks {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(0, 255, 65, 0.12);
+}
+
+.vault-context-tasks-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+  color: #52645b;
+  font-size: 0.57rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vault-context-tasks ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vault-context-tasks li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.55rem;
+  padding: 0.55rem 0.6rem;
+  background: rgba(0, 217, 255, 0.025);
+  border-left: 1px solid rgba(0, 217, 255, 0.32);
+}
+
+.vault-context-tasks li.is-done {
+  opacity: 0.45;
+}
+
+.vault-context-tasks li.is-done strong {
+  text-decoration: line-through;
+}
+
+.vault-context-task-checkbox {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+.vault-context-tasks strong,
+.vault-context-tasks small {
+  display: block;
+}
+
+.vault-context-tasks strong {
+  color: #b8c4c0;
+  font-size: 0.69rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.vault-context-tasks small {
+  margin-top: 0.18rem;
+  color: #648a70;
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+
+.vault-context-task-lane {
+  padding-top: 0.12rem;
+  color: #648a70;
+  font-size: 0.53rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.vault-context-task-lane.lane-now { color: #00ff41; }
+.vault-context-task-lane.lane-next { color: #f7c873; }
 
 .vault-next-action {
   padding: 0.7rem;

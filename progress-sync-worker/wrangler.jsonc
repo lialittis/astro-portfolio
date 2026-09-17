@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "progress-sync",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-17",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://tianchiyu.me,https://www.tianchiyu.me,http://localhost:4321"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "PROGRESS_STATE",
+      "id": "3236a30d41b0444094ecb7a6d38daf19"
+    }
+  ],
+  "secrets": {
+    "required": ["SYNC_AUTH_HASH"]
+  }
+}

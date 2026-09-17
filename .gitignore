@@ -28,3 +28,10 @@ local/
 
 # Unencrypted progress-vault data stays on this machine.
 data/progress.private.yml
+
+# Cloudflare Worker local state and secrets.
+progress-sync-worker/.dev.vars
+progress-sync-worker/.env*
+progress-sync-worker/.wrangler/
+progress-sync-worker/node_modules/
+.wrangler-config/

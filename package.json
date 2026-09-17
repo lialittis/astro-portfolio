@@ -13,6 +13,7 @@
     "progress:decrypt": "node scripts/progress-vault.mjs decrypt",
     "progress:validate": "node scripts/progress-vault.mjs validate",
     "test:progress": "node --test tests/progress-vault.test.mjs",
+    "test:progress-sync": "node --test progress-sync-worker/test/*.test.mjs",
     "sync:conferences": "node scripts/sync_ccf_conferences.mjs",
     "prettier": "npx prettier --write ."
   },

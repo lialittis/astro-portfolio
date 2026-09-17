@@ -332,13 +332,6 @@
   cursor: pointer;
 }
 
-.vault-local-state-note {
-  margin: 0.7rem 0 0 !important;
-  color: #52645b !important;
-  font-size: 0.6rem;
-  text-align: right;
-}
-
 .vault-task-copy strong,
 .vault-task-copy span,
 .vault-task-due span,
@@ -391,6 +384,27 @@
 .vault-immediate-list .is-soon .vault-task-due time {
   color: #f7c873;
 }
+
+.vault-sync-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  margin: -0.65rem 0 0 !important;
+  color: #648a70 !important;
+  font-size: 0.6rem;
+}
+
+.vault-sync-status > span {
+  width: 0.42rem;
+  height: 0.42rem;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.vault-sync-status.status-syncing { color: #f7c873 !important; }
+.vault-sync-status.status-synced { color: #00ff41 !important; }
+.vault-sync-status.status-offline { color: #ff7770 !important; }
 
 .vault-section-heading {
   margin-bottom: 1rem;

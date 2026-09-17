@@ -41,8 +41,25 @@ and writes `public/data/progress.enc.json`. Commit that encrypted file when it i
 ready to deploy. Enter it as `<answer>::<private-suffix>` and use at least 12 unpredictable
 characters for the suffix; the public code puzzle alone is not resistant to offline guessing.
 
-Task checkboxes persist in browser `localStorage`. They synchronize between the task overview
-and Work Context cards on that browser, but do not sync across browsers or devices.
+Task checkboxes persist in browser `localStorage`. When the optional Cloudflare Worker in
+`progress-sync-worker/` is configured, checkbox state is encrypted in the browser and synchronized
+across devices. The Worker receives opaque task identifiers and AES-GCM ciphertext only.
+
+### Checkbox synchronization
+
+The synchronization Worker requires a Workers KV binding named `PROGRESS_STATE` and a secret named
+`SYNC_AUTH_HASH`. Create the namespace from `progress-sync-worker/` with:
+
+```bash
+pnpm install
+pnpm wrangler login
+pnpm wrangler kv namespace create PROGRESS_STATE
+```
+
+Add the returned namespace ID to `progress-sync-worker/wrangler.jsonc`, then run `pnpm secret:set`.
+That command privately derives and uploads `SYNC_AUTH_HASH` from the complete challenge response.
+Deploy with `pnpm deploy` and put the resulting public Worker URL in `src/config/progress-sync.ts`.
+Never commit the complete response or authentication hash.
 
 If the local YAML is lost, move any existing private file aside and run
 `pnpm progress:decrypt` to restore it from the encrypted payload.

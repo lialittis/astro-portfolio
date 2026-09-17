@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type FormEvent } from 'react'
+import React, { useMemo, useRef, useState, type FormEvent } from 'react'
 import type {
   ProgressDataset,
   ProgressEnvelope,
@@ -7,11 +7,22 @@ import type {
   WorkItem,
   WorkStatus,
 } from '../lib/progress'
+import {
+  deriveSyncCredentials,
+  fetchRemoteTaskStates,
+  getOpaqueTaskId,
+  putRemoteTaskState,
+  readLocalTaskState,
+  writeLocalTaskState,
+  type SyncCredentials,
+  type TaskCompletionState,
+} from '../lib/progress-sync'
+import { progressSyncUrl } from '../config/progress-sync'
 import '../style/progress-vault.css'
 
 const AAD = new TextEncoder().encode('progress-vault:v1')
 const EXPECTED_ITERATIONS = 600_000
-const TASK_STATE_PREFIX = 'progress-vault:task:v1:'
+const SYNC_DEBOUNCE_MS = 1_100
 
 class VaultSetupError extends Error {}
 
@@ -24,43 +35,6 @@ const isProgressDataset = (value: unknown): value is ProgressDataset => {
   if (!value || typeof value !== 'object') return false
   const dataset = value as Partial<ProgressDataset>
   return dataset.version === 1 && typeof dataset.updatedAt === 'string' && Array.isArray(dataset.items)
-}
-
-const getTaskStateKey = async (projectId: string, taskId: string) => {
-  const digest = await window.crypto.subtle.digest(
-    'SHA-256',
-    new TextEncoder().encode(`${projectId}:${taskId}`),
-  )
-  const id = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('')
-  return `${TASK_STATE_PREFIX}${id}`
-}
-
-const applyLocalTaskState = async (dataset: ProgressDataset): Promise<ProgressDataset> => ({
-  ...dataset,
-  items: await Promise.all(
-    dataset.items.map(async (item) => ({
-      ...item,
-      tasks: await Promise.all(
-        item.tasks.map(async (task) => {
-          try {
-            const saved = window.localStorage.getItem(await getTaskStateKey(item.id, task.id))
-            if (saved === '1' || saved === '0') return { ...task, done: saved === '1' }
-          } catch {
-            // Keep the encrypted dataset value when browser storage is unavailable.
-          }
-          return task
-        }),
-      ),
-    })),
-  ),
-})
-
-const saveLocalTaskState = async (projectId: string, taskId: string, done: boolean) => {
-  try {
-    window.localStorage.setItem(await getTaskStateKey(projectId, taskId), done ? '1' : '0')
-  } catch {
-    // The checkbox still works for this session when browser storage is unavailable.
-  }
 }
 
 const decryptDataset = async (envelope: ProgressEnvelope, answer: string) => {
@@ -147,6 +121,61 @@ interface TaskEntry extends ProgressTask {
 }
 
 type ToggleTask = (projectId: string, taskId: string) => void
+type SyncStatus = 'local' | 'syncing' | 'synced' | 'offline'
+
+const loadLocalTaskStates = async (dataset: ProgressDataset) => {
+  const states = new Map<string, TaskCompletionState>()
+  await Promise.all(
+    dataset.items.flatMap((item) =>
+      item.tasks.map(async (task) => {
+        try {
+          const opaqueTaskId = await getOpaqueTaskId(item.id, task.id)
+          const saved = readLocalTaskState(window.localStorage, opaqueTaskId)
+          if (saved) states.set(opaqueTaskId, saved)
+        } catch {
+          // Browser storage can be unavailable in strict privacy modes.
+        }
+      }),
+    ),
+  )
+  return states
+}
+
+const applyTaskStates = async (
+  dataset: ProgressDataset,
+  states: Map<string, TaskCompletionState>,
+): Promise<ProgressDataset> => ({
+  ...dataset,
+  items: await Promise.all(
+    dataset.items.map(async (item) => ({
+      ...item,
+      tasks: await Promise.all(
+        item.tasks.map(async (task) => {
+          const state = states.get(await getOpaqueTaskId(item.id, task.id))
+          return state ? { ...task, done: state.done } : task
+        }),
+      ),
+    })),
+  ),
+})
+
+const mergeTaskStates = (
+  local: Map<string, TaskCompletionState>,
+  remote: Map<string, TaskCompletionState>,
+) => {
+  const merged = new Map(remote)
+  const localChanges = new Map<string, TaskCompletionState>()
+
+  local.forEach((state, taskId) => {
+    const remoteState = remote.get(taskId)
+    if (!remoteState || state.updatedAt > remoteState.updatedAt) {
+      merged.set(taskId, state)
+      localChanges.set(taskId, state)
+    }
+  })
+
+  return { merged, localChanges }
+}
 
 function EmptyDashboard() {
   return (
@@ -347,19 +376,27 @@ function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onTog
           })}
         </ul>
       )}
-      <p className="vault-local-state-note">Checkboxes are saved only in this browser.</p>
     </section>
   )
+}
+
+const syncStatusLabel: Record<SyncStatus, string> = {
+  local: 'Checkboxes are saved in this browser.',
+  syncing: 'Syncing checkbox changes…',
+  synced: 'Checkboxes are synced across devices.',
+  offline: 'Cloud sync unavailable; changes are saved locally.',
 }
 
 function Dashboard({
   dataset,
   onLock,
   onToggleTask,
+  syncStatus,
 }: {
   dataset: ProgressDataset
   onLock: () => void
   onToggleTask: ToggleTask
+  syncStatus: SyncStatus
 }) {
   const timeline = useMemo(
     () =>
@@ -402,8 +439,12 @@ function Dashboard({
       {dataset.items.length === 0 ? (
         <EmptyDashboard />
       ) : (
-        <>
+        <React.Fragment>
           <ImmediateTasks entries={tasks} onToggleTask={onToggleTask} />
+          <p className={`vault-sync-status status-${syncStatus}`} aria-live="polite">
+            <span aria-hidden="true" />
+            {syncStatusLabel[syncStatus]}
+          </p>
 
           <section className="vault-work-section" aria-labelledby="work-title">
             <div className="vault-section-heading">
@@ -421,7 +462,7 @@ function Dashboard({
           </section>
 
           {timeline.length > 0 && <Timeline entries={timeline} />}
-        </>
+        </React.Fragment>
       )}
     </div>
   )
@@ -431,7 +472,44 @@ export default function ProgressVault() {
   const [dataset, setDataset] = useState<ProgressDataset | null>(null)
   const [phase, setPhase] = useState<'locked' | 'unlocking' | 'error' | 'setup'>('locked')
   const [message, setMessage] = useState('')
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>('local')
   const answerRef = useRef<HTMLInputElement>(null)
+  const syncCredentialsRef = useRef<SyncCredentials | null>(null)
+  const taskStatesRef = useRef(new Map<string, TaskCompletionState>())
+  const pendingSyncRef = useRef(new Map<string, TaskCompletionState>())
+  const syncTimerRef = useRef<number | null>(null)
+
+  const flushPendingSync = async () => {
+    const credentials = syncCredentialsRef.current
+    if (!progressSyncUrl || !credentials || pendingSyncRef.current.size === 0) return
+
+    const pending = new Map(pendingSyncRef.current)
+    pendingSyncRef.current.clear()
+    setSyncStatus('syncing')
+
+    try {
+      await Promise.all(
+        Array.from(pending, ([taskId, state]) =>
+          putRemoteTaskState(progressSyncUrl, credentials, taskId, state),
+        ),
+      )
+      setSyncStatus(pendingSyncRef.current.size > 0 ? 'syncing' : 'synced')
+    } catch {
+      pending.forEach((state, taskId) => pendingSyncRef.current.set(taskId, state))
+      setSyncStatus('offline')
+    }
+  }
+
+  const scheduleRemoteSync = (taskId: string, state: TaskCompletionState) => {
+    if (!progressSyncUrl || !syncCredentialsRef.current) return
+    pendingSyncRef.current.set(taskId, state)
+    setSyncStatus('syncing')
+    if (syncTimerRef.current !== null) window.clearTimeout(syncTimerRef.current)
+    syncTimerRef.current = window.setTimeout(() => {
+      syncTimerRef.current = null
+      void flushPendingSync()
+    }, SYNC_DEBOUNCE_MS)
+  }
 
   const toggleTask: ToggleTask = (projectId, taskId) => {
     if (!dataset) return
@@ -452,7 +530,16 @@ export default function ProgressVault() {
           : item,
       ),
     })
-    void saveLocalTaskState(projectId, taskId, done)
+    void getOpaqueTaskId(projectId, taskId).then((opaqueTaskId) => {
+      const state = { done, updatedAt: Date.now() }
+      taskStatesRef.current.set(opaqueTaskId, state)
+      try {
+        writeLocalTaskState(window.localStorage, opaqueTaskId, state)
+      } catch {
+        // Keep the checkbox interactive for this session when storage is unavailable.
+      }
+      scheduleRemoteSync(opaqueTaskId, state)
+    })
   }
 
   const unlock = async (event: FormEvent<HTMLFormElement>) => {
@@ -472,8 +559,43 @@ export default function ProgressVault() {
       if (!response.ok) throw new Error('The encrypted dataset could not be loaded.')
       const envelope = (await response.json()) as ProgressEnvelope
       const decrypted = await decryptDataset(envelope, answer)
+      const localStates = await loadLocalTaskStates(decrypted)
+      let mergedStates = localStates
+
+      if (progressSyncUrl) {
+        setSyncStatus('syncing')
+        try {
+          const credentials = await deriveSyncCredentials(answer)
+          const remoteStates = await fetchRemoteTaskStates(progressSyncUrl, credentials)
+          const merged = mergeTaskStates(localStates, remoteStates)
+          mergedStates = merged.merged
+          syncCredentialsRef.current = credentials
+          merged.localChanges.forEach((state, taskId) => pendingSyncRef.current.set(taskId, state))
+          mergedStates.forEach((state, taskId) => {
+            try {
+              writeLocalTaskState(window.localStorage, taskId, state)
+            } catch {
+              // The remote state remains usable for the current session.
+            }
+          })
+          setSyncStatus(merged.localChanges.size > 0 ? 'syncing' : 'synced')
+        } catch {
+          syncCredentialsRef.current = await deriveSyncCredentials(answer)
+          setSyncStatus('offline')
+        }
+      } else {
+        setSyncStatus('local')
+      }
+
+      taskStatesRef.current = mergedStates
       if (answerRef.current) answerRef.current.value = ''
-      setDataset(await applyLocalTaskState(decrypted))
+      setDataset(await applyTaskStates(decrypted, mergedStates))
+      if (pendingSyncRef.current.size > 0) {
+        syncTimerRef.current = window.setTimeout(() => {
+          syncTimerRef.current = null
+          void flushPendingSync()
+        }, SYNC_DEBOUNCE_MS)
+      }
       setPhase('locked')
     } catch (error) {
       if (answerRef.current) {
@@ -491,6 +613,11 @@ export default function ProgressVault() {
   }
 
   const lock = () => {
+    if (syncTimerRef.current !== null) window.clearTimeout(syncTimerRef.current)
+    syncTimerRef.current = null
+    syncCredentialsRef.current = null
+    taskStatesRef.current.clear()
+    pendingSyncRef.current.clear()
     setDataset(null)
     setMessage('Vault locked. Decrypted progress data was removed from this page.')
     setPhase('locked')
@@ -498,7 +625,16 @@ export default function ProgressVault() {
     window.setTimeout(() => answerRef.current?.focus(), 250)
   }
 
-  if (dataset) return <Dashboard dataset={dataset} onLock={lock} onToggleTask={toggleTask} />
+  if (dataset) {
+    return (
+      <Dashboard
+        dataset={dataset}
+        onLock={lock}
+        onToggleTask={toggleTask}
+        syncStatus={syncStatus}
+      />
+    )
+  }
 
   return (
     <section className="vault-gate" aria-labelledby="vault-title">

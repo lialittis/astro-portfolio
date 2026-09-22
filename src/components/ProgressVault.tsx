@@ -322,12 +322,13 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
 
 function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onToggleTask: ToggleTask }) {
   const laneOrder = { now: 0, next: 1, later: 2 }
-  const orderedEntries = [...entries].sort((left, right) => {
-    if (left.done !== right.done) return Number(left.done) - Number(right.done)
-    const laneDifference = laneOrder[left.lane] - laneOrder[right.lane]
-    if (laneDifference !== 0) return laneDifference
-    return (left.dueDate ?? '9999-12-31').localeCompare(right.dueDate ?? '9999-12-31')
-  })
+  const orderedEntries = entries
+    .filter((entry) => !entry.done)
+    .sort((left, right) => {
+      const laneDifference = laneOrder[left.lane] - laneOrder[right.lane]
+      if (laneDifference !== 0) return laneDifference
+      return (left.dueDate ?? '9999-12-31').localeCompare(right.dueDate ?? '9999-12-31')
+    })
 
   return (
     <section className="vault-panel vault-immediate-panel" aria-labelledby="tasks-title">
@@ -336,10 +337,10 @@ function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onTog
           <p className="vault-kicker">what needs attention</p>
           <h2 id="tasks-title">Immediate Tasks</h2>
         </div>
-        <span>{entries.filter((entry) => !entry.done).length} open</span>
+        <span>{orderedEntries.length} open</span>
       </div>
       {orderedEntries.length === 0 ? (
-        <p className="vault-panel-empty">No tasks yet.</p>
+        <p className="vault-panel-empty">No open tasks.</p>
       ) : (
         <ul className="vault-immediate-list">
           {orderedEntries.map((task) => {

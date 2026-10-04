@@ -79,6 +79,7 @@ https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misl
 https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/
 https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/
 https://blog.trailofbits.com/2026/09/25/dont-let-tees-break-your-mpc/
+https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -1155,9 +1156,15 @@ https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html
 https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
 https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
 https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html
+https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html
+https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html
 https://thehackernews.com/2026/10/google-rolls-out-gemini-4-argon-to.html
 https://thehackernews.com/2026/10/metamask-security-incident-prompts-exit.html
 https://thehackernews.com/2026/10/openai-disrupts-reasoning-extraction.html
+https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html
+https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html
+https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html
+https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1444,6 +1451,8 @@ https://www.schneier.com/blog/archives/2026/09/using-ai-for-weapons-development.
 https://www.schneier.com/blog/archives/2026/09/using-device-linking-to-eavesdrop-on-whatsapp-and-signal.html
 https://www.schneier.com/blog/archives/2026/09/whats-the-scam.html
 https://www.schneier.com/blog/archives/2026/10/connected-cars-are-a-surveillance-platform.html
+https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-eu-is-trying-to-fight-unregulated-squid-fishing.html
+https://www.schneier.com/blog/archives/2026/10/how-american-political-campaigns-are-using-ai-and-what-theyre-spending-on-the-tools.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/1-6-million-likely-impacted-by-ringcentral-data-breach/
@@ -1499,6 +1508,7 @@ https://www.securityweek.com/after-openai-disclosure-anthropic-finds-its-own-mod
 https://www.securityweek.com/agentic-ai-security-wrong-context-wrong-decisions-at-machine-speed/
 https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/
 https://www.securityweek.com/ai-agent-firewall-startup-air-security-emerges-from-stealth-with-50-million/
+https://www.securityweek.com/ai-agents-aimed-sql-injection-at-us-and-canadian-government-sites/
 https://www.securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code/
 https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/
 https://www.securityweek.com/ai-driven-vulnerability-surge-breaks-the-traditional-patching-model/
@@ -1732,6 +1742,7 @@ https://www.securityweek.com/crowdsec-confirms-source-code-stolen-in-supply-chai
 https://www.securityweek.com/crowdstrike-insider-helped-hackers-falsely-claim-system-breach/
 https://www.securityweek.com/crowdstrike-to-buy-identity-security-firm-sgnl-for-740-million-in-cash/
 https://www.securityweek.com/crunchbase-confirms-data-breach-after-hacking-claims/
+https://www.securityweek.com/crypto-scammers-hijack-microsofts-official-x-account/
 https://www.securityweek.com/cryptobandits-malware-doubles-as-a-backdoor-abuses-tor/
 https://www.securityweek.com/cursor-ai-vulnerability-exposed-developer-devices/
 https://www.securityweek.com/customer-service-firm-5ca-denies-responsibility-for-discord-data-breach/
@@ -1775,6 +1786,7 @@ https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
 https://www.securityweek.com/dknife-implant-used-by-chinese-threat-actor-for-adversary-in-the-middle-attacks/
 https://www.securityweek.com/doj-antitrust-review-clears-googles-32-billion-acquisition-of-wiz/
+https://www.securityweek.com/doxx-net-raises-38-million-to-prevent-ai-agent-on-the-internet-misadventures/
 https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-threat-actor/
 https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/
 https://www.securityweek.com/dozens-of-webkit-vulnerabilities-patched-with-fresh-macos-ios-security-updates/
@@ -1812,6 +1824,7 @@ https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins
 https://www.securityweek.com/exploitation-of-fresh-citrix-netscaler-vulnerability-begins/
 https://www.securityweek.com/exploitation-of-recent-oracle-e-business-suite-vulnerability-begins/
 https://www.securityweek.com/exploitation-of-servicenow-vulnerability-seen-days-after-disclosure/
+https://www.securityweek.com/exploited-fortinet-fortimail-zero-day-calls-for-urgent-action/
 https://www.securityweek.com/exploited-vulnerability-exposes-nginx-servers-to-hacking/
 https://www.securityweek.com/exposed-docker-apis-likely-exploited-to-build-botnet/
 https://www.securityweek.com/extortion-group-claims-it-hacked-astrazeneca/
@@ -1844,6 +1857,7 @@ https://www.securityweek.com/fortinet-confirms-forticloud-sso-exploitation-again
 https://www.securityweek.com/fortinet-patches-critical-vulnerabilities-in-fortimonitoronsight-chrome-extension/
 https://www.securityweek.com/fortinet-rushes-emergency-fixes-for-exploited-zero-day/
 https://www.securityweek.com/fortinet-warns-of-new-attacks-exploiting-old-vulnerability/
+https://www.securityweek.com/fortra-patches-critical-vulnerabilities-in-boks/
 https://www.securityweek.com/france-probes-foreign-interference-after-remote-control-malware-found-on-passenger-ferry/
 https://www.securityweek.com/free-onlyfans-lure-used-to-spread-cross-platform-crpx0-malware/
 https://www.securityweek.com/french-government-messaging-platform-breached-by-mysterious-misere-hacker/
@@ -1952,6 +1966,7 @@ https://www.securityweek.com/identity-security-firm-saviynt-raises-700-million-a
 https://www.securityweek.com/ima-diligence-services-data-breach-impacts-525000-people/
 https://www.securityweek.com/imper-ai-emerges-from-stealth-mode-with-28-million-in-funding/
 https://www.securityweek.com/imunify360-vulnerability-could-expose-millions-of-sites-to-hacking/
+https://www.securityweek.com/in-other-news-15k-icloud-spoofing-bugs-ai-policy-experts-phished-adblocker-spies-on-ai-chats/
 https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major-shinyhunters-hacks-deepseeks-coding-bias/
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
 https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/
@@ -2045,6 +2060,7 @@ https://www.securityweek.com/living-off-the-ai-the-next-evolution-of-attacker-tr
 https://www.securityweek.com/llms-in-attacker-crosshairs-warns-threat-intel-firm/
 https://www.securityweek.com/loblaw-data-breach-impacts-customer-information/
 https://www.securityweek.com/lumia-security-raises-18-million-for-ai-security-and-governance/
+https://www.securityweek.com/macos-users-targeted-by-fake-zoom-installer-carrying-cloudsyncd-backdoor/
 https://www.securityweek.com/macos-weaknesses-chained-to-silently-disable-endpoint-security-agents/
 https://www.securityweek.com/maine-disables-data-breach-portal-due-to-fake-submissions/
 https://www.securityweek.com/malicious-ai-prompt-injection-attacks-increasing-but-sophistication-still-low-google/
@@ -2468,6 +2484,7 @@ https://www.securityweek.com/zafran-security-raises-60-million-in-series-c-fundi
 https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/
 https://www.securityweek.com/zdi-drops-13-unpatched-ivanti-endpoint-manager-vulnerabilities/
 https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/
+https://www.securityweek.com/zero-trust-creator-says-model-holds-firm-against-ai-assisted-attacks/
 https://www.securityweek.com/zero-trust-is-15-years-old-why-full-adoption-is-worth-the-struggle/
 https://www.securityweek.com/zionsiphon-malware-targets-ics-in-water-facilities/
 https://www.securityweek.com/zombieagent-attack-let-researchers-take-over-chatgpt/

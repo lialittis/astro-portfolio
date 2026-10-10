@@ -1153,14 +1153,19 @@ https://thehackernews.com/2026/09/your-critical-vulnerabilities-might-not.html
 https://thehackernews.com/2026/09/zero-trust-for-ai-agents-starts-with.html
 https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html
 https://thehackernews.com/2026/10/100-compromised-websites-use-fake.html
+https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html
 https://thehackernews.com/2026/10/anthropic-expands-claude-access-for.html
+https://thehackernews.com/2026/10/anthropic-launches-free-ai.html
 https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html
+https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html
 https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
 https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
 https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html
+https://thehackernews.com/2026/10/credential-stealing-github-actions.html
 https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html
 https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html
 https://thehackernews.com/2026/10/fake-chatgpt-gemini-and-claude-ad.html
+https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html
 https://thehackernews.com/2026/10/fbi-removes-accenture-contractor-after.html
 https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html
 https://thehackernews.com/2026/10/google-pauses-oss-product-bug-bounty.html
@@ -1170,7 +1175,10 @@ https://thehackernews.com/2026/10/linux-backdoors-impersonate-email.html
 https://thehackernews.com/2026/10/metamask-security-incident-prompts-exit.html
 https://thehackernews.com/2026/10/openai-disrupts-reasoning-extraction.html
 https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html
+https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html
+https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html
 https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html
+https://thehackernews.com/2026/10/the-ai-velocity-paradox-why-security-is.html
 https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html
 https://thehackernews.com/2026/10/welcome-to-jungle-what-we-found-inside.html
 https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html
@@ -1554,6 +1562,7 @@ https://www.securityweek.com/androids-september-2026-updates-patch-180-vulnerabi
 https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain/
 https://www.securityweek.com/another-draftkings-hacker-sentenced-to-prison/
 https://www.securityweek.com/anthropic-disputes-fable-5-ai-jailbreak/
+https://www.securityweek.com/anthropic-fast-tracks-ai-bug-reports-to-oss-maintainers-taps-11-firms-for-ot-security/
 https://www.securityweek.com/anthropic-introduces-3-tier-cyber-verification-program-for-ai-access/
 https://www.securityweek.com/anthropic-launches-claude-fable-5-mythos-class-ai-with-cybersecurity-guardrails/
 https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/
@@ -1698,6 +1707,7 @@ https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-a
 https://www.securityweek.com/ciso-conversations-nico-waisman-from-self-taught-hacker-to-ai-driven-offensive-security-at-xbow/
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/citrix-confirms-2-netscaler-zero-days-after-admins-pulled-the-plug/
+https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
 https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/
 https://www.securityweek.com/claude-mythos-turns-n-days-into-n-hours-with-rapid-exploit-creation/
@@ -1869,6 +1879,7 @@ https://www.securityweek.com/flickr-security-incident-tied-to-third-party-email-
 https://www.securityweek.com/follow-pragmatic-interventions-to-keep-agentic-ai-in-check/
 https://www.securityweek.com/for-some-so-called-skynet-day-came-too-close-to-sci-fi-after-a-rogue-agent-hacked-into-a-startup/
 https://www.securityweek.com/forget-predictions-true-2026-cybersecurity-priorities-from-leaders/
+https://www.securityweek.com/formula-predicts-when-ai-chatbots-are-at-risk-of-turning-bad/
 https://www.securityweek.com/fortibleed-86000-fortinet-device-credentials-compromised/
 https://www.securityweek.com/fortibleed-campaign-linked-to-inc-lynx-ransomware-attacks/
 https://www.securityweek.com/fortinet-acquires-ai-security-company-virtue-ai/
@@ -1910,6 +1921,7 @@ https://www.securityweek.com/google-confirms-exploitation-of-oracle-peoplesoft-z
 https://www.securityweek.com/google-confirms-workspace-accounts-also-hit-in-salesforce-salesloft-drift-data-theft-campaign/
 https://www.securityweek.com/google-deepmind-researchers-map-web-attacks-against-ai-agents/
 https://www.securityweek.com/google-deepminds-new-ai-agent-finds-and-fixes-vulnerabilities/
+https://www.securityweek.com/google-domains-impacted-by-recent-cctld-domain-hijacks/
 https://www.securityweek.com/google-fbi-disrupt-netnut-residential-proxy-network-powered-by-millions-of-devices/
 https://www.securityweek.com/google-hit-with-463-million-fine-for-eu-location-data-rule-breach/
 https://www.securityweek.com/google-launched-behind-the-scenes-campaign-against-california-privacy-legislation-it-passed-anyway/
@@ -1922,6 +1934,7 @@ https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/
 https://www.securityweek.com/google-patches-gemini-ai-hacks-involving-poisoned-logs-search-results/
 https://www.securityweek.com/google-patches-high-severity-chrome-vulnerability-in-latest-update/
 https://www.securityweek.com/google-pays-100000-in-rewards-for-two-chrome-vulnerabilities/
+https://www.securityweek.com/google-pixel-10-exploits-earned-hackers-560000-at-pwn2own/
 https://www.securityweek.com/google-rolls-out-cookie-theft-protections-in-chrome/
 https://www.securityweek.com/google-sees-5-chinese-groups-exploiting-react2shell-for-malware-delivery/
 https://www.securityweek.com/google-slashes-quantum-resource-requirements-for-breaking-cryptocurrency-encryption/
@@ -1991,6 +2004,7 @@ https://www.securityweek.com/in-other-news-15k-icloud-spoofing-bugs-ai-policy-ex
 https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major-shinyhunters-hacks-deepseeks-coding-bias/
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
 https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/
+https://www.securityweek.com/in-other-news-ai-used-in-korean-bank-breaches-poem-guided-botnet-empire-admin-gets-40-years/
 https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/
 https://www.securityweek.com/in-other-news-apple-patches-beats-eavesdropping-flaw-dot-closes-delta-crowdstrike-probe-aws-continuum/
 https://www.securityweek.com/in-other-news-atm-jackpotting-whatsapp-nso-lawsuit-continues-cisa-hiring/
@@ -2209,6 +2223,7 @@ https://www.securityweek.com/open-vsx-publisher-account-hijacked-in-fresh-glassw
 https://www.securityweek.com/openai-agents-coordinated-via-makeshift-message-board-ahead-of-hugging-face-hack/
 https://www.securityweek.com/openai-agents-exploited-linux-kernel-flaw-on-companys-own-systems/
 https://www.securityweek.com/openai-agents-probed-websites-for-vulnerabilities-while-fetching-public-data/
+https://www.securityweek.com/openai-fires-3-safety-researchers-in-dispute-over-ai-risks/
 https://www.securityweek.com/openai-fixes-chatgpt-agent-flaw-that-could-let-attackers-forge-an-ai-insider/
 https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/
 https://www.securityweek.com/openai-investigates-report-linking-ai-agents-to-rubygems-attack/
@@ -2268,6 +2283,7 @@ https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability
 https://www.securityweek.com/podcast-broken-governance-agentic-ai-and-the-mindstone-agent-exclusive/
 https://www.securityweek.com/podcast-compliance-wont-save-you-the-future-of-cyber-risk-with-edna-conway/
 https://www.securityweek.com/polish-security-agency-reports-ics-breaches-at-five-water-treatment-plants/
+https://www.securityweek.com/pre-baked-firmware-malware-hits-budget-android-devices-in-150-countries/
 https://www.securityweek.com/pre-stuxnet-sabotage-malware-fast16-linked-to-us-iran-cyber-tensions/
 https://www.securityweek.com/president-trump-orders-divestment-in-2-9-million-chips-deal-to-protect-us-security-interests/
 https://www.securityweek.com/prime-security-raises-20-million-to-build-agentic-security-architect/
@@ -2440,6 +2456,7 @@ https://www.securityweek.com/unc6692-uses-email-bombing-social-engineering-to-de
 https://www.securityweek.com/under-armour-looking-into-data-breach-affecting-customers-email-addresses/
 https://www.securityweek.com/underminr-vulnerability-lets-attackers-hide-malicious-connections-behind-trusted-domains/
 https://www.securityweek.com/university-of-sydney-data-breach-affects-27000-individuals/
+https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/
 https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/
 https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-remote-hacking/

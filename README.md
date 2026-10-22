@@ -22,6 +22,22 @@
 - [d3](https://d3js.org/)
 - [react]()
 
+## Managing projects
+
+Edit `src/lib/Projects.ts` in Helix to add or update a project. Each entry contains
+`title`, `technologies`, `description`, and `url`; array order determines display
+order. Set `status: 'preparing'` for a project that is not ready yet.
+
+The optional `updatedAt: 'YYYY-MM-DD'` field supplies that project's displayed
+last-modified date. Use the UTC date of the latest verified commit to the linked
+repository, or to the specific project page for older portfolio links. Omit it
+when the date is unknown; the page displays "Not recorded". These are stored
+dates, so update the field when the project changes. Builds do not query GitHub
+or Gitea for dates.
+
+Preview changes with `pnpm dev` at `http://localhost:4321/project`, then run
+`pnpm build` before committing and pushing.
+
 ## Writing a blog post with Helix
 
 Run these commands from the repository root after `pnpm install`:

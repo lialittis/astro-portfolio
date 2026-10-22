@@ -8,7 +8,12 @@ import '../style/hacker-theme.css';
 
 const title = "Projects";
 
-// Projects loaded successfully
+const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  timeZone: 'UTC',
+});
 ---
 
 <ProjectLayout
@@ -36,7 +41,13 @@ const title = "Projects";
                 <span class="file-owner">tianchi</span>
                 <span class="file-group">staff</span>
                 <span class="file-size">{project.status === 'preparing' ? '0' : '4096'}</span>
-                <span class="file-date">Nov 18 2025</span>
+                {project.updatedAt ? (
+                  <time class="file-date" datetime={project.updatedAt} title="Last updated (UTC)">
+                    {modifiedDateFormatter.format(new Date(project.updatedAt))}
+                  </time>
+                ) : (
+                  <span class="file-date" title="Update date has not been recorded">Not recorded</span>
+                )}
                 <span class:list={['file-name', { 'file-name-draft': project.status === 'preparing' }]}>project_{String(index + 1).padStart(2, '0')}_[{project.title}]{project.status === 'preparing' && '.draft'}</span>
               </div>
             ))
@@ -158,6 +169,12 @@ const title = "Projects";
   .file-name {
     color: rgba(0, 217, 255, 0.72);
     font-weight: 600;
+  }
+
+  .file-date {
+    min-width: 12ch;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
   }
 
   .file-name-draft {

@@ -1,46 +1,104 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import { getBlogPosts } from "../../lib/blog";
+import BlogShell from "../../layouts/BlogShell.astro";
 import PostRow from "../../components/Blog/PostRow.astro";
+import CommandLine from "../../components/Terminal/CommandLine.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (blogEntryA, blogEntryB) =>
-    blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
-);
+const posts = await getBlogPosts();
+const publishedCount = posts.filter((post) => !post.data.draft).length;
+const draftCount = posts.length - publishedCount;
 ---
 
-<script>
-  import { timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../../lib/constants";
-
-  const sequence = [loaderAnimation];
-
-  timeline(sequence as TimelineDefinition);
-</script>
-
-<Layout
+<BlogShell
   title="Tianchi YU - Blog"
   description="Notes on software security, compilers, and programming by Tianchi YU."
 >
-  <main
-    class="box-border w-full min-w-0 min-h-screen flex flex-col justify-start items-start max-w-6xl mx-auto p-4 sm:p-8"
-  >
-    <a
-      href="/"
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"
-      >Back</a
-    >
-    <h1 class="text-4xl font-bold mb-4 text-neutral-100">Posts</h1>
-    <ul class="w-full">
-      {
-        posts.map((post) => (
-          <PostRow
-            title={post.data.title}
-            date={post.data.pubDate}
-            url={post.slug}
-          />
-        ))
-      }
-    </ul>
-  </main>
-</Layout>
+  <CommandLine command="ls -lt ~/blog" />
+  <header class="collection-header">
+    <h1>Blog</h1>
+    <p>Notes on software security, compilers, and programming.</p>
+  </header>
+  <div class="collection-meta">
+    <span>
+      {publishedCount} published {publishedCount === 1 ? "post" : "posts"}
+      {draftCount > 0 && <span class="draft-count"> · {draftCount} local {draftCount === 1 ? "draft" : "drafts"}</span>}
+    </span>
+    <a href="/rss.xml" class="rss-link">RSS feed <span aria-hidden="true">↗</span></a>
+  </div>
+  <ul class="post-list" aria-label="Blog posts">
+    {
+      posts.map((post) => (
+        <PostRow
+          title={post.data.title}
+          description={post.data.description}
+          tags={post.data.tags}
+          date={post.data.pubDate}
+          url={post.slug}
+          draft={post.data.draft}
+        />
+      ))
+    }
+  </ul>
+</BlogShell>
+
+<style>
+  .collection-header h1 {
+    margin: 0 0 0.75rem;
+    color: #00d9ff !important;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .collection-header p {
+    margin: 0;
+    color: #a7b5ae !important;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .collection-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem 1rem;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+    color: #789184;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .draft-count {
+    color: #f7c873;
+  }
+
+  .rss-link {
+    color: #00d9ff;
+    text-decoration: none;
+  }
+
+  .rss-link:hover {
+    color: #00ff41;
+    text-decoration: underline;
+  }
+
+  .rss-link:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 4px;
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

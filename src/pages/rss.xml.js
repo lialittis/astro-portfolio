@@ -1,11 +1,12 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import { getBlogPosts } from "../lib/blog";
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-  const blog = await getCollection("blog");
+  // RSS always contains published posts, including during local development.
+  const blog = await getBlogPosts(false);
   return rss({
     title: "Tianchi YU(于天池)'s Blog",
     description: "my blog",

@@ -3,61 +3,162 @@ import { formatDate } from "../../lib/helpers";
 
 interface Props {
   title: string;
-  date: Date;
+  description: string;
+  tags?: string[];
+  date?: Date;
   url: string;
+  draft?: boolean;
 }
 
-const { title, date, url } = Astro.props;
+const { title, description, tags = [], date, url, draft = false } = Astro.props;
 ---
 
-<li class="w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-2">
-  <a
-    class="post-link text-sm md:text-base decoration-none"
-    href={`/blog/${url}`}
-  >
-    <p class="post-title">
-      {title}
-    </p>
-    <time
-      class="post-date tabular-nums"
-      datetime={date.toISOString()}
-      data-date={date.toISOString()}
-    >
-      {formatDate(date)}
-    </time>
+<li class="post-row">
+  <a class="post-link" href={`/blog/${url}`}>
+    <div class="post-details">
+      <div class="post-heading">
+        <h2 class="post-title">{title}</h2>
+        {draft && <span class="draft-badge">Draft</span>}
+      </div>
+      {description && <span class="post-description">{description}</span>}
+      {tags.length > 0 && (
+        <span class="post-tags" aria-label="Tags">
+          {tags.map((tag) => <span class="post-tag">{tag}</span>)}
+        </span>
+      )}
+    </div>
+    <div class="post-meta">
+      {date ? <time class="post-date" datetime={date.toISOString()}>
+        {formatDate(date)}
+      </time> : <span class="post-date">Unpublished</span>}
+      <span class="post-arrow" aria-hidden="true">→</span>
+    </div>
   </a>
 </li>
 
 <style>
+  .post-row {
+    min-width: 0;
+  }
+
   .post-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(0, 255, 65, 0.18);
+    border-left: 2px solid rgba(0, 255, 65, 0.4);
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(0, 22, 18, 0.65), rgba(0, 8, 6, 0.9));
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .post-link:hover {
+    border-color: rgba(0, 217, 255, 0.45);
+    background: linear-gradient(135deg, rgba(0, 29, 25, 0.8), rgba(0, 10, 8, 0.95));
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.08);
+  }
+
+  .post-link:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 4px;
+  }
+
+  .post-details {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem 1.5rem;
-    padding-block: 0.75rem;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .post-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
   }
 
   .post-title {
     min-width: 0;
     margin: 0;
+    color: #00d9ff !important;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
     overflow-wrap: anywhere;
     line-height: 1.5;
   }
 
+  .post-link:hover .post-title {
+    color: #00ff41 !important;
+  }
+
+  .post-description {
+    color: #a7b5ae;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .post-tag {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(247, 200, 115, 0.18);
+    border-radius: 0.25rem;
+    color: #f7c873;
+    background: rgba(247, 200, 115, 0.04);
+    font-size: 0.7rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
   .post-date {
-    flex-shrink: 0;
-    color: #a3a3a3;
+    color: #789184;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
 
-  @media (min-width: 640px) {
+  .post-arrow {
+    color: #00ff41;
+    font-size: 1.125rem;
+  }
+
+  .draft-badge {
+    padding: 0.15rem 0.4rem;
+    border: 1px solid rgba(247, 200, 115, 0.3);
+    border-radius: 0.25rem;
+    color: #f7c873;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
     .post-link {
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem;
     }
 
-    .post-date {
-      text-align: right;
+    .post-meta {
+      flex-direction: row;
+      align-items: center;
     }
   }
 </style>

@@ -1,0 +1,50 @@
+---
+import BasicLayout from "./BasicLayout.astro";
+import TerminalHeader from "../components/Terminal/TerminalHeader.astro";
+import TerminalWrapper from "../components/Terminal/TerminalWrapper.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+---
+
+<BasicLayout title={title} description={description} noindex={noindex}>
+  <div class="blog-shell">
+    <TerminalWrapper>
+      <TerminalHeader title="~/blog" />
+      <main class="terminal-content">
+        <slot />
+      </main>
+    </TerminalWrapper>
+  </div>
+</BasicLayout>
+
+<style>
+  .blog-shell {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .blog-shell :global(.terminal-wrapper) {
+    min-width: 0;
+  }
+
+  .blog-shell :global(.terminal-content) {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2rem) !important;
+  }
+
+  @media (max-width: 768px) {
+    .blog-shell {
+      padding: 1rem;
+    }
+  }
+</style>

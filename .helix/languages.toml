@@ -1,0 +1,8 @@
+[[language]]
+name = "markdown"
+text-width = 88
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+# Override the root Prettier config's TypeScript parser, required pragma,
+# and blanket ignore rule, while preserving paragraph line breaks.
+formatter = { command = "pnpm", args = ["exec", "prettier", "--parser", "markdown", "--prose-wrap", "preserve", "--no-require-pragma", "--ignore-path", ".gitignore", "--stdin-filepath", "%{buffer_name}"] }

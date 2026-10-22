@@ -22,6 +22,82 @@
 - [d3](https://d3js.org/)
 - [react]()
 
+## Writing a blog post with Helix
+
+Run these commands from the repository root after `pnpm install`:
+
+```bash
+# Terminal 1: live preview at http://localhost:4321/blog/
+pnpm dev
+
+# Terminal 2: create a draft and open it in Helix.
+pnpm blog:new "Understanding LLVM Passes"
+```
+
+The generator creates `src/content/blog/understanding-llvm-passes.md` and
+`public/blog/understanding-llvm-passes/`. It opens `hx` when run in an interactive
+terminal. Use `--no-edit` to create files without opening the editor, or
+`--slug my-stable-address` to choose the URL. Existing files are never overwritten.
+The explicit `slug` stays fixed when you edit the title or rename the file.
+
+Open Helix from the repository root (`hx` or `hx src/content/blog/my-post.md`) so
+the project settings in `.helix/languages.toml` apply. Markdown visually wraps
+at 88 columns and formats with the project's Prettier on save while preserving
+paragraph line breaks. These settings override the legacy root formatter rules
+that otherwise skip Markdown. No Markdown language server is required. If `hx`
+or `pnpm` is missing from your shell's PATH, install or configure it locally.
+
+New posts have this metadata (the generator fills in your title and slug):
+
+```yaml
+---
+layout: ../../layouts/LayoutBlogPost.astro
+title: Understanding LLVM Passes
+slug: understanding-llvm-passes
+description: ""
+draft: true
+tags: []
+# Set pubDate: YYYY-MM-DD and draft: false when ready to publish.
+---
+```
+
+Drafts appear in the local blog index with a Draft label and at their normal
+`/blog/<slug>/` address. They can omit a publication date and have an empty
+description while you write. Production builds exclude draft article pages,
+index entries, and sitemap entries; RSS excludes drafts even in development.
+Existing posts without `draft` remain published. Draft status does not make
+files in a public Git repository or under `public/` private.
+
+The layout already displays the article title, so begin the body with an
+introduction and use `##` headings for sections. Store images in the generated
+folder and give each image useful alt text:
+
+```markdown
+![Stages of the LLVM pass pipeline](/blog/understanding-llvm-passes/pass-pipeline.png)
+```
+
+For links to another post, use its deployed URL, such as
+`[Another article](/blog/another-post/)`, rather than a relative `.md` file path.
+
+When ready to publish:
+
+1. Write a short `description`, set an unquoted `pubDate: YYYY-MM-DD` to the actual
+   publication date, and change `draft: true` to `draft: false`.
+2. Run `pnpm blog:check` to validate metadata, duplicate slugs, local images,
+   internal page links, and links from published posts to drafts. It checks
+   Markdown links (including reference links) and HTML `a`/`img` attributes;
+   it does not fetch external URLs or validate heading fragments.
+3. Run `pnpm build`, then `pnpm preview` to inspect the production site, including
+   the article on a narrow screen. `pnpm preview` excludes drafts.
+4. Review `git diff`, commit the article and its images, and push to `main`.
+   The existing GitHub Pages workflow validates and builds before deployment.
+   Pull requests also run the blog checks and a full build.
+
+Publication dates control ordering; they do not schedule publication. You can
+commit drafts as backups and publish later by changing their metadata.
+
+Run `pnpm test:blog` when changing the authoring scripts or validation rules.
+
 ## Progress vault
 
 The `/progress` dashboard loads only encrypted data. Its unencrypted YAML source

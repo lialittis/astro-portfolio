@@ -1,42 +1,53 @@
 ---
 import { formatDate } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
-import BasicLayout from "./BasicLayout.astro";
+import BlogShell from "./BlogShell.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
   description: string;
-  pubDate: string | Date;
+  pubDate?: string | Date;
+  draft?: boolean;
+  tags?: string[];
   minutesRead: string;
 }>;
 
 const { frontmatter } = Astro.props;
+const pubDate = frontmatter.pubDate ? new Date(frontmatter.pubDate) : undefined;
 ---
 
-<BasicLayout
+<BlogShell
   title={`${frontmatter.title} | Tianchi YU`}
   description={frontmatter.description}
+  noindex={frontmatter.draft}
 >
-  <main class="blog-post text-neutral-100">
-    <a
-      href="/blog"
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg mb-8"
-      >Back</a
-    >
+  <div class="blog-post">
+    <a href="/blog" class="back-link" aria-label="Back to all blog posts">
+      <span aria-hidden="true">$</span> cd ~/blog
+    </a>
+    {frontmatter.draft && (
+      <p class="draft-notice">Draft preview · Visible only during local development.</p>
+    )}
     <header class="post-header">
       <h1>{frontmatter.title}</h1>
+      {frontmatter.description && <p class="post-description">{frontmatter.description}</p>}
       <div class="post-meta">
-        <time datetime={new Date(frontmatter.pubDate).toISOString()}>
-          {formatDate(new Date(frontmatter.pubDate))}
-        </time>
+        {pubDate ? <time datetime={pubDate.toISOString()}>
+          {formatDate(pubDate)}
+        </time> : <span>Unpublished draft</span>}
         <span>{frontmatter.minutesRead}</span>
       </div>
+      {frontmatter.tags && frontmatter.tags.length > 0 && (
+        <ul class="post-tags" aria-label="Tags">
+          {frontmatter.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      )}
     </header>
     <article class="post-body prose prose-slate prose-invert">
       <slot />
     </article>
-  </main>
-</BasicLayout>
+  </div>
+</BlogShell>
 
 <style>
   .blog-post {
@@ -44,22 +55,66 @@ const { frontmatter } = Astro.props;
     width: 100%;
     max-width: 48rem;
     min-width: 0;
-    min-height: 100vh;
     margin-inline: auto;
-    padding: 2rem clamp(1rem, 4vw, 2rem) 4rem;
+    padding-bottom: 2rem;
+    color: #d6dee4;
     overflow-wrap: anywhere;
+  }
+
+  .back-link {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #00d9ff;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .back-link span {
+    color: #00ff41;
+  }
+
+  .back-link:hover {
+    color: #00ff41;
+    text-decoration: underline;
+  }
+
+  .back-link:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 4px;
   }
 
   .post-header {
     margin-block: 2.5rem;
   }
 
+  .draft-notice {
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(247, 200, 115, 0.3);
+    border-radius: 0.5rem;
+    color: #f7c873 !important;
+    background: rgba(247, 200, 115, 0.05);
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
   .post-header h1 {
     margin: 0;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 600;
     line-height: 1.15;
     text-wrap: balance;
+  }
+
+  .post-description {
+    margin-block: 1rem 0;
+    color: #a7b5ae !important;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 
   .post-meta {
@@ -68,8 +123,32 @@ const { frontmatter } = Astro.props;
     justify-content: space-between;
     gap: 0.5rem 1rem;
     margin-top: 1rem;
-    color: #a3a3a3;
-    font-size: 0.875rem;
+    color: #789184;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.8rem;
+  }
+
+  .post-meta time {
+    color: #f7c873;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .post-tags li {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(247, 200, 115, 0.18);
+    border-radius: 0.25rem;
+    color: #f7c873;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 
   .post-body {
@@ -78,9 +157,30 @@ const { frontmatter } = Astro.props;
   }
 
   .post-body :global(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Satoshi', sans-serif;
     margin-top: 2em;
     margin-bottom: 0.75em;
     line-height: 1.3;
+  }
+
+  .post-body :global(a) {
+    color: #00d9ff;
+    text-decoration-color: rgba(0, 217, 255, 0.4);
+    text-underline-offset: 0.2em;
+  }
+
+  .post-body :global(a:hover) {
+    color: #00ff41;
+  }
+
+  .post-body :global(:not(pre) > code) {
+    color: #f7c873;
+    background: rgba(247, 200, 115, 0.07);
+  }
+
+  .post-body :global(code::before),
+  .post-body :global(code::after) {
+    content: none;
   }
 
   .post-body :global(pre) {

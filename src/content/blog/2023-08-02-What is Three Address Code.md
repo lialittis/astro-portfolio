@@ -1,16 +1,13 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      What is Three Address Code
-# subtitle:   Compiler Theory
-# description: ""
-pubDate:       2023-08-02
-# author:     TC YU
-# header-img: ""
-# catalog: true
+layout: ../../layouts/LayoutBlogPost.astro
+title: What is Three Address Code
+description: An introduction to three-address code, its structure, and its role
+  in compiler optimization.
+pubDate: 2023-08-02
 tags:
-    - Compiler
+  - Compiler
 categories:
-    - Tutorials
+  - Tutorials
 ---
 
 Three Address Code (TAC) is an intermediate code generation technique used by compilers to represent high-level language constructs in a lower-level, more manageable form. TAC is called "three address code" because each instruction in this intermediate representation typically involves at most three addresses or operands. These addresses can represent variables, constants, or temporary results. TAC is an essential part of the compilation process as it simplifies the optimization and code generation phases.

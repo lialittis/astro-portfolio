@@ -1,14 +1,10 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      Performance Benefits From Underutilized CPU
-# subtitle:   Performance
-# description: ""
-pubDate:       2023-08-18
-# author:     TC YU
-# header-img: ""
-# catalog: true
+layout: ../../layouts/LayoutBlogPost.astro
+title: Performance Benefits From Underutilized CPU
+description: Notes on CPU utilization and performance.
+pubDate: 2023-08-18
 tags:
-    - Performance
+  - Performance
 categories:
-    - Tutorials
+  - Tutorials
 ---

@@ -12,14 +12,14 @@ const { title, date, url } = Astro.props;
 
 <li class="w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-2">
   <a
-    class="text-sm md:text-base decoration-none flex justify-between"
+    class="post-link text-sm md:text-base decoration-none"
     href={`/blog/${url}`}
   >
-    <p class="inline-block whitespace-nowrap">
+    <p class="post-title">
       {title}
     </p>
     <time
-      class="text-right tabular-nums"
+      class="post-date tabular-nums"
       datetime={date.toISOString()}
       data-date={date.toISOString()}
     >
@@ -27,3 +27,37 @@ const { title, date, url } = Astro.props;
     </time>
   </a>
 </li>
+
+<style>
+  .post-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 1.5rem;
+    padding-block: 0.75rem;
+  }
+
+  .post-title {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+
+  .post-date {
+    flex-shrink: 0;
+    color: #a3a3a3;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .post-link {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .post-date {
+      text-align: right;
+    }
+  }
+</style>

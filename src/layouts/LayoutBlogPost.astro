@@ -6,7 +6,7 @@ import BasicLayout from "./BasicLayout.astro";
 type Props = MarkdownLayoutProps<{
   title: string;
   description: string;
-  pubDate: string;
+  pubDate: string | Date;
   minutesRead: string;
 }>;
 
@@ -14,24 +14,102 @@ const { frontmatter } = Astro.props;
 ---
 
 <BasicLayout
-  title="Gianmarco Cavallo - Blog"
-  description="Software developer with strong focus on the user experience animations and micro interactions"
+  title={`${frontmatter.title} | Tianchi YU`}
+  description={frontmatter.description}
 >
-  <main class="mx-auto max-w-3xl w-full h-screen p-8 text-neutral-100">
+  <main class="blog-post text-neutral-100">
     <a
       href="/blog"
       class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg mb-8"
       >Back</a
     >
-    <div class="my-10">
-      <h1 class="text-5xl font-semibold">{frontmatter.title}</h1>
-      <div class="flex justify-between pt-4 text-gray-500 text-sm">
-        <p>{formatDate(new Date(frontmatter.pubDate))}</p>
-        <p>{frontmatter.minutesRead}</p>
+    <header class="post-header">
+      <h1>{frontmatter.title}</h1>
+      <div class="post-meta">
+        <time datetime={new Date(frontmatter.pubDate).toISOString()}>
+          {formatDate(new Date(frontmatter.pubDate))}
+        </time>
+        <span>{frontmatter.minutesRead}</span>
       </div>
-    </div>
-    <article class="prose prose-p:text-red-500 prose-slate prose-invert">
+    </header>
+    <article class="post-body prose prose-slate prose-invert">
       <slot />
     </article>
   </main>
 </BasicLayout>
+
+<style>
+  .blog-post {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 48rem;
+    min-width: 0;
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: 2rem clamp(1rem, 4vw, 2rem) 4rem;
+    overflow-wrap: anywhere;
+  }
+
+  .post-header {
+    margin-block: 2.5rem;
+  }
+
+  .post-header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+    color: #a3a3a3;
+    font-size: 0.875rem;
+  }
+
+  .post-body {
+    max-width: none;
+    line-height: 1.75;
+  }
+
+  .post-body :global(h1, h2, h3, h4, h5, h6) {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+  }
+
+  .post-body :global(pre) {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    overflow-wrap: normal;
+    white-space: pre;
+  }
+
+  .post-body :global(pre code) {
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .post-body :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-body :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+</style>

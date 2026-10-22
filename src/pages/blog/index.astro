@@ -5,7 +5,7 @@ import PostRow from "../../components/Blog/PostRow.astro";
 
 const posts = (await getCollection("blog")).sort(
   (blogEntryA, blogEntryB) =>
-    (blogEntryB.data.pubDate?.getTime?.() ?? 0) - (blogEntryA.data.pubDate?.getTime?.() ?? 0)
+    blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
 );
 ---
 
@@ -20,10 +20,10 @@ const posts = (await getCollection("blog")).sort(
 
 <Layout
   title="Tianchi YU - Blog"
-  description="Software developer"
+  description="Notes on software security, compilers, and programming by Tianchi YU."
 >
   <main
-    class="w-screen min-h-screen flex flex-col justify-start items-start max-w-6xl mx-auto p-8"
+    class="box-border w-full min-w-0 min-h-screen flex flex-col justify-start items-start max-w-6xl mx-auto p-4 sm:p-8"
   >
     <a
       href="/"

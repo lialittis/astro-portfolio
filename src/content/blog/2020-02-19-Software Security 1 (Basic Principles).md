@@ -1,17 +1,13 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      Software Security 1 (Basic Principles)
-# subtitle:   EPFL课程
-# description: ""
-pubDate:       2020-02-19
-# author:     TC YU
-# header-img: assets/img/header_software_security.jpg
-# catalog: true
+layout: ../../layouts/LayoutBlogPost.astro
+title: Software Security 1 (Basic Principles)
+description: Course notes on software security principles, threats, attacks, and defenses.
+pubDate: 2020-02-19
 tags:
-    - Software Security
-    - 软件安全
+  - Software Security
+  - 软件安全
 categories:
-    - Tutorials
+  - Tutorials
 ---
 
 # Software Security 1 (Basic Principles)

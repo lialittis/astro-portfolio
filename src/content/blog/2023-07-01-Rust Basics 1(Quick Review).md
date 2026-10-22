@@ -1,20 +1,13 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      "Rust Basics 1(Quick Review)"
-# subtitle:   Rust Tutorial
-escription: "this is a post example"
-pubDate:       2023-07-01
-# author:     TC YU
-# catagory:   "coding"
+layout: ../../layouts/LayoutBlogPost.astro
+title: Rust Basics 1(Quick Review)
+description: A quick review of Rust programs, compilation, variables, and basic
+  language concepts.
+pubDate: 2023-07-01
 tags:
-    - Rust
+  - Rust
 categories:
-    - Tutorials
-# layout: ../../layouts/LayoutBlogPost.astro
-# title: "Hello, World"
-# description: "this is a post example"
-# pubDate: 2023-01-21
-# category: "intro"
+  - Tutorials
 ---
 
 

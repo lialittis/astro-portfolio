@@ -1,17 +1,14 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      DIS - Classification
-# subtitle:   EPFL
-# description: ""
-pubDate:       2020-06-11
-# author:     TC YU
-# header-img: assets/img/decision_tree.png
-# catalog: true
+layout: ../../layouts/LayoutBlogPost.astro
+title: DIS - Classification
+description: Notes on classification, clustering, and decision trees in
+  distributed information systems.
+pubDate: 2020-06-11
 tags:
-    - Data Mining
-    - Distributed Information System
+  - Data Mining
+  - Distributed Information System
 categories:
-    - Tutorials
+  - Tutorials
 ---
 
 <head>

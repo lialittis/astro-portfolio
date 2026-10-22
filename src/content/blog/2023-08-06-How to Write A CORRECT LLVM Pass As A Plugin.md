@@ -1,14 +1,10 @@
 ---
-layout:     ../../layouts/LayoutBlogPost.astro
-title:      How to Write A CORRECT LLVM Pass As A Plugin
-# subtitle:   LLVM Tutorial
-# description: ""
-pubDate:       2023-08-06
-# author:     TC YU
-# header-img: ""
-# catalog: true
+layout: ../../layouts/LayoutBlogPost.astro
+title: How to Write A CORRECT LLVM Pass As A Plugin
+description: Notes on writing an LLVM pass as a plugin.
+pubDate: 2023-08-06
 tags:
-    - LLVM
+  - LLVM
 categories:
-    - Tutorials
+  - Tutorials
 ---

@@ -7,6 +7,7 @@ import { slug as githubSlug } from 'github-slugger'
 import MarkdownIt from 'markdown-it'
 import YAML from 'yaml'
 import { blogSchema } from '../src/lib/blog-schema.mjs'
+import { loadProjectManifests, projectResourceRoutes } from '../src/lib/project-reports.mjs'
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url))
 const markdown = new MarkdownIt({ html: true })
@@ -115,6 +116,7 @@ export async function checkPosts(root = projectRoot) {
     routes.add(normalizeRoute(route))
   }
   routes.add('/blog')
+  for (const route of projectResourceRoutes(await loadProjectManifests(root))) routes.add(route)
   for (const post of posts) {
     for (const reference of markdownReferences(post.body)) {
       const raw = reference.url?.trim()

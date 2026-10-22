@@ -1,3 +1,14 @@
+import gpuStudy from '../data/project-studies/ai-infra-gpu-study.json';
+
+export interface ProjectStudy {
+	slug: string;
+	title: string;
+	description: string;
+	technologies: string[];
+	sourcePath: string;
+	report?: { entry: string; assets: string[] };
+}
+
 export interface Project {
 	title: string;
 	technologies: string[];
@@ -6,15 +17,21 @@ export interface Project {
 	// Last verified repository or linked project-page commit date, in UTC (YYYY-MM-DD).
 	updatedAt?: string;
 	status?: 'preparing';
+	slug?: string;
+	sourceRef?: string;
+	studies?: ProjectStudy[];
 }
 
 const projects: Project[] = [
 	{
 		title: 'AI Infrastructure & GPU Study',
+		slug: gpuStudy.slug,
+		sourceRef: gpuStudy.ref,
+		studies: gpuStudy.studies,
 		technologies: ['CUDA', 'PyTorch', 'vLLM', 'GPU Profiling'],
 		description:
 			'Hands-on experiments exploring CUDA streams, PyTorch and vLLM inference, and numerical errors in CUDA graphs. Includes reproducible examples and profiling notes from NVIDIA GPU hardware.',
-		url: 'https://github.com/lialittis/AI-Infra-GPU-Study',
+		url: `https://github.com/${gpuStudy.repository}`,
 		updatedAt: '2026-10-20'
 	},
 	{
@@ -74,3 +91,9 @@ const projects: Project[] = [
 ];
 
 export default projects;
+
+export function getStudySourceUrl(project: Project, study: ProjectStudy, sourceRef = project.sourceRef ?? 'main'): string {
+	const ref = encodeURIComponent(sourceRef);
+	const source = study.sourcePath.split('/').map(encodeURIComponent).join('/');
+	return `${project.url}/tree/${ref}/${source}`;
+}

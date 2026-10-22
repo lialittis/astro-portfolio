@@ -81,7 +81,14 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
                   
                   {project.description && <p class="project-description">{project.description}</p>}
                   
-                  {project.url ? (
+                  {project.slug && project.studies?.length ? (
+                    <div class="project-actions">
+                      <a href={`/project/${project.slug}/`} class="project-link-hacker">
+                        <span><span class="action-prompt">$</span> explore {project.studies.length} studies</span>
+                      </a>
+                      <a href={project.url} class="project-source-link" target="_blank" rel="noreferrer">repository ↗</a>
+                    </div>
+                  ) : project.url ? (
                     <a href={project.url} target="_blank" rel="noreferrer" class="project-link-hacker">
                       <span><span class="action-prompt">$</span> open project</span>
                     </a>
@@ -179,6 +186,30 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
 
   .file-name-draft {
     color: #f7c873;
+  }
+
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  .project-source-link {
+    color: #00d9ff;
+    font-family: 'SF Mono', 'Monaco', monospace;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .project-source-link:hover {
+    color: #00ff41;
+    text-decoration: underline;
+  }
+
+  .project-source-link:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 4px;
   }
 
   /* Hacker Mode Styles */

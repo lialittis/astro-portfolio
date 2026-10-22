@@ -11,6 +11,8 @@
     "blog:new": "node scripts/blog.mjs new",
     "blog:check": "node scripts/blog.mjs check",
     "test:blog": "node --test tests/blog.test.mjs",
+    "projects:sync": "node scripts/sync-project-reports.mjs",
+    "test:projects": "node --test tests/project-reports.test.mjs",
     "progress:init": "node scripts/progress-vault.mjs init",
     "progress:encrypt": "node scripts/progress-vault.mjs encrypt",
     "progress:decrypt": "node scripts/progress-vault.mjs decrypt",

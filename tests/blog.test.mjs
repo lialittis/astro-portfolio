@@ -149,6 +149,18 @@ test('drafts may link to other drafts', async t => {
   assert.deepEqual((await checkPosts(root)).errors, [])
 })
 
+test('blog posts can link to selected project pages and their published reports', async t => {
+  const root = await workspace(t)
+  await file(root, 'src/data/project-studies/gpu-study.json', JSON.stringify({
+    slug: 'gpu-study', repository: 'example/gpu', ref: 'main', studies: [{
+      slug: 'graph-errors', title: 'Graph errors', description: 'A visual report.',
+      technologies: ['CUDA'], sourcePath: '02-graphs', report: { entry: '02-graphs/explainer.html', assets: [] }
+    }]
+  }))
+  await post(root, 'project-links', { body: '[Project](/project/gpu-study/)\n[Report](/project/gpu-study/graph-errors/)' })
+  assert.deepEqual((await checkPosts(root)).errors, [])
+})
+
 test('checker detects local references inside HTML without inspecting fenced HTML examples', async t => {
   const root = await workspace(t)
   await post(root, 'html', { body: '<img src="/missing.png">\n\n<a href="/missing/">Missing</a>' })

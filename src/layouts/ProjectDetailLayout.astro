@@ -1,0 +1,55 @@
+---
+import BasicLayout from "./BasicLayout.astro";
+import TerminalHeader from "../components/Terminal/TerminalHeader.astro";
+import TerminalWrapper from "../components/Terminal/TerminalWrapper.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BasicLayout title={title} description={description}>
+  <div class="project-shell">
+    <TerminalWrapper>
+      <TerminalHeader title="~/projects" />
+      <main class="terminal-content">
+        <slot />
+      </main>
+    </TerminalWrapper>
+  </div>
+</BasicLayout>
+
+<style>
+  .project-shell {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  .project-shell :global(.terminal-wrapper) {
+    min-width: 0;
+  }
+
+  .project-shell :global(.terminal-content) {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2rem) !important;
+  }
+
+  .project-shell :global(.cmd-line),
+  .project-shell :global(.cmd) {
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    .project-shell {
+      padding: 1rem;
+    }
+  }
+</style>

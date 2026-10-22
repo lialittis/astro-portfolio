@@ -38,6 +38,57 @@ or Gitea for dates.
 Preview changes with `pnpm dev` at `http://localhost:4321/project`, then run
 `pnpm build` before committing and pushing.
 
+### Selected studies and HTML reports
+
+The GPU project has a local hub at `/project/ai-infra-gpu-study/`. Its CUDA graph
+report is published at `/project/ai-infra-gpu-study/cuda-graph-errors/`, with its
+original layout and scripts plus navigation back to the project and source.
+
+Choose featured studies in
+`src/data/project-studies/ai-infra-gpu-study.json`. Each study has a stable `slug`,
+title, description, technology tags, and a repository `sourcePath`. Adding a
+`report` with an HTML `entry` enables a local report page. Studies without a
+report link to their experiment code and documentation on GitHub.
+
+To update a report, edit and commit it in the project repository, then run:
+
+```bash
+pnpm projects:sync ai-infra-gpu-study
+
+# Optional: import a specific branch, tag, or complete commit SHA.
+pnpm projects:sync ai-infra-gpu-study --ref <revision>
+
+pnpm build
+pnpm preview
+```
+
+The command resolves the source revision once and imports every selected report
+at that commit. It stores the unchanged HTML in `src/data/project-reports/` and
+records the revision, source-file modification date, and file hashes in
+`src/data/project-reports.lock.json`. Repeating the same import produces no
+content changes. The report date comes from its source-file commit; the parent
+project's `updatedAt` remains the explicitly maintained project date.
+
+For a report with local images, stylesheets, or scripts, list their paths in
+`report.assets`, relative to the HTML entry's directory. For example,
+`["images/plot.svg", "styles.css"]`. Include dependencies referenced by those
+stylesheets too. Assets are copied to
+`public/project/<project-slug>/<study-slug>/`, preserving their relative paths.
+External fonts and scripts retain their original URLs. Local report references
+must use relative asset URLs or same-page `#anchors`.
+
+Review the diff and both local pages before committing the snapshots, lockfile,
+and any imported assets. Normal builds read these local copies and verify their
+hashes; they do not download reports. Make report changes in the source project,
+then sync again instead of editing the imported snapshot. Public GitHub imports
+need no token; optionally set `GITHUB_TOKEN` locally to use authenticated API
+rate limits. Tokens are not written to the imported files.
+
+For another parent project, add a manifest in `src/data/project-studies/` and
+connect its `slug`, `ref` (as `sourceRef`), and `studies` to the corresponding
+entry in `src/lib/Projects.ts`. Existing projects without studies keep their
+current links. Run `pnpm test:projects` when changing the import tools.
+
 ## Writing a blog post with Helix
 
 Run these commands from the repository root after `pnpm install`:

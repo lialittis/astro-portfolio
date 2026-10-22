@@ -52,6 +52,9 @@ jobs:
       - name: Validate blog content
         run: pnpm blog:check
 
+      - name: Test project report imports
+        run: pnpm test:projects
+
       - name: Build the site
         run: pnpm run build
 

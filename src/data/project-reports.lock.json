@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "reports": {
+    "ai-infra-gpu-study/cuda-graph-errors": {
+      "repository": "lialittis/AI-Infra-GPU-Study",
+      "commit": "a816fed3712109356e2dd215aba100037d7a49ea",
+      "sourcePath": "02-cuda-graph-numerical-errors/explainer.html",
+      "updatedAt": "2026-10-19",
+      "sha256": "de5d0506c9e7910f1d6489835b64c37663e4deac785926c46d4f07ba6a98ac12",
+      "assets": {}
+    }
+  }
+}

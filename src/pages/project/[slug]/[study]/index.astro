@@ -1,0 +1,27 @@
+---
+import projects, { type Project, type ProjectStudy } from "../../../../lib/Projects";
+import { loadReportSnapshot, renderProjectReport } from "../../../../lib/project-reports.mjs";
+
+export function getStaticPaths() {
+  return projects.flatMap(project => project.slug ? (
+    project.studies?.filter(study => study.report).map(study => ({
+      params: { slug: project.slug, study: study.slug },
+      props: { project, study },
+    })) ?? []
+  ) : []);
+}
+
+interface Props { project: Project; study: ProjectStudy }
+const { project, study } = Astro.props;
+const { html, record } = await loadReportSnapshot(project.slug, study.slug);
+const report = renderProjectReport(html, {
+  projectSlug: project.slug,
+  studySlug: study.slug,
+  projectTitle: project.title,
+  description: study.description,
+  record,
+  site: Astro.site,
+});
+---
+
+<Fragment set:html={report} />

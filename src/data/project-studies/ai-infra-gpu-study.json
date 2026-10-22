@@ -1,0 +1,25 @@
+{
+  "slug": "ai-infra-gpu-study",
+  "repository": "lialittis/AI-Infra-GPU-Study",
+  "ref": "main",
+  "studies": [
+    {
+      "slug": "cuda-streams",
+      "title": "CUDA Streams",
+      "description": "From CUDA microbenchmarks to real inference: study concurrency, hidden serialization, and the streams used by PyTorch and vLLM.",
+      "technologies": ["CUDA", "PyTorch", "vLLM", "Nsight Systems"],
+      "sourcePath": "01-cuda-streams"
+    },
+    {
+      "slug": "cuda-graph-errors",
+      "title": "CUDA Graph Numerical Errors",
+      "description": "Explore what CUDA graph replay freezes, why numerical errors occur, and how to fix them through code comparisons, diagrams, and measured results.",
+      "technologies": ["CUDA Graphs", "PyTorch", "Numerical Correctness"],
+      "sourcePath": "02-cuda-graph-numerical-errors",
+      "report": {
+        "entry": "02-cuda-graph-numerical-errors/explainer.html",
+        "assets": []
+      }
+    }
+  ]
+}

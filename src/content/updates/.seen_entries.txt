@@ -1166,8 +1166,10 @@ https://thehackernews.com/2026/10/attackers-heat-french-supermarket.html
 https://thehackernews.com/2026/10/attackers-tampered-with-aomei.html
 https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
 https://thehackernews.com/2026/10/bring-your-own-agent-your-employees.html
+https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html
 https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html
 https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
+https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html
 https://thehackernews.com/2026/10/citizen-lab-traces-zero-click-candiru.html
 https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html
 https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html
@@ -1185,7 +1187,10 @@ https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html
 https://thehackernews.com/2026/10/google-chrome-adds-clickfix-warnings-to.html
 https://thehackernews.com/2026/10/google-pauses-oss-product-bug-bounty.html
 https://thehackernews.com/2026/10/google-rolls-out-gemini-4-argon-to.html
+https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html
+https://thehackernews.com/2026/10/hackers-breach-enterprise-firewalls-and.html
 https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html
+https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html
 https://thehackernews.com/2026/10/ledger-finds-unauthorized-hardware.html
 https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html
 https://thehackernews.com/2026/10/libreoffice-and-openoffice-flaws-let.html
@@ -1199,6 +1204,7 @@ https://thehackernews.com/2026/10/new-qpack-flaws-can-crash-http3-servers.html
 https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html
 https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html
 https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html
+https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html
 https://thehackernews.com/2026/10/openai-disrupts-reasoning-extraction.html
 https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html
 https://thehackernews.com/2026/10/openai-research-model-spent-3rd-party.html
@@ -1209,6 +1215,8 @@ https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html
 https://thehackernews.com/2026/10/product-walkthrough-bitdefender-ai.html
 https://thehackernews.com/2026/10/researchers-demonstrate-openbsd-root.html
 https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html
+https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html
+https://thehackernews.com/2026/10/ruby-fixes-three-regex-engine-bugs.html
 https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html
 https://thehackernews.com/2026/10/silent-lynx-exploits-winrar-flaw-to.html
 https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html
@@ -1510,12 +1518,14 @@ https://www.schneier.com/blog/archives/2026/09/whats-the-scam.html
 https://www.schneier.com/blog/archives/2026/10/another-historic-cipher-falls-to-ai.html
 https://www.schneier.com/blog/archives/2026/10/apples-verified-photography-system.html
 https://www.schneier.com/blog/archives/2026/10/backdooring-open-weight-ai-models.html
+https://www.schneier.com/blog/archives/2026/10/compromised-tls-certificates.html
 https://www.schneier.com/blog/archives/2026/10/connected-cars-are-a-surveillance-platform.html
 https://www.schneier.com/blog/archives/2026/10/cyberattack-on-connected-fridges-in-france.html
 https://www.schneier.com/blog/archives/2026/10/fbi-arrests-suspect-in-fbi-hacking-case.html
 https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-eu-is-trying-to-fight-unregulated-squid-fishing.html
 https://www.schneier.com/blog/archives/2026/10/how-american-political-campaigns-are-using-ai-and-what-theyre-spending-on-the-tools.html
 https://www.schneier.com/blog/archives/2026/10/measuring-human-cryptanalysis-effort.html
+https://www.schneier.com/blog/archives/2026/10/new-serious-php-vulnerabilities-released-and-patched.html
 https://www.schneier.com/blog/archives/2026/10/possible-new-cellebrite-iphone-radio-zero-day.html
 https://www.schneier.com/blog/archives/2026/10/possible-vulnerability-in-apples-automatic-reboot.html
 https://www.schneier.com/blog/archives/2026/10/the-future-of-ai-cryptanalysis.html
@@ -1527,6 +1537,7 @@ https://www.securityweek.com/1-6-million-likely-impacted-by-ringcentral-data-bre
 https://www.securityweek.com/1-million-sandbox-challenge-uncovers-linux-kernel-flaws/
 https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/
 https://www.securityweek.com/100-chrome-extensions-steal-user-data-open-backdoor/
+https://www.securityweek.com/11-million-impacted-by-capcom-data-breach/
 https://www.securityweek.com/113000-impacted-by-data-breach-at-virginia-mental-health-authority/
 https://www.securityweek.com/12-million-impacted-by-data-breach-at-japanese-telco-kddi/
 https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/
@@ -1645,9 +1656,11 @@ https://www.securityweek.com/asos-confirms-cyberattack-data-breach/
 https://www.securityweek.com/asymmetric-security-emerges-from-stealth-with-4-2-million-in-funding/
 https://www.securityweek.com/asymptote-labs-lands-5-5-million-seed-for-ai-agent-runtime-security/
 https://www.securityweek.com/atf-confirms-cyber-incident-after-ransomware-group-claims-attack/
+https://www.securityweek.com/atlassian-patches-75-third-party-flaws-in-data-center-and-server-products/
 https://www.securityweek.com/atlassian-patches-critical-apache-tika-flaw/
 https://www.securityweek.com/atlassian-patches-critical-vulnerability-affecting-8-products/
 https://www.securityweek.com/atlassian-splunk-patch-critical-vulnerabilities/
+https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/
 https://www.securityweek.com/automotive-it-firm-hyundai-autoever-discloses-data-breach/
 https://www.securityweek.com/autonomous-ai-agents-provide-new-class-of-supply-chain-attack/
 https://www.securityweek.com/autonomous-ai-hacks-raise-thorny-questions-of-legal-accountability/
@@ -2153,6 +2166,7 @@ https://www.securityweek.com/legacy-systems-real-world-impacts-the-reality-of-ot
 https://www.securityweek.com/lema-ai-emerges-from-stealth-with-24-million-to-tackle-third-party-risk/
 https://www.securityweek.com/libraesva-email-security-gateway-vulnerability-exploited-by-nation-state-hackers/
 https://www.securityweek.com/linux-foundation-unveils-new-open-source-security-project-akrites/
+https://www.securityweek.com/litellm-compromised-in-fresh-supply-chain-attack/
 https://www.securityweek.com/living-off-the-ai-the-next-evolution-of-attacker-tradecraft/
 https://www.securityweek.com/llms-in-attacker-crosshairs-warns-threat-intel-firm/
 https://www.securityweek.com/loblaw-data-breach-impacts-customer-information/
@@ -2211,6 +2225,7 @@ https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data
 https://www.securityweek.com/millions-impacted-by-conduent-data-breach/
 https://www.securityweek.com/mind-secures-72-million-for-ai-powered-dlp/
 https://www.securityweek.com/mindgard-raises-30-million-to-protect-ai-systems/
+https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/
 https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/
 https://www.securityweek.com/mitre-launches-new-security-framework-for-embedded-systems/
 https://www.securityweek.com/mitre-releases-2025-list-of-top-25-most-dangerous-software-vulnerabilities/
@@ -2372,6 +2387,7 @@ https://www.securityweek.com/pwn2own-whatsapp-hacker-says-exploit-privately-repo
 https://www.securityweek.com/pypi-warns-users-of-fresh-phishing-campaign/
 https://www.securityweek.com/qiz-security-raises-17-million-for-cryptographic-governance-platform/
 https://www.securityweek.com/quantum-bridge-raises-8-million-for-quantum-safe-key-distribution-solution/
+https://www.securityweek.com/quest-diagnostics-reports-cyber-breach-affecting-certain-patient-records/
 https://www.securityweek.com/questions-raised-over-cisas-silent-ransomware-updates-in-kev-catalog/
 https://www.securityweek.com/radicl-raises-31-million-for-vsoc/
 https://www.securityweek.com/ransomware-attack-disrupts-local-emergency-alert-system-across-us/

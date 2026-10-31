@@ -1155,6 +1155,7 @@ https://thehackernews.com/2026/09/your-critical-vulnerabilities-might-not.html
 https://thehackernews.com/2026/09/zero-trust-for-ai-agents-starts-with.html
 https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html
 https://thehackernews.com/2026/10/100-compromised-websites-use-fake.html
+https://thehackernews.com/2026/10/a-shared-chatgpt-link-could-run.html
 https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html
 https://thehackernews.com/2026/10/ai-decision-models-and-their-impact-on.html
 https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html
@@ -1163,6 +1164,7 @@ https://thehackernews.com/2026/10/anthropic-launches-free-ai.html
 https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html
 https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html
 https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html
+https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html
 https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html
 https://thehackernews.com/2026/10/attackers-exploit-fortios-flaw-to.html
 https://thehackernews.com/2026/10/attackers-heat-french-supermarket.html
@@ -1175,6 +1177,7 @@ https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
 https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html
 https://thehackernews.com/2026/10/citizen-lab-traces-zero-click-candiru.html
 https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html
+https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html
 https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html
 https://thehackernews.com/2026/10/credential-stealing-github-actions.html
 https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html
@@ -1211,6 +1214,7 @@ https://thehackernews.com/2026/10/new-qpack-flaws-can-crash-http3-servers.html
 https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html
 https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html
 https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html
+https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html
 https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html
 https://thehackernews.com/2026/10/openai-disrupts-reasoning-extraction.html
 https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html
@@ -1229,16 +1233,20 @@ https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html
 https://thehackernews.com/2026/10/silent-lynx-exploits-winrar-flaw-to.html
 https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html
 https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html
+https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html
 https://thehackernews.com/2026/10/the-ai-velocity-paradox-why-security-is.html
 https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html
 https://thehackernews.com/2026/10/threatsday-adobe-rce-dns-wallet-theft.html
+https://thehackernews.com/2026/10/trezor-warns-of-suspected-hardware.html
 https://thehackernews.com/2026/10/two-critical-marklogic-flaws-could-give.html
 https://thehackernews.com/2026/10/uat-11985-uses-fake-event-invites-to.html
 https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html
 https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html
 https://thehackernews.com/2026/10/welcome-to-jungle-what-we-found-inside.html
 https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html
+https://thehackernews.com/2026/10/why-urgent-security-fixes-arent-fixed.html
 https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html
+https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1528,6 +1536,7 @@ https://www.schneier.com/blog/archives/2026/10/another-historic-cipher-falls-to-
 https://www.schneier.com/blog/archives/2026/10/apples-verified-photography-system.html
 https://www.schneier.com/blog/archives/2026/10/backdooring-open-weight-ai-models.html
 https://www.schneier.com/blog/archives/2026/10/bias-in-qwen3-coder-model.html
+https://www.schneier.com/blog/archives/2026/10/bloatware-in-aftermarket-auto-parts.html
 https://www.schneier.com/blog/archives/2026/10/compromised-tls-certificates.html
 https://www.schneier.com/blog/archives/2026/10/connected-cars-are-a-surveillance-platform.html
 https://www.schneier.com/blog/archives/2026/10/cyberattack-on-connected-fridges-in-france.html
@@ -1556,6 +1565,7 @@ https://www.securityweek.com/14000-trezor-customers-impacted-by-data-breach-at-s
 https://www.securityweek.com/146000-impacted-by-delta-dental-of-virginia-data-breach/
 https://www.securityweek.com/15-year-old-linux-vulnerability-ghostlock-earns-researchers-92k-from-google/
 https://www.securityweek.com/160000-impacted-by-wayne-memorial-hospital-data-breach/
+https://www.securityweek.com/2-million-drained-from-polymarket-traders-in-new-supply-chain-attack/
 https://www.securityweek.com/2-venezuelans-convicted-in-us-for-using-malware-to-hack-atms/
 https://www.securityweek.com/22-million-affected-by-aflac-data-breach/
 https://www.securityweek.com/23-million-user-records-compromised-in-gyazo-data-breach/
@@ -1695,6 +1705,7 @@ https://www.securityweek.com/brevo-supply-chain-attack-injects-malware-into-1000
 https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/
 https://www.securityweek.com/brightspeed-investigating-cyberattack/
 https://www.securityweek.com/brinks-home-discloses-data-breach-as-hackers-leak-files/
+https://www.securityweek.com/bulletproof-host-virtualine-loses-its-domain-to-fbi-seizure/
 https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/
 https://www.securityweek.com/by-design-flaw-in-mcp-could-enable-widespread-ai-supply-chain-attacks/
 https://www.securityweek.com/california-gov-gavin-newsom-signs-bill-creating-ai-safety-measures/
@@ -1904,6 +1915,7 @@ https://www.securityweek.com/dozens-of-major-data-breaches-linked-to-single-thre
 https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/
 https://www.securityweek.com/dozens-of-webkit-vulnerabilities-patched-with-fresh-macos-ios-security-updates/
 https://www.securityweek.com/dream-raises-260-million-at-3-billion-valuation/
+https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/
 https://www.securityweek.com/drupal-patches-highly-critical-vulnerability-exposing-websites-to-hacking/
 https://www.securityweek.com/drupal-vulnerability-in-hacker-crosshairs-shortly-after-disclosure/
 https://www.securityweek.com/dutch-carrier-odido-discloses-data-breach-impacting-6-million/
@@ -1984,6 +1996,7 @@ https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after
 https://www.securityweek.com/fresh-mongodb-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/fresh-sharepoint-vulnerability-exploited-soon-after-disclosure/
 https://www.securityweek.com/fresh-smartermail-flaw-exploited-for-admin-access/
+https://www.securityweek.com/fresh-wordpress-vulnerability-in-attackers-crosshairs/
 https://www.securityweek.com/ftc-is-investigating-openai-and-anthropic-over-possible-risks-to-consumers/
 https://www.securityweek.com/geordie-raises-30-million-for-ai-security-and-governance-platform/
 https://www.securityweek.com/ghost-accounts-abuse-github-api-in-mass-recon-campaign/
@@ -2093,6 +2106,7 @@ https://www.securityweek.com/in-other-news-600k-hit-by-healthcare-breaches-major
 https://www.securityweek.com/in-other-news-900k-for-xss-bugs-hybridpetya-malware-burger-king-censors-research/
 https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/
 https://www.securityweek.com/in-other-news-ai-used-in-korean-bank-breaches-poem-guided-botnet-empire-admin-gets-40-years/
+https://www.securityweek.com/in-other-news-anthropic-breach-dispute-uefi-flaw-hits-most-servers-cloudflare-ai-data-leak/
 https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/
 https://www.securityweek.com/in-other-news-apple-patches-beats-eavesdropping-flaw-dot-closes-delta-crowdstrike-probe-aws-continuum/
 https://www.securityweek.com/in-other-news-atm-jackpotting-whatsapp-nso-lawsuit-continues-cisa-hiring/
@@ -2195,6 +2209,7 @@ https://www.securityweek.com/malware-now-uses-ai-during-execution-to-mutate-and-
 https://www.securityweek.com/manchester-airports-group-data-on-8-8-million-people-leaked-after-ransom-refusal/
 https://www.securityweek.com/manifold-raises-8-million-for-ai-detection-and-response/
 https://www.securityweek.com/many-attacks-aimed-at-eu-targeted-ot-says-cybersecurity-agency/
+https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/
 https://www.securityweek.com/mazda-says-no-data-leakage-or-operational-impact-from-oracle-hack/
 https://www.securityweek.com/mckesson-confirms-data-breach-as-attacker-deadline-looms/
 https://www.securityweek.com/medtech-giant-stryker-crippled-by-iran-linked-hacker-attack/
@@ -2368,6 +2383,7 @@ https://www.securityweek.com/palo-alto-networks-sonicwall-patch-high-severity-vu
 https://www.securityweek.com/palo-alto-networks-to-patch-zero-day-exploited-to-hack-firewalls/
 https://www.securityweek.com/papercut-exploitation-escalates-to-active-intrusions/
 https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/
+https://www.securityweek.com/passkeys-are-better-than-passwords-but-they-are-not-enough/
 https://www.securityweek.com/patch-bypassed-for-supermicro-vulnerability-allowing-bmc-hack/
 https://www.securityweek.com/payment-system-vendor-took-year-to-patch-infinite-card-top-up-hack-security-firm/
 https://www.securityweek.com/pcpjack-worm-removes-teampcp-infections-steals-credentials/
@@ -2379,6 +2395,7 @@ https://www.securityweek.com/personal-information-exposed-in-apollo-global-data-
 https://www.securityweek.com/personal-information-for-over-1-million-people-stolen-in-a-cyberattack-on-arizonas-court-system/
 https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting-energy-sector/
 https://www.securityweek.com/phishing-research-challenges-conventional-security-awareness-testing/
+https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/
 https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
 https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/
@@ -2502,6 +2519,7 @@ https://www.securityweek.com/t-mobile-sets-the-record-straight-on-latest-data-br
 https://www.securityweek.com/tailscale-rushes-patches-after-uncoordinated-disclosure-of-tailworm-flaws/
 https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt/
 https://www.securityweek.com/teampcp-ups-the-game-releases-shai-hulud-worms-source-code/
+https://www.securityweek.com/teamviewer-flaw-could-let-malicious-hosts-take-over-support-technicians-machines/
 https://www.securityweek.com/tech-cybersecurity-giants-unite-behind-openai-led-cyber-defense-pledge/
 https://www.securityweek.com/telnyx-targeted-in-growing-teampcp-supply-chain-attack/
 https://www.securityweek.com/tennessee-man-pleads-guilty-to-repeatedly-hacking-supreme-courts-filing-system/

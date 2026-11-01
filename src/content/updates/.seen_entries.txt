@@ -1173,6 +1173,7 @@ https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
 https://thehackernews.com/2026/10/bring-your-own-agent-your-employees.html
 https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html
 https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html
+https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html
 https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
 https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html
 https://thehackernews.com/2026/10/citizen-lab-traces-zero-click-candiru.html
@@ -1247,6 +1248,9 @@ https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html
 https://thehackernews.com/2026/10/why-urgent-security-fixes-arent-fixed.html
 https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html
 https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html
+https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html
+https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html
+https://thehackernews.com/2026/11/netamloader-malware-targets-government.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -2314,6 +2318,7 @@ https://www.securityweek.com/no-exploits-required/
 https://www.securityweek.com/no-patches-for-vulnerabilities-allowing-cognex-industrial-camera-hacking/
 https://www.securityweek.com/nobody-trusts-the-security-questionnaire-we-rely-on-it-anyway/
 https://www.securityweek.com/nordvpn-denies-breach-after-hacker-leaks-data/
+https://www.securityweek.com/northstar-security-exits-stealth-with-7m-to-expose-toxic-risk-combinations/
 https://www.securityweek.com/notepad-patches-updater-flaw-after-reports-of-traffic-hijacking/
 https://www.securityweek.com/novel-android-banking-rat-hirudo-replaces-banking-apps-with-trojanized-copies/
 https://www.securityweek.com/npm-package-with-56000-downloads-steals-whatsapp-credentials-data/
@@ -2515,6 +2520,7 @@ https://www.securityweek.com/supply-chain-security-crisis-too-many-vulnerabiliti
 https://www.securityweek.com/surfshark-systems-targeted-by-hackers/
 https://www.securityweek.com/sweet-security-raises-75-million-for-cloud-and-ai-security/
 https://www.securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems/
+https://www.securityweek.com/syrian-hacker-gets-prison-time-in-us-after-over-a-decade-on-the-run/
 https://www.securityweek.com/t-mobile-sets-the-record-straight-on-latest-data-breach-filing/
 https://www.securityweek.com/tailscale-rushes-patches-after-uncoordinated-disclosure-of-tailworm-flaws/
 https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt/

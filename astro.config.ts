@@ -14,7 +14,7 @@ export default defineConfig({
       // {include: ['**/*.tsx', '**/*.jsx'],}
     ),
     sitemap({
-      filter: (page) => !page.endsWith('/progress/') && !page.endsWith('/progress'),
+      filter: (page) => !page.endsWith('/progress/') && !page.endsWith('/progress') && !/^\/design(?:\/|$)/.test(new URL(page).pathname),
     }),
     // robotsTxt({
     //   sitemap: [

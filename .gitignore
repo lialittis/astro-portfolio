@@ -35,3 +35,6 @@ progress-sync-worker/.env*
 progress-sync-worker/.wrangler/
 progress-sync-worker/node_modules/
 .wrangler-config/
+
+# Local recovery bundles and snapshots (may contain unpublished drafts).
+.backups/

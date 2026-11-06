@@ -1,0 +1,179 @@
+---
+const buildings = [{x:8,w:26,h:28},{x:40,w:20,h:37},{x:65,w:35,h:23},{x:106,w:23,h:44},{x:137,w:38,h:30},{x:183,w:22,h:39},{x:214,w:31,h:24},{x:253,w:24,h:32},{x:285,w:30,h:22}]
+const stars = [[19,17],[61,12],[93,28],[151,14],[186,27],[223,11],[271,25],[303,13],[38,39],[128,36]]
+---
+<div class="observatory-scene" data-scene data-lamp="on">
+  <svg viewBox="0 0 400 170" role="img" aria-labelledby="scene-title scene-description" shape-rendering="crispEdges">
+    <title id="scene-title">A quiet desk above the city</title>
+    <desc id="scene-description">An original pixel illustration of a study window, city rooftops, books, a computer, and a desk lamp. The scene changes with the page theme; the lamp can be switched below.</desc>
+    <defs><pattern id="wall-grain" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="var(--grain)"/></pattern></defs>
+    <rect width="400" height="170" fill="var(--wall)"/><rect width="400" height="170" fill="url(#wall-grain)"/>
+    <rect x="30" y="9" width="340" height="122" fill="var(--frame-shadow)"/><rect x="34" y="12" width="332" height="114" fill="var(--frame)"/>
+    <svg x="40" y="17" width="320" height="103" viewBox="0 0 320 103">
+      <rect width="320" height="103" fill="var(--sky)"/><rect y="65" width="320" height="38" fill="var(--horizon)"/>
+      <g class="scene-stars" fill="#dce3bd">{stars.map(([x,y])=><rect x={x} y={y} width="1" height="1"/>)}</g>
+      <g class="celestial"><rect x="250" y="12" width="14" height="18" fill="var(--moon)"/><rect x="247" y="15" width="20" height="12" fill="var(--moon)"/><rect class="moon-shadow" x="246" y="10" width="13" height="14" fill="var(--sky)"/></g>
+      <g class="scene-cloud" fill="var(--cloud)"><path d="M15 42H32V38H55V41H66V46H15ZM182 48H193V44H211V48H226V52H182Z"/></g>
+      <path d="M0 80L24 69L35 75L67 57L95 73L119 60L157 80L180 68L207 76L244 60L276 74L292 65L320 77V103H0Z" fill="var(--distant)"/>
+      {buildings.map((b,i)=><g><rect x={b.x} y={103-b.h} width={b.w} height={b.h} fill={i%2 ? 'var(--building)' : 'var(--building-alt)'}/><rect x={b.x-2} y={101-b.h} width={b.w+4} height="3" fill="var(--roof)"/>{[0,1,2].map(row=>[0,1,2].map(col=><rect x={b.x+4+col*6} y={108-b.h+row*8} width="2" height="3" fill={(i+row+col)%3 ? 'var(--window-off)' : 'var(--window-on)'}/>))}</g>)}
+      <path d="M109 59V49H111V59M107 51H116V53H107M192 64V53H194V64" fill="var(--roof)"/>
+    </svg>
+    <rect x="196" y="15" width="7" height="110" fill="var(--frame)"/><rect x="39" y="67" width="322" height="5" fill="var(--frame)"/>
+    <rect x="26" y="123" width="348" height="5" fill="var(--sill)"/><rect x="31" y="128" width="338" height="4" fill="var(--frame-shadow)"/>
+    <path d="M20 12H39V110H35V115H27V118H20ZM361 12H380V118H373V115H365V110H361Z" fill="var(--curtain)"/><path d="M25 12V107M32 12V105M368 12V105M375 12V107" stroke="var(--curtain-line)" stroke-width="2"/>
+    <g class="lamp-glow"><path d="M271 96L242 145H329L294 96Z" fill="#f1c879" opacity=".12"/><path d="M270 96L256 145H312L293 96Z" fill="#f1c879" opacity=".08"/></g>
+    <rect x="12" y="145" width="376" height="6" fill="var(--desk-top)"/><rect x="16" y="151" width="368" height="7" fill="var(--desk-front)"/><rect x="26" y="158" width="9" height="12" fill="var(--desk-leg)"/><rect x="363" y="158" width="9" height="12" fill="var(--desk-leg)"/>
+    <g><rect x="142" y="107" width="76" height="31" fill="#14222c"/><rect x="145" y="110" width="70" height="24" fill="var(--screen)"/><path d="M150 116H165M150 120H179M150 124H172M150 128H160" stroke="#a9c3ac" stroke-width="1"/><rect x="196" y="117" width="12" height="10" fill="#4e747c"/><rect x="175" y="138" width="10" height="4" fill="var(--metal)"/><rect x="165" y="142" width="30" height="2" fill="var(--metal)"/><rect x="137" y="144" width="88" height="1" fill="#94a0a1"/></g>
+    <g><path d="M272 140H295V144H272Z" fill="var(--metal)"/><path d="M283 139V114L293 101L286 97L275 115V139Z" fill="var(--metal)"/><path d="M274 86H288V89H293V94H298V98H264V94H269V89H274Z" fill="var(--lamp-shade)"/><rect x="267" y="98" width="28" height="2" fill="var(--lamp-bulb)"/></g>
+    <g><rect x="55" y="136" width="43" height="8" fill="#7e7e70"/><rect x="58" y="137" width="38" height="5" fill="#d0c9b5"/><rect x="61" y="128" width="33" height="8" fill="#986f56"/><rect x="65" y="130" width="27" height="4" fill="#c6baa1"/><rect x="55" y="125" width="41" height="3" fill="#536e73"/></g>
+    <g><rect x="324" y="130" width="15" height="15" fill="#9b7863"/><rect x="322" y="127" width="19" height="4" fill="#ba9677"/><path d="M330 127V112H333V127M326 119H322V110H325V116H330M333 115H338V104H341V118H333M330 115H326V103H329V110H330" fill="#668771"/><rect x="329" y="102" width="5" height="8" fill="#839b74"/></g>
+    <g><rect x="241" y="133" width="12" height="11" fill="#c7c0a9"/><path d="M253 135H257V141H253" stroke="#c7c0a9" stroke-width="2" fill="none"/><rect x="242" y="132" width="10" height="2" fill="#564439"/></g>
+    <rect x="102" y="143" width="25" height="2" fill="#d5ccad"/><path d="M114 143L122 136" stroke="#ae7d56" stroke-width="2"/>
+  </svg>
+  <div class="scene-controls"><span><span class="dot"></span>A quiet corner in Munich</span><button type="button" data-lamp-toggle aria-pressed="true">Desk lamp <span data-lamp-label>on</span> <span aria-hidden="true">↗</span></button></div>
+</div>
+<style>
+	.observatory-scene {
+		--wall: #24303a;
+		--grain: #2e3a43;
+		--frame: #45535c;
+		--frame-shadow: #101923;
+		--sky: #1b2c42;
+		--horizon: #2d4054;
+		--moon: #e6d6a7;
+		--cloud: #354658;
+		--distant: #354959;
+		--building: #263846;
+		--building-alt: #2e404d;
+		--roof: #192b36;
+		--window-off: #435763;
+		--window-on: #b29865;
+		--sill: #61727a;
+		--curtain: #394853;
+		--curtain-line: #465661;
+		--desk-top: #8c7963;
+		--desk-front: #65594c;
+		--desk-leg: #4c4944;
+		--screen: #263e42;
+		--metal: #6f7b7f;
+		--lamp-shade: #c4a26f;
+		--lamp-bulb: #f5d99d;
+		border: 1px solid var(--rule);
+		background: var(--surface);
+	}
+	:global([data-theme='light']) .observatory-scene {
+		--wall: #d3d8ca;
+		--grain: #c5cbbd;
+		--frame: #849696;
+		--frame-shadow: #6c8184;
+		--sky: #a2c6ce;
+		--horizon: #c1d6d2;
+		--moon: #fae6aa;
+		--cloud: #d6e3db;
+		--distant: #8faeaf;
+		--building: #829b9f;
+		--building-alt: #9aafb0;
+		--roof: #627f86;
+		--window-off: #aec3be;
+		--window-on: #ccd5b3;
+		--sill: #b8bfa8;
+		--curtain: #9eaea2;
+		--curtain-line: #b7c3b3;
+		--desk-top: #b79e79;
+		--desk-front: #907e64;
+		--desk-leg: #788078;
+		--metal: #627d82;
+		--lamp-shade: #b99760;
+	}
+	svg {
+		width: 100%;
+		display: block;
+		image-rendering: pixelated;
+	}
+	.scene-controls {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		border-top: 1px solid var(--rule);
+		padding: 13px 18px;
+		font: 10px/1.5 var(--mono);
+		color: var(--muted);
+	}
+	.scene-controls button {
+		border: 0;
+		background: transparent;
+		padding: 0;
+		color: var(--accent);
+		font: inherit;
+		min-height: 26px;
+	}
+	.scene-controls > span {
+		align-self: center;
+	}
+	.scene-controls button:hover {
+		text-decoration: underline;
+	}
+	.scene-controls button span[data-lamp-label] {
+		display: inline-block;
+		min-width: 22px;
+		text-align: left;
+	}
+	.lamp-glow {
+		transition: opacity 0.2s;
+	}
+	[data-lamp='off'] .lamp-glow {
+		opacity: 0;
+	}
+	[data-lamp='off'] {
+		--lamp-bulb: #9d926d;
+	}
+	:global([data-theme='light']) .scene-stars,
+	:global([data-theme='light']) .moon-shadow {
+		display: none;
+	}
+	.scene-cloud {
+		animation: drift 40s ease-in-out infinite alternate;
+		animation-play-state: paused;
+	}
+	.is-visible .scene-cloud {
+		animation-play-state: running;
+	}
+	@keyframes drift {
+		to {
+			transform: translateX(20px);
+		}
+	}
+	@media (max-width: 500px) {
+		.scene-controls {
+			font-size: 9px;
+			padding: 10px;
+		}
+		.scene-controls > span {
+			max-width: 145px;
+		}
+		.scene-controls button {
+			min-height: 32px;
+		}
+	}
+</style>
+<script>
+	const scene = document.querySelector<HTMLElement>('[data-scene]')
+	const lamp = scene?.querySelector<HTMLButtonElement>('[data-lamp-toggle]')
+	lamp?.addEventListener('click', () => {
+		const on = scene!.dataset.lamp !== 'on'
+		scene!.dataset.lamp = on ? 'on' : 'off'
+		lamp.setAttribute('aria-pressed', String(on))
+		lamp.querySelector('[data-lamp-label]')!.textContent = on ? 'on' : 'off'
+	})
+	if (scene) {
+		let visible = false
+		const sync = () =>
+			scene.classList.toggle('is-visible', visible && !document.hidden)
+		const observer = new IntersectionObserver(([entry]) => {
+			visible = entry.isIntersecting
+			sync()
+		})
+		observer.observe(scene)
+		document.addEventListener('visibilitychange', sync)
+	}
+</script>

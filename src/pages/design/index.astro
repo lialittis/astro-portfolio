@@ -1,0 +1,213 @@
+---
+import DesignPreview from '../../layouts/DesignPreview.astro'
+import { directions } from '../../lib/design-preview'
+---
+<DesignPreview>
+  <main id="main" class="design-shell comparison" lang="zh-CN">
+    <div class="eyebrow">Tianchi Yu / Homepage studies</div>
+    <h1>同一个人，<br />四种表达。</h1>
+    <p class="introduction">相同的内容，不同的视觉语言。打开一个方案，通过顶部导航随时切换；右上角的月亮或太阳按钮可以切换明暗主题。</p>
+    <div class="directions">{directions.map(item => <a class={`direction ${item.slug}`} href={`/design/${item.slug}/`}>
+      <div class="miniature" aria-hidden="true"><div class="mini-top">{item.slug === 'pixel-terminal' ? '● ● ●  tianchi@home:~' : 'TIANCHI YU'} <span>—— &nbsp; ——</span></div>{['observatory', 'pixel-terminal'].includes(item.slug) && <div class="mini-window"><i></i><b></b></div>}<div class="mini-title">{item.slug === 'journal' ? 'Fieldnotes.' : item.slug === 'pixel-terminal' ? '$ whoami_' : <>Curiosity,<br />made tangible.</>}</div><div class="mini-lines"><i></i><i></i><i></i></div></div>
+      <div class="direction-meta"><span class="eyebrow">Direction {item.letter}</span><span>↗</span></div><h2>{item.chinese}</h2><div class="english-name">{item.name}</div><p>{item.note}</p><span class="mood">{item.mood}</span>
+    </a>)}</div>
+    <div class="comparison-note"><p>建议对比</p><ul><li>第一眼的气质是否像你？</li><li>你是否愿意继续阅读和探索？</li><li>手机上的密度和节奏是否舒服？</li></ul></div>
+    <a class="back" href="/">返回现有首页 ↗</a>
+  </main>
+</DesignPreview>
+<style>
+	.comparison {
+		max-width: 1160px;
+		padding-top: 70px;
+		padding-bottom: 60px;
+	}
+	.comparison h1 {
+		font-size: 54px;
+		line-height: 1.25;
+		letter-spacing: -2px;
+		font-weight: 600;
+		margin: 20px 0;
+	}
+	.introduction {
+		font-size: 15px;
+		line-height: 1.9;
+		max-width: 600px;
+		color: var(--muted);
+	}
+	.directions {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 25px;
+		margin-top: 45px;
+	}
+	.direction {
+		display: block;
+		min-width: 0;
+		border: 1px solid var(--rule);
+		padding: 16px;
+		transition: transform 0.2s;
+	}
+	.direction:hover {
+		transform: translateY(-4px);
+	}
+	.miniature {
+		height: 205px;
+		padding: 16px;
+		background: #ecece2;
+		color: #47674d;
+		border: 1px solid #cbd0c0;
+	}
+	.mini-top {
+		font: 7px var(--mono);
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid currentColor;
+		padding-bottom: 10px;
+	}
+	.mini-title {
+		font:
+			550 28px/0.95 'Preview Display',
+			sans-serif;
+		letter-spacing: -1px;
+		margin-top: 20px;
+	}
+	.mini-lines {
+		margin-top: 20px;
+	}
+	.mini-lines i {
+		display: block;
+		width: 90%;
+		height: 1px;
+		background: currentColor;
+		opacity: 0.3;
+		margin: 10px 0;
+	}
+	.mini-lines i:last-child {
+		width: 60%;
+	}
+	.journal .miniature {
+		background: #f4eee3;
+		color: #a74432;
+	}
+	.journal .mini-title {
+		font:
+			39px Georgia,
+			serif;
+		border-bottom: 1px solid;
+		padding: 5px 0 16px;
+	}
+	.observatory .miniature {
+		background: #1b2632;
+		color: #d9ae65;
+	}
+	.observatory .mini-title {
+		font-size: 22px;
+		margin-top: 12px;
+	}
+	.observatory .mini-lines {
+		display: none;
+	}
+	.pixel-terminal .miniature { background: #111c18; color: #99d5ab; border-color: #30443a; }
+	.pixel-terminal .mini-title { font: 18px var(--mono); margin-top: 14px; }
+	.pixel-terminal .mini-lines { display: none; }
+	.pixel-terminal .mini-window { border-color: #456052; }
+	.mini-window {
+		height: 65px;
+		background: #2e485b;
+		border: 5px solid #61727a;
+		margin-top: 14px;
+		position: relative;
+		overflow: hidden;
+	}
+	.mini-window i {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background: #e6d6a7;
+		right: 25px;
+		top: 8px;
+	}
+	.mini-window b {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 15px;
+		background: #182c3c;
+		box-shadow:
+			20px -8px #263846,
+			80px -15px #263846;
+	}
+	.direction-meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 22px;
+	}
+	.direction h2 {
+		font-size: 21px;
+		margin: 10px 0 5px;
+	}
+	.english-name {
+		font-size: 12px;
+		color: var(--muted);
+	}
+	.direction p {
+		font-size: 13px;
+		line-height: 1.8;
+		color: var(--muted);
+		margin: 16px 0;
+	}
+	.mood {
+		font: 9px/1.8 var(--mono);
+		color: var(--accent);
+	}
+	.comparison-note {
+		margin-top: 42px;
+		padding-top: 24px;
+		border-top: 1px solid var(--rule);
+		display: flex;
+		gap: 35px;
+		font-size: 13px;
+		color: var(--muted);
+	}
+	.comparison-note ul {
+		margin: 0;
+		padding-left: 18px;
+		line-height: 2;
+	}
+	.back {
+		display: inline-block;
+		margin-top: 30px;
+		font-size: 12px;
+	}
+	@media (max-width: 800px) {
+		.directions {
+			grid-template-columns: minmax(0, 1fr);
+		}
+		.direction {
+			max-width: 500px;
+		}
+		.miniature {
+			height: 230px;
+		}
+		.mini-title {
+			font-size: clamp(26px, 7vw, 36px);
+		}
+		.journal .mini-title {
+			font-size: clamp(32px, 9vw, 54px);
+		}
+		.mini-window {
+			height: 90px;
+		}
+		.comparison {
+			padding-top: 40px;
+		}
+		.comparison h1 {
+			font-size: 42px;
+		}
+		.comparison-note {
+			gap: 18px;
+		}
+	}
+</style>

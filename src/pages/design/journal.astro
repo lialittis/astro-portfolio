@@ -1,0 +1,278 @@
+---
+import DesignPreview from '../../layouts/DesignPreview.astro'
+import SiteHead from '../../components/design/SiteHead.astro'
+import Writing from '../../components/design/Writing.astro'
+import Work from '../../components/design/Work.astro'
+import Footer from '../../components/design/Footer.astro'
+import { getPreviewContent } from '../../lib/design-preview'
+const content = await getPreviewContent()
+---
+<DesignPreview variant="journal">
+  <div class="design-shell journal-shell">
+    <SiteHead variant="journal" />
+    <main id="main">
+      <section class="journal-masthead" aria-labelledby="intro-title"><div class="masthead-label eyebrow"><span>A personal journal by Tianchi Yu</span><span>Research · Work · Life</span></div><h1 id="intro-title">Fieldnotes<span>.</span></h1><div class="masthead-caption"><span>Curiosity, made tangible.</span><span>From Munich, with an open mind.</span></div></section>
+      <section class="journal-intro" aria-label="Introduction">
+        <div class="intro-main"><span class="eyebrow">A note from the author</span><h2>Understanding systems.<br /><em>Collecting perspectives.</em></h2><p>{content.intro}</p><a class="editor-link" href="/me">Meet the person behind the notes <span>↗</span></a></div>
+        <aside class="margin-note"><span class="eyebrow">On the desk</span><div class="scribble" aria-hidden="true"><svg viewBox="0 0 190 105" fill="none"><g stroke="currentColor" stroke-width="1.3"><ellipse cx="95" cy="52" rx="65" ry="22" transform="rotate(-25 95 52)"/><ellipse cx="95" cy="52" rx="65" ry="22" transform="rotate(25 95 52)"/><ellipse cx="95" cy="52" rx="65" ry="22" transform="rotate(90 95 52)"/></g><circle cx="95" cy="52" r="5" fill="currentColor"/></svg></div><p>System security.<br />AI infrastructure.<br />Learning by building.</p><span class="margin-caption">Different paths.<br />Connected questions.</span></aside>
+      </section>
+      <section class="chapter journal-writing" id="writing">
+        <div class="section-title"><h2><span>01</span> From the notebook</h2><a href="/blog">Writing archive ↗</a></div>
+        <Writing posts={content.posts} />
+      </section>
+      <section class="chapter journal-work" id="work">
+        <div class="section-title"><h2><span>02</span> Ideas in practice</h2><a href="/project">All projects ↗</a></div>
+        <Work projects={content.projects} />
+      </section>
+      <section class="journal-personal" aria-labelledby="personal-title"><div><span class="eyebrow">03 / Life between the lines</span><h2 id="personal-title">Beyond<br /> <em>the keyboard.</em></h2></div><div><p class="body-copy">{content.about}</p><div class="milestones"><span><b>2025.08</b> Got married ♡</span><span><b>2024.11</b> Began my Ph.D.</span></div><a class="editor-link" href="/travel">Places along the way ↗</a></div></section>
+    </main>
+    <Footer />
+  </div>
+</DesignPreview>
+<style>
+	.journal-shell {
+		max-width: 1140px;
+	}
+	.journal-masthead {
+		border-top: 3px solid var(--ink);
+		border-bottom: 1px solid var(--ink);
+		padding: 17px 0 15px;
+	}
+	.masthead-label {
+		display: flex;
+		justify-content: space-between;
+		font-size: 10px;
+	}
+	.journal-masthead h1 {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-weight: 400;
+		font-size: clamp(85px, 14vw, 166px);
+		letter-spacing: -9px;
+		line-height: 1.12;
+		margin: 5px 0;
+	}
+	.journal-masthead h1 span {
+		color: var(--accent);
+	}
+	.masthead-caption {
+		display: flex;
+		justify-content: space-between;
+		font-family: Georgia, serif;
+		font-size: 15px;
+		font-style: italic;
+		color: var(--muted);
+	}
+	.journal-intro {
+		display: grid;
+		grid-template-columns: 1fr 240px;
+		padding: 44px 0 46px;
+		gap: 60px;
+		border-bottom: 1px solid var(--rule);
+	}
+	.intro-main h2 {
+		font:
+			400 clamp(30px, 3.5vw, 42px) / 1.2 Georgia,
+			serif;
+		letter-spacing: -1px;
+		margin: 18px 0 22px;
+	}
+	.intro-main em {
+		color: var(--accent);
+	}
+	.intro-main p {
+		font-size: 17px;
+		line-height: 1.8;
+		max-width: 570px;
+		color: var(--muted);
+	}
+	.editor-link {
+		display: inline-block;
+		margin-top: 22px;
+		font-size: 13px;
+		border-bottom: 1px solid var(--accent);
+		padding-bottom: 5px;
+	}
+	.editor-link span {
+		margin-left: 20px;
+	}
+	.margin-note {
+		border-left: 1px solid var(--rule);
+		padding-left: 30px;
+	}
+	.scribble {
+		color: var(--accent);
+		max-width: 150px;
+		margin: 5px 0;
+	}
+	.margin-note p {
+		font:
+			17px/1.6 Georgia,
+			serif;
+	}
+	.margin-caption {
+		display: block;
+		font: 10px/1.6 var(--mono);
+		color: var(--muted);
+		margin-top: 16px;
+	}
+	.journal-writing,
+	.journal-work {
+		margin-top: 40px;
+	}
+	.section-title h2 {
+		font:
+			400 28px Georgia,
+			serif;
+		letter-spacing: -0.7px;
+	}
+	.section-title h2 span {
+		font: 10px var(--mono);
+		color: var(--accent);
+		margin-right: 17px;
+		vertical-align: middle;
+	}
+	.journal-writing :global(.writing-link) {
+		grid-template-columns: 100px 1fr 20px;
+		padding: 24px 0;
+	}
+	.journal-writing :global(.writing-link h3) {
+		font:
+			400 25px/1.3 Georgia,
+			serif;
+		letter-spacing: -0.4px;
+	}
+	.journal-writing :global(.writing-link p) {
+		max-width: 650px;
+	}
+	.journal-writing :global(.writing-list li:first-child) {
+		border-top: 0;
+	}
+	.journal-writing :global(.writing-list li:first-child .writing-link) {
+		padding-top: 6px;
+	}
+	.journal-work :global(.work-visual) {
+		height: 175px;
+		background: transparent;
+		border: 0;
+		border-top: 1px solid var(--rule);
+		border-bottom: 1px solid var(--rule);
+		background-image: radial-gradient(var(--rule) 0.6px, transparent 0.6px);
+		background-size: 7px 7px;
+	}
+	.journal-work :global(.work-item h3) {
+		font:
+			400 26px/1.25 Georgia,
+			serif;
+	}
+	.journal-work :global(.work-item p) {
+		max-width: 380px;
+	}
+	.journal-work :global(.selected-work) {
+		gap: 40px;
+	}
+	.journal-personal {
+		margin-top: 50px;
+		border-top: 3px double var(--rule);
+		padding-top: 30px;
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 60px;
+	}
+	.journal-personal h2 {
+		font:
+			400 42px/1.08 Georgia,
+			serif;
+		letter-spacing: -1px;
+		margin-top: 18px;
+	}
+	.journal-personal em {
+		color: var(--accent);
+	}
+	.milestones {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 24px;
+		margin-top: 18px;
+		font-size: 12px;
+	}
+	.milestones b {
+		font: 10px var(--mono);
+		margin-right: 8px;
+		color: var(--accent);
+	}
+	@media (max-width: 700px) {
+		.journal-masthead h1 {
+			font-size: clamp(72px, 17vw, 115px);
+			letter-spacing: -5px;
+		}
+		.masthead-label > span:last-child {
+			display: none;
+		}
+		.masthead-caption {
+			font-size: 12px;
+			gap: 12px;
+		}
+		.masthead-caption > span:last-child {
+			max-width: 130px;
+			text-align: right;
+		}
+		.journal-intro {
+			grid-template-columns: 1fr;
+			gap: 28px;
+			padding: 30px 0;
+		}
+		.intro-main h2 {
+			font-size: 32px;
+		}
+		.margin-note {
+			display: grid;
+			grid-template-columns: 1fr 1.3fr;
+			gap: 12px 20px;
+			padding: 20px;
+			background: var(--surface);
+			border: 0;
+		}
+		.margin-note .eyebrow {
+			grid-column: 1/-1;
+		}
+		.scribble {
+			grid-column: 1;
+			grid-row: 2/4;
+			margin: 0;
+		}
+		.margin-note p {
+			font-size: 16px;
+		}
+		.margin-caption {
+			margin: 0;
+		}
+		.journal-writing :global(.writing-link) {
+			grid-template-columns: 1fr 20px;
+		}
+		.journal-writing :global(.writing-link h3) {
+			font-size: 23px;
+		}
+		.section-title h2 {
+			font-size: 24px;
+		}
+		.section-title h2 span {
+			margin-right: 7px;
+		}
+		.section-title > a {
+			font-size: 10px;
+		}
+		.journal-personal {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+		.journal-personal h2 {
+			font-size: 37px;
+		}
+		.journal-personal h2 br {
+			display: none;
+		}
+		.journal-work :global(.selected-work) {
+			gap: 30px;
+		}
+	}
+</style>

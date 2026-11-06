@@ -1,0 +1,25 @@
+---
+import type { PreviewContent } from '../../lib/design-preview'
+interface Props { projects: PreviewContent['projects'] }
+const { projects } = Astro.props
+---
+<div class="selected-work">
+  {projects.map((project, i) => <article class="work-item"><a href={project.href}>
+    <div class="work-visual" aria-hidden="true">
+      {i === 0 ? <svg viewBox="0 0 220 120" fill="none"><g stroke="currentColor" stroke-width="1">
+        <path d="M10 30H48M10 60H48M10 90H48M172 30H210M172 60H210M172 90H210" stroke-dasharray="3 4"/>
+        <rect x="48" y="14" width="124" height="92" rx="3"/><rect x="58" y="24" width="104" height="72"/>
+        {[0,1,2,3].map(x => [0,1,2].map(y => <rect x={67+x*23} y={33+y*20} width="16" height="12" fill="currentColor" fill-opacity={(x+y)%3 === 0 ? '.5' : '.12'}/>))}
+        <path d="M82 4V14M110 4V14M138 4V14M82 106V116M110 106V116M138 106V116"/>
+      </g></svg> : <svg viewBox="0 0 220 120" fill="none"><g stroke="currentColor" stroke-width="1">
+        <rect x="25" y="9" width="170" height="100" rx="4"/><path d="M25 28H195"/><circle cx="36" cy="19" r="2"/><circle cx="44" cy="19" r="2"/><circle cx="52" cy="19" r="2"/>
+        <path d="M40 43L47 49L40 55M55 55H68M40 72H91M40 81H77M40 90H83"/><rect x="110" y="40" width="69" height="53" stroke-dasharray="3 3"/>
+        <path d="M122 77V64H135V52H148V68H163V77Z" fill="currentColor" fill-opacity=".2"/>
+      </g></svg>}
+      <span>{i === 0 ? 'FIG. 01 / PARALLEL THOUGHTS' : 'FIG. 02 / SMALL INTERFACES'}</span>
+    </div>
+    <div class="eyebrow">{i === 0 ? 'Research & experiments' : 'Tools & play'}</div>
+    <h3>{project.title} <span aria-hidden="true">↗</span></h3><p>{project.summary}</p>
+    <div class="work-tags">{project.technologies.slice(0,3).join(' / ')}</div>
+  </a></article>)}
+</div>

@@ -22,6 +22,22 @@
 - [d3](https://d3js.org/)
 - [react]()
 
+## Homepage design previews
+
+Run `pnpm dev` and open `http://localhost:4321/design/` to compare the homepage
+prototypes: `/design/paper/`, `/design/journal/`, `/design/observatory/`, and
+`/design/pixel-terminal/` (the pixel scene combined with a terminal workspace).
+The comparison bar switches between directions; each page has a light/dark
+toggle. Both pixel designs have an interactive desk lamp and a Munich clock.
+The pixel terminal's tabs and directory follow the current reading section.
+
+All four use the same published articles and selected projects through
+`src/lib/design-preview.ts`. Shared preview components live in
+`src/components/design/`, with isolated styling in `src/style/design-preview.css`.
+The previews are marked `noindex` and excluded from the sitemap. Existing content
+links open the current article, project, and personal pages; this experiment
+only redesigns the homepages. The original homepage is still at `/`.
+
 ## Managing projects
 
 Edit `src/lib/Projects.ts` in Helix to add or update a project. Each entry contains

@@ -1,0 +1,67 @@
+---
+import { directions, type Direction } from '../lib/design-preview'
+import '../style/design-preview.css'
+interface Props { variant?: Direction }
+const { variant = 'paper' } = Astro.props
+const direction = directions.find(item => item.slug === variant)!
+const isIndex = /^\/design\/?$/.test(Astro.url.pathname)
+---
+<!doctype html>
+<html lang="en" data-design={variant} data-theme={['observatory', 'pixel-terminal'].includes(variant) ? 'dark' : 'light'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{isIndex ? 'Homepage studies' : direction.name} — Tianchi Yu · Design preview</title>
+    <meta name="description" content={`A homepage design study for Tianchi Yu: ${direction.name}.`} />
+    <link rel="icon" href="/head.ico" />
+    <script is:inline>
+      try {
+        const root = document.documentElement;
+        const saved = localStorage.getItem('design-preview-theme-' + root.dataset.design);
+        if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="preview-skip" href="#main">Skip to content</a>
+    <aside class="preview-toolbar" aria-label="Design comparison">
+      <a class="preview-index" href="/design/" lang="zh-CN">首页设计实验 <span> / </span></a>
+      <nav aria-label="Choose a homepage design">
+        {directions.map(item => <a href={`/design/${item.slug}/`} aria-current={!isIndex && item.slug === variant ? 'page' : undefined}><span>{item.letter}</span> <span lang="zh-CN">{item.chinese}</span></a>)}
+      </nav>
+      <a class="preview-original" href="/" lang="zh-CN">原首页 ↗</a>
+    </aside>
+    <slot />
+    <script>
+	const root = document.documentElement
+	const buttons = document.querySelectorAll<HTMLButtonElement>(
+		'[data-theme-toggle]'
+	)
+	function syncTheme() {
+		buttons.forEach((button) => {
+			const dark = root.dataset.theme === 'dark'
+			button.setAttribute(
+				'aria-label',
+				`Switch to ${dark ? 'light' : 'dark'} theme`
+			)
+			button.title = `Switch to ${dark ? 'light' : 'dark'} theme`
+			button.textContent = dark ? '☀' : '☾'
+		})
+	}
+	syncTheme()
+	buttons.forEach((button) =>
+		button.addEventListener('click', () => {
+			root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'
+			try {
+				localStorage.setItem(
+					'design-preview-theme-' + root.dataset.design,
+					root.dataset.theme
+				)
+			} catch {}
+			syncTheme()
+		})
+	)
+</script>
+  </body>
+</html>

@@ -124,6 +124,18 @@ should follow the publisher's record. The current-directions section ends with a
 collaboration invitation linking to the homepage's click-to-reveal email display.
 Keep this section to research themes that can be discussed publicly.
 
+### Security news
+
+Security digests remain in `src/content/updates/` with the `security` tag.
+The latest page shows three entries; `/security-news/archive/` lists every digest
+by year. Both use the shared `~/news` window and the same dated rows, with the first
+source headline as a preview. Each entry
+links to `/security-news/<slug>/`, where the original Markdown and source links
+are rendered once in a normal reading column, with newer/older navigation.
+These pages work without JavaScript; no card expansion or modal is needed.
+The displayed commands read date-prefixed `.md` files from `~/news`; the archive
+is a full listing of that same directory, not a separate filesystem folder.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

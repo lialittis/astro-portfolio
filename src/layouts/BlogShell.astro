@@ -1,9 +1,11 @@
 ---
+import { workspace } from '../lib/terminal'
 import PixelPage from './PixelPage.astro'
 interface Props {
 	title: string
 	description: string
 	noindex?: boolean
 }
+const isArticle = Astro.url.pathname.replace(/\/$/, '') !== '/blog'
 ---
-<PixelPage {...Astro.props} path="~/writing" article={Astro.url.pathname.replace(/\/$/, '') !== '/blog'}><slot /></PixelPage>
+<PixelPage {...Astro.props} path={workspace.writing} reading={isArticle} article={isArticle}><slot /></PixelPage>

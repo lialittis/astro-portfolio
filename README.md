@@ -40,6 +40,81 @@ The original site and the prototype checkpoint are preserved in local backup
 branches and offline archives. See [design recovery](docs/design-recovery.md)
 for exact restore commands.
 
+### Shared page conventions
+
+The homepage and core content pages share `Pixel/WindowHeader.astro` and the
+`workspace` variant of `NavBar`. Window titles identify the current working directory; active navigation uses
+the current URL. Display paths are maintained in `src/lib/terminal.ts`.
+Use `PixelPage.astro` for content pages and `Pixel/PageHeading.astro` for their
+heading, optional command, and description. Set `reading` on `PixelPage` for a
+centered reading column.
+
+Design tokens live in `src/style/pixel-site.css`:
+
+| Element | Convention |
+| --- | --- |
+| Frame | 1180px maximum, 24px gutters / 12px on mobile |
+| Background | Shared subtle 9px dot grid around desktop panels (1000px and wider); solid content panels and mobile backgrounds |
+| Reading column | 48rem maximum, fluid on smaller screens |
+| Page / section / card heading | 26–32px / 22px / 18px, shared sans-serif font |
+| Body | 16px, 1.8 line height; monospace for commands and metadata |
+| Action links and buttons | `.site-button`, 40px minimum height; `.site-button--small` for compact actions |
+| Theme | Shared light/dark tokens; dark default, saved under `site-color-theme` |
+
+Keep layout-specific cards, tables, and content in their page components.
+News, conference tools, progress, and travel still use their earlier layouts;
+the standalone HTML report preserves its imported presentation. Their migration
+is a separate step. Design previews also retain their independent shell.
+
+### Terminal directory model
+
+The terminal is a presentation of the website, not an executable shell. Its path
+logic follows a single Unix workspace. Web URLs remain unchanged (`/blog`,
+`/project`, etc.); the displayed filesystem paths are a separate convention.
+
+```text
+/home/tianchi/                 = ~/
+├── README.md                  homepage profile
+├── contact.txt
+├── life.log
+├── writing/                   articles as <slug>.md
+├── projects/
+│   └── ai-infra-gpu-study/
+│       ├── README.md
+│       └── <study-slug>/
+├── about/
+│   ├── README.md
+│   ├── education-experience.txt
+│   ├── beyond-coding.txt
+│   └── social/
+├── research/                  Markdown records linking to the original papers
+│   └── in_progress/status.txt
+├── news/index.txt
+└── conferences/
+    ├── README.md
+    └── active/                index.tsv and conference .yml records
+/root/progress/                protected destination outside the user's home
+```
+
+- `~` always abbreviates `/home/tianchi`, never `/root` or `/home/tianchi-other`.
+- Window titles give the working directory. Listing that directory uses `ls`;
+  relative commands resolve from it. Each project detail has its own directory.
+- Read a profile with `cat README.md`. `whoami` would only print the login name.
+  Read project README files instead of `cat` on directories; publication records
+  use `.md`, and their links open the original PDF. Quote dynamic file arguments.
+- Navigation displays destinations (`~/`, `~/projects`, `/root/progress`), not
+  invented `~/home` or `~/progress` directories. Action links are ordinary labels.
+- Progress remains in the visitor's home session and depicts a privileged read
+  with `sudo -u root -- ls /root/progress`. It does not claim an authenticated root
+  shell, change directory, or display a root `#` prompt before verification.
+  This is a visual convention only: access still uses the existing client-side
+  encryption and verification, not OS permissions or a real `sudo` command.
+- The directory listing UI omits fabricated file sizes, permissions and block
+  totals. Recorded project update dates remain project metadata.
+
+Historical `/design/` prototypes and unused demo pages retain their original
+copy; they are not the current workspace model.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`
@@ -71,8 +146,10 @@ are excluded from the sitemap. Their content links open the production pages.
 ## Managing projects
 
 Edit `src/lib/Projects.ts` in Helix to add or update a project. Each entry contains
-`title`, `technologies`, `description`, and `url`; array order determines display
-order. Set `status: 'preparing'` for a project that is not ready yet.
+`title`, `technologies`, `description`, and `url`. The project page sorts entries
+by directory name to match `ls -1F`, and shows each project once with its directory,
+description, technologies, update date, and available links. Local study hubs and
+external repositories or project websites have separate actions. Set `status: 'preparing'` for a project that is not ready yet.
 
 The optional `updatedAt: 'YYYY-MM-DD'` field supplies that project's displayed
 last-modified date. Use the UTC date of the latest verified commit to the linked

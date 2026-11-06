@@ -14,6 +14,20 @@
 }
 
 :root {
+	--font-body: 'Preview Sans', sans-serif;
+	--site-width: 1180px;
+	--reading-width: 48rem;
+	--shell-gutter: 24px;
+	--shell-margin: 24px;
+	--content-padding: clamp(18px, 4vw, 40px);
+	--text-page: clamp(26px, 3vw, 32px);
+	--text-section: 22px;
+	--text-card: 18px;
+	--text-body: 16px;
+	--text-meta: 12px;
+	--leading-body: 1.8;
+	--radius-window: 8px;
+	--radius-control: 4px;
 	--paper: #e9eee6;
 	--ink: #243c32;
 	--muted: #53695c;
@@ -24,10 +38,11 @@
 	--terminal-chrome: #e3eadd;
 	--terminal-warm: #8b5c28;
 	--terminal-header-shadow: none;
-	--terminal-content-shadow: 0 8px 28px color-mix(in srgb, var(--ink) 9%, transparent);
+	--terminal-content-shadow: 0 8px 28px
+		color-mix(in srgb, var(--ink) 9%, transparent);
 	--mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 	color-scheme: light;
-	font-family: 'Preview Sans', sans-serif;
+	font-family: var(--font-body);
 	background: var(--paper);
 	color: var(--ink);
 }
@@ -88,8 +103,8 @@ a:hover {
 	margin-bottom: 24px;
 }
 .section-title h2 {
-	font-size: 24px;
-	letter-spacing: -0.6px;
+	font-size: var(--text-section);
+	letter-spacing: -0.3px;
 	font-weight: 600;
 }
 .section-title > a {
@@ -232,26 +247,6 @@ a:hover {
 body {
 	min-width: 280px;
 }
-.page-heading {
-	font:
-		600 clamp(28px, 5vw, 40px) / 1.2 'Preview Display',
-		sans-serif;
-	color: var(--ink);
-	margin: 5px 0 15px;
-}
-.interior-shell .terminal-header {
-	flex-wrap: wrap;
-}
-.interior-shell .terminal-title {
-	flex: 1;
-	min-width: 0;
-	overflow-wrap: anywhere;
-}
-.interior-shell .terminal-nav {
-	order: 3;
-	flex-basis: 100%;
-	margin-left: 0;
-}
 .interior-shell .terminal-wrapper .hacker-section {
 	margin-left: 0;
 	padding-left: 0;
@@ -286,8 +281,8 @@ body {
 	background: transparent;
 	border: 1px solid var(--rule);
 	border-radius: 4px;
-	width: 36px;
-	height: 36px;
+	width: 40px;
+	height: 40px;
 	font-size: 22px;
 	flex-shrink: 0;
 }
@@ -298,9 +293,9 @@ body {
 	scroll-margin-top: 25px;
 }
 .interior-shell {
-	width: min(1180px, 100%);
-	margin: 24px auto;
-	padding: 0 24px;
+	width: min(var(--site-width), 100%);
+	margin: var(--shell-margin) auto;
+	padding: 0 var(--shell-gutter);
 	min-width: 0;
 }
 .interior-shell .terminal-wrapper {
@@ -308,7 +303,9 @@ body {
 }
 .interior-shell main.terminal-content {
 	min-width: 0;
-	padding: clamp(18px, 4vw, 40px);
+	padding: var(--content-padding);
+	border-top: 0;
+	border-radius: 0 0 var(--radius-window) var(--radius-window);
 }
 .interior-footer {
 	display: flex;
@@ -320,6 +317,10 @@ body {
 	margin: 24px 0;
 }
 @media (max-width: 700px) {
+	:root {
+		--shell-gutter: 12px;
+		--shell-margin: 14px;
+	}
 	.interior-shell {
 		padding: 0 12px;
 		margin: 14px auto;
@@ -353,3 +354,68 @@ body {
 	}
 }
 
+/* Shared action treatment. Inline links remain inline, navigation has its own state. */
+.site-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 40px;
+	max-width: 100%;
+	padding: 8px 14px;
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-control);
+	background: transparent;
+	color: var(--accent);
+	font: var(--text-meta) / 1.6 var(--mono);
+	text-align: center;
+	text-decoration: none;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	cursor: pointer;
+	transition:
+		background 0.15s,
+		border-color 0.15s;
+}
+.site-button:hover {
+	background: var(--surface);
+	border-color: var(--accent);
+	text-decoration: none;
+}
+.site-button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}
+.site-button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.site-button--small {
+	min-height: 32px;
+	padding: 4px 8px;
+}
+.site-button[hidden] {
+	display: none;
+}
+.reading-column {
+	width: 100%;
+	max-width: var(--reading-width);
+	margin-inline: auto;
+}
+
+.site-page-content {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	min-width: 0;
+	width: 100%;
+}
+
+/* The same quiet desktop texture surrounds every shared page panel. */
+@media (min-width: 1000px) {
+	.pixel-desktop,
+	.interior-shell {
+		background-image: radial-gradient(var(--rule) 0.5px, transparent 0.5px);
+		background-size: 9px 9px;
+	}
+}

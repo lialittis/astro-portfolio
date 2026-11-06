@@ -2,7 +2,7 @@
 import { getBlogPosts } from '../../lib/blog'
 import BlogShell from '../../layouts/BlogShell.astro'
 import PostRow from '../../components/Blog/PostRow.astro'
-import CommandLine from '../../components/Terminal/CommandLine.astro'
+import PageHeading from '../../components/Pixel/PageHeading.astro'
 
 const posts = await getBlogPosts()
 const publishedCount = posts.filter((post) => !post.data.draft).length
@@ -13,11 +13,7 @@ const draftCount = posts.length - publishedCount
   title="Tianchi YU - Blog"
   description="Notes on software security, compilers, and programming by Tianchi YU."
 >
-  <CommandLine command="ls -lt ~/blog" />
-  <header class="collection-header">
-    <h1>Blog</h1>
-    <p>Notes on software security, compilers, and programming.</p>
-  </header>
+  <PageHeading title="Writing" command="ls -1" description="Notes on software security, compilers, and programming." />
   <div class="collection-meta">
     <span>
       {publishedCount} published {publishedCount === 1 ? "post" : "posts"}
@@ -42,23 +38,6 @@ const draftCount = posts.length - publishedCount
 </BlogShell>
 
 <style>
-	.collection-header h1 {
-		margin: 0 0 0.75rem;
-		color: var(--accent) !important;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: clamp(1.75rem, 5vw, 2.5rem);
-		font-weight: 600;
-		line-height: 1.2;
-	}
-
-	.collection-header p {
-		margin: 0;
-		color: var(--muted) !important;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.9rem;
-		line-height: 1.7;
-	}
-
 	.collection-meta {
 		display: flex;
 		flex-wrap: wrap;

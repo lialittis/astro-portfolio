@@ -1,6 +1,6 @@
 ---
 import PixelLayout from './PixelLayout.astro'
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import WindowHeader from '../components/Pixel/WindowHeader.astro'
 import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
 interface Props {
 	title: string
@@ -8,15 +8,20 @@ interface Props {
 	path: string
 	noindex?: boolean
 	article?: boolean
+	reading?: boolean
 }
-const { path, ...meta } = Astro.props
+const { path, reading = false, ...meta } = Astro.props
 ---
 <PixelLayout {...meta}>
   <div class="interior-shell">
     <TerminalWrapper>
-      <TerminalHeader title={path} themeToggle />
-      <main id="main" class="terminal-content"><slot /></main>
+      <WindowHeader path={path} />
+      <main id="main" class="terminal-content">
+        <div class:list={["site-page-content", { "reading-column": reading }]}>
+          <slot />
+        </div>
+      </main>
     </TerminalWrapper>
-    <footer class="interior-footer"><a href="/">← Tianchi Yu / personal workspace</a><a href="/#contact">Contact ↗</a></footer>
+    <footer class="interior-footer"><a href="/">← Tianchi Yu</a><a href="/#contact">Contact ↗</a></footer>
   </div>
 </PixelLayout>

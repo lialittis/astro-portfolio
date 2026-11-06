@@ -1,8 +1,11 @@
 ---
+import { workspace } from '../lib/terminal'
 import PixelPage from './PixelPage.astro'
 interface Props {
 	title: string
 	description: string
+	folder: string
 }
+const { folder, ...meta } = Astro.props
 ---
-<PixelPage {...Astro.props} path="~/projects"><slot /></PixelPage>
+<PixelPage {...meta} path={`${workspace.projects}/${folder}`}><slot /></PixelPage>

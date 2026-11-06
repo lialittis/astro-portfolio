@@ -1,12 +1,13 @@
 ---
 import NavBar from '../NavBar.astro'
+import { displayPath, HOME_DIRECTORY } from '../../lib/terminal'
 
 interface Props {
   title?: string
   themeToggle?: boolean
 }
 
-const { title = 'root@tianchi:~$', themeToggle = false } = Astro.props
+const { title = HOME_DIRECTORY, themeToggle = false } = Astro.props
 ---
 
 <div class="terminal-header">
@@ -15,7 +16,7 @@ const { title = 'root@tianchi:~$', themeToggle = false } = Astro.props
     <span class="dot yellow"></span>
     <span class="dot green"></span>
   </div>
-  <div class="terminal-title">{title}</div>
+  <div class="terminal-title" title={title}>{displayPath(title)}</div>
   <NavBar />
   {themeToggle && <button class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>}
 </div>

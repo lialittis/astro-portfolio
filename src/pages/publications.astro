@@ -1,9 +1,8 @@
 ---
-import PixelLayout from '../layouts/PixelLayout.astro'
-import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
-import CommandLine from '../components/Terminal/CommandLine.astro'
-const title = 'Publications'
+import { workspace, shellQuote } from '../lib/terminal'
+import PixelPage from '../layouts/PixelPage.astro'
+import PageHeading from '../components/Pixel/PageHeading.astro'
+import CommandLine from '../components/Pixel/TerminalPrompt.astro'
 
 // Publication data
 const publications = [
@@ -22,98 +21,63 @@ const publications = [
 ]
 ---
 
-<PixelLayout title={title} description="Publications">
-  <div class="interior-shell">
-    <TerminalWrapper>
-      <TerminalHeader title="~/publications" themeToggle />
-      <main id="main" class="terminal-content">
-        <h1 class="page-heading">Publications</h1>
-        <CommandLine command="ls -la ~/research/publications" />
+<PixelPage title="Publications | Tianchi Yu" description="Research publications by Tianchi Yu." path={workspace.research}>
+  <PageHeading title="Publications" command="ls -1F" />
 
-        <div class="file-listing">
-          <div class="file-listing-line" style="color: var(--muted);">
-            total {publications.length}
-          </div>
-          {publications.map((pub, index) => (
-            <div class="file-listing-line">
-              <span style="color: var(--muted);">-rw-r--r--</span>
-              <span style="color: var(--muted); margin: 0 0.5rem;">1</span>
-              <span style="color: var(--muted); margin-right: 0.5rem;">tianchi</span>
-              <span style="color: var(--muted); margin-right: 1rem;">staff</span>
-              <span style="color: var(--muted); margin-right: 1rem;">2023</span>
-              <span style="color: var(--muted); margin-right: 1rem;">Jul 25</span>
-              <span style="color: var(--accent); font-weight: 600;">{pub.title}.pdf</span>
-            </div>
-          ))}
-          <div class="file-listing-line">
-            <span style="color: var(--muted);">drwxr-xr-x</span>
-            <span style="color: var(--muted); margin: 0 0.5rem;">2</span>
-            <span style="color: var(--muted); margin-right: 0.5rem;">tianchi</span>
-            <span style="color: var(--muted); margin-right: 1rem;">staff</span>
-            <span style="color: var(--muted); margin-right: 1rem;">4096</span>
-            <span style="color: var(--muted); margin-right: 1rem;">Nov 18 2025</span>
-            <span style="color: var(--accent); font-weight: 600;">in_progress/</span>
-          </div>
-        </div>
-
-        {publications.map((pub, index) => (
-          <div class="publication-section">
-            <CommandLine command={`cat ${pub.title}.pdf`} />
-            <div class="terminal-publication">
-              <h2 class="pub-title">[{index}] {pub.title}</h2>
-
-              <div class="pub-meta">
-                <div class="meta-line">
-                  <span class="meta-label">AUTHORS:</span>
-                  <span class="meta-value">{pub.authors} <span class="highlight-name">{pub.myName}</span></span>
-                </div>
-                <div class="meta-line">
-                  <span class="meta-label">CONFERENCE:</span>
-                  <span class="meta-value">{pub.conference}</span>
-                </div>
-              </div>
-
-              <div class="pub-abstract">
-                <div class="abstract-header">ABSTRACT:</div>
-                <p class="abstract-text">{pub.abstract}</p>
-              </div>
-
-              <a href={pub.url} target="_blank" rel="noopener noreferrer" class="terminal-link-btn">
-                <span>→ View Publication</span>
-              </a>
-            </div>
-          </div>
-        ))}
-
-        <div class="publication-section">
-          <CommandLine command="cat in_progress/status.txt" />
-          <div class="terminal-publication coming-soon-terminal">
-            <div class="coming-soon-content">
-              <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
-              <p style="color: var(--muted); line-height: 1.8;">
-                Stay tuned for upcoming publications in:<br/>
-                • System Security<br/>
-                • Memory Protection<br/>
-                • Hardware-Software Co-design<br/>
-                • AI Stack Security<br/>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <CommandLine command="echo 'End of publications list'" />
-      </main>
-    </TerminalWrapper>
+  <div class="file-listing">
+    {publications.map(pub => <div class="file-listing-line">{pub.title}.md</div>)}
+    <div class="file-listing-line">in_progress/</div>
   </div>
-</PixelLayout>
+
+  {publications.map((pub, index) => (
+    <div class="publication-section">
+      <CommandLine command={`cat -- ${shellQuote(`${pub.title}.md`)}`} />
+      <div class="terminal-publication">
+        <h2 class="pub-title">[{index}] {pub.title}</h2>
+
+        <div class="pub-meta">
+          <div class="meta-line">
+            <span class="meta-label">AUTHORS:</span>
+            <span class="meta-value">{pub.authors} <span class="highlight-name">{pub.myName}</span></span>
+          </div>
+          <div class="meta-line">
+            <span class="meta-label">CONFERENCE:</span>
+            <span class="meta-value">{pub.conference}</span>
+          </div>
+        </div>
+
+        <div class="pub-abstract">
+          <div class="abstract-header">ABSTRACT:</div>
+          <p class="abstract-text">{pub.abstract}</p>
+        </div>
+
+        <a href={pub.url} target="_blank" rel="noopener noreferrer" class="site-button">
+          <span>→ View Publication</span>
+        </a>
+      </div>
+    </div>
+  ))}
+
+  <div class="publication-section">
+    <CommandLine command="cat in_progress/status.txt" />
+    <div class="terminal-publication coming-soon-terminal">
+      <div class="coming-soon-content">
+        <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
+        <p style="color: var(--muted); line-height: 1.8;">
+          Stay tuned for upcoming publications in:<br/>
+          • System Security<br/>
+          • Memory Protection<br/>
+          • Hardware-Software Co-design<br/>
+          • AI Stack Security<br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <CommandLine command="echo 'End of publications list'" />
+</PixelPage>
 
 <style>
-	.hacker-container {
-		display: block;
-		min-height: 100vh;
-		padding: 2rem;
-		padding-top: 2rem;
-	}
 
 	/* Hacker Mode Specific Styles */
 	.file-listing {
@@ -147,8 +111,8 @@ const publications = [
 
 	.pub-title {
 		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.5rem;
+		font-family: var(--font-body);
+		font-size: var(--text-section);
 		margin-bottom: 1.5rem;
 		font-weight: 600;
 	}
@@ -195,31 +159,12 @@ const publications = [
 
 	.abstract-text {
 		color: var(--muted);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.95rem;
+		font-family: var(--font-body);
+		font-size: var(--text-body);
 		line-height: 1.8;
-		text-align: justify;
-	}
+		text-align: left;
 
-	.terminal-link-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1rem;
-		padding: 0.75rem 1.5rem;
-		border: 1px solid var(--accent);
-		border-radius: 5px;
-		text-decoration: none;
-		transition: all 0.3s ease;
-		margin-top: 1rem;
-	}
-
-	.terminal-link-btn:hover {
-		background: var(--surface);
-		box-shadow: 0 0 15px var(--rule);
-		transform: translateY(-2px);
+		max-width: var(--reading-width);
 	}
 
 	.coming-soon-terminal {

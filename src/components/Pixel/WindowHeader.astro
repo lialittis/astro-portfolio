@@ -1,0 +1,58 @@
+---
+import NavBar from '../NavBar.astro'
+import { displayPath } from '../../lib/terminal'
+interface Props { path: string }
+const { path } = Astro.props
+---
+<header class="site-window-header">
+  <div class="site-window-chrome">
+    <span class="site-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="site-window-path" title={path}>{displayPath(path)}</span>
+    <button type="button" class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>
+  </div>
+  <NavBar variant="workspace" />
+</header>
+<style>
+	.site-window-header {
+		background: var(--terminal-chrome);
+		border: 1px solid var(--rule);
+		border-radius: var(--radius-window) var(--radius-window) 0 0;
+	}
+	.site-window-chrome {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 12px 18px;
+		border-bottom: 1px solid var(--rule);
+	}
+	.site-window-dots {
+		display: flex;
+		gap: 7px;
+		flex-shrink: 0;
+	}
+	.site-window-dots i {
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: #c88477;
+	}
+	.site-window-dots i:nth-child(2) {
+		background: #c7ad70;
+	}
+	.site-window-dots i:nth-child(3) {
+		background: #7baf8d;
+	}
+	.site-window-path {
+		flex: 1;
+		min-width: 0;
+		font: var(--text-meta) / 1.6 var(--mono);
+		color: var(--accent);
+		overflow-wrap: anywhere;
+	}
+	@media (max-width: 700px) {
+		.site-window-chrome {
+			padding: 10px 12px;
+			gap: 10px;
+		}
+	}
+</style>

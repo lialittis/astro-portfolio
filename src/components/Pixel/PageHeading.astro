@@ -1,0 +1,28 @@
+---
+import TerminalPrompt from './TerminalPrompt.astro'
+interface Props { title: string; command?: string; description?: string }
+const { title, command, description } = Astro.props
+---
+<header class="site-page-heading">
+  {command && <TerminalPrompt command={command} />}
+  <h1>{title}</h1>
+  {description && <p>{description}</p>}
+</header>
+<style>
+	.site-page-heading {
+		display: grid;
+		gap: 16px;
+		min-width: 0;
+	}
+	h1 {
+		color: var(--ink);
+		font: 600 var(--text-page) / 1.25 var(--font-body);
+		letter-spacing: -0.5px;
+		overflow-wrap: anywhere;
+	}
+	p {
+		max-width: var(--reading-width);
+		color: var(--muted);
+		font: var(--text-body) / var(--leading-body) var(--font-body);
+	}
+</style>

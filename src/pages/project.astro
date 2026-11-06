@@ -1,403 +1,158 @@
 ---
-import PixelLayout from '../layouts/PixelLayout.astro'
+import { workspace, projectFolder } from '../lib/terminal'
+import PixelPage from '../layouts/PixelPage.astro'
+import PageHeading from '../components/Pixel/PageHeading.astro'
 import projects from '../lib/Projects'
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
-import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
-import CommandLine from '../components/Terminal/CommandLine.astro'
 
-const title = 'Projects'
-
-const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
-	year: 'numeric',
-	month: 'short',
-	day: '2-digit',
-	timeZone: 'UTC'
-})
+const directoryEntries = [...projects].sort((a, b) =>
+  projectFolder(a).localeCompare(projectFolder(b), 'en')
+)
+const isRepository = (url: string) =>
+  ['github.com', 'gitea.com'].includes(new URL(url).hostname)
 ---
 
-<PixelLayout
-  title={title}
-  description="Projects"
->
-  <!-- Hacker Mode Layout -->
-  <div class="interior-shell">
-    <TerminalWrapper>
-      <TerminalHeader title="root@projects:~$" themeToggle />
+<PixelPage title="Projects | Tianchi Yu" description="Projects and experiments by Tianchi Yu." path={workspace.projects}>
+  <PageHeading title="Projects" command="ls -1F" />
 
-      <main id="main" class="terminal-content">
-        <h1 class="page-heading">Projects</h1>
-        <CommandLine command="ls -la ~/projects" />
-
-        <!-- File listing output -->
-        <div class="file-listing">
-          <div class="file-listing-line file-listing-total">
-            total {projects.length}
-          </div>
-          {
-            projects.map((project, index) => (
-              <div class="file-listing-line">
-                <span class="file-mode">{project.status === 'preparing' ? '-rw-r--r--' : 'drwxr-xr-x'}</span>
-                <span class="file-count">2</span>
-                <span class="file-owner">tianchi</span>
-                <span class="file-group">staff</span>
-                <span class="file-size">{project.status === 'preparing' ? '0' : '4096'}</span>
-                {project.updatedAt ? (
-                  <time class="file-date" datetime={project.updatedAt} title="Last updated (UTC)">
-                    {modifiedDateFormatter.format(new Date(project.updatedAt))}
-                  </time>
-                ) : (
-                  <span class="file-date" title="Update date has not been recorded">Not recorded</span>
-                )}
-                <span class:list={['file-name', { 'file-name-draft': project.status === 'preparing' }]}>project_{String(index + 1).padStart(2, '0')}_[{project.title}]{project.status === 'preparing' && '.draft'}</span>
+  <ul class="project-list" aria-label="Projects">
+    {directoryEntries.map(project => {
+      const folder = projectFolder(project)
+      const technologies = project.technologies.filter(technology => technology.trim())
+      const studiesUrl = project.slug && project.studies?.length ? `/project/${project.slug}/` : undefined
+      return (
+        <li>
+          <article class="project-entry" aria-labelledby={`project-${folder}`}>
+            <header class="project-entry-header">
+              <div class="project-identity">
+                <p class="project-directory">{folder}/</p>
+                <h2 id={`project-${folder}`}>{project.title}</h2>
               </div>
-            ))
-          }
-        </div>
-
-        <div class="hacker-section projects-list">
-          {
-            projects.map((project, index) => (
-              <div class="hacker-project-card">
-                <div class="project-header-hacker">
-                  <CommandLine command={`${project.status === 'preparing' ? 'touch' : 'cat'} project_${String(index + 1).padStart(2, '0')}_[${project.title}]`} />
-                </div>
-
-                <div class="project-content-hacker">
-                  <div class="project-heading">
-                    <h2 class="project-title">{project.title}</h2>
-                    <div class="project-meta">
-                      {project.status === 'preparing' && <span class="project-status">PREPARING</span>}
-                      <span class="project-number">[{String(index + 1).padStart(2, '0')}]</span>
-                    </div>
-                  </div>
-
-                  {project.technologies.length > 0 && (
-                    <div class="tech-stack-hacker">
-                      {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
-                        <span class="tech-tag-hacker">{tech}</span>
-                      ))}
-                    </div>
-                  )}
-
-                  {project.description && <p class="project-description">{project.description}</p>}
-
-                  {project.slug && project.studies?.length ? (
-                    <div class="project-actions">
-                      <a href={`/project/${project.slug}/`} class="project-link-hacker">
-                        <span><span class="action-prompt">$</span> explore {project.studies.length} studies</span>
-                      </a>
-                      <a href={project.url} class="project-source-link" target="_blank" rel="noreferrer">repository ↗</a>
-                    </div>
-                  ) : project.url ? (
-                    <a href={project.url} target="_blank" rel="noreferrer" class="project-link-hacker">
-                      <span><span class="action-prompt">$</span> open project</span>
-                    </a>
-                  ) : (
-                    <p class="empty-project">// empty workspace — figures coming soon</p>
-                  )}
-                </div>
+              <div class="project-meta">
+                {project.status === 'preparing' && <span class="project-status">Preparing</span>}
+                {project.updatedAt && <time datetime={project.updatedAt}>Updated {project.updatedAt}</time>}
               </div>
-            ))
-          }
-        </div>
+            </header>
 
-        <CommandLine command="echo 'End of project list'" />
-      </main>
-    </TerminalWrapper>
-  </div>
-</PixelLayout>
+            {project.description && <p class="project-description">{project.description}</p>}
+
+            {technologies.length > 0 && (
+              <ul class="project-technologies" aria-label="Technologies">
+                {technologies.map(technology => <li>{technology}</li>)}
+              </ul>
+            )}
+
+            {(studiesUrl || project.url) && (
+              <div class="project-actions">
+                {studiesUrl && <a href={studiesUrl} class="site-button">View {project.studies!.length} studies <span aria-hidden="true">→</span></a>}
+                {project.url && <a href={project.url} class="project-external-link" target="_blank" rel="noopener noreferrer">
+                  {isRepository(project.url) ? 'Source repository' : 'Project website'} <span aria-hidden="true">↗</span>
+                </a>}
+              </div>
+            )}
+          </article>
+        </li>
+      )
+    })}
+  </ul>
+</PixelPage>
 
 <style>
-	/* Hacker Mode Container */
-	.hacker-container {
-		/* width: 100% !important; */
-		/* max-width: 1200px !important; */
-		/* margin: 0 auto !important; */
-		padding: 2rem !important;
-		padding-top: 2rem !important;
-		/* background: var(--terminal-panel) !important; */
-		min-height: 100vh !important;
-		position: relative !important;
-		z-index: 100 !important;
-	}
-
-	/* Override visibility for hacker content */
-	.hacker-container * {
-		visibility: visible !important;
-		opacity: 1 !important;
-	}
-
-	/* File listing styles */
-	.file-listing {
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin: 1rem 0 2rem 0;
-		font-family: 'SF Mono', 'Monaco', monospace;
-		font-size: 0.875rem;
-	}
-
-	.file-listing-line {
-		color: var(--muted);
-		font-family: 'SF Mono', 'Monaco', monospace;
-		line-height: 1.8;
-		white-space: nowrap;
-		overflow-x: auto;
-		display: flex;
-		align-items: center;
-	}
-
-	.file-listing-line:hover {
-		background: var(--surface);
-		margin: 0 -0.5rem;
-		padding: 0 0.5rem;
-	}
-
-	.file-listing-total {
-		margin-bottom: 0.5rem;
-		color: var(--muted);
-	}
-
-	.file-count {
-		margin: 0 0.5rem;
-	}
-
-	.file-owner {
-		margin-right: 0.5rem;
-	}
-
-	.file-group,
-	.file-size,
-	.file-date {
-		margin-right: 1rem;
-	}
-
-	.file-name {
-		color: var(--muted);
-		font-weight: 600;
-	}
-
-	.file-date {
-		min-width: 12ch;
-		flex-shrink: 0;
-		font-variant-numeric: tabular-nums;
-	}
-
-	.file-name-draft {
-		color: var(--terminal-warm);
-	}
-
-	.project-actions {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 1rem 1.5rem;
-	}
-
-	.project-source-link {
-		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', monospace;
-		font-size: 0.875rem;
-		text-decoration: none;
-	}
-
-	.project-source-link:hover {
-		color: var(--accent);
-		text-decoration: underline;
-	}
-
-	.project-source-link:focus-visible {
-		outline: 2px solid var(--accent);
-		outline-offset: 4px;
-	}
-
-	/* Hacker Mode Styles */
-	.projects-list {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.hacker-project-card {
-		border-left: 2px solid var(--rule);
-		padding-left: 1.5rem;
-		margin-left: 1rem;
-		position: relative;
-		z-index: 101;
-	}
-
-	.hacker-project-card::before {
-		content: '';
-		position: absolute;
-		top: 2.35rem;
-		left: -6px;
-		width: 10px;
-		height: 10px;
-		background: var(--accent);
-		border: 2px solid var(--surface);
-		border-radius: 50%;
-		box-shadow: 0 0 12px var(--rule);
-	}
-
-	.project-header-hacker {
-		margin-bottom: 1rem;
-	}
-
-	.project-content-hacker {
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 8px;
-		padding: 1.5rem;
-		transition:
-			border-color 0.3s ease,
-			box-shadow 0.3s ease,
-			background 0.3s ease;
-		position: relative;
-		z-index: 102;
-	}
-
-	.project-content-hacker:hover {
-		border-color: var(--rule);
-		background: var(--surface);
-		box-shadow: 0 3px 12px color-mix(in srgb, var(--ink) 8%, transparent);
-	}
-
-	.project-heading {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 1rem;
-	}
-
-	.project-title {
-		margin: 0;
-		color: var(--accent) !important;
-		font-family: 'Preview Sans', sans-serif;
-		font-size: 1.5rem;
-		line-height: 1.3;
-		min-width: 0;
-		text-shadow: none;
-	}
-
-	.project-number {
-		flex-shrink: 0;
-		color: var(--terminal-warm);
-		font-family: 'SF Mono', monospace;
-		font-size: 0.875rem;
-	}
-
-	.project-meta {
-		display: flex;
-		flex-shrink: 0;
-		align-items: center;
-		gap: 0.75rem;
-	}
-
-	.project-status {
-		padding: 0.25rem 0.55rem;
-		color: var(--terminal-warm);
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 4px;
-		font-family: 'SF Mono', monospace;
-		font-size: 0.68rem;
-		letter-spacing: 0.08em;
-	}
-
-	.project-description {
-		margin: 1.5rem 0;
-		color: var(--ink) !important;
-		font-family: 'SF Mono', monospace;
-		line-height: 1.7;
-	}
-
-	.empty-project {
-		margin: 1.25rem 0 0;
-		color: var(--muted) !important;
-		font-family: 'SF Mono', monospace;
-		font-size: 0.85rem;
-		font-style: italic;
-	}
-
-	.tech-stack-hacker {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		margin: 1rem 0;
-	}
-
-	.tech-tag-hacker {
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		color: var(--terminal-warm);
-		padding: 0.25rem 0.75rem;
-		border-radius: 4px;
-		font-family: 'SF Mono', monospace;
-		font-size: 0.75rem;
-		transition: all 0.3s ease;
-	}
-
-	.tech-tag-hacker:hover {
-		background: var(--surface);
-		border-color: var(--terminal-warm);
-		box-shadow: 0 0 10px var(--rule);
-	}
-
-	.project-link-hacker {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.75rem 1.5rem;
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		color: var(--accent);
-		text-decoration: none;
-		border-radius: 4px;
-		font-family: 'SF Mono', monospace;
-		font-weight: 600;
-		transition: all 0.3s ease;
-	}
-
-	.project-link-hacker:hover {
-		background: var(--surface);
-		border-color: var(--accent);
-		color: var(--accent);
-		box-shadow: 0 0 18px var(--rule);
-	}
-
-	.action-prompt {
-		margin-right: 0.35rem;
-		color: var(--accent);
-	}
-
-	.hacker-container {
-		display: block;
-	}
-
-	/* Responsive for hacker mode */
-	@media (max-width: 768px) {
-		.hacker-container {
-			padding: 1rem;
-		}
-
-		.hacker-project-card {
-			padding-left: 0.75rem;
-			margin-left: 0;
-		}
-
-		.project-content-hacker {
-			padding: 1rem;
-		}
-
-		.project-heading {
-			flex-direction: column;
-			gap: 0.75rem;
-		}
-
-		.project-title {
-			font-size: 1.25rem;
-		}
-	}
+  .project-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .project-list > li {
+    border-top: 1px solid var(--rule);
+  }
+  .project-list > li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .project-entry {
+    display: grid;
+    gap: 16px;
+    padding: 28px 0;
+    min-width: 0;
+  }
+  .project-entry-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+  .project-identity {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .project-directory {
+    color: var(--accent);
+    font: var(--text-meta)/1.6 var(--mono);
+    overflow-wrap: anywhere;
+    margin-bottom: 8px;
+  }
+  h2 {
+    color: var(--ink);
+    font: 600 var(--text-section)/1.35 var(--font-body);
+  }
+  .project-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    color: var(--muted);
+    font: var(--text-meta)/1.6 var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .project-meta:empty {
+    display: none;
+  }
+  .project-status {
+    color: var(--terminal-warm);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-control);
+    padding: 3px 8px;
+  }
+  .project-description {
+    color: var(--muted);
+    max-width: var(--reading-width);
+    font: var(--text-body)/var(--leading-body) var(--font-body);
+  }
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .project-technologies li {
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-control);
+    color: var(--muted);
+    font: var(--text-meta)/1.6 var(--mono);
+  }
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 24px;
+  }
+  .project-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    color: var(--accent);
+    font: var(--text-meta)/1.6 var(--mono);
+    text-underline-offset: 4px;
+  }
+  .project-external-link:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .project-entry { padding: 24px 0; }
+    .project-identity { flex-basis: 100%; }
+  }
 </style>

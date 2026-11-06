@@ -12,48 +12,95 @@ const readable = address.replace('@', ' [at] ').replaceAll('.', ' [dot] ')
   <span class="email-label">{label}</span>
   <span class="email-value" data-email-value>{readable}</span>
   <span class="email-actions">
-    <button type="button" data-email-reveal hidden aria-label={`Show ${label.toLowerCase()} email address`}>Show email</button>
-    <button type="button" data-email-copy hidden aria-label={`Copy ${label.toLowerCase()} email address`}>Copy</button>
+    <button type="button" class="site-button site-button--small" data-email-reveal hidden aria-label={`Show ${label.toLowerCase()} email address`}>Show email</button>
+    <button type="button" class="site-button site-button--small" data-email-copy hidden aria-label={`Copy ${label.toLowerCase()} email address`}>Copy</button>
   </span>
   <span class="email-feedback" role="status" aria-live="polite" data-email-feedback></span>
 </span>
 <script>
-  document.querySelectorAll<HTMLElement>('[data-email-contact]').forEach(contact => {
-    const reveal = contact.querySelector<HTMLButtonElement>('[data-email-reveal]')!
-    const copy = contact.querySelector<HTMLButtonElement>('[data-email-copy]')!
-    const value = contact.querySelector<HTMLElement>('[data-email-value]')!
-    const feedback = contact.querySelector<HTMLElement>('[data-email-feedback]')!
-    reveal.hidden = false
-    reveal.addEventListener('click', () => {
-      const address = atob(contact.dataset.address!)
-      const link = document.createElement('a')
-      link.href = `mailto:${address}`
-      link.textContent = address
-      value.replaceChildren(link)
-      reveal.hidden = true
-      copy.hidden = false
-      link.focus()
-    })
-    copy.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(value.textContent!)
-        feedback.textContent = 'Copied.'
-      } catch {
-        feedback.textContent = 'Select the address to copy it manually.'
-      }
-    })
-  })
+	document
+		.querySelectorAll<HTMLElement>('[data-email-contact]')
+		.forEach((contact) => {
+			const reveal = contact.querySelector<HTMLButtonElement>(
+				'[data-email-reveal]'
+			)!
+			const copy = contact.querySelector<HTMLButtonElement>('[data-email-copy]')!
+			const value = contact.querySelector<HTMLElement>('[data-email-value]')!
+			const feedback = contact.querySelector<HTMLElement>(
+				'[data-email-feedback]'
+			)!
+			reveal.hidden = false
+			reveal.addEventListener('click', () => {
+				const address = atob(contact.dataset.address!)
+				const link = document.createElement('a')
+				link.href = `mailto:${address}`
+				link.textContent = address
+				value.replaceChildren(link)
+				reveal.hidden = true
+				copy.hidden = false
+				link.focus()
+			})
+			copy.addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(value.textContent!)
+					feedback.textContent = 'Copied.'
+				} catch {
+					feedback.textContent = 'Select the address to copy it manually.'
+				}
+			})
+		})
 </script>
 <style>
-  .email-contact { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; font-style: normal; }
-  .email-label { color: var(--muted, #a0b2a4); min-width: 76px; font-size: 11px; }
-  .email-value { overflow-wrap: anywhere; min-width: 0; }
-  .email-value :global(a) { color: inherit; text-underline-offset: 3px; }
-  .email-actions { display: inline-flex; gap: 8px; }
-  button { padding: 3px 7px; border: 1px solid var(--rule, #30443a); border-radius: 3px; background: transparent; color: var(--accent, #99d5ab); font: inherit; font-size: 11px; cursor: pointer; }
-  button:hover { background: var(--surface, #192820); }
-  button[hidden] { display: none; }
-  button:focus-visible { outline: 2px solid var(--accent, #99d5ab); outline-offset: 3px; }
-  .email-feedback { color: var(--muted, #a0b2a4); font-size: 11px; }
-  .email-feedback:empty { display: none; }
+	.email-contact {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 6px 12px;
+		font-style: normal;
+	}
+	.email-label {
+		color: var(--muted, #a0b2a4);
+		min-width: 76px;
+		font-size: 11px;
+	}
+	.email-value {
+		overflow-wrap: anywhere;
+		min-width: 0;
+	}
+	.email-value :global(a) {
+		color: inherit;
+		text-underline-offset: 3px;
+	}
+	.email-actions {
+		display: inline-flex;
+		gap: 8px;
+	}
+	button {
+		padding: 4px 8px;
+		border: 1px solid var(--rule, #30443a);
+		border-radius: var(--radius-control, 4px);
+		background: transparent;
+		color: var(--accent, #99d5ab);
+		font: var(--text-meta, 12px) / 1.6 var(--mono, monospace);
+		font-size: var(--text-meta, 11px);
+		cursor: pointer;
+		min-height: 32px;
+	}
+	button:hover {
+		background: var(--surface, #192820);
+	}
+	button[hidden] {
+		display: none;
+	}
+	button:focus-visible {
+		outline: 2px solid var(--accent, #99d5ab);
+		outline-offset: 4px;
+	}
+	.email-feedback {
+		color: var(--muted, #a0b2a4);
+		font-size: 11px;
+	}
+	.email-feedback:empty {
+		display: none;
+	}
 </style>

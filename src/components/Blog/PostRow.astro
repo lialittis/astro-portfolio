@@ -61,7 +61,7 @@ const { title, description, tags = [], date, url, draft = false } = Astro.props
 	.post-link:hover {
 		border-color: var(--rule);
 		background: var(--surface);
-		box-shadow: 0 0 24px var(--rule);
+		border-color: var(--accent);
 	}
 
 	.post-link:focus-visible {
@@ -86,9 +86,9 @@ const { title, description, tags = [], date, url, draft = false } = Astro.props
 	.post-title {
 		min-width: 0;
 		margin: 0;
-		color: var(--accent) !important;
-		font-family: inherit;
-		font-size: 1.05rem;
+		color: var(--ink);
+		font-family: var(--font-body);
+		font-size: var(--text-card);
 		font-weight: 600;
 		overflow-wrap: anywhere;
 		line-height: 1.5;
@@ -100,9 +100,11 @@ const { title, description, tags = [], date, url, draft = false } = Astro.props
 
 	.post-description {
 		color: var(--muted);
-		font-size: 0.875rem;
-		line-height: 1.7;
+		font-size: var(--text-body);
+		line-height: var(--leading-body);
 		overflow-wrap: anywhere;
+
+		font-family: var(--font-body);
 	}
 
 	.post-tags {

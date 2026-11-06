@@ -1,86 +1,61 @@
 ---
-import PixelLayout from '../layouts/PixelLayout.astro'
+import { workspace } from '../lib/terminal'
+import PixelPage from '../layouts/PixelPage.astro'
+import PageHeading from '../components/Pixel/PageHeading.astro'
+import TerminalPrompt from '../components/Pixel/TerminalPrompt.astro'
 import { LINKS } from '../lib/constants'
 import { Icon } from 'astro-icon/components'
-import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 ---
 
-<PixelLayout
-  title="Tianchi YU(于天池) - Developer & Hacker"
-  description="Security Researcher & Life Hacker"
->
-  <div id="hacker-container" class="interior-shell">
-    <TerminalWrapper>
-      <TerminalHeader title="~/about-me" themeToggle />
-      <main id="main" class="terminal-content">
-        <h1 class="page-heading">About me</h1>
-        <div class="terminal-output">
-          <div class="about-section">
-            <div class="section-header">
-              <span class="prompt">$</span> whoami
-            </div>
-            <p class="terminal-text">
-              Hi, I'm <span class="highlight-green">Tianchi YU</span>, a Ph.D. student specializing in <span class="highlight-cyan">System Security</span> at the <a href="https://www.unipd.it/en/" target="_blank" class="terminal-link">University of Padova</a> under the guidance of <a href="https://www.math.unipd.it/~conti/" target="_blank" class="terminal-link">Prof. Mauro Conti</a>. I am part of the <a href="https://spritz.math.unipd.it/" target="_blank" class="terminal-link">Security and Privacy (SPRITZ)</a> research group, and I also serve as an Industrial Ph.D. student, collaborating with <span class="highlight-green">Huawei's</span> Trusted System Security Lab at Munich Heisenberg Researcher Center, supervised by senior expert <a href="https://scholar.google.com/citations?user=v8jHN5UAAAAJ&hl=en" target="_blank" class="terminal-link">Dr. Mahmoud Ammar</a> and director <a href="https://www.linkedin.com/in/silviu-vlasceanu/" target="_blank" class="terminal-link">Silviu Vlasceanu</a>. I am also co-advised by <a href="https://www.ifi.uzh.ch/en/spins/people/oliveira.html" target="_blank" class="terminal-link">Prof. Ivan De Oliveira Nunes</a> from the <a href="https://www.ifi.uzh.ch/en/spins/people.html" target="_blank" class="terminal-link">Security and Privacy of Information, Networks, and Systems (SPINS)</a> research group at University of Zurich.
-            </p>
-            <p class="terminal-text">
-              My research interests are System/Hardware Security, Trustworthy Systems and Heterogenous Computing. I am highly receptive to engaging in Open Source Projects as well as any other compelling initiatives.
-            </p>
-          </div>
+<PixelPage title="About | Tianchi Yu" description="Ph.D. student at the University of Padova, working on system security." path={workspace.about} reading>
+  <PageHeading title="About me" />
+  <div class="terminal-output reading-column">
+    <div class="about-section">
+      <TerminalPrompt command="cat README.md" />
+      <p class="terminal-text">
+        Hi, I'm <span class="highlight-green">Tianchi YU</span>, a Ph.D. student specializing in <span class="highlight-cyan">System Security</span> at the <a href="https://www.unipd.it/en/" target="_blank" class="terminal-link">University of Padova</a> under the guidance of <a href="https://www.math.unipd.it/~conti/" target="_blank" class="terminal-link">Prof. Mauro Conti</a>. I am part of the <a href="https://spritz.math.unipd.it/" target="_blank" class="terminal-link">Security and Privacy (SPRITZ)</a> research group, and I also serve as an Industrial Ph.D. student, collaborating with <span class="highlight-green">Huawei's</span> Trusted System Security Lab at Munich Heisenberg Researcher Center, supervised by senior expert <a href="https://scholar.google.com/citations?user=v8jHN5UAAAAJ&hl=en" target="_blank" class="terminal-link">Dr. Mahmoud Ammar</a> and director <a href="https://www.linkedin.com/in/silviu-vlasceanu/" target="_blank" class="terminal-link">Silviu Vlasceanu</a>. I am also co-advised by <a href="https://www.ifi.uzh.ch/en/spins/people/oliveira.html" target="_blank" class="terminal-link">Prof. Ivan De Oliveira Nunes</a> from the <a href="https://www.ifi.uzh.ch/en/spins/people.html" target="_blank" class="terminal-link">Security and Privacy of Information, Networks, and Systems (SPINS)</a> research group at University of Zurich.
+      </p>
+      <p class="terminal-text">
+        My research interests are System/Hardware Security, Trustworthy Systems and Heterogenous Computing. I am highly receptive to engaging in Open Source Projects as well as any other compelling initiatives.
+      </p>
+    </div>
 
-          <div class="about-section">
-            <div class="section-header">
-              <span class="prompt">$</span> cat education-experience.txt
-            </div>
-            <p class="terminal-text">
-              I obtained my first M.Sc. from <a href="https://www.ip-paris.fr/en" target="_blank" class="terminal-link">École Polytechnique/IP-Paris</a> in Cyber-Physical Systems, and my second M.Sc. (diplôme d'ingénieur) from <a href="https://www.isae-supaero.fr/fr/" target="_blank" class="terminal-link">Institut Supérieur de l'Aéronautique et de l'Espace</a>, direction of Math and Computer Science. My first professional research project was at <span class="highlight-green">Nomadic Labs</span> in 2021 on Smart Contract of Tezos Blockchain, where I was fortunate to work with <a href="https://yrg.gitlab.io/homepage/" target="_blank" class="terminal-link">Dr. Yann Régis-Gianas</a> and Dr. Ric Bonichon. Soon after, I focused more on Hardware Security and Machine Learning Security, then I finished my Master Thesis with <a href="https://scholar.google.de/citations?user=QJv4B9EAAAAJ&hl=fr" target="_blank" class="terminal-link">Dr. Laurent Gomez</a> at <span class="highlight-green">SAP Security Research Team</span> and we eventually published a scientific paper with the content of my thesis.
-            </p>
-          </div>
+    <div class="about-section">
+      <TerminalPrompt command="cat education-experience.txt" />
+      <p class="terminal-text">
+        I obtained my first M.Sc. from <a href="https://www.ip-paris.fr/en" target="_blank" class="terminal-link">École Polytechnique/IP-Paris</a> in Cyber-Physical Systems, and my second M.Sc. (diplôme d'ingénieur) from <a href="https://www.isae-supaero.fr/fr/" target="_blank" class="terminal-link">Institut Supérieur de l'Aéronautique et de l'Espace</a>, direction of Math and Computer Science. My first professional research project was at <span class="highlight-green">Nomadic Labs</span> in 2021 on Smart Contract of Tezos Blockchain, where I was fortunate to work with <a href="https://yrg.gitlab.io/homepage/" target="_blank" class="terminal-link">Dr. Yann Régis-Gianas</a> and Dr. Ric Bonichon. Soon after, I focused more on Hardware Security and Machine Learning Security, then I finished my Master Thesis with <a href="https://scholar.google.de/citations?user=QJv4B9EAAAAJ&hl=fr" target="_blank" class="terminal-link">Dr. Laurent Gomez</a> at <span class="highlight-green">SAP Security Research Team</span> and we eventually published a scientific paper with the content of my thesis.
+      </p>
+    </div>
 
-          <div class="about-section">
-            <div class="section-header">
-              <span class="prompt">$</span> cat beyond-coding.txt
-            </div>
-            <p class="terminal-text">
-              Beyond coding, I like anime, music and sports. I speak Mandarin, English and French. I enjoy reading, thinking and travelling.
-            </p>
-          </div>
+    <div class="about-section">
+      <TerminalPrompt command="cat beyond-coding.txt" />
+      <p class="terminal-text">
+        Beyond coding, I like anime, music and sports. I speak Mandarin, English and French. I enjoy reading, thinking and travelling.
+      </p>
+    </div>
 
-          <div class="about-section">
-            <div class="section-header">
-              <span class="prompt">$</span> ls -la ~/social
-            </div>
-            <div class="social-links">
-              <a href={LINKS.github} target="_blank" class="terminal-social-link">
-                <Icon name="ri:github-fill" class="social-icon" />
-                <span>GitHub</span>
-              </a>
-              <a href={LINKS.linkedin} target="_blank" class="terminal-social-link">
-                <Icon name="ri:linkedin-box-fill" class="social-icon" />
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
+    <div class="about-section">
+      <TerminalPrompt command="ls social/" />
+      <div class="social-links">
+        <a href={LINKS.github} target="_blank" class="site-button">
+          <Icon name="ri:github-fill" class="social-icon" />
+          <span>GitHub</span>
+        </a>
+        <a href={LINKS.linkedin} target="_blank" class="site-button">
+          <Icon name="ri:linkedin-box-fill" class="social-icon" />
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
 
-          <div class="cmd-line">
-            <span class="prompt">$</span>
-            <span class="cursor">_</span>
-          </div>
-        </div>
-      </main>
-    </TerminalWrapper>
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cursor">_</span>
+    </div>
   </div>
-</PixelLayout>
+</PixelPage>
 
 <style>
-	.hacker-container {
-		display: block;
-		box-sizing: border-box;
-		width: 100%;
-		min-height: 100vh;
-		padding: 2rem;
-		padding-top: 2rem;
-	}
 
 	.terminal-output {
 		padding: 1rem 0;
@@ -90,13 +65,6 @@ import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 		margin-bottom: 2rem;
 	}
 
-	.section-header {
-		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		margin-bottom: 0.75rem;
-		font-size: 1rem;
-	}
-
 	.prompt {
 		color: var(--accent);
 		margin-right: 0.5rem;
@@ -104,11 +72,11 @@ import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 
 	.terminal-text {
 		color: var(--muted);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.95rem;
+		font-family: var(--font-body);
+		font-size: var(--text-body);
 		line-height: 1.8;
 		margin: 0.5rem 0;
-		padding-left: 1.5rem;
+		padding-left: 0;
 	}
 
 	.highlight-green {
@@ -136,29 +104,10 @@ import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
 
 	.social-links {
 		display: flex;
-		gap: 1.5rem;
-		padding-left: 1.5rem;
+		gap: 12px;
+		flex-wrap: wrap;
+		padding-left: 0;
 		margin-top: 1rem;
-	}
-
-	.terminal-social-link {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		color: var(--accent);
-		text-decoration: none;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.95rem;
-		padding: 0.5rem 1rem;
-		border: 1px solid var(--accent);
-		border-radius: 5px;
-		transition: all 0.3s ease;
-	}
-
-	.terminal-social-link:hover {
-		background: var(--surface);
-		box-shadow: 0 0 15px var(--rule);
-		transform: translateY(-2px);
 	}
 
 	.social-icon {

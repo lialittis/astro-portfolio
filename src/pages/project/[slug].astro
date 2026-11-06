@@ -1,8 +1,9 @@
 ---
+import { projectFolder } from '../../lib/terminal'
 import projects, { getStudySourceUrl, type Project } from '../../lib/Projects'
 import { readReportLock } from '../../lib/project-reports.mjs'
 import ProjectDetailLayout from '../../layouts/ProjectDetailLayout.astro'
-import CommandLine from '../../components/Terminal/CommandLine.astro'
+import PageHeading from '../../components/Pixel/PageHeading.astro'
 
 export function getStaticPaths() {
 	return projects
@@ -20,17 +21,15 @@ const { project } = Astro.props
 const lock = await readReportLock()
 ---
 
-<ProjectDetailLayout title={`${project.title} | Tianchi YU`} description={project.description}>
+<ProjectDetailLayout folder={projectFolder(project)} title={`${project.title} | Tianchi YU`} description={project.description}>
   <a class="back-link" href="/project">← All projects</a>
-  <CommandLine command={`ls -lt ./${project.slug}`} />
-  <header class="project-hero">
-    <h1>{project.title}</h1>
-    <p>{project.description}</p>
+  <div class="project-hero">
+    <PageHeading title={project.title} command="ls -1" description={project.description} />
     <ul class="technology-list" aria-label="Technologies">
       {project.technologies.map(technology => <li>{technology}</li>)}
     </ul>
     <a class="source-link" href={project.url}>View repository <span aria-hidden="true">↗</span></a>
-  </header>
+  </div>
 
   <section class="studies-section" aria-labelledby="studies-heading">
     <div class="section-heading">
@@ -39,12 +38,12 @@ const lock = await readReportLock()
     </div>
     <p class="section-intro">Focused experiments, reproducible examples, and visual explanations.</p>
     <div class="study-grid">
-      {project.studies?.map((study, index) => {
+      {project.studies?.map((study) => {
         const record = lock.reports[`${project.slug}/${study.slug}`];
         return (
           <article class:list={['study-card', { 'has-report': !!study.report }]}>
             <div class="study-label">
-              <span class="study-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="study-number">{study.slug}/</span>
               <span>{study.report ? 'VISUAL REPORT' : 'EXPERIMENT'}</span>
             </div>
             <h3>{study.title}</h3>
@@ -54,7 +53,7 @@ const lock = await readReportLock()
             </ul>
             {record && <time class="study-date" datetime={record.updatedAt}>Report updated {record.updatedAt}</time>}
             <div class="study-actions">
-              {study.report && <a class="report-link" href={`/project/${project.slug}/${study.slug}/`}>Read visual report <span aria-hidden="true">→</span></a>}
+              {study.report && <a class="site-button" href={`/project/${project.slug}/${study.slug}/`}>Read visual report <span aria-hidden="true">→</span></a>}
               <a class="source-link" href={getStudySourceUrl(project, study, record?.commit)}>{study.report ? 'Experiment code' : 'Code & notes'} <span aria-hidden="true">↗</span></a>
             </div>
           </article>
@@ -67,14 +66,6 @@ const lock = await readReportLock()
 <style>
 	.back-link,
 	.source-link,
-	.report-link {
-		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.875rem;
-		text-decoration: none;
-		line-height: 1.6;
-	}
-
 	a:hover {
 		color: var(--accent);
 		text-decoration: underline;
@@ -86,25 +77,10 @@ const lock = await readReportLock()
 	}
 
 	.project-hero {
-		max-width: 56rem;
+		max-width: var(--reading-width);
+		display: grid;
+		gap: 20px;
 		padding-bottom: 1.5rem;
-	}
-
-	.project-hero h1 {
-		margin: 0;
-		color: var(--accent) !important;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: clamp(1.75rem, 4vw, 2.75rem);
-		font-weight: 600;
-		line-height: 1.25;
-		text-wrap: balance;
-	}
-
-	.project-hero p {
-		margin: 1.25rem 0;
-		color: var(--ink) !important;
-		font-size: 1.05rem;
-		line-height: 1.8;
 	}
 
 	.technology-list {
@@ -142,9 +118,9 @@ const lock = await readReportLock()
 
 	.section-heading h2 {
 		margin: 0;
-		color: var(--accent) !important;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.25rem;
+		color: var(--ink);
+		font-family: var(--font-body);
+		font-size: var(--text-section);
 		font-weight: 500;
 	}
 
@@ -200,9 +176,9 @@ const lock = await readReportLock()
 
 	.study-card h3 {
 		margin: 0;
-		color: var(--accent) !important;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.25rem;
+		color: var(--ink);
+		font-family: var(--font-body);
+		font-size: var(--text-card);
 		font-weight: 600;
 		line-height: 1.5;
 	}
@@ -224,13 +200,6 @@ const lock = await readReportLock()
 		gap: 1rem 1.5rem;
 		margin-top: auto;
 		padding-top: 0.75rem;
-	}
-
-	.report-link {
-		padding: 0.6rem 0.9rem;
-		border: 1px solid var(--rule);
-		border-radius: 0.25rem;
-		background: var(--surface);
 	}
 
 	@media (max-width: 768px) {

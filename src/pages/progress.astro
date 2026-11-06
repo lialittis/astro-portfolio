@@ -1,4 +1,5 @@
 ---
+import { workspace } from '../lib/terminal'
 import Layout from '../layouts/Layout.astro'
 import CommandLine from '../components/Terminal/CommandLine.astro'
 import ProgressVault from '../components/ProgressVault'
@@ -15,9 +16,9 @@ import '../style/hacker-theme.css'
 >
   <div class="progress-container">
     <TerminalWrapper>
-      <TerminalHeader title="root@progress:~$" />
+      <TerminalHeader title={workspace.home} />
       <main class="terminal-content">
-        <CommandLine command="decrypt ~/progress.enc.json" />
+        <CommandLine command={`sudo -u root -- ls ${workspace.progress}`} />
         <div class="progress-vault-root">
           <ProgressVault client:load />
           <noscript>

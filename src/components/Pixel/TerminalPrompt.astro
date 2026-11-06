@@ -15,7 +15,7 @@ const { command, path = '~', showUser = false } = Astro.props
 		flex-wrap: wrap;
 		align-items: baseline;
 		gap: 8px;
-		font: 12px/1.7 var(--mono);
+		font: var(--text-meta, 12px) / 1.7 var(--mono);
 	}
 	.prompt-user {
 		color: var(--accent);
@@ -33,7 +33,7 @@ const { command, path = '~', showUser = false } = Astro.props
 	}
 	@media (max-width: 600px) {
 		.terminal-prompt {
-			font-size: 11px;
+			font-size: var(--text-meta, 11px);
 			gap: 6px;
 		}
 	}

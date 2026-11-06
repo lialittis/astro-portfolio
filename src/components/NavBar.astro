@@ -1,19 +1,21 @@
 ---
 import { navigation, isCurrentRoute } from '../lib/navigation'
+interface Props { variant?: 'legacy' | 'workspace' }
+const { variant = 'legacy' } = Astro.props
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
 const links = navigation
 const isActive = (href: string) => isCurrentRoute(currentPath, href)
 ---
 
-<nav class="terminal-nav" aria-label="Primary navigation">
-  {links.map(({ href, label, ...options }) => (
+<nav class:list={["terminal-nav", { "workspace-nav": variant === "workspace" }]} aria-label="Primary navigation">
+  {links.map(({ href, label, path, ...options }) => (
     <a
       href={href}
       class:list={['terminal-nav-link', { active: isActive(href) }]}
       aria-current={isActive(href) ? 'page' : undefined}
       aria-label={('locked' in options && options.locked) ? `${label}, locked` : label}
     >
-      <span aria-hidden="true">~/</span>{label}{('locked' in options && options.locked) && <span class="lock-mark" aria-hidden="true">◆</span>}
+      {path === '~' ? '~/' : path}{('locked' in options && options.locked) && <span class="lock-mark" aria-hidden="true">◆</span>}
     </a>
   ))}
 </nav>
@@ -90,6 +92,31 @@ const isActive = (href: string) => isCurrentRoute(currentPath, href)
 		.terminal-nav-link {
 			padding: 0.4rem 0.5rem;
 			font-size: 0.68rem;
+		}
+	}
+
+	.terminal-nav.workspace-nav {
+		width: 100%;
+		margin: 0;
+		padding: 10px 18px;
+		gap: 4px;
+		overflow: visible;
+	}
+	.workspace-nav .terminal-nav-link {
+		padding: 7px 10px;
+		font: var(--text-meta) / 1.6 var(--mono);
+		border-radius: var(--radius-control);
+	}
+	.workspace-nav .lock-mark {
+		color: var(--terminal-warm);
+	}
+	@media (max-width: 700px) {
+		.terminal-nav.workspace-nav {
+			padding: 8px 12px;
+			gap: 3px;
+		}
+		.workspace-nav .terminal-nav-link {
+			padding: 7px 8px;
 		}
 	}
 </style>

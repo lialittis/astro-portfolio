@@ -2,7 +2,8 @@
 import PixelLayout from '../../layouts/PixelLayout.astro'
 import Globe from '../Globe/Globe'
 import EmailAddress from '../EmailAddress.astro'
-import { navigation } from '../../lib/navigation'
+import WindowHeader from './WindowHeader.astro'
+import { workspace } from '../../lib/terminal'
 import { LINKS } from '../../lib/constants'
 import ObservatoryScene from './ObservatoryScene.astro'
 import TerminalPrompt from './TerminalPrompt.astro'
@@ -21,20 +22,13 @@ const sections = [
 <PixelLayout title="Tianchi Yu — Ph.D. student" description={content.intro}>
   <div class="pixel-desktop">
     <div class="pixel-window">
-      <header class="window-chrome">
-        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-        <span class="window-title">tianchi@home <span>—</span> ~/personal-space</span>
-        <button class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>
-      </header>
-      <nav class="site-destinations" aria-label="Primary navigation">
-        {navigation.map(link => <a href={link.href} aria-current={link.href === '/' ? 'page' : undefined}><span aria-hidden="true">~/</span>{link.label}{'locked' in link && <span aria-label="locked"> ◆</span>}</a>)}
-      </nav>
+      <WindowHeader path={workspace.home} />
       <nav class="mobile-section-nav" aria-label="On this page">{sections.map(section => <a href={`#${section.id}`} data-section-link={section.id}>{section.label}</a>)}</nav>
       <div class="workspace-grid">
         <aside class="workspace-sidebar" aria-label="Workspace directory">
           <div class="sidebar-sticky">
             <div class="sidebar-label">EXPLORER</div>
-            <div class="directory-root"><span aria-hidden="true">⌄</span> ~/tianchi</div>
+            <div class="directory-root" title={workspace.home}><span aria-hidden="true">⌄</span> ~/</div>
             <nav aria-label="File navigation">
               {sections.map((section, i) => <a href={`#${section.id}`} data-section-link={section.id} aria-current={i === 0 ? 'location' : undefined}><span aria-hidden="true">{i === 0 ? '≡' : section.id === 'life' ? '·' : '▸'}</span>{section.file}</a>)}
             </nav>
@@ -47,7 +41,7 @@ const sections = [
             <div class="scene-heading"><span><span aria-hidden="true">▧</span> workspace.scene</span></div>
             <ObservatoryScene />
             <div class="intro-content">
-              <TerminalPrompt command="whoami" />
+              <TerminalPrompt command="cat README.md" />
               <div class="identity"><h1 id="intro-title">Tianchi Yu</h1><span class="chinese-name" lang="zh-CN">于天池</span></div>
               <p class="research-affiliation">Ph.D. student at <a href="https://www.unipd.it/en/">University of Padova</a> · <a href="https://spritz.math.unipd.it/">SPRITZ</a><br />Industrial research with Huawei’s Trusted System Security Lab, Munich.</p>
               <details class="research-details"><summary>Research background & collaborators</summary><p>Supervised by <a href="https://www.math.unipd.it/~conti/">Prof. Mauro Conti</a>, with industrial supervision from <a href="https://scholar.google.com/citations?user=v8jHN5UAAAAJ&amp;hl=en">Dr. Mahmoud Ammar</a> and <a href="https://www.linkedin.com/in/silviu-vlasceanu/">Silviu Vlasceanu</a>. Co-advised by <a href="https://www.ifi.uzh.ch/en/spins/people/oliveira.html">Prof. Ivan De Oliveira Nunes</a> at the University of Zurich’s SPINS group.</p></details>
@@ -66,7 +60,7 @@ const sections = [
             <Work projects={content.projects} />
           </section>
           <section id="news" class="chapter output-section" aria-labelledby="news-title">
-            <TerminalPrompt command="tail ./security-news" />
+            <TerminalPrompt command="tail -n 1 news/index.txt" />
             <div class="section-title"><h2 id="news-title">Security news</h2><a href="/security-news">Read updates ↗</a></div>
             {content.news ? <a class="news-dispatch" href="/security-news"><div class="dispatch-date"><span class="dot"></span>Latest digest <time datetime={content.news.date}>{content.news.date}</time></div><h3>{content.news.title} <span aria-hidden="true">↗</span></h3></a> : <p class="body-copy">Follow the security news feed for research and vulnerability updates.</p>}
           </section>
@@ -131,61 +125,19 @@ const sections = [
 </script>
 <style>
 	.pixel-desktop {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 30px 32px 24px;
+		max-width: var(--site-width);
+		margin: var(--shell-margin) auto;
+		padding: 0 var(--shell-gutter);
 	}
 	.pixel-window {
-		border: 1px solid var(--rule);
-		border-radius: 9px;
+		border-radius: var(--radius-window);
 		background: var(--terminal-panel);
 		box-shadow: 0 20px 65px #00000020;
-	}
-	.window-chrome {
-		display: flex;
-		align-items: center;
-		gap: 20px;
-		background: var(--terminal-chrome);
-		border-radius: 8px 8px 0 0;
-		border-bottom: 1px solid var(--rule);
-		padding: 12px 18px;
-	}
-	.window-dots {
-		display: flex;
-		gap: 7px;
-	}
-	.window-dots i {
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		background: #c88477;
-	}
-	.window-dots i:nth-child(2) {
-		background: #c7ad70;
-	}
-	.window-dots i:nth-child(3) {
-		background: #7baf8d;
-	}
-	.window-title {
-		font: 11px/1.6 var(--mono);
-		color: var(--accent);
-		flex: 1;
-		overflow-wrap: anywhere;
-	}
-	.window-title > span {
-		color: var(--muted);
-		margin: 0 7px;
-	}
-	.window-chrome .theme-button {
-		width: 30px;
-		height: 30px;
-		border-radius: 4px;
-		font-size: 20px;
-		flex-shrink: 0;
 	}
 	.workspace-grid {
 		display: grid;
 		grid-template-columns: 174px minmax(0, 1fr);
+		border-inline: 1px solid var(--rule);
 	}
 	.workspace-sidebar {
 		border-right: 1px solid var(--rule);
@@ -241,7 +193,7 @@ const sections = [
 	}
 	.workspace-main {
 		min-width: 0;
-		padding: 26px 32px 32px;
+		padding: var(--content-padding);
 	}
 	.scene-heading {
 		display: flex;
@@ -299,7 +251,7 @@ const sections = [
 	}
 	.section-title h2 {
 		font:
-			500 25px/1.3 'Preview Display',
+			600 var(--text-section) / 1.3 var(--font-body),
 			sans-serif;
 	}
 	.section-title > a {
@@ -390,8 +342,8 @@ const sections = [
 		justify-content: space-between;
 		gap: 15px;
 		padding: 12px 18px;
-		border-top: 1px solid var(--rule);
-		border-radius: 0 0 8px 8px;
+		border: 1px solid var(--rule);
+		border-radius: 0 0 var(--radius-window) var(--radius-window);
 		background: var(--terminal-chrome);
 		font: 10px/1.5 var(--mono);
 		color: var(--muted);
@@ -414,16 +366,7 @@ const sections = [
 		color: var(--muted);
 		margin: 20px 2px 0;
 	}
-	@media (min-width: 1000px) {
-		.pixel-desktop {
-			background-image: radial-gradient(var(--rule) 0.5px, transparent 0.5px);
-			background-size: 9px 9px;
-		}
-	}
 	@media (max-width: 900px) {
-		.pixel-desktop {
-			padding: 20px;
-		}
 		.workspace-sidebar {
 			display: none;
 		}
@@ -438,26 +381,6 @@ const sections = [
 		}
 	}
 	@media (max-width: 600px) {
-		.pixel-desktop {
-			padding: 16px 12px;
-		}
-		.window-chrome {
-			padding: 10px 12px;
-			gap: 12px;
-		}
-		.window-dots {
-			gap: 4px;
-		}
-		.window-dots i {
-			width: 7px;
-			height: 7px;
-		}
-		.window-title {
-			font-size: 10px;
-		}
-		.window-title > span {
-			margin: 0 2px;
-		}
 		.workspace-main {
 			padding: 17px 15px 24px;
 		}
@@ -481,7 +404,7 @@ const sections = [
 			gap: 10px;
 		}
 		.section-title h2 {
-			font-size: 24px;
+			font-size: var(--text-section);
 		}
 		.output-section {
 			margin-top: 30px;
@@ -513,30 +436,6 @@ const sections = [
 		}
 	}
 
-	.site-destinations {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 4px;
-		padding: 12px 18px;
-		border-bottom: 1px solid var(--rule);
-		background: var(--terminal-chrome);
-	}
-	.site-destinations a {
-		font: 11px/1.7 var(--mono);
-		padding: 7px 10px;
-		border: 1px solid transparent;
-		border-radius: 3px;
-		color: var(--muted);
-	}
-	.site-destinations a[aria-current],
-	.site-destinations a:hover {
-		color: var(--accent);
-		border-color: var(--rule);
-		background: var(--surface);
-	}
-	.site-destinations a > span:first-child {
-		opacity: 0.65;
-	}
 	.mobile-section-nav {
 		display: none;
 	}
@@ -653,14 +552,6 @@ const sections = [
 		}
 	}
 	@media (max-width: 600px) {
-		.site-destinations {
-			padding: 10px;
-			gap: 3px;
-		}
-		.site-destinations a {
-			font-size: 10px;
-			padding: 7px 8px;
-		}
 		.travel-note {
 			grid-template-columns: 110px 1fr;
 			gap: 15px;

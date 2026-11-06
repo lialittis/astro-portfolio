@@ -150,6 +150,17 @@ Run `node --experimental-strip-types --test tests/conference-time.test.mjs` for
 UTC offsets and round-transition checks. `pnpm sync:conferences` remains the
 existing way to refresh source data.
 
+### Progress interface
+
+`/progress` uses the shared pixel-terminal layout and theme. The visitor stays in
+`~` and the displayed command requests `/root/progress`; unlocking does not
+pretend to create a root shell. The board groups open tasks, project/activity
+context (including completed checkboxes), and milestones. Completion changes
+continue using the existing local persistence and encrypted sync service.
+The form becomes interactive after hydration; loading, unlock errors, and
+missing-data states are shown inline. Validate this interface with synthetic
+encrypted fixtures and mocked sync responses, without touching private data.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState, type FormEvent } from 'react'
+import React, { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import type {
   ProgressDataset,
   ProgressEnvelope,
@@ -25,6 +25,7 @@ const EXPECTED_ITERATIONS = 600_000
 const SYNC_DEBOUNCE_MS = 1_100
 
 class VaultSetupError extends Error {}
+class VaultLoadError extends Error {}
 
 const fromBase64 = (value: string) => {
   const binary = window.atob(value)
@@ -180,10 +181,8 @@ const mergeTaskStates = (
 function EmptyDashboard() {
   return (
     <section className="vault-empty" aria-labelledby="empty-title">
-      <span className="vault-empty-icon" aria-hidden="true">◇</span>
       <div>
-        <p className="vault-kicker">workspace ready</p>
-        <h2 id="empty-title">Your progress vault is empty.</h2>
+        <h2 id="empty-title">No projects or activities yet.</h2>
         <p>
           Add the first project or activity to <code>data/progress.private.yml</code>, then run{' '}
           <code>pnpm progress:encrypt</code>.
@@ -226,7 +225,7 @@ function WorkCard({ item, onToggleTask }: { item: WorkItem; onToggleTask: Toggle
         </div>
         {item.targetDate && (
           <div>
-            <dt>health</dt>
+            <dt>deadline</dt>
             <dd className={deadlineClass}>{deadlineLabel(item)}</dd>
           </div>
         )}
@@ -243,13 +242,14 @@ function WorkCard({ item, onToggleTask }: { item: WorkItem; onToggleTask: Toggle
               <li className={task.done ? 'is-done' : ''} key={task.id}>
                 <input
                   className="vault-task-checkbox vault-context-task-checkbox"
+                  id={`context-${item.id}-${task.id}`}
                   type="checkbox"
                   checked={task.done}
                   onChange={() => onToggleTask(item.id, task.id)}
                   aria-label={`${task.done ? 'Mark incomplete' : 'Mark complete'}: ${task.label}`}
                 />
                 <div>
-                  <strong>{task.label}</strong>
+                  <label htmlFor={`context-${item.id}-${task.id}`}>{task.label}</label>
                   {(task.schedule || task.dueDate) && (
                     <small>{task.schedule ?? `Due ${formatDate(task.dueDate)}`}</small>
                   )}
@@ -280,8 +280,7 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
     <section className="vault-panel" aria-labelledby="timeline-title">
       <div className="vault-section-heading">
         <div>
-          <p className="vault-kicker">chronological view</p>
-          <h2 id="timeline-title">Milestone Timeline</h2>
+          <h2 id="timeline-title">Milestones</h2>
         </div>
         <span>{entries.length} events</span>
       </div>
@@ -297,7 +296,6 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
                   <span className="vault-timeline-dot" aria-hidden="true" />
                   <div>
                     <strong>Today</strong>
-                    <span>current position</span>
                   </div>
                 </li>
               )
@@ -309,7 +307,7 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
                 <span className="vault-timeline-dot" aria-hidden="true" />
                 <div>
                   <strong>{entry.label}</strong>
-                  <span>{entry.projectTitle}</span>
+                  <span>{entry.projectTitle} · {statusLabel(entry.state)}</span>
                 </div>
               </li>
             )
@@ -321,6 +319,7 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
 }
 
 function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onToggleTask: ToggleTask }) {
+  const headingRef = useRef<HTMLHeadingElement>(null)
   const laneOrder = { now: 0, next: 1, later: 2 }
   const orderedEntries = entries
     .filter((entry) => !entry.done)
@@ -334,8 +333,7 @@ function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onTog
     <section className="vault-panel vault-immediate-panel" aria-labelledby="tasks-title">
       <div className="vault-section-heading">
         <div>
-          <p className="vault-kicker">what needs attention</p>
-          <h2 id="tasks-title">Immediate Tasks</h2>
+          <h2 id="tasks-title" ref={headingRef} tabIndex={-1}>Tasks</h2>
         </div>
         <span>{orderedEntries.length} open</span>
       </div>
@@ -357,11 +355,16 @@ function ImmediateTasks({ entries, onToggleTask }: { entries: TaskEntry[]; onTog
                   className="vault-task-checkbox"
                   type="checkbox"
                   checked={task.done}
-                  onChange={() => onToggleTask(task.projectId, task.id)}
+                  id={`task-${task.projectId}-${task.id}`}
+                  onChange={(event) => {
+                    const next = event.currentTarget.closest('li')?.nextElementSibling?.querySelector<HTMLInputElement>('input')
+                    onToggleTask(task.projectId, task.id)
+                    requestAnimationFrame(() => (next ?? headingRef.current)?.focus())
+                  }}
                   aria-label={`${task.done ? 'Mark incomplete' : 'Mark complete'}: ${task.label}`}
                 />
                 <div className="vault-task-copy">
-                  <strong>{task.label}</strong>
+                  <label htmlFor={`task-${task.projectId}-${task.id}`}>{task.label}</label>
                   <span>{task.projectTitle}</span>
                 </div>
                 <div className="vault-task-due">
@@ -428,12 +431,11 @@ function Dashboard({
     <div className="vault-dashboard">
       <div className="vault-toolbar">
         <div>
-          <p className="vault-kicker">decryption successful</p>
-          <h1>Reminder Board</h1>
-          <p className="vault-updated">Last updated {formatDate(dataset.updatedAt)}</p>
+          <h1 id="progress-board-title" tabIndex={-1}>Progress</h1>
+          <p className="vault-updated">Content updated {formatDate(dataset.updatedAt)}</p>
         </div>
-        <button className="vault-lock-button" type="button" onClick={onLock}>
-          <span aria-hidden="true">■</span> lock vault
+        <button className="site-button vault-lock-button" type="button" onClick={onLock}>
+          Lock vault
         </button>
       </div>
 
@@ -450,8 +452,7 @@ function Dashboard({
           <section className="vault-work-section" aria-labelledby="work-title">
             <div className="vault-section-heading">
               <div>
-                <p className="vault-kicker">compact context</p>
-                <h2 id="work-title">Work Context</h2>
+                <h2 id="work-title">Projects & activities</h2>
               </div>
               <span>{dataset.items.length} item{dataset.items.length === 1 ? '' : 's'}</span>
             </div>
@@ -471,10 +472,19 @@ function Dashboard({
 
 export default function ProgressVault() {
   const [dataset, setDataset] = useState<ProgressDataset | null>(null)
+  const [ready, setReady] = useState(false)
+  const unlocked = dataset !== null
+  useEffect(() => { setReady(true) }, [])
+  useEffect(() => {
+    if (unlocked) document.getElementById('progress-board-title')?.focus()
+  }, [unlocked])
   const [phase, setPhase] = useState<'locked' | 'unlocking' | 'error' | 'setup'>('locked')
   const [message, setMessage] = useState('')
   const [syncStatus, setSyncStatus] = useState<SyncStatus>('local')
   const answerRef = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if (phase === 'error' || phase === 'setup') answerRef.current?.focus()
+  }, [phase])
   const syncCredentialsRef = useRef<SyncCredentials | null>(null)
   const taskStatesRef = useRef(new Map<string, TaskCompletionState>())
   const pendingSyncRef = useRef(new Map<string, TaskCompletionState>())
@@ -549,6 +559,7 @@ export default function ProgressVault() {
     if (answer.length < 16) {
       setMessage('Enter the code answer and your private suffix.')
       setPhase('error')
+      answerRef.current?.focus()
       return
     }
 
@@ -556,8 +567,9 @@ export default function ProgressVault() {
     setPhase('unlocking')
     try {
       const response = await fetch('/data/progress.enc.json', { cache: 'no-store' })
+        .catch(() => { throw new VaultLoadError('Unable to load encrypted data.') })
       if (response.status === 404) throw new VaultSetupError('The encrypted dataset has not been created yet.')
-      if (!response.ok) throw new Error('The encrypted dataset could not be loaded.')
+      if (!response.ok) throw new VaultLoadError('The encrypted dataset could not be loaded.')
       const envelope = (await response.json()) as ProgressEnvelope
       const decrypted = await decryptDataset(envelope, answer)
       const localStates = await loadLocalTaskStates(decrypted)
@@ -604,8 +616,11 @@ export default function ProgressVault() {
         answerRef.current.focus()
       }
       if (error instanceof VaultSetupError) {
-        setMessage('Vault not initialized. Run pnpm progress:init, edit the private YAML, then run pnpm progress:encrypt.')
+        setMessage('Encrypted progress data is not available yet.')
         setPhase('setup')
+      } else if (error instanceof VaultLoadError) {
+        setMessage('Could not load the encrypted data. Check your connection and try again.')
+        setPhase('error')
       } else {
         setMessage('Access denied. Check the answer, suffix, and capitalization.')
         setPhase('error')
@@ -622,7 +637,7 @@ export default function ProgressVault() {
     setDataset(null)
     setMessage('Vault locked. Decrypted progress data was removed from this page.')
     setPhase('locked')
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
     window.setTimeout(() => answerRef.current?.focus(), 250)
   }
 
@@ -639,20 +654,19 @@ export default function ProgressVault() {
 
   return (
     <section className="vault-gate" aria-labelledby="vault-title">
-      <div className="vault-gate-mark" aria-hidden="true">
-        <span>◆</span>
-      </div>
-      <p className="vault-kicker">encrypted workspace · AES-256-GCM</p>
-      <h1 id="vault-title">Read the code.</h1>
+      <header className="vault-gate-heading">
+        <h1 id="vault-title">Progress</h1>
+        <span className="vault-status">Locked</span>
+      </header>
+      <p className="vault-intro">Enter your response to unlock the progress board.</p>
       <div className="vault-code-challenge">
         <pre><code>int x = 1;{'\n'}printf(&quot;%d&quot;, x++ + ++x);</code></pre>
         <p>In C, what is this program's behavior?</p>
       </div>
 
-      <form className="vault-form" onSubmit={unlock}>
-        <label htmlFor="vault-answer">challenge_response</label>
+      <form className="vault-form" onSubmit={unlock} aria-busy={phase === 'unlocking'}>
+        <label htmlFor="vault-answer">Response</label>
         <div className="vault-input-row">
-          <span aria-hidden="true">$</span>
           <input
             ref={answerRef}
             id="vault-answer"
@@ -661,12 +675,13 @@ export default function ProgressVault() {
             autoComplete="off"
             autoCapitalize="none"
             spellCheck={false}
-            disabled={phase === 'unlocking'}
+            disabled={!ready || phase === 'unlocking'}
             placeholder="answer::private-suffix"
             aria-describedby="vault-hint vault-message"
+            aria-invalid={phase === 'error'}
           />
-          <button type="submit" disabled={phase === 'unlocking'}>
-            {phase === 'unlocking' ? 'deriving key…' : 'decrypt'}
+          <button className="site-button" type="submit" disabled={!ready || phase === 'unlocking'}>
+            {phase === 'unlocking' ? 'Unlocking…' : 'Unlock'}
           </button>
         </div>
         <p id="vault-hint" className="vault-hint">
@@ -677,13 +692,12 @@ export default function ProgressVault() {
           className={`vault-message ${phase === 'error' ? 'is-error' : phase === 'setup' ? 'is-setup' : ''}`}
           aria-live="polite"
         >
-          {message}
+          {phase === 'unlocking' ? 'Unlocking the board…' : message}
         </p>
       </form>
 
       <div className="vault-security-note">
-        <span aria-hidden="true">i</span>
-        <p>The answer is processed locally. It is never sent to a server or stored by this page.</p>
+        <p>Your response stays in this browser and is not saved by this page.</p>
       </div>
     </section>
   )

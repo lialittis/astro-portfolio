@@ -49,3 +49,13 @@ export const formatRemainingTime = (
 	if (days > 0) return `${days}d ${hours}h`
 	return `${hours}h ${minutes}m`
 }
+
+/** Advance to the next dated round, or retain the last round once all are closed. */
+export function selectSubmissionWindow<T extends { deadlineUtc: string }>(
+  windows: readonly T[],
+  now = Date.now(),
+): T | undefined {
+  const dated = windows.filter(window => Number.isFinite(Date.parse(window.deadlineUtc)))
+    .sort((a, b) => Date.parse(a.deadlineUtc) - Date.parse(b.deadlineUtc))
+  return dated.find(window => Date.parse(window.deadlineUtc) > now) ?? dated.at(-1)
+}

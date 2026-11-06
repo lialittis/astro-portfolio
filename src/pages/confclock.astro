@@ -1,1197 +1,159 @@
 ---
-import { workspace, shellQuote } from '../lib/terminal'
-import ConfTable from '../components/Table/ConfTable'
-import Layout from "../layouts/Layout.astro";
-import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
-import CommandLine from '../components/Terminal/CommandLine.astro'
+import PixelPage from '../layouts/PixelPage.astro'
+import PageHeading from '../components/Pixel/PageHeading.astro'
+import { workspace } from '../lib/terminal'
+import { loadConferences } from '../lib/conferences'
+import { formatRemainingTime } from '../lib/conferenceTime'
 
-import fs from 'fs'
-import path from 'path'
-import yaml from 'yaml'
-import { deadlineToTimestamp, formatRemainingTime } from '../lib/conferenceTime'
-
-interface TimelineEntry {
-	deadline: string
-	abstract_deadline?: string
-	comment?: string
-}
-
-interface SubmissionWindow {
-	id: string
-	label: string
-	deadline: string
-	deadlineDisplay: string
-	deadlineUtc: string
-	abstractDeadline?: string
-	abstractDeadlineDisplay?: string
-	abstractDeadlineUtc?: string
-}
-
-interface ConferenceYear {
-	year: number
-	id: string
-	link: string
-	timeline: TimelineEntry[]
-	timezone: string
-	date: string
-	place: string
-}
-
-interface Conference {
-	title: string
-	description: string
-	sub: string
-	rank: { ccf: string; core: string; thcpl: string }
-	dblp: string
-	confs: ConferenceYear[]
-	latestconf: ConferenceYear
-	deadline: string
-	deadlineLabel: string
-	deadlineDisplay: string
-	deadlineSummary: string
-	deadlineUtc: string
-	submissionWindows: SubmissionWindow[]
-	remainingTime: string
-}
-
-const CATEGORY_LABELS = {
-	DS: 'Systems',
-	SE: 'Software',
-	SC: 'Security',
-} as const
-
-const getSubmissionWindowLabel = (
-	entry: TimelineEntry,
-	index: number,
-	total: number,
-): string => {
-	const comment = entry.comment?.trim()
-	if (!comment) return total > 1 ? `Cycle ${index + 1}` : 'Main submission'
-
-	const ordinalCycle = comment.match(
-		/^(First|Second|Third)\s+(?:Paper\s+)?submission deadline$/i,
-	)
-	if (ordinalCycle) return `${ordinalCycle[1]} Cycle`
-
-	const label = comment
-		.replace(/^Submission Deadline Round\s+/i, 'Round ')
-		.replace(/\s+submission deadline$/i, '')
-		.replace(/\s+deadline$/i, '')
-		.trim()
-
-	return label.charAt(0).toUpperCase() + label.slice(1)
-}
-
-const loadConferences = (baseDir: string): Conference[] => {
-	const conferenceList: Conference[] = []
-
-	// The clock intentionally tracks only CCF-A venues in the requested subjects.
-	const categories = fs
-		.readdirSync(baseDir, { withFileTypes: true })
-		.filter(
-			(dirent) =>
-				dirent.isDirectory() &&
-				dirent.name in CATEGORY_LABELS,
-		)
-		.map((dirent) => dirent.name)
-
-	categories.forEach((category) => {
-		const categoryPath = path.join(baseDir, category)
-
-		// Read all YAML files inside each category
-		const files = fs
-			.readdirSync(categoryPath)
-			.filter((file) => file.endsWith('.yaml') || file.endsWith('.yml'))
-
-		files.forEach((file) => {
-			const filePath = path.join(categoryPath, file)
-			const content = fs.readFileSync(filePath, 'utf8')
-
-			try {
-				const parsed = yaml.parse(content)
-				// console.log("Parsed YAML:", parsed);
-
-				// Ensure the parsed data is structured correctly
-				if (
-					parsed &&
-					typeof parsed === 'object' &&
-					parsed.confs &&
-					parsed.rank?.ccf === 'A'
-				) {
-					parsed.latestconf = parsed.confs[parsed.confs.length - 1]
-					const subject = parsed.sub as keyof typeof CATEGORY_LABELS
-					parsed.sub = CATEGORY_LABELS[subject]
-					
-					const submissionWindows = parsed.latestconf.timeline
-						.map((entry: TimelineEntry, index: number) => {
-							const timestamp = deadlineToTimestamp(
-								entry.deadline,
-								parsed.latestconf.timezone,
-							)
-							if (timestamp === null) return null
-
-							const abstractTimestamp = entry.abstract_deadline
-								? deadlineToTimestamp(
-										entry.abstract_deadline,
-										parsed.latestconf.timezone,
-									)
-								: null
-
-							return {
-								id: `${parsed.latestconf.id}-window-${index + 1}`,
-								label: getSubmissionWindowLabel(
-									entry,
-									index,
-									parsed.latestconf.timeline.length,
-								),
-								deadline: entry.deadline,
-								deadlineDisplay: `${entry.deadline} ${parsed.latestconf.timezone}`,
-								deadlineUtc: new Date(timestamp).toISOString(),
-								...(entry.abstract_deadline && abstractTimestamp !== null
-									? {
-										abstractDeadline: entry.abstract_deadline,
-										abstractDeadlineDisplay: `${entry.abstract_deadline} ${parsed.latestconf.timezone}`,
-										abstractDeadlineUtc: new Date(abstractTimestamp).toISOString(),
-									}
-									: {}),
-							} satisfies SubmissionWindow
-						})
-						.filter(
-							(window: SubmissionWindow | null): window is SubmissionWindow =>
-								window !== null,
-						)
-
-					if (submissionWindows.length === 0) {
-						console.warn(`Warning: Skipping ${file}; no dated deadline`)
-						return
-					}
-
-					const now = Date.now()
-					const selected =
-						submissionWindows.find(
-							(window: SubmissionWindow) =>
-								Date.parse(window.deadlineUtc) >= now,
-						) ?? submissionWindows[submissionWindows.length - 1]
-
-					parsed.deadline = selected.deadline
-					parsed.deadlineLabel = selected.label
-					parsed.deadlineDisplay = selected.deadlineDisplay
-					parsed.deadlineSummary = `${selected.label} · ${selected.deadlineDisplay}`
-					parsed.deadlineUtc = selected.deadlineUtc
-					parsed.submissionWindows = submissionWindows
-					conferenceList.push(parsed)
-				} else {
-					console.warn(`Warning: Skipping ${file} due to invalid structure`)
-				}
-			} catch (error) {
-				console.error(`Error parsing YAML file ${filePath}:`, error)
-			}
-		})
-	})
-
-	const now = Date.now()
-	return conferenceList.sort((a, b) => {
-		const aTime = Date.parse(a.deadlineUtc)
-		const bTime = Date.parse(b.deadlineUtc)
-		const aActive = aTime >= now
-		const bActive = bTime >= now
-
-		if (aActive !== bActive) return aActive ? -1 : 1
-		return aActive ? aTime - bTime : bTime - aTime
-	})
-}
-
-const conferences = loadConferences('./conferences')
-
-// Helper function to calculate remaining time
-function calculateRemainingTime(deadlineUtc: string): string {
-	return formatRemainingTime(deadlineUtc)
-}
-
-const activeConferences = conferences
-	.filter((conference) => calculateRemainingTime(conference.deadlineUtc) !== 'EXPIRED')
-	.sort((a, b) => Date.parse(a.deadlineUtc) - Date.parse(b.deadlineUtc))
+const conferences = loadConferences()
+const isClosed = (deadline: string) => Date.parse(deadline) <= Date.now()
 ---
+<PixelPage title="Conferences | Tianchi Yu" description="Submission deadlines for CCF-A conferences in systems, security, and software." path={workspace.conferences}>
+  <PageHeading title="Conferences" command="cat index.tsv" description="CCF A · Systems, Security, Software" />
+  <div id="conference-controls" class="conference-controls" hidden>
+    <label class="search-field">Search
+      <input id="conference-search" type="search" placeholder="Name, topic or location" autocomplete="off" />
+    </label>
+    <label>Category
+      <select id="conference-category"><option value="">All categories</option><option>Systems</option><option>Security</option><option>Software</option></select>
+    </label>
+    <label>Show
+      <select id="conference-status"><option value="upcoming">Upcoming</option><option value="all">All conferences</option></select>
+    </label>
+    <label>Sort by
+      <select id="conference-sort"><option value="deadline">Deadline</option><option value="name">Name</option><option value="category">Category</option></select>
+    </label>
+  </div>
+  <div class="results-bar">
+    <p id="conference-count" role="status">{conferences.length} conferences</p>
+    <div id="conference-views" class="view-controls" role="group" aria-label="Conference view" hidden>
+      <button type="button" class="site-button site-button--small" data-view="list" aria-pressed="true" aria-controls="conference-list">List</button>
+      <button type="button" class="site-button site-button--small" data-view="table" aria-pressed="false" aria-controls="conference-table">Table</button>
+    </div>
+  </div>
+  <p id="conference-empty" hidden>No matching conferences. <button type="button" id="conference-reset" class="reset-button">Clear filters</button></p>
+  <div id="conference-list">
+    {conferences.map(conf => (
+      <details class="conference-entry" id={`conference-${conf.latestconf.id}`} data-conference={conf.latestconf.id}>
+        <summary>
+          <span class="conference-name"><strong>{conf.title} {conf.latestconf.year}</strong><small>{conf.sub}</small></span>
+          <span class="deadline-summary"><span data-field="label">{conf.deadlineLabel}</span><time data-field="deadline" datetime={conf.deadlineUtc}>{conf.deadlineDisplay}</time></span>
+          <span class="countdown" data-field="remaining">{isClosed(conf.deadlineUtc) ? 'Closed' : formatRemainingTime(conf.deadlineUtc)}</span>
+          <span class="expand-arrow" aria-hidden="true">＋</span>
+        </summary>
+        <div class="conference-detail">
+          <p class="conference-description">{conf.description}</p>
+          <dl class="conference-meta">
+            <div><dt>Conference dates</dt><dd>{conf.latestconf.date}</dd></div>
+            <div><dt>Location</dt><dd>{conf.latestconf.place}</dd></div>
+            <div><dt>Ranking</dt><dd>CCF {conf.rank.ccf}{conf.rank.core && ` · CORE ${conf.rank.core}`}</dd></div>
+          </dl>
+          {conf.latestconf.link && <a class="site-button" href={conf.latestconf.link} target="_blank" rel="noopener noreferrer">Conference website <span aria-hidden="true">↗</span></a>}
+          <section class="submission-schedule" aria-label={`${conf.title} submission windows`}>
+            <h2>Submission windows</h2>
+            <ol class="window-list">
+              {conf.submissionWindows.map(window => (
+                <li data-window={window.id} class:list={["submission-window", { closed: isClosed(window.deadlineUtc) }]}>
+                  <div class="window-heading"><h3>{window.label}</h3><span data-window-status>{isClosed(window.deadlineUtc) ? 'Closed' : window.id === conf.submissionWindows.find(w => w.deadlineUtc === conf.deadlineUtc)?.id ? 'Next deadline' : 'Upcoming'}</span></div>
+                  <dl>
+                    {window.abstractDeadlineUtc && <div><dt>Register / abstract</dt><dd><time data-abstract datetime={window.abstractDeadlineUtc}>{window.abstractDeadlineDisplay}</time><span class="abstract-state" data-abstract-state>{isClosed(window.abstractDeadlineUtc) ? ' · Closed' : ''}</span></dd></div>}
+                    <div><dt>Paper</dt><dd><time datetime={window.deadlineUtc}>{window.deadlineDisplay}</time></dd></div>
+                  </dl>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </div>
+      </details>
+    ))}
+  </div>
+  <div id="conference-table" hidden>
+    <p class="table-hint">Select a conference for all submission windows. Scroll horizontally for more columns.</p>
+    <div class="table-scroll" role="region" aria-label="Conference deadlines table" tabindex="0">
+      <table>
+        <caption class="sr-only">Conference deadlines in the stated source timezone</caption>
+        <thead><tr><th scope="col">Conference</th><th scope="col">Category</th><th scope="col">Next / last window</th><th scope="col">Paper deadline</th><th scope="col">Remaining</th><th scope="col">CORE</th><th scope="col">Conference dates</th><th scope="col">Location</th></tr></thead>
+        <tbody>{conferences.map(conf => (
+          <tr data-table-conference={conf.latestconf.id}>
+            <th scope="row"><button type="button" class="inspect-conference" data-inspect={conf.latestconf.id}>{conf.title} {conf.latestconf.year}</button></th>
+            <td>{conf.sub}</td><td data-field="label">{conf.deadlineLabel}</td>
+            <td><time data-field="deadline" datetime={conf.deadlineUtc}>{conf.deadlineDisplay}</time></td>
+            <td class="countdown" data-field="remaining">{isClosed(conf.deadlineUtc) ? 'Closed' : formatRemainingTime(conf.deadlineUtc)}</td>
+            <td>{conf.rank.core || '—'}</td><td>{conf.latestconf.date}</td><td>{conf.latestconf.place}</td>
+          </tr>
+        ))}</tbody>
+      </table>
+    </div>
+  </div>
+  <p class="timezone-note">Dates use each conference’s stated timezone. AoE means UTC−12. Countdowns use your device clock.</p>
+  <script id="conference-data" type="application/json" set:html={JSON.stringify(conferences.map(({ title, description, sub, latestconf, submissionWindows }) => ({ title, description, sub, id: latestconf.id, place: latestconf.place, submissionWindows }))).replaceAll('<', '\u003c')} />
+</PixelPage>
 
-
-<Layout title='Conferences Clock' description='' standaloneNav={false}>
-    <div id="hacker-container" class="hacker-container">
-		<TerminalWrapper>
-			<TerminalHeader title={workspace.conferences} />
-			<div class='terminal-content'>
-				<CommandLine command='cat README.md' />
-				
-				<div class='terminal-output'>
-					<div class='info-section'>
-						<p class='terminal-text' style='color: #00d9ff; font-weight: 600;'>
-							Conference Deadline Tracker - Real-time monitoring system
-						</p>
-						<p class='terminal-text' style='color: rgba(255, 255, 255, 0.7);'>
-							Total conferences: {conferences.length} | CCF rank: A | Categories: Systems, Security, Software
-						</p>
-					</div>
-				</div>
-
-				<CommandLine command='cat active/index.tsv' />
-				
-				<div class='active-conferences-list'>
-					<div class='list-header'>
-						<span style='color: #00d9ff; font-weight: 600;'>ACTIVE DEADLINES</span>
-						<button id='showTableBtn' class='table-view-btn'>
-							<span class='btn-icon'></span> View Full Table
-						</button>
-					</div>
-					
-					{activeConferences
-						.map(conf => {
-							const remaining = calculateRemainingTime(conf.deadlineUtc)
-							const isUrgent = parseInt(remaining.split('d')[0]) < 7
-							
-							return (
-								<button
-									type='button'
-									class={`active-row ${isUrgent ? 'urgent' : ''}`}
-									data-conference-trigger={conf.latestconf.id}
-									aria-expanded='false'
-									aria-controls={`conference-detail-${conf.latestconf.id}`}
-								>
-									<span class='row-title'>
-										<span>{conf.title}</span>
-										<small>
-											{conf.deadlineLabel}
-											{conf.submissionWindows.length > 1 && ` · ${conf.submissionWindows.length} windows`}
-										</small>
-									</span>
-									<span class='row-category'>{conf.sub}</span>
-									<span class='row-rank'>CCF {conf.rank.ccf}</span>
-									<span class='row-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
-										{remaining}
-										<span class='row-arrow' aria-hidden='true'>›</span>
-									</span>
-								</button>
-							)
-						})
-					}
-				</div>
-
-				<CommandLine command='ls -1 active/*.yml' />
-				
-				<div class='conference-detail-viewer' aria-live='polite'>
-					<div id='conference-detail-empty' class='conference-detail-empty'>
-						<span class='empty-cursor'>&gt;_</span>
-						<div>
-							<p>SELECT AN ACTIVE CONFERENCE</p>
-							<span>Click a deadline above to inspect its details.</span>
-						</div>
-					</div>
-
-					{activeConferences.map(conf => {
-						const remaining = calculateRemainingTime(conf.deadlineUtc)
-						const isUrgent = parseInt(remaining.split('d')[0]) < 7
-
-						return (
-							<article
-								id={`conference-detail-${conf.latestconf.id}`}
-								class='conf-entry conference-detail-panel hidden'
-								data-conference-detail={conf.latestconf.id}
-								aria-label={`${conf.title} conference details`}
-							>
-								<div class='detail-path'>
-									<span>$</span> {`cat -- ${shellQuote(`active/${conf.latestconf.id}.yml`)}`}
-								</div>
-								<div class='conf-header'>
-									<span class='conf-number'>[{conf.latestconf.id}]</span>
-									<span class='conf-title'>{conf.title}</span>
-									<span class={`conf-status ${isUrgent ? 'urgent' : 'active'}`}>
-										{isUrgent ? '⚠ URGENT' : '✓ ACTIVE'}
-									</span>
-								</div>
-
-								<div class='conf-details'>
-									<div class='detail-line'>
-										<span class='detail-label'>NEXT WINDOW:</span>
-										<span class='detail-value window-name'>{conf.deadlineLabel}</span>
-									</div>
-									<div class='detail-line'>
-										<span class='detail-label'>PAPER DDL:</span>
-										<span class='detail-value' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
-											{conf.deadlineDisplay}
-										</span>
-										<span class='remaining-time' style={isUrgent ? 'color: #ffb86c;' : 'color: #00ff41;'}>
-											({remaining})
-										</span>
-									</div>
-									<div class='detail-line'>
-										<span class='detail-label'>DOMAIN:</span>
-										<span class='detail-value'>{conf.sub}</span>
-									</div>
-									<div class='detail-line'>
-										<span class='detail-label'>RANK:</span>
-										<span class='detail-value'>
-											CCF: <span class='rank-badge'>{conf.rank.ccf}</span>
-											{conf.rank.core && ` | CORE: `}<span class='rank-badge'>{conf.rank.core}</span>
-										</span>
-									</div>
-									<div class='detail-line'>
-										<span class='detail-label'>VENUE:</span>
-										<span class='detail-value'>{conf.latestconf.place}</span>
-									</div>
-									<div class='detail-line'>
-										<span class='detail-label'>DATE:</span>
-										<span class='detail-value'>{conf.latestconf.date}</span>
-									</div>
-									{conf.latestconf.link && (
-										<div class='detail-line'>
-											<span class='detail-label'>LINK:</span>
-											<a href={conf.latestconf.link} target='_blank' rel='noopener noreferrer' class='conf-link'>
-												{conf.latestconf.link}
-											</a>
-										</div>
-									)}
-								</div>
-
-								<section class='submission-schedule' aria-label={`${conf.title} submission windows`}>
-									<div class='schedule-header'>
-										<span>SUBMISSION WINDOWS</span>
-										<small>{conf.latestconf.timezone} · {conf.submissionWindows.length} total</small>
-									</div>
-									<div class='window-list'>
-										{conf.submissionWindows.map((window, index) => {
-											const deadlineTime = Date.parse(window.deadlineUtc)
-											const isClosed = deadlineTime < Date.now()
-											const isNext = !isClosed && window.deadlineUtc === conf.deadlineUtc
-											const abstractIsClosed = window.abstractDeadlineUtc
-												? Date.parse(window.abstractDeadlineUtc) < Date.now()
-												: false
-
-											return (
-												<div class={`submission-window ${isClosed ? 'closed' : isNext ? 'next' : 'upcoming'}`}>
-													<div class='window-heading'>
-														<span class='window-index'>{String(index + 1).padStart(2, '0')}</span>
-														<strong>{window.label}</strong>
-														<span class='window-status'>
-															{isClosed
-																? 'CLOSED'
-																: isNext
-																	? `NEXT · ${calculateRemainingTime(window.deadlineUtc)}`
-																	: 'UPCOMING'}
-														</span>
-													</div>
-													{window.abstractDeadlineDisplay && (
-														<div class='window-date-row'>
-															<span>REGISTER / ABSTRACT</span>
-															<time class={abstractIsClosed ? 'date-closed' : ''}>
-																{window.abstractDeadlineDisplay}
-															</time>
-														</div>
-													)}
-													<div class='window-date-row'>
-														<span>PAPER</span>
-														<time class={isClosed ? 'date-closed' : ''}>{window.deadlineDisplay}</time>
-													</div>
-												</div>
-											)
-										})}
-									</div>
-								</section>
-
-								{conf.description && (
-									<div class='conf-description'>
-										<p>{conf.description}</p>
-									</div>
-								)}
-							</article>
-						)
-					})}
-				</div>
-
-				<CommandLine command='echo "Monitoring active..."' />
-			</div>
-		</TerminalWrapper>
-	</div>
-
-	<!-- Modal for Table View -->
-	<div id='tableModal' class='modal hidden'>
-		<div class='modal-content'>
-			<div class='modal-header'>
-				<h2>Conference Deadlines - Table View</h2>
-				<button id='closeModalBtn' class='close-btn'>✕</button>
-			</div>
-			<div class='modal-body'>
-				<ConfTable conferences={conferences} client:load />
-			</div>
-		</div>
-	</div>
-</Layout>
+<script src="../scripts/conference-clock.ts"></script>
 
 <style>
-	@import '../style/hacker-theme.css';
-	
-	:global(body) {
-		height: auto !important;
-		min-height: 100vh;
-		justify-content: flex-start !important;
-		align-items: stretch !important;
-	}
-
-	.hacker-container {
-		display: block;
-		min-height: 100vh;
-		padding: 0;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-		z-index: 100;
-	}
-
-	.hacker-container.hidden {
-		display: none !important;
-	}
-
-	.clock-intro {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 2rem;
-		padding: 1.5rem 1.75rem;
-		border: 1px solid rgba(255, 255, 255, 0.16);
-		border-radius: 18px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
-		box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
-	}
-
-	.clock-intro h1 {
-		margin: 0.2rem 0 0.35rem;
-		font-size: clamp(2rem, 4vw, 3.4rem);
-		line-height: 1;
-	}
-
-	.clock-intro p {
-		margin: 0;
-	}
-
-	.clock-intro .clock-eyebrow {
-		color: #a5b4fc !important;
-		font-size: 0.78rem;
-		font-weight: 700;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-	}
-
-	.clock-intro a {
-		flex-shrink: 0;
-		color: #c4b5fd;
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.clock-intro a:hover {
-		color: white;
-	}
-
-	/* Terminal Output Styles */
-	.terminal-output {
-		padding: 1rem 0;
-	}
-
-	.info-section {
-		margin-bottom: 2rem;
-		padding: 1rem;
-		background: rgba(0, 20, 8, 0.3);
-		border: 1px solid rgba(0, 255, 65, 0.2);
-		border-radius: 5px;
-	}
-
-	.terminal-text {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.95rem;
-		line-height: 1.8;
-		margin: 0.5rem 0;
-	}
-
-	/* Active Conferences List */
-	.active-conferences-list {
-		margin: 1.5rem 0;
-		background: rgba(0, 20, 8, 0.3);
-		border: 1px solid rgba(0, 255, 65, 0.2);
-		border-radius: 5px;
-		padding: 1rem;
-	}
-
-	.list-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1rem;
-		padding-bottom: 0.75rem;
-		border-bottom: 1px solid rgba(0, 255, 65, 0.2);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-	}
-
-	.table-view-btn {
-		background: rgba(0, 217, 255, 0.1);
-		border: 1px solid rgba(0, 217, 255, 0.3);
-		color: #00d9ff;
-		padding: 0.4rem 1rem;
-		border-radius: 5px;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.85rem;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.table-view-btn:hover {
-		background: rgba(0, 217, 255, 0.2);
-		border-color: rgba(0, 217, 255, 0.6);
-		box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
-		transform: translateY(-1px);
-	}
-
-	.btn-icon {
-		font-size: 1rem;
-	}
-
-	.active-row {
-		display: grid;
-		grid-template-columns: 2fr 1fr 80px 100px;
-		width: 100%;
-		gap: 1rem;
-		padding: 0.75rem;
-		margin: 0.5rem 0;
-		background: rgba(0, 40, 10, 0.2);
-		border: 1px solid rgba(0, 255, 65, 0.15);
-		border-radius: 4px;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.9rem;
-		align-items: center;
-		transition: all 0.2s ease;
-		appearance: none;
-		color: inherit;
-		cursor: pointer;
-		text-align: left;
-	}
-
-	.active-row:hover {
-		background: rgba(0, 40, 10, 0.3);
-		border-color: rgba(0, 255, 65, 0.3);
-		transform: translateX(5px);
-	}
-
-	.active-row.urgent {
-		border-color: rgba(255, 184, 108, 0.3);
-		background: rgba(40, 30, 0, 0.2);
-	}
-
-	.active-row.urgent:hover {
-		border-color: rgba(255, 184, 108, 0.5);
-		background: rgba(40, 30, 0, 0.3);
-	}
-
-	.active-row[aria-expanded='true'] {
-		background: rgba(0, 65, 20, 0.35);
-		border-color: rgba(0, 217, 255, 0.65);
-		box-shadow: 0 0 18px rgba(0, 217, 255, 0.12);
-	}
-
-	.active-row:focus-visible {
-		outline: 2px solid #00d9ff;
-		outline-offset: 2px;
-	}
-
-	.row-title {
-		display: flex;
-		flex-direction: column;
-		gap: 0.2rem;
-		color: #00ff41;
-		font-weight: 600;
-	}
-
-	.row-title small {
-		color: #00d9ff;
-		font-size: 0.7rem;
-		font-weight: 500;
-		letter-spacing: 0.02em;
-	}
-
-	.row-category {
-		color: rgba(255, 255, 255, 0.7);
-	}
-
-	.row-rank {
-		color: #ffb86c;
-		font-weight: 600;
-		text-align: center;
-	}
-
-	.row-time {
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-		gap: 0.65rem;
-		font-weight: 700;
-		text-align: right;
-	}
-
-	.row-arrow {
-		display: inline-block;
-		font-size: 1.2rem;
-		line-height: 1;
-		transition: transform 0.2s ease;
-	}
-
-	.active-row[aria-expanded='true'] .row-arrow {
-		transform: rotate(90deg);
-	}
-
-	/* Modal Styles */
-	.modal {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(0, 0, 0, 0.85);
-		backdrop-filter: blur(10px);
-		z-index: 9999;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-		animation: fadeIn 0.3s ease;
-	}
-
-	.modal.hidden {
-		display: none !important;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	.modal-content {
-		background: rgba(10, 10, 15, 0.95);
-		border: 2px solid rgba(0, 255, 65, 0.3);
-		border-radius: 12px;
-		max-width: 1400px;
-		width: 100%;
-		max-height: 90vh;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		box-shadow: 0 0 50px rgba(0, 255, 65, 0.2);
-		animation: slideUp 0.3s ease;
-	}
-
-	@keyframes slideUp {
-		from {
-			transform: translateY(50px);
-			opacity: 0;
-		}
-		to {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-
-	.modal-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1.5rem 2rem;
-		border-bottom: 1px solid rgba(0, 255, 65, 0.2);
-		background: rgba(0, 20, 8, 0.3);
-	}
-
-	.modal-header h2 {
-		color: #00ff41;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.3rem;
-		margin: 0;
-	}
-
-	.close-btn {
-		background: rgba(255, 85, 85, 0.1);
-		border: 1px solid rgba(255, 85, 85, 0.3);
-		color: #ff5555;
-		width: 36px;
-		height: 36px;
-		border-radius: 50%;
-		font-size: 1.2rem;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.close-btn:hover {
-		background: rgba(255, 85, 85, 0.2);
-		border-color: rgba(255, 85, 85, 0.6);
-		transform: rotate(90deg);
-	}
-
-	.modal-body {
-		padding: 2rem;
-		overflow-y: auto;
-		flex: 1;
-	}
-
-	/* On-demand conference details */
-	.conference-detail-viewer {
-		margin: 2rem 0;
-	}
-
-	.conference-detail-empty {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		min-height: 92px;
-		padding: 1.25rem 1.5rem;
-		border: 1px dashed rgba(0, 217, 255, 0.3);
-		border-radius: 8px;
-		background: rgba(0, 20, 25, 0.2);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		box-sizing: border-box;
-	}
-
-	.conference-detail-empty.hidden {
-		display: none !important;
-	}
-
-	.conference-detail-empty p {
-		margin: 0 0 0.35rem;
-		color: #00d9ff;
-		font-size: 0.85rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-	}
-
-	.conference-detail-empty span:not(.empty-cursor) {
-		color: rgba(255, 255, 255, 0.55);
-		font-size: 0.82rem;
-	}
-
-	.empty-cursor {
-		color: #00ff41;
-		font-size: 1.4rem;
-		font-weight: 700;
-		text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-	}
-
-	.conference-detail-panel.hidden {
-		display: none !important;
-	}
-
-	.conference-detail-panel:not(.hidden) {
-		animation: revealDetail 0.22s ease-out;
-	}
-
-	@keyframes revealDetail {
-		from {
-			opacity: 0;
-			transform: translateY(-8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.detail-path {
-		margin-bottom: 1.25rem;
-		padding-bottom: 0.75rem;
-		border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-		color: #00d9ff;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.85rem;
-	}
-
-	.detail-path span {
-		color: #00ff41;
-		font-weight: 700;
-	}
-
-	.window-name {
-		color: #00d9ff;
-		font-weight: 700;
-	}
-
-	.submission-schedule {
-		margin-top: 1.5rem;
-		padding-top: 1.25rem;
-		border-top: 1px solid rgba(0, 217, 255, 0.2);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-	}
-
-	.schedule-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 0.9rem;
-		color: #00d9ff;
-		font-size: 0.82rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-	}
-
-	.schedule-header small {
-		color: rgba(255, 255, 255, 0.5);
-		font-size: 0.72rem;
-		font-weight: 500;
-		letter-spacing: 0;
-	}
-
-	.window-list {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-		gap: 0.75rem;
-	}
-
-	.submission-window {
-		padding: 0.9rem 1rem;
-		border: 1px solid rgba(0, 255, 65, 0.18);
-		border-radius: 6px;
-		background: rgba(0, 30, 10, 0.28);
-	}
-
-	.submission-window.next {
-		border-color: rgba(0, 217, 255, 0.55);
-		background: rgba(0, 45, 55, 0.25);
-		box-shadow: inset 3px 0 0 rgba(0, 217, 255, 0.7);
-	}
-
-	.submission-window.closed {
-		opacity: 0.52;
-		background: rgba(20, 20, 20, 0.25);
-	}
-
-	.window-heading {
-		display: grid;
-		grid-template-columns: auto 1fr auto;
-		align-items: center;
-		gap: 0.65rem;
-		margin-bottom: 0.7rem;
-	}
-
-	.window-heading strong {
-		color: rgba(255, 255, 255, 0.92);
-		font-size: 0.84rem;
-	}
-
-	.window-index {
-		color: #00d9ff;
-		font-size: 0.72rem;
-	}
-
-	.window-status {
-		color: #00ff41;
-		font-size: 0.66rem;
-		font-weight: 700;
-		letter-spacing: 0.04em;
-	}
-
-	.submission-window.next .window-status {
-		color: #00d9ff;
-	}
-
-	.submission-window.closed .window-status {
-		color: rgba(255, 255, 255, 0.48);
-	}
-
-	.window-date-row {
-		display: grid;
-		grid-template-columns: 145px 1fr;
-		gap: 0.75rem;
-		margin-top: 0.4rem;
-		font-size: 0.73rem;
-	}
-
-	.window-date-row span {
-		color: rgba(255, 255, 255, 0.48);
-	}
-
-	.window-date-row time {
-		color: rgba(255, 255, 255, 0.86);
-	}
-
-	.window-date-row time.date-closed {
-		color: rgba(255, 255, 255, 0.42);
-		text-decoration: line-through;
-	}
-
-	/* Conference Entry */
-	.conf-entry {
-		background: rgba(0, 20, 8, 0.2);
-		border: 1px solid rgba(0, 255, 65, 0.2);
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		transition: all 0.3s ease;
-	}
-
-	.conf-entry:hover {
-		background: rgba(0, 30, 8, 0.3);
-		border-color: rgba(0, 255, 65, 0.4);
-		box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-	}
-
-	.conf-header {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		margin-bottom: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.conf-number {
-		color: #00d9ff;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.9rem;
-		font-weight: 600;
-	}
-
-	.conf-title {
-		color: #00ff41;
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1.1rem;
-		font-weight: 700;
-		flex: 1;
-	}
-
-	.conf-status {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.85rem;
-		padding: 0.25rem 0.75rem;
-		border-radius: 3px;
-		font-weight: 600;
-	}
-
-	.conf-status.active {
-		color: #00ff41;
-		background: rgba(0, 255, 65, 0.1);
-		border: 1px solid rgba(0, 255, 65, 0.3);
-	}
-
-	.conf-status.urgent {
-		color: #ffb86c;
-		background: rgba(255, 184, 108, 0.1);
-		border: 1px solid rgba(255, 184, 108, 0.3);
-	}
-
-	.conf-status.expired {
-		color: #ff5555;
-		background: rgba(255, 85, 85, 0.1);
-		border: 1px solid rgba(255, 85, 85, 0.3);
-	}
-
-	.conf-details {
-		margin: 1rem 0;
-	}
-
-	.detail-line {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.9rem;
-		margin: 0.5rem 0;
-		display: flex;
-		gap: 1rem;
-		align-items: baseline;
-	}
-
-	.detail-label {
-		color: #00d9ff;
-		font-weight: 600;
-		min-width: 100px;
-	}
-
-	.detail-value {
-		color: rgba(255, 255, 255, 0.9);
-		flex: 1;
-	}
-
-	.remaining-time {
-		font-weight: 600;
-		margin-left: 0.5rem;
-	}
-
-	.rank-badge {
-		color: #ffb86c;
-		font-weight: 700;
-	}
-
-	.conf-link {
-		color: #00d9ff;
-		text-decoration: none;
-		border-bottom: 1px solid transparent;
-		transition: all 0.3s ease;
-	}
-
-	.conf-link:hover {
-		color: #00ff41;
-		border-bottom-color: #00ff41;
-		text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-	}
-
-	.conf-description {
-		margin-top: 1rem;
-		padding-top: 1rem;
-		border-top: 1px solid rgba(0, 255, 65, 0.2);
-	}
-
-	.conf-description p {
-		color: rgba(255, 255, 255, 0.8);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.9rem;
-		line-height: 1.6;
-	}
-
-	/* Responsive */
-	@media (max-width: 768px) {
-		.conf-header {
-			flex-direction: column;
-			align-items: flex-start;
-		}
-
-		.detail-line {
-			flex-direction: column;
-			gap: 0.25rem;
-		}
-
-		.detail-label {
-			min-width: auto;
-		}
-
-		.active-row {
-			grid-template-columns: 1fr;
-			gap: 0.5rem;
-		}
-
-		.row-rank,
-		.row-time {
-			text-align: left;
-		}
-
-		.row-time {
-			justify-content: flex-start;
-		}
-
-		.schedule-header {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 0.35rem;
-		}
-
-		.window-list {
-			grid-template-columns: 1fr;
-		}
-
-		.window-heading {
-			grid-template-columns: auto 1fr;
-		}
-
-		.window-status {
-			grid-column: 2;
-		}
-
-		.window-date-row {
-			grid-template-columns: 1fr;
-			gap: 0.15rem;
-		}
-
-		.modal {
-			padding: 1rem;
-		}
-
-		.modal-content {
-			max-height: 95vh;
-		}
-
-		.modal-header {
-			padding: 1rem;
-		}
-
-		.modal-body {
-			padding: 1rem;
-		}
-	}
+  [hidden] { display: none !important; }
+  .conference-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; }
+  label { display: grid; gap: 8px; color: var(--muted); font: var(--text-meta)/1.6 var(--mono); min-width: 0; }
+  .search-field { flex: 1 1 220px; }
+  input, select { width: 100%; min-height: 42px; min-width: 0; border: 1px solid var(--rule); border-radius: var(--radius-control); background: var(--terminal-panel); color: var(--ink); padding: 9px 12px; font: 14px/1.5 var(--font-body); }
+  input::placeholder { color: var(--muted); }
+  input:focus-visible, select:focus-visible, summary:focus-visible, .table-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .results-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  #conference-count, .timezone-note, .table-hint { color: var(--muted); font: var(--text-meta)/1.8 var(--mono); }
+  .view-controls { display: flex; gap: 8px; }
+  [aria-pressed='true'] { background: var(--surface); border-color: var(--accent); }
+  #conference-empty { color: var(--muted); font: var(--text-body)/1.8 var(--font-body); }
+  .reset-button { border: 0; background: none; color: var(--accent); text-decoration: underline; padding: 10px 0; }
+  .conference-entry { border-top: 1px solid var(--rule); scroll-margin-top: 24px; }
+  .conference-entry:last-child { border-bottom: 1px solid var(--rule); }
+  summary { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(240px, 1.5fr) 100px 20px; align-items: center; gap: 16px; padding: 24px 0; list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover .conference-name strong { color: var(--accent); }
+  .conference-name, .deadline-summary { display: grid; gap: 6px; min-width: 0; }
+  .conference-name strong { color: var(--ink); font: 600 var(--text-card)/1.4 var(--font-body); }
+  .conference-name small, .deadline-summary, .countdown, .expand-arrow { font: var(--text-meta)/1.7 var(--mono); }
+  .conference-name small, [data-field='label'] { color: var(--muted); }
+  .countdown { color: var(--accent); font-variant-numeric: tabular-nums; }
+  [data-urgent='true'] .countdown { color: var(--terminal-warm); }
+  [data-closed='true'] .countdown { color: var(--muted); }
+  .expand-arrow { color: var(--accent); text-align: right; }
+  details[open] > summary .expand-arrow { transform: rotate(45deg); }
+  .conference-detail { padding: 0 0 28px; max-width: var(--reading-width); }
+  .conference-description { color: var(--muted); font: var(--text-body)/1.8 var(--font-body); }
+  dl { margin: 0; }
+  dd { margin: 0; }
+  .conference-meta { display: grid; gap: 12px; margin: 20px 0; font: 14px/1.8 var(--font-body); }
+  dl > div { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 16px; }
+  dt { color: var(--muted); }
+  .submission-schedule { margin-top: 28px; }
+  h2 { font: 600 var(--text-card)/1.4 var(--font-body); }
+  .window-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+  .submission-window { border: 1px solid var(--rule); border-radius: var(--radius-control); padding: 16px; }
+  .submission-window.next { border-left: 3px solid var(--accent); }
+  .window-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 12px; }
+  h3 { font: 600 16px/1.5 var(--font-body); }
+  [data-window-status] { color: var(--accent); font: var(--text-meta)/1.6 var(--mono); }
+  .closed [data-window-status], .abstract-state { color: var(--muted); }
+  .submission-window dl { display: grid; gap: 8px; font: var(--text-meta)/1.8 var(--mono); }
+  .table-hint { margin-bottom: 12px; }
+  .table-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius-control); }
+  table { border-collapse: collapse; width: 100%; min-width: 1050px; font: 13px/1.7 var(--font-body); }
+  th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th { color: var(--muted); background: var(--surface); font-weight: 500; white-space: nowrap; }
+  td time { white-space: nowrap; font: var(--text-meta)/1.8 var(--mono); }
+  .inspect-conference { background: none; border: 0; padding: 0; color: var(--accent); text-align: left; font: 600 14px/1.8 var(--font-body); text-decoration: underline; text-underline-offset: 4px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  @media (max-width: 800px) {
+    summary { grid-template-columns: minmax(0, 1fr) auto 20px; gap: 12px; }
+    .deadline-summary { grid-row: 2; grid-column: 1 / -1; }
+    .countdown { grid-column: 2; grid-row: 1; }
+    .expand-arrow { grid-column: 3; grid-row: 1; }
+  }
+  @media (max-width: 480px) {
+    .conference-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .search-field { grid-column: 1 / -1; }
+    dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .submission-window { padding: 12px; }
+  }
 </style>
-
-<script>
-	// Expand one active conference at a time in the terminal detail viewer.
-	const conferenceTriggers = Array.from(
-		document.querySelectorAll<HTMLButtonElement>('[data-conference-trigger]')
-	)
-	const conferenceDetails = Array.from(
-		document.querySelectorAll<HTMLElement>('[data-conference-detail]')
-	)
-	const conferenceDetailEmpty = document.getElementById('conference-detail-empty')
-
-	const collapseConferenceDetails = () => {
-		conferenceTriggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'))
-		conferenceDetails.forEach((detail) => detail.classList.add('hidden'))
-		conferenceDetailEmpty?.classList.remove('hidden')
-	}
-
-	conferenceTriggers.forEach((trigger) => {
-		trigger.addEventListener('click', () => {
-			const wasExpanded = trigger.getAttribute('aria-expanded') === 'true'
-			const conferenceId = trigger.dataset.conferenceTrigger
-			collapseConferenceDetails()
-
-			if (wasExpanded || !conferenceId) return
-
-			const selectedDetail = conferenceDetails.find(
-				(detail) => detail.dataset.conferenceDetail === conferenceId
-			)
-			if (!selectedDetail) return
-
-			trigger.setAttribute('aria-expanded', 'true')
-			conferenceDetailEmpty?.classList.add('hidden')
-			selectedDetail.classList.remove('hidden')
-			requestAnimationFrame(() => {
-				selectedDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-			})
-		})
-	})
-
-	// Modal functionality
-	const showTableBtn = document.getElementById('showTableBtn')
-	const closeModalBtn = document.getElementById('closeModalBtn')
-	const tableModal = document.getElementById('tableModal')
-
-	showTableBtn?.addEventListener('click', () => {
-		tableModal?.classList.remove('hidden')
-		document.body.style.overflow = 'hidden'
-	})
-
-	closeModalBtn?.addEventListener('click', () => {
-		tableModal?.classList.add('hidden')
-		document.body.style.overflow = 'auto'
-	})
-
-	// Close modal when clicking outside
-	tableModal?.addEventListener('click', (e) => {
-		if (e.target === tableModal) {
-			tableModal.classList.add('hidden')
-			document.body.style.overflow = 'auto'
-		}
-	})
-
-	// Close modal with Escape key
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape' && !tableModal?.classList.contains('hidden')) {
-			tableModal?.classList.add('hidden')
-			document.body.style.overflow = 'auto'
-		} else if (e.key === 'Escape') {
-			collapseConferenceDetails()
-		}
-	})
-</script>

@@ -136,6 +136,20 @@ These pages work without JavaScript; no card expansion or modal is needed.
 The displayed commands read date-prefixed `.md` files from `~/news`; the archive
 is a full listing of that same directory, not a separate filesystem folder.
 
+### Conference deadlines
+
+`/confclock` uses the shared `~/conferences` window. It reads CCF-A venues in
+Systems, Security, and Software from `conferences/` via `src/lib/conferences.ts`.
+Search, category, status, and sort controls apply to both the expandable list
+and the table. Select a table entry to open its full submission schedule.
+Dates retain their source timezone, including AoE (UTC−12). The client refreshes
+countdowns and advances to the next submission round using the device clock;
+closed rounds remain visible in each schedule. With JavaScript disabled, all
+recorded conferences and native expandable schedules remain readable.
+Run `node --experimental-strip-types --test tests/conference-time.test.mjs` for
+UTC offsets and round-transition checks. `pnpm sync:conferences` remains the
+existing way to refresh source data.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

@@ -14,7 +14,7 @@ const isIndex = /^\/design\/?$/.test(Astro.url.pathname)
     <meta name="robots" content="noindex, nofollow" />
     <title>{isIndex ? 'Homepage studies' : direction.name} — Tianchi Yu · Design preview</title>
     <meta name="description" content={`A homepage design study for Tianchi Yu: ${direction.name}.`} />
-    <link rel="icon" href="/head.ico" />
+    <link rel="icon" type="image/x-icon" href="/head-transparent.ico?v=2" />
     <script is:inline>
       try {
         const root = document.documentElement;

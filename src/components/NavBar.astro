@@ -1,101 +1,95 @@
 ---
-const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-
-const links = [
-  { href: '/', label: 'home' },
-  { href: '/project', label: 'projects' },
-  { href: '/me', label: 'about' },
-  { href: '/blog', label: 'blog' },
-  { href: '/publications', label: 'publications' },
-  { href: '/confclock', label: 'conferences' },
-  { href: '/progress', label: 'progress', locked: true },
-];
-
-const isActive = (href: string) =>
-  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+import { navigation, isCurrentRoute } from '../lib/navigation'
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
+const links = navigation
+const isActive = (href: string) => isCurrentRoute(currentPath, href)
 ---
 
 <nav class="terminal-nav" aria-label="Primary navigation">
-  {links.map(({ href, label, locked }) => (
+  {links.map(({ href, label, ...options }) => (
     <a
       href={href}
       class:list={['terminal-nav-link', { active: isActive(href) }]}
       aria-current={isActive(href) ? 'page' : undefined}
-      aria-label={locked ? `${label}, locked` : label}
+      aria-label={('locked' in options && options.locked) ? `${label}, locked` : label}
     >
-      <span aria-hidden="true">~/</span>{label}{locked && <span class="lock-mark" aria-hidden="true">◆</span>}
+      <span aria-hidden="true">~/</span>{label}{('locked' in options && options.locked) && <span class="lock-mark" aria-hidden="true">◆</span>}
     </a>
   ))}
 </nav>
 
 <style>
-  .terminal-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    min-width: 0;
-    margin-left: auto;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+	.terminal-nav {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		flex-wrap: wrap;
+		min-width: 0;
+		margin-left: auto;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
 
-  .terminal-nav::-webkit-scrollbar {
-    display: none;
-  }
+	.terminal-nav::-webkit-scrollbar {
+		display: none;
+	}
 
-  .terminal-nav-link {
-    flex: 0 0 auto;
-    padding: 0.35rem 0.55rem;
-    color: rgba(0, 255, 65, 0.58);
-    border: 1px solid transparent;
-    border-radius: 4px;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.72rem;
-    line-height: 1;
-    text-decoration: none;
-    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  }
+	.terminal-nav-link {
+		flex: 0 0 auto;
+		padding: 0.35rem 0.55rem;
+		color: var(--muted, #a0b2a4);
+		border: 1px solid transparent;
+		border-radius: 4px;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.72rem;
+		line-height: 1;
+		text-decoration: none;
+		transition:
+			color 0.2s ease,
+			background 0.2s ease,
+			border-color 0.2s ease;
+	}
 
-  .terminal-nav-link:hover {
-    color: #00ff41;
-    background: rgba(0, 255, 65, 0.08);
-    border-color: rgba(0, 255, 65, 0.25);
-  }
+	.terminal-nav-link:hover {
+		color: var(--accent, #99d5ab);
+		background: var(--surface, #192820);
+		border-color: var(--rule, #30443a);
+	}
 
-  .terminal-nav-link.active {
-    color: #00ff41;
-    background: rgba(0, 255, 65, 0.12);
-    border-color: rgba(0, 255, 65, 0.4);
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
-  }
+	.terminal-nav-link.active {
+		color: var(--accent, #99d5ab);
+		background: var(--surface, #192820);
+		border-color: var(--rule, #30443a);
+		text-shadow: none;
+	}
 
-  .lock-mark {
-    margin-left: 0.35rem;
-    color: #f7c873;
-    font-size: 0.55rem;
-  }
+	.lock-mark {
+		margin-left: 0.35rem;
+		color: #f7c873;
+		font-size: 0.55rem;
+	}
 
-  :global(body > .terminal-nav),
-  :global(body > astro-island > .terminal-nav) {
-    width: min(1400px, calc(100% - 2rem));
-    box-sizing: border-box;
-    margin: 1rem auto 0;
-    padding: 0.65rem;
-    background: linear-gradient(180deg, #141414 0%, #080808 100%);
-    border: 1px solid rgba(0, 255, 65, 0.3);
-    border-radius: 8px;
-  }
+	:global(body > .terminal-nav),
+	:global(body > astro-island > .terminal-nav) {
+		width: min(1400px, calc(100% - 2rem));
+		box-sizing: border-box;
+		margin: 1rem auto 0;
+		padding: 0.65rem;
+		background: linear-gradient(180deg, #141414 0%, #080808 100%);
+		border: 1px solid rgba(0, 255, 65, 0.3);
+		border-radius: 8px;
+	}
 
-  @media (max-width: 768px) {
-    .terminal-nav {
-      width: 100%;
-      margin-left: 0;
-      padding-bottom: 0.15rem;
-    }
+	@media (max-width: 768px) {
+		.terminal-nav {
+			width: 100%;
+			margin-left: 0;
+			padding-bottom: 0.15rem;
+		}
 
-    .terminal-nav-link {
-      padding: 0.4rem 0.5rem;
-      font-size: 0.68rem;
-    }
-  }
+		.terminal-nav-link {
+			padding: 0.4rem 0.5rem;
+			font-size: 0.68rem;
+		}
+	}
 </style>

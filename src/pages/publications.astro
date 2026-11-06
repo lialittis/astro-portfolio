@@ -1,55 +1,58 @@
 ---
-import FrameLayout from "../layouts/FrameLayout.astro";
-import TerminalWrapper from "../components/Terminal/TerminalWrapper.astro";
-import TerminalHeader from "../components/Terminal/TerminalHeader.astro";
-import CommandLine from "../components/Terminal/CommandLine.astro";
-const title = "Publications";
+import PixelLayout from '../layouts/PixelLayout.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
+const title = 'Publications'
 
 // Publication data
 const publications = [
-  {
-    id: 1,
-    type: "publication",
-    title: "Security for Distributed Machine Learning",
-    authors: "Laurent Gomez.,",
-    myName: "Tianchi Yu.",
-    conference: "20th International Conference on Security and Cryptography - SECRYPT",
-    abstract: "With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.",
-    url: "https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1"
-  }
-];
+	{
+		id: 1,
+		type: 'publication',
+		title: 'Security for Distributed Machine Learning',
+		authors: 'Laurent Gomez.,',
+		myName: 'Tianchi Yu.',
+		conference:
+			'20th International Conference on Security and Cryptography - SECRYPT',
+		abstract:
+			'With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.',
+		url: 'https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1'
+	}
+]
 ---
 
-<FrameLayout title={title} description="Publications">
-  <div class="hacker-container">
+<PixelLayout title={title} description="Publications">
+  <div class="interior-shell">
     <TerminalWrapper>
-      <TerminalHeader title="~/publications" />
-      <div class="terminal-content">
+      <TerminalHeader title="~/publications" themeToggle />
+      <main id="main" class="terminal-content">
+        <h1 class="page-heading">Publications</h1>
         <CommandLine command="ls -la ~/research/publications" />
-        
+
         <div class="file-listing">
-          <div class="file-listing-line" style="color: rgba(0, 255, 65, 0.7);">
+          <div class="file-listing-line" style="color: var(--muted);">
             total {publications.length}
           </div>
           {publications.map((pub, index) => (
             <div class="file-listing-line">
-              <span style="color: rgba(0, 255, 65, 0.5);">-rw-r--r--</span>
-              <span style="color: rgba(0, 255, 65, 0.5); margin: 0 0.5rem;">1</span>
-              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 0.5rem;">tianchi</span>
-              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">staff</span>
-              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">2023</span>
-              <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">Jul 25</span>
-              <span style="color: #00ff41; font-weight: 600;">{pub.title}.pdf</span>
+              <span style="color: var(--muted);">-rw-r--r--</span>
+              <span style="color: var(--muted); margin: 0 0.5rem;">1</span>
+              <span style="color: var(--muted); margin-right: 0.5rem;">tianchi</span>
+              <span style="color: var(--muted); margin-right: 1rem;">staff</span>
+              <span style="color: var(--muted); margin-right: 1rem;">2023</span>
+              <span style="color: var(--muted); margin-right: 1rem;">Jul 25</span>
+              <span style="color: var(--accent); font-weight: 600;">{pub.title}.pdf</span>
             </div>
           ))}
           <div class="file-listing-line">
-            <span style="color: rgba(0, 255, 65, 0.5);">drwxr-xr-x</span>
-            <span style="color: rgba(0, 255, 65, 0.5); margin: 0 0.5rem;">2</span>
-            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 0.5rem;">tianchi</span>
-            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">staff</span>
-            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">4096</span>
-            <span style="color: rgba(0, 255, 65, 0.5); margin-right: 1rem;">Nov 18 2025</span>
-            <span style="color: #00d9ff; font-weight: 600;">in_progress/</span>
+            <span style="color: var(--muted);">drwxr-xr-x</span>
+            <span style="color: var(--muted); margin: 0 0.5rem;">2</span>
+            <span style="color: var(--muted); margin-right: 0.5rem;">tianchi</span>
+            <span style="color: var(--muted); margin-right: 1rem;">staff</span>
+            <span style="color: var(--muted); margin-right: 1rem;">4096</span>
+            <span style="color: var(--muted); margin-right: 1rem;">Nov 18 2025</span>
+            <span style="color: var(--accent); font-weight: 600;">in_progress/</span>
           </div>
         </div>
 
@@ -58,7 +61,7 @@ const publications = [
             <CommandLine command={`cat ${pub.title}.pdf`} />
             <div class="terminal-publication">
               <h2 class="pub-title">[{index}] {pub.title}</h2>
-              
+
               <div class="pub-meta">
                 <div class="meta-line">
                   <span class="meta-label">AUTHORS:</span>
@@ -86,8 +89,8 @@ const publications = [
           <CommandLine command="cat in_progress/status.txt" />
           <div class="terminal-publication coming-soon-terminal">
             <div class="coming-soon-content">
-              <h3 style="color: #00d9ff; font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
-              <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">
+              <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
+              <p style="color: var(--muted); line-height: 1.8;">
                 Stay tuned for upcoming publications in:<br/>
                 • System Security<br/>
                 • Memory Protection<br/>
@@ -99,137 +102,133 @@ const publications = [
         </div>
 
         <CommandLine command="echo 'End of publications list'" />
-      </div>
+      </main>
     </TerminalWrapper>
   </div>
-</FrameLayout>
+</PixelLayout>
 
 <style>
-  @import "../style/hacker-theme.css";
+	.hacker-container {
+		display: block;
+		min-height: 100vh;
+		padding: 2rem;
+		padding-top: 2rem;
+	}
 
-  .hacker-container {
-    display: block;
-    min-height: 100vh;
-    padding: 2rem;
-    padding-top: 2rem;
-  }
+	/* Hacker Mode Specific Styles */
+	.file-listing {
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin: 1rem 0 2rem 0;
+		font-family: 'SF Mono', 'Monaco', monospace;
+		font-size: 0.875rem;
+	}
 
-  /* Hacker Mode Specific Styles */
-  .file-listing {
-    background: rgba(0, 20, 8, 0.3);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1rem 0 2rem 0;
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 0.875rem;
-  }
+	.file-listing-line {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.875rem;
+		margin: 0.25rem 0;
+		color: var(--muted);
+	}
 
-  .file-listing-line {
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.875rem;
-    margin: 0.25rem 0;
-    color: rgba(0, 255, 65, 0.7);
-  }
+	.publication-section {
+		margin-bottom: 3rem;
+	}
 
-  .publication-section {
-    margin-bottom: 3rem;
-  }
+	.terminal-publication {
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		border-radius: 8px;
+		padding: 2rem;
+		margin-top: 1rem;
+	}
 
-  .terminal-publication {
-    background: rgba(0, 20, 8, 0.2);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
+	.pub-title {
+		color: var(--accent);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
 
-  .pub-title {
-    color: #00ff41;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
+	.pub-meta {
+		margin-bottom: 1.5rem;
+	}
 
-  .pub-meta {
-    margin-bottom: 1.5rem;
-  }
+	.meta-line {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.95rem;
+		margin: 0.75rem 0;
+		display: flex;
+		gap: 1rem;
+	}
 
-  .meta-line {
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.95rem;
-    margin: 0.75rem 0;
-    display: flex;
-    gap: 1rem;
-  }
+	.meta-label {
+		color: var(--accent);
+		font-weight: 600;
+		min-width: 120px;
+	}
 
-  .meta-label {
-    color: #00d9ff;
-    font-weight: 600;
-    min-width: 120px;
-  }
+	.meta-value {
+		color: var(--muted);
+		flex: 1;
+	}
 
-  .meta-value {
-    color: rgba(255, 255, 255, 0.9);
-    flex: 1;
-  }
+	.highlight-name {
+		color: var(--accent);
+		font-weight: 700;
+	}
 
-  .highlight-name {
-    color: #00ff41;
-    font-weight: 700;
-  }
+	.pub-abstract {
+		margin: 1.5rem 0;
+	}
 
-  .pub-abstract {
-    margin: 1.5rem 0;
-  }
+	.abstract-header {
+		color: var(--accent);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
 
-  .abstract-header {
-    color: #00d9ff;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
+	.abstract-text {
+		color: var(--muted);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.95rem;
+		line-height: 1.8;
+		text-align: justify;
+	}
 
-  .abstract-text {
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    text-align: justify;
-  }
+	.terminal-link-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--accent);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 1rem;
+		padding: 0.75rem 1.5rem;
+		border: 1px solid var(--accent);
+		border-radius: 5px;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		margin-top: 1rem;
+	}
 
-  .terminal-link-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #00ff41;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #00ff41;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-  }
+	.terminal-link-btn:hover {
+		background: var(--surface);
+		box-shadow: 0 0 15px var(--rule);
+		transform: translateY(-2px);
+	}
 
-  .terminal-link-btn:hover {
-    background: rgba(0, 255, 65, 0.2);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
-    transform: translateY(-2px);
-  }
+	.coming-soon-terminal {
+		background: var(--surface);
+		border-color: var(--rule);
+	}
 
-  .coming-soon-terminal {
-    background: rgba(0, 20, 20, 0.3);
-    border-color: rgba(0, 217, 255, 0.3);
-  }
-
-  .coming-soon-content {
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    text-align: center;
-  }
-
-
+	.coming-soon-content {
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		text-align: center;
+	}
 </style>

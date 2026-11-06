@@ -1,33 +1,33 @@
 ---
-import ProjectLayout from "../layouts/ProjectLayout.astro";
-import projects from "../lib/Projects";
-import TerminalHeader from '../components/Terminal/TerminalHeader.astro';
-import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro';
-import CommandLine from '../components/Terminal/CommandLine.astro';
-import '../style/hacker-theme.css';
+import PixelLayout from '../layouts/PixelLayout.astro'
+import projects from '../lib/Projects'
+import TerminalHeader from '../components/Terminal/TerminalHeader.astro'
+import TerminalWrapper from '../components/Terminal/TerminalWrapper.astro'
+import CommandLine from '../components/Terminal/CommandLine.astro'
 
-const title = "Projects";
+const title = 'Projects'
 
 const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric',
-  month: 'short',
-  day: '2-digit',
-  timeZone: 'UTC',
-});
+	year: 'numeric',
+	month: 'short',
+	day: '2-digit',
+	timeZone: 'UTC'
+})
 ---
 
-<ProjectLayout
+<PixelLayout
   title={title}
   description="Projects"
 >
   <!-- Hacker Mode Layout -->
-  <div class="hacker-container">
+  <div class="interior-shell">
     <TerminalWrapper>
-      <TerminalHeader title="root@projects:~$" />
-      
-      <div class="terminal-content">
+      <TerminalHeader title="root@projects:~$" themeToggle />
+
+      <main id="main" class="terminal-content">
+        <h1 class="page-heading">Projects</h1>
         <CommandLine command="ls -la ~/projects" />
-        
+
         <!-- File listing output -->
         <div class="file-listing">
           <div class="file-listing-line file-listing-total">
@@ -53,7 +53,7 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
             ))
           }
         </div>
-      
+
         <div class="hacker-section projects-list">
           {
             projects.map((project, index) => (
@@ -61,7 +61,7 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
                 <div class="project-header-hacker">
                   <CommandLine command={`${project.status === 'preparing' ? 'touch' : 'cat'} project_${String(index + 1).padStart(2, '0')}_[${project.title}]`} />
                 </div>
-                
+
                 <div class="project-content-hacker">
                   <div class="project-heading">
                     <h2 class="project-title">{project.title}</h2>
@@ -70,7 +70,7 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
                       <span class="project-number">[{String(index + 1).padStart(2, '0')}]</span>
                     </div>
                   </div>
-                  
+
                   {project.technologies.length > 0 && (
                     <div class="tech-stack-hacker">
                       {project.technologies.filter(tech => tech.trim() !== '').map((tech) => (
@@ -78,9 +78,9 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
                       ))}
                     </div>
                   )}
-                  
+
                   {project.description && <p class="project-description">{project.description}</p>}
-                  
+
                   {project.slug && project.studies?.length ? (
                     <div class="project-actions">
                       <a href={`/project/${project.slug}/`} class="project-link-hacker">
@@ -100,290 +100,304 @@ const modifiedDateFormatter = new Intl.DateTimeFormat('en-US', {
             ))
           }
         </div>
-        
+
         <CommandLine command="echo 'End of project list'" />
-      </div>
+      </main>
     </TerminalWrapper>
   </div>
-</ProjectLayout>
+</PixelLayout>
 
 <style>
-  /* Hacker Mode Container */
-  .hacker-container {
-    /* width: 100% !important; */
-    /* max-width: 1200px !important; */
-    /* margin: 0 auto !important; */
-    padding: 2rem !important;
-    padding-top: 2rem !important;
-    /* background: #000000 !important; */
-    min-height: 100vh !important;
-    position: relative !important;
-    z-index: 100 !important;
-  }
+	/* Hacker Mode Container */
+	.hacker-container {
+		/* width: 100% !important; */
+		/* max-width: 1200px !important; */
+		/* margin: 0 auto !important; */
+		padding: 2rem !important;
+		padding-top: 2rem !important;
+		/* background: var(--terminal-panel) !important; */
+		min-height: 100vh !important;
+		position: relative !important;
+		z-index: 100 !important;
+	}
 
-  /* Override visibility for hacker content */
-  .hacker-container * {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
+	/* Override visibility for hacker content */
+	.hacker-container * {
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
 
-  /* File listing styles */
-  .file-listing {
-    background: rgba(3, 12, 9, 0.72);
-    border: 1px solid rgba(100, 138, 112, 0.2);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1rem 0 2rem 0;
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 0.875rem;
-  }
+	/* File listing styles */
+	.file-listing {
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin: 1rem 0 2rem 0;
+		font-family: 'SF Mono', 'Monaco', monospace;
+		font-size: 0.875rem;
+	}
 
-  .file-listing-line {
-    color: #648a70;
-    font-family: 'SF Mono', 'Monaco', monospace;
-    line-height: 1.8;
-    white-space: nowrap;
-    overflow-x: auto;
-    display: flex;
-    align-items: center;
-  }
+	.file-listing-line {
+		color: var(--muted);
+		font-family: 'SF Mono', 'Monaco', monospace;
+		line-height: 1.8;
+		white-space: nowrap;
+		overflow-x: auto;
+		display: flex;
+		align-items: center;
+	}
 
-  .file-listing-line:hover {
-    background: rgba(0, 217, 255, 0.04);
-    margin: 0 -0.5rem;
-    padding: 0 0.5rem;
-  }
+	.file-listing-line:hover {
+		background: var(--surface);
+		margin: 0 -0.5rem;
+		padding: 0 0.5rem;
+	}
 
-  .file-listing-total {
-    margin-bottom: 0.5rem;
-    color: #789184;
-  }
+	.file-listing-total {
+		margin-bottom: 0.5rem;
+		color: var(--muted);
+	}
 
-  .file-count {
-    margin: 0 0.5rem;
-  }
+	.file-count {
+		margin: 0 0.5rem;
+	}
 
-  .file-owner {
-    margin-right: 0.5rem;
-  }
+	.file-owner {
+		margin-right: 0.5rem;
+	}
 
-  .file-group,
-  .file-size,
-  .file-date {
-    margin-right: 1rem;
-  }
+	.file-group,
+	.file-size,
+	.file-date {
+		margin-right: 1rem;
+	}
 
-  .file-name {
-    color: rgba(0, 217, 255, 0.72);
-    font-weight: 600;
-  }
+	.file-name {
+		color: var(--muted);
+		font-weight: 600;
+	}
 
-  .file-date {
-    min-width: 12ch;
-    flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
-  }
+	.file-date {
+		min-width: 12ch;
+		flex-shrink: 0;
+		font-variant-numeric: tabular-nums;
+	}
 
-  .file-name-draft {
-    color: #f7c873;
-  }
+	.file-name-draft {
+		color: var(--terminal-warm);
+	}
 
-  .project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem 1.5rem;
-  }
+	.project-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem 1.5rem;
+	}
 
-  .project-source-link {
-    color: #00d9ff;
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 0.875rem;
-    text-decoration: none;
-  }
+	.project-source-link {
+		color: var(--accent);
+		font-family: 'SF Mono', 'Monaco', monospace;
+		font-size: 0.875rem;
+		text-decoration: none;
+	}
 
-  .project-source-link:hover {
-    color: #00ff41;
-    text-decoration: underline;
-  }
+	.project-source-link:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
 
-  .project-source-link:focus-visible {
-    outline: 2px solid #00d9ff;
-    outline-offset: 4px;
-  }
+	.project-source-link:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 4px;
+	}
 
-  /* Hacker Mode Styles */
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+	/* Hacker Mode Styles */
+	.projects-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 
-  .hacker-project-card {
-    border-left: 2px solid rgba(0, 255, 65, 0.28);
-    padding-left: 1.5rem;
-    margin-left: 1rem;
-    position: relative;
-    z-index: 101;
-  }
+	.hacker-project-card {
+		border-left: 2px solid var(--rule);
+		padding-left: 1.5rem;
+		margin-left: 1rem;
+		position: relative;
+		z-index: 101;
+	}
 
-  .hacker-project-card::before {
-    content: '';
-    position: absolute;
-    top: 2.35rem;
-    left: -6px;
-    width: 10px;
-    height: 10px;
-    background: #00ff41;
-    border: 2px solid #001a08;
-    border-radius: 50%;
-    box-shadow: 0 0 12px rgba(0, 255, 65, 0.65);
-  }
+	.hacker-project-card::before {
+		content: '';
+		position: absolute;
+		top: 2.35rem;
+		left: -6px;
+		width: 10px;
+		height: 10px;
+		background: var(--accent);
+		border: 2px solid var(--surface);
+		border-radius: 50%;
+		box-shadow: 0 0 12px var(--rule);
+	}
 
-  .project-header-hacker {
-    margin-bottom: 1rem;
-  }
+	.project-header-hacker {
+		margin-bottom: 1rem;
+	}
 
-  .project-content-hacker {
-    background: linear-gradient(135deg, rgba(0, 22, 18, 0.72), rgba(0, 8, 6, 0.92));
-    border: 1px solid rgba(0, 255, 65, 0.18);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    position: relative;
-    z-index: 102;
-  }
+	.project-content-hacker {
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		border-radius: 8px;
+		padding: 1.5rem;
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease,
+			background 0.3s ease;
+		position: relative;
+		z-index: 102;
+	}
 
-  .project-content-hacker:hover {
-    border-color: rgba(0, 217, 255, 0.5);
-    background: linear-gradient(135deg, rgba(0, 29, 25, 0.82), rgba(0, 10, 8, 0.96));
-    box-shadow: 0 0 24px rgba(0, 217, 255, 0.1), inset 0 1px 0 rgba(0, 217, 255, 0.08);
-  }
+	.project-content-hacker:hover {
+		border-color: var(--rule);
+		background: var(--surface);
+		box-shadow: 0 3px 12px color-mix(in srgb, var(--ink) 8%, transparent);
+	}
 
-  .project-heading {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
+	.project-heading {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
 
-  .project-title {
-    margin: 0;
-    color: #00d9ff !important;
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 1.5rem;
-    text-shadow: 0 0 12px rgba(0, 217, 255, 0.18);
-  }
+	.project-title {
+		margin: 0;
+		color: var(--accent) !important;
+		font-family: 'Preview Sans', sans-serif;
+		font-size: 1.5rem;
+		line-height: 1.3;
+		min-width: 0;
+		text-shadow: none;
+	}
 
-  .project-number {
-    flex-shrink: 0;
-    color: #f7c873;
-    font-family: 'SF Mono', monospace;
-    font-size: 0.875rem;
-  }
+	.project-number {
+		flex-shrink: 0;
+		color: var(--terminal-warm);
+		font-family: 'SF Mono', monospace;
+		font-size: 0.875rem;
+	}
 
-  .project-meta {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    gap: 0.75rem;
-  }
+	.project-meta {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		gap: 0.75rem;
+	}
 
-  .project-status {
-    padding: 0.25rem 0.55rem;
-    color: #f7c873;
-    background: rgba(247, 200, 115, 0.07);
-    border: 1px solid rgba(247, 200, 115, 0.36);
-    border-radius: 4px;
-    font-family: 'SF Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-  }
+	.project-status {
+		padding: 0.25rem 0.55rem;
+		color: var(--terminal-warm);
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		border-radius: 4px;
+		font-family: 'SF Mono', monospace;
+		font-size: 0.68rem;
+		letter-spacing: 0.08em;
+	}
 
-  .project-description {
-    margin: 1.5rem 0;
-    color: #b8c4c0 !important;
-    font-family: 'SF Mono', monospace;
-    line-height: 1.7;
-  }
+	.project-description {
+		margin: 1.5rem 0;
+		color: var(--ink) !important;
+		font-family: 'SF Mono', monospace;
+		line-height: 1.7;
+	}
 
-  .empty-project {
-    margin: 1.25rem 0 0;
-    color: #789184 !important;
-    font-family: 'SF Mono', monospace;
-    font-size: 0.85rem;
-    font-style: italic;
-  }
+	.empty-project {
+		margin: 1.25rem 0 0;
+		color: var(--muted) !important;
+		font-family: 'SF Mono', monospace;
+		font-size: 0.85rem;
+		font-style: italic;
+	}
 
-  .tech-stack-hacker {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-  }
+	.tech-stack-hacker {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 1rem 0;
+	}
 
-  .tech-tag-hacker {
-    background: rgba(247, 200, 115, 0.07);
-    border: 1px solid rgba(247, 200, 115, 0.36);
-    color: #f7c873;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-family: 'SF Mono', monospace;
-    font-size: 0.75rem;
-    transition: all 0.3s ease;
-  }
+	.tech-tag-hacker {
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		color: var(--terminal-warm);
+		padding: 0.25rem 0.75rem;
+		border-radius: 4px;
+		font-family: 'SF Mono', monospace;
+		font-size: 0.75rem;
+		transition: all 0.3s ease;
+	}
 
-  .tech-tag-hacker:hover {
-    background: rgba(247, 200, 115, 0.14);
-    border-color: #f7c873;
-    box-shadow: 0 0 10px rgba(247, 200, 115, 0.18);
-  }
+	.tech-tag-hacker:hover {
+		background: var(--surface);
+		border-color: var(--terminal-warm);
+		box-shadow: 0 0 10px var(--rule);
+	}
 
-  .project-link-hacker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: rgba(0, 255, 65, 0.1);
-    border: 1px solid rgba(0, 255, 65, 0.4);
-    color: #00ff41;
-    text-decoration: none;
-    border-radius: 4px;
-    font-family: 'SF Mono', monospace;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
+	.project-link-hacker {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		background: var(--surface);
+		border: 1px solid var(--rule);
+		color: var(--accent);
+		text-decoration: none;
+		border-radius: 4px;
+		font-family: 'SF Mono', monospace;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
 
-  .project-link-hacker:hover {
-    background: rgba(0, 217, 255, 0.1);
-    border-color: #00d9ff;
-    color: #00d9ff;
-    box-shadow: 0 0 18px rgba(0, 217, 255, 0.18);
-  }
+	.project-link-hacker:hover {
+		background: var(--surface);
+		border-color: var(--accent);
+		color: var(--accent);
+		box-shadow: 0 0 18px var(--rule);
+	}
 
-  .action-prompt {
-    margin-right: 0.35rem;
-    color: #00ff41;
-  }
+	.action-prompt {
+		margin-right: 0.35rem;
+		color: var(--accent);
+	}
 
-  .hacker-container {
-    display: block;
-  }
+	.hacker-container {
+		display: block;
+	}
 
-  /* Responsive for hacker mode */
-  @media (max-width: 768px) {
-    .hacker-container {
-      padding: 1rem;
-    }
+	/* Responsive for hacker mode */
+	@media (max-width: 768px) {
+		.hacker-container {
+			padding: 1rem;
+		}
 
-    .hacker-project-card {
-      padding-left: 1rem;
-      margin-left: 0.5rem;
-    }
+		.hacker-project-card {
+			padding-left: 0.75rem;
+			margin-left: 0;
+		}
 
-    .project-content-hacker {
-      padding: 1rem;
-    }
-  }
+		.project-content-hacker {
+			padding: 1rem;
+		}
+
+		.project-heading {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.project-title {
+			font-size: 1.25rem;
+		}
+	}
 </style>

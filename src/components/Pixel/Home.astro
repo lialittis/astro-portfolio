@@ -1,0 +1,681 @@
+---
+import PixelLayout from '../../layouts/PixelLayout.astro'
+import Globe from '../Globe/Globe'
+import EmailAddress from '../EmailAddress.astro'
+import { navigation } from '../../lib/navigation'
+import { LINKS } from '../../lib/constants'
+import ObservatoryScene from './ObservatoryScene.astro'
+import TerminalPrompt from './TerminalPrompt.astro'
+import Writing from './Writing.astro'
+import Work from './Work.astro'
+import { getHomeContent } from '../../lib/home'
+const content = await getHomeContent()
+const sections = [
+	{ id: 'intro', label: 'home', file: 'README.md', number: '01' },
+	{ id: 'writing', label: 'writing', file: 'writing/', number: '02' },
+	{ id: 'work', label: 'projects', file: 'projects/', number: '03' },
+	{ id: 'news', label: 'news', file: 'news/', number: '04' },
+	{ id: 'life', label: 'life', file: 'life.log', number: '05' }
+]
+---
+<PixelLayout title="Tianchi Yu — Ph.D. student" description={content.intro}>
+  <div class="pixel-desktop">
+    <div class="pixel-window">
+      <header class="window-chrome">
+        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="window-title">tianchi@home <span>—</span> ~/personal-space</span>
+        <button class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>
+      </header>
+      <nav class="site-destinations" aria-label="Primary navigation">
+        {navigation.map(link => <a href={link.href} aria-current={link.href === '/' ? 'page' : undefined}><span aria-hidden="true">~/</span>{link.label}{'locked' in link && <span aria-label="locked"> ◆</span>}</a>)}
+      </nav>
+      <nav class="mobile-section-nav" aria-label="On this page">{sections.map(section => <a href={`#${section.id}`} data-section-link={section.id}>{section.label}</a>)}</nav>
+      <div class="workspace-grid">
+        <aside class="workspace-sidebar" aria-label="Workspace directory">
+          <div class="sidebar-sticky">
+            <div class="sidebar-label">EXPLORER</div>
+            <div class="directory-root"><span aria-hidden="true">⌄</span> ~/tianchi</div>
+            <nav aria-label="File navigation">
+              {sections.map((section, i) => <a href={`#${section.id}`} data-section-link={section.id} aria-current={i === 0 ? 'location' : undefined}><span aria-hidden="true">{i === 0 ? '≡' : section.id === 'life' ? '·' : '▸'}</span>{section.file}</a>)}
+            </nav>
+            <div class="sidebar-label elsewhere-label">ELSEWHERE</div>
+            <nav aria-label="More about Tianchi"><a href="/publications"><span aria-hidden="true">↗</span> Research</a><a href="/travel"><span aria-hidden="true">↗</span> Travels</a><a href={content.github}><span aria-hidden="true">↗</span> GitHub</a><a href="/me"><span aria-hidden="true">↗</span> About me</a></nav>
+          </div>
+        </aside>
+        <main id="main" class="workspace-main">
+          <section id="intro" class="chapter intro-chapter" aria-labelledby="intro-title">
+            <div class="scene-heading"><span><span aria-hidden="true">▧</span> workspace.scene</span></div>
+            <ObservatoryScene />
+            <div class="intro-content">
+              <TerminalPrompt command="whoami" />
+              <div class="identity"><h1 id="intro-title">Tianchi Yu</h1><span class="chinese-name" lang="zh-CN">于天池</span></div>
+              <p class="research-affiliation">Ph.D. student at <a href="https://www.unipd.it/en/">University of Padova</a> · <a href="https://spritz.math.unipd.it/">SPRITZ</a><br />Industrial research with Huawei’s Trusted System Security Lab, Munich.</p>
+              <details class="research-details"><summary>Research background & collaborators</summary><p>Supervised by <a href="https://www.math.unipd.it/~conti/">Prof. Mauro Conti</a>, with industrial supervision from <a href="https://scholar.google.com/citations?user=v8jHN5UAAAAJ&amp;hl=en">Dr. Mahmoud Ammar</a> and <a href="https://www.linkedin.com/in/silviu-vlasceanu/">Silviu Vlasceanu</a>. Co-advised by <a href="https://www.ifi.uzh.ch/en/spins/people/oliveira.html">Prof. Ivan De Oliveira Nunes</a> at the University of Zurich’s SPINS group.</p></details>
+              <p class="research-interests">Interests: system security and AI infrastructure.</p>
+              <a class="inline-link" href="/me">Read more about me <span aria-hidden="true">↗</span></a>
+            </div>
+          </section>
+          <section id="writing" class="chapter output-section" aria-labelledby="writing-title">
+            <TerminalPrompt command="ls ./writing" />
+            <div class="section-title"><h2 id="writing-title">Writing</h2><a href="/blog">All writing ↗</a></div>
+            <Writing posts={content.posts} />
+          </section>
+          <section id="work" class="chapter output-section" aria-labelledby="work-title">
+            <TerminalPrompt command="ls ./projects" />
+            <div class="section-title"><h2 id="work-title">Projects</h2><a href="/project">All projects ↗</a></div>
+            <Work projects={content.projects} />
+          </section>
+          <section id="news" class="chapter output-section" aria-labelledby="news-title">
+            <TerminalPrompt command="tail ./security-news" />
+            <div class="section-title"><h2 id="news-title">Security news</h2><a href="/security-news">Read updates ↗</a></div>
+            {content.news ? <a class="news-dispatch" href="/security-news"><div class="dispatch-date"><span class="dot"></span>Latest digest <time datetime={content.news.date}>{content.news.date}</time></div><h3>{content.news.title} <span aria-hidden="true">↗</span></h3></a> : <p class="body-copy">Follow the security news feed for research and vulnerability updates.</p>}
+          </section>
+          <section id="life" class="chapter output-section life-section" aria-labelledby="life-title">
+            <TerminalPrompt command="cat life.log" />
+            <div class="section-title"><h2 id="life-title">Life</h2><a href="/travel">Explore places ↗</a></div>
+
+            <ol class="life-log"><li><time datetime="2025-08">2025.08</time><span>Got married <span class="warm-heart" aria-hidden="true">♡</span></span></li><li><time datetime="2024-11">2024.11</time><span>Began my Ph.D. journey</span></li></ol>
+            <div class="travel-note"><div class="travel-globe"><Globe client:visible /></div><div><span class="eyebrow">Travel</span><br /><a class="inline-link" href="/travel">Explore the globe ↗</a></div></div>
+          </section>
+          <footer id="contact" class="workspace-contact">
+            <TerminalPrompt command="cat contact.txt" />
+            <address class="contact-address"><EmailAddress address={content.email} label="Personal" /><EmailAddress address="tianchi.yu@phd.unipd.it" label="University" /></address>
+            <nav aria-label="Contact and feeds"><a href={content.github}>GitHub ↗</a><a href={LINKS.linkedin}>LinkedIn ↗</a><a href="/rss.xml">RSS ↗</a></nav>
+          </footer>
+        </main>
+      </div>
+      <footer class="window-status"><span><span class="status-square" aria-hidden="true"></span> personal space</span><a href="#intro">↑ Back to top</a></footer>
+    </div>
+    <div class="desktop-footer"><span>© {new Date().getFullYear()} Tianchi Yu</span></div>
+  </div>
+</PixelLayout>
+<script>
+	// Track the reading position. These are ordinary anchors, including without JS.
+	const chapters = [
+		...document.querySelectorAll<HTMLElement>('.workspace-main > section[id]')
+	]
+	const links = document.querySelectorAll<HTMLAnchorElement>(
+		'[data-section-link]'
+	)
+	let scheduled = false
+	function updateSection() {
+		const offset = 80
+		let active = chapters[0]?.id
+		for (const chapter of chapters)
+			if (chapter.getBoundingClientRect().top <= offset) active = chapter.id
+		if (
+			window.scrollY + window.innerHeight >=
+			document.documentElement.scrollHeight - 2
+		)
+			active = chapters.at(-1)?.id
+		links.forEach((link) => {
+			if (link.dataset.sectionLink === active)
+				link.setAttribute('aria-current', 'location')
+			else link.removeAttribute('aria-current')
+		})
+		scheduled = false
+	}
+	window.addEventListener(
+		'scroll',
+		() => {
+			if (!scheduled) {
+				scheduled = true
+				requestAnimationFrame(updateSection)
+			}
+		},
+		{ passive: true }
+	)
+	window.addEventListener('resize', updateSection)
+	window.addEventListener('pageshow', updateSection)
+	updateSection()
+</script>
+<style>
+	.pixel-desktop {
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 30px 32px 24px;
+	}
+	.pixel-window {
+		border: 1px solid var(--rule);
+		border-radius: 9px;
+		background: var(--terminal-panel);
+		box-shadow: 0 20px 65px #00000020;
+	}
+	.window-chrome {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		background: var(--terminal-chrome);
+		border-radius: 8px 8px 0 0;
+		border-bottom: 1px solid var(--rule);
+		padding: 12px 18px;
+	}
+	.window-dots {
+		display: flex;
+		gap: 7px;
+	}
+	.window-dots i {
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: #c88477;
+	}
+	.window-dots i:nth-child(2) {
+		background: #c7ad70;
+	}
+	.window-dots i:nth-child(3) {
+		background: #7baf8d;
+	}
+	.window-title {
+		font: 11px/1.6 var(--mono);
+		color: var(--accent);
+		flex: 1;
+		overflow-wrap: anywhere;
+	}
+	.window-title > span {
+		color: var(--muted);
+		margin: 0 7px;
+	}
+	.window-chrome .theme-button {
+		width: 30px;
+		height: 30px;
+		border-radius: 4px;
+		font-size: 20px;
+		flex-shrink: 0;
+	}
+	.workspace-grid {
+		display: grid;
+		grid-template-columns: 174px minmax(0, 1fr);
+	}
+	.workspace-sidebar {
+		border-right: 1px solid var(--rule);
+		background: var(--terminal-chrome);
+		padding: 25px 14px;
+	}
+	.sidebar-sticky {
+		position: sticky;
+		top: 80px;
+	}
+	.sidebar-label {
+		font: 9px var(--mono);
+		letter-spacing: 0.14em;
+		color: var(--muted);
+		margin: 0 10px 22px;
+	}
+	.directory-root {
+		font: 11px var(--mono);
+		color: var(--accent);
+		margin: 0 10px 12px;
+	}
+	.directory-root > span {
+		margin-right: 6px;
+	}
+	.workspace-sidebar nav {
+		display: grid;
+		gap: 3px;
+	}
+	.workspace-sidebar nav a {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		padding: 10px 8px;
+		font: 11px var(--mono);
+		color: var(--muted);
+		border-left: 2px solid transparent;
+	}
+	.workspace-sidebar nav a > span {
+		color: var(--accent);
+	}
+	.workspace-sidebar nav a[aria-current] {
+		background: var(--surface);
+		color: var(--ink);
+		border-color: var(--accent);
+	}
+	.workspace-sidebar nav a:hover {
+		color: var(--accent);
+		background: var(--surface);
+	}
+	.elsewhere-label {
+		margin-top: 40px;
+		margin-bottom: 12px;
+	}
+	.workspace-main {
+		min-width: 0;
+		padding: 26px 32px 32px;
+	}
+	.scene-heading {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		font: 10px/1.7 var(--mono);
+		color: var(--muted);
+		margin-bottom: 10px;
+	}
+	.scene-heading > span:first-child {
+		color: var(--accent);
+	}
+	.scene-heading > span > span {
+		color: var(--terminal-warm);
+		margin-right: 6px;
+	}
+	.intro-content {
+		padding: 30px 0 0;
+	}
+	.identity {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 17px;
+		margin: 16px 0 12px;
+	}
+	h1 {
+		font:
+			600 24px / 1.3 'Preview Sans',
+			sans-serif;
+		letter-spacing: -0.3px;
+	}
+	.chinese-name {
+		font-size: 14px;
+		color: var(--muted);
+	}
+	.inline-link {
+		font: 11px/1.8 var(--mono);
+		color: var(--accent);
+	}
+	.inline-link > span {
+		margin-left: 12px;
+	}
+	.inline-link:hover {
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+	.output-section {
+		border-top: 1px dashed var(--rule);
+		margin-top: 38px;
+		padding-top: 24px;
+	}
+	.section-title {
+		margin: 15px 0 20px;
+	}
+	.section-title h2 {
+		font:
+			500 25px/1.3 'Preview Display',
+			sans-serif;
+	}
+	.section-title > a {
+		font-size: 10px;
+	}
+	.output-section :global(.writing-link) {
+		grid-template-columns: 76px 1fr 16px;
+		gap: 15px;
+		padding: 22px 0;
+	}
+	.output-section :global(.writing-link h3) {
+		font-size: 17px;
+		font-weight: 550;
+	}
+	.output-section :global(.writing-link p) {
+		font-size: 13px;
+	}
+	.output-section :global(.selected-work) {
+		gap: 22px;
+	}
+	.output-section :global(.work-visual) {
+		background: var(--surface);
+		height: 140px;
+	}
+	.output-section :global(.work-visual svg) {
+		color: var(--accent);
+	}
+	.output-section :global(.work-item h3) {
+		font-size: 18px;
+	}
+	.output-section :global(.work-visual > span) {
+		font-size: 8px;
+	}
+	.output-section :global(.work-item .eyebrow) {
+		font-size: 9px;
+	}
+	.life-log {
+		list-style: none;
+		margin: 22px 0 0;
+		padding: 0;
+		border-left: 1px solid var(--rule);
+	}
+	.life-log li {
+		display: flex;
+		gap: 25px;
+		position: relative;
+		align-items: baseline;
+		margin-left: 18px;
+		padding: 10px 0;
+		font-size: 14px;
+	}
+	.life-log li::before {
+		content: '';
+		position: absolute;
+		width: 5px;
+		height: 5px;
+		background: var(--accent);
+		left: -21px;
+		top: 17px;
+	}
+	.life-log time {
+		font: 10px var(--mono);
+		color: var(--muted);
+	}
+	.warm-heart {
+		color: var(--terminal-warm);
+		margin-left: 8px;
+	}
+	.workspace-contact {
+		border-top: 1px dashed var(--rule);
+		padding-top: 22px;
+		margin-top: 35px;
+	}
+	.workspace-contact p {
+		color: var(--muted);
+		font-size: 14px;
+		line-height: 1.8;
+		margin: 12px 0;
+	}
+	.workspace-contact nav {
+		display: flex;
+		gap: 25px;
+		font: 11px/1.8 var(--mono);
+		color: var(--accent);
+	}
+	.window-status {
+		display: flex;
+		justify-content: space-between;
+		gap: 15px;
+		padding: 12px 18px;
+		border-top: 1px solid var(--rule);
+		border-radius: 0 0 8px 8px;
+		background: var(--terminal-chrome);
+		font: 10px/1.5 var(--mono);
+		color: var(--muted);
+	}
+	.status-square {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		background: var(--accent);
+		margin-right: 8px;
+	}
+	.window-status a {
+		color: var(--accent);
+	}
+	.desktop-footer {
+		display: flex;
+		justify-content: space-between;
+		gap: 15px;
+		font: 10px/1.6 var(--mono);
+		color: var(--muted);
+		margin: 20px 2px 0;
+	}
+	@media (min-width: 1000px) {
+		.pixel-desktop {
+			background-image: radial-gradient(var(--rule) 0.5px, transparent 0.5px);
+			background-size: 9px 9px;
+		}
+	}
+	@media (max-width: 900px) {
+		.pixel-desktop {
+			padding: 20px;
+		}
+		.workspace-sidebar {
+			display: none;
+		}
+		.workspace-grid {
+			grid-template-columns: minmax(0, 1fr);
+		}
+		.workspace-main {
+			padding: 24px;
+		}
+		.sidebar-sticky {
+			position: static;
+		}
+	}
+	@media (max-width: 600px) {
+		.pixel-desktop {
+			padding: 16px 12px;
+		}
+		.window-chrome {
+			padding: 10px 12px;
+			gap: 12px;
+		}
+		.window-dots {
+			gap: 4px;
+		}
+		.window-dots i {
+			width: 7px;
+			height: 7px;
+		}
+		.window-title {
+			font-size: 10px;
+		}
+		.window-title > span {
+			margin: 0 2px;
+		}
+		.workspace-main {
+			padding: 17px 15px 24px;
+		}
+		.scene-heading {
+			font-size: 9px;
+		}
+		.intro-content {
+			padding-top: 24px;
+		}
+		.identity {
+			gap: 12px;
+		}
+		h1 {
+			font-size: 24px;
+		}
+		.chinese-name {
+			font-size: 12px;
+		}
+		.section-title {
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+		.section-title h2 {
+			font-size: 24px;
+		}
+		.output-section {
+			margin-top: 30px;
+			padding-top: 22px;
+		}
+		.output-section :global(.writing-link) {
+			grid-template-columns: 1fr 16px;
+			gap: 8px;
+		}
+		.output-section :global(.selected-work) {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
+		.life-log li {
+			gap: 15px;
+			font-size: 13px;
+		}
+		.window-status {
+			padding: 12px;
+			font-size: 9px;
+			gap: 10px;
+		}
+		.desktop-footer {
+			font-size: 9px;
+			flex-wrap: wrap;
+		}
+		.life-section .body-copy {
+			font-size: 15px;
+		}
+	}
+
+	.site-destinations {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		padding: 12px 18px;
+		border-bottom: 1px solid var(--rule);
+		background: var(--terminal-chrome);
+	}
+	.site-destinations a {
+		font: 11px/1.7 var(--mono);
+		padding: 7px 10px;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		color: var(--muted);
+	}
+	.site-destinations a[aria-current],
+	.site-destinations a:hover {
+		color: var(--accent);
+		border-color: var(--rule);
+		background: var(--surface);
+	}
+	.site-destinations a > span:first-child {
+		opacity: 0.65;
+	}
+	.mobile-section-nav {
+		display: none;
+	}
+	.research-interests {
+		font-size: 14px;
+		line-height: 1.8;
+		color: var(--muted);
+		margin: 16px 0;
+	}
+	.research-affiliation {
+		font-size: 14px;
+		line-height: 1.8;
+		color: var(--muted);
+		margin-top: 16px;
+	}
+	.research-affiliation a,
+	.research-details a {
+		color: var(--accent);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+	.research-details {
+		margin-top: 14px;
+		color: var(--muted);
+		font-size: 14px;
+		line-height: 1.8;
+	}
+	.research-details summary {
+		cursor: pointer;
+		font: 11px/1.8 var(--mono);
+		color: var(--terminal-warm);
+	}
+	.research-details p {
+		padding: 12px 0;
+	}
+	.news-dispatch {
+		display: block;
+		padding: 20px;
+		border: 1px solid var(--rule);
+		background: var(--surface);
+	}
+	.news-dispatch:hover {
+		border-color: var(--accent);
+	}
+	.dispatch-date {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		font: 10px/1.7 var(--mono);
+		color: var(--muted);
+	}
+	.dispatch-date time {
+		margin-left: auto;
+	}
+	.news-dispatch h3 {
+		font-size: 18px;
+		font-weight: 550;
+		line-height: 1.5;
+		margin: 12px 0;
+	}
+	.news-dispatch p {
+		font-size: 13px;
+		line-height: 1.8;
+		color: var(--muted);
+	}
+	.travel-note {
+		display: grid;
+		grid-template-columns: 180px 1fr;
+		gap: 28px;
+		align-items: center;
+		border-top: 1px dashed var(--rule);
+		margin-top: 25px;
+		padding-top: 20px;
+	}
+	.travel-globe {
+		height: 160px;
+		min-width: 0;
+	}
+	.travel-note p {
+		font-size: 14px;
+		line-height: 1.8;
+		color: var(--muted);
+		margin: 8px 0;
+	}
+	.contact-address {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font: 12px/1.8 var(--mono);
+		overflow-wrap: anywhere;
+		margin: 16px 0;
+		color: var(--terminal-warm);
+	}
+	.workspace-contact nav {
+		flex-wrap: wrap;
+	}
+	@media (max-width: 900px) {
+		.mobile-section-nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5px;
+			padding: 10px 15px;
+			border-bottom: 1px solid var(--rule);
+		}
+		.mobile-section-nav a {
+			font: 10px/1.8 var(--mono);
+			color: var(--muted);
+			padding: 4px 9px;
+		}
+		.mobile-section-nav a[aria-current] {
+			color: var(--accent);
+			background: var(--surface);
+		}
+	}
+	@media (max-width: 600px) {
+		.site-destinations {
+			padding: 10px;
+			gap: 3px;
+		}
+		.site-destinations a {
+			font-size: 10px;
+			padding: 7px 8px;
+		}
+		.travel-note {
+			grid-template-columns: 110px 1fr;
+			gap: 15px;
+		}
+		.travel-globe {
+			height: 110px;
+		}
+		.travel-note .eyebrow {
+			font-size: 9px;
+		}
+		.news-dispatch {
+			padding: 15px;
+		}
+		.news-dispatch h3 {
+			font-size: 16px;
+		}
+	}
+</style>

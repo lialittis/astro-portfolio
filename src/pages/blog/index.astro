@@ -1,12 +1,12 @@
 ---
-import { getBlogPosts } from "../../lib/blog";
-import BlogShell from "../../layouts/BlogShell.astro";
-import PostRow from "../../components/Blog/PostRow.astro";
-import CommandLine from "../../components/Terminal/CommandLine.astro";
+import { getBlogPosts } from '../../lib/blog'
+import BlogShell from '../../layouts/BlogShell.astro'
+import PostRow from '../../components/Blog/PostRow.astro'
+import CommandLine from '../../components/Terminal/CommandLine.astro'
 
-const posts = await getBlogPosts();
-const publishedCount = posts.filter((post) => !post.data.draft).length;
-const draftCount = posts.length - publishedCount;
+const posts = await getBlogPosts()
+const publishedCount = posts.filter((post) => !post.data.draft).length
+const draftCount = posts.length - publishedCount
 ---
 
 <BlogShell
@@ -42,63 +42,63 @@ const draftCount = posts.length - publishedCount;
 </BlogShell>
 
 <style>
-  .collection-header h1 {
-    margin: 0 0 0.75rem;
-    color: #00d9ff !important;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
-    font-weight: 600;
-    line-height: 1.2;
-  }
+	.collection-header h1 {
+		margin: 0 0 0.75rem;
+		color: var(--accent) !important;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: clamp(1.75rem, 5vw, 2.5rem);
+		font-weight: 600;
+		line-height: 1.2;
+	}
 
-  .collection-header p {
-    margin: 0;
-    color: #a7b5ae !important;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
+	.collection-header p {
+		margin: 0;
+		color: var(--muted) !important;
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9rem;
+		line-height: 1.7;
+	}
 
-  .collection-meta {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.75rem 1rem;
-    padding-block: 0.75rem;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.15);
-    color: #789184;
-    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
+	.collection-meta {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 0.75rem 1rem;
+		padding-block: 0.75rem;
+		border-bottom: 1px solid var(--rule);
+		color: var(--muted);
+		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+		font-size: 0.8rem;
+		line-height: 1.6;
+	}
 
-  .draft-count {
-    color: #f7c873;
-  }
+	.draft-count {
+		color: var(--terminal-warm);
+	}
 
-  .rss-link {
-    color: #00d9ff;
-    text-decoration: none;
-  }
+	.rss-link {
+		color: var(--accent);
+		text-decoration: none;
+	}
 
-  .rss-link:hover {
-    color: #00ff41;
-    text-decoration: underline;
-  }
+	.rss-link:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
 
-  .rss-link:focus-visible {
-    outline: 2px solid #00d9ff;
-    outline-offset: 4px;
-  }
+	.rss-link:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 4px;
+	}
 
-  .post-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+	.post-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 </style>

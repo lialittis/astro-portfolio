@@ -1,9 +1,9 @@
 ---
 interface Props {
-  command: string;
+	command: string
 }
 
-const { command } = Astro.props;
+const { command } = Astro.props
 ---
 
 <div class="cmd-line">
@@ -11,35 +11,39 @@ const { command } = Astro.props;
 </div>
 
 <style>
-  .cmd-line {
-    font-family: 'SF Mono', 'Monaco', monospace;
-    font-size: 14px;
-    color: rgba(0, 255, 65, 0.9);
-    margin-top: 16px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+	.cmd-line {
+		font-family: 'SF Mono', 'Monaco', monospace;
+		font-size: 14px;
+		color: var(--accent, #99d5ab);
+		margin-top: 16px;
+		margin-bottom: 8px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
 
-  .cmd-line .prompt {
-    color: #00ff41;
-    font-weight: bold;
-  }
+	.cmd-line .prompt {
+		color: var(--accent, #99d5ab);
+		font-weight: bold;
+	}
 
-  .cmd-line .cmd {
-    color: rgba(0, 255, 65, 0.85);
-    animation: typing 0.5s steps(20);
-  }
+	.cmd-line .cmd {
+		color: var(--ink, #dce3df);
+		animation: typing 0.5s steps(20);
+	}
 
-  @keyframes typing {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+	@keyframes typing {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
-  @media (max-width: 768px) {
-    .cmd-line {
-      font-size: 12px;
-    }
-  }
+	@media (max-width: 768px) {
+		.cmd-line {
+			font-size: 12px;
+		}
+	}
 </style>

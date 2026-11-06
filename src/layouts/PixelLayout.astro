@@ -1,0 +1,72 @@
+---
+import '../style/pixel-site.css'
+interface Props {
+	title: string
+	description: string
+	noindex?: boolean
+	article?: boolean
+}
+const { title, description, noindex = false, article = false } = Astro.props
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
+const image = new URL('/gojo-tc.webp', canonical)
+---
+<!doctype html>
+<html lang="en" data-site-style="pixel-terminal" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/head.ico" />
+    <link rel="alternate" type="application/rss+xml" title="Tianchi Yu — Writing" href="/rss.xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <script is:inline>
+	try {
+		const theme = localStorage.getItem('site-color-theme')
+		if (theme === 'light' || theme === 'dark')
+			document.documentElement.dataset.theme = theme
+	} catch {}
+</script>
+  </head>
+  <body>
+    <a class="site-skip" href="#main">Skip to content</a>
+    <slot />
+    <script>
+	const root = document.documentElement
+	const controls = document.querySelectorAll<HTMLButtonElement>(
+		'[data-theme-toggle]'
+	)
+	const sync = () =>
+		controls.forEach((button) => {
+			const dark = root.dataset.theme === 'dark'
+			button.textContent = dark ? '☀' : '☾'
+			button.setAttribute(
+				'aria-label',
+				`Switch to ${dark ? 'light' : 'dark'} theme`
+			)
+			button.title = button.getAttribute('aria-label')!
+		})
+	sync()
+	controls.forEach((button) =>
+		button.addEventListener('click', () => {
+			root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'
+			try {
+				localStorage.setItem('site-color-theme', root.dataset.theme)
+			} catch {}
+			sync()
+		})
+	)
+</script>
+  </body>
+</html>

@@ -1,12 +1,8 @@
 ---
-import type { PreviewContent } from '../../lib/design-preview'
-interface Props { posts: PreviewContent['posts'] }
-const { posts } = Astro.props
+import Component from '../Pixel/Writing.astro'
+import type { HomeContent } from '../../lib/home'
+interface Props {
+	posts: HomeContent['posts']
+}
 ---
-<ul class="writing-list">
-  {posts.map(post => <li><a class="writing-link" href={post.href}>
-    <time datetime={post.date}>{post.label}</time>
-    <div><h3>{post.title}</h3><p>{post.description}</p></div>
-    <span class="link-arrow" aria-hidden="true">↗</span>
-  </a></li>)}
-</ul>
+<Component {...Astro.props} />

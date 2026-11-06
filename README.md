@@ -5,8 +5,8 @@
 
 ## Features
 
-- Modern and Minimal bento-like, sleek UI Design
-- All in one page (almost)
+- Pixel observatory and terminal workspace design
+- Shared light/dark theme across the homepage and core content pages
 - Fully Responsive
 - Performances and SEO optimizations
 - Ready to be deployed on [Netlify](https://www.netlify.com/)
@@ -22,6 +22,35 @@
 - [d3](https://d3js.org/)
 - [react]()
 
+## Website design
+
+The homepage at `/` combines the pixel observatory with the terminal workspace.
+Blog, project, about, and publication pages share its colors and persistent
+light/dark setting. The homepage retains research details, contact links,
+security updates, life milestones, and the interactive travel globe. The intro
+uses a compact Ph.D. student profile without promotional copy.
+
+Edit homepage content in `src/lib/home.ts` and site navigation in
+`src/lib/navigation.ts`. Production components live in `src/components/Pixel/`;
+`src/layouts/PixelLayout.astro` and `src/style/pixel-site.css` provide the shared
+shell and theme. Specialized tools and the standalone project HTML report keep
+their own layouts.
+
+The original site and the prototype checkpoint are preserved in local backup
+branches and offline archives. See [design recovery](docs/design-recovery.md)
+for exact restore commands.
+
+### Contact addresses
+
+`src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`
+notation, with a button to reveal a mail link and copy the address. Without
+JavaScript the readable notation remains available. Other page footers link to
+`/#contact` instead of publishing duplicate mail links.
+
+This is lightweight obfuscation, not access control: bots can decode it, and
+previously published addresses or repository history remain public. A dedicated,
+replaceable website email alias offers better control if spam becomes a problem.
+
 ## Homepage design previews
 
 Run `pnpm dev` and open `http://localhost:4321/design/` to compare the homepage
@@ -31,12 +60,13 @@ The comparison bar switches between directions; each page has a light/dark
 toggle. Both pixel designs have an interactive desk lamp and a Munich clock.
 The pixel terminal's tabs and directory follow the current reading section.
 
-All four use the same published articles and selected projects through
-`src/lib/design-preview.ts`. Shared preview components live in
-`src/components/design/`, with isolated styling in `src/style/design-preview.css`.
-The previews are marked `noindex` and excluded from the sitemap. Existing content
-links open the current article, project, and personal pages; this experiment
-only redesigns the homepages. The original homepage is still at `/`.
+All four use the same published articles and selected projects from
+`src/lib/home.ts`, re-exported by `src/lib/design-preview.ts`. Preview components
+live in `src/components/design/` and reuse the pixel scene and content components
+from `src/components/Pixel/`. Preview styling is isolated in
+`src/style/design-preview.css`, with a separate theme preference from the live
+site. The previews remain available for comparison, are marked `noindex`, and
+are excluded from the sitemap. Their content links open the production pages.
 
 ## Managing projects
 

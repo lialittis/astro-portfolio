@@ -1,0 +1,40 @@
+---
+interface Props {
+	command: string
+	path?: string
+	showUser?: boolean
+}
+const { command, path = '~', showUser = false } = Astro.props
+---
+<div class="terminal-prompt">
+  {showUser && <><span class="prompt-user">tianchi</span><span class="prompt-path">{path}</span></>}<span class="prompt-dollar" aria-hidden="true">$</span><code>{command}</code>
+</div>
+<style>
+	.terminal-prompt {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 8px;
+		font: 12px/1.7 var(--mono);
+	}
+	.prompt-user {
+		color: var(--accent);
+	}
+	.prompt-path {
+		color: var(--muted);
+	}
+	.prompt-dollar {
+		color: var(--terminal-warm);
+	}
+	code {
+		font: inherit;
+		color: var(--ink);
+		overflow-wrap: anywhere;
+	}
+	@media (max-width: 600px) {
+		.terminal-prompt {
+			font-size: 11px;
+			gap: 6px;
+		}
+	}
+</style>

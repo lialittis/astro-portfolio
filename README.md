@@ -171,6 +171,13 @@ two seconds. A manual toggle cancels that pending update, and repeated theme
 changes restart the timer. Lamp state is not persisted. Reduced-motion settings
 skip the automatic pull/rebound animation.
 
+Mia and Kira are drawn in `src/components/Pixel/SceneCats.astro`: Mia rests by the
+books with warm brown points; Kira sits on the sill with dark grey and white
+fur and subtle tabby stripes. Their buttons support pointer, touch, Enter and
+Space. Names appear on hover or keyboard focus, and brief responses settle back
+to idle automatically. Idle motion pauses off-screen and respects reduced-motion
+settings. Fur highlights follow the lamp state, including its theme delay.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

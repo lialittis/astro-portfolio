@@ -113,6 +113,30 @@ for (const scene of document.querySelectorAll<HTMLElement>('[data-scene]')) {
     if (event.persisted) { cancelThemeTimer(); setLamp(root.dataset.theme !== 'light') }
   })
 
+  const cats = Array.from(scene.querySelectorAll<HTMLButtonElement>('[data-cat]')).map(control => ({
+    control,
+    artwork: scene.querySelector<SVGGElement>(`[data-cat-art="${control.dataset.cat}"]`)!,
+    timer: undefined as number | undefined,
+  }))
+  const resetCats = () => cats.forEach(cat => {
+    window.clearTimeout(cat.timer)
+    cat.artwork.classList.remove('is-responding')
+    cat.timer = undefined
+  })
+  cats.forEach(cat => {
+    cat.control.disabled = false
+    cat.control.addEventListener('click', () => {
+      window.clearTimeout(cat.timer)
+      cat.artwork.classList.add('is-responding')
+      cat.timer = window.setTimeout(() => {
+        cat.artwork.classList.remove('is-responding')
+        cat.timer = undefined
+      }, cat.control.dataset.cat === 'mia' ? 1800 : 1600)
+    })
+  })
+  window.addEventListener('pagehide', resetCats)
+  document.addEventListener('visibilitychange', () => { if (document.hidden) resetCats() })
+
   let visible = false
   const syncVisibility = () => scene.classList.toggle('is-visible', visible && !document.hidden)
   const visibilityObserver = new IntersectionObserver(([entry]) => {

@@ -1,4 +1,5 @@
 ---
+import SceneCats from './SceneCats.astro'
 interface Props { showCaption?: boolean }
 const { showCaption = false } = Astro.props
 const buildings = [
@@ -29,7 +30,7 @@ const stars = [
   <div class="scene-stage">
   <svg viewBox="0 0 400 170" role="img" aria-labelledby="scene-title scene-description" shape-rendering="crispEdges">
     <title id="scene-title">A quiet desk above the city</title>
-    <desc id="scene-description">An original pixel illustration of a study window, city rooftops, books, a computer, and a desk lamp. The scene changes with the page theme; pull the cord beside the desk lamp to switch it on or off.</desc>
+    <desc id="scene-description">An original pixel illustration of a study window, city rooftops, books, a computer, and a desk lamp. Mia, a fluffy ragdoll, rests beside the books; Kira, a grey-and-white tabby cat, sits on the windowsill. The scene changes with the page theme; pull the cord beside the desk lamp to switch it on or off.</desc>
     <defs><pattern id="wall-grain" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="var(--grain)"/></pattern></defs>
     <rect width="400" height="170" fill="var(--wall)"/><rect width="400" height="170" fill="url(#wall-grain)"/>
     <rect x="30" y="9" width="340" height="122" fill="var(--frame-shadow)"/><rect x="34" y="12" width="332" height="114" fill="var(--frame)"/>
@@ -56,8 +57,11 @@ const stars = [
     <g><rect x="55" y="136" width="43" height="8" fill="#7e7e70"/><rect x="58" y="137" width="38" height="5" fill="#d0c9b5"/><rect x="61" y="128" width="33" height="8" fill="#986f56"/><rect x="65" y="130" width="27" height="4" fill="#c6baa1"/><rect x="55" y="125" width="41" height="3" fill="#536e73"/></g>
     <g><rect x="324" y="130" width="15" height="15" fill="#9b7863"/><rect x="322" y="127" width="19" height="4" fill="#ba9677"/><path d="M330 127V112H333V127M326 119H322V110H325V116H330M333 115H338V104H341V118H333M330 115H326V103H329V110H330" fill="#668771"/><rect x="329" y="102" width="5" height="8" fill="#839b74"/></g>
     <g><rect x="241" y="133" width="12" height="11" fill="#c7c0a9"/><path d="M253 135H257V141H253" stroke="#c7c0a9" stroke-width="2" fill="none"/><rect x="242" y="132" width="10" height="2" fill="#564439"/></g>
-    <rect x="102" y="143" width="25" height="2" fill="#d5ccad"/><path d="M114 143L122 136" stroke="#ae7d56" stroke-width="2"/>
+    <rect x="22" y="143" width="25" height="2" fill="#d5ccad"/><path d="M34 143L42 136" stroke="#ae7d56" stroke-width="2"/>
+    <SceneCats />
   </svg>
+    <button type="button" class="cat-touch cat-touch-mia" data-cat="mia" aria-label="Pet Mia, the ragdoll cat" disabled><span class="cat-name" aria-hidden="true">Mia</span></button>
+    <button type="button" class="cat-touch cat-touch-kira" data-cat="kira" aria-label="Pet Kira, the grey-and-white tabby cat" disabled><span class="cat-name" aria-hidden="true">Kira</span></button>
     <button type="button" class="lamp-pull" data-lamp-toggle aria-label="Desk lamp" aria-pressed="false" title="Pull to switch the desk lamp" disabled></button>
   </div>
   {showCaption && <div class="scene-controls"><span><span class="dot"></span>A quiet corner in Munich</span></div>}
@@ -149,6 +153,48 @@ const stars = [
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
+  .cat-touch {
+    position: absolute;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cat-touch-mia {
+    width: max(44px, 8.5%);
+    height: max(44px, 12%);
+    left: calc(29.5% - max(22px, 4.25%));
+    top: calc(80% - max(22px, 6%));
+  }
+  .cat-touch-kira {
+    width: max(44px, 7.5%);
+    height: max(44px, 16%);
+    left: min(calc(60.5% - max(22px, 3.75%)), calc(74% - 22px - max(44px, 7.5%)));
+    top: calc(64.7% - max(22px, 8%));
+  }
+  .cat-touch:disabled { visibility: hidden; }
+  .cat-touch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cat-name {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    transform: translateX(-50%);
+    padding: 3px 6px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--terminal-panel);
+    color: var(--ink);
+    font: 11px/1.5 var(--mono);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .cat-touch:focus-visible .cat-name { opacity: 1; }
+  @media (hover: hover) { .cat-touch:hover .cat-name { opacity: 1; } }
   .lamp-pull:active { cursor: grabbing; }
   .lamp-pull:disabled { visibility: hidden; }
   .lamp-pull:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

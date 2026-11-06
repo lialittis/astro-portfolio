@@ -1,0 +1,105 @@
+<!-- Local pixel coordinates keep the two silhouettes independent of the scene. -->
+<g class="scene-cat mia" data-cat-art="mia" transform="translate(101 126)" aria-hidden="true">
+  <path d="M2 17H32V19H2Z" fill="var(--cat-shadow)" />
+  <g class="mia-body cat-idle">
+    <path d="M10 6H25V8H29V11H32V16H29V18H6V16H3V12H6V8H10Z" fill="var(--mia-coat)" />
+    <path d="M15 7H25V9H28V12H25V10H16Z" class="mia-light" />
+    <path d="M24 12H31V14H33V17H29V19H11V17H25V16H27V14H24Z" fill="var(--mia-point)" />
+    <path d="M12 17H25V18H12Z" fill="var(--mia-coat)" />
+  </g>
+  <g class="mia-head">
+    <g class="mia-ears cat-idle">
+      <path d="M2 6V0H4V2H7V5ZM11 5V2H14V0H16V7Z" fill="var(--mia-point)" />
+      <path d="M4 3H5V5H4ZM13 3H14V5H13Z" fill="var(--cat-nose)" />
+    </g>
+    <path d="M4 4H13V6H16V12H14V15H4V13H1V7H4Z" fill="var(--mia-point)" />
+    <path d="M8 5H10V8H11V10H13V13H10V15H6V13H4V11H7V8H8Z" class="mia-light" />
+    <g class="mia-sleep-eyes" fill="var(--cat-ink)"><path d="M3 9H6V10H3ZM11 9H14V10H11Z" /></g>
+    <g class="mia-awake-eyes"><path d="M3 8H6V10H3ZM11 8H14V10H11Z" fill="var(--mia-eyes)" /><path d="M4 8H5V10H4ZM12 8H13V10H12Z" fill="var(--cat-ink)" /></g>
+    <rect x="8" y="11" width="2" height="1" fill="var(--cat-nose)" />
+    <path d="M3 13H5V16H13V17H7V16H3Z" fill="var(--mia-coat)" />
+  </g>
+  <path d="M4 17H9V19H4ZM13 17H17V19H13Z" class="mia-light" />
+</g>
+
+<g class="scene-cat kira" data-cat-art="kira" transform="translate(226 96)" aria-hidden="true">
+  <path d="M5 26H30V28H5Z" fill="var(--cat-shadow)" />
+  <g class="kira-tail cat-idle">
+    <path class="tail-rest" d="M20 19H24V23H28V21H30V25H27V27H19V24Z" fill="var(--kira-back)" />
+    <path class="tail-curled" d="M20 19H24V22H28V19H26V17H30V19H32V24H29V27H20Z" fill="var(--kira-back)" />
+    <path class="tail-rest" d="M20 21H24V23H20ZM25 24H27V27H25Z" fill="var(--kira-stripe)" />
+    <path class="tail-curled" d="M21 22H24V24H21ZM27 24H29V26H27ZM28 17H30V19H28Z" fill="var(--kira-stripe)" />
+  </g>
+  <path d="M11 9H19V12H22V17H24V24H21V27H7V24H8V16H10Z" fill="var(--kira-back)" />
+  <path d="M11 12H15V15H17V25H14V27H8V24H10V18Z" class="kira-light" />
+  <path d="M19 15H21V21H23V24H20V22H18V17H19Z" fill="var(--kira-shade)" />
+  <path d="M16 12H20V14H18V15H16ZM18 17H22V19H20V20H18ZM20 22H24V24H22V25H20Z" fill="var(--kira-stripe)" />
+  <path d="M7 25H12V27H7ZM15 25H20V27H15Z" class="kira-light" />
+  <g class="kira-head">
+    <path d="M6 5V0H8V2H11V4H15V2H18V0H20V6Z" fill="var(--kira-back)" />
+    <path d="M8 3H9V5H8ZM17 3H18V5H17Z" fill="var(--cat-nose)" />
+    <path d="M7 4H19V6H21V11H19V14H8V12H5V7H7Z" fill="var(--kira-back)" />
+    <path d="M6 8H10V10H16V8H20V12H18V14H9V12H6Z" class="kira-light" />
+    <path d="M10 4H11V6H12V5H14V6H15V4H16V7H14V6H12V7H10ZM5 9H7V10H5ZM19 10H21V11H19Z" fill="var(--kira-stripe)" />
+    <g class="kira-profile"><rect x="7" y="7" width="3" height="2" fill="var(--kira-eyes)" class="kira-eye cat-idle"/><rect x="7" y="7" width="1" height="2" fill="var(--cat-ink)" class="kira-eye cat-idle"/><rect x="5" y="10" width="2" height="1" fill="var(--cat-nose)" /></g>
+    <g class="kira-front"><path d="M8 7H11V9H8ZM16 7H19V9H16Z" fill="var(--kira-eyes)"/><path d="M9 7H10V9H9ZM17 7H18V9H17Z" fill="var(--cat-ink)"/><rect x="13" y="10" width="2" height="1" fill="var(--cat-nose)"/></g>
+  </g>
+</g>
+
+<style>
+  .scene-cat {
+    --cat-shadow: #263337;
+    --cat-ink: #26343c;
+    --cat-nose: #aa8580;
+    --mia-coat: #c3c7c1;
+    --mia-point: #877166;
+    --mia-eyes: #91bdcd;
+    --kira-back: #66727c;
+    --kira-shade: #4e5862;
+    --kira-white: #c8ccd0;
+    --kira-stripe: #35414b;
+    --kira-eyes: #adc29b;
+    --fur-warmth: 0%;
+  }
+  :global([data-theme='light']) .scene-cat {
+    --cat-shadow: #8d927e;
+    --mia-coat: #e6e3d7;
+    --mia-point: #987e6e;
+    --kira-back: #737f87;
+    --kira-shade: #5b666e;
+    --kira-white: #e1e4e2;
+    --kira-stripe: #444f58;
+  }
+  :global([data-lamp='on']) .scene-cat,
+  :global([data-lamp='auto']) .scene-cat { --fur-warmth: 22%; }
+  :global([data-theme='light'] [data-lamp='auto']) .scene-cat { --fur-warmth: 0%; }
+  .mia-light { fill: color-mix(in srgb, var(--mia-coat), #e6bd7c var(--fur-warmth)); }
+  .kira-light { fill: color-mix(in srgb, var(--kira-white), #ded9cc var(--fur-warmth)); }
+  .mia-light, .kira-light { transition: fill 0.2s; }
+  .mia-awake-eyes, .kira-front, .tail-curled { display: none; }
+  .mia.is-responding .mia-sleep-eyes,
+  .kira.is-responding .kira-profile,
+  .kira.is-responding .tail-rest { display: none; }
+  .mia.is-responding .mia-awake-eyes,
+  .kira.is-responding .kira-front,
+  .kira.is-responding .tail-curled { display: inline; }
+  .mia-head, .kira-head { transition: transform 160ms steps(2, end); }
+  .mia.is-responding .mia-head { transform: translateY(-3px); }
+  .kira.is-responding .kira-head { transform: translate(-1px, -1px); }
+  .mia-body { animation: cat-breathe 7s steps(1, end) infinite; }
+  .mia-ears { animation: cat-ear 19s steps(1, end) infinite; animation-delay: -6s; }
+  .kira-tail { animation: cat-tail 13s steps(1, end) infinite; animation-delay: -3s; }
+  .kira-eye { animation: cat-blink 17s steps(1, end) infinite; transform-origin: 8px 8px; animation-delay: -9s; }
+  .cat-idle { animation-play-state: paused; }
+  :global(.observatory-scene.is-visible) .cat-idle { animation-play-state: running; }
+  .scene-cat.is-responding .cat-idle { animation-play-state: paused; }
+  @keyframes cat-breathe { 0%, 45%, 100% { transform: translateY(0); } 55%, 75% { transform: translateY(-1px); } }
+  @keyframes cat-ear { 0%, 94%, 100% { transform: translateY(0); } 95%, 97% { transform: translateY(-1px); } }
+  @keyframes cat-tail { 0%, 76%, 100% { transform: translateY(0); } 80%, 88% { transform: translateY(-1px); } }
+  @keyframes cat-blink { 0%, 97%, 100% { transform: scaleY(1); } 98%, 99% { transform: scaleY(0.1); } }
+  @media (prefers-reduced-motion: reduce) {
+    .cat-idle { animation: none; }
+    .mia-head, .kira-head, .mia-light, .kira-light { transition: none; }
+    .mia.is-responding .mia-head, .kira.is-responding .kira-head { transform: none; }
+  }
+</style>

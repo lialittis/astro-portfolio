@@ -15,7 +15,7 @@ const { path, reading = false, ...meta } = Astro.props
 <PixelLayout {...meta}>
   <div class="interior-shell">
     <TerminalWrapper>
-      <WindowHeader path={path} />
+      <WindowHeader />
       <main id="main" class="terminal-content">
         <div class:list={["site-page-content", { "reading-column": reading }]}>
           <slot />

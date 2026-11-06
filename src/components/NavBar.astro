@@ -96,27 +96,34 @@ const isActive = (href: string) => isCurrentRoute(currentPath, href)
 	}
 
 	.terminal-nav.workspace-nav {
-		width: 100%;
+		width: auto;
 		margin: 0;
-		padding: 10px 18px;
-		gap: 4px;
+		padding: 0;
+		gap: 2px;
+		flex-wrap: nowrap;
 		overflow: visible;
 	}
 	.workspace-nav .terminal-nav-link {
-		padding: 7px 10px;
+		padding: 7px 8px;
 		font: var(--text-meta) / 1.6 var(--mono);
 		border-radius: var(--radius-control);
 	}
 	.workspace-nav .lock-mark {
 		color: var(--terminal-warm);
 	}
-	@media (max-width: 700px) {
+	@media (max-width: 1099px) {
 		.terminal-nav.workspace-nav {
-			padding: 8px 12px;
-			gap: 3px;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			width: 100%;
+			gap: 6px;
 		}
 		.workspace-nav .terminal-nav-link {
-			padding: 7px 8px;
+			display: flex;
+			align-items: center;
+			min-height: 40px;
+			min-width: 0;
+			overflow-wrap: anywhere;
 		}
 	}
 </style>

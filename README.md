@@ -178,6 +178,15 @@ Space. Names appear on hover or keyboard focus, and brief responses settle back
 to idle automatically. Idle motion pauses off-screen and respects reduced-motion
 settings. Fur highlights follow the lamp state, including its theme delay.
 
+### Window navigation
+
+The shared window header places navigation directly after the window dots on
+the left, with the theme control on the right, in one row at desktop widths.
+Below 1100px, a native Menu disclosure reveals the same links in two columns. Escape closes it and returns focus to Menu; resizing
+preserves a usable focus target. Without JavaScript the mobile menu starts open
+and can still be toggled. The header omits the current path; active navigation
+and page content provide location context.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

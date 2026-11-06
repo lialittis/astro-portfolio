@@ -1,58 +1,90 @@
 ---
 import NavBar from '../NavBar.astro'
-import { displayPath } from '../../lib/terminal'
-interface Props { path: string }
-const { path } = Astro.props
 ---
-<header class="site-window-header">
-  <div class="site-window-chrome">
-    <span class="site-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-    <span class="site-window-path" title={path}>{displayPath(path)}</span>
-    <button type="button" class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>
-  </div>
-  <NavBar variant="workspace" />
+<header class="site-window-header" data-window-header>
+  <span class="site-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+  <details class="site-window-navigation" open>
+    <summary class="site-button window-menu-toggle" aria-label="Site navigation">Menu <span aria-hidden="true">⌄</span></summary>
+    <NavBar variant="workspace" />
+  </details>
+  <button type="button" class="theme-button" data-theme-toggle aria-label="Switch color theme">☀</button>
 </header>
+<script is:inline>
+  // Run as the header is parsed to avoid a flash of expanded navigation on mobile.
+  (() => {
+    const header = document.currentScript.previousElementSibling
+    const menu = header.querySelector('.site-window-navigation')
+    const toggle = menu.querySelector('summary')
+    const nav = menu.querySelector('nav')
+    const compact = window.matchMedia('(max-width: 1099px)')
+    menu.open = !compact.matches
+    compact.addEventListener('change', () => {
+      const focusInNav = nav.contains(document.activeElement)
+      const focusOnToggle = document.activeElement === toggle
+      menu.open = !compact.matches
+      if (compact.matches && focusInNav) toggle.focus()
+      if (!compact.matches && focusOnToggle) {
+        ;(nav.querySelector('[aria-current="page"]') || nav.querySelector('a')).focus()
+      }
+    })
+    header.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && compact.matches && menu.open) {
+        menu.open = false
+        toggle.focus()
+        event.preventDefault()
+      }
+    })
+    nav.addEventListener('click', event => {
+      if (compact.matches && event.target.closest('a')) menu.open = false
+    })
+    document.addEventListener('click', event => {
+      if (compact.matches && menu.open && !header.contains(event.target)) menu.open = false
+    })
+  })()
+</script>
 <style>
-	.site-window-header {
-		background: var(--terminal-chrome);
-		border: 1px solid var(--rule);
-		border-radius: var(--radius-window) var(--radius-window) 0 0;
-	}
-	.site-window-chrome {
-		display: flex;
-		align-items: center;
-		gap: 14px;
-		padding: 12px 18px;
-		border-bottom: 1px solid var(--rule);
-	}
-	.site-window-dots {
-		display: flex;
-		gap: 7px;
-		flex-shrink: 0;
-	}
-	.site-window-dots i {
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		background: #c88477;
-	}
-	.site-window-dots i:nth-child(2) {
-		background: #c7ad70;
-	}
-	.site-window-dots i:nth-child(3) {
-		background: #7baf8d;
-	}
-	.site-window-path {
-		flex: 1;
-		min-width: 0;
-		font: var(--text-meta) / 1.6 var(--mono);
-		color: var(--accent);
-		overflow-wrap: anywhere;
-	}
-	@media (max-width: 700px) {
-		.site-window-chrome {
-			padding: 10px 12px;
-			gap: 10px;
-		}
-	}
+  .site-window-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: var(--terminal-chrome);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-window) var(--radius-window) 0 0;
+  }
+  .site-window-dots { grid-column: 1; grid-row: 1; display: flex; gap: 7px; }
+  .site-window-dots i { width: 9px; height: 9px; border-radius: 50%; background: #c88477; }
+  .site-window-dots i:nth-child(2) { background: #c7ad70; }
+  .site-window-dots i:nth-child(3) { background: #7baf8d; }
+  .site-window-navigation { display: contents; }
+  .site-window-navigation::details-content { display: contents; }
+  .site-window-navigation:not([open]) > :global(nav) { display: none; }
+  .window-menu-toggle { display: none; }
+  .site-window-header :global(.workspace-nav) { grid-column: 2; grid-row: 1; justify-self: start; }
+  .theme-button { grid-column: 3; grid-row: 1; }
+  @media (max-width: 1099px) {
+    .site-window-header { gap: 0 10px; padding: 10px 12px; }
+    .window-menu-toggle {
+      display: inline-flex;
+      justify-self: start;
+      grid-column: 2;
+      grid-row: 1;
+      min-height: 40px;
+      padding: 8px 10px;
+      list-style: none;
+      cursor: pointer;
+    }
+    .window-menu-toggle::-webkit-details-marker { display: none; }
+    .window-menu-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .site-window-navigation[open] > summary { background: var(--surface); border-color: var(--accent); }
+    .site-window-navigation[open] > summary span { transform: rotate(180deg); }
+    .site-window-header :global(.workspace-nav) {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--rule);
+    }
+  }
 </style>

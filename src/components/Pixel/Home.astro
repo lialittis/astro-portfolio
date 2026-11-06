@@ -22,7 +22,7 @@ const sections = [
 <PixelLayout title="Tianchi Yu — Ph.D. student" description={content.intro}>
   <div class="pixel-desktop">
     <div class="pixel-window">
-      <WindowHeader path={workspace.home} />
+      <WindowHeader />
       <nav class="mobile-section-nav" aria-label="On this page">{sections.map(section => <a href={`#${section.id}`} data-section-link={section.id}>{section.label}</a>)}</nav>
       <div class="workspace-grid">
         <aside class="workspace-sidebar" aria-label="Workspace directory">

@@ -115,6 +115,15 @@ logic follows a single Unix workspace. Web URLs remain unchanged (`/blog`,
 Historical `/design/` prototypes and unused demo pages retain their original
 copy; they are not the current workspace model.
 
+### Research content
+
+Edit publications and the broad current directions in `src/lib/research.ts`.
+The `/publications` page uses `~/research`, shows each paper once, and provides
+an expandable abstract plus publisher/PDF links. Author order, year, and venue
+should follow the publisher's record. The current-directions section ends with a
+collaboration invitation linking to the homepage's click-to-reveal email display.
+Keep this section to research themes that can be discussed publicly.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

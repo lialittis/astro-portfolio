@@ -1,179 +1,99 @@
 ---
-import { workspace, shellQuote } from '../lib/terminal'
+import { workspace } from '../lib/terminal'
+import { publications, researchDirections } from '../lib/research'
 import PixelPage from '../layouts/PixelPage.astro'
 import PageHeading from '../components/Pixel/PageHeading.astro'
-import CommandLine from '../components/Pixel/TerminalPrompt.astro'
-
-// Publication data
-const publications = [
-	{
-		id: 1,
-		type: 'publication',
-		title: 'Security for Distributed Machine Learning',
-		authors: 'Laurent Gomez.,',
-		myName: 'Tianchi Yu.',
-		conference:
-			'20th International Conference on Security and Cryptography - SECRYPT',
-		abstract:
-			'With the adoption of IoT-like technologies, industrials aim to enhance the business value of their physical assets and improve their operational efficiency. However, IoT devices alone tend to strain enterprise systems with a sheer volume of unstructured and unfiltered data. To overcome this challenge, endowing (smart) devices with AI-based capabilities can significantly enhance enterprise system capabilities. However, deploying AI-based capabilities on potentially insecure edge hardware and platforms introduces new security risks, including AI model theft, poisoning, and data leaks. This paradigm shift necessitates the protection of distributed AI applications and data. In this paper, we propose a solution for safeguarding the Intellectual Property and data privacy of ML-based software. We utilize hardware-assisted Privacy Enhancing Technologies, specifically Trusted Execution Environments. We evaluate the effectiveness of our approach in the context of ML-based motion detection in CCTV cameras. This work is part of a co-innovation project with the Smart City of Antibes, France.',
-		url: 'https://www.scitepress.org/PublicationsDetail.aspx?ID=pdOTx3O9VVE=&t=1'
-	}
-]
 ---
 
-<PixelPage title="Publications | Tianchi Yu" description="Research publications by Tianchi Yu." path={workspace.research}>
-  <PageHeading title="Publications" command="ls -1F" />
+<PixelPage title="Research | Tianchi Yu" description="Publications, current research directions, and collaboration interests of Tianchi Yu." path={workspace.research}>
+  <PageHeading title="Research" command="ls -1F" />
 
-  <div class="file-listing">
-    {publications.map(pub => <div class="file-listing-line">{pub.title}.md</div>)}
-    <div class="file-listing-line">in_progress/</div>
-  </div>
+  <section class="publications-section" aria-labelledby="publications-heading">
+    <h2 id="publications-heading" class="section-heading">Publications</h2>
+    <ul class="publication-list">
+      {publications.map(pub => (
+        <li>
+          <article class="publication-entry" aria-labelledby={`publication-${pub.slug}`}>
+            <header class="publication-header">
+              <p class="publication-file">{pub.slug}.md</p>
+              <time datetime={String(pub.year)}>{pub.year}</time>
+              <h3 id={`publication-${pub.slug}`}>{pub.title}</h3>
+            </header>
+            <p class="publication-authors">
+              {pub.authors.map((author, index) => <>{index > 0 && ', '}{author === 'Tianchi Yu' ? <strong>{author}</strong> : author}</>)}
+            </p>
+            <p class="publication-venue"><span>{pub.venue}</span> · {pub.conference}</p>
+            <div class="publication-links">
+              <a class="site-button" href={pub.url} target="_blank" rel="noopener noreferrer">Publication <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href={pub.pdf} target="_blank" rel="noopener noreferrer">PDF <span aria-hidden="true">↗</span></a>
+            </div>
+            <details class="publication-abstract">
+              <summary>Abstract</summary>
+              <p>{pub.abstract}</p>
+            </details>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </section>
 
-  {publications.map((pub, index) => (
-    <div class="publication-section">
-      <CommandLine command={`cat -- ${shellQuote(`${pub.title}.md`)}`} />
-      <div class="terminal-publication">
-        <h2 class="pub-title">[{index}] {pub.title}</h2>
-
-        <div class="pub-meta">
-          <div class="meta-line">
-            <span class="meta-label">AUTHORS:</span>
-            <span class="meta-value">{pub.authors} <span class="highlight-name">{pub.myName}</span></span>
-          </div>
-          <div class="meta-line">
-            <span class="meta-label">CONFERENCE:</span>
-            <span class="meta-value">{pub.conference}</span>
-          </div>
-        </div>
-
-        <div class="pub-abstract">
-          <div class="abstract-header">ABSTRACT:</div>
-          <p class="abstract-text">{pub.abstract}</p>
-        </div>
-
-        <a href={pub.url} target="_blank" rel="noopener noreferrer" class="site-button">
-          <span>→ View Publication</span>
-        </a>
-      </div>
+  <section class="current-directions" aria-labelledby="directions-heading">
+    <p class="directory-label">in_progress/</p>
+    <h2 id="directions-heading" class="section-heading">Current directions</h2>
+    <ul class="direction-list">
+      {researchDirections.map(direction => (
+        <li>
+          <h3>{direction.title}</h3>
+          <p>{direction.description}</p>
+          {direction.href && <a class="text-link" href={direction.href}>Related experiments <span aria-hidden="true">→</span></a>}
+        </li>
+      ))}
+    </ul>
+    <div class="collaboration-note">
+      <p>If you’re working on related questions, I’d be happy to exchange ideas, compare experiments, or discuss a possible collaboration.</p>
+      <a href="/#contact" class="site-button">Get in touch <span aria-hidden="true">→</span></a>
     </div>
-  ))}
-
-  <div class="publication-section">
-    <CommandLine command="cat in_progress/status.txt" />
-    <div class="terminal-publication coming-soon-terminal">
-      <div class="coming-soon-content">
-        <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem;"> More Coming Soon...</h3>
-        <p style="color: var(--muted); line-height: 1.8;">
-          Stay tuned for upcoming publications in:<br/>
-          • System Security<br/>
-          • Memory Protection<br/>
-          • Hardware-Software Co-design<br/>
-          • AI Stack Security<br/>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <CommandLine command="echo 'End of publications list'" />
+  </section>
 </PixelPage>
 
 <style>
-
-	/* Hacker Mode Specific Styles */
-	.file-listing {
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin: 1rem 0 2rem 0;
-		font-family: 'SF Mono', 'Monaco', monospace;
-		font-size: 0.875rem;
-	}
-
-	.file-listing-line {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.875rem;
-		margin: 0.25rem 0;
-		color: var(--muted);
-	}
-
-	.publication-section {
-		margin-bottom: 3rem;
-	}
-
-	.terminal-publication {
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 8px;
-		padding: 2rem;
-		margin-top: 1rem;
-	}
-
-	.pub-title {
-		color: var(--accent);
-		font-family: var(--font-body);
-		font-size: var(--text-section);
-		margin-bottom: 1.5rem;
-		font-weight: 600;
-	}
-
-	.pub-meta {
-		margin-bottom: 1.5rem;
-	}
-
-	.meta-line {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 0.95rem;
-		margin: 0.75rem 0;
-		display: flex;
-		gap: 1rem;
-	}
-
-	.meta-label {
-		color: var(--accent);
-		font-weight: 600;
-		min-width: 120px;
-	}
-
-	.meta-value {
-		color: var(--muted);
-		flex: 1;
-	}
-
-	.highlight-name {
-		color: var(--accent);
-		font-weight: 700;
-	}
-
-	.pub-abstract {
-		margin: 1.5rem 0;
-	}
-
-	.abstract-header {
-		color: var(--accent);
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		font-size: 1rem;
-		font-weight: 600;
-		margin-bottom: 1rem;
-	}
-
-	.abstract-text {
-		color: var(--muted);
-		font-family: var(--font-body);
-		font-size: var(--text-body);
-		line-height: 1.8;
-		text-align: left;
-
-		max-width: var(--reading-width);
-	}
-
-	.coming-soon-terminal {
-		background: var(--surface);
-		border-color: var(--rule);
-	}
-
-	.coming-soon-content {
-		font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-		text-align: center;
-	}
+  .section-heading {
+    color: var(--ink);
+    font: 600 var(--text-section)/1.35 var(--font-body);
+  }
+  .publication-list {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .publication-list > li { border-top: 1px solid var(--rule); }
+  .publication-entry { display: grid; gap: 14px; padding: 24px 0; }
+  .publication-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; align-items: baseline; }
+  .publication-file, .directory-label {
+    color: var(--accent);
+    font: var(--text-meta)/1.6 var(--mono);
+    overflow-wrap: anywhere;
+  }
+  .publication-header time { color: var(--muted); font: var(--text-meta)/1.6 var(--mono); font-variant-numeric: tabular-nums; }
+  .publication-header h3 { grid-column: 1 / -1; color: var(--ink); font: 600 var(--text-section)/1.4 var(--font-body); }
+  .publication-authors, .publication-venue { color: var(--muted); font: var(--text-body)/var(--leading-body) var(--font-body); max-width: var(--reading-width); }
+  .publication-authors strong { color: var(--ink); font-weight: 600; }
+  .publication-venue span { color: var(--ink); }
+  .publication-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+  .text-link { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; color: var(--accent); font: var(--text-meta)/1.6 var(--mono); text-underline-offset: 4px; }
+  .text-link:hover { text-decoration: underline; }
+  .publication-abstract { max-width: var(--reading-width); }
+  summary { width: fit-content; padding: 8px 0; color: var(--accent); font: var(--text-meta)/1.6 var(--mono); cursor: pointer; }
+  summary:hover { text-decoration: underline; text-underline-offset: 4px; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .publication-abstract p { padding-top: 12px; color: var(--muted); font: var(--text-body)/var(--leading-body) var(--font-body); }
+  .current-directions { border-top: 1px solid var(--rule); padding-top: 28px; }
+  .directory-label { margin-bottom: 8px; }
+  .direction-list { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 20px; max-width: var(--reading-width); }
+  .direction-list h3 { color: var(--ink); font: 550 var(--text-card)/1.4 var(--font-body); }
+  .direction-list p { margin-top: 6px; color: var(--muted); font: var(--text-body)/var(--leading-body) var(--font-body); }
+  .direction-list .text-link { margin-top: 4px; }
+  .collaboration-note { border-left: 2px solid var(--rule); padding-left: 18px; max-width: var(--reading-width); }
+  .collaboration-note p { color: var(--muted); font: var(--text-body)/var(--leading-body) var(--font-body); margin-bottom: 16px; }
+  @media(max-width:600px) { .publication-header { grid-template-columns: minmax(0, 1fr); gap: 8px; } .publication-header time { grid-row: 3; } }
 </style>

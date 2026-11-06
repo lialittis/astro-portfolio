@@ -25,10 +25,11 @@ const stars = [
 	[128, 36]
 ]
 ---
-<div class="observatory-scene" data-scene data-lamp="on">
+<div class="observatory-scene" data-scene data-lamp="auto">
+  <div class="scene-stage">
   <svg viewBox="0 0 400 170" role="img" aria-labelledby="scene-title scene-description" shape-rendering="crispEdges">
     <title id="scene-title">A quiet desk above the city</title>
-    <desc id="scene-description">An original pixel illustration of a study window, city rooftops, books, a computer, and a desk lamp. The scene changes with the page theme; the lamp can be switched below.</desc>
+    <desc id="scene-description">An original pixel illustration of a study window, city rooftops, books, a computer, and a desk lamp. The scene changes with the page theme; pull the cord beside the desk lamp to switch it on or off.</desc>
     <defs><pattern id="wall-grain" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="var(--grain)"/></pattern></defs>
     <rect width="400" height="170" fill="var(--wall)"/><rect width="400" height="170" fill="url(#wall-grain)"/>
     <rect x="30" y="9" width="340" height="122" fill="var(--frame-shadow)"/><rect x="34" y="12" width="332" height="114" fill="var(--frame)"/>
@@ -48,12 +49,18 @@ const stars = [
     <rect x="12" y="145" width="376" height="6" fill="var(--desk-top)"/><rect x="16" y="151" width="368" height="7" fill="var(--desk-front)"/><rect x="26" y="158" width="9" height="12" fill="var(--desk-leg)"/><rect x="363" y="158" width="9" height="12" fill="var(--desk-leg)"/>
     <g><rect x="142" y="107" width="76" height="31" fill="#14222c"/><rect x="145" y="110" width="70" height="24" fill="var(--screen)"/><path d="M150 116H165M150 120H179M150 124H172M150 128H160" stroke="#a9c3ac" stroke-width="1"/><rect x="196" y="117" width="12" height="10" fill="#4e747c"/><rect x="175" y="138" width="10" height="4" fill="var(--metal)"/><rect x="165" y="142" width="30" height="2" fill="var(--metal)"/><rect x="137" y="144" width="88" height="1" fill="#94a0a1"/></g>
     <g><path d="M272 140H295V144H272Z" fill="var(--metal)"/><path d="M283 139V114L293 101L286 97L275 115V139Z" fill="var(--metal)"/><path d="M274 86H288V89H293V94H298V98H264V94H269V89H274Z" fill="var(--lamp-shade)"/><rect x="267" y="98" width="28" height="2" fill="var(--lamp-bulb)"/></g>
+    <g aria-hidden="true" class="lamp-cord-art">
+      <line data-lamp-cord x1="296" y1="99" x2="296" y2="120" stroke="var(--cord)" stroke-width="1" />
+      <g data-lamp-handle><rect x="294" y="120" width="5" height="7" fill="var(--cord-handle)"/><rect x="295" y="121" width="1" height="4" fill="var(--cord)"/></g>
+    </g>
     <g><rect x="55" y="136" width="43" height="8" fill="#7e7e70"/><rect x="58" y="137" width="38" height="5" fill="#d0c9b5"/><rect x="61" y="128" width="33" height="8" fill="#986f56"/><rect x="65" y="130" width="27" height="4" fill="#c6baa1"/><rect x="55" y="125" width="41" height="3" fill="#536e73"/></g>
     <g><rect x="324" y="130" width="15" height="15" fill="#9b7863"/><rect x="322" y="127" width="19" height="4" fill="#ba9677"/><path d="M330 127V112H333V127M326 119H322V110H325V116H330M333 115H338V104H341V118H333M330 115H326V103H329V110H330" fill="#668771"/><rect x="329" y="102" width="5" height="8" fill="#839b74"/></g>
     <g><rect x="241" y="133" width="12" height="11" fill="#c7c0a9"/><path d="M253 135H257V141H253" stroke="#c7c0a9" stroke-width="2" fill="none"/><rect x="242" y="132" width="10" height="2" fill="#564439"/></g>
     <rect x="102" y="143" width="25" height="2" fill="#d5ccad"/><path d="M114 143L122 136" stroke="#ae7d56" stroke-width="2"/>
   </svg>
-  <div class="scene-controls">{showCaption && <span><span class="dot"></span>A quiet corner in Munich</span>}<button type="button" data-lamp-toggle aria-pressed="true">Desk lamp <span data-lamp-label>on</span> <span aria-hidden="true">↗</span></button></div>
+    <button type="button" class="lamp-pull" data-lamp-toggle aria-label="Desk lamp" aria-pressed="false" title="Pull to switch the desk lamp" disabled></button>
+  </div>
+  {showCaption && <div class="scene-controls"><span><span class="dot"></span>A quiet corner in Munich</span></div>}
 </div>
 <style>
 	.observatory-scene {
@@ -81,6 +88,8 @@ const stars = [
 		--metal: #6f7b7f;
 		--lamp-shade: #c4a26f;
 		--lamp-bulb: #f5d99d;
+		--cord: #e1cf9f;
+		--cord-handle: #9f8154;
 		border: 1px solid var(--rule);
 		background: var(--surface);
 	}
@@ -107,6 +116,8 @@ const stars = [
 		--desk-leg: #788078;
 		--metal: #627d82;
 		--lamp-shade: #b99760;
+		--cord: #66563f;
+		--cord-handle: #a27842;
 	}
 	svg {
 		width: 100%;
@@ -122,33 +133,34 @@ const stars = [
 		font: 10px/1.5 var(--mono);
 		color: var(--muted);
 	}
-	.scene-controls button {
-		margin-left: auto;
-		border: 0;
-		background: transparent;
-		padding: 0;
-		color: var(--accent);
-		font: inherit;
-		min-height: 26px;
-	}
-	.scene-controls > span {
-		align-self: center;
-	}
-	.scene-controls button:hover {
-		text-decoration: underline;
-	}
-	.scene-controls button span[data-lamp-label] {
-		display: inline-block;
-		min-width: 22px;
-		text-align: left;
-	}
+  .scene-stage { position: relative; }
+  .lamp-pull {
+    position: absolute;
+    left: calc(74% - 22px);
+    top: calc(72.65% - 22px);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .lamp-pull:active { cursor: grabbing; }
+  .lamp-pull:disabled { visibility: hidden; }
+  .lamp-pull:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 	.lamp-glow {
 		transition: opacity 0.2s;
 	}
-	[data-lamp='off'] .lamp-glow {
+	[data-lamp='off'] .lamp-glow,
+  :global([data-theme='light']) [data-lamp='auto'] .lamp-glow {
 		opacity: 0;
 	}
-	[data-lamp='off'] {
+	[data-lamp='off'],
+  :global([data-theme='light']) .observatory-scene[data-lamp='auto'] {
 		--lamp-bulb: #9d926d;
 	}
 	:global([data-theme='light']) .scene-stars,
@@ -175,30 +187,7 @@ const stars = [
 		.scene-controls > span {
 			max-width: 145px;
 		}
-		.scene-controls button {
-		margin-left: auto;
-			min-height: 32px;
-		}
+
 	}
 </style>
-<script>
-	const scene = document.querySelector<HTMLElement>('[data-scene]')
-	const lamp = scene?.querySelector<HTMLButtonElement>('[data-lamp-toggle]')
-	lamp?.addEventListener('click', () => {
-		const on = scene!.dataset.lamp !== 'on'
-		scene!.dataset.lamp = on ? 'on' : 'off'
-		lamp.setAttribute('aria-pressed', String(on))
-		lamp.querySelector('[data-lamp-label]')!.textContent = on ? 'on' : 'off'
-	})
-	if (scene) {
-		let visible = false
-		const sync = () =>
-			scene.classList.toggle('is-visible', visible && !document.hidden)
-		const observer = new IntersectionObserver(([entry]) => {
-			visible = entry.isIntersecting
-			sync()
-		})
-		observer.observe(scene)
-		document.addEventListener('visibilitychange', sync)
-	}
-</script>
+<script src="../../scripts/workspace-scene.ts"></script>

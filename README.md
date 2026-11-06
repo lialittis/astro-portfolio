@@ -161,6 +161,16 @@ The form becomes interactive after hydration; loading, unlock errors, and
 missing-data states are shown inline. Validate this interface with synthetic
 encrypted fixtures and mocked sync responses, without touching private data.
 
+### Workspace scene
+
+The desk lamp uses the pixel pull cord in `ObservatoryScene.astro`, with pointer
+and keyboard behavior in `src/scripts/workspace-scene.ts`. Click/tap the pull
+handle, drag it down, or focus it and press Enter/Space to toggle. The initial
+lamp follows the theme (dark: on, light: off); later theme changes update it after
+two seconds. A manual toggle cancels that pending update, and repeated theme
+changes restart the timer. Lamp state is not persisted. Reduced-motion settings
+skip the automatic pull/rebound animation.
+
 ### Contact addresses
 
 `src/components/EmailAddress.astro` displays addresses using `[at]` / `[dot]`

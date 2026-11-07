@@ -84,6 +84,7 @@ https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-probl
 https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/
 https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/
 https://blog.trailofbits.com/2026/11/03/the-cryptography-behind-electronic-voting-and-why-paper-ballots-are-still-essential/
+https://blog.trailofbits.com/2026/11/06/after-binance-check-what-your-signing-systems-can-approve/
 https://nebelwelt.net/blog/2025/1130-aisec.html
 https://nebelwelt.net/blog/2025/1227-fiasco.html
 https://nebelwelt.net/blog/2026/0226-sysyphuzz.html
@@ -1251,14 +1252,23 @@ https://thehackernews.com/2026/10/why-urgent-security-fixes-arent-fixed.html
 https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html
 https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html
 https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html
+https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html
 https://thehackernews.com/2026/11/chainstack-reports-production-systems.html
 https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html
+https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html
 https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html
 https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html
+https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html
 https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html
+https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html
+https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html
 https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html
+https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html
+https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html
+https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html
 https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html
 https://thehackernews.com/2026/11/netamloader-malware-targets-government.html
+https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html
 https://thehackernews.com/2026/11/radio-with-no-radar-why-agent-runtime.html
 https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
@@ -1567,6 +1577,8 @@ https://www.schneier.com/blog/archives/2026/10/training-ais-to-solve-captchas.ht
 https://www.schneier.com/blog/archives/2026/10/upcoming-speaking-engagements-61.html
 https://www.schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html
 https://www.schneier.com/blog/archives/2026/11/ais-hacking-the-law.html
+https://www.schneier.com/blog/archives/2026/11/friday-squid-blogging-new-jurassic-squid-predecessors.html
+https://www.schneier.com/blog/archives/2026/11/pinpointing-location-of-videos-from-background-airplane-sounds.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/1-6-million-likely-impacted-by-ringcentral-data-breach/
@@ -1924,6 +1936,7 @@ https://www.securityweek.com/defi-protocol-balancer-starts-recovering-funds-stol
 https://www.securityweek.com/dell-recoverpoint-zero-day-exploited-by-chinese-cyberespionage-group/
 https://www.securityweek.com/delmia-factory-software-vulnerability-exploited-in-attacks/
 https://www.securityweek.com/depthfirst-raises-40-million-for-vulnerability-management/
+https://www.securityweek.com/digicert-data-breach-impacts-business-customer-information/
 https://www.securityweek.com/discern-security-raises-13-million-in-series-a-funding/
 https://www.securityweek.com/discord-says-70000-users-had-ids-exposed-in-recent-data-breach/
 https://www.securityweek.com/discord-says-user-information-stolen-in-third-party-data-breach/
@@ -2065,6 +2078,7 @@ https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-nets
 https://www.securityweek.com/government-scientific-entities-hit-via-daemon-tools-supply-chain-attack/
 https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/
 https://www.securityweek.com/grafana-says-codebase-and-other-data-stolen-via-tanstack-supply-chain-attack/
+https://www.securityweek.com/grocery-giant-ahold-delhaize-estimates-financial-toll-of-october-cyberattack/
 https://www.securityweek.com/guardarian-users-targeted-with-malicious-strapi-npm-packages/
 https://www.securityweek.com/hacked-hospitals-hidden-spyware-iran-conflict-shows-how-digital-fight-is-ingrained-in-warfare/
 https://www.securityweek.com/hacker-claims-theft-of-40-million-conde-nast-records-after-wired-data-leak/
@@ -2160,6 +2174,7 @@ https://www.securityweek.com/in-other-news-satellite-cybersecurity-act-90k-chrom
 https://www.securityweek.com/in-other-news-scammers-abuse-grok-us-manufacturing-attacks-gmail-security-claims-debunked/
 https://www.securityweek.com/in-other-news-scattered-spider-hacker-arrested-soc-effectiveness-metrics-nsa-tool-vulnerability/
 https://www.securityweek.com/in-other-news-train-hacker-arrested-pamdoora-linux-backdoor-new-cisa-director-frontrunner/
+https://www.securityweek.com/in-other-news-trezor-implant-llmjacking-bills-hit-1m-sap-flaws-weaponized-within-days/
 https://www.securityweek.com/in-other-news-trump-mobile-data-breach-fifa-world-cup-phishing-cisa-responds-to-supply-chain-attacks/
 https://www.securityweek.com/in-other-news-unauthorized-mythos-access-plankey-cisa-nomination-ends-new-display-security-device/
 https://www.securityweek.com/in-other-news-x-fined-e120-million-array-flaw-exploited-new-iranian-backdoor/
@@ -2194,6 +2209,7 @@ https://www.securityweek.com/ivanti-patches-exploited-epmm-zero-days/
 https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots/
 https://www.securityweek.com/jaguar-land-rover-operations-severely-disrupted-by-cyberattack/
 https://www.securityweek.com/jaguar-land-rover-says-shutdown-will-continue-until-at-least-oct-1-after-cyberattack/
+https://www.securityweek.com/japan-announces-emergency-cybersecurity-package-following-a-wave-of-attacks/
 https://www.securityweek.com/japan-issues-ot-security-guidance-for-semiconductor-factories/
 https://www.securityweek.com/judge-says-pentagons-measures-against-anthropic-were-illegal-and-baseless/
 https://www.securityweek.com/juniper-networks-patches-critical-junos-space-vulnerabilities/
@@ -2364,11 +2380,14 @@ https://www.securityweek.com/openai-fixes-chatgpt-agent-flaw-that-could-let-atta
 https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/
 https://www.securityweek.com/openai-investigates-report-linking-ai-agents-to-rubygems-attack/
 https://www.securityweek.com/openai-launches-bug-bounty-program-for-abuse-and-safety-risks/
+https://www.securityweek.com/openai-model-wrote-its-own-network-code-to-get-around-sandbox-restrictions/
 https://www.securityweek.com/openai-models-hacked-data-portals-raided-a-crypto-wallet-to-finish-tasks/
 https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/
 https://www.securityweek.com/openai-says-its-models-engaged-with-us-government-websites-in-new-model-misbehavior-disclosure/
+https://www.securityweek.com/openai-says-new-gpt-6-cyber-model-hunts-flaws-without-crossing-the-line/
 https://www.securityweek.com/openai-user-data-exposed-in-mixpanel-hack/
 https://www.securityweek.com/openleash-adds-a-human-check-to-risky-ai-agent-actions/
+https://www.securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass/
 https://www.securityweek.com/openssl-patches-high-severity-vulnerability-found-with-ai/
 https://www.securityweek.com/opti-raises-20-million-for-identity-security-platform/
 https://www.securityweek.com/oracle-addresses-peoplesoft-vulnerability-amid-reports-of-zero-day-attacks/
@@ -2469,6 +2488,7 @@ https://www.securityweek.com/reflectiz-raises-22-million-for-website-security-so
 https://www.securityweek.com/refrigeration-controller-hack-spoils-food-across-european-supermarkets/
 https://www.securityweek.com/reliaquest-confirms-shinyhunters-hack-but-says-impact-was-limited/
 https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unpatched-2020-cve/
+https://www.securityweek.com/researchers-find-residential-proxies-on-white-house-network/
 https://www.securityweek.com/researchers-hack-chatgpt-memories-and-web-search-features/
 https://www.securityweek.com/rethinking-application-security-for-the-ai-era/
 https://www.securityweek.com/reveng-ai-raises-15-million-to-hunt-for-flaws-and-backdoors-in-software-binaries/
@@ -2513,6 +2533,7 @@ https://www.securityweek.com/socket-raises-60-million-at-1-billion-valuation/
 https://www.securityweek.com/solarwinds-patches-critical-rce-flaws-in-observability-self-hosted/
 https://www.securityweek.com/solarwinds-patches-critical-web-help-desk-vulnerabilities/
 https://www.securityweek.com/sonicwall-patches-exploited-sma-1000-zero-day/
+https://www.securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins/
 https://www.securityweek.com/sonicwall-patches-high-severity-flaws-in-firewalls-email-security-appliance/
 https://www.securityweek.com/sonicwall-prompts-password-resets-after-firewall-configurations-exposed-in-breach/
 https://www.securityweek.com/sonicwall-updates-sma-100-appliances-to-remove-overstep-malware/
@@ -2615,6 +2636,7 @@ https://www.securityweek.com/unpatched-vulnerabilities-expose-novakon-hmis-to-re
 https://www.securityweek.com/unsecured-perforce-servers-expose-sensitive-data-from-major-orgs/
 https://www.securityweek.com/upbound-group-says-data-breach-led-to-13-million-in-fraudulent-contract-losses/
 https://www.securityweek.com/upwind-raises-250-million-at-1-5-billion-valuation/
+https://www.securityweek.com/us-agencies-urge-organizations-to-harden-refrigeration-controllers/
 https://www.securityweek.com/us-confirms-handala-link-to-iran-government-amid-takedown-of-hackers-sites/
 https://www.securityweek.com/us-cyber-strategy-targets-adversaries-critical-infrastructure-and-emerging-technologies/
 https://www.securityweek.com/us-cybersecurity-agency-flags-wi-fi-range-extender-vulnerability-under-active-attack/

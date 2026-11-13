@@ -1260,13 +1260,17 @@ https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html
 https://thehackernews.com/2026/11/chainstack-reports-production-systems.html
 https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html
 https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html
+https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html
 https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html
 https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html
 https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html
+https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html
 https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html
 https://thehackernews.com/2026/11/france-blames-iran-for-sabotage-attack.html
 https://thehackernews.com/2026/11/google-issues-chrome-security-update.html
 https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html
+https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html
+https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html
 https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html
 https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html
 https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html
@@ -1276,10 +1280,16 @@ https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html
 https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html
 https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html
 https://thehackernews.com/2026/11/netamloader-malware-targets-government.html
+https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html
 https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html
+https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html
 https://thehackernews.com/2026/11/radio-with-no-radar-why-agent-runtime.html
 https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html
+https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html
+https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html
+https://thehackernews.com/2026/11/when-ai-agent-goes-wrong-can-you-stop-it.html
 https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html
+https://thehackernews.com/2026/11/your-soc-sees-alert-but-does-it-know.html
 https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html
 https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html
 https://www.schneier.com/blog/archives/2025/09/1965-cryptanalysis-training-workbook-released-by-the-nsa.html
@@ -1584,12 +1594,15 @@ https://www.schneier.com/blog/archives/2026/10/possible-vulnerability-in-apples-
 https://www.schneier.com/blog/archives/2026/10/the-future-of-ai-cryptanalysis.html
 https://www.schneier.com/blog/archives/2026/10/training-ais-to-solve-captchas.html
 https://www.schneier.com/blog/archives/2026/10/upcoming-speaking-engagements-61.html
+https://www.schneier.com/blog/archives/2026/11/ai-doesnt-have-to-go-rogue-to-break-the-world.html
 https://www.schneier.com/blog/archives/2026/11/ai-security.html
 https://www.schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html
 https://www.schneier.com/blog/archives/2026/11/ais-hacking-the-law.html
+https://www.schneier.com/blog/archives/2026/11/another-way-police-are-locating-people-from-their-smartphones.html
 https://www.schneier.com/blog/archives/2026/11/friday-squid-blogging-new-jurassic-squid-predecessors.html
 https://www.schneier.com/blog/archives/2026/11/new-openssh-vulnerability.html
 https://www.schneier.com/blog/archives/2026/11/pinpointing-location-of-videos-from-background-airplane-sounds.html
+https://www.schneier.com/blog/archives/2026/11/three-people-arrested-for-ai-enhanced-impersonation-fraud.html
 https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/
 https://www.securityweek.com/1-2-million-impacted-by-westjet-data-breach/
 https://www.securityweek.com/1-6-million-likely-impacted-by-ringcentral-data-breach/
@@ -1694,6 +1707,7 @@ https://www.securityweek.com/anthropic-says-claude-ai-powered-90-of-chinese-espi
 https://www.securityweek.com/anthropic-unveils-claude-security-to-counter-ai-powered-exploit-surge/
 https://www.securityweek.com/anthropic-warns-claude-users-of-infostealer-malware-infections/
 https://www.securityweek.com/api-threats-grow-in-scale-as-ai-expands-the-blast-radius/
+https://www.securityweek.com/apify-confirms-customer-data-accessed-in-cyberattack/
 https://www.securityweek.com/apollomd-data-breach-impacts-626000-individuals/
 https://www.securityweek.com/apono-raises-34-million-for-cloud-identity-management-platform/
 https://www.securityweek.com/apple-bug-bounty-update-top-payout-now-2-million-35-million-paid-to-date/
@@ -1841,6 +1855,7 @@ https://www.securityweek.com/ciso-conversations-john-four-flynn-vp-of-security-a
 https://www.securityweek.com/ciso-conversations-nico-waisman-from-self-taught-hacker-to-ai-driven-offensive-security-at-xbow/
 https://www.securityweek.com/ciso-conversations-ross-mckerchar-ciso-at-sophos/
 https://www.securityweek.com/citrix-confirms-2-netscaler-zero-days-after-admins-pulled-the-plug/
+https://www.securityweek.com/citrix-patches-10-critical-netscaler-vulnerabilities/
 https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/
 https://www.securityweek.com/claude-ai-apis-can-be-abused-for-data-exfiltration/
 https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/
@@ -2100,6 +2115,7 @@ https://www.securityweek.com/hacker-conversations-katie-paxton-fear-talks-autism
 https://www.securityweek.com/hackers-abuse-qemu-for-defense-evasion/
 https://www.securityweek.com/hackers-accessed-university-of-hawaii-cancer-center-patient-data-they-werent-immediately-notified/
 https://www.securityweek.com/hackers-earn-1-3-million-at-pwn2own-berlin-2026/
+https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/
 https://www.securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh/
 https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/
 https://www.securityweek.com/hackers-leak-5-1-million-panera-bread-accounts/
@@ -2243,6 +2259,7 @@ https://www.securityweek.com/la-metro-cyberattack-linked-to-iranian-state-sponso
 https://www.securityweek.com/landfall-android-spyware-targeted-samsung-phones-via-zero-day/
 https://www.securityweek.com/lastpass-users-targeted-with-backup-themed-phishing-emails/
 https://www.securityweek.com/lastwall-raises-11-5-million-for-quantum-resilient-identity-platform/
+https://www.securityweek.com/law-enforcement-disrupts-gootloader-castlerat-and-stealc-infrastructure/
 https://www.securityweek.com/lawmakers-gathered-quietly-to-talk-about-ai-angst-and-fears-of-destruction-followed/
 https://www.securityweek.com/legacy-systems-real-world-impacts-the-reality-of-ot-security/
 https://www.securityweek.com/lema-ai-emerges-from-stealth-with-24-million-to-tackle-third-party-risk/
@@ -2277,6 +2294,7 @@ https://www.securityweek.com/meta-ordered-to-pay-new-mexico-25-billion-for-decei
 https://www.securityweek.com/meta-paid-out-4-million-via-bug-bounty-program-in-2025/
 https://www.securityweek.com/meta-pays-78000-bounty-for-vulnerability-exposing-customer-support-data/
 https://www.securityweek.com/mi5-warns-lawmakers-that-chinese-spies-are-trying-to-reach-them-via-linkedin/
+https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/
 https://www.securityweek.com/microsoft-and-allies-smash-shared-infrastructure-of-amadey-and-stealc-malware/
 https://www.securityweek.com/microsoft-and-steam-take-action-as-unity-vulnerability-puts-games-at-risk/
 https://www.securityweek.com/microsoft-apple-release-fresh-security-updates/
@@ -2360,6 +2378,7 @@ https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-i
 https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/
 https://www.securityweek.com/nightmare-eclipse-drops-hardbreacher-kaspersky-product-exploit/
 https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/
+https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/
 https://www.securityweek.com/nike-probing-potential-security-incident-as-hackers-threaten-to-leak-data/
 https://www.securityweek.com/niobium-raises-23-million-for-fhe-hardware-acceleration/
 https://www.securityweek.com/nissan-confirms-impact-from-red-hat-data-breach/
@@ -2403,6 +2422,7 @@ https://www.securityweek.com/openai-models-hacked-data-portals-raided-a-crypto-w
 https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/
 https://www.securityweek.com/openai-says-its-models-engaged-with-us-government-websites-in-new-model-misbehavior-disclosure/
 https://www.securityweek.com/openai-says-new-gpt-6-cyber-model-hunts-flaws-without-crossing-the-line/
+https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/
 https://www.securityweek.com/openai-user-data-exposed-in-mixpanel-hack/
 https://www.securityweek.com/openleash-adds-a-human-check-to-risky-ai-agent-actions/
 https://www.securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass/
@@ -2455,6 +2475,7 @@ https://www.securityweek.com/personal-information-for-over-1-million-people-stol
 https://www.securityweek.com/phishers-abuse-sharepoint-in-new-campaign-targeting-energy-sector/
 https://www.securityweek.com/phishing-research-challenges-conventional-security-awareness-testing/
 https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/
+https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/
 https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/
 https://www.securityweek.com/plex-urges-password-resets-following-data-breach/
 https://www.securityweek.com/plex2shell-exploited-against-qnap-nas-users/
@@ -2547,6 +2568,7 @@ https://www.securityweek.com/shaky-ceasefire-unlikely-to-stop-cyberattacks-from-
 https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/
 https://www.securityweek.com/shinyhunters-claims-council-of-europe-hack/
 https://www.securityweek.com/silent-push-raises-10-million-for-threat-intelligence-platform/
+https://www.securityweek.com/silentair-hackers-intercept-calls-sms-from-inside-mobile-networks/
 https://www.securityweek.com/small-ai-models-may-soon-be-able-to-self-replicate-on-iot-devices-anthropic-warns/
 https://www.securityweek.com/smartertools-hit-by-ransomware-via-vulnerability-in-its-own-product/
 https://www.securityweek.com/socket-raises-60-million-at-1-billion-valuation/
